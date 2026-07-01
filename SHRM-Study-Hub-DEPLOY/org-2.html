@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ملخص SHRM Organization – الصفحات 101–200</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#1a3a5c;--accent:#c8a84b;--accent2:#e8734a;--bg:#f7f4ef;--card:#fff;--green:#1e7a4a;--red:#b91c1c;--purple:#6d28d9;--teal:#0f766e;--border:#e2d9c8;--muted:#6b7280;--org:#2c4a1e;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Tajawal',sans-serif;background:var(--bg);color:#2c2c2c;line-height:1.85;font-size:16px;}
+
+.header{background:linear-gradient(135deg,#2c4a1e 0%,#1a3a5c 50%,#4a2c1e 100%);color:#fff;padding:48px 40px 40px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-60px;left:-60px;width:300px;height:300px;border-radius:50%;background:rgba(200,168,75,.1);}
+.header::after{content:'';position:absolute;bottom:-80px;right:-40px;width:220px;height:220px;border-radius:50%;background:rgba(74,44,30,.12);}
+.badge{display:inline-block;background:var(--accent);color:var(--primary);font-weight:700;font-size:13px;padding:4px 16px;border-radius:20px;margin-bottom:14px;letter-spacing:1px;}
+.header h1{font-size:2rem;font-weight:800;margin-bottom:8px;}
+.header p{font-size:.95rem;opacity:.8;max-width:620px;}
+.meta{display:flex;gap:24px;margin-top:20px;flex-wrap:wrap;}
+.meta span{font-size:13px;opacity:.85;}
+
+.container{max-width:960px;margin:0 auto;padding:40px 24px 80px;}
+.progress-wrap{margin-bottom:36px;}
+.progress-label{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:6px;}
+.progress-bar{height:10px;background:#e2d9c8;border-radius:10px;overflow:hidden;}
+.progress-fill{height:100%;border-radius:10px;background:linear-gradient(90deg,#2c4a1e,#c8a84b);}
+
+.overview{background:var(--primary);color:#fff;border-radius:16px;padding:30px 34px;margin-bottom:36px;position:relative;overflow:hidden;}
+.overview::after{content:'OED & Workforce';position:absolute;left:-10px;bottom:-18px;font-size:55px;font-weight:900;color:rgba(255,255,255,.04);white-space:nowrap;}
+.overview h2{font-size:1.2rem;color:var(--accent);margin-bottom:12px;}
+.overview p{font-size:15px;line-height:1.9;opacity:.92;}
+
+.section{margin-bottom:44px;}
+.sec-title{display:flex;align-items:center;gap:14px;margin-bottom:22px;}
+.sec-num{background:var(--accent);color:var(--primary);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0;}
+.sec-title h2{font-size:1.25rem;font-weight:700;color:var(--primary);}
+.sec-title .en{font-size:13px;color:var(--muted);font-style:italic;direction:ltr;}
+
+.card{background:var(--card);border-radius:14px;padding:26px 28px;border:1px solid var(--border);box-shadow:0 2px 12px rgba(0,0,0,.05);margin-bottom:22px;}
+.card h3{font-size:1rem;font-weight:700;color:var(--primary);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--border);}
+.card h3 .en{color:var(--accent2);font-size:.83rem;direction:ltr;display:inline-block;margin-right:6px;}
+.card p.bt{font-size:15px;margin-bottom:12px;line-height:1.85;}
+
+ul.ilist{list-style:none;padding:0;}
+ul.ilist li{padding:8px 0;border-bottom:1px solid #f0ebe0;font-size:15px;display:flex;gap:10px;align-items:flex-start;}
+ul.ilist li:last-child{border-bottom:none;}
+.dot{width:8px;height:8px;background:var(--accent);border-radius:50%;margin-top:8px;flex-shrink:0;}
+.dot.g{background:var(--green);}
+.dot.r{background:var(--red);}
+.dot.t{background:var(--teal);}
+.dot.p{background:var(--purple);}
+
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px;}
+.tbl th{background:var(--primary);color:#fff;padding:10px 14px;text-align:right;}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top;}
+.tbl tr:nth-child(even) td{background:#f9f6f0;}
+.tbl tr:hover td{background:#fff3e0;}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+@media(max-width:640px){.grid2{grid-template-columns:1fr;}}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:14px;}
+@media(max-width:700px){.grid3{grid-template-columns:1fr 1fr;}}
+.gitem{background:#f9f6f0;border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.gitem h4{font-size:14px;font-weight:700;color:var(--primary);margin-bottom:6px;}
+.gitem .en{font-size:11px;color:var(--accent2);direction:ltr;display:block;margin-bottom:5px;}
+.gitem p{font-size:13px;color:#444;line-height:1.7;}
+
+/* RACI */
+.raci-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px;}
+.raci-card{border-radius:12px;padding:18px;border:2px solid var(--border);}
+.raci-card h4{font-size:1.1rem;font-weight:800;margin-bottom:6px;}
+.raci-card p{font-size:13.5px;color:#444;line-height:1.7;}
+.rc-r{border-color:#1d4ed8;background:#eff6ff;} .rc-r h4{color:#1d4ed8;}
+.rc-a{border-color:var(--red);background:#fff1f2;} .rc-a h4{color:var(--red);}
+.rc-c{border-color:var(--green);background:#f0fdf4;} .rc-c h4{color:var(--green);}
+.rc-i{border-color:var(--muted);background:#f9f6f0;} .rc-i h4{color:var(--muted);}
+
+/* Tuckman stages */
+.tuck-flow{display:flex;gap:0;margin:14px 0;overflow-x:auto;}
+.tuck-box{flex:1;min-width:100px;padding:14px 10px;text-align:center;}
+.tuck-box h5{font-size:13px;font-weight:700;margin-bottom:5px;}
+.tuck-box p{font-size:11px;line-height:1.5;}
+.tuck-arrow{display:flex;align-items:center;color:var(--accent);font-size:20px;font-weight:900;flex-shrink:0;}
+.tk1{background:#dbeafe;border-radius:10px 0 0 10px;} .tk1 h5{color:#1d4ed8;}
+.tk2{background:#fee2e2;} .tk2 h5{color:var(--red);}
+.tk3{background:#fef3cd;} .tk3 h5{color:#854d0e;}
+.tk4{background:#d1fae5;border-radius:0 10px 10px 0;} .tk4 h5{color:var(--green);}
+
+/* Structure comparison */
+.struct-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:14px;}
+@media(max-width:700px){.struct-grid{grid-template-columns:1fr 1fr;}}
+.sc{border-radius:12px;padding:14px 16px;border:1px solid var(--border);}
+.sc h4{font-size:13.5px;font-weight:700;margin-bottom:6px;}
+.sc .en{font-size:11px;direction:ltr;display:block;margin-bottom:6px;}
+.sc .pro{font-size:12.5px;color:var(--green);margin-bottom:3px;}
+.sc .con{font-size:12.5px;color:var(--red);}
+.sf{border-top:4px solid var(--primary);} .sf h4{color:var(--primary);}
+.sp{border-top:4px solid var(--teal);} .sp h4{color:var(--teal);}
+.sg{border-top:4px solid var(--accent2);} .sg h4{color:var(--accent2);}
+.sm{border-top:4px solid var(--purple);} .sm h4{color:var(--purple);}
+
+/* 9-box grid */
+.ninebox{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px;margin-top:14px;border:2px solid var(--border);border-radius:10px;overflow:hidden;}
+.nb{padding:12px 8px;text-align:center;font-size:12px;line-height:1.5;}
+.nb .num{font-size:1.4rem;font-weight:800;display:block;margin-bottom:3px;}
+.nb-1{background:#1e7a4a;color:#fff;} .nb-1 .num{color:#a3e6c0;}
+.nb-2{background:#2e8b57;color:#fff;} .nb-2 .num{color:#a3e6c0;}
+.nb-3{background:#3d9e6a;color:#fff;} .nb-3 .num{color:#c3f0d8;}
+.nb-4{background:#2563eb;color:#fff;} .nb-4 .num{color:#bfdbfe;}
+.nb-5{background:#3b82f6;color:#fff;} .nb-5 .num{color:#bfdbfe;}
+.nb-6{background:#60a5fa;color:#fff;} .nb-6 .num{color:#eff6ff;}
+.nb-7{background:#fde047;color:#1a1a1a;} .nb-7 .num{color:#713f12;}
+.nb-8{background:#fbbf24;color:#1a1a1a;} .nb-8 .num{color:#713f12;}
+.nb-9{background:#ef4444;color:#fff;} .nb-9 .num{color:#fee2e2;}
+.nb-hdr{background:var(--primary);color:#fff;font-weight:700;font-size:12px;padding:8px 4px;text-align:center;}
+.nb-side{background:var(--primary);color:#fff;font-weight:700;font-size:11px;padding:8px 4px;text-align:center;writing-mode:vertical-lr;transform:rotate(180deg);}
+
+/* Deep */
+.deep{background:linear-gradient(135deg,#fff8e7,#fef3cd);border:2px solid var(--accent);border-radius:14px;padding:22px 26px;margin:16px 0;}
+.deep h4{color:var(--primary);font-size:.95rem;font-weight:700;margin-bottom:10px;}
+.deep p,.deep ul{font-size:15px;line-height:1.85;}
+.deep ul{list-style:none;padding:0;}
+.deep ul li{padding:5px 0;display:flex;gap:10px;}
+.deep ul li::before{content:'◆';color:var(--accent);font-size:11px;margin-top:5px;flex-shrink:0;}
+
+.tip{background:#f0fdf4;border:1px solid #86efac;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.tip strong{color:var(--green);}
+.note{background:#fefce8;border:1px solid #fde047;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.note strong{color:#854d0e;}
+.warn{background:#fff1f2;border:1px solid #fca5a5;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.warn strong{color:var(--red);}
+.hl{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1px solid #93c5fd;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.hl strong{color:#1d4ed8;}
+
+.divider{border:none;border-top:2px dashed var(--border);margin:36px 0;}
+.footer{text-align:center;margin-top:60px;padding:22px;color:var(--muted);font-size:13px;border-top:2px solid var(--border);}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="badge">📚 كتاب Organization · الجزء الثاني</div>
+  <h1>ملخص الصفحات 101–200</h1>
+  <p>SHRM Learning System 2023 — Organization Domain · شرح موسّع</p>
+  <div class="meta">
+    <span>📄 402 صفحة إجمالاً</span>
+    <span>🎯 18% من الامتحان</span>
+    <span>🏢 OED كامل + إدارة القوى العاملة</span>
+    <span>🌍 شرح عربي + مصطلحات إنجليزية</span>
+  </div>
+</div>
+
+<div class="container">
+  <div class="progress-wrap">
+    <div class="progress-label"><span>تقدّمك في الكتاب</span><span>200 / 402 صفحة — 50% 🎉</span></div>
+    <div class="progress-bar"><div class="progress-fill" style="width:50%"></div></div>
+  </div>
+
+  <div class="overview">
+    <h2>🗺️ نظرة عامة — الصفحات 101–200</h2>
+    <p>
+      يُكمل هذا الجزء منطقة <strong>Organizational Effectiveness & Development (OED)</strong> بتفصيل التصميم التنظيمي، أنواع الهياكل الأربعة، مصفوفة RACI الحاسمة، تحليل فجوة الأداء، وتطوير الفرق (نموذج Tuckman). ثم يدخل بعمق في منطقة <strong>Workforce Management</strong> — تخطيط القوى العاملة، إعادة الهيكلة، الاستحواذ والاندماج، تخفيض الحجم، إدارة المواهب، تخطيط الخلافة بالـ 9-box grid، وإدارة المعرفة.
+    </p>
+  </div>
+
+  <!-- ════ SECTION 1: ORGANIZATIONAL DESIGN ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">1</div>
+      <div><h2>التصميم التنظيمي — الهياكل الأربعة</h2><div class="en">Organizational Design & Structures</div></div>
+    </div>
+
+    <div class="card">
+      <h3>ما هو التصميم التنظيمي؟ <span class="en">Organizational Design — Beyond Structure</span></h3>
+      <p class="bt">التصميم التنظيمي أشمل بكثير من مجرد مخطط تنظيمي. يشمل كل العناصر التي تدعم عمل المنظمة:</p>
+      <ul class="ilist">
+        <li><span class="dot"></span><strong>الرسالة والرؤية والاستراتيجيات</strong> التي تُحدّد التوجه العام</li>
+        <li><span class="dot"></span><strong>طريقة اتخاذ القرارات</strong> — مركزي أم موزّع؟</li>
+        <li><span class="dot"></span><strong>طريقة تواصل المعلومات</strong> — القنوات والتدفق</li>
+        <li><span class="dot"></span><strong>العمليات</strong> — كيف يُنجز العمل وكيف تتصل أجزاء الهيكل</li>
+        <li><span class="dot"></span><strong>الأنظمة</strong> — الموارد البشرية والمادية والمالية والمعرفية</li>
+      </ul>
+      <div class="deep">
+        <h4>💡 دور HR في التصميم التنظيمي — 5 مسؤوليات</h4>
+        <ul>
+          <li>تقديم تشخيص هيكلي يُحدّد الأسباب الجذرية لمشاكل الأداء</li>
+          <li>مساعدة القادة في تقييم خيارات التصميم المختلفة</li>
+          <li>ضمان توافق قرارات التصميم مع الأهداف الاستراتيجية قصيرة وطويلة المدى</li>
+          <li>مساعدة القادة على فهم أدوارهم في تطبيق الهيكل الجديد</li>
+          <li>المراقبة المستمرة للهيكل وتسليط الضوء على التحديات عند ظهورها</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>الخصائص الهيكلية الجوهرية <span class="en">Structural Characteristics</span></h3>
+      <table class="tbl">
+        <tr><th>الخاصية</th><th>التعريف</th><th>التأثير على الأداء</th></tr>
+        <tr>
+          <td><strong>تخصص العمل</strong><br><em>Work Specialization</em></td>
+          <td>درجة أداء المهام كوظائف منفصلة</td>
+          <td>يُحسّن الكفاءة — لكن يُعيق التعاون والابتكار في البيئات المعقدة</td>
+        </tr>
+        <tr>
+          <td><strong>سلطة القرار</strong><br><em>Decision-Making Authority</em></td>
+          <td>من يملك حق اتخاذ القرار في كل مستوى</td>
+          <td>مركزية = تحكم أكبر. لامركزية = استجابة أسرع</td>
+        </tr>
+        <tr>
+          <td><strong>نطاق الإشراف</strong><br><em>Span of Control</em></td>
+          <td>عدد الأفراد الذين يُبلّغون لمشرف واحد</td>
+          <td>نطاق واسع = هيكل مسطّح وأسرع. ضيّق = تحكم أدق وتكلفة أعلى</td>
+        </tr>
+        <tr>
+          <td><strong>سلسلة القيادة</strong><br><em>Chain of Command</em></td>
+          <td>خط السلطة في المنظمة</td>
+          <td>تقليدياً: موظف واحد → مشرف واحد. اليوم: شبكي ومتعدد في بيئات المصفوفة</td>
+        </tr>
+        <tr>
+          <td><strong>الرسمية</strong><br><em>Formalization</em></td>
+          <td>مدى حكم القواعد والسياسات والإجراءات على سلوك الموظفين</td>
+          <td>مرتفعة = اتساق وامتثال. منخفضة = مرونة وابتكار</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>الهياكل التنظيمية الأربعة — مقارنة شاملة <span class="en">4 Organizational Structures</span></h3>
+      <div class="struct-grid">
+        <div class="sc sf">
+          <h4>الهيكل الوظيفي</h4>
+          <span class="en">Functional Structure</span>
+          <p>الأقسام مُعرَّفة بالخدمة التي تُقدّمها: تسويق، عمليات، HR. الأشيع تاريخياً.</p>
+          <div class="pro">✅ اقتصاديات الحجم · مسارات وظيفية واضحة · تخصص عميق</div>
+          <div class="con">❌ تركيز ضعيف على العملاء/المنتجات · صوامع (Silos) · تواصل ضعيف بين الوظائف</div>
+        </div>
+        <div class="sc sp">
+          <h4>هيكل المنتج / العميل</h4>
+          <span class="en">Product / Customer Structure</span>
+          <p>الأقسام الوظيفية مُجمَّعة تحت أقسام المنتجات. كل قسم له تسويق وإنتاج ومالية خاصة به.</p>
+          <div class="pro">✅ ثقافة فريق المنتج · خبرة عميقة · تواصل متقاطع</div>
+          <div class="con">❌ تكاليف أعلى (ازدواجية الموارد) · تركيز إقليمي/محلي ضعيف</div>
+        </div>
+        <div class="sc sg">
+          <h4>الهيكل الجغرافي</h4>
+          <span class="en">Geographic Structure</span>
+          <p>مشابه لهيكل المنتج — لكن المناطق الجغرافية تُحدّد الهيكل. كل منطقة مكتفية ذاتياً.</p>
+          <div class="pro">✅ قرب من العميل · تكيّف مع الممارسات المحلية · استجابة أسرع</div>
+          <div class="con">❌ اقتصاديات حجم أقل · صعوبة الاتساق عبر المناطق</div>
+        </div>
+        <div class="sc sm" style="grid-column:1/-1;">
+          <h4>الهيكل المصفوفي — الأكثر تعقيداً وتأثيراً</h4>
+          <span class="en">Matrix Structure — Dual Chain of Command</span>
+          <p>يجمع التقسيم بالأقسام/البرامج والتقسيم الوظيفي. موظف يُبلّغ لمديرَين: مدير المشروع ومدير وظيفي.</p>
+          <div class="pro">✅ مزيج الكفاءات متعددة التخصصات · أفضل المواهب العالمية · مرونة وأجيلة</div>
+          <div class="con">❌ هياكل تقارير معقدة · صراعات بين الوظائف والمشاريع على الموارد · إرهاق الموظفين</div>
+        </div>
+      </div>
+      <div class="deep" style="margin-top:14px;">
+        <h4>💡 متى يُستخدم الهيكل المصفوفي؟</h4>
+        <ul>
+          <li>حين يعيق التسلسل الهرمي العمودي أنشطة خلق القيمة (الصوامع تعرقل التعاون)</li>
+          <li>في المشاريع المعقدة التي تحتاج مهارات من وظائف متعددة في آن واحد</li>
+          <li>مثال: شركة طيران تضع مهندسين في فرق مشاريع — وعند انتهاء المشروع يعودون لوظائفهم وينتظرون إعادة التوزيع</li>
+          <li>التحدي الأكبر: يجب تعيين أدوار واضحة جداً — أي غموض يُولّد صراعاً وإرهاقاً</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ SECTION 2: RACI MATRIX ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">2</div>
+      <div><h2>مصفوفة RACI — الشرح الكامل</h2><div class="en">RACI Matrix — Deep Dive</div></div>
+    </div>
+
+    <div class="card">
+      <h3>لماذا نحتاج RACI؟ <span class="en">Why RACI Matters</span></h3>
+      <p class="bt">في الهياكل المعقدة (خاصةً المصفوفية)، يُصبح الغموض حول "من يفعل ماذا" السبب الرئيسي لفشل المشاريع والتأخير وتكرار الجهود. RACI هو الأداة الأبسط والأكثر فاعلية لمعالجة هذا الغموض.</p>
+      <div class="raci-grid">
+        <div class="raci-card rc-r">
+          <h4>R — المسؤول عن التنفيذ</h4>
+          <p><strong>Responsible:</strong> الشخص الذي يُنفّذ النشاط فعلياً. قد يكون أكثر من شخص للأنشطة الكبيرة أو المعقدة — لكن يجب تنسيق جهودهم.</p>
+        </div>
+        <div class="raci-card rc-a">
+          <h4>A — المساءَل (صاحب القرار)</h4>
+          <p><strong>Accountable:</strong> الشخص المسؤول أمام الإدارة عن النشاط. يوافق ويُخصّص الموارد. <strong>يجب أن يكون شخصاً واحداً فقط</strong> لتجنب الفوضى. قد يكون مشاركاً في التنفيذ أيضاً.</p>
+        </div>
+        <div class="raci-card rc-c">
+          <h4>C — المستشار</h4>
+          <p><strong>Consulted:</strong> يُقدّم المشورة أو المعلومات اللازمة لإنجاز المهمة. تواصل ثنائي الاتجاه — يمنح الرأي ويتلقى التغذية الراجعة.</p>
+        </div>
+        <div class="raci-card rc-i">
+          <h4>I — المُبلَّغ</h4>
+          <p><strong>Informed:</strong> يتلقى إشعارات عن الأنشطة لكنه لا يُنفّذ ولا يُستشار. تواصل أحادي الاتجاه فقط.</p>
+        </div>
+      </div>
+      <div class="deep" style="margin-top:14px;">
+        <h4>💡 مثال تطبيقي من الكتاب: توثيق تغييرات البرمجيات</h4>
+        <ul>
+          <li><strong>R — جون:</strong> يُحدّث الوثائق عند كل تغيير في البرمجيات</li>
+          <li><strong>A — ماري:</strong> رئيس قسم تطوير البرمجيات — تُوافق وتخصص الموارد</li>
+          <li><strong>C — قادة الفرق:</strong> يُزوّدون جون بالمعلومات اللازمة لكل تغيير</li>
+          <li><strong>I — جورج:</strong> يحتاج أن يعلم بالتغييرات لأنه مسؤول عن إشعار جميع المستخدمين</li>
+        </ul>
+      </div>
+      <div class="tip"><strong>🎯 للامتحان:</strong> RACI مهم جداً للامتحان — خاصةً في أسئلة SJI عن التعاون وتوضيح الأدوار وإدارة المشاريع. القاعدة الذهبية: يجب أن يكون هناك <strong>A واحد فقط</strong> لكل نشاط. وجود أكثر من A = وصفة للفوضى.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ SECTION 3: PERFORMANCE GAP ANALYSIS ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">3</div>
+      <div><h2>تحليل فجوة الأداء</h2><div class="en">Performance Gap Analysis</div></div>
+    </div>
+
+    <div class="card">
+      <h3>أبعاد فجوة الأداء الأربعة <span class="en">4 Dimensions of Performance Gap</span></h3>
+      <div class="grid2">
+        <div class="gitem" style="border-top:4px solid #1d4ed8;">
+          <h4>1. فجوات المعرفة والمهارات</h4>
+          <span class="en">Knowledge & Skills Gaps</span>
+          <p>تحليل الفجوة بين المهارات المطلوبة حالياً أو مستقبلاً وبين المهارات الموجودة في الوصف الوظيفي الحالي. تُعالَج بالتدريب، التدريب الميداني (Coaching)، الإرشاد (Mentoring)، وتحديث الأوصاف الوظيفية.</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid var(--teal);">
+          <h4>2. متطلبات التكنولوجيا</h4>
+          <span class="en">Technology Requirements</span>
+          <p>تكنولوجيا غير كافية تُعيق الأداء الفعّال. الحل: أدوات رقمية جديدة تُقلّل الأخطاء، أو توسيع أنظمة إدارة المعرفة لتوصيل المعلومات الصحيحة للأشخاص الصحيحين في الوقت الصحيح.</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid var(--accent2);">
+          <h4>3. متطلبات العمليات</h4>
+          <span class="en">Process Requirements</span>
+          <p>مع مرور الوقت تنفصل عمليات العمل عن احتياجات العملاء أو تتعارض مجموعات متعددة بأهداف مختلفة. يجب مراجعة دورية للعمليات وإعادة تصميمها واختبارها.</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid var(--purple);">
+          <h4>4. متطلبات الثقافة التنظيمية</h4>
+          <span class="en">Organizational Culture Requirements</span>
+          <p>قد لا تدعم ثقافة المنظمة رؤيتها المستقبلية. التحول الثقافي يمر بـ 4 خطوات: وصف الثقافة الحالية ← تحديد الثقافة الطموحة ← تحديد الفجوات ← تطوير مبادرات التغيير.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ SECTION 4: TUCKMAN + TEAM DYNAMICS ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">4</div>
+      <div><h2>تطوير الفرق — نموذج Tuckman وديناميكيات المجموعة</h2><div class="en">Team Development — Tuckman & Group Dynamics</div></div>
+    </div>
+
+    <div class="card">
+      <h3>سلّم Tuckman الرباعي <span class="en">Tuckman's 4-Stage Ladder</span></h3>
+      <div class="tuck-flow">
+        <div class="tuck-box tk1">
+          <h5>Forming</h5>
+          <p>التكوين<br>مجاملة وحذر<br>يحتاج قائد يُبني العلاقات</p>
+        </div>
+        <div class="tuck-arrow">→</div>
+        <div class="tuck-box tk2">
+          <h5>Storming</h5>
+          <p>العاصفة<br>صراع وجهات النظر<br>مؤلم — لكن تواصل قيّم</p>
+        </div>
+        <div class="tuck-arrow">→</div>
+        <div class="tuck-box tk3">
+          <h5>Norming</h5>
+          <p>التطبيع<br>بناء ثقة + قواعد<br>خطر التفكير الجماعي</p>
+        </div>
+        <div class="tuck-arrow">→</div>
+        <div class="tuck-box tk4">
+          <h5>Performing</h5>
+          <p>الأداء<br>إنتاجية كاملة<br>تعاون وتناسق</p>
+        </div>
+      </div>
+      <div class="deep" style="margin-top:14px;">
+        <h4>💡 فهم أعمق لكل مرحلة</h4>
+        <ul>
+          <li><strong>Forming:</strong> الأعضاء مهذّبون، يستكشفون الحدود. القائد يُوفّر توجيهاً واضحاً ويبني فرص التواصل.</li>
+          <li><strong>Storming:</strong> الأجندات الشخصية تظهر والخلافات تتصاعد. مؤلم لكن ضروري — التواصل الحقيقي يبدأ هنا. القائد يحكّم دون قمع.</li>
+          <li><strong>Norming:</strong> الفريق يبني هويته الجماعية. خطر "التفكير الجماعي" (Group Think) — الجميع يتبنى نفس المواقف ويرفض وجهات النظر الخارجية مما يُخمد الابتكار.</li>
+          <li><strong>Performing:</strong> الفريق متعاون ومنتج بالكامل. أي تغيير (عضو جديد، تغيير في العمليات) قد يُعيد الفريق لمراحل سابقة — دور القائد حيوي في التعافي السريع.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>أدوار المجموعة — Benne & Sheats <span class="en">Group Roles</span></h3>
+      <div class="grid3">
+        <div class="gitem" style="border-top:4px solid var(--green);">
+          <h4>الأدوار المهمية</h4>
+          <span class="en">Task Roles</span>
+          <p>تساعد في إنجاز العمل — اقتراح الحلول، مشاركة المعلومات، أداء المهام المُسندة.</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid #1d4ed8;">
+          <h4>الأدوار الاجتماعية</h4>
+          <span class="en">Social Roles</span>
+          <p>تُحافظ على العلاقات والعمل الجماعي الإيجابي — تعزيز الوئام، حل النزاعات، إشراك الجميع.</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid var(--red);">
+          <h4>الأدوار الخللية</h4>
+          <span class="en">Dysfunctional Roles</span>
+          <p>تُضعف المجموعة — الهجوم، الهيمنة، مقاومة الأفكار، نشر السلبية. تُعالَج بمحادثات خاصة أو التدريب.</p>
+        </div>
+      </div>
+      <div class="note"><strong>📌 ملاحظة Benne وSheats:</strong> دور الفرد في المجموعة يتغيّر بحسب الظروف. القائد الذي يركّز على المهام في البداية قد ينتقل تدريجياً لأدوار اجتماعية بعد أن تتوافق الفرق على الاتجاه.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ SECTION 5: WORKFORCE MANAGEMENT ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">5</div>
+      <div><h2>إدارة القوى العاملة — الإطار الشامل</h2><div class="en">Workforce Management</div></div>
+    </div>
+
+    <div class="card">
+      <h3>تخطيط القوى العاملة — 6 مراحل <span class="en">Workforce Planning Process — 6 Stages</span></h3>
+      <p class="bt">تخطيط القوى العاملة هو المرحلة الأولى في عملية إدارة القوى العاملة. يوافق استراتيجياً رأس المال البشري للمنظمة مع توجهها التجاري.</p>
+      <table class="tbl">
+        <tr><th>المرحلة</th><th>السؤال الجوهري</th><th>ما يُحدَّد</th></tr>
+        <tr><td><strong>1. التركيز الاستراتيجي</strong></td><td>ماذا يمكن وماذا لا يمكن؟</td><td>الاتجاه الاستراتيجي ونقاط القوة والضعف الحالية</td></tr>
+        <tr><td><strong>2. تحليل العرض</strong></td><td>أين نحن الآن؟ ماذا لدينا؟</td><td>المزيج الحالي من المهارات، الموظفون ذوو الأداء العالي، مخاوف التوصيف</td></tr>
+        <tr><td><strong>3. تحليل الطلب</strong></td><td>أين نريد أن نكون؟ ماذا نحتاج؟</td><td>الكفاءات المستقبلية، عدد الموظفين، المناطق الزمنية</td></tr>
+        <tr><td><strong>4. تحليل الفجوة</strong></td><td>ما الذي ينقصنا؟</td><td>الكفاءات غير الموجودة، المناطق الأكثر هشاشة</td></tr>
+        <tr><td><strong>5. تحليل الحلول</strong></td><td>ماذا يمكننا؟ كيف نحصل على ما نحتاج؟</td><td>Build (تطوير) أم Buy (توظيف) أم Borrow (إعارة)؟</td></tr>
+        <tr><td><strong>6. تقييم أثر التخطيط</strong></td><td>كيف أدّينا؟</td><td>قياس النجاح، تحديد التحديات، مراجعة المبادرات</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>إعادة الهيكلة — محرّكاتها وأنواعها <span class="en">Restructuring — Drivers & Types</span></h3>
+      <p class="bt">المحرّكات الأربعة الكبرى (د. كولكارني) + تكنولوجيا العصر:</p>
+      <div class="grid2">
+        <div class="gitem" style="border-top:4px solid var(--primary);">
+          <h4>1. الاستراتيجية</h4>
+          <p>تغيير الاستراتيجية يستلزم تغيير الهيكل — إنشاء أقسام جديدة أو إغلاق أخرى.</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid var(--teal);">
+          <h4>2. الهيكل نفسه</h4>
+          <p>إعادة ترتيب الهيكل لنموذج أعمال جديد أو لتحسين الكفاءة أو خفض التكاليف.</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid var(--red);">
+          <h4>3. تقليص الحجم</h4>
+          <p>الاستجابة لخسارة إيرادات — إغلاق أقسام، تقليص الموظفين.</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid var(--green);">
+          <h4>4. التوسّع</h4>
+          <p>منتجات أو مرافق جديدة تستلزم أقساماً جديدة وهيكلاً معاد تصميمه.</p>
+        </div>
+      </div>
+      <div class="hl" style="margin-top:14px;"><strong>💡 المحرّك الخامس — التكنولوجيا والذكاء الاصطناعي:</strong> يمكن أن تُلغي التكنولوجيا أقساماً بأكملها أو تُنشئها. الاستجابة: تحديد المهارات اللازمة للتكنولوجيا الجديدة ثم وضع استراتيجية Upskilling وReskilling.</div>
+    </div>
+
+    <div class="card">
+      <h3>الاستحواذ والاندماج M&A — دور HR <span class="en">Mergers & Acquisitions — HR's Role</span></h3>
+      <p class="bt"><strong>Due Diligence</strong> = التحقيق الشامل في القرار قبل إتمامه لتحديد كل العوامل المحتملة إيجاباً وسلباً. يُعدّ أحد أهم أدوار HR في M&A.</p>
+      <table class="tbl">
+        <tr><th>مجال التحقيق</th><th>ما يُفحصه HR</th></tr>
+        <tr><td><strong>الهيكلي</strong></td><td>ازدواجية العمليات والموظفين، اختلافات الثقافة التنظيمية، تعارض سياسات HR، علاقات التقارير</td></tr>
+        <tr><td><strong>التكنولوجي</strong></td><td>توافق أنظمة المعلومات، ERP، آليات التواصل وتتبع البيانات</td></tr>
+        <tr><td><strong>المالي</strong></td><td>هيكل التعويضات، عقود النقابات، خطط التقاعد وتمويلها، خيارات الأسهم، الغرامات المختبئة</td></tr>
+        <tr><td><strong>القانوني</strong></td><td>متطلبات الإبلاغ، القيود على إغلاق المرافق، الدعاوى القضائية المعلّقة، تعويضات الفصل</td></tr>
+      </table>
+      <div class="grid3" style="margin-top:14px;">
+        <div class="gitem" style="border-top:3px solid var(--primary);">
+          <h4>قبل الإتمام</h4>
+          <span class="en">Due Diligence Phase</span>
+          <p>البحث الشامل + مقارنة الهياكل + تحديد المواهب الرئيسية + وضع خطة الدمج.</p>
+        </div>
+        <div class="gitem" style="border-top:3px solid var(--accent2);">
+          <h4>أثناء التنفيذ</h4>
+          <span class="en">Implementation Phase</span>
+          <p>التواصل السريع والصادق · التغييرات المطلوبة بسرعة · دعم مزج العمليات · إشراك الشركاء الخارجيين.</p>
+        </div>
+        <div class="gitem" style="border-top:3px solid var(--green);">
+          <h4>بعد الإتمام</h4>
+          <span class="en">Post-Merger Phase</span>
+          <p>رصد مؤشرات المشاكل + مبادرات بناء التماسك + تحليل أفضل الممارسات للمستقبل.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>تقليص الحجم — دور HR <span class="en">Reduction in Force (RIF) — HR's Role</span></h3>
+      <div class="grid2">
+        <div class="gitem" style="border-top:4px solid var(--accent2);">
+          <h4>دور HR خلال RIF</h4>
+          <span class="en">During RIF</span>
+          <p>مساعدة الموظفين المتبقين على مواجهة: انخفاض الأمن الوظيفي، زيادة عبء العمل، "ذنب الناجين"، الخوف من جولة تقليص أخرى.</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid var(--green);">
+          <h4>دور HR بعد RIF</h4>
+          <span class="en">After RIF</span>
+          <p>توصيل رواية التغيير بوضوح + تعريف المسؤوليات من جديد + دعم القادة + إعادة توافق المكافآت مع الأهداف الجديدة.</p>
+        </div>
+      </div>
+      <div class="note"><strong>📌 بدائل تقليص الحجم:</strong> تخفيضات الأجور الطوعية · الإجازات بدون أجر (Furloughs) · العروض الطوعية للاستقالة أو التقاعد المبكر · تخفيض ساعات العمل.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ SECTION 6: SUCCESSION PLANNING + 9-BOX ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">6</div>
+      <div><h2>تخطيط الخلافة + شبكة التسعة مربعات</h2><div class="en">Succession Planning + 9-Box Grid — Deep Dive</div></div>
+    </div>
+
+    <div class="card">
+      <h3>تخطيط الخلافة مقابل تخطيط الاستبدال <span class="en">Succession Planning vs. Replacement Planning</span></h3>
+      <p class="bt">الخلط بين هذين المفهومين شائع — لكنهما مختلفان جوهرياً:</p>
+      <table class="tbl">
+        <tr><th>المتغيّر</th><th>تخطيط الخلافة</th><th>تخطيط الاستبدال</th></tr>
+        <tr><td>الإطار الزمني</td><td>12-36 شهراً</td><td>0-12 شهراً</td></tr>
+        <tr><td>الجاهزية</td><td>المرشح ذو الإمكانات التطويرية الأفضل</td><td>أفضل مرشح متاح الآن</td></tr>
+        <tr><td>مستوى الالتزام</td><td>احتمالات حتى تظهر الشواغر</td><td>مرشح بديل محدّد ومعيَّن</td></tr>
+        <tr><td>تركيز التخطيط</td><td>مجموعة مرشحين لعدة مناصب</td><td>خطوط خلافة رأسية داخل الوحدات</td></tr>
+        <tr><td>أساس التقييم</td><td>تقييمات متعددة من مديرين مختلفين</td><td>ملاحظة الأداء عبر الزمن</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>شبكة التسعة مربعات (9-Box Grid) — الشرح الكامل <span class="en">9-Box Grid — Complete Guide</span></h3>
+      <p class="bt">تُصنّف الموظفين في تسع فئات بحسب الأداء (منخفض/متوسط/عالٍ) والإمكانات (منخفضة/متوسطة/عالية). أداة محورية في تخطيط الخلافة وإدارة المواهب.</p>
+
+      <!-- 9-box visualization -->
+      <div style="overflow-x:auto;margin-top:14px;">
+        <table style="width:100%;border-collapse:collapse;font-size:13px;">
+          <tr>
+            <td style="width:80px;"></td>
+            <td colspan="3" style="background:var(--primary);color:#fff;text-align:center;padding:8px;font-weight:700;">محور الأداء ←</td>
+          </tr>
+          <tr>
+            <td style="background:var(--primary);color:#fff;font-size:12px;font-weight:700;text-align:center;writing-mode:vertical-lr;transform:rotate(180deg);padding:8px;">محور الإمكانات ↑</td>
+            <td style="padding:8px;vertical-align:top;">
+              <div style="background:#f87171;color:#fff;border-radius:8px;padding:12px;text-align:center;margin-bottom:4px;">
+                <div style="font-size:1.2rem;font-weight:800;">5</div>
+                <div style="font-size:11px;">أداء منخفض<br>إمكانات عالية<br>يحتاج توجيه</div>
+              </div>
+            </td>
+            <td style="padding:8px;vertical-align:top;">
+              <div style="background:#60a5fa;color:#fff;border-radius:8px;padding:12px;text-align:center;margin-bottom:4px;">
+                <div style="font-size:1.2rem;font-weight:800;">2</div>
+                <div style="font-size:11px;">أداء جيد<br>إمكانات عالية<br>مهام تحدّي</div>
+              </div>
+            </td>
+            <td style="padding:8px;vertical-align:top;">
+              <div style="background:#1e7a4a;color:#fff;border-radius:8px;padding:12px;text-align:center;margin-bottom:4px;">
+                <div style="font-size:1.2rem;font-weight:800;">1</div>
+                <div style="font-size:11px;">أداء ممتاز<br>إمكانات عالية<br>⭐ النجم المطلق</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td style="padding:8px;vertical-align:top;">
+              <div style="background:#fbbf24;color:#1a1a1a;border-radius:8px;padding:12px;text-align:center;margin-bottom:4px;">
+                <div style="font-size:1.2rem;font-weight:800;">8</div>
+                <div style="font-size:11px;">أداء منخفض<br>إمكانات متوسطة<br>أهداف تمديد</div>
+              </div>
+            </td>
+            <td style="padding:8px;vertical-align:top;">
+              <div style="background:#3b82f6;color:#fff;border-radius:8px;padding:12px;text-align:center;margin-bottom:4px;">
+                <div style="font-size:1.2rem;font-weight:800;">6</div>
+                <div style="font-size:11px;">أداء جيد<br>إمكانات متوسطة<br>توسيع الدور</div>
+              </div>
+            </td>
+            <td style="padding:8px;vertical-align:top;">
+              <div style="background:#2563eb;color:#fff;border-radius:8px;padding:12px;text-align:center;margin-bottom:4px;">
+                <div style="font-size:1.2rem;font-weight:800;">3</div>
+                <div style="font-size:11px;">أداء ممتاز<br>إمكانات متوسطة<br>تحسين التفكير الاستراتيجي</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td style="padding:8px;vertical-align:top;">
+              <div style="background:#ef4444;color:#fff;border-radius:8px;padding:12px;text-align:center;">
+                <div style="font-size:1.2rem;font-weight:800;">9</div>
+                <div style="font-size:11px;">أداء منخفض<br>إمكانات منخفضة<br>قرار: إعادة توزيع أو خروج</div>
+              </div>
+            </td>
+            <td style="padding:8px;vertical-align:top;">
+              <div style="background:#84cc16;color:#1a1a1a;border-radius:8px;padding:12px;text-align:center;">
+                <div style="font-size:1.2rem;font-weight:800;">7</div>
+                <div style="font-size:11px;">أداء جيد<br>إمكانات منخفضة<br>تشجيع التفكير الجانبي</div>
+              </div>
+            </td>
+            <td style="padding:8px;vertical-align:top;">
+              <div style="background:#0d9488;color:#fff;border-radius:8px;padding:12px;text-align:center;">
+                <div style="font-size:1.2rem;font-weight:800;">4</div>
+                <div style="font-size:11px;">أداء ممتاز<br>إمكانات منخفضة<br>تشجيع وتمكين</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td style="background:var(--primary);color:#fff;text-align:center;font-size:12px;font-weight:700;padding:6px;">أداء منخفض</td>
+            <td style="background:var(--primary);color:#fff;text-align:center;font-size:12px;font-weight:700;padding:6px;">أداء متوسط</td>
+            <td style="background:var(--primary);color:#fff;text-align:center;font-size:12px;font-weight:700;padding:6px;">أداء عالٍ</td>
+          </tr>
+        </table>
+      </div>
+      <div class="deep" style="margin-top:14px;">
+        <h4>💡 كيف تستخدم الـ 9-Box في أسئلة الامتحان؟</h4>
+        <ul>
+          <li><strong>المربع 1 (أداء عالٍ + إمكانات عالية):</strong> النجم المطلق — أُولوية قصوى للاحتفاظ والتطوير السريع</li>
+          <li><strong>المربعات 5, 8, 9 (أداء منخفض):</strong> يستدعون انتباهاً فورياً — تدريب إضافي أو تدخّل قيادي أو إعادة توزيع</li>
+          <li><strong>المربعات 1, 3, 4 (أداء عالٍ):</strong> يُحافَظ عليهم ويُطوَّرون</li>
+          <li><strong>الأخطاء الشائعة في تخطيط الخلافة:</strong> الاعتماد على التجارب الماضية فقط | إعداد الخطط بمعزل | جعله حدثاً سنوياً لا نشاطاً مستمراً</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ SECTION 7: KNOWLEDGE MANAGEMENT ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">7</div>
+      <div><h2>إدارة المعرفة</h2><div class="en">Knowledge Management — Deep Dive</div></div>
+    </div>
+
+    <div class="card">
+      <h3>ما هي إدارة المعرفة؟ <span class="en">Knowledge Management Definition</span></h3>
+      <p class="bt">إدارة المعرفة (KM) هي عملية إنشاء المعرفة وإتاحتها ومشاركتها وإدارتها لتعزيز أداء الأفراد والمنظمة. الهدف: الحفاظ على فاعلية المنظمة وهي تتغيّر وتتطوّر بمرور الوقت.</p>
+      <div class="grid2">
+        <div class="gitem" style="border-top:4px solid var(--primary);">
+          <h4>الأنظمة غير الرسمية</h4>
+          <span class="en">Informal KM Systems</span>
+          <p>تنشأ تلقائياً من خبرة الموظفين. تعتمد على الشبكات الشخصية. قوية وفعّالة لكنها مُعرَّضة للضياع حين يغادر الموظفون.</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid var(--teal);">
+          <h4>الأنظمة الرسمية</h4>
+          <span class="en">Formal KM Systems</span>
+          <p>إجراءات منظّمة لاستخلاص المعلومات ومستودع محدد لتخزينها. تُتيح البحث والوصول السريع لكل الموظفين.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>خطوات إنشاء نظام KM رسمي <span class="en">4 Steps to Create a Formal KM System</span></h3>
+      <table class="tbl">
+        <tr><th>الخطوة</th><th>الوصف</th></tr>
+        <tr><td><strong>1. جرد أصول المعرفة</strong></td><td>حصر الأصول الملموسة: الأوراق البيضاء، العروض، الخطط، وقوائم الموظفين بمهاراتهم وخبراتهم</td></tr>
+        <tr><td><strong>2. إنشاء مستودع المعرفة</strong></td><td>مكتبة متاحة عبر الإنترانت أو تطبيق مخصص. يجب أن تكون سريعة وسهلة الاستخدام مع قدرة بحث قوية</td></tr>
+        <tr><td><strong>3. تشجيع الاستخدام</strong></td><td>تواصل + تدريب + عمليات لضمان القبول الثقافي. إذا لم يُرَ النظام كضرورة، فشلّه محتوم</td></tr>
+        <tr><td><strong>4. التحديث المستمر</strong></td><td>التحديثات المستمرة ضرورية للحفاظ على المصداقية. قاعدة بيانات قديمة = أخطاء وإحباط</td></tr>
+      </table>
+      <div class="deep" style="margin-top:14px;">
+        <h4>💡 عوامل النجاح الحرجة لـ KM</h4>
+        <ul>
+          <li>بيئة تُشجّع على مشاركة أفضل الممارسات عبر الحدود التنظيمية</li>
+          <li>إدراك أن المعلومات يجب أن تتدفق داخل المنظمة ولا تُحجَز</li>
+          <li>ثقافة مشاركة المعرفة — الموظفون يُقدّمون ويأخذون بالتساوي</li>
+          <li>معالجة سؤال "ما الفائدة لي؟" — أولئك الذين يستخدمون النظام يجب أن يُساهموا فيه أيضاً</li>
+          <li>معالجة التحديات متعددة الثقافات: لغات متعددة، تفضيلات مختلفة</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>التعلم الاجتماعي ومشاركة المعرفة خارجياً <span class="en">Social Learning & External Knowledge Sharing</span></h3>
+      <ul class="ilist">
+        <li><span class="dot g"></span><strong>التعلم الاجتماعي (Social Learning):</strong> معظم ما يحتاجه الموظفون حولهم دائماً — مراقبة الزملاء، تلقي التدريب من المشرف، الحصول على الأفكار المجرّبة.</li>
+        <li><span class="dot g"></span><strong>التعلم الاجتماعي لا يستلزم تقنيات:</strong> برامج التدريب والإرشاد فرص للتعلم الاجتماعي تتطلب تخطيطاً ووقتاً بدون رأس مال استثماري كبير.</li>
+        <li><span class="dot g"></span><strong>المقارنة المعيارية (Benchmarking):</strong> لن تكون ممكنة إذا لم تشارك المنظمات عالية الأداء معلوماتها. تشجيع المشاركة الخارجية = أفضل الممارسات تتحسن عالمياً.</li>
+        <li><span class="dot g"></span><strong>الريادة الفكرية (Thought Leadership):</strong> الأفراد والمنظمات الذين يؤثّرون في صناعتهم بنقل معرفتهم. تُحسّن الظهور والسمعة والمبيعات.</li>
+        <li><span class="dot t"></span><strong>التحدي الرئيسي:</strong> تحويل التعلم الاجتماعي العشوائي إلى شيء أكثر هيكلية وصرامة — التكنولوجيا يمكن أن تساعد، لكنها ليست شرطاً.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- GLOSSARY -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">📖</div>
+      <div><h2>المصطلحات الأساسية — الجزء الثاني</h2></div>
+    </div>
+    <div class="card">
+      <table class="tbl">
+        <tr><th>المصطلح العربي</th><th>الإنجليزي</th><th>التعريف المختصر</th></tr>
+        <tr><td>مصفوفة RACI</td><td>RACI Matrix</td><td>أداة توضيح الأدوار: مسؤول تنفيذ، مساءَل، مستشار، مُبلَّغ</td></tr>
+        <tr><td>الهيكل المصفوفي</td><td>Matrix Structure</td><td>يُدمج التقسيم الوظيفي والتقسيم بالمشاريع — موظف يُبلّغ لمديرَين</td></tr>
+        <tr><td>الهيكل الوظيفي</td><td>Functional Structure</td><td>أقسام مُعرَّفة بالخدمة: تسويق، عمليات، HR</td></tr>
+        <tr><td>نموذج Tuckman</td><td>Tuckman's Stages</td><td>مراحل تطور الفريق: Forming → Storming → Norming → Performing</td></tr>
+        <tr><td>تحليل القوى العاملة</td><td>Workforce Analysis</td><td>جمع بيانات القوى العاملة الحالية وتوقع الاحتياجات المستقبلية</td></tr>
+        <tr><td>الواجب القانوني المسبق</td><td>Due Diligence</td><td>التحقيق الشامل في القرار قبل إتمامه لتحديد العوامل الإيجابية والسلبية</td></tr>
+        <tr><td>تقليص الحجم</td><td>Reduction in Force (RIF)</td><td>إنهاء عمل الموظفين لأسباب غير متعلقة بالأداء (اقتصادية أو هيكلية)</td></tr>
+        <tr><td>إدارة المواهب</td><td>Talent Management</td><td>تطوير ودمج عمليات HR للاحتفاظ بالمهارات التي تلبّي الاحتياجات الحالية والمستقبلية</td></tr>
+        <tr><td>تخطيط الخلافة</td><td>Succession Planning</td><td>تحديد وتطوير الموظفين ذوي الإمكانات العالية للمناصب المستقبلية</td></tr>
+        <tr><td>تخطيط الاستبدال</td><td>Replacement Planning</td><td>تحديد بدائل فورية للمناصب الرئيسية — أفق 0-12 شهراً</td></tr>
+        <tr><td>شبكة التسعة مربعات</td><td>9-Box Grid</td><td>أداة لتصنيف الموظفين بحسب الأداء والإمكانات في 9 فئات</td></tr>
+        <tr><td>إدارة المعرفة</td><td>Knowledge Management (KM)</td><td>إنشاء المعرفة ومشاركتها وإدارتها لتعزيز الأداء التنظيمي</td></tr>
+        <tr><td>المقارنة المعيارية</td><td>Benchmarking</td><td>مقارنة ممارسات المنظمة بالمنظمات عالية الأداء لتحسين أدائها</td></tr>
+        <tr><td>الريادة الفكرية</td><td>Thought Leadership</td><td>استخدام المعرفة للتأثير على الصناعة عبر نقلها للعموم</td></tr>
+        <tr><td>تحليل فجوة الأداء</td><td>Performance Gap Analysis</td><td>تحليل الفجوة بين الأداء الحالي والمطلوب في 4 أبعاد</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- INTEGRATION -->
+  <div class="overview" style="margin-top:30px;">
+    <h2>🔗 تكامل مفاهيم هذا الجزء</h2>
+    <p style="line-height:2.1;">
+      <strong>OED + RACI:</strong> التصميم التنظيمي بدون وضوح الأدوار (RACI) مآله الفوضى — خاصةً في الهياكل المصفوفية التي تُعدّ الأكثر تعقيداً وتحتاج RACI أكثر من غيرها.<br>
+      <strong>Tuckman + تغيير الهيكل:</strong> أي إعادة هيكلة تُعيد الفريق إلى مرحلة Forming أو حتى Storming. دور HR: تسريع العودة لـ Performing عبر التواصل الواضح وتعريف الأدوار.<br>
+      <strong>9-Box + تخطيط الخلافة:</strong> الـ 9-Box أداة التشخيص، وتخطيط الخلافة هو خطة العلاج. الأداة بدون الخطة = تشخيص بلا علاج.<br>
+      <strong>KM + تقليص الحجم:</strong> إدارة المعرفة تحمي المنظمة من خسارة الذاكرة المؤسسية عند تقليص الحجم أو خروج الموظفين القدامى.
+    </p>
+  </div>
+
+  <div class="tip" style="margin-top:22px;font-size:15px;">
+    <strong>🎯 نصيحة الامتحان:</strong> أسئلة SJI عن تطوير الفرق تُركّز على Tuckman (خاصةً Storming وأدوار القائد). أسئلة إدارة القوى العاملة تُركّز على تسلسل التخطيط الاستراتيجي → تحليل الفجوة → استراتيجية Build/Buy/Borrow. والـ 9-Box يظهر دائماً في سياق تخطيط الخلافة وإدارة المواهب.
+  </div>
+
+  <!-- STUDY PLAN -->
+  <div class="overview" style="margin-top:36px;background:linear-gradient(135deg,#2c4a1e,#1a3a5c);">
+    <h2>📅 تقدّمك — نصف الكتاب مكتمل! 🎉</h2>
+    <table class="tbl" style="margin-top:14px;background:rgba(255,255,255,.08);">
+      <tr style="background:rgba(255,255,255,.15);">
+        <th style="background:transparent;color:#fff;">الجزء</th>
+        <th style="background:transparent;color:#fff;">الصفحات</th>
+        <th style="background:transparent;color:#fff;">المحتوى</th>
+        <th style="background:transparent;color:#fff;">الحالة</th>
+      </tr>
+      <tr style="color:#fff;font-size:14px;"><td>الأول</td><td>1–100</td><td>هيكل HR (7 نماذج) + BSC + مراجعات + OED بداية + McKinsey 7S</td><td>✅</td></tr>
+      <tr style="color:#fff;font-size:14px;background:rgba(200,168,75,.2);"><td><strong>الثاني ✅</strong></td><td><strong>101–200</strong></td><td><strong>التصميم التنظيمي + RACI + Tuckman + إدارة القوى العاملة + 9-Box + KM</strong></td><td>✅ أنت هنا</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>الثالث</td><td>201–300</td><td>علاقات الموظفين والعمل: ILO + الانضباط + التحقيقات + ADR + النقابات</td><td>⏳ التالي</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>الرابع</td><td>301–402</td><td>علاقات العمل (تكملة) + إدارة التكنولوجيا + مراجعة شاملة + نصائح الامتحان</td><td>⏳</td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <p>اطلب الجزء الثالث (صفحات 201–300) متى شئت 🚀</p>
+    <p style="margin-top:6px;color:#aaa;">SHRM Learning System 2023 — Organization Domain · ملخص موسّع بالعربية</p>
+  </div>
+</div>
+</body>
+</html>

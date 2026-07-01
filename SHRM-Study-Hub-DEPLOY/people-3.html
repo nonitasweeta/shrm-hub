@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ملخص SHRM People – الصفحات 201–300</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#1a3a5c;--accent:#c8a84b;--accent2:#e8734a;--bg:#f7f4ef;--card:#fff;--green:#1e7a4a;--red:#b91c1c;--purple:#6d28d9;--teal:#0f766e;--border:#e2d9c8;--muted:#6b7280;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Tajawal',sans-serif;background:var(--bg);color:#2c2c2c;line-height:1.85;font-size:16px;}
+
+.header{background:linear-gradient(135deg,#154360 0%,#1a3a5c 60%,#0b4c40 100%);color:#fff;padding:48px 40px 40px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-60px;left:-60px;width:300px;height:300px;border-radius:50%;background:rgba(200,168,75,.12);}
+.header::after{content:'';position:absolute;bottom:-80px;right:-40px;width:220px;height:220px;border-radius:50%;background:rgba(11,76,64,.15);}
+.badge{display:inline-block;background:var(--accent);color:var(--primary);font-weight:700;font-size:13px;padding:4px 16px;border-radius:20px;margin-bottom:14px;letter-spacing:1px;}
+.header h1{font-size:2rem;font-weight:800;margin-bottom:8px;}
+.header p{font-size:.95rem;opacity:.8;max-width:620px;}
+.meta{display:flex;gap:24px;margin-top:20px;flex-wrap:wrap;}
+.meta span{font-size:13px;opacity:.85;}
+
+.container{max-width:920px;margin:0 auto;padding:40px 24px 80px;}
+.progress-wrap{margin-bottom:36px;}
+.progress-label{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:6px;}
+.progress-bar{height:10px;background:#e2d9c8;border-radius:10px;overflow:hidden;}
+.progress-fill{height:100%;border-radius:10px;background:linear-gradient(90deg,var(--primary),var(--accent));}
+
+.overview{background:var(--primary);color:#fff;border-radius:16px;padding:30px 34px;margin-bottom:36px;position:relative;overflow:hidden;}
+.overview::after{content:'People';position:absolute;left:-10px;bottom:-22px;font-size:90px;font-weight:900;color:rgba(255,255,255,.04);}
+.overview h2{font-size:1.2rem;color:var(--accent);margin-bottom:12px;}
+.overview p{font-size:15px;line-height:1.9;opacity:.92;}
+
+.section{margin-bottom:40px;}
+.sec-title{display:flex;align-items:center;gap:14px;margin-bottom:20px;}
+.sec-num{background:var(--accent);color:var(--primary);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0;}
+.sec-title h2{font-size:1.25rem;font-weight:700;color:var(--primary);}
+.sec-title .en{font-size:13px;color:var(--muted);font-style:italic;direction:ltr;}
+
+.card{background:var(--card);border-radius:14px;padding:26px 28px;border:1px solid var(--border);box-shadow:0 2px 12px rgba(0,0,0,.05);margin-bottom:20px;}
+.card h3{font-size:1rem;font-weight:700;color:var(--primary);margin-bottom:12px;padding-bottom:10px;border-bottom:2px solid var(--border);}
+.card h3 .en{color:var(--accent2);font-size:.83rem;direction:ltr;display:inline-block;margin-right:6px;}
+.card p.bt{font-size:15px;margin-bottom:12px;line-height:1.85;}
+
+ul.ilist{list-style:none;padding:0;}
+ul.ilist li{padding:8px 0;border-bottom:1px solid #f0ebe0;font-size:15px;display:flex;gap:10px;align-items:flex-start;}
+ul.ilist li:last-child{border-bottom:none;}
+.dot{width:8px;height:8px;background:var(--accent);border-radius:50%;margin-top:8px;flex-shrink:0;}
+.dot.g{background:var(--green);}
+.dot.r{background:var(--red);}
+.dot.t{background:var(--teal);}
+.dot.p{background:var(--purple);}
+
+.term{background:#f0f6ff;border-right:4px solid var(--primary);padding:10px 16px;margin:8px 0;border-radius:6px;font-size:15px;}
+.term strong{color:var(--primary);}
+.term .en-t{color:var(--accent2);font-style:italic;direction:ltr;display:inline-block;}
+
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px;}
+.tbl th{background:var(--primary);color:#fff;padding:10px 14px;text-align:right;}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top;}
+.tbl tr:nth-child(even) td{background:#f9f6f0;}
+.tbl tr:hover td{background:#fff3e0;}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px;}
+@media(max-width:640px){.grid2{grid-template-columns:1fr;}}
+.gitem{background:#f9f6f0;border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.gitem h4{font-size:14px;font-weight:700;color:var(--primary);margin-bottom:5px;}
+.gitem .en{font-size:11px;color:var(--accent2);direction:ltr;display:block;margin-bottom:5px;}
+.gitem p{font-size:13px;color:#444;line-height:1.7;}
+
+/* ASSESSMENT CARDS */
+.assess-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:14px;}
+@media(max-width:700px){.assess-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.assess-grid{grid-template-columns:1fr;}}
+.ac{border-radius:12px;padding:16px;border:1px solid var(--border);}
+.ac h4{font-size:13px;font-weight:700;margin-bottom:5px;}
+.ac .en{font-size:11px;direction:ltr;display:block;margin-bottom:5px;}
+.ac p{font-size:12.5px;color:#555;line-height:1.65;}
+.ac.cog{border-top:4px solid #2563eb;} .ac.cog h4{color:#1d4ed8;}
+.ac.per{border-top:4px solid var(--purple);} .ac.per h4{color:var(--purple);}
+.ac.apt{border-top:4px solid var(--teal);} .ac.apt h4{color:var(--teal);}
+.ac.psy{border-top:4px solid var(--accent2);} .ac.psy h4{color:var(--accent2);}
+.ac.cen{border-top:4px solid var(--green);} .ac.cen h4{color:var(--green);}
+
+/* ENGAGEMENT PYRAMID */
+.engage-pyramid{display:flex;flex-direction:column;gap:8px;margin:14px 0;}
+.ep-row{border-radius:10px;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;}
+.ep-row .ar{font-weight:700;font-size:15px;color:#fff;}
+.ep-row .en{font-size:12px;color:rgba(255,255,255,.75);direction:ltr;}
+.ep-row.e1{background:var(--green);}
+.ep-row.e2{background:var(--teal);}
+.ep-row.e3{background:#2563eb;}
+.ep-row.e4{background:var(--red);}
+
+/* GALLUP Q12 */
+.q12-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;}
+@media(max-width:600px){.q12-grid{grid-template-columns:1fr;}}
+.q12-item{background:#f9f6f0;border-radius:8px;padding:10px 14px;font-size:13px;color:#444;border-right:3px solid var(--accent);line-height:1.6;}
+
+/* COMPARE */
+.cmp-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+@media(max-width:600px){.cmp-pair{grid-template-columns:1fr;}}
+.cp{border-radius:12px;padding:16px 18px;border:1px solid var(--border);}
+.cp h4{font-size:13px;font-weight:700;margin-bottom:8px;}
+.cp ul{list-style:none;padding:0;}
+.cp ul li{font-size:13px;padding:4px 0;display:flex;gap:8px;}
+.cp ul li::before{content:'•';font-weight:900;flex-shrink:0;}
+.cp.plus{background:#f0fdf4;border-color:#86efac;} .cp.plus h4{color:var(--green);} .cp.plus ul li::before{color:var(--green);}
+.cp.minus{background:#fff1f2;border-color:#fca5a5;} .cp.minus h4{color:var(--red);} .cp.minus ul li::before{color:var(--red);}
+
+.hl{background:linear-gradient(135deg,#fff8e7,#fef3cd);border:1px solid var(--accent);border-radius:12px;padding:18px 24px;margin:14px 0;}
+.hl p{font-size:15px;}
+.tip{background:#f0fdf4;border:1px solid #86efac;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.tip strong{color:var(--green);}
+.note{background:#fefce8;border:1px solid #fde047;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.note strong{color:#854d0e;}
+.warn{background:#fff1f2;border:1px solid #fca5a5;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.warn strong{color:var(--red);}
+
+.steps{list-style:none;padding:0;counter-reset:steps;}
+.steps li{counter-increment:steps;display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #f0ebe0;font-size:15px;}
+.steps li:last-child{border-bottom:none;}
+.steps li::before{content:counter(steps);background:var(--primary);color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0;}
+
+.divider{border:none;border-top:2px dashed var(--border);margin:32px 0;}
+.footer{text-align:center;margin-top:60px;padding:22px;color:var(--muted);font-size:13px;border-top:2px solid var(--border);}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="badge">📚 كتاب People · الجزء الثالث</div>
+  <h1>ملخص الصفحات 201–300</h1>
+  <p>SHRM Learning System 2023 — People Domain</p>
+  <div class="meta">
+    <span>📄 744 صفحة إجمالاً</span>
+    <span>🎯 18% من الامتحان</span>
+    <span>🌍 شرح بالعربية · المصطلحات بالإنجليزية</span>
+  </div>
+</div>
+
+<div class="container">
+  <div class="progress-wrap">
+    <div class="progress-label"><span>تقدّمك في الكتاب</span><span>300 / 744 صفحة — 40% 🎉</span></div>
+    <div class="progress-bar"><div class="progress-fill" style="width:40%"></div></div>
+  </div>
+
+  <div class="overview">
+    <h2>🗺️ نظرة عامة — الصفحات 201–300</h2>
+    <p>
+      يُكمل هذا الجزء منطقة <strong>Talent Acquisition</strong> بتفصيل أساليب التقييم الثلاثة (Substantive + Discretionary + Contingent) وأدوات التقييم الثقافي وخطوات إتمام قرار الاختيار وتقديم العرض. ثم يدخل في عمق منطقة <strong>Employee Engagement & Retention</strong> — محرّكات الانخراط، أبعاده، أداة Gallup Q12 الشهيرة، وتصميم الاستبيانات وتحليلها.
+    </p>
+  </div>
+
+  <!-- ════════════════════════════════ -->
+  <!-- S1: ASSESSMENT METHODS -->
+  <!-- ════════════════════════════════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">1</div>
+      <div><h2>أساليب التقييم في الاختيار</h2><div class="en">Selection Assessment Methods</div></div>
+    </div>
+
+    <div class="card">
+      <h3>الأساليب الجوهرية (ما قبل التوظيف) <span class="en">Substantive / Pre-Employment Assessments</span></h3>
+      <p class="bt">تُضيّق قائمة المرشحين إلى المتأهلين النهائيين. تُسبق المقابلة أو تُتبعها — هي أكثر موضوعيةً من المقابلة وأعلى ارتباطاً بالأداء الفعلي.</p>
+      <div class="assess-grid">
+        <div class="ac cog">
+          <h4>اختبارات القدرة المعرفية</h4>
+          <span class="en">Cognitive Ability Tests</span>
+          <p>تقيس مهارات ذهنية: لفظية، رياضية، استدلالية، قراءة. من أعلى الأدوات ارتباطاً بالأداء المستقبلي. أمثلة: اختبارات عيّنة العمل.</p>
+        </div>
+        <div class="ac per">
+          <h4>اختبارات الشخصية</h4>
+          <span class="en">Personality Tests</span>
+          <p>تقيس السمات السلوكية: الضمير، الانبساطية، القبول، الاتزان. نموذج Big Five الأشهر. تتنبأ بالتوافق الثقافي ومسلكيات المواطنة.</p>
+        </div>
+        <div class="ac apt">
+          <h4>اختبارات الاستعداد</h4>
+          <span class="en">Aptitude Tests</span>
+          <p>تقيس القدرة الفطرية على تعلم مهارة جديدة — لا الخبرة الموجودة. تتنبأ بنجاح التدريب. مثال: استعداد البرمجة.</p>
+        </div>
+        <div class="ac psy">
+          <h4>اختبارات نفسحركية</h4>
+          <span class="en">Psychomotor Tests</span>
+          <p>تقيس القوة والمهارة اليدوية والتنسيق الحركي. تستخدم فقط لوظائف تتطلب أداءً جسدياً محدداً. مثال: التجميع اليدوي.</p>
+        </div>
+        <div class="ac cen">
+          <h4>مراكز التقييم</h4>
+          <span class="en">Assessment Centers</span>
+          <p>ليست مكاناً — بل أسلوب تقييم بسلسلة تمارين تحاكي مواقف الوظيفة الفعلية. تستمر يوماً فأكثر. الأدق لتقييم الكفاءات القيادية والإدارية.</p>
+        </div>
+      </div>
+      <div class="note"><strong>📌 التحدي الدولي:</strong> تفسير مجموعات المهارات يختلف بين الثقافات. 3 سنوات خبرة برمجة في إسرائيل تختلف نوعياً عن نفسها في أمريكا أو الهند. HR يأخذ السياق بالحسبان.</div>
+    </div>
+
+    <div class="card">
+      <h3>الأساليب التقديرية <span class="en">Discretionary Assessments</span></h3>
+      <p class="bt">تُستخدم لتمييز المرشح النهائي عن بقية المؤهلين — حين يكون جميعهم مستوفين للمعايير الجوهرية. تعتمد على الحكم الشخصي في تقييم الملاءمة الثقافية وسلوكيات المواطنة التنظيمية.</p>
+      <div class="hl">
+        <p>💡 <strong>أمثلة على الاستخدام:</strong><br>
+        ① تقييم احتمالية سلوكيات المواطنة: هل سيساعد زملاءه؟ هل سيكون مُبادِراً خارج مهامه؟<br>
+        ② تقييم التنوع كجزء من فلسفة التوظيف: قد تُعطى الخصائص الديموغرافية وزناً في قرار التعيين النهائي.<br>
+        ⚠️ <strong>تحذير:</strong> لا يُستخدم التقديري وحده — يجب أن تسبقه الأساليب الجوهرية لأن طبيعته الذاتية تجعله قابلاً للتحيز.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>الأساليب المشروطة <span class="en">Contingent Assessments</span></h3>
+      <p class="bt">تعتمد على طبيعة الوظيفة والمتطلبات القانونية — ليست دائماً مطلوبة. الأهم: <strong>توقيتها القانوني</strong> هو ما يُميّزها.</p>
+      <table class="tbl">
+        <tr><th>النوع</th><th>متى يُستخدم؟</th><th>اعتبارات قانونية</th></tr>
+        <tr><td><strong>فحص المخدرات</strong><br><em>Drug Testing</em></td><td>وظائف تمس السلامة العامة أو أمان الآخرين</td><td>يتم في مختبر مستقل. يُنجز عادةً بعد العرض المبدئي. الخصوصية حق محمي.</td></tr>
+        <tr><td><strong>الفحص الطبي</strong><br><em>Medical Exam</em></td><td>حين توجد حاجة مُقنِعة مرتبطة بالوظيفة</td><td>يُنجز بعد تقديم العرض المبدئي (في معظم الدول). يجب أن يكون مرتبطاً بالوظيفة — لا يُستخدم لإقصاء المعاقين بدون مبرر.</td></tr>
+        <tr><td><strong>التحقق من الرخصة</strong></td><td>وظائف تستلزم ترخيصاً قانونياً (طبيب، محاسب)</td><td>يمكن التحقق قبل أو بعد العرض حسب السياسة</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>أدوات التقييم الثقافي العالمية <span class="en">Cross-Cultural Assessment Tools</span></h3>
+      <table class="tbl">
+        <tr><th>الأداة</th><th>ما تقيسه</th></tr>
+        <tr><td><strong>CCAI</strong><br><em>Cross-Cultural Adaptability Inventory</em></td><td>4 مجالات: التكيّف مع المواقف الجديدة، التفاعل مع المختلفين، تحمّل الغموض، الحفاظ على هوية الذات</td></tr>
+        <tr><td><strong>COI®</strong><br><em>Cultural Orientations Indicator</em></td><td>أسلوب العمل والتفضيلات الثقافية — يُقدّم توصيات لبناء مهارات التعامل الثقافي</td></tr>
+        <tr><td><strong>IDI</strong><br><em>Intercultural Development Inventory</em></td><td>50 سؤالاً تقيس الكفاءة بين الثقافية وفق نموذج DMIS — قياسي وموثوق إحصائياً</td></tr>
+        <tr><td><strong>SAGE</strong><br><em>Self-Assessment for Global Endeavors</em></td><td>لمن يُفكّر في قبول مهمة دولية: يُقيّم الذات والمسار الوظيفي والأسرة. نسخة للشريك/الزوج.</td></tr>
+      </table>
+      <div class="tip"><strong>🎯 قاعدة ذهبية:</strong> لا يُبنى قرار التعيين على نتيجة أداة واحدة فقط — التقييمات تُكمل بعضها وتُستخدم مجتمعةً مع أساليب الاختيار الأخرى.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════════════════════════════════ -->
+  <!-- S2: BACKGROUND CHECKS + OFFER -->
+  <!-- ════════════════════════════════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">2</div>
+      <div><h2>فحص الخلفية وتقديم العرض</h2><div class="en">Background Checks & Job Offer</div></div>
+    </div>
+
+    <div class="card">
+      <h3>فحص الخلفية والمراجع <span class="en">Background Investigations & Reference Checks</span></h3>
+      <ul class="ilist">
+        <li><span class="dot"></span>يُجرى بعد تحديد المرشح المناسب — وليس من البداية</li>
+        <li><span class="dot"></span>يجب أن يكون متسقاً لجميع المرشحين في نفس الوظيفة — ومرتبطاً بمتطلباتها</li>
+        <li><span class="dot"></span>يتطلب إذناً كتابياً من المرشح قبل البدء</li>
+        <li><span class="dot r"></span><strong>تحديات دولية:</strong> الشيكات الجنائية تختلف قوانينها جذرياً. الاتحاد الأوروبي: قواعد تبادل البيانات الدولية صارمة. بعض الدول: يستحيل التحقق بدون بيانات اتصال دقيقة وإلمام باللغة المحلية</li>
+      </ul>
+      <div class="warn"><strong>⚠️ خطأ شائع:</strong> التأخر في التحقق حتى يحضر الموظف للعمل. يجب إتمام التحقق قبل بدء العمل الفعلي.</div>
+    </div>
+
+    <div class="card">
+      <h3>خطوات قرار الاختيار النهائي <span class="en">Decision Process Steps</span></h3>
+      <ol class="steps">
+        <li><strong>تنظيم المعلومات:</strong> جمع بيانات جميع المرشحين في ملف واحد وضمان اكتمالها لكل مرشح</li>
+        <li><strong>تحديد وترتيب المرشحين:</strong> تقييم كل مرشح وفق معايير الاختيار المحددة مسبقاً — مع توثيق الأسباب</li>
+        <li><strong>جمع معلومات إضافية:</strong> حين تظهر فجوات في البيانات — مقابلات تكميلية أو تمارين محاكاة</li>
+        <li><strong>تقديم العرض:</strong> للمرشح الأعلى تأهلاً — بالتفاوض على الشروط</li>
+      </ol>
+      <div class="note"><strong>📌 نصيحة استراتيجية:</strong> الأفضل اختيار قائمة من المرشحين النهائيين لا مرشح واحد فقط. يمنح المنظمة مرونة أكبر في حال رفض العرض أو الانسحاب.</div>
+    </div>
+
+    <div class="card">
+      <h3>اعتبارات ثقافية في قرار الاختيار <span class="en">Global Considerations in Selection</span></h3>
+      <div class="grid2">
+        <div class="gitem"><h4>الحاجز اللغوي ≠ ضعف الذكاء</h4><span class="en">Language ≠ Intelligence</span><p>لا تُقيَّم القدرات بناءً على مستوى اللغة. إذا كانت اللغة غير مطلوبة في الوظيفة فلا تُعطِها وزناً في التقييم.</p></div>
+        <div class="gitem"><h4>الثقة بالنفس ثقافياً</h4><span class="en">Humility vs. Confidence</span><p>بعض الثقافات تتوقع التواضع، وأخرى تُقدّر التعبير عن الإنجازات. ما يبدو "ترددًا" قد يكون تواضعاً ثقافياً.</p></div>
+        <div class="gitem"><h4>فريق التقييم متنوع</h4><span class="en">Diverse Review Panel</span><p>في السياقات الدولية: أشرك شخصاً يفهم اللغة والثقافة المحلية للمرشح لتجنب سوء التفسير.</p></div>
+        <div class="gitem"><h4>البيانات غير المكتملة</h4><span class="en">Incomplete Data</span><p>لا تُرفض الطلبات غير المكتملة فوراً — قد يكون السبب ظروفاً بيئية (صعوبة الحصول على وثائق) لا إهمالاً.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════════════════════════════════ -->
+  <!-- S3: EMPLOYEE ENGAGEMENT INTRO -->
+  <!-- ════════════════════════════════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">3</div>
+      <div><h2>انخراط الموظفين — المقدمة والمحرّكات</h2><div class="en">Employee Engagement — Introduction & Drivers</div></div>
+    </div>
+
+    <div class="card">
+      <h3>ما هو الانخراط الحقيقي؟ <span class="en">What is Employee Engagement?</span></h3>
+      <p class="bt">الانخراط هو التزام عاطفي يجعل الموظف يضع كامل طاقته في خدمة أهداف المنظمة — ليس فقط لأنه مُجبَر، بل لأنه يُؤمن بها ويُبادر من تلقاء نفسه.</p>
+      <div class="engage-pyramid">
+        <div class="ep-row e1"><span class="ar">🚀 المُنخرِط الكامل</span><span class="en">Fully Engaged — يمنح طاقته بالكامل</span></div>
+        <div class="ep-row e2"><span class="ar">✅ المُنخرِط جزئياً</span><span class="en">Moderately Engaged — يؤدي بشكل جيد</span></div>
+        <div class="ep-row e3"><span class="ar">😐 غير المُنخرِط</span><span class="en">Not Engaged — يؤدي الحد الأدنى</span></div>
+        <div class="ep-row e4"><span class="ar">💣 المُنفصِل نشطاً</span><span class="en">Actively Disengaged — يُضرّ بالمنظمة</span></div>
+      </div>
+      <div class="hl"><p>💡 <strong>المفارقة المُكلِفة (Gallup):</strong> الموظفون المنفصلون نشطاً يستنزفون الإنتاجية ويُنشرون السلبية. تكلفة الانخراط المنخفض على الاقتصاد العالمي تُقاس بالتريليونات سنوياً.</p></div>
+    </div>
+
+    <div class="card">
+      <h3>محرّكات الانخراط بحسب SHRM <span class="en">SHRM Engagement Drivers</span></h3>
+      <table class="tbl">
+        <tr><th>المجال</th><th>المحرّكات الرئيسية</th></tr>
+        <tr><td><strong>التطوير المهني</strong><br><em>Career Development</em></td><td>فرص الترقية والنمو، التدريب المدفوع، التنقل الداخلي، مسارات وظيفية واضحة</td></tr>
+        <tr><td><strong>العلاقة مع الإدارة</strong><br><em>Relationship with Management</em></td><td>التواصل مع القيادة العليا، الاستقلالية في القرارات، الاعتراف بالأداء</td></tr>
+        <tr><td><strong>التعويضات والمزايا</strong><br><em>Compensation & Benefits</em></td><td>الراتب التنافسي، المرونة في العمل، التأمين الصحي للموظف وأسرته</td></tr>
+        <tr><td><strong>بيئة العمل</strong><br><em>Work Environment</em></td><td>معنى العمل، ثقافة المنظمة، علاقات الزملاء، الإسهام في الأهداف التنظيمية</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>إثراء الوظيفة وأدوات رفع الانخراط <span class="en">Job Design for Engagement</span></h3>
+      <div class="grid2">
+        <div class="gitem"><h4>توسيع الوظيفة</h4><span class="en">Job Enlargement</span><p>إضافة مهام أفقية على نفس المستوى. تُزيد التنوع وتُقلّل الرتابة. مثال: إضافة نشاطَين لممثل خدمة العملاء دون زيادة التعقيد.</p></div>
+        <div class="gitem"><h4>إثراء الوظيفة</h4><span class="en">Job Enrichment</span><p>إضافة مسؤوليات أعمق رأسياً. تُعطي الموظف قراراً وتحكماً أكبر. يرتبط مباشرة بنظرية هرتزبرغ للدوافع.</p></div>
+        <div class="gitem"><h4>تدوير الوظائف</h4><span class="en">Job Rotation</span><p>التنقل بين أدوار مختلفة لاكتساب مهارات متنوعة وفهم أعمق للمنظمة. يمنع الإرهاق ويُطوّر مسار القيادة.</p></div>
+        <div class="gitem"><h4>تبسيط الوظيفة</h4><span class="en">Work Simplification</span><p>تقليل المهام البيروقراطية — تُمكّن الموظف من قضاء وقته في العمل الحقيقي ذي القيمة.</p></div>
+      </div>
+      <div class="note"><strong>📌 مسارات مهنية مزدوجة (Dual Career Ladders):</strong> تُوفّر مساراً للتقدم الوظيفي للمتخصصين والتقنيين خارج المسار الإداري التقليدي — تحفّز من لا يريد الإدارة لكنه يريد التقدم.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════════════════════════════════ -->
+  <!-- S4: GALLUP Q12 + SURVEYS -->
+  <!-- ════════════════════════════════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">4</div>
+      <div><h2>قياس الانخراط — Q12 والاستبيانات</h2><div class="en">Measuring Engagement — Gallup Q12 & Surveys</div></div>
+    </div>
+
+    <div class="card">
+      <h3>استبيان Gallup Q12 الشهير <span class="en">Gallup Q12 Engagement Survey</span></h3>
+      <p class="bt">12 سؤالاً مرتبطة بنتائج أعمال ملموسة: الاحتفاظ، الإنتاجية، الربحية، رضا العملاء، السلامة. هي من أكثر أدوات قياس الانخراط استخداماً وتحقيقاً في العالم.</p>
+      <div class="q12-grid">
+        <div class="q12-item">1. هل تعرف ما يُتوقع منك في العمل؟</div>
+        <div class="q12-item">2. هل لديك المواد والمعدات اللازمة للعمل بشكل صحيح؟</div>
+        <div class="q12-item">3. هل تملك فرصة يومياً لأداء ما تُتقنه؟</div>
+        <div class="q12-item">4. في الـ 7 أيام الماضية — هل تلقّيت تقديراً على عمل جيد؟</div>
+        <div class="q12-item">5. هل يهتم مشرفك أو أحدهم بك كإنسان؟</div>
+        <div class="q12-item">6. هل يشجّعك أحد في العمل على التطوير؟</div>
+        <div class="q12-item">7. هل تُؤخَذ آراؤك بعين الاعتبار؟</div>
+        <div class="q12-item">8. هل رسالة شركتك تجعل عملك ذا معنى؟</div>
+        <div class="q12-item">9. هل يلتزم زملاؤك بأداء عمل عالي الجودة؟</div>
+        <div class="q12-item">10. هل لديك صديق مقرّب في العمل؟</div>
+        <div class="q12-item">11. في 6 أشهر الماضية — هل تحدّث معك أحد عن تقدّمك؟</div>
+        <div class="q12-item">12. في العام الماضي — هل أُتيحت لك فرص للتعلم والنمو؟</div>
+      </div>
+      <div class="tip"><strong>🎯 للامتحان:</strong> Q12 يقيس الأسباب الجذرية للانخراط — ليس مجرد رضا عام. الأسئلة الأولى تتعلق بالأساسيات (الوضوح، الأدوات)، وتتصاعد نحو الانتماء والنمو.</div>
+    </div>
+
+    <div class="card">
+      <h3>أنواع استبيانات الموظفين <span class="en">Types of Employee Surveys</span></h3>
+      <div class="grid2">
+        <div class="gitem"><h4>استبيان الرأي</h4><span class="en">Opinion Survey</span><p>يقيس آراء في قضايا محددة: إجراء بعينه، سياسة ما، خدمة معينة. دائماً داخلي — مُصمَّم للمنظمة تحديداً.</p></div>
+        <div class="gitem"><h4>استبيان الانخراط</h4><span class="en">Engagement Survey</span><p>يقيس مستوى الرضا والالتزام والمعنوية والإدراك الثقافي. يمكن مقارنته بمعايير الصناعة إذا كان من مزوّد خارجي.</p></div>
+        <div class="gitem"><h4>استبيان النبض</h4><span class="en">Pulse Survey</span><p>أقصر، أكثر تكراراً، يستهدف قضايا بعينها أو شرائح محددة. يُكمل الاستبيان السنوي ولا يُغنى عنه.</p></div>
+        <div class="gitem"><h4>الاستبيان الخارجي</h4><span class="en">Third-Party Survey</span><p>يُوفّر السرية والمقارنة بالصناعة. قد يُحسّن دقة الاستجابة لأن الموظفين أكثر صراحةً مع طرف محايد.</p></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>فوائد الاستبيانات وشروط نجاحها <span class="en">Survey Benefits & Conditions for Success</span></h3>
+      <div class="cmp-pair">
+        <div class="cp plus">
+          <h4>✅ فوائد الاستبيانات</h4>
+          <ul>
+            <li>تُعطي الموظفين صوتاً — "Voice of the Employee"</li>
+            <li>تكشف مشاكل مبكرة قبل أن تتفاقم</li>
+            <li>تُحسّن رضا العملاء (موظف سعيد = عميل سعيد)</li>
+            <li>تبني الثقة إن أُعمل بنتائجها</li>
+          </ul>
+        </div>
+        <div class="cp minus">
+          <h4>❌ متى تضرّ الاستبيانات؟</h4>
+          <ul>
+            <li>حين لا تُتخذ إجراءات على نتائجها</li>
+            <li>إذا لم تُضمن السرية والإخفاء</li>
+            <li>عند تجاهل الفروق الثقافية في التصميم</li>
+            <li>لو كانت القيادة غير مستعدة لقبول النقد</li>
+          </ul>
+        </div>
+      </div>
+      <div class="warn"><strong>⚠️ الفخ الأكبر:</strong> استبيان بلا إجراءات تالية يُولّد السخرية ويُضرّ بالانخراط أكثر مما يُحسّنه. الموظفون يتوقفون عن الصدق وعن المشاركة.</div>
+    </div>
+
+    <div class="card">
+      <h3>قواعد تصميم استبيان انخراط فعّال <span class="en">Survey Design Best Practices</span></h3>
+      <ul class="ilist">
+        <li><span class="dot g"></span><strong>اسأل أسئلة يمكن طرحها كل عام</strong> — للحصول على قياس اتجاهي زمني</li>
+        <li><span class="dot g"></span><strong>استخدم لغة محايدة أو إيجابية</strong> — تجنب الصياغة السلبية المُحيطة</li>
+        <li><span class="dot g"></span><strong>ركّز على السلوكيات</strong> — لا على المشاعر العامة</li>
+        <li><span class="dot g"></span><strong>احذر الأسئلة المُحمَّلة</strong> — "هل تتطلع للعمل صباح الاثنين؟" تُنتج دائماً "لا" حتى من المنخرطين</li>
+        <li><span class="dot g"></span><strong>حافظ على طول معقول</strong> — الاستبيان الطويل يُقلّل معدل الاستجابة ويُشوّه النتائج</li>
+        <li><span class="dot g"></span><strong>أضف أسئلة مفتوحة محدودة</strong> — لالتقاط مواضيع لم يتوقعها المصمّم</li>
+        <li><span class="dot g"></span><strong>ضمان السرية والإخفاء</strong> — شرط لا يقبل التنازل للحصول على إجابات صادقة</li>
+      </ul>
+      <div class="note"><strong>📌 الفروق الثقافية في الاستبيانات:</strong> في بعض الثقافات الآسيوية الهرمية، مفهوم طلب المديرية آراء الموظفين غريب ومزعج. التصميم يراعي ذلك بالتوعية المسبقة والتكيّف الثقافي.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════════════════════════════════ -->
+  <!-- GLOSSARY -->
+  <!-- ════════════════════════════════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">📖</div>
+      <div><h2>المصطلحات الأساسية — الجزء الثالث</h2><div class="en">Key Terms</div></div>
+    </div>
+    <div class="card">
+      <table class="tbl">
+        <tr><th>المصطلح العربي</th><th>الإنجليزي</th><th>التعريف المختصر</th></tr>
+        <tr><td>اختبارات القدرة المعرفية</td><td>Cognitive Ability Tests</td><td>تقيس المهارات الذهنية — أعلى الأدوات ارتباطاً بالأداء</td></tr>
+        <tr><td>اختبارات الشخصية</td><td>Personality Tests</td><td>تقيس السمات السلوكية (Big Five) — تتنبأ بالتوافق الثقافي</td></tr>
+        <tr><td>مراكز التقييم</td><td>Assessment Centers</td><td>سلسلة تمارين محاكاة — الأدق لتقييم الكفاءات القيادية</td></tr>
+        <tr><td>التقييم التقديري</td><td>Discretionary Assessment</td><td>يُمايز بين المؤهلين النهائيين — ذاتي لا يُستخدم وحده</td></tr>
+        <tr><td>التقييم المشروط</td><td>Contingent Assessment</td><td>فحص المخدرات والطبي — يأتي بعد العرض المبدئي</td></tr>
+        <tr><td>سلوكيات المواطنة التنظيمية</td><td>Organizational Citizenship Behaviors (OCB)</td><td>مساعدة الزملاء، المبادرة، اللطف — خارج نطاق المهام الرسمية</td></tr>
+        <tr><td>انخراط الموظفين</td><td>Employee Engagement</td><td>التزام عاطفي يدفع الموظف لبذل طاقته الكاملة</td></tr>
+        <tr><td>الموظف المنفصل نشطاً</td><td>Actively Disengaged</td><td>يُضرّ بالمنظمة بنشر السلبية وتثبيط الزملاء</td></tr>
+        <tr><td>Q12 (Gallup)</td><td>Gallup Q12</td><td>12 سؤالاً لقياس الانخراط المرتبطة بنتائج الأعمال</td></tr>
+        <tr><td>استبيان النبض</td><td>Pulse Survey</td><td>استبيان قصير متكرر يتناول قضايا محددة</td></tr>
+        <tr><td>صوت الموظف</td><td>Voice of the Employee</td><td>التواصل الثنائي الاتجاه بين الموظفين والإدارة</td></tr>
+        <tr><td>إثراء الوظيفة</td><td>Job Enrichment</td><td>إضافة مسؤوليات أعمق رأسياً — يُعطي تحكماً وقرارات أكثر</td></tr>
+        <tr><td>توسيع الوظيفة</td><td>Job Enlargement</td><td>إضافة مهام أفقية — يُزيد التنوع ويُقلّل الرتابة</td></tr>
+        <tr><td>تدوير الوظائف</td><td>Job Rotation</td><td>التنقل بين الأدوار لاكتساب مهارات متنوعة</td></tr>
+        <tr><td>مسارات مهنية مزدوجة</td><td>Dual Career Ladders</td><td>مسار ترقٍّ للمتخصصين خارج الإدارة التقليدية</td></tr>
+        <tr><td>CCAI</td><td>Cross-Cultural Adaptability Inventory</td><td>أداة لتقييم قدرة التكيّف الثقافي في 4 مجالات</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- INTEGRATION -->
+  <div class="overview" style="margin-top:30px;">
+    <h2>🔗 تكامل المفاهيم في هذا الجزء</h2>
+    <p style="line-height:2.1;">
+      <strong>Assessment Methods + Ethical Practice:</strong> الاختيار العادل والموضوعي يتطلب استخدام أدوات صالحة وموثوقة — ليس الحدس وحده. الأساليب الجوهرية تحمي المنظمة قانونياً وترفع جودة التوظيف.<br>
+      <strong>Employee Engagement + Job Design:</strong> إثراء الوظيفة وتوسيعها ليسا مجرد إعادة تنظيم مهام — بل هما استجابة لمحرّكات الانخراط العميقة (الاستقلالية، المعنى، النمو).<br>
+      <strong>Surveys + Analytics:</strong> استبيانات الانخراط هي بيانات خام — القيمة الحقيقية تأتي من تحليلها، ربطها بمؤشرات الأعمال، واتخاذ إجراءات مدروسة. بيانات بلا قرار = هدر.
+    </p>
+  </div>
+
+  <div class="tip" style="margin-top:22px;font-size:15px;">
+    <strong>🎯 نصيحة الامتحان لهذا الجزء:</strong> أسئلة SJI حول التقييم: الجواب الصحيح لا يعتمد أداة واحدة فقط — الأفضل دائماً مزيج. وفي أسئلة Engagement: الاستبيان بلا خطة عمل يُؤذي أكثر مما ينفع. Q12 يظهر كثيراً — احفظ مكوّناته وربطها بنتائج الأعمال.
+  </div>
+
+  <!-- STUDY PLAN -->
+  <div class="overview" style="margin-top:36px;background:linear-gradient(135deg,#154360,#1a3a5c);">
+    <h2>📅 تقدّمك في خطة الدراسة — 40% مكتمل! 🎉</h2>
+    <table class="tbl" style="margin-top:14px;background:rgba(255,255,255,.08);">
+      <tr style="background:rgba(255,255,255,.15);">
+        <th style="background:transparent;color:#fff;">الجزء</th>
+        <th style="background:transparent;color:#fff;">الصفحات</th>
+        <th style="background:transparent;color:#fff;">المحتوى</th>
+        <th style="background:transparent;color:#fff;">الحالة</th>
+      </tr>
+      <tr style="color:#fff;font-size:14px;"><td>الأول</td><td>1–100</td><td>HR Strategy: PESTLE، SWOT، مراحل الاستراتيجية، التفكير النظمي</td><td>✅</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>الثاني</td><td>101–200</td><td>Talent Acquisition: EVP + Branding + Job Analysis + Sourcing + Interviews + Metrics</td><td>✅</td></tr>
+      <tr style="color:#fff;font-size:14px;background:rgba(200,168,75,.2);"><td><strong>الثالث ✅</strong></td><td><strong>201–300</strong></td><td><strong>استكمال الاختيار (Assessments) + Employee Engagement (مقدمة + Q12 + استبيانات)</strong></td><td>✅ أنت هنا</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>الرابع</td><td>301–400</td><td>Engagement & Retention: استبيانات (تكملة) + مقابلات البقاء + برامج الاحتفاظ + دورة الحياة</td><td>⏳ التالي</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>الخامس</td><td>401–500</td><td>Learning & Development: Andragogy + ADDIE + Kirkpatrick + 70-20-10</td><td>⏳</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>السادس</td><td>501–600</td><td>Total Rewards: الفلسفة والأنظمة والمزايا</td><td>⏳</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>السابع</td><td>601–744</td><td>Total Rewards (تكملة) + مراجعة شاملة + نصائح الامتحان</td><td>⏳</td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <p>اطلب الجزء الرابع (صفحات 301–400) متى شئت 🚀</p>
+    <p style="margin-top:6px;color:#aaa;">SHRM Learning System 2023 — People Domain · ملخص دراسي بالعربية</p>
+  </div>
+</div>
+</body>
+</html>

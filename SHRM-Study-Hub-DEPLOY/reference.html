@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المرجع الشامل — النظريات والقوانين | SHRM</title>
+<style>
+  :root{
+    --navy:#0d1b2e;--navy2:#163456;--gold:#c8a84b;--teal:#1D9E75;
+    --teal-bg:#e1f5ee;--coral:#D85A30;--coral-bg:#fdeee8;
+    --bg:#f7f5f0;--card:#fff;--ink:#1a2332;--muted:#6b7280;
+    --soft:#f0ede5;--border:#e0dbd2;
+    --comp:#185FA5;--comp-bg:#e8f2fb;
+    --people:#1D9E75;--people-bg:#e1f5ee;
+    --org:#BA7517;--org-bg:#fdf3e3;
+    --wp:#A32D2D;--wp-bg:#fbeaea;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;}
+  .wrap{max-width:780px;margin:0 auto;padding:16px;}
+
+  .hero{background:linear-gradient(135deg,var(--navy),var(--navy2));border-radius:22px;padding:28px 24px;margin-bottom:18px;text-align:center;color:#fff;}
+  .hero h1{font-size:1.5rem;font-weight:800;margin-bottom:8px;}
+  .hero p{font-size:.88rem;color:rgba(255,255,255,.72);}
+  .hero .badge{display:inline-block;background:rgba(200,168,75,.18);border:1px solid rgba(200,168,75,.35);color:var(--gold);font-size:.74rem;font-weight:700;padding:5px 16px;border-radius:20px;margin-top:12px;}
+
+  /* Nav */
+  .nav{position:sticky;top:0;z-index:50;background:var(--bg);padding:10px 0;margin-bottom:8px;display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid var(--border);}
+  .nav a{flex:1;min-width:fit-content;text-decoration:none;background:var(--card);border:1.5px solid var(--border);border-radius:11px;padding:8px 12px;font-size:.78rem;font-weight:700;color:var(--navy);text-align:center;transition:all .15s;}
+  .nav a:active{transform:scale(.96);}
+  .nav a.theories{border-color:var(--comp);color:var(--comp);}
+  .nav a.laws{border-color:var(--wp);color:var(--wp);}
+  .nav a.numbers{border-color:var(--gold);color:#8a6d1a;}
+
+  .section-head{display:flex;align-items:center;gap:12px;margin:28px 0 16px;padding-bottom:10px;border-bottom:2px solid var(--navy);}
+  .section-head .ico{font-size:1.6rem;}
+  .section-head h2{font-size:1.3rem;font-weight:800;color:var(--navy);}
+
+  /* Book filter pills */
+  .filter{display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap;}
+  .pill{padding:7px 14px;border-radius:20px;font-size:.78rem;font-weight:700;cursor:pointer;border:1.5px solid var(--border);background:var(--card);color:var(--muted);transition:all .15s;user-select:none;}
+  .pill.on{background:var(--navy);color:#fff;border-color:var(--navy);}
+
+  /* Theory card */
+  .th{background:var(--card);border:1.5px solid var(--border);border-radius:16px;margin-bottom:14px;overflow:hidden;}
+  .th-top{padding:16px 18px;cursor:pointer;display:flex;align-items:center;gap:12px;}
+  .th-top:active{background:var(--soft);}
+  .th-name{flex:1;}
+  .th-name .en{font-size:1rem;font-weight:800;color:var(--navy);}
+  .th-name .ar{font-size:.82rem;color:var(--muted);margin-top:1px;}
+  .th-tag{font-size:.66rem;font-weight:700;padding:3px 9px;border-radius:10px;white-space:nowrap;}
+  .tag-comp{background:var(--comp-bg);color:var(--comp);}
+  .tag-people{background:var(--people-bg);color:var(--people);}
+  .tag-org{background:var(--org-bg);color:var(--org);}
+  .tag-wp{background:var(--wp-bg);color:var(--wp);}
+  .th-arrow{color:var(--muted);font-size:.8rem;transition:transform .2s;}
+  .th.open .th-arrow{transform:rotate(180deg);}
+  .th-body{display:none;padding:0 18px 18px;}
+  .th.open .th-body{display:block;animation:fade .25s;}
+  @keyframes fade{from{opacity:0;}to{opacity:1;}}
+  .th-body .def{font-size:.9rem;color:#333;line-height:1.8;margin-bottom:12px;}
+  .th-original{background:linear-gradient(135deg,#0d1b2e,#1a3a5c);border-radius:12px;padding:14px 16px;margin:0 0 14px;}
+  .th-original .lbl{font-size:.68rem;font-weight:700;color:var(--gold);letter-spacing:.04em;margin-bottom:8px;text-transform:uppercase;}
+  .th-original .en{font-size:.86rem;color:#fff;line-height:1.75;direction:ltr;text-align:left;font-style:italic;margin-bottom:10px;border-right:none;}
+  .th-original .ar-orig{font-size:.86rem;color:rgba(255,255,255,.82);line-height:1.8;padding-top:10px;border-top:1px solid rgba(255,255,255,.15);}
+  .th-diagram{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:16px 14px;margin:12px 0;text-align:center;}
+  .th-diagram .dg-title{font-size:.72rem;font-weight:700;color:var(--muted);margin-bottom:10px;letter-spacing:.03em;}
+  .th-diagram svg{width:100%;height:auto;max-width:440px;display:block;margin:0 auto;}
+  .th-diagram svg text{font-family:'Segoe UI',Tahoma,Arial,sans-serif;}
+  .th-comp{background:var(--soft);border-radius:10px;padding:12px 14px;margin:10px 0;}
+  .th-comp h4{font-size:.82rem;font-weight:800;color:var(--navy);margin-bottom:6px;}
+  .th-comp ul{list-style:none;padding:0;}
+  .th-comp li{font-size:.85rem;color:#444;padding:3px 0;padding-right:16px;position:relative;line-height:1.7;}
+  .th-comp li:before{content:"◂";position:absolute;right:0;color:var(--gold);}
+  .formula{background:var(--navy);color:var(--gold);font-weight:700;font-size:.86rem;padding:10px 14px;border-radius:8px;margin:10px 0;text-align:center;direction:ltr;font-family:'Outfit',monospace,sans-serif;}
+  .exam-tip{background:#fff8e7;border:1.5px solid var(--gold);border-radius:10px;padding:11px 15px;margin-top:12px;font-size:.85rem;color:#4a3000;line-height:1.7;}
+  .exam-tip strong{color:var(--navy);}
+  .example{background:var(--teal-bg);border-right:3px solid var(--teal);border-radius:0 8px 8px 0;padding:10px 14px;margin:10px 0;font-size:.85rem;color:#0a4435;line-height:1.7;}
+  .example strong{color:var(--teal);}
+
+  .footer{text-align:center;font-size:.74rem;color:var(--muted);padding:28px 0 16px;line-height:1.9;border-top:1px solid var(--border);margin-top:30px;}
+
+  .intro-note{background:var(--teal-bg);border-right:4px solid var(--teal);border-radius:0 12px 12px 0;padding:14px 18px;margin-bottom:20px;font-size:.86rem;color:#0a4435;line-height:1.8;}
+  .intro-note strong{color:var(--teal);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <h1>📚 المرجع الشامل</h1>
+    <p>كل النظريات والقوانين عبر الكتب الأربعة · مع ملاحظات الامتحان</p>
+    <div class="badge">ندى الفاتح محجوب · امتحان 12 يوليو</div>
+    <div style="margin-top:16px"><a href="https://shrm-arabic-hub.netlify.app/shrm-quest" style="display:inline-block;padding:12px 24px;background:linear-gradient(135deg,#d4af37,#f0d77b);color:#0d1b2e;font-weight:800;border-radius:26px;text-decoration:none;font-size:15px;box-shadow:0 4px 16px rgba(212,175,55,.3)">🎮 اختبر نفسك في «رحلة إتقان الموارد البشرية» ←</a></div>
+  </div>
+
+  <div class="intro-note">
+    <strong>كيف تستخدمين هذه الصفحة:</strong> كل نظرية أو قانون موسوم بكتابه المصدر بلون مميز.
+    اضغطي أي عنصر ليتوسّع ويُظهر التفاصيل وملاحظة الامتحان. استخدمي أزرار التصفية لعرض كتاب واحد فقط.
+  </div>
+
+  <div class="nav">
+    <a href="#theories" class="theories">🧠 النظريات</a>
+    <a href="#laws" class="laws">⚖️ القوانين</a>
+    <a href="#numbers" class="numbers">🔢 الأرقام الحاسمة</a>
+  </div>
+
+  <!-- ============ THEORIES ============ -->
+  <div class="section-head" id="theories">
+    <span class="ico">🧠</span>
+    <h2>النظريات والنماذج</h2>
+  </div>
+
+  <div class="filter" id="thFilter">
+    <span class="pill on" data-f="all">الكل</span>
+    <span class="pill" data-f="comp">📘 Competencies</span>
+    <span class="pill" data-f="people">👥 People</span>
+    <span class="pill" data-f="org">🏢 Organization</span>
+    <span class="pill" data-f="wp">⚖️ Workplace</span>
+  </div>
+
+  <div id="theoryList"></div>
+
+  <!-- ============ LAWS ============ -->
+  <div class="section-head" id="laws">
+    <span class="ico">⚖️</span>
+    <h2>القوانين الأمريكية</h2>
+  </div>
+  <div class="intro-note" style="border-right-color:var(--wp);background:var(--wp-bg);color:#6b1414;">
+    <strong>ملاحظة:</strong> جميع قوانين العمل تقريباً تأتي من كتاب <strong>Workplace</strong>.
+    ركّزي على الأرقام (الحدود والمدد) فهي الأكثر ظهوراً في الامتحان.
+  </div>
+
+  <div id="lawList"></div>
+
+  <!-- ============ CRITICAL NUMBERS ============ -->
+  <div class="section-head" id="numbers">
+    <span class="ico">🔢</span>
+    <h2>الأرقام الحاسمة</h2>
+  </div>
+  <div class="intro-note" style="border-right-color:var(--gold);background:#fff8e7;color:#4a3000;">
+    <strong>للحفظ السريع:</strong> هذه الأرقام تظهر في كل امتحان تقريباً. راجعيها قبل الامتحان مباشرةً.
+  </div>
+  <div id="numberList"></div>
+
+  <div class="footer">
+    صدقة جارية لـ ندى الفاتح محجوب ولوالديها الكرام ولأولادها الأعزاء<br>
+    في حياتها وبعد رحيلها
+  </div>
+</div>
+
+<script>
+// ============ THEORY DATA ============
+const THEORIES = [
+  // ===== COMPETENCIES — Motivation =====
+  {book:"comp", en:"Maslow's Hierarchy of Needs", ar:"هرم ماسلو للاحتياجات", cat:"التحفيز",
+   original:"Human needs are arranged in a five-level hierarchy; lower-level needs must be substantially satisfied before higher-level needs become motivating.", originalAr:"تُرتَّب الاحتياجات الإنسانية في هرم من خمسة مستويات؛ ويجب إشباع الاحتياجات الأدنى بشكل جوهري قبل أن تصبح الاحتياجات الأعلى محفِّزة.",
+   diagram:"<svg viewBox='0 0 400 250' xmlns='http://www.w3.org/2000/svg'><polygon points='200,15 230,60 170,60' fill='#c8a84b'/><text x='200' y='45' font-size='10' fill='#fff' text-anchor='middle' font-weight='700'>تحقيق الذات</text><polygon points='170,62 230,62 252,107 148,107' fill='#185FA5'/><text x='200' y='90' font-size='10' fill='#fff' text-anchor='middle' font-weight='700'>التقدير</text><polygon points='148,109 252,109 274,154 126,154' fill='#1D9E75'/><text x='200' y='137' font-size='10' fill='#fff' text-anchor='middle' font-weight='700'>الانتماء</text><polygon points='126,156 274,156 296,201 104,201' fill='#BA7517'/><text x='200' y='184' font-size='10' fill='#fff' text-anchor='middle' font-weight='700'>الأمان</text><polygon points='104,203 296,203 318,235 82,235' fill='#A32D2D'/><text x='200' y='224' font-size='10' fill='#fff' text-anchor='middle' font-weight='700'>الفسيولوجية</text><text x='355' y='30' font-size='9' fill='#6b7280' text-anchor='middle'>الأعلى</text><text x='355' y='225' font-size='9' fill='#6b7280' text-anchor='middle'>القاعدة</text><line x1='350' y1='40' x2='350' y2='215' stroke='#e0dbd2' stroke-width='1.5' marker-end='url(#arr)'/><defs><marker id='arr' markerWidth='8' markerHeight='8' refX='4' refY='4' orient='auto'><path d='M0,0 L8,4 L0,8 Z' fill='#e0dbd2'/></marker></defs></svg>",
+   def:"خمسة مستويات تصاعدية من الاحتياجات الإنسانية. يجب إشباع الأدنى قبل الانتقال للأعلى.",
+   comp:["الفسيولوجية (طعام، نوم)","الأمان (وظيفة، استقرار)","الانتماء (علاقات، فريق)","التقدير (احترام، إنجاز)","تحقيق الذات (نمو، إبداع)"],
+   example:"موظف يقلق من تقليص الشركة → احتياج الأمان غير مُشبع → لن يستجيب لبرامج تطوير المسار حتى تُحلّ مخاوف الأمان أولاً.",
+   tip:"في الأسئلة الموقفية: حدّدي أي مستوى احتياج غير مُشبع قبل اقتراح الحل. لا تقترحي تحقيق الذات لموظف يخشى على وظيفته."},
+
+  {book:"comp", en:"Herzberg's Two-Factor Theory", ar:"نظرية العاملين لهيرزبرغ", cat:"التحفيز",
+   original:"Job satisfaction and dissatisfaction arise from two separate sets of factors: hygiene factors prevent dissatisfaction, while motivators create genuine satisfaction.", originalAr:"ينشأ الرضا وعدم الرضا الوظيفي من مجموعتين منفصلتين من العوامل: عوامل النظافة تمنع عدم الرضا، بينما المحفِّزات تخلق الرضا الحقيقي.",
+   diagram:"<svg viewBox='0 0 400 200' xmlns='http://www.w3.org/2000/svg'><rect x='20' y='30' width='165' height='150' rx='12' fill='#A32D2D' fill-opacity='0.12' stroke='#A32D2D' stroke-width='1.5'/><text x='102' y='52' font-size='11' fill='#A32D2D' text-anchor='middle' font-weight='800'>عوامل النظافة</text><text x='102' y='67' font-size='8' fill='#A32D2D' text-anchor='middle'>Hygiene Factors</text><text x='102' y='90' font-size='8.5' fill='#333' text-anchor='middle'>الراتب · الإشراف</text><text x='102' y='106' font-size='8.5' fill='#333' text-anchor='middle'>بيئة العمل · الأمان</text><text x='102' y='135' font-size='8' fill='#A32D2D' text-anchor='middle' font-weight='700'>غيابها → عدم رضا</text><text x='102' y='150' font-size='8' fill='#A32D2D' text-anchor='middle' font-weight='700'>وجودها → لا يُحفّز</text><rect x='215' y='30' width='165' height='150' rx='12' fill='#1D9E75' fill-opacity='0.12' stroke='#1D9E75' stroke-width='1.5'/><text x='297' y='52' font-size='11' fill='#1D9E75' text-anchor='middle' font-weight='800'>المحفّزات</text><text x='297' y='67' font-size='8' fill='#1D9E75' text-anchor='middle'>Motivators</text><text x='297' y='90' font-size='8.5' fill='#333' text-anchor='middle'>الإنجاز · التقدير</text><text x='297' y='106' font-size='8.5' fill='#333' text-anchor='middle'>المسؤولية · النمو</text><text x='297' y='135' font-size='8' fill='#1D9E75' text-anchor='middle' font-weight='700'>وجودها → تحفيز حقيقي</text><text x='297' y='150' font-size='8' fill='#1D9E75' text-anchor='middle' font-weight='700'>ودافعية داخلية</text></svg>",
+   def:"يفصل بين عوامل تمنع عدم الرضا (النظافة) وعوامل تخلق التحفيز الحقيقي (المحفزات).",
+   comp:["عوامل النظافة: الراتب، الإشراف، بيئة العمل — غيابها يُسبب عدم رضا لكن وجودها لا يُحفّز","عوامل التحفيز: الإنجاز، التقدير، المسؤولية، النمو — وجودها يُحفّز فعلاً"],
+   example:"رفع الراتب لن يُحفّز على المدى البعيد (عامل نظافة). لكن منح مسؤولية مشروع جديد (محفّز) يرفع الحافز الفعلي.",
+   tip:"التمييز الجوهري: إذا انخفض الأداء بسبب الراتب أو البيئة → عوامل نظافة. إذا بسبب عدم الشعور بالإنجاز → محفّزات. الحل مختلف تماماً."},
+
+  {book:"comp", en:"McGregor Theory X & Y", ar:"نظرية ماكجريجور إكس وواي", cat:"التحفيز",
+   original:"Managers hold one of two opposing assumptions about workers: Theory X assumes employees dislike work and need control; Theory Y assumes they are self-motivated and seek responsibility.", originalAr:"يتبنّى المديرون أحد افتراضين متعارضين عن الموظفين: نظرية إكس تفترض أنهم يكرهون العمل ويحتاجون مراقبة؛ ونظرية واي تفترض أنهم ذاتيو الدافعية ويسعون للمسؤولية.",
+   def:"افتراضان متعارضان حول طبيعة الموظفين يُشكّلان أسلوب الإدارة.",
+   comp:["Theory X: الموظفون كسالى، يحتاجون مراقبة وإجبار","Theory Y: الموظفون يريدون العمل والإبداع، الرقابة الذاتية أفعل"],
+   example:"مدير يُلزم بتسجيل كل نشاط كل 30 دقيقة → يعكس Theory X. مدير يُعطي المهمة ويترك التنفيذ للموظف → Theory Y.",
+   tip:"بيئات المعرفة (مهندسون، أطباء، محللون) تحتاج Theory Y دائماً. Theory X مناسبة للعمل الروتيني المتكرر فقط."},
+
+  {book:"comp", en:"Vroom's Expectancy Theory", ar:"نظرية التوقع لفروم", cat:"التحفيز",
+   original:"Motivation is the product of three perceptions: that effort leads to performance (expectancy), that performance leads to reward (instrumentality), and that the reward is valued (valence).", originalAr:"الدافعية حاصل ضرب ثلاثة إدراكات: أن الجهد يؤدي للأداء (التوقع)، وأن الأداء يؤدي للمكافأة (الأداتية)، وأن المكافأة ذات قيمة (التكافؤ).",
+   diagram:"<svg viewBox='0 0 400 120' xmlns='http://www.w3.org/2000/svg'><rect x='10' y='40' width='95' height='50' rx='10' fill='#185FA5'/><text x='57' y='62' font-size='10' fill='#fff' text-anchor='middle' font-weight='700'>Expectancy</text><text x='57' y='78' font-size='8' fill='#fff' text-anchor='middle'>التوقع</text><text x='117' y='70' font-size='18' fill='#c8a84b' text-anchor='middle' font-weight='800'>×</text><rect x='130' y='40' width='100' height='50' rx='10' fill='#1D9E75'/><text x='180' y='62' font-size='9.5' fill='#fff' text-anchor='middle' font-weight='700'>Instrumentality</text><text x='180' y='78' font-size='8' fill='#fff' text-anchor='middle'>الأداتية</text><text x='242' y='70' font-size='18' fill='#c8a84b' text-anchor='middle' font-weight='800'>×</text><rect x='255' y='40' width='90' height='50' rx='10' fill='#BA7517'/><text x='300' y='62' font-size='10' fill='#fff' text-anchor='middle' font-weight='700'>Valence</text><text x='300' y='78' font-size='8' fill='#fff' text-anchor='middle'>التكافؤ</text><text x='372' y='70' font-size='13' fill='#0d1b2e' text-anchor='middle' font-weight='800'>=</text><text x='200' y='25' font-size='9' fill='#A32D2D' text-anchor='middle' font-weight='700'>إذا كان أي عنصر = صفر → الدافعية = صفر</text></svg>",
+   def:"الدافعية حاصل ضرب ثلاثة عوامل — إذا كان أيها صفراً يصبح الحافز صفراً.",
+   formula:"Motivation = Expectancy × Instrumentality × Valence",
+   comp:["Expectancy: هل جهدي سيُنتج أداءً جيداً؟","Instrumentality: هل الأداء الجيد سيُكافأ؟","Valence: هل أقدّر هذه المكافأة؟"],
+   example:"موظف يعرف أنه مهما عمل سيحصل على نفس الراتب (Instrumentality = صفر) → لن يبذل جهداً إضافياً حتى لو كان الراتب مرتفعاً.",
+   tip:"نظام الحوافز يفشل إذا: الموظفون لا يثقون بإمكانية تحقيق الهدف، أو لا يؤمنون أن الأداء سيُكافأ فعلاً."},
+
+  {book:"comp", en:"Adams' Equity Theory", ar:"نظرية العدالة لآدامز", cat:"التحفيز",
+   original:"Employees compare the ratio of their outcomes to inputs against that of others; perceived inequity creates tension that motivates them to restore balance.", originalAr:"يقارن الموظفون نسبة مخرجاتهم إلى مدخلاتهم بنسبة الآخرين؛ والشعور بعدم العدالة يخلق توتراً يدفعهم لاستعادة التوازن.",
+   def:"الموظف يقارن نسبة (مخرجاته ÷ مدخلاته) بنسبة الآخرين. عدم التوازن يدفعه للتصرف.",
+   comp:["إذا شعر بالظلم: يُقلّل جهده، يطلب زيادة، يترك العمل، أو يُعيد تأطير تصوّره"],
+   example:"موظف يكتشف أن زميله بنفس المؤهلات يتقاضى أكثر → سيُقلّل إنتاجيته أو يطلب زيادة أو يبحث عن عمل آخر.",
+   tip:"سياسات شفافية الأجور (Pay Transparency) تُقلّل الإدراك السلبي لعدم العدالة. مرتبطة بتحديث 2025."},
+
+  {book:"comp", en:"McClelland's Need Theory", ar:"نظرية الاحتياجات لماكليلاند", cat:"التحفيز",
+   original:"Three acquired needs drive behavior in varying degrees: the need for achievement (nAch), affiliation (nAff), and power (nPow).", originalAr:"ثلاثة احتياجات مكتسبة تُحرّك السلوك بدرجات متفاوتة: الحاجة للإنجاز، والحاجة للانتماء، والحاجة للسلطة.",
+   def:"ثلاثة احتياجات تحفيزية مكتسبة (وليست فطرية) تختلف نسبتها بين الأفراد.",
+   comp:["nAch — الحاجة للإنجاز: يحبون التحديات المتوسطة","nAff — الحاجة للانتماء: يفضّلون التعاون","nPow — الحاجة للسلطة: يريدون التأثير والقيادة"],
+   example:"مندوب مبيعات ممتاز قد يكون مديراً فاشلاً إذا كان nAch عالياً وnPow منخفضاً — يفضّل العمل الفردي على قيادة الآخرين.",
+   tip:"اربطي نوع الاحتياج بالدور المناسب. صاحب nPow عالٍ مناسب للقيادة، وصاحب nAch عالٍ للأدوار الفردية التحدّية."},
+
+  // ===== COMPETENCIES — Leadership =====
+  {book:"comp", en:"Goleman's Emotional Intelligence", ar:"الذكاء العاطفي لجولمان", cat:"القيادة",
+   original:"Effective leadership rests on five emotional competencies — self-awareness, self-regulation, motivation, empathy, and social skills — beginning with awareness of one's own emotions.", originalAr:"تقوم القيادة الفعّالة على خمس كفاءات عاطفية — الوعي بالذات، وتنظيم الذات، والدافعية، والتعاطف، والمهارات الاجتماعية — بدءاً بالوعي بالمشاعر الذاتية.",
+   def:"خمسة مكونات للذكاء العاطفي، الترتيب مهم: الوعي بالذات أولاً قبل التأثير على الآخرين.",
+   comp:["Self-Awareness (الوعي بالذات)","Self-Regulation (تنظيم الذات)","Motivation (الدافعية)","Empathy (التعاطف)","Social Skills (المهارات الاجتماعية)"],
+   example:"مدير يفقد أعصابه في الاجتماعات ثم يعتذر → ضعف في Self-Regulation. الحل: تدريب على استراتيجيات تنظيم الذات.",
+   tip:"الكفاءة التقنية (IQ) لا تساوي فاعلية القيادة. الذكاء العاطفي (EQ) هو المحدد الأقوى لنجاح القائد."},
+
+  {book:"comp", en:"Goleman's Six Leadership Styles", ar:"أساليب القيادة الستة لجولمان", cat:"القيادة",
+   original:"Leaders draw on six emotional styles — Commanding, Visionary, Affiliative, Democratic, Pacesetting, and Coaching — and the most effective leaders switch fluidly among them to fit the situation.", originalAr:"يستخدم القادة ستة أساليب عاطفية — الآمِر، والرؤيوي، والانسجامي، والديمقراطي، ومحدّد الإيقاع، والمدرّب — وأكثر القادة فاعلية يبدّلون بينها بمرونة لتناسب الموقف.",
+   def:"ستة أساليب قيادية، لكل منها موقف مناسب — القائد الفعّال يُبدّل بينها.",
+   comp:["Commanding (آمِر): للأزمات","Visionary (رؤيوي): لتوجيه نحو هدف","Affiliative (انسجامي): لبناء الترابط","Democratic (ديمقراطي): لبناء الإجماع","Pacesetting (محدّد الإيقاع): للقدوة","Coaching (مدرّب): لتطوير المهارات"],
+   example:"أسلوب التدريب (Coaching) فعّال عندما يريد الموظف التطوّر ويربط القائد العمل بأهدافه المهنية. يفشل مع موظف غير متحمّس.",
+   tip:"احفظي الموقف المناسب لكل أسلوب. الأسئلة الموقفية تصف موقفاً وتسأل عن الأسلوب الأمثل."},
+
+  {book:"comp", en:"Hersey-Blanchard Situational Leadership", ar:"القيادة الظرفية لهيرسي وبلانشارد", cat:"القيادة",
+   original:"The most effective leadership style depends on the follower's readiness; as competence and commitment grow, the leader shifts from directing to coaching to supporting to delegating.", originalAr:"يعتمد أنسب أسلوب قيادي على جاهزية التابع؛ وكلما نمت الكفاءة والالتزام، انتقل القائد من التوجيه إلى الإرشاد إلى الدعم إلى التفويض.",
+   diagram:"<svg viewBox='0 0 400 260' xmlns='http://www.w3.org/2000/svg'><text x='200' y='250' font-size='8.5' fill='#6b7280' text-anchor='middle' font-weight='700'>كفاءة الموظف → عالية</text><rect x='40' y='20' width='150' height='95' rx='10' fill='#185FA5'/><text x='115' y='55' font-size='10.5' fill='#fff' text-anchor='middle' font-weight='700'>S3 Supporting</text><text x='115' y='73' font-size='8.5' fill='#fff' text-anchor='middle'>دعم</text><text x='115' y='91' font-size='7' fill='#cfe0f2' text-anchor='middle'>كفاءة عالية·التزام متذبذب</text><rect x='210' y='20' width='150' height='95' rx='10' fill='#1D9E75'/><text x='285' y='55' font-size='10.5' fill='#fff' text-anchor='middle' font-weight='700'>S4 Delegating</text><text x='285' y='73' font-size='8.5' fill='#fff' text-anchor='middle'>تفويض</text><text x='285' y='91' font-size='7' fill='#d4f0e6' text-anchor='middle'>كفاءة عالية·التزام عالٍ</text><rect x='40' y='125' width='150' height='95' rx='10' fill='#A32D2D'/><text x='115' y='160' font-size='10.5' fill='#fff' text-anchor='middle' font-weight='700'>S1 Directing</text><text x='115' y='178' font-size='8.5' fill='#fff' text-anchor='middle'>توجيه</text><text x='115' y='196' font-size='7' fill='#f2cccc' text-anchor='middle'>كفاءة منخفضة·التزام عالٍ</text><rect x='210' y='125' width='150' height='95' rx='10' fill='#BA7517'/><text x='285' y='160' font-size='10.5' fill='#fff' text-anchor='middle' font-weight='700'>S2 Coaching</text><text x='285' y='178' font-size='8.5' fill='#fff' text-anchor='middle'>إرشاد</text><text x='285' y='196' font-size='7' fill='#f2e0c4' text-anchor='middle'>كفاءة بعض الشيء</text></svg>",
+   def:"أسلوب القيادة يتكيّف مع مستوى نضج/كفاءة الموظف (أربعة مستويات).",
+   comp:["Directing (توجيه): كفاءة منخفضة + التزام عالٍ","Coaching (إرشاد): كفاءة بعض الشيء + التزام متذبذب","Supporting (دعم): كفاءة عالية + التزام متذبذب","Delegating (تفويض): كفاءة عالية + التزام عالٍ"],
+   example:"موظف خبير وملتزم → أسلوب التفويض (Delegating) بأقل إشراف. موظف جديد → أسلوب التوجيه (Directing).",
+   tip:"التفويض يناسب فقط من يجمع الكفاءة العالية والالتزام العالي معاً. لا تُفوّضي لمن ينقصه أحدهما."},
+
+  {book:"comp", en:"Transformational vs Transactional", ar:"القيادة التحويلية مقابل التبادلية", cat:"القيادة",
+   original:"Transactional leaders motivate through rewards and penalties tied to performance, while transformational leaders inspire followers to transcend self-interest for a shared vision.", originalAr:"يحفّز القادة التبادليون عبر المكافآت والعقوبات المرتبطة بالأداء، بينما يُلهم القادة التحويليون الأتباع لتجاوز مصلحتهم الذاتية من أجل رؤية مشتركة.",
+   def:"التحويلية تُلهم نحو رؤية تتجاوز المصلحة الذاتية؛ التبادلية تعتمد على المكافأة مقابل الأداء.",
+   comp:["تحويلية: إلهام، رؤية، تطوير الأتباع","تبادلية: أهداف واضحة، مكافأة/عقاب مقابل النتائج"],
+   tip:"التحويلية تُميّزها قدرة إلهام الأتباع لتجاوز مصلحتهم الذاتية. التبادلية تُركّز على الصفقة (أداء مقابل مكافأة)."},
+
+  // ===== COMPETENCIES — Change =====
+  {book:"comp", en:"Lewin's 3-Stage Change Model", ar:"نموذج لوين للتغيير", cat:"إدارة التغيير",
+   original:"Organizational change proceeds through three stages: unfreezing the current state, moving to the new state, and refreezing to make the change permanent.", originalAr:"يمرّ التغيير التنظيمي بثلاث مراحل: إذابة الوضع الحالي، والانتقال للوضع الجديد، وإعادة التجميد لجعل التغيير دائماً.",
+   diagram:"<svg viewBox='0 0 400 120' xmlns='http://www.w3.org/2000/svg'><rect x='15' y='35' width='105' height='55' rx='10' fill='#185FA5'/><text x='67' y='60' font-size='11' fill='#fff' text-anchor='middle' font-weight='700'>Unfreeze</text><text x='67' y='77' font-size='9' fill='#fff' text-anchor='middle'>إذابة الجليد</text><rect x='147' y='35' width='105' height='55' rx='10' fill='#BA7517'/><text x='199' y='60' font-size='11' fill='#fff' text-anchor='middle' font-weight='700'>Change</text><text x='199' y='77' font-size='9' fill='#fff' text-anchor='middle'>التغيير</text><rect x='279' y='35' width='105' height='55' rx='10' fill='#1D9E75'/><text x='331' y='60' font-size='11' fill='#fff' text-anchor='middle' font-weight='700'>Refreeze</text><text x='331' y='77' font-size='9' fill='#fff' text-anchor='middle'>إعادة التجميد</text><path d='M122,62 L145,62' stroke='#c8a84b' stroke-width='2.5' marker-end='url(#a2)'/><path d='M254,62 L277,62' stroke='#c8a84b' stroke-width='2.5' marker-end='url(#a2)'/><defs><marker id='a2' markerWidth='9' markerHeight='9' refX='5' refY='4.5' orient='auto'><path d='M0,0 L9,4.5 L0,9 Z' fill='#c8a84b'/></marker></defs></svg>",
+   def:"أبسط نماذج التغيير — ثلاث مراحل مفاهيمية.",
+   formula:"Unfreeze → Change → Refreeze",
+   comp:["Unfreeze (إذابة): تحضير الناس نفسياً وإقناعهم بالحاجة للتغيير","Change (تغيير): التطبيق الفعلي ومرحلة المقاومة","Refreeze (تجميد): تثبيت السلوك الجديد كمعيار دائم"],
+   example:"استبدال نظام ورقي برقمي: Unfreeze = إقناعهم بالحاجة. Change = التدريب والتطبيق. Refreeze = ربط التقييم بالنظام الجديد.",
+   tip:"Unfreeze = التحضير النفسي وليس التغيير الفعلي. Refreeze = الدمج في الثقافة وليس مجرد الانتهاء من التطبيق."},
+
+  {book:"comp", en:"Kotter's 8-Step Model", ar:"نموذج كوتر للتغيير", cat:"إدارة التغيير",
+   original:"Successful large-scale change requires eight sequential steps, from creating urgency and building a guiding coalition through to anchoring the new approaches in the culture.", originalAr:"يتطلب التغيير الناجح واسع النطاق ثماني خطوات متتابعة، من خلق الإلحاح وبناء تحالف قيادي وصولاً إلى ترسيخ الأساليب الجديدة في الثقافة.",
+   diagram:"<svg viewBox='0 0 400 210' xmlns='http://www.w3.org/2000/svg'><rect x='8' y='170' width='42' height='32' rx='5' fill='#163456'/><text x='29' y='190' font-size='11' fill='#fff' text-anchor='middle' font-weight='800'>1</text><rect x='55' y='151' width='42' height='32' rx='5' fill='#1d4068'/><text x='76' y='171' font-size='11' fill='#fff' text-anchor='middle' font-weight='800'>2</text><rect x='102' y='132' width='42' height='32' rx='5' fill='#185FA5'/><text x='123' y='152' font-size='11' fill='#fff' text-anchor='middle' font-weight='800'>3</text><rect x='149' y='113' width='42' height='32' rx='5' fill='#2a6b8a'/><text x='170' y='133' font-size='11' fill='#fff' text-anchor='middle' font-weight='800'>4</text><rect x='196' y='94' width='42' height='32' rx='5' fill='#1D9E75'/><text x='217' y='114' font-size='11' fill='#fff' text-anchor='middle' font-weight='800'>5</text><rect x='243' y='75' width='42' height='32' rx='5' fill='#5a9e3a'/><text x='264' y='95' font-size='11' fill='#fff' text-anchor='middle' font-weight='800'>6</text><rect x='290' y='56' width='42' height='32' rx='5' fill='#BA7517'/><text x='311' y='76' font-size='11' fill='#fff' text-anchor='middle' font-weight='800'>7</text><rect x='337' y='37' width='42' height='32' rx='5' fill='#A32D2D'/><text x='358' y='57' font-size='11' fill='#fff' text-anchor='middle' font-weight='800'>8</text><text x='200' y='15' font-size='9' fill='#6b7280' text-anchor='middle' font-weight='700'>8 خطوات متتابعة لقيادة التغيير</text><text x='29' y='150' font-size='6.5' fill='#163456' text-anchor='middle'>إلحاح</text><text x='217' y='65' font-size='6.5' fill='#1D9E75' text-anchor='middle'>عوائق</text><text x='358' y='27' font-size='6.5' fill='#A32D2D' text-anchor='middle'>ترسيخ</text></svg>",
+   def:"نموذج تطبيقي تفصيلي من ثماني خطوات لقيادة التغيير المؤسسي.",
+   comp:["1. خلق الإلحاح","2. بناء تحالف قيادي","3. صياغة رؤية","4. توصيل الرؤية","5. إزالة العوائق (الأكثر إهمالاً)","6. انتصارات قصيرة المدى","7. البناء على التغيير","8. الترسيخ في الثقافة (الأهم)"],
+   example:"شركة طبّقت ERP وبعد 8 أشهر يعود الموظفون للأوراق → تجاوزوا الخطوة 5 (لم يُزيلوا الإجراءات القديمة) والخطوة 8 (لم يربطوا الالتزام بالمكافأة).",
+   tip:"Kotter للتغيير المؤسسي الواسع. الخطوة 5 (إزالة العوائق) الأكثر إهمالاً، والخطوة 8 (الترسيخ) الأهم للاستدامة."},
+
+  {book:"comp", en:"ADKAR Model", ar:"نموذج ADKAR للتغيير الفردي", cat:"إدارة التغيير",
+   original:"Individual change happens through five sequential building blocks: Awareness, Desire, Knowledge, Ability, and Reinforcement — each must be achieved before the next.", originalAr:"يحدث التغيير الفردي عبر خمس لبنات متتابعة: الوعي، والرغبة، والمعرفة، والقدرة، والترسيخ — وكل منها يجب تحقيقه قبل التالي.",
+   diagram:"<svg viewBox='0 0 400 110' xmlns='http://www.w3.org/2000/svg'><rect x='8' y='30' width='68' height='50' rx='8' fill='#163456'/><text x='42' y='52' font-size='13' fill='#fff' text-anchor='middle' font-weight='800'>A</text><text x='42' y='68' font-size='7.5' fill='#fff' text-anchor='middle'>Awareness</text><path d='M76,55 L86,55' stroke='#c8a84b' stroke-width='2' marker-end='url(#a3)'/><rect x='86' y='30' width='68' height='50' rx='8' fill='#185FA5'/><text x='120' y='52' font-size='13' fill='#fff' text-anchor='middle' font-weight='800'>D</text><text x='120' y='68' font-size='7.5' fill='#fff' text-anchor='middle'>Desire</text><path d='M154,55 L164,55' stroke='#c8a84b' stroke-width='2' marker-end='url(#a3)'/><rect x='164' y='30' width='68' height='50' rx='8' fill='#1D9E75'/><text x='198' y='52' font-size='13' fill='#fff' text-anchor='middle' font-weight='800'>K</text><text x='198' y='68' font-size='7.5' fill='#fff' text-anchor='middle'>Knowledge</text><path d='M232,55 L242,55' stroke='#c8a84b' stroke-width='2' marker-end='url(#a3)'/><rect x='242' y='30' width='68' height='50' rx='8' fill='#BA7517'/><text x='276' y='52' font-size='13' fill='#fff' text-anchor='middle' font-weight='800'>A</text><text x='276' y='68' font-size='7.5' fill='#fff' text-anchor='middle'>Ability</text><path d='M310,55 L320,55' stroke='#c8a84b' stroke-width='2' marker-end='url(#a3)'/><rect x='320' y='30' width='68' height='50' rx='8' fill='#A32D2D'/><text x='354' y='52' font-size='13' fill='#fff' text-anchor='middle' font-weight='800'>R</text><text x='354' y='68' font-size='7.5' fill='#fff' text-anchor='middle'>Reinforce</text><defs><marker id='a3' markerWidth='8' markerHeight='8' refX='4.5' refY='4' orient='auto'><path d='M0,0 L8,4 L0,8 Z' fill='#c8a84b'/></marker></defs></svg>",
+   def:"يُركّز على التغيير الفردي — كل خطوة يجب اكتمالها قبل التالية.",
+   formula:"Awareness → Desire → Knowledge → Ability → Reinforcement",
+   comp:["Awareness: يعرف سبب التغيير","Desire: يريد المشاركة","Knowledge: يعرف كيف يتغيّر","Ability: يستطيع التطبيق فعلاً","Reinforcement: يحافظ على السلوك"],
+   example:"موظف يعرف سبب التغيير لكنه يرفض المشاركة → المشكلة في Desire (الخطوة 2) وليس Awareness.",
+   tip:"ADKAR يُشخّص أين يتعثّر الفرد بالتحديد. 'يعرف لكن لا يريد' = مشكلة Desire. 'يريد لكن لا يستطيع' = مشكلة Ability."},
+
+  // ===== COMPETENCIES — Culture =====
+  {book:"comp", en:"Hofstede's Cultural Dimensions", ar:"أبعاد هوفستيد الثقافية", cat:"الثقافة العالمية",
+   original:"National cultures differ along measurable dimensions — power distance, individualism/collectivism, uncertainty avoidance, masculinity/femininity, long-term orientation, and indulgence — that shape workplace behavior.", originalAr:"تختلف الثقافات الوطنية على أبعاد قابلة للقياس — مسافة السلطة، والفردية/الجماعية، وتجنّب الغموض، والذكورية/الأنوثية، والتوجه الزمني، والانغماس — تُشكّل سلوك مكان العمل.",
+   def:"أبعاد تُشخّص الفروق الثقافية بين الدول، حاسمة في قرارات HR الدولية.",
+   comp:["Power Distance (مسافة السلطة): قبول التفاوت في السلطة","Individualism vs Collectivism (الفردية/الجماعية)","Uncertainty Avoidance (تجنّب الغموض)","Masculinity vs Femininity (التنافس/التعاون)","Long-term Orientation (التوجه الزمني)","Indulgence (الانغماس/الكبح)"],
+   example:"إدخال تقييم 360° (الموظف يُقيّم مديره) في ثقافة مسافة سلطة عالية → مقاومة شديدة. نظام مكافآت فردي في ثقافة جماعية → يُدمّر العمل الجماعي.",
+   tip:"عند فشل نظام في فرع دولي، اسألي أي بُعد ثقافي تجاهلناه. 'لماذا لا يُقدّم الموظفون مقترحاتهم؟' → مسافة سلطة عالية."},
+
+  {book:"comp", en:"Trompenaars' 7 Dimensions", ar:"أبعاد ترومبينارز السبعة", cat:"الثقافة العالمية",
+   original:"Cultures vary across seven dimensions of relationships and time — such as universalism vs particularism and sequential vs synchronic time — guiding how to work across differences.", originalAr:"تتباين الثقافات عبر سبعة أبعاد للعلاقات والوقت — مثل العالمية مقابل الخصوصية والوقت التسلسلي مقابل المتزامن — تُوجّه كيفية العمل عبر الاختلافات.",
+   def:"سبعة أبعاد ثقافية تُوجّه التعامل مع الاختلاف الثقافي.",
+   comp:["Universalism vs Particularism (القواعد مقابل العلاقات)","Individualism vs Communitarianism","Sequential vs Synchronic Time (وقت تسلسلي/متزامن)","وغيرها"],
+   example:"مدير أمريكي (Universalism) يطبّق قاعدة التأخير على الجميع بما فيهم صديقه. زميله البرازيلي (Particularism) يرى هذا جفاءً.",
+   tip:"Hofstede يُشخّص الثقافة، Trompenaars يُوجّه التعامل مع الاختلاف."},
+
+  {book:"comp", en:"Schein's Organizational Culture", ar:"ثقافة المنظمة لشاين", cat:"الثقافة العالمية",
+   original:"Organizational culture operates at three levels: visible artifacts, espoused values, and the deepest layer of unconscious basic assumptions.", originalAr:"تعمل الثقافة التنظيمية على ثلاثة مستويات: المظاهر المرئية، والقيم المعلنة، والطبقة الأعمق من الافتراضات الأساسية اللاواعية.",
+   def:"ثلاثة مستويات للثقافة التنظيمية، من المرئي للضمني.",
+   comp:["Artifacts (المظاهر): المرئية — المكاتب، اللباس، الطقوس","Espoused Values (القيم المعلنة): ما تقول المنظمة إنها تؤمن به","Basic Assumptions (الافتراضات الأساسية): المعتقدات اللاواعية العميقة"],
+   tip:"التغيير الثقافي الحقيقي يتطلب الوصول للافتراضات الأساسية، وليس مجرد تغيير المظاهر أو القيم المعلنة."},
+
+  // ===== PEOPLE — Learning =====
+  {book:"people", en:"Kirkpatrick's 4 Levels", ar:"مستويات كيركباتريك الأربعة", cat:"التعلم والتطوير",
+   original:"Training effectiveness is evaluated at four ascending levels: reaction, learning, behavior, and results — with Phillips adding ROI as a fifth.", originalAr:"تُقيَّم فاعلية التدريب على أربعة مستويات تصاعدية: ردة الفعل، والتعلم، والسلوك، والنتائج — مع إضافة فيليبس لعائد الاستثمار كمستوى خامس.",
+   diagram:"<svg viewBox='0 0 400 220' xmlns='http://www.w3.org/2000/svg'><rect x='30' y='160' width='80' height='45' rx='6' fill='#163456'/><text x='70' y='180' font-size='10' fill='#fff' text-anchor='middle' font-weight='700'>1. ردة الفعل</text><text x='70' y='196' font-size='8' fill='#c8a84b' text-anchor='middle'>Reaction</text><rect x='115' y='115' width='80' height='45' rx='6' fill='#185FA5'/><text x='155' y='135' font-size='10' fill='#fff' text-anchor='middle' font-weight='700'>2. التعلم</text><text x='155' y='151' font-size='8' fill='#fff' text-anchor='middle'>Learning</text><rect x='200' y='70' width='80' height='45' rx='6' fill='#1D9E75'/><text x='240' y='90' font-size='10' fill='#fff' text-anchor='middle' font-weight='700'>3. السلوك</text><text x='240' y='106' font-size='8' fill='#fff' text-anchor='middle'>Behavior</text><rect x='285' y='25' width='80' height='45' rx='6' fill='#BA7517'/><text x='325' y='45' font-size='10' fill='#fff' text-anchor='middle' font-weight='700'>4. النتائج</text><text x='325' y='61' font-size='8' fill='#fff' text-anchor='middle'>Results</text><text x='200' y='218' font-size='8.5' fill='#6b7280' text-anchor='middle'>كلما ارتفع المستوى = أصعب قياساً وأعلى قيمة</text></svg>",
+   def:"نموذج تقييم فاعلية التدريب على أربعة مستويات تصاعدية (+ خامس لفيليبس).",
+   formula:"Reaction → Learning → Behavior → Results (→ ROI)",
+   comp:["1. Reaction: هل أحبّوا التدريب؟ (الأكثر قياساً، الأقل قيمة)","2. Learning: هل اكتسبوا المعرفة؟","3. Behavior: هل طبّقوا؟ (الأصعب قياساً)","4. Results: هل تحسّنت مؤشرات الأعمال؟","5. ROI (Phillips): هل العائد > التكلفة؟"],
+   example:"برنامج سلامة نجح في الاستبيانات (مستوى 1) لكن الحوادث لم تتغير → قِسنا المستوى الخطأ. يجب قياس المستوى 3 و4.",
+   tip:"المستوى الأعلى أصعب قياساً لكنه أقيم. لا تكتفي بالمستوى 1 (ردة الفعل) لتقييم نجاح التدريب."},
+
+  {book:"people", en:"Bloom's Taxonomy", ar:"تصنيف بلوم", cat:"التعلم والتطوير",
+   original:"Learning objectives are classified in six ascending cognitive levels: remember, understand, apply, analyze, evaluate, and create.", originalAr:"تُصنَّف الأهداف التعليمية في ستة مستويات معرفية تصاعدية: التذكّر، والفهم، والتطبيق، والتحليل، والتقييم، والإبداع.",
+   diagram:"<svg viewBox='0 0 400 250' xmlns='http://www.w3.org/2000/svg'><polygon points='200,12 226,48 174,48' fill='#A32D2D'/><text x='200' y='38' font-size='9.5' fill='#fff' text-anchor='middle' font-weight='700'>إبداع</text><polygon points='174,50 226,50 244,86 156,86' fill='#BA7517'/><text x='200' y='73' font-size='9.5' fill='#fff' text-anchor='middle' font-weight='700'>تقييم</text><polygon points='156,88 244,88 262,124 138,124' fill='#185FA5'/><text x='200' y='111' font-size='9.5' fill='#fff' text-anchor='middle' font-weight='700'>تحليل</text><polygon points='138,126 262,126 280,162 120,162' fill='#1D9E75'/><text x='200' y='149' font-size='9.5' fill='#fff' text-anchor='middle' font-weight='700'>تطبيق</text><polygon points='120,164 280,164 298,200 102,200' fill='#5b8a9e'/><text x='200' y='187' font-size='9.5' fill='#fff' text-anchor='middle' font-weight='700'>فهم</text><polygon points='102,202 298,202 316,236 84,236' fill='#163456'/><text x='200' y='225' font-size='9.5' fill='#fff' text-anchor='middle' font-weight='700'>تذكّر</text><text x='360' y='30' font-size='8.5' fill='#6b7280' text-anchor='middle'>تفكير عُليا</text><text x='360' y='228' font-size='8.5' fill='#6b7280' text-anchor='middle'>معرفة دُنيا</text></svg>",
+   def:"ستة مستويات تصاعدية للأهداف التعليمية، من التذكّر البسيط للإبداع.",
+   formula:"تذكّر → فهم → تطبيق → تحليل → تقييم → إبداع",
+   comp:["المستويات الدنيا: المعرفة الأساسية والحفظ","المستويات العليا: التفكير النقدي والابتكار"],
+   example:"تدريب الامتثال يستهدف المستوى 1-2. تدريب القيادة الفعّال يستهدف 4-6 (تحليل، تقييم، إبداع حلول).",
+   tip:"'اذكر القوانين' = مستوى 1. 'ماذا تفعل لو رأيت مخالفة؟' = مستوى 3-4. صمّمي الأهداف حسب المستوى المطلوب."},
+
+  {book:"people", en:"Kolb's Experiential Learning", ar:"دورة كولب للتعلم التجريبي", cat:"التعلم والتطوير",
+   original:"Learning is a four-stage cycle: concrete experience, reflective observation, abstract conceptualization, and active experimentation.", originalAr:"التعلم دورة من أربع مراحل: التجربة الملموسة، والملاحظة التأملية، والمفهمة المجردة، والتجريب الفعّال.",
+   diagram:"<svg viewBox='0 0 360 230' xmlns='http://www.w3.org/2000/svg'><circle cx='180' cy='115' r='95' fill='none' stroke='#e0dbd2' stroke-width='1.5' stroke-dasharray='4 4'/><rect x='130' y='8' width='100' height='42' rx='8' fill='#185FA5'/><text x='180' y='26' font-size='8.5' fill='#fff' text-anchor='middle' font-weight='700'>تجربة ملموسة</text><text x='180' y='40' font-size='7.5' fill='#fff' text-anchor='middle'>Experience</text><rect x='262' y='92' width='95' height='42' rx='8' fill='#1D9E75'/><text x='309' y='110' font-size='8.5' fill='#fff' text-anchor='middle' font-weight='700'>ملاحظة تأملية</text><text x='309' y='124' font-size='7.5' fill='#fff' text-anchor='middle'>Reflection</text><rect x='130' y='180' width='100' height='42' rx='8' fill='#BA7517'/><text x='180' y='198' font-size='8.5' fill='#fff' text-anchor='middle' font-weight='700'>مفهمة مجردة</text><text x='180' y='212' font-size='7.5' fill='#fff' text-anchor='middle'>Conceptualize</text><rect x='3' y='92' width='95' height='42' rx='8' fill='#A32D2D'/><text x='50' y='110' font-size='8.5' fill='#fff' text-anchor='middle' font-weight='700'>تجريب فعّال</text><text x='50' y='124' font-size='7.5' fill='#fff' text-anchor='middle'>Experiment</text><path d='M240,40 A95,95 0 0,1 295,88' fill='none' stroke='#c8a84b' stroke-width='2.5' marker-end='url(#a5)'/><path d='M300,138 A95,95 0 0,1 232,185' fill='none' stroke='#c8a84b' stroke-width='2.5' marker-end='url(#a5)'/><path d='M125,188 A95,95 0 0,1 62,138' fill='none' stroke='#c8a84b' stroke-width='2.5' marker-end='url(#a5)'/><path d='M58,86 A95,95 0 0,1 125,42' fill='none' stroke='#c8a84b' stroke-width='2.5' marker-end='url(#a5)'/><defs><marker id='a5' markerWidth='8' markerHeight='8' refX='4' refY='4' orient='auto'><path d='M0,0 L8,4 L0,8 Z' fill='#c8a84b'/></marker></defs></svg>",
+   def:"دورة من أربع مراحل للتعلم من التجربة.",
+   formula:"تجربة ملموسة → ملاحظة تأملية → مفهمة مجردة → تجريب فعّال",
+   example:"التعلم من خلال المشاريع الفعلية (Stretch Assignments) يُغطي الدورة كاملة. الدورات النظرية فقط تقف عند المفهمة المجردة.",
+   tip:"التعلم الفعّال يكمل الدورة كاملة. التدريب النظري وحده ناقص."},
+
+  {book:"people", en:"Andragogy (Knowles)", ar:"أندراغوجيا — تعلّم البالغين", cat:"التعلم والتطوير",
+   original:"Adults learn differently from children: they need to know why they are learning, draw on prior experience, value relevance to their lives, and learn best through problem-solving.", originalAr:"يتعلم البالغون بشكل مختلف عن الأطفال: يحتاجون لمعرفة سبب تعلّمهم، ويستندون لخبرتهم السابقة، ويُقدّرون الصلة بحياتهم، ويتعلمون أفضل عبر حل المشكلات.",
+   def:"مبادئ تعلّم البالغين، تختلف جوهرياً عن تعليم الأطفال.",
+   comp:["يحتاجون معرفة 'لماذا' يتعلمون","يحملون تجارب سابقة غنية","يتعلمون ما يرونه ذا صلة بحياتهم الآن","يتعلمون بحل المشكلات لا الحفظ"],
+   example:"تدريب المديرين 'نظري جداً' → المشكلة في تطبيق Andragogy. الحل: ربط كل مفهوم بتحدٍّ حقيقي يواجهونه الآن.",
+   tip:"تدريب البالغين يجب أن يكون عملياً ومرتبطاً بواقعهم. لا تُعامليهم كطلاب يحفظون."},
+
+  {book:"people", en:"70-20-10 Model", ar:"نموذج 70-20-10", cat:"التعلم والتطوير",
+   original:"Development comes from three sources in proportion: 70% from challenging experience, 20% from relationships and coaching, and 10% from formal training.", originalAr:"يأتي التطوّر من ثلاثة مصادر بنسب: 70% من التجربة التحدّية، و20% من العلاقات والإرشاد، و10% من التدريب الرسمي.",
+   diagram:"<svg viewBox='0 0 400 130' xmlns='http://www.w3.org/2000/svg'><rect x='10' y='40' width='266' height='55' rx='8' fill='#1D9E75'/><text x='143' y='63' font-size='13' fill='#fff' text-anchor='middle' font-weight='800'>70%</text><text x='143' y='80' font-size='8.5' fill='#fff' text-anchor='middle'>التجربة والمهام</text><rect x='280' y='40' width='76' height='55' rx='8' fill='#BA7517'/><text x='318' y='63' font-size='12' fill='#fff' text-anchor='middle' font-weight='800'>20%</text><text x='318' y='80' font-size='7.5' fill='#fff' text-anchor='middle'>الإرشاد</text><rect x='360' y='40' width='30' height='55' rx='6' fill='#A32D2D'/><text x='375' y='62' font-size='9' fill='#fff' text-anchor='middle' font-weight='800'>10%</text><text x='375' y='78' font-size='6.5' fill='#fff' text-anchor='middle'>تدريب</text><text x='200' y='25' font-size='9' fill='#6b7280' text-anchor='middle' font-weight='700'>من أين يأتي التعلّم والتطوّر</text><text x='200' y='118' font-size='8' fill='#A32D2D' text-anchor='middle'>الدورات الرسمية وحدها (10%) لا تكفي</text></svg>",
+   def:"توزيع مصادر التعلم والتطوير الفعّال.",
+   comp:["70%: التجربة والمهام التحدّية (Stretch Assignments)","20%: العلاقات والإرشاد (Coaching/Mentoring)","10%: التدريب الرسمي (Formal Training)"],
+   example:"موظف موهوب لا يتطوّر رغم كثرة الدورات → ينقصه الـ70% (مهام حقيقية) والـ20% (مرشد). الدورات وحدها (10%) لا تكفي.",
+   tip:"معظم التطوّر يأتي من التجربة لا الدورات. إذا كان الحل المقترح 'دورة أخرى' فقط، فهو على الأرجح ناقص."},
+
+  // ===== PEOPLE — Job Design & Engagement =====
+  {book:"people", en:"Hackman & Oldham Job Characteristics", ar:"نموذج خصائص الوظيفة", cat:"تصميم الوظيفة",
+   original:"Five core job characteristics — skill variety, task identity, task significance, autonomy, and feedback — produce internal motivation and higher performance.", originalAr:"خمس خصائص وظيفية أساسية — تنوع المهارات، وهوية المهمة، وأهمية المهمة، والاستقلالية، والتغذية الراجعة — تُنتج دافعية داخلية وأداءً أعلى.",
+   diagram:"<svg viewBox='0 0 400 200' xmlns='http://www.w3.org/2000/svg'><rect x='8' y='25' width='150' height='150' rx='10' fill='#185FA5' fill-opacity='0.1' stroke='#185FA5' stroke-width='1.5'/><text x='83' y='44' font-size='9.5' fill='#185FA5' text-anchor='middle' font-weight='800'>5 خصائص أساسية</text><text x='83' y='62' font-size='8' fill='#333' text-anchor='middle'>تنوع المهارات</text><text x='83' y='82' font-size='8' fill='#333' text-anchor='middle'>هوية المهمة</text><text x='83' y='102' font-size='8' fill='#333' text-anchor='middle'>أهمية المهمة</text><text x='83' y='122' font-size='8' fill='#333' text-anchor='middle'>الاستقلالية</text><text x='83' y='142' font-size='8' fill='#333' text-anchor='middle'>التغذية الراجعة</text><path d='M160,100 L195,100' stroke='#c8a84b' stroke-width='2.5' marker-end='url(#a6)'/><rect x='200' y='45' width='115' height='110' rx='10' fill='#1D9E75' fill-opacity='0.12' stroke='#1D9E75' stroke-width='1.5'/><text x='257' y='70' font-size='9' fill='#1D9E75' text-anchor='middle' font-weight='800'>حالات نفسية</text><text x='257' y='92' font-size='7.5' fill='#333' text-anchor='middle'>المعنى</text><text x='257' y='110' font-size='7.5' fill='#333' text-anchor='middle'>المسؤولية</text><text x='257' y='128' font-size='7.5' fill='#333' text-anchor='middle'>معرفة النتائج</text><path d='M317,100 L350,100' stroke='#c8a84b' stroke-width='2.5' marker-end='url(#a6)'/><rect x='322' y='60' width='72' height='80' rx='10' fill='#BA7517'/><text x='358' y='95' font-size='8.5' fill='#fff' text-anchor='middle' font-weight='700'>دافعية</text><text x='358' y='112' font-size='8.5' fill='#fff' text-anchor='middle'>وأداء</text><defs><marker id='a6' markerWidth='9' markerHeight='9' refX='5' refY='4.5' orient='auto'><path d='M0,0 L9,4.5 L0,9 Z' fill='#c8a84b'/></marker></defs></svg>",
+   def:"خمس خصائص وظيفية تُنتج دافعية داخلية وأداءً أعلى.",
+   formula:"MPS = (Skill + Identity + Significance)/3 × Autonomy × Feedback",
+   comp:["Skill Variety: تنوع المهارات","Task Identity: إنجاز مهمة كاملة","Task Significance: التأثير على الآخرين","Autonomy: الاستقلالية","Feedback: معرفة النتائج"],
+   example:"موظف إدخال بيانات بمهام متطابقة → تنوع منخفض + هوية منخفضة → ملل. الحل: Job Enrichment (إثراء بمهام أعلى مستوى).",
+   tip:"Job Enrichment = مسؤوليات أعلى (رأسياً). Job Enlargement = مهام أكثر بنفس المستوى (أفقياً). Job Rotation = تناوب بين أدوار."},
+
+  {book:"people", en:"Bandura's Self-Efficacy", ar:"الفاعلية الذاتية لباندورا", cat:"تصميم الوظيفة",
+   original:"A person's belief in their capability to perform a specific task strongly influences actual performance, built mainly through mastery experiences.", originalAr:"اعتقاد الشخص بقدرته على أداء مهمة محددة يؤثر بقوة على الأداء الفعلي، ويُبنى أساساً عبر تجارب النجاح.",
+   def:"الاعتقاد بالقدرة على أداء مهمة محددة يؤثر مباشرة على الأداء الفعلي.",
+   comp:["Mastery Experiences: تجارب النجاح (الأقوى)","Vicarious Learning: مشاهدة الآخرين ينجحون","Verbal Persuasion: التشجيع","Physiological States: إدارة القلق"],
+   example:"موظف مؤهل يتجنّب قيادة الاجتماعات → مشكلة Self-Efficacy وليس كفاءة. الحل: اجتماع صغير أولاً → نجاح → ثقة.",
+   tip:"'يمتلك المهارة لكن يتجنّب' = Self-Efficacy. 'لا يمتلك المهارة' = Training. الفرق جوهري في الحل."},
+
+  {book:"people", en:"Locke's Goal-Setting Theory", ar:"نظرية وضع الأهداف للوك", cat:"تصميم الوظيفة",
+   original:"Specific and challenging goals lead to higher performance than vague or easy goals, provided they are clear, measurable, and accepted by the employee.", originalAr:"الأهداف المحددة والصعبة تؤدي لأداء أعلى من الأهداف الغامضة أو السهلة، شريطة أن تكون واضحة وقابلة للقياس ومقبولة من الموظف.",
+   def:"الأهداف المحددة الصعبة تُنتج أداءً أعلى من الغامضة أو السهلة.",
+   comp:["محدد + قابل للقياس + صعب لكن قابل للتحقيق + مقبول من الموظف"],
+   example:"'افعل قصارى جهدك' (غامض) ← أداء أدنى من ← 'حقّق 95% رضا العملاء هذا الشهر' (SMART).",
+   tip:"الغموض = عدم يقين = أداء متذبذب. الأهداف الواضحة الصعبة المقبولة تُحفّز أكثر."},
+
+  {book:"people", en:"Pygmalion Effect", ar:"تأثير بجماليون", cat:"تصميم الوظيفة",
+   original:"A manager's high expectations of an employee tend to produce higher performance, functioning as a self-fulfilling prophecy.", originalAr:"توقعات المدير العالية تجاه الموظف تميل لإنتاج أداء أعلى، وتعمل كنبوءة تُحقق ذاتها.",
+   def:"توقعات المدير العالية تُنتج أداءً أعلى (نبوءة تُحقق ذاتها)، والعكس صحيح.",
+   example:"مدير يُعامل موظفاً جديداً كواعد (مهام صعبة، ثقة) → يرتقي للتوقعات. ومن يُعامله كضعيف → يصبح ضعيفاً فعلاً.",
+   tip:"درّبي المحكّمين على تجنّب Pygmalion في المقابلات — التوقعات المسبقة من السيرة الذاتية تُؤثر على التقييم."},
+
+  {book:"people", en:"Senge's Learning Organization", ar:"المنظمة المتعلّمة لسينج", cat:"التعلم والتطوير",
+   original:"A learning organization masters five disciplines — systems thinking, personal mastery, mental models, shared vision, and team learning — with systems thinking as the cornerstone.", originalAr:"تُتقن المنظمة المتعلّمة خمسة تخصصات — التفكير النظمي، والإتقان الشخصي، والنماذج الذهنية، والرؤية المشتركة، وتعلّم الفريق — مع التفكير النظمي كحجر الزاوية.",
+   def:"خمسة تخصصات تجعل المنظمة قادرة على التعلّم والتكيّف المستمر.",
+   comp:["Systems Thinking (التفكير النظمي) — التخصص الجوهري","Personal Mastery","Mental Models","Shared Vision","Team Learning"],
+   tip:"التفكير النظمي هو حجر الزاوية — رؤية الترابطات بدل الأحداث المنعزلة."},
+
+  // ===== ORGANIZATION =====
+  {book:"org", en:"Ulrich's 4 HR Roles", ar:"أدوار أولريك الأربعة لـ HR", cat:"استراتيجية HR",
+   original:"HR delivers value through four roles defined by two axes (time focus and activity focus): Strategic Partner, Change Agent, Administrative Expert, and Employee Champion.", originalAr:"تُقدّم الموارد البشرية القيمة عبر أربعة أدوار محددة بمحورين (التركيز الزمني والنشاطي): الشريك الاستراتيجي، ووكيل التغيير، والخبير الإداري، ونصير الموظفين.",
+   diagram:"<svg viewBox='0 0 400 260' xmlns='http://www.w3.org/2000/svg'><text x='200' y='14' font-size='9' fill='#6b7280' text-anchor='middle' font-weight='700'>مستقبلي / استراتيجي</text><text x='200' y='252' font-size='9' fill='#6b7280' text-anchor='middle' font-weight='700'>يومي / تشغيلي</text><text x='12' y='130' font-size='9' fill='#6b7280' text-anchor='middle' font-weight='700' transform='rotate(-90 12,130)'>عمليات</text><text x='388' y='130' font-size='9' fill='#6b7280' text-anchor='middle' font-weight='700' transform='rotate(90 388,130)'>أشخاص</text><rect x='40' y='25' width='150' height='100' rx='10' fill='#185FA5'/><text x='115' y='65' font-size='11' fill='#fff' text-anchor='middle' font-weight='700'>Strategic Partner</text><text x='115' y='84' font-size='9' fill='#fff' text-anchor='middle'>الشريك الاستراتيجي</text><text x='115' y='102' font-size='7.5' fill='#cfe0f2' text-anchor='middle'>توافق HR مع الاستراتيجية</text><rect x='210' y='25' width='150' height='100' rx='10' fill='#1D9E75'/><text x='285' y='65' font-size='11' fill='#fff' text-anchor='middle' font-weight='700'>Change Agent</text><text x='285' y='84' font-size='9' fill='#fff' text-anchor='middle'>وكيل التغيير</text><text x='285' y='102' font-size='7.5' fill='#d4f0e6' text-anchor='middle'>إدارة التحول</text><rect x='40' y='135' width='150' height='100' rx='10' fill='#BA7517'/><text x='115' y='175' font-size='11' fill='#fff' text-anchor='middle' font-weight='700'>Admin Expert</text><text x='115' y='194' font-size='9' fill='#fff' text-anchor='middle'>الخبير الإداري</text><text x='115' y='212' font-size='7.5' fill='#f2e0c4' text-anchor='middle'>كفاءة العمليات</text><rect x='210' y='135' width='150' height='100' rx='10' fill='#A32D2D'/><text x='285' y='175' font-size='11' fill='#fff' text-anchor='middle' font-weight='700'>Employee Champion</text><text x='285' y='194' font-size='9' fill='#fff' text-anchor='middle'>نصير الموظفين</text><text x='285' y='212' font-size='7.5' fill='#f2cccc' text-anchor='middle'>رفاهية الموظفين</text></svg>",
+   def:"أربعة أدوار لوظيفة الموارد البشرية على محورين: الزمن (يومي/مستقبلي) والتركيز (عمليات/أشخاص).",
+   comp:["Strategic Partner: مستقبلي + عمليات → توافق HR مع الاستراتيجية","Change Agent: مستقبلي + أشخاص → إدارة التغيير","Administrative Expert: يومي + عمليات → كفاءة العمليات","Employee Champion: يومي + أشخاص → رفاهية الموظفين"],
+   example:"HR يقضي معظم وقته في طلبات الإجازات والرواتب → Administrative Expert. للارتقاء لـ Strategic Partner: أتمتة العمليات وتخصيص الوقت للاستراتيجية.",
+   tip:"الأسئلة تصف كيف يقضي HR وقته وتسأل عن الدور. أتمتة الإداري تُحرّر الوقت للاستراتيجي."},
+
+  {book:"org", en:"McKinsey 7-S Framework", ar:"إطار ماكنزي السبعة", cat:"استراتيجية HR",
+   original:"Organizational effectiveness depends on the alignment of seven interdependent elements — strategy, structure, systems, shared values, skills, style, and staff.", originalAr:"تعتمد الفاعلية التنظيمية على توافق سبعة عناصر مترابطة — الاستراتيجية، والهيكل، والأنظمة، والقيم المشتركة، والمهارات، والأسلوب، والموظفون.",
+   diagram:"<svg viewBox='0 0 380 300' xmlns='http://www.w3.org/2000/svg'><line x1='190' y1='150' x2='190' y2='55' stroke='#e0dbd2' stroke-width='1.5'/><line x1='190' y1='150' x2='295' y2='100' stroke='#e0dbd2' stroke-width='1.5'/><line x1='190' y1='150' x2='295' y2='200' stroke='#e0dbd2' stroke-width='1.5'/><line x1='190' y1='150' x2='190' y2='245' stroke='#e0dbd2' stroke-width='1.5'/><line x1='190' y1='150' x2='85' y2='200' stroke='#e0dbd2' stroke-width='1.5'/><line x1='190' y1='150' x2='85' y2='100' stroke='#e0dbd2' stroke-width='1.5'/><circle cx='190' cy='150' r='42' fill='#c8a84b'/><text x='190' y='146' font-size='9' fill='#0d1b2e' text-anchor='middle' font-weight='800'>Shared</text><text x='190' y='158' font-size='9' fill='#0d1b2e' text-anchor='middle' font-weight='800'>Values</text><text x='190' y='172' font-size='7' fill='#0d1b2e' text-anchor='middle'>القيم</text><circle cx='190' cy='55' r='34' fill='#163456'/><text x='190' y='53' font-size='9' fill='#fff' text-anchor='middle' font-weight='700'>Strategy</text><text x='190' y='66' font-size='7' fill='#fff' text-anchor='middle'>استراتيجية</text><circle cx='295' cy='100' r='34' fill='#185FA5'/><text x='295' y='98' font-size='9' fill='#fff' text-anchor='middle' font-weight='700'>Structure</text><text x='295' y='111' font-size='7' fill='#fff' text-anchor='middle'>هيكل</text><circle cx='295' cy='200' r='34' fill='#1D9E75'/><text x='295' y='198' font-size='9' fill='#fff' text-anchor='middle' font-weight='700'>Systems</text><text x='295' y='211' font-size='7' fill='#fff' text-anchor='middle'>أنظمة</text><circle cx='190' cy='245' r='34' fill='#BA7517'/><text x='190' y='243' font-size='9' fill='#fff' text-anchor='middle' font-weight='700'>Style</text><text x='190' y='256' font-size='7' fill='#fff' text-anchor='middle'>أسلوب</text><circle cx='85' cy='200' r='34' fill='#A32D2D'/><text x='85' y='198' font-size='9' fill='#fff' text-anchor='middle' font-weight='700'>Staff</text><text x='85' y='211' font-size='7' fill='#fff' text-anchor='middle'>موظفون</text><circle cx='85' cy='100' r='34' fill='#5b8a9e'/><text x='85' y='98' font-size='9' fill='#fff' text-anchor='middle' font-weight='700'>Skills</text><text x='85' y='111' font-size='7' fill='#fff' text-anchor='middle'>مهارات</text><text x='190' y='292' font-size='8' fill='#6b7280' text-anchor='middle'>القيم المشتركة في المركز تربط كل العناصر</text></svg>",
+   def:"سبعة عناصر يجب أن تتوافق معاً لنجاح المنظمة — القيم المشتركة في المركز.",
+   comp:["الصلبة: Strategy، Structure، Systems","الناعمة: Shared Values (المركز)، Skills، Style، Staff"],
+   example:"شركة غيّرت استراتيجيتها للابتكار لكن نظام التقييم يكافئ الروتين والمديرون يتجنبون المخاطرة → عدم توافق 7-S → فشل الاستراتيجية.",
+   tip:"أي سؤال يصف فشل مبادرة → ابحثي عن عنصر 7-S غير متوافق. التغيير في عنصر يستلزم فحص الستة الأخرى."},
+
+  {book:"org", en:"Mintzberg's Configurations", ar:"تكوينات مينتزبرغ", cat:"تصميم المنظمة",
+   original:"Organizations take one of five structural configurations depending on their size, environment, and stage: simple structure, machine bureaucracy, professional bureaucracy, divisional form, and adhocracy.", originalAr:"تتخذ المنظمات أحد خمسة تكوينات هيكلية حسب حجمها وبيئتها ومرحلتها: الهيكل البسيط، والبيروقراطية الآلية، والبيروقراطية المهنية، والشكل القطاعي، والأدهوقراطية.",
+   def:"خمسة هياكل تنظيمية حسب مرحلة النمو والبيئة.",
+   comp:["Simple Structure: صغيرة، رائد أعمال يتحكم","Machine Bureaucracy: كبيرة، إجراءات موحّدة (بنوك)","Professional Bureaucracy: خبراء مستقلون (جامعات، مستشفيات)","Divisional Form: وحدات مستقلة","Adhocracy: فرق مشاريع مرنة (إبداعية)"],
+   example:"نظام HR يناسب Machine Bureaucracy قد يُخنق Adhocracy. سياسات HR يجب أن تتوافق مع هيكل المنظمة.",
+   tip:"لا يوجد هيكل HR مثالي واحد — يعتمد على نوع المنظمة وبيئتها."},
+
+  {book:"org", en:"Tuckman's Team Stages", ar:"مراحل تاكمان للفريق", cat:"تطوير الفريق",
+   original:"Teams develop through five stages: forming, storming, norming, performing, and adjourning.", originalAr:"تتطور الفرق عبر خمس مراحل: التشكّل، والعصف، والتنظيم، والأداء، والانفضاض.",
+   diagram:"<svg viewBox='0 0 400 110' xmlns='http://www.w3.org/2000/svg'><rect x='6' y='32' width='70' height='46' rx='8' fill='#163456'/><text x='41' y='52' font-size='9' fill='#fff' text-anchor='middle' font-weight='700'>Forming</text><text x='41' y='67' font-size='8' fill='#fff' text-anchor='middle'>تشكّل</text><path d='M76,55 L85,55' stroke='#c8a84b' stroke-width='2' marker-end='url(#a4)'/><rect x='85' y='32' width='70' height='46' rx='8' fill='#A32D2D'/><text x='120' y='52' font-size='9' fill='#fff' text-anchor='middle' font-weight='700'>Storming</text><text x='120' y='67' font-size='8' fill='#fff' text-anchor='middle'>عصف</text><path d='M155,55 L164,55' stroke='#c8a84b' stroke-width='2' marker-end='url(#a4)'/><rect x='164' y='32' width='70' height='46' rx='8' fill='#BA7517'/><text x='199' y='52' font-size='9' fill='#fff' text-anchor='middle' font-weight='700'>Norming</text><text x='199' y='67' font-size='8' fill='#fff' text-anchor='middle'>تنظيم</text><path d='M234,55 L243,55' stroke='#c8a84b' stroke-width='2' marker-end='url(#a4)'/><rect x='243' y='32' width='70' height='46' rx='8' fill='#1D9E75'/><text x='278' y='52' font-size='9' fill='#fff' text-anchor='middle' font-weight='700'>Performing</text><text x='278' y='67' font-size='8' fill='#fff' text-anchor='middle'>أداء</text><path d='M313,55 L322,55' stroke='#c8a84b' stroke-width='2' marker-end='url(#a4)'/><rect x='322' y='32' width='70' height='46' rx='8' fill='#6b7280'/><text x='357' y='52' font-size='9' fill='#fff' text-anchor='middle' font-weight='700'>Adjourning</text><text x='357' y='67' font-size='8' fill='#fff' text-anchor='middle'>انفضاض</text><defs><marker id='a4' markerWidth='8' markerHeight='8' refX='4.5' refY='4' orient='auto'><path d='M0,0 L8,4 L0,8 Z' fill='#c8a84b'/></marker></defs></svg>",
+   def:"خمس مراحل يمرّ بها الفريق في تطوّره.",
+   formula:"Forming → Storming → Norming → Performing → Adjourning",
+   comp:["Forming (تشكّل): تعارف وحذر","Storming (عصف): صراعات وتنافس","Norming (تنظيم): اتفاق على المعايير","Performing (أداء): إنتاجية عالية","Adjourning (انفضاض): انتهاء المهمة"],
+   example:"فريق جديد يمرّ بصراعات (Storming) → طبيعي ومتوقع. خطأ القائد: التدخل المفرط أو اعتباره فشلاً.",
+   tip:"مرحلة Storming طبيعية وضرورية. القائد ييسّرها ولا يقمعها. الانتقال للأداء يتطلب المرور بها."},
+
+  // ===== WORKPLACE =====
+  {book:"wp", en:"Perlmutter's EPRG Model", ar:"نموذج بيرلموتر EPRG", cat:"الأعمال الدولية",
+   original:"Multinational firms adopt one of four orientations toward staffing and management: ethnocentric, polycentric, regiocentric, and geocentric.", originalAr:"تتبنّى الشركات متعددة الجنسيات أحد أربعة توجهات نحو التوظيف والإدارة: الإثنومركزي، والبوليمركزي، والإقليمي، والجيومركزي.",
+   def:"أربعة توجهات للشركات متعددة الجنسيات في التوظيف والإدارة.",
+   formula:"Ethnocentric → Polycentric → Regiocentric → Geocentric",
+   comp:["Ethnocentric: المقر يتحكم، مديرو الوطن في كل الفروع","Polycentric: الفروع مستقلة، مديرون محليون","Regiocentric: إدارة إقليمية","Geocentric: أفضل المواهب عالمياً بصرف النظر عن الجنسية"],
+   example:"شركة تُعيّن فقط مواطني بلد المقر في المناصب الإدارية العالمية → Ethnocentric → تُضيّع المواهب المحلية وتُخفق ثقافياً.",
+   tip:"Geocentric هو الأنضج. Ethnocentric يُسبب هدر المواهب ومشاكل تكيّف ثقافي."},
+
+  {book:"wp", en:"GI-LR Matrix", ar:"مصفوفة التكامل العالمي والاستجابة المحلية", cat:"الأعمال الدولية",
+   original:"International strategy is determined by two pressures — global integration and local responsiveness — yielding four strategies: international, multidomestic, global, and transnational.", originalAr:"تتحدد الاستراتيجية الدولية بضغطين — التكامل العالمي والاستجابة المحلية — ينتج عنهما أربع استراتيجيات: الدولية، والمتعددة المحلية، والعالمية، والعابرة للحدود.",
+   diagram:"<svg viewBox='0 0 400 280' xmlns='http://www.w3.org/2000/svg'><text x='200' y='268' font-size='9' fill='#6b7280' text-anchor='middle' font-weight='700'>← الاستجابة المحلية (LR) →</text><text x='14' y='135' font-size='9' fill='#6b7280' text-anchor='middle' font-weight='700' transform='rotate(-90 14,135)'>← التكامل العالمي (GI) →</text><rect x='40' y='15' width='150' height='110' rx='10' fill='#1D9E75'/><text x='115' y='58' font-size='11' fill='#fff' text-anchor='middle' font-weight='700'>Global</text><text x='115' y='76' font-size='8.5' fill='#fff' text-anchor='middle'>عالمية</text><text x='115' y='95' font-size='7' fill='#d4f0e6' text-anchor='middle'>GI عالٍ · LR منخفض</text><rect x='210' y='15' width='150' height='110' rx='10' fill='#185FA5'/><text x='285' y='52' font-size='11' fill='#fff' text-anchor='middle' font-weight='700'>Transnational</text><text x='285' y='70' font-size='8.5' fill='#fff' text-anchor='middle'>عابرة للحدود</text><text x='285' y='89' font-size='7' fill='#cfe0f2' text-anchor='middle'>GI عالٍ · LR عالٍ</text><text x='285' y='105' font-size='6.5' fill='#c8a84b' text-anchor='middle'>الأعقد</text><rect x='40' y='135' width='150' height='110' rx='10' fill='#6b7280'/><text x='115' y='178' font-size='11' fill='#fff' text-anchor='middle' font-weight='700'>International</text><text x='115' y='196' font-size='8.5' fill='#fff' text-anchor='middle'>دولية</text><text x='115' y='215' font-size='7' fill='#e0e0e0' text-anchor='middle'>GI منخفض · LR منخفض</text><rect x='210' y='135' width='150' height='110' rx='10' fill='#BA7517'/><text x='285' y='178' font-size='11' fill='#fff' text-anchor='middle' font-weight='700'>Multidomestic</text><text x='285' y='196' font-size='8.5' fill='#fff' text-anchor='middle'>متعددة محلية</text><text x='285' y='215' font-size='7' fill='#f2e0c4' text-anchor='middle'>GI منخفض · LR عالٍ</text></svg>",
+   def:"أربع استراتيجيات حسب التكامل العالمي (GI) والاستجابة المحلية (LR).",
+   comp:["International: GI منخفض + LR منخفض","Multidomestic: GI منخفض + LR عالٍ (تكيّف كامل)","Global: GI عالٍ + LR منخفض (توحيد)","Transnational: GI عالٍ + LR عالٍ (الأعقد — كفاءة + تكيّف)"],
+   example:"McDonald's: إجراءات جودة موحّدة عالمياً (GI عالٍ) + قائمة تختلف حسب البلد (LR عالٍ) → Transnational.",
+   tip:"Transnational الأصعب: يجمع الكفاءة العالمية والتكيّف المحلي معاً. حدّدي مستوى GI وLR لتحديد الاستراتيجية."},
+
+  {book:"wp", en:"Porter's CSV (Shared Value)", ar:"القيمة المشتركة لبورتر", cat:"المسؤولية الاجتماعية",
+   original:"Companies create competitive advantage by addressing social problems in ways that also generate economic value — distinguishing shared value from traditional philanthropy.", originalAr:"تخلق الشركات ميزة تنافسية بمعالجة المشكلات الاجتماعية بطرق تُولّد قيمة اقتصادية أيضاً — مما يُميّز القيمة المشتركة عن العمل الخيري التقليدي.",
+   def:"خلق قيمة اقتصادية واجتماعية معاً — يختلف عن CSR التقليدي.",
+   comp:["CSR التقليدي: تبرعات ومسؤولية منفصلة عن العمل","CSV: دمج القيمة الاجتماعية في صميم نموذج الأعمال"],
+   example:"شركة دواء تُطوّر أدوية معقولة الثمن للأسواق النامية → سوق جديد (قيمة اقتصادية) + صحة أفضل (قيمة اجتماعية) = CSV. مقابل التبرع لمستشفيات = CSR فقط.",
+   tip:"CSV يخلق قيمة مزدوجة (اقتصادية + اجتماعية). في الامتحان: الخيار الذي يربط الفائدة الاجتماعية بفائدة الأعمال هو CSV."},
+
+  {book:"wp", en:"Triple Bottom Line (TBL)", ar:"الخط الثلاثي للنتائج", cat:"المسؤولية الاجتماعية",
+   original:"Organizational performance should be measured across three dimensions, not profit alone: people (social), planet (environmental), and profit (financial).", originalAr:"يجب قياس الأداء التنظيمي عبر ثلاثة أبعاد لا الربح وحده: الناس (الاجتماعي)، والكوكب (البيئي)، والربح (المالي).",
+   diagram:"<svg viewBox='0 0 360 250' xmlns='http://www.w3.org/2000/svg'><circle cx='180' cy='95' r='75' fill='#1D9E75' fill-opacity='0.75'/><circle cx='125' cy='165' r='75' fill='#185FA5' fill-opacity='0.75'/><circle cx='235' cy='165' r='75' fill='#BA7517' fill-opacity='0.75'/><text x='180' y='70' font-size='12' fill='#fff' text-anchor='middle' font-weight='800'>People</text><text x='180' y='86' font-size='9' fill='#fff' text-anchor='middle'>الناس</text><text x='95' y='185' font-size='12' fill='#fff' text-anchor='middle' font-weight='800'>Planet</text><text x='95' y='201' font-size='9' fill='#fff' text-anchor='middle'>الكوكب</text><text x='265' y='185' font-size='12' fill='#fff' text-anchor='middle' font-weight='800'>Profit</text><text x='265' y='201' font-size='9' fill='#fff' text-anchor='middle'>الربح</text><text x='180' y='240' font-size='8.5' fill='#6b7280' text-anchor='middle'>الاستدامة الحقيقية في تقاطع المحاور الثلاثة</text></svg>",
+   def:"قياس أداء المنظمة على ثلاثة محاور لا الربح وحده.",
+   formula:"People + Planet + Profit",
+   comp:["People (الناس): العدالة الاجتماعية","Planet (الكوكب): الاستدامة البيئية","Profit (الربح): الربحية المالية"],
+   tip:"المنظمات تُقاس بالمحاور الثلاثة. أي سؤال عن قياس شامل للأداء بما يتجاوز المال → TBL."},
+
+/* ===== أ) نظريات سلوكية ناقصة — كتاب Competencies ===== */
+
+  {book:"comp", en:"Trait Theory of Leadership", ar:"نظرية السمات في القيادة", cat:"القيادة",
+   original:"Leaders are distinguished by a set of inborn personal traits — such as intelligence, self-confidence, determination, and sociability — that set them apart from non-leaders.", originalAr:"يتميّز القادة بمجموعة من السمات الشخصية الفطرية — كالذكاء والثقة بالنفس والعزيمة والاجتماعية — تفصلهم عن غيرهم.",
+   def:"أقدم مقاربات القيادة: القائد يُولد لا يُصنع، وتُحدِّده سماته الموروثة.",
+   comp:["تركّز على «من هو القائد» لا «ماذا يفعل»","سمات متكررة: الذكاء، الثقة، الحزم، النزاهة، الاجتماعية","انتُقدت لأنها لا تفسّر القيادة المكتسبة ولا أثر الموقف"],
+   example:"عند ترقية موظف لقيادي بحجة «شخصيته القيادية الفطرية» فقط → استدلال قائم على نظرية السمات، ويتجاهل المهارات القابلة للتطوير.",
+   tip:"في الامتحان: السمات وحدها لا تكفي. SHRM تفضّل المقاربات السلوكية والظرفية التي ترى القيادة مهارةً قابلةً للتعلّم."},
+
+  {book:"comp", en:"Fiedler's Contingency Model", ar:"نموذج الطوارئ لفيدلر", cat:"القيادة",
+   original:"Leadership effectiveness depends on the match between a leader's style (task- or relationship-oriented, measured by the Least-Preferred Coworker scale) and how favorable the situation is.", originalAr:"تتوقّف فعالية القائد على مدى توافق أسلوبه (موجَّه نحو المهمة أو نحو العلاقة، ويُقاس بمقياس «أقل زميل تفضيلاً» LPC) مع درجة مواتاة الموقف.",
+   def:"لا يوجد أسلوب قيادي أمثل؛ الأمثل هو الأنسب للموقف. والأسلوب ثابت نسبياً، فيُغيَّر الموقف لا القائد.",
+   formula:"الفعالية = توافق (الأسلوب × مواتاة الموقف)",
+   comp:["مقياس LPC يحدّد التوجّه: نحو المهمة أم نحو العلاقة","مواتاة الموقف = علاقات القائد بالأعضاء + بنية المهمة + سلطة المنصب","الموجَّه نحو المهمة يتفوّق في المواقف شديدة المواتاة أو شديدة عدمها"],
+   example:"قائد موجَّه نحو المهمة في أزمة عاجلة وفريق متعاون ومهمة واضحة → موقف عالي المواتاة → أداء مرتفع.",
+   tip:"الفرق الجوهري عن «القيادة الظرفية»: فيدلر يرى الأسلوب ثابتاً (نغيّر الموقف)، بينما هيرسي-بلانشارد يرى القائد يغيّر أسلوبه."},
+
+  {book:"comp", en:"Path-Goal Theory (House)", ar:"نظرية المسار-الهدف لهاوس", cat:"القيادة",
+   original:"A leader's job is to clear the path to followers' goals by removing obstacles and providing the direction and support each situation requires.", originalAr:"وظيفة القائد تمهيد المسار نحو أهداف التابعين بإزالة العقبات وتوفير التوجيه والدعم الذي يقتضيه كل موقف.",
+   def:"يكيّف القائد سلوكه حسب الموظف والمهمة ليرفع دافعيته ووضوح مساره نحو الهدف.",
+   comp:["توجيهي: يوضّح التوقعات (للمهام الغامضة)","داعم: يهتمّ براحة الفريق (للمهام المُجهِدة)","مشارك: يستشير قبل القرار (للموظف الخبير)","موجَّه بالإنجاز: يضع أهدافاً طموحة (لذوي الدافعية العالية)"],
+   example:"فريق جديد يواجه مهمة غامضة → الأسلوب التوجيهي. الفريق ذاته بعد إتقانها → التحوّل للأسلوب المشارك.",
+   tip:"المفتاح: الأسلوب يُختار حسب حاجة الموظف والموقف، لا حسب تفضيل القائد."},
+
+  {book:"comp", en:"Blake-Mouton Managerial Grid", ar:"الشبكة الإدارية لبليك وموتون", cat:"القيادة",
+   original:"Leadership style is plotted on two axes — concern for production and concern for people — yielding five styles, with the high-high (team) style seen as most effective.", originalAr:"يُوضَع الأسلوب القيادي على محورين — الاهتمام بالإنتاج × الاهتمام بالناس — لينتج عنه خمسة أساليب، أمثلها أسلوب «الفريق» (عالي/عالي).",
+   formula:"الأسلوب = (الاهتمام بالإنتاج 1–9) × (الاهتمام بالناس 1–9)",
+   def:"شبكة 9×9 تصنّف القادة وفق توازنهم بين النتائج والعلاقات الإنسانية.",
+   comp:["1,1 المتهالك (Impoverished): اهتمام ضعيف بالاثنين","9,1 السلطة-الطاعة (Task): إنتاج عالٍ، ناس مهمَلون","1,9 نادي الريف (Country Club): ناس أولاً، إنتاج منخفض","5,5 منتصف الطريق: توازن متوسط مقبول","9,9 قيادة الفريق: الأمثل — إنتاج عالٍ والتزام عالٍ"],
+   example:"مدير يحقّق أرقاماً ممتازة لكن بمعدّل دوران مرتفع → نمط 9,1 (سلطة-طاعة) يحتاج رفع محور «الناس».",
+   tip:"تذكّري الإحداثيات بالترتيب (الإنتاج أولاً ثم الناس): 9,1 = مهمة؛ 1,9 = ناس."},
+
+  {book:"comp", en:"Servant Leadership", ar:"القيادة الخادمة", cat:"القيادة",
+   original:"The servant leader prioritizes the growth, well-being, and empowerment of followers, leading through service rather than positional authority.", originalAr:"يضع القائد الخادم نموَّ التابعين ورفاهيتهم وتمكينهم في المقدّمة، فيقود بالخدمة لا بسلطة المنصب.",
+   def:"فلسفة قيادية تقلب الهرم: القائد في خدمة فريقه أولاً.",
+   comp:["الإصغاء والتعاطف وبناء المجتمع","تمكين الفريق وتنمية قدراته","الإشراف الأمين على موارد المنظمة (Stewardship)"],
+   example:"مدير يقضي وقته في إزالة عوائق فريقه وتأمين موارده بدل إصدار الأوامر → قيادة خادمة.",
+   tip:"تظهر كثيراً في أسئلة المواقف التي تكافئ تمكين الفريق وتطويره على القيادة الآمرة."},
+
+  {book:"comp", en:"Thomas-Kilmann Conflict Modes", ar:"أنماط ثوماس-كيلمان لإدارة النزاع", cat:"حل النزاع",
+   original:"Conflict-handling behavior is described along two dimensions — assertiveness and cooperativeness — producing five modes for managing conflict.", originalAr:"يُوصَف التعامل مع النزاع على بُعدين — الحزم × التعاون — لينتج خمسة أنماط لإدارته.",
+   formula:"النمط = (الحزم) × (التعاون)",
+   def:"خمسة أنماط لإدارة الخلاف، يُختار الأنسب حسب أهمية الموضوع والعلاقة.",
+   comp:["تنافس (حازم/غير متعاون): رابح-خاسر، للقرارات الحاسمة العاجلة","تعاون (حازم/متعاون): رابح-رابح، للقضايا المهمّة المعقّدة","تسوية (وسط): حلّ سريع مقبول جزئياً للطرفين","تجنّب (غير حازم/غير متعاون): للقضايا التافهة أو لتهدئة الأجواء","تكيّف (غير حازم/متعاون): تنازل لحفظ العلاقة"],
+   example:"خلاف على بند ميزانية بسيط ووقت ضيّق → التسوية. خلاف استراتيجي طويل الأثر بين قسمين → التعاون.",
+   tip:"«التعاون» مثالي لكنه مكلِف وقتاً؛ لا يُقترح لكل نزاع. طابقي النمط مع أهمية القضية × أهمية العلاقة."},
+
+  {book:"comp", en:"Communication Process Model", ar:"نموذج عملية الاتصال", cat:"الاتصال",
+   original:"Communication flows from a sender who encodes a message through a channel to a receiver who decodes it and returns feedback, with noise potentially distorting any stage.", originalAr:"يتدفّق الاتصال من مُرسِل يُرمِّز رسالةً عبر قناة إلى مُستقبِل يفكّ ترميزها ويُرسل تغذيةً راجعة، مع «تشويش» قد يشوّه أي مرحلة.",
+   formula:"مُرسِل → ترميز → رسالة/قناة → فكّ ترميز → مُستقبِل → تغذية راجعة (مع تشويش)",
+   def:"الإطار الأساسي الذي يفسّر كيف ولماذا يُساء فهم الرسائل.",
+   comp:["الترميز/فكّ الترميز: اللغة والثقافة قد تختلف بين الطرفين","القناة: اختيارها يؤثّر في الوضوح (بريد؟ اجتماع؟)","التشويش: مادي (ضجيج) أو نفسي (تحيّز) أو دلالي (مصطلحات)","التغذية الراجعة: دليل وصول الرسالة وفهمها"],
+   example:"تعميم بريدي يُفهَم خطأً بسبب مصطلح تقني (تشويش دلالي) → الحلّ قناة أوضح + طلب تغذية راجعة.",
+   tip:"كثير من أسئلة المواقف الاتصالية يكون جوابها الأفضل: تأكّدي من الفهم عبر التغذية الراجعة، لا مجرد إعادة الإرسال."},
+
+  {book:"comp", en:"Hall's High- vs Low-Context Cultures", ar:"ثقافات Hall عالية ومنخفضة السياق", cat:"الثقافة العالمية",
+   original:"In high-context cultures meaning is carried implicitly through relationships, setting, and nonverbal cues; in low-context cultures meaning is stated explicitly and directly in words.", originalAr:"في الثقافات عالية السياق تُنقَل المعاني ضمنياً عبر العلاقات والسياق والإشارات غير اللفظية؛ وفي منخفضة السياق تُذكَر المعاني صراحةً ومباشرةً بالكلمات.",
+   def:"بُعد ثقافي يفسّر اختلاف أساليب التواصل بين الشعوب.",
+   comp:["عالية السياق (اليابان، الخليج، أمريكا اللاتينية): تلميح، علاقات، صمت معبِّر","منخفضة السياق (ألمانيا، الولايات المتحدة، الدول الإسكندنافية): صراحة، توثيق مكتوب","سوء الفهم يقع حين يلتقي الطرفان دون وعي بالفرق"],
+   example:"مدير منخفض السياق يطلب «لا» صريحة من موظف عالي السياق يكتفي بـ«سأحاول» (تعني الرفض) → إساءة فهم متبادلة.",
+   tip:"في إدارة الفرق العالمية: لا تساوي الصمت بالموافقة، ولا الصراحة بالوقاحة — كيّفي أسلوبك مع سياق الطرف الآخر."},
+
+  {book:"org", en:"Reinforcement Theory (Skinner)", ar:"نظرية التعزيز لسكينر", cat:"التحفيز",
+   original:"Behavior is a function of its consequences: positive and negative reinforcement increase a behavior, while punishment and extinction decrease it.", originalAr:"السلوك دالةٌ لنتائجه: التعزيز الإيجابي والسلبي يزيدان تكراره، بينما العقاب والإطفاء يقلّلانه.",
+   def:"نظرية تحفيز سلوكية تركّز على النتائج التي تتبع السلوك لتشكيله.",
+   comp:["تعزيز إيجابي: إضافة مكافأة (مكافأة على الأداء)","تعزيز سلبي: إزالة شيء مزعج (رفع رقابة مشدّدة عند التحسّن)","عقاب: إضافة نتيجة مزعجة لكبح السلوك","إطفاء: إيقاف التعزيز حتى يخفت السلوك"],
+   example:"الإشادة الفورية بموظف أنجز مبكّراً (تعزيز إيجابي) ترفع احتمال تكرار الإنجاز.",
+   tip:"انتبهي: «التعزيز السلبي» ليس عقاباً — هو إزالة شيء مزعج لتقوية سلوك مرغوب. خطأ شائع في الامتحان."},
+
+  {book:"wp", en:"Groupthink (Janis)", ar:"التفكير الجمعي لجانيس", cat:"اتخاذ القرار",
+   original:"In cohesive groups the drive for consensus can suppress dissent and critical evaluation, leading to poor or irrational decisions.", originalAr:"في الجماعات المتماسكة قد يقمع السعي للتوافق الآراءَ المخالفة والتقييم النقدي، فيؤدي إلى قرارات رديئة أو غير عقلانية.",
+   def:"خلل جماعي: تماسك الجماعة يبتلع التفكير المستقل سعياً للانسجام.",
+   comp:["أعراضه: وهم اللامنالية، ضغط على المخالفين، رقابة ذاتية، إجماع زائف","يزيد مع التماسك العالي والقيادة الموجِّهة وعزلة الجماعة","علاجه: تعيين «محامي شيطان»، تشجيع المعارضة، طلب آراء خارجية"],
+   example:"لجنة توافق بسرعة على قرار محفوف بالمخاطر دون أن يجرؤ أحد على الاعتراض → تفكير جمعي.",
+   tip:"الحلّ المفضَّل في المواقف: تأسيس آلية للنقد البنّاء (محامي شيطان / مراجعة مستقلة) قبل القرار."},
+
+  {book:"comp", en:"Negotiation: BATNA & Distributive vs Integrative", ar:"التفاوض: BATNA والتوزيعي مقابل التكاملي", cat:"حل النزاع",
+   original:"Distributive bargaining divides a fixed pie (win-lose); integrative bargaining expands mutual value (win-win); BATNA is each party's Best Alternative To a Negotiated Agreement and sets the walk-away point.", originalAr:"التفاوض التوزيعي يقتسم كعكةً ثابتة (رابح-خاسر)؛ والتكاملي يوسّع المنفعة المشتركة (رابح-رابح)؛ وBATNA هو أفضل بديل لكل طرف عن الاتفاق المتفاوَض عليه، ويحدّد نقطة الانسحاب.",
+   def:"مفاهيم التفاوض الأساسية: نوع المساومة + قوّتك التفاوضية.",
+   comp:["توزيعي: مورد محدود، مكسب طرف = خسارة الآخر (مثل سعر ثابت)","تكاملي: توسيع الخيارات لمصلحة مشتركة (مثل دمج مزايا)","BATNA الأقوى = موقف تفاوضي أقوى وثقة أكبر في رفض العرض السيئ"],
+   example:"قبل التفاوض على راتب، معرفة عرض وظيفي بديل (BATNA قوي) يمنحك حرية رفض عرض منخفض.",
+   tip:"حدّدي BATNA دائماً قبل الجلوس للتفاوض؛ ومعظم نزاعات العمل تُحلّ أفضل بالأسلوب التكاملي."},
+
+/* ===== ب) معادلات ومقاييس HR — كتابا People و Workplace ===== */
+
+  {book:"people", en:"Turnover Rate", ar:"معدّل دوران الموظفين", cat:"مقاييس القوى العاملة",
+   def:"النسبة المئوية للموظفين الذين غادروا خلال فترة محدّدة.",
+   formula:"Turnover % = (عدد المغادرين ÷ متوسط عدد الموظفين) × 100",
+   comp:["متوسط عدد الموظفين = (بداية الفترة + نهايتها) ÷ 2","يُفصَل عادةً إلى دوران طوعي وغير طوعي","ارتفاعه مؤشر على مشكلات الاندماج أو القيادة أو الأجور"],
+   example:"غادر 12 موظفاً ومتوسط العدد 150 → (12 ÷ 150) × 100 = 8% معدّل دوران.",
+   tip:"الدوران الطوعي للموظفين عالي الأداء (Regrettable Turnover) هو المقياس الأخطر — ركّزي عليه لا على الرقم الإجمالي."},
+
+  {book:"people", en:"Retention Rate", ar:"معدّل الاحتفاظ", cat:"مقاييس القوى العاملة",
+   def:"نسبة الموظفين الذين بقوا طوال الفترة.",
+   formula:"Retention % = (عدد الباقين طوال الفترة ÷ العدد في بدايتها) × 100",
+   comp:["مكمّل لمعدّل الدوران لكنه ليس مكمّلاً حسابياً تاماً (التعيينات الجديدة)","يُحسب لفئات حرجة: السنة الأولى، عالو الأداء، المواهب النادرة"],
+   example:"من 200 موظف في بداية العام بقي 184 → (184 ÷ 200) × 100 = 92% احتفاظ.",
+   tip:"احتفاظ السنة الأولى مؤشر مباشر على جودة الاستقطاب والاندماج (Onboarding)."},
+
+  {book:"people", en:"Cost per Hire", ar:"تكلفة التعيين", cat:"مقاييس الاستقطاب",
+   def:"متوسط التكلفة الكلية لتعيين موظف واحد.",
+   formula:"Cost per Hire = (التكاليف الداخلية + الخارجية) ÷ عدد التعيينات",
+   comp:["خارجية: إعلانات، وكالات، رسوم فحص، فعاليات توظيف","داخلية: وقت المعيِّنين، الإحالات، تكلفة فريق الاستقطاب","معيار SHRM/ANSI الرسمي لحسابها"],
+   example:"تكاليف 60,000 ريال و15 تعييناً → 60,000 ÷ 15 = 4,000 ريال لكل تعيين.",
+   tip:"وازنيها دائماً مع جودة التعيين؛ تكلفة منخفضة مع دوران مرتفع ليست توفيراً."},
+
+  {book:"people", en:"Time to Fill / Time to Hire", ar:"زمن إشغال الشاغر / زمن التعيين", cat:"مقاييس الاستقطاب",
+   def:"سرعة عملية التوظيف من زاويتين مختلفتين.",
+   formula:"Time to Fill = أيام من فتح الشاغر إلى قبول العرض · Time to Hire = أيام من تقدّم المرشّح إلى قبوله",
+   comp:["Time to Fill يقيس كفاءة العملية ككل (تخطيط القوى العاملة)","Time to Hire يقيس تجربة المرشّح وسرعة القرار","طول المدّة يرفع تكلفة الشواغر وخطر فقد المرشّحين"],
+   example:"فُتح الشاغر 1 يناير وقُبل العرض 31 يناير → Time to Fill = 30 يوماً.",
+   tip:"لا تخلطي بينهما: Time to Fill يبدأ من فتح الوظيفة، وTime to Hire من دخول المرشّح."},
+
+  {book:"people", en:"Yield Ratio", ar:"نسبة العائد (التحويل)", cat:"مقاييس الاستقطاب",
+   def:"نسبة المرشّحين الذين يعبرون من مرحلة توظيف إلى التالية.",
+   formula:"Yield Ratio % = (عدد العابرين للمرحلة ÷ عدد الداخلين إليها) × 100",
+   comp:["يُحسب لكل مرحلة (فرز → مقابلة → عرض → قبول)","يكشف مرحلة «التسرّب» الأعلى في القمع (Funnel)","يُستخدم للتنبؤ بعدد المتقدّمين اللازم لتعيين واحد"],
+   example:"100 سيرة → 25 مقابلة: نسبة العائد 25%. لتعيين 4 → تحتاجين قمعاً أوسع في الأعلى.",
+   tip:"نِسَب العائد أساس تخطيط الاستقطاب الكمّي — اعكسيها لتقدير حجم القمع المطلوب."},
+
+  {book:"wp", en:"Adverse Impact — Four-Fifths (80%) Rule", ar:"الأثر التمييزي — قاعدة الأربعة أخماس (80%)", cat:"مقاييس السلامة والامتثال",
+   original:"Adverse impact is indicated when the selection rate of a protected group is less than 80% of the rate of the highest-selected group.", originalAr:"يُشتبَه بوجود أثر تمييزي حين يقلّ معدّل اختيار المجموعة المحمية عن 80% من معدّل اختيار المجموعة الأعلى.",
+   def:"اختبار قانوني للكشف عن التمييز غير المقصود في قرارات الاختيار.",
+   formula:"النسبة = (معدّل اختيار المجموعة المحمية ÷ معدّل اختيار المجموعة الأعلى) × 100 — إذا < 80% ⇒ أثر تمييزي",
+   comp:["معدّل اختيار كل مجموعة = (المختارون ÷ المتقدّمون)","تُحسَب لكل مجموعة محمية مقابل المجموعة الأعلى اختياراً","النتيجة دون 80% مؤشر (لا إثبات قاطع) يستوجب المراجعة"],
+   example:"اختيار 50% من الذكور و30% من الإناث → 30÷50 = 60% < 80% ⇒ مؤشر أثر تمييزي على الإناث.",
+   tip:"من أكثر المعادلات تكراراً في الامتحان. تذكّري: نسبة المجموعة الأدنى ÷ الأعلى، والعتبة 80%."},
+
+  {book:"wp", en:"OSHA Incident Rate (TRIR & DART)", ar:"معدّل إصابات OSHA (TRIR وDART)", cat:"مقاييس السلامة والامتثال",
+   def:"مقياس موحَّد لتكرار إصابات العمل يسمح بمقارنة المنشآت.",
+   formula:"TRIR = (عدد الحوادث المسجَّلة × 200,000) ÷ إجمالي ساعات العمل",
+   comp:["الرقم 200,000 = 100 عامل × 40 ساعة × 50 أسبوعاً (معيار سنوي)","TRIR يشمل كل الحوادث المسجَّلة","DART يشمل فقط حالات الغياب/تقييد العمل/النقل"],
+   example:"5 حوادث و250,000 ساعة عمل → (5 × 200,000) ÷ 250,000 = 4.0 معدّل TRIR.",
+   tip:"احفظي الرقم 200,000 — هو ثابت المعادلة دائماً، ويمثّل ساعات 100 عامل بدوام كامل سنوياً."},
+
+  {book:"people", en:"Compa-Ratio", ar:"نسبة المقارنة (Compa-Ratio)", cat:"مقاييس المكافآت",
+   def:"موقع راتب الموظف الفعلي من منتصف نطاق أجره.",
+   formula:"Compa-Ratio = راتب الموظف ÷ نقطة منتصف النطاق",
+   comp:["1.00 = الراتب عند منتصف النطاق تماماً","أقل من 1.00 = أدنى من المنتصف (موظف جديد/متطوّر)","أعلى من 1.00 = أعلى من المنتصف (خبير/أداء عالٍ)","تُحسَب أيضاً جماعياً لقسم كامل لرصد انزياح الأجور"],
+   example:"راتب 9,000 ومنتصف النطاق 10,000 → 9,000 ÷ 10,000 = 0.90 compa-ratio.",
+   tip:"compa-ratio جماعي مرتفع باستمرار قد يعني تضخّم تكلفة الأجور؛ ومنخفض جداً يهدّد القدرة على الاحتفاظ."},
+
+  {book:"people", en:"Range Spread", ar:"اتساع نطاق الأجر", cat:"مقاييس المكافآت",
+   def:"عرض نطاق الأجر بين حدّه الأدنى والأعلى.",
+   formula:"Range Spread % = ((الحد الأعلى − الحد الأدنى) ÷ الحد الأدنى) × 100",
+   comp:["نطاقات الوظائف الدنيا أضيق (20–40%)","النطاقات الإدارية والتنفيذية أوسع (50%+)","يحدّد مساحة النموّ في الأجر داخل نفس الدرجة"],
+   example:"حد أدنى 8,000 وأعلى 12,000 → ((12,000 − 8,000) ÷ 8,000) × 100 = 50% اتساع.",
+   tip:"الاتساع الأوسع يمنح مرونة احتفاظ أطول دون ترقية؛ والأضيق يدفع للترقية أسرع."},
+
+  {book:"people", en:"Absence Rate", ar:"معدّل الغياب", cat:"مقاييس القوى العاملة",
+   def:"نسبة وقت العمل المفقود بسبب الغياب.",
+   formula:"Absence % = (أيام الغياب ÷ (متوسط عدد الموظفين × أيام العمل)) × 100",
+   comp:["معادلة مكتب إحصاءات العمل الأمريكي (BLS)","يُستثنى عادةً الإجازات المخطّطة والعطل الرسمية","ارتفاعه قد يشير لمشكلات اندماج أو صحة أو إشراف"],
+   example:"320 يوم غياب، 200 موظف، 22 يوم عمل → (320 ÷ (200×22)) × 100 ≈ 7.3%.",
+   tip:"افصلي الغياب العَرَضي المتكرّر (مؤشر اندماج) عن الغياب المرضي الطويل (مؤشر صحة/سلامة)."},
+
+  {book:"people", en:"Human Capital ROI", ar:"عائد رأس المال البشري", cat:"تحليلات HR والعائد",
+   def:"قيمة العائد المتولِّدة عن كل وحدة تُنفَق على تعويضات الموظفين.",
+   formula:"HCROI = (الإيراد − (المصروفات التشغيلية − إجمالي تكلفة التعويضات)) ÷ إجمالي تكلفة التعويضات",
+   comp:["يقيس مساهمة الإنفاق على الناس في الربحية","ناتج 2.0 يعني عائد ريالين لكل ريال على التعويضات","يربط HR مباشرةً بلغة المالية والأعمال"],
+   example:"ناتج HCROI = 3.2 يعني أن كل ريال على التعويضات ولّد 3.2 ريال عائداً صافياً.",
+   tip:"أداة قوية لإقناع الإدارة العليا؛ يحوّل تكلفة الموظفين من «مصروف» إلى «استثمار» بلغة الأرقام."},
+
+  {book:"people", en:"Training ROI", ar:"عائد الاستثمار في التدريب", cat:"تحليلات HR والعائد",
+   def:"العائد المالي الصافي من برنامج تدريبي مقارنةً بتكلفته (المستوى الخامس لكيركباتريك/فيليبس).",
+   formula:"Training ROI % = ((صافي منافع التدريب − تكلفته) ÷ تكلفته) × 100",
+   comp:["يتطلّب تحويل نتائج التدريب إلى قيمة مالية","يبني على مستويات كيركباتريك الأربعة (يضيف فيليبس المستوى الخامس)","موجب = البرنامج يولّد قيمة تفوق كلفته"],
+   example:"منافع 150,000 وتكلفة 100,000 → ((150,000 − 100,000) ÷ 100,000) × 100 = 50% عائد.",
+   tip:"يُربط بمستوى Phillips الخامس فوق كيركباتريك. اربطي دائماً نتائج التدريب بمقياس عمل ملموس."},
+
+  {book:"people", en:"Revenue per Employee", ar:"الإيراد لكل موظف", cat:"تحليلات HR والعائد",
+   def:"مؤشر إنتاجية إجمالي يقسّم إيراد المنظمة على عدد موظفيها.",
+   formula:"Revenue per Employee = إجمالي الإيراد ÷ عدد الموظفين",
+   comp:["مقياس مقارنة (Benchmark) بين الشركات والقطاعات","ارتفاعه يشير لإنتاجية أعلى أو أتمتة أكبر","يُتابَع عبر الزمن لرصد أثر مبادرات الكفاءة"],
+   example:"إيراد 50 مليون و250 موظفاً → 50,000,000 ÷ 250 = 200,000 لكل موظف.",
+   tip:"قارنيه بمتوسط القطاع لا برقم مطلق؛ القطاعات كثيفة العمالة تختلف جذرياً عن التقنية."},
+  {book:"comp", en:"Porter's Five Forces", ar:"قوى بورتر التنافسية الخمس", cat:"الفطنة التجارية",
+   original:"Industry profitability is shaped by five competitive forces: rivalry among existing competitors, threat of new entrants, threat of substitutes, and the bargaining power of suppliers and of buyers.", originalAr:"تتحدّد ربحية القطاع بخمس قوى: حدّة المنافسة الحالية، وتهديد الداخلين الجدد، وتهديد البدائل، والقوة التفاوضية للموردين والمشترين.",
+   def:"إطار لتحليل جاذبية صناعة ما وشدّة المنافسة فيها.",
+   comp:["المنافسة بين اللاعبين الحاليين","تهديد الداخلين الجدد (حواجز الدخول)","تهديد المنتجات البديلة","قوة الموردين التفاوضية","قوة المشترين التفاوضية"],
+   example:"قطاع بحواجز دخول منخفضة وبدائل كثيرة → ربحية ضعيفة → يدفع HR لمكافآت واحتفاظ أكثر تنافسية.",
+   tip:"تحليل خارجي للقطاع، بينما SWOT يجمع الداخلي والخارجي، وPESTLE للبيئة الكلّية."},
+];
+
+// ============ RENDER ============
+const tagLabel={comp:"📘 Competencies",people:"👥 People",org:"🏢 Organization",wp:"⚖️ Workplace"};
+
+function renderTheories(filter='all'){
+  const list=document.getElementById('theoryList');
+  const items=THEORIES.filter(t=>filter==='all'||t.book===filter);
+
+  // group by category
+  const cats={};
+  items.forEach(t=>{(cats[t.cat]=cats[t.cat]||[]).push(t);});
+
+  let html='';
+  for(const cat in cats){
+    html+=`<div style="font-size:.82rem;font-weight:800;color:var(--muted);margin:18px 0 10px;padding-right:4px;">▾ ${cat}</div>`;
+    cats[cat].forEach((t,idx)=>{
+      const gid=t.en.replace(/\W/g,'');
+      html+=`
+      <div class="th" id="th-${gid}">
+        <div class="th-top" onclick="document.getElementById('th-${gid}').classList.toggle('open')">
+          <div class="th-name">
+            <div class="en">${t.en}</div>
+            <div class="ar">${t.ar}</div>
+          </div>
+          <span class="th-tag tag-${t.book}">${tagLabel[t.book]}</span>
+          <span class="th-arrow">▼</span>
+        </div>
+        <div class="th-body">
+          ${t.original?`<div class="th-original"><div class="lbl">📖 النص الأصلي للنظرية</div><div class="en">${t.original}</div><div class="ar-orig">${t.originalAr}</div></div>`:''}
+          <div class="def">${t.def}</div>
+          ${t.formula?`<div class="formula">${t.formula}</div>`:''}
+          ${t.diagram?`<div class="th-diagram"><div class="dg-title">📊 رسم توضيحي</div>${t.diagram}</div>`:''}
+          ${t.comp?`<div class="th-comp"><h4>المكوّنات</h4><ul>${t.comp.map(c=>`<li>${c}</li>`).join('')}</ul></div>`:''}
+          ${t.example?`<div class="example"><strong>مثال:</strong> ${t.example}</div>`:''}
+          ${t.tip?`<div class="exam-tip">⭐ <strong>في الامتحان:</strong> ${t.tip}</div>`:''}
+        </div>
+      </div>`;
+    });
+  }
+  list.innerHTML=html;
+}
+renderTheories();
+
+document.querySelectorAll('#thFilter .pill').forEach(p=>{
+  p.onclick=()=>{
+    document.querySelectorAll('#thFilter .pill').forEach(x=>x.classList.remove('on'));
+    p.classList.add('on');
+    renderTheories(p.dataset.f);
+  };
+});
+
+// ============ LAWS DATA ============
+const LAWS = [
+  {en:"Title VII (Civil Rights Act 1964)", ar:"الباب السابع من قانون الحقوق المدنية", size:"15+ موظف",
+   def:"يحظر التمييز في العمل على أساس العرق واللون والأصل القومي والجنس والدين.",
+   tip:"بعد قضية Bostock (2020) يشمل أيضاً التوجه الجنسي والهوية الجندرية. العمر ليس ضمنه (يُغطيه ADEA)."},
+  {en:"ADEA", ar:"قانون التمييز بسبب السن", size:"20+ موظف",
+   def:"يحمي العاملين من سن 40 فأكثر من التمييز بسبب العمر.",
+   tip:"تذكّري الرقمين: 40 سنة فأكثر (الفئة المحمية) · 20 موظف فأكثر (الشركات المشمولة)."},
+  {en:"ADA", ar:"قانون الأمريكيين ذوي الإعاقة", size:"15+ موظف",
+   def:"يحظر التمييز ضد ذوي الإعاقة ويُلزم بتوفير تسهيلات معقولة ما لم تُسبب ضائقة لا مبرر لها.",
+   tip:"الكلمة المفتاحية: 'العملية التفاعلية' (Interactive Process) لإيجاد التسهيل. الدفاع الوحيد: الضائقة التي لا مبرر لها."},
+  {en:"GINA", ar:"قانون عدم التمييز بالمعلومات الجينية", size:"15+ موظف",
+   def:"يحظر استخدام المعلومات الجينية في قرارات العمل وطلبها أو شراءها.",
+   tip:"يشمل المعلومات الجينية للموظف وعائلته."},
+  {en:"FMLA", ar:"قانون إجازة العائلة والمرض", size:"50+ موظف (ضمن 75 ميل)",
+   def:"يمنح إجازة غير مدفوعة محمية حتى 12 أسبوعاً لأسباب عائلية أو طبية.",
+   tip:"الأهلية = 4 شروط معاً: 50+ موظف ضمن 75 ميل · عمل 12 شهراً · 1,250 ساعة في آخر 12 شهراً. نقص أي شرط = غير مؤهل."},
+  {en:"FLSA", ar:"قانون معايير العمل العادلة", size:"معظم أصحاب العمل",
+   def:"ينظّم الحد الأدنى للأجر والعمل الإضافي وتصنيف الموظفين (معفى/غير معفى).",
+   tip:"للإعفاء من الأجر الإضافي: راتب ≥ $684/أسبوع AND اختبار المهام — كلاهما معاً. اللقب أو الراتب وحده لا يكفي."},
+  {en:"COBRA", ar:"قانون استمرارية التغطية الصحية", size:"20+ موظف",
+   def:"يتيح استمرار التأمين الصحي بعد فقدان الأهلية، على نفقة الموظف.",
+   tip:"المدد: 18 شهر (فصل/تقليل ساعات) · 29 (إعاقة) · 36 (طلاق/وفاة/Medicare). التكلفة 102% من القسط."},
+  {en:"WARN Act", ar:"قانون الإشعار بالتسريح الجماعي", size:"100+ موظف",
+   def:"يُلزم بإشعار مسبق قبل الإغلاق أو التسريح الجماعي الكبير.",
+   tip:"100+ موظف → إشعار 60 يوماً. تسريح جماعي = 500+ موظف، أو 50-499 إذا كانوا 33%+ من القوى العاملة."},
+  {en:"USERRA", ar:"قانون حقوق توظيف الخدمة العسكرية", size:"لا حد أدنى",
+   def:"يحمي حقوق إعادة توظيف أفراد الخدمة العسكرية.",
+   tip:"الوحيد بلا حد أدنى لعدد الموظفين — ينطبق على جميع أصحاب العمل."},
+  {en:"Equal Pay Act (1963)", ar:"قانون الأجر المتساوي", size:"معظم أصحاب العمل",
+   def:"يُلزم بأجر متساوٍ للعمل المتساوي جوهرياً في المهارة والجهد والمسؤولية وظروف العمل.",
+   tip:"يُركّز على الجنس تحديداً. العمل 'متساوٍ جوهرياً' وليس متطابقاً."},
+  {en:"Lilly Ledbetter Act (2009)", ar:"قانون ليلي ليدبيتر للأجر العادل", size:"—",
+   def:"يُعيد ضبط فترة تقديم دعاوى تمييز الأجور مع كل شيك راتب متأثر.",
+   tip:"كل شيك راتب يحمل تمييزاً يُعيد بدء فترة التقادم (180/300 يوم)."},
+  {en:"Pregnancy Discrimination Act", ar:"قانون التمييز بسبب الحمل", size:"15+ موظف",
+   def:"يُعامل الحمل كأي حالة طبية مؤقتة أخرى، ويحظر التمييز بسببه.",
+   tip:"يُكمله PWFA الجديد (2024) الذي يُلزم بتسهيلات معقولة للحمل."},
+  {en:"PWFA (2024)", ar:"قانون عدالة العاملات الحوامل", size:"15+ موظف", new:true,
+   def:"يُلزم بتوفير تسهيلات معقولة للقيود المرتبطة بالحمل والولادة ما لم تُسبب ضائقة لا مبرر لها.",
+   tip:"تحديث 2025 مهم. الكلمة المفتاحية: 'تسهيلات' (accommodation) وليس بالضرورة إجازة. اللائحة النهائية يونيو 2024."},
+  {en:"PUMP Act", ar:"قانون الرضاعة للأمهات العاملات", size:"—", new:true,
+   def:"يوسّع حقوق الرضاعة لتشمل جميع الموظفات بمن فيهن المعفيات من الأجر الإضافي.",
+   tip:"تحديث 2025. التوسّع الأهم: شمول الموظفات المعفيات (Exempt) اللواتي كنّ مستثنيات سابقاً."},
+  {en:"Bostock v. Clayton County (2020)", ar:"قضية بوستوك", size:"15+ موظف", new:true,
+   def:"حكمت المحكمة العليا بأن Title VII يحمي التوجه الجنسي والهوية الجندرية.",
+   tip:"تحديث 2025 حاسم. التمييز بسبب التوجه الجنسي أو الهوية الجندرية = تمييز جنسي محظور تحت Title VII."},
+  {en:"McLaren Macomb (NLRB 2023)", ar:"قرار مكلارين ماكومب", size:"—", new:true,
+   def:"بنود السرية وعدم الانتقاد الواسعة في اتفاقيات الفصل قد تنتهك المادة 7 من NLRA.",
+   tip:"تحديث 2025. البنود بلا قيود تُثبّط حق الموظفين في مناقشة ظروف العمل → يجب أن تكون ضيقة ومحددة."},
+  {en:"NLRA — Section 7", ar:"قانون علاقات العمل الوطني", size:"معظم القطاع الخاص",
+   def:"يحمي حق الموظفين في الأنشطة المشتركة بما فيها مناقشة الأجور وظروف العمل.",
+   tip:"ينطبق حتى على أماكن العمل غير النقابية. حظر مناقشة الرواتب بين الموظفين قد ينتهكه."},
+  {en:"Weingarten Rights", ar:"حقوق واينغارتن", size:"—",
+   def:"حق الموظف النقابي في حضور ممثل نقابي في مقابلة تحقيقية قد تؤدي للتأديب.",
+   tip:"من قضية NLRB v. Weingarten (1975). ينطبق على العمال النقابيين في المقابلات التحقيقية."},
+  {en:"OWBPA", ar:"قانون حماية مزايا العمال الأكبر سناً", size:"—",
+   def:"ينظّم شروط تنازل العمال فوق 40 عن حقوق ADEA في اتفاقيات الفصل.",
+   tip:"فردي: 21 يوم تفكير + 7 تراجع. جماعي: 45 يوم + 7 تراجع + إفصاح بيانات الوحدة (أعمار وألقاب)."},
+  {en:"FCRA", ar:"قانون التقارير الائتمانية العادلة", size:"—",
+   def:"ينظّم استخدام تقارير الخلفية في قرارات التوظيف.",
+   tip:"يتطلب تفويضاً كتابياً قبل الحصول على التقرير، وإشعار 'ما قبل الإجراء السلبي' قبل الرفض."},
+  {en:"EPPA", ar:"قانون حماية الموظف من كاشف الكذب", size:"معظم القطاع الخاص",
+   def:"يحظر عموماً على أصحاب العمل الخاص طلب اختبارات كشف الكذب.",
+   tip:"مع استثناءات محدودة (أمن، أدوية). القاعدة العامة: محظور."},
+  {en:"OSHA — General Duty Clause", ar:"بند الواجب العام", size:"معظم أصحاب العمل",
+   def:"يُلزم أصحاب العمل بتوفير مكان عمل خالٍ من المخاطر المعترف بها.",
+   tip:"التزام واسع يتجاوز المعايير المحددة. أساس 'واجب العناية' (Duty of Care)."},
+
+  {en:"Civil Rights Act of 1991", ar:"قانون الحقوق المدنية 1991", size:"15+ موظف (مع Title VII)",
+   def:"عدّل Title VII: أتاح المحاكمة أمام هيئة محلّفين والتعويضات التعويضية والتأديبية، وقنّن نظرية «الأثر التمييزي» (Disparate Impact).",
+   tip:"سقوف التعويضات بحسب حجم صاحب العمل: من $50,000 (15–100 موظف) إلى $300,000 (500+). جاء ليعكس عدّة أحكام للمحكمة العليا قيّدت حقوق المدّعين."},
+
+  {en:"IRCA — Form I-9", ar:"قانون إصلاح الهجرة / نموذج I-9", size:"كل أصحاب العمل (4+ للتمييز)",
+   def:"يُلزم بالتحقّق من هوية كل موظف وأهليته للعمل عبر نموذج I-9، ويحظر التوظيف المتعمّد لغير المصرَّح لهم، ويمنع التمييز بسبب الجنسية أو الأصل القومي.",
+   tip:"يُستكمل I-9 خلال 3 أيام عمل من التعيين. لا تطلبي وثائق بعينها (تجاوزها = «إساءة توثيق»). E-Verify نظام إلكتروني طوعي/إلزامي بحسب الولاية."},
+
+  {en:"ERISA (1974)", ar:"قانون تأمين دخل تقاعد الموظفين", size:"خطط المزايا الخاصة",
+   def:"ينظّم خطط التقاعد والمزايا الصحية في القطاع الخاص: واجبات ائتمانية، استحقاق (Vesting)، إفصاح (وثيقة SPD)، وحماية مستحقّات الموظفين.",
+   tip:"لا يُلزم صاحب العمل بتقديم مزايا — بل ينظّم الخطط الموجودة. PBGC يؤمّن خطط المعاش المحدّد. مفهوم Fiduciary Duty أساسي في الامتحان."},
+
+  {en:"HIPAA (1996)", ar:"قانون قابلية نقل التأمين الصحي والمساءلة", size:"خطط التأمين الصحي الجماعية",
+   def:"يضمن قابلية نقل التغطية الصحية عند تغيير الوظيفة، ويحمي خصوصية وأمن المعلومات الصحية المحمية (PHI).",
+   tip:"بُعدان: (1) قابلية النقل، (2) خصوصية PHI بمبدأ «الحدّ الأدنى الضروري». قيود الحالات السابقة خفّفها لاحقاً قانون ACA."},
+
+  {en:"ACA (Affordable Care Act 2010)", ar:"قانون الرعاية الميسّرة", size:"50+ موظف بدوام كامل معادل (ALE)",
+   def:"يُلزم أصحاب العمل الكبار (ALE) بتقديم تغطية صحية ميسورة وذات قيمة دنيا أو دفع غرامة (مسؤولية مشتركة)، مع إقرارات 1094/1095-C.",
+   tip:"عتبة 50 موظفاً بدوام كامل معادل تُفعّل «تفويض صاحب العمل». تذكّري اختبار «الميسورية» ومبدأ «ادفع أو وفّر» (Play-or-Pay)."},
+
+  {en:"Sarbanes-Oxley (SOX 2002)", ar:"قانون ساربينز-أوكسلي", size:"الشركات المساهمة العامة",
+   def:"يضع معايير حوكمة مالية للشركات العامة، ويحمي المُبلِّغين عن المخالفات (Whistleblowers) من الانتقام عند الإبلاغ عن احتيال.",
+   tip:"صلته بـ HR = حماية المُبلِّغين + الاحتفاظ بالسجلّات. ينطبق على الشركات المتداولة علناً فقط."},
+
+  {en:"Davis-Bacon Act (1931)", ar:"قانون ديفيس-باكون", size:"إنشاءات حكومية > $2,000",
+   def:"يُلزم بدفع «الأجر السائد» محلياً للعمال في عقود الإنشاءات الفيدرالية.",
+   tip:"الثلاثي الحكومي للأجور: ديفيس-باكون = الإنشاءات. تذكّريها مع شقيقيها (Walsh-Healey وMcNamara-O'Hara)."},
+
+  {en:"Walsh-Healey Act (1936)", ar:"قانون والش-هيلي للعقود العامة", size:"توريد/تصنيع حكومي > $10,000",
+   def:"يفرض الأجر السائد والعمل الإضافي على عقود توريد السلع والتصنيع الفيدرالية.",
+   tip:"والش-هيلي = التصنيع/التوريد (السلع) بعتبة $10,000. لا تخلطيه مع ديفيس-باكون (الإنشاءات)."},
+
+  {en:"McNamara-O'Hara Service Contract Act (1965)", ar:"قانون عقود الخدمات (ماكنمارا-أوهارا)", size:"خدمات حكومية > $2,500",
+   def:"يفرض الأجر والمزايا السائدة على عقود الخدمات الفيدرالية.",
+   tip:"ماكنمارا = الخدمات بعتبة $2,500. المخطّط: إنشاءات (Davis-Bacon) · سلع (Walsh-Healey) · خدمات (McNamara)."},
+
+  {en:"Taft-Hartley Act / LMRA (1947)", ar:"قانون تافت-هارتلي لعلاقات العمل", size:"—",
+   def:"عدّل قانون واغنر (NLRA): أضاف ممارسات النقابات غير العادلة، وحظر «المتجر المغلق»، وأتاح للولايات قوانين «الحق في العمل»، وأجاز أمراً قضائياً 80 يوماً للإضرابات ذات الطوارئ الوطنية.",
+   tip:"وازن قانون واغنر لصالح أصحاب العمل بعد أن كان منحازاً للنقابات. مفهوم «ولايات الحق في العمل» (Right-to-Work) يُختبر كثيراً."},
+
+  {en:"Landrum-Griffin Act / LMRDA (1959)", ar:"قانون لاندروم-غريفين", size:"—",
+   def:"يضع «وثيقة حقوق» لأعضاء النقابات، ويفرض شفافية مالية وإفصاحاً على النقابات، وينظّم شؤونها الداخلية.",
+   tip:"يحمي العضو *من نقابته* (لا من صاحب العمل). ركّزي على الإفصاح المالي والانتخابات الديمقراطية داخل النقابة."},
+
+  {en:"Rehabilitation Act (1973)", ar:"قانون إعادة التأهيل", size:"الجهات الفيدرالية ومقاولوها",
+   def:"يحظر التمييز بسبب الإعاقة: §501 للوكالات الفيدرالية، §503 لمقاولي الحكومة، §504 للبرامج المموّلة فيدرالياً — مع التزام التمييز الإيجابي.",
+   tip:"سلف ADA في القطاع الفيدرالي. §503 ما زال ساري المفعول حتى بعد إلغاء EO 11246 (لأنه تشريع لا أمر تنفيذي)."},
+
+  {en:"Executive Order 11246 (1965) — أُلغي 2025", ar:"الأمر التنفيذي 11246 (مُلغى)", size:"مقاولو الحكومة (سابقاً 50+ موظف و$50k+ عقد)",
+   def:"تاريخياً ألزم مقاولي الحكومة بعدم التمييز و«بخطط التمييز الإيجابي» (Affirmative Action Plans) على أساس العرق والجنس، وأشرفت عليه OFCCP.",
+   tip:"⚠️ تحديث 2025: أُلغي بالأمر EO 14173 في 21 يناير 2025، فانتهت التزامات التمييز الإيجابي لمقاولي الحكومة على أساس العرق/الجنس وتوقّف إنفاذ OFCCP لها. لكن §503 (الإعاقة) وVEVRAA (المحاربون) ما زالا ساريين، وTitle VII لم يتأثّر."},
+
+  {en:"VEVRAA (1974)", ar:"قانون إعادة تأهيل محاربي حقبة فيتنام", size:"مقاولو الحكومة ≥ $150,000",
+   def:"يفرض التمييز الإيجابي وعدم التمييز لصالح «المحاربين المحميين» لدى مقاولي الحكومة، مع تقرير سنوي VETS-4212.",
+   tip:"ما زال ساري المفعول (تشريع، لا أمر تنفيذي) بعد إلغاء EO 11246. يقترن مع §503 في التزامات المقاولين."},
+
+  {en:"Drug-Free Workplace Act (1988)", ar:"قانون مكان العمل الخالي من المخدرات", size:"مقاولو/منح الحكومة ≥ $100,000",
+   def:"يُلزم مقاولي الحكومة والجهات الممنوحة بوضع سياسة مكتوبة وبرنامج توعية لمكان عمل خالٍ من المخدرات.",
+   tip:"لا يفرض فحص المخدرات — بل سياسة وتوعية. ينطبق فقط على المقاولين/الممنوحين الفيدراليين، لا كل أصحاب العمل."},
+
+  {en:"Portal-to-Portal Act (1947)", ar:"قانون البوابة إلى البوابة", size:"يعدّل FLSA",
+   def:"يوضّح ما يُحتسب «ساعات عمل» مدفوعة بموجب FLSA: التنقّل العادي للعمل غير مدفوع، والأنشطة التمهيدية/الختامية غالباً غير مدفوعة ما لم تكن جوهرية للعمل.",
+   tip:"مفتاح أسئلة «ساعات العمل»: التنقّل من/إلى العمل لا يُحتسب. لكن ارتداء معدّات السلامة الجوهرية (Donning/Doffing) قد يُحتسب."},
+];
+
+function renderLaws(){
+  const list=document.getElementById('lawList');
+  list.innerHTML=LAWS.map(l=>{
+    const gid=l.en.replace(/\W/g,'');
+    return `
+    <div class="th" id="law-${gid}">
+      <div class="th-top" onclick="document.getElementById('law-${gid}').classList.toggle('open')">
+        <div class="th-name">
+          <div class="en">${l.en} ${l.new?'<span style="font-size:.6rem;background:var(--coral);color:#fff;padding:2px 7px;border-radius:8px;vertical-align:middle;">2025 جديد</span>':''}</div>
+          <div class="ar">${l.ar}</div>
+        </div>
+        <span class="th-tag tag-wp">${l.size}</span>
+        <span class="th-arrow">▼</span>
+      </div>
+      <div class="th-body">
+        <div class="def">${l.def}</div>
+        <div class="exam-tip">⭐ <strong>في الامتحان:</strong> ${l.tip}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+renderLaws();
+
+// ============ CRITICAL NUMBERS ============
+const NUMBERS = [
+  {label:"FMLA", val:"50 موظف · 75 ميل · 12 شهر · 1,250 ساعة"},
+  {label:"COBRA", val:"18 / 29 / 36 شهراً · التكلفة 102%"},
+  {label:"FLSA إعفاء", val:"≥ $684/أسبوع + اختبار المهام (كلاهما)"},
+  {label:"WARN", val:"100+ موظف → 60 يوماً إشعار"},
+  {label:"ADEA", val:"40+ سنة · 20+ موظف"},
+  {label:"Title VII / ADA / GINA", val:"15+ موظف"},
+  {label:"USERRA", val:"لا حد أدنى — الجميع"},
+  {label:"OWBPA فردي", val:"21 يوم تفكير + 7 تراجع"},
+  {label:"OWBPA جماعي", val:"45 يوم + 7 تراجع + بيانات الوحدة"},
+  {label:"قاعدة 4/5", val:"< 80% = تأثير متعارض"},
+  {label:"Bostock 2020", val:"Title VII → التوجه الجنسي والهوية الجندرية"},
+  {label:"PWFA 2024", val:"تسهيلات معقولة للحمل"},
+];
+function renderNumbers(){
+  const list=document.getElementById('numberList');
+  list.innerHTML=`<div style="display:grid;grid-template-columns:1fr;gap:8px;">`+
+    NUMBERS.map(n=>`
+    <div style="display:flex;align-items:center;gap:12px;background:var(--card);border:1.5px solid var(--border);border-radius:12px;padding:13px 16px;">
+      <span style="font-weight:800;color:var(--navy);font-size:.9rem;min-width:130px;">${n.label}</span>
+      <span style="color:#444;font-size:.86rem;flex:1;direction:rtl;">${n.val}</span>
+    </div>`).join('')+`</div>`;
+}
+renderNumbers();
+</script>
+</body>
+</html>

@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HR Competencies Exam — SHRM Practice Exam</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f2ea;--card:#fff;--navy:#0d1b2e;--navy2:#163456;
+  --ac:#1a3a5c;--acl:#e8f2fb;
+  --gold:#c8a84b;--bdr:#ddd6c8;--txt:#1a1a1a;--mut:#777;
+  --grn:#15803d;--red:#b91c1c;--grnl:#e1f5ee;--redl:#fcebeb;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;}
+.screen{display:none;}.screen.active{display:block;}
+
+/* HEADER */
+.hdr{background:linear-gradient(160deg,var(--navy),var(--navy2));padding:16px 20px;color:#fff;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px rgba(0,0,0,.2);}
+.hdr-row1{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;}
+.hdr-title{font-family:'Tajawal',sans-serif;font-size:1.05rem;font-weight:800;}
+.hdr-sub{font-size:.75rem;opacity:.55;font-family:'Outfit',sans-serif;font-weight:400;margin-top:1px;}
+.lang-sw{display:flex;border:1.5px solid rgba(255,255,255,.2);border-radius:9px;overflow:hidden;}
+.lbtn{padding:6px 14px;font-size:12px;font-weight:700;cursor:pointer;border:none;background:transparent;color:rgba(255,255,255,.5);font-family:'Tajawal',sans-serif;transition:all .15s;}
+.lbtn.on{background:var(--gold);color:var(--navy);}
+.hdr-row2{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.pb{height:4px;flex:1;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden;}
+.pf{height:100%;background:var(--gold);border-radius:2px;transition:width .3s;}
+.ptxt{font-size:11px;opacity:.55;white-space:nowrap;font-family:'Tajawal',sans-serif;}
+.bdg{padding:3px 9px;border-radius:16px;font-size:10.5px;font-weight:700;}
+.bdg-ki{background:rgba(56,189,248,.15);color:#7dd3fc;}
+.bdg-sji{background:rgba(139,92,246,.2);color:#c4b5fd;}
+.bdg-area{background:var(--acl);color:var(--ac);font-family:'Tajawal',sans-serif;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.bdg-2025{background:rgba(21,128,61,.2);color:#4ade80;border:1px solid rgba(74,222,128,.2);}
+.bdg-d{background:rgba(255,255,255,.07);color:rgba(255,255,255,.45);font-size:10px;}
+
+/* QUESTION */
+.qwrap{max-width:740px;margin:20px auto;padding:0 16px;}
+.scen-box{background:#f0f6ff;border:1px solid #c7ddf8;border-radius:12px;padding:14px 18px;margin-bottom:18px;font-size:.9rem;line-height:1.75;}
+.scen-box[dir=rtl]{font-family:'Tajawal',sans-serif;font-size:.95rem;text-align:right;}
+.scen-lbl{font-size:10px;font-weight:700;color:var(--ac);letter-spacing:.07em;text-transform:uppercase;margin-bottom:6px;}
+.qtext{font-size:1.04rem;line-height:1.85;margin-bottom:22px;font-weight:500;}
+.qtext[dir=rtl]{font-family:'Tajawal',sans-serif;font-size:1.1rem;text-align:right;}
+.opts{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:18px;}
+.opt{display:flex;align-items:flex-start;gap:12px;padding:13px 16px;background:var(--card);border:1.5px solid var(--bdr);border-radius:12px;cursor:pointer;transition:border-color .12s,background .12s;}
+.opt:hover:not(.dis){border-color:var(--ac);background:var(--acl);}
+.opt.sel{border-color:var(--ac);background:var(--acl);}
+.opt.ok{border-color:var(--grn);background:var(--grnl);}
+.opt.bad{border-color:var(--red);background:var(--redl);}
+.opt.hint{border-color:var(--grn);background:var(--grnl);opacity:.7;}
+.opt.dis{cursor:default;}
+.olet{width:27px;height:27px;border-radius:7px;background:var(--bdr);display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:700;flex-shrink:0;font-family:'Outfit',sans-serif;}
+.opt.ok .olet{background:var(--grn);color:#fff;}
+.opt.bad .olet{background:var(--red);color:#fff;}
+.opt.hint .olet{background:var(--grn);color:#fff;}
+.otxt{font-size:.92rem;line-height:1.65;}
+.otxt[dir=rtl]{font-family:'Tajawal',sans-serif;font-size:.97rem;text-align:right;}
+.exp{margin-top:14px;border-radius:12px;padding:15px 19px;display:none;font-size:.87rem;line-height:1.8;}
+.exp.show{display:block;}
+.exp.ok{background:var(--grnl);border:1px solid #86efac;}
+.exp.bad{background:var(--redl);border:1px solid #fca5a5;}
+.exp-hdr{font-family:'Tajawal',sans-serif;font-weight:700;font-size:.88rem;margin-bottom:6px;}
+.exp.ok .exp-hdr{color:var(--grn);}
+.exp.bad .exp-hdr{color:var(--red);}
+.exp-body{font-family:'Outfit',sans-serif;}
+.exp-body[dir=rtl]{font-family:'Tajawal',sans-serif;text-align:right;}
+
+/* NAV */
+.qnav{display:flex;align-items:center;justify-content:space-between;max-width:740px;margin:0 auto 28px;padding:0 16px;}
+.nbtn{padding:10px 22px;border-radius:10px;font-size:.88rem;font-weight:600;cursor:pointer;border:none;font-family:'Tajawal',sans-serif;transition:all .15s;}
+.pbtn{background:var(--card);color:var(--mut);border:1.5px solid var(--bdr);}
+.nxbtn{background:var(--ac);color:#fff;}
+.subbtn{background:var(--grn);color:#fff;}
+.dots{display:flex;flex-wrap:wrap;gap:5px;max-width:420px;justify-content:center;}
+.d{width:13px;height:13px;border-radius:4px;background:var(--bdr);cursor:pointer;transition:all .12s;}
+.d.dok{background:var(--grn);}
+.d.dno{background:var(--red);}
+.d.dcur{outline:2px solid var(--ac);outline-offset:1px;}
+
+/* WELCOME */
+.welcome{max-width:580px;margin:48px auto;padding:0 20px;text-align:center;}
+.wtitle{font-family:'Tajawal',sans-serif;font-size:2rem;font-weight:800;color:var(--navy);margin-bottom:6px;}
+.wsub{color:var(--mut);font-size:.95rem;margin-bottom:24px;}
+.wstats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px;}
+.wsc{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:16px;}
+.wsc-n{font-size:1.7rem;font-weight:800;color:var(--ac);}
+.wsc-l{font-size:11px;color:var(--mut);margin-top:2px;font-family:'Tajawal',sans-serif;}
+.lang-pick{display:flex;gap:8px;justify-content:center;margin-bottom:20px;}
+.lpbtn{padding:10px 24px;border-radius:10px;font-size:.92rem;font-weight:600;cursor:pointer;border:1.5px solid var(--bdr);background:var(--card);color:var(--mut);font-family:'Tajawal',sans-serif;transition:all .15s;}
+.lpbtn.on{background:var(--ac);color:#fff;border-color:var(--ac);}
+.sbtn{background:var(--ac);color:#fff;border:none;padding:14px 44px;border-radius:12px;font-size:1rem;font-weight:700;cursor:pointer;font-family:'Tajawal',sans-serif;}
+.update-note{background:rgba(21,128,61,.08);border:1px solid rgba(21,128,61,.2);border-radius:10px;padding:10px 16px;margin-bottom:20px;font-size:.8rem;color:var(--grn);font-family:'Tajawal',sans-serif;text-align:right;}
+
+/* RESULTS */
+.results{max-width:560px;margin:40px auto;padding:0 20px;text-align:center;}
+.scircle{width:110px;height:110px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.7rem;font-weight:800;}
+.sp{background:var(--grnl);border:3px solid var(--grn);color:var(--grn);}
+.sf{background:var(--redl);border:3px solid var(--red);color:var(--red);}
+.rgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0;}
+.rc{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:13px;}
+.rc-n{font-size:1.35rem;font-weight:800;}
+.rc-l{font-size:11px;color:var(--mut);font-family:'Tajawal',sans-serif;}
+.abts{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px;}
+.abt{padding:10px 20px;border-radius:10px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:'Tajawal',sans-serif;border:none;}
+.ab1{background:var(--ac);color:#fff;}
+.ab2{background:var(--card);border:1.5px solid var(--bdr);color:var(--txt);}
+
+@media(max-width:600px){
+  .wstats{grid-template-columns:1fr 1fr;}
+  .hdr-title{font-size:.95rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- STICKY HEADER -->
+<div class="hdr" id="mainHdr">
+  <div class="hdr-row1">
+    <div>
+      <div class="hdr-title" id="hdrTitle">امتحان الكفاءات</div>
+      <div class="hdr-sub">HR Competencies Exam · SHRM Practice Exam · مُحدَّث 2025</div>
+    </div>
+    <div class="lang-sw">
+      <button class="lbtn on" id="lbAr" onclick="setLang('ar')">العربية</button>
+      <button class="lbtn" id="lbBi" onclick="setLang('bi')">ثنائي</button>
+      <button class="lbtn" id="lbEn" onclick="setLang('en')">English</button>
+    </div>
+  </div>
+  <div class="hdr-row2" id="hdrMeta" style="display:none;">
+    <div class="pb"><div class="pf" id="pf"></div></div>
+    <div class="ptxt" id="ptxt"></div>
+    <div class="bdg" id="typeBdg"></div>
+    <div class="bdg bdg-area" id="areaBdg"></div>
+    <div class="bdg bdg-d" id="diffBdg"></div>
+  </div>
+</div>
+
+<!-- WELCOME SCREEN -->
+<div class="screen active" id="scrWelcome">
+  <div class="welcome">
+    <div class="wtitle" id="wTitle">امتحان الكفاءات</div>
+    <div class="wsub" id="wSub">HR Competencies Exam</div>
+    <div class="update-note">✅ محدَّث بتغييرات 2025 — يشمل أسئلة جديدة عن: Analytical Aptitude, Inclusion & Diversity</div>
+    <div class="wstats">
+      <div class="wsc"><div class="wsc-n" id="wTotal">102</div><div class="wsc-l">سؤال</div></div>
+      <div class="wsc"><div class="wsc-n">61</div><div class="wsc-l">KI معرفي</div></div>
+      <div class="wsc"><div class="wsc-n">41</div><div class="wsc-l">SJI حكمي</div></div>
+    </div>
+    <div style="margin-bottom:16px;font-size:.85rem;color:var(--mut);font-family:'Tajawal',sans-serif;">اختاري لغة الأسئلة:</div>
+    <div class="lang-pick">
+      <button class="lpbtn" id="lpEn" onclick="pickLang('en')">English Only</button>
+      <button class="lpbtn on" id="lpAr" onclick="pickLang('ar')">عربي فقط</button>
+      <button class="lpbtn" id="lpBi" onclick="pickLang('bi')">ثنائي اللغة</button>
+    </div>
+    <button class="sbtn" onclick="startExam()">ابدأ الامتحان ←</button>
+  </div>
+</div>
+
+<!-- EXAM SCREEN -->
+<div class="screen" id="scrExam">
+  <div class="qwrap">
+    <div class="scen-box" id="scenBox" style="display:none">
+      <div class="scen-lbl">📋 Scenario</div>
+      <div id="scenText"></div>
+    </div>
+    <div class="qtext" id="qText"></div>
+    <ul class="opts" id="optsList"></ul>
+    <div class="exp" id="expBox">
+      <div class="exp-hdr" id="expHdr"></div>
+      <div class="exp-body" id="expBody"></div>
+    </div>
+  </div>
+  <div class="qnav">
+    <button class="nbtn pbtn" id="btnPrev" onclick="prevQ()" style="display:none">← رجوع</button>
+    <div class="dots" id="qDots"></div>
+    <button class="nbtn nxbtn" id="btnNext" onclick="nextQ()">التالي →</button>
+  </div>
+</div>
+
+<!-- RESULTS SCREEN -->
+<div class="screen" id="scrResults">
+  <div class="results">
+    <div class="scircle" id="scoreCirc"></div>
+    <div style="font-family:'Tajawal',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:6px;" id="resMsg"></div>
+    <div style="color:var(--mut);font-size:.85rem;font-family:'Tajawal',sans-serif;" id="resPass">درجة النجاح: 70%</div>
+    <div class="rgrid">
+      <div class="rc"><div class="rc-n" id="rCorrect" style="color:var(--grn)"></div><div class="rc-l">إجابات صحيحة</div></div>
+      <div class="rc"><div class="rc-n" id="rWrong" style="color:var(--red)"></div><div class="rc-l">إجابات خاطئة</div></div>
+      <div class="rc"><div class="rc-n" id="rKi"></div><div class="rc-l">KI صحيحة</div></div>
+      <div class="rc"><div class="rc-n" id="rSji"></div><div class="rc-l">SJI صحيحة</div></div>
+    </div>
+    <div class="abts">
+      <button class="abt ab1" onclick="retryExam()">إعادة الامتحان 🔄</button>
+      <button class="abt ab2" onclick="reviewExam()">مراجعة الإجابات 📋</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const Q=[
+// ══════ LEADERSHIP & NAVIGATION (12q) ══════
+{a:"Leadership & Navigation",t:"KI",d:"medium",
+q:"In Goleman's six leadership styles, the 'coaching' style is MOST effective when:",
+o:["The team needs emotional support and reconnection after a difficult period","Employees want to develop their skills and the leader connects work to their career goals","The team is in crisis and needs clear directives to act quickly and consistently","The leader needs to motivate a high-performance culture by setting a personal example"],
+c:1,e:"Coaching = leader links tasks to the employee's personal development goals. Works when the employee wants to grow. Wrong: C describes Commanding (crisis/directives). D describes Pacesetting (personal example/high performance). A describes Affiliative (emotional reconnection). Coaching fails with unmotivated employees who resist development conversations.",
+qAr:"في أساليب القيادة الستة لـ Goleman، يكون أسلوب 'التدريب' الأكثر فاعلية عندما:",
+oAr:["يحتاج الفريق دعماً عاطفياً وإعادة ترابط بعد مرحلة صعبة","يريد الموظفون تطوير مهاراتهم والقائد يربط العمل بأهدافهم المهنية","الفريق في أزمة ويحتاج توجيهات واضحة للتصرف بسرعة واتساق","يحتاج القائد لتحفيز ثقافة عالية الأداء من خلال إعطاء القدوة شخصياً"]},
+
+{a:"Leadership & Navigation",t:"SJI",d:"hard",
+s:"A newly appointed plant manager inherits a team of 80 experienced union workers with 15+ years tenure. Production quality has declined 22% over two years. Investigation reveals: clear rules exist but enforcement is inconsistent; workers feel management 'doesn't care'; senior workers ignore newer safety protocols.",
+q:"The leadership style MOST appropriate for this situation is:",
+o:["Commanding — establishing non-negotiable rules with consistent, immediate consequences","Affiliative — focusing on emotional reconnection before addressing the performance gap","Democratic — involving the team in redesigning quality standards through collaborative sessions","Pacesetting — demonstrating high personal standards to model the quality required"],
+c:0,e:"Commanding fits a deteriorating performance situation needing clear, non-negotiable boundaries. The 22% decline with rule-non-enforcement is a compliance problem, not a motivation or design problem. Wrong: D (Pacesetting) works for motivated high-performers, not compliance gaps. B (Affiliative) ignores the performance urgency. C (Democratic) is too slow and implies the existing rules were the problem.",
+qAr:"أسلوب القيادة الأنسب لهذا الوضع هو:",
+oAr:["الأسلوب القسري — وضع قواعد غير قابلة للتفاوض مع تطبيق فوري ومتسق","الأسلوب الانسجامي — التركيز على إعادة الترابط العاطفي قبل معالجة الأداء","الأسلوب الديمقراطي — إشراك الفريق في إعادة تصميم معايير الجودة","قيادة بالقدوة — عرض معايير شخصية عالية لنمذجة الجودة المطلوبة"],
+sAr:"مدير مصنع جديد يرث فريقاً من 80 عامل نقابي متمرس. الإنتاجية انخفضت 22% في 6 أشهر. العمال يشعرون بالإهمال من الإدارة السابقة. المدير الجديد يحتاج تحقيق أهداف الإنتاج في 90 يوماً مع بناء الثقة."},
+
+{a:"Leadership & Navigation",t:"KI",d:"medium",
+q:"Kotter's 8-step change model differs from Lewin's 3-stage model primarily in that Kotter's model:",
+o:["Provides a granular action sequence including coalition-building, vision communication, and anchoring culture that Lewin's model condenses into three phases","Addresses only organizational redesign while Lewin's addresses individual behavior change","Requires external consultants to lead the process while Lewin's relies on internal champions","Was designed for technology implementations while Lewin's addresses cultural change programs"],
+c:0,e:"Kotter expands Lewin's Unfreeze-Change-Refreeze into 8 specific action steps — making it more prescriptive and operationally detailed. Wrong: B is false (both address organizational change broadly). D is false (both models are general-purpose). C is false (neither model specifies who leads). Both models are used in HR for managing organizational change.",
+qAr:"يختلف نموذج Kotter ذو الـ 8 خطوات عن نموذج Lewin ذي الـ 3 مراحل في أن نموذج Kotter:",
+oAr:["يوفر تسلسلاً تشغيلياً تفصيلياً يشمل بناء التحالف والرؤية وإدارة المقاومة","يعالج إعادة التصميم التنظيمي فقط بينما يعالج Lewin التغيير الفردي","يتطلب مستشارين خارجيين لقيادة العملية بينما يعتمد Lewin على القيادة الداخلية","صُمم لتطبيقات التكنولوجيا بينما يعالج Lewin التغيير الثقافي"]},
+
+{a:"Leadership & Navigation",t:"SJI",d:"hard",
+s:"A company completed a major ERP system rollout 6 months ago, but adoption remains at 34%. Employees report they understand why the system is needed, there was extensive training, and executive sponsors communicated the change vision clearly. However, middle managers still route work through the old process.",
+q:"Based on Kotter's model, where did this change effort MOST likely fail?",
+o:["Step 8 only — the change was not anchored into culture before the project team disbanded","Steps 6-7 — short-term wins were not celebrated and resistance was not removed from middle managers","Steps 1-2 — insufficient urgency was created and no guiding coalition was formed","Steps 3-4 — no compelling vision was developed and communication of the vision was inadequate"],
+c:1,e:"The scenario explicitly rules out Steps 1-4 (employees understand the 'why,' executive sponsors communicated the vision). Low adoption + middle manager workarounds = Step 6 failure: short-term wins weren't built or visible, and Step 7: obstacles (non-compliant managers) were left in place. Wrong: A and D are disproven by the scenario. A (Step 8 alone) can't be identified as the cause when adoption was never achieved in the first place.",
+qAr:"استناداً لنموذج Kotter، أين فشل جهد التغيير هذا على الأرجح؟",
+oAr:["الخطوة 8 فقط — لم يُرسَّخ التغيير في الثقافة قبل إغلاق المشروع","الخطوات 6-7 — لم تُحتفَل بالانتصارات قصيرة المدى ولم تُزَل العوائق","الخطوات 1-2 — لم يُبنَ إلحاح كافٍ ولم يُشكَّل تحالف قيادي داعم","الخطوات 3-4 — لم تُطوَّر رؤية مقنعة ولم يُوصَّل التغيير بفاعلية"],
+sAr:"أكملت شركة تطبيق نظام ERP كبير منذ 6 أشهر، لكن نسبة التبني لا تزال 34%. يستمر الموظفون في استخدام جداول بيانات Excel القديمة."},
+
+{a:"Leadership & Navigation",t:"KI",d:"medium",
+q:"In Hersey and Blanchard's Situational Leadership model, the 'delegating' style applies to employees with:",
+o:["High competence and variable commitment who need collaborative decision-making involvement","Low competence and low commitment who need detailed instruction and close supervision","Moderate competence and variable commitment who need task guidance paired with support","High competence and high commitment who can work with minimal direction or supervision"],
+c:3,e:"Delegating = D4 (high competence, high commitment). The leader provides low task and low relationship behavior — the employee doesn't need either. Wrong: B = D1 (Directing/Telling). C = D2 (Coaching/Selling). A = D3 (Supporting/Participating). The model emphasizes that style must match the employee's specific development level for a specific task, not their overall career level.",
+qAr:"في نموذج القيادة الظرفية لـ Hersey و Blanchard، ينطبق أسلوب 'التفويض' على الموظفين:",
+oAr:["عالي الكفاءة ومتذبذبي الالتزام الذين يحتاجون قرارات تشاركية","منخفضي الكفاءة والالتزام الذين يحتاجون تعليمات تفصيلية وإشرافاً دقيقاً","متوسطي الكفاءة ومتذبذبي الالتزام الذين يحتاجون توجيهاً للمهمة مع دعم","عالي الكفاءة والالتزام القادرين على العمل بتوجيه وإشراف أدنى"]},
+
+{a:"Leadership & Navigation",t:"SJI",d:"medium",
+s:"An HR director has been asked to lead a culture transformation involving 12 business units across 5 countries. The initiative requires collaboration with Legal, Finance, Operations, and Communications. Early stakeholder mapping shows low awareness and moderate skepticism from most business unit heads.",
+q:"The FIRST action HR should take according to change management best practices is:",
+o:["Design and pilot culture measurement tools to establish a baseline before any interventions","Request board-level sponsorship and formal mandate before engaging any business unit leaders","Launch a comprehensive communication campaign explaining the transformation rationale to all employees","Build a guiding coalition of influential leaders from key business units and functions who can champion the change"],
+c:3,e:"Building the guiding coalition (Kotter Step 2) must precede communication campaigns, which require credible messengers. Without influential champions from the affected units, communication alone lacks legitimacy. Wrong: C (communication) is Step 4 — premature without coalition. A (measurement baseline) is valuable but not the urgent first step. B (board mandate) may exist already and is not the HR director's first action.",
+qAr:"أول إجراء يجب أن تتخذه HR وفق أفضل ممارسات إدارة التغيير هو:",
+oAr:["تصميم وتجريب أدوات قياس الثقافة لتحديد خط الأساس قبل أي تدخل","طلب رعاية مجلس الإدارة ووكالة رسمية قبل إشراك أي مساهم","إطلاق حملة تواصل شاملة تشرح أهداف التحول وجداول زمنية للجميع","بناء تحالف من القادة المؤثرين في وحدات الأعمال الرئيسية"],
+sAr:"طُلب من مدير HR قيادة تحول ثقافي يشمل 12 وحدة عمل و3,200 موظف. الرئيس التنفيذي يريد نتائج ملموسة في 90 يوماً."},
+
+{a:"Leadership & Navigation",t:"KI",d:"medium",
+q:"The concept of 'organizational politics' in SHRM's Leadership competency is BEST understood as:",
+o:["The process of navigating competing interests and priorities to accomplish organizational goals","Informal networks that spread rumors HR must manage through official communications","Formal governmental and regulatory affairs that influence HR policy development","Corrupt self-serving behavior that ethical leaders must identify and suppress promptly"],
+c:0,e:"SHRM frames organizational politics neutrally: the navigation of competing interests to achieve outcomes. HR leaders must develop political acumen — understanding who has influence, how decisions actually get made, and how to build coalitions. Wrong: A conflates politics with corruption (not the SHRM definition). C refers to government/public affairs. B refers to informal communication networks, not politics per se.",
+qAr:"تُفهم 'السياسة التنظيمية' في كفاءة القيادة لـ SHRM على أنها:",
+oAr:["عملية التعامل مع المصالح والأولويات المتنافسة لتحقيق النتائج","الشبكات غير الرسمية التي تنشر الشائعات ويجب على HR إدارتها","الشؤون الحكومية والتنظيمية الرسمية التي تؤثر على سياسة HR","سلوك فاسد يخدم الذات يجب على القادة الأخلاقيين تحديده ومنعه"]},
+
+{a:"Leadership & Navigation",t:"SJI",d:"hard",
+s:"A CHRO presents a 3-year people strategy to the executive team. The CFO challenges: 'HR costs are up 18% year-on-year. What return are we getting?' The CHRO has strong qualitative data on culture improvement but limited financial metrics linking HR programs to business outcomes.",
+q:"The MOST strategically appropriate response for the CHRO demonstrates which capability?",
+o:["Ask the board to reaffirm the strategic importance of culture before responding to the CFO","Defend the culture data by explaining that intangible benefits are the primary value of HR investment","Request that the CFO define expected financial outcomes before the next HR budget cycle","Commit to developing financial metrics for HR programs and present a measurement framework at the next meeting"],
+c:3,e:"HR's strategic credibility requires translating people investments into business language. Acknowledging the gap and committing to a measurement framework demonstrates business acumen and builds CFO partnership. Wrong: B is defensive and doesn't address the CFO's legitimate concern. C shifts responsibility to the CFO. A is an escalation that bypasses the legitimate challenge.",
+qAr:"الرد الاستراتيجي الأنسب من CHRO يُظهر أي قدرة؟",
+oAr:["طلب من المجلس إعادة تأكيد أهمية الثقافة الاستراتيجية قبل المضي","الدفاع عن بيانات الثقافة بشرح أن الفوائد غير الملموسة هي القيمة","طلب من CFO تحديد النتائج المالية المتوقعة قبل الاجتماع القادم","الالتزام بتطوير مقاييس مالية لبرامج HR وتقديم نموذج مرتبط بالأعمال"],
+sAr:"يقدم CHRO استراتيجية أفراد لـ 3 سنوات لفريق التنفيذ. يتحدى CFO البيانات قائلاً: كيف يتحول هذا لعائد للمساهمين؟"},
+
+{a:"Leadership & Navigation",t:"KI",d:"medium",
+q:"The 'anchoring' step in Kotter's change model (Step 8) is critical because:",
+o:["New behaviors risk reverting to old patterns unless explicitly connected to organizational culture, systems, and succession decisions","It requires external validation to confirm the change achieved its intended business outcomes","It is the only step that requires formal board approval before implementation","Step 8 creates legally binding commitments that prevent future leadership from reversing the change"],
+c:0,e:"Anchoring = making the new behavior the default by embedding it in culture, HR systems (hiring, promotion, performance), and leadership development. Without anchoring, change is fragile — it persists only as long as the change sponsors remain active. Wrong: C is false (no board approval required). B is measurement, not anchoring. D is false (no legal binding from Step 8).",
+qAr:"خطوة 'الترسيخ' في نموذج Kotter (الخطوة 8) حاسمة لأن:",
+oAr:["السلوكيات الجديدة معرضة للعودة للأنماط القديمة ما لم ترتبط بالثقافة وأنظمة HR","تتطلب تحقق خارجي لتأكيد أن التغيير حقق أهدافه","إنها الخطوة الوحيدة التي تتطلب موافقة مجلس الإدارة الرسمية","الخطوة 8 تُنشئ التزامات قانونية ملزمة تمنع التراجع"]},
+
+{a:"Leadership & Navigation",t:"KI",d:"easy",
+q:"Which leadership behavior MOST distinguishes 'transformational' leadership from 'transactional' leadership?",
+o:["Inspiring followers to pursue a vision beyond their individual self-interest through purpose and mission","Focusing the team on short-term deliverables to maintain operational stability","Ensuring compliance with established procedures through systematic monitoring and correction","Setting clear performance expectations and rewarding achievement against defined targets"],
+c:0,e:"Transformational leadership = inspiring followers toward a compelling vision that transcends self-interest. Transactional leadership = exchange-based — performance for reward. Wrong: D, C, and B are all transactional behaviors (exchange, monitoring, short-term focus). SHRM distinguishes the two because different organizational contexts call for different primary approaches.",
+qAr:"أي سلوك قيادي يُميّز القيادة التحويلية عن التبادلية بشكل أوضح؟",
+oAr:["إلهام الأتباع للسعي نحو رؤية تتجاوز مصلحتهم الذاتية الفردية","تركيز الفريق على المخرجات قصيرة المدى للحفاظ على الاستمرارية","ضمان الامتثال للإجراءات المعتمدة من خلال مراقبة منهجية","وضع توقعات أداء واضحة ومكافأة الإنجاز مقابل الأهداف"]},
+
+{a:"Leadership & Navigation",t:"SJI",d:"medium",
+s:"An HR manager observes that two senior leaders are publicly disagreeing about the direction of a major talent initiative in executive meetings. One wants a centralized HR model; the other wants decentralized business partner autonomy. Both have legitimate organizational support.",
+q:"The MOST appropriate HR response that demonstrates political acumen is:",
+o:["Present a compromise position to the full executive team without prior consultation with either leader","Remain neutral and wait for the conflict to resolve before proceeding with the initiative","Privately meet with both leaders to understand their core concerns, identify shared interests, and facilitate a constructive dialogue that moves toward a workable solution","Escalate the conflict to the CEO immediately to obtain a definitive directive"],
+c:2,e:"Political acumen = understanding stakeholders' real interests (not just stated positions) and creating space for productive dialogue. Private bilateral conversations before group meetings allow positions to soften. Wrong: B (wait) allows paralysis. D (escalate immediately) is premature and may damage relationships. A (public compromise without prior groundwork) puts both leaders on the defensive.",
+qAr:"الاستجابة الأنسب من HR التي تُظهر الفطنة السياسية هي:",
+oAr:["تقديم موقف توفيقي للفريق التنفيذي دون استشارة مسبقة","البقاء محايداً وانتظار حل الصراع بنفسه","الاجتماع خاصاً مع كلا القائدين لفهم مخاوفهما وإيجاد أرضية مشتركة","تصعيد الصراع للرئيس التنفيذي فوراً للحصول على توجيه حاسم"],
+sAr:"يلاحظ مدير HR أن قائدين كبيرين يختلفان علناً حول أولوية مبادرة HR عالية المخاطر. يؤثر الخلاف على معنويات الفريق."},
+
+{a:"Leadership & Navigation",t:"KI",d:"medium",
+q:"In SHRM's competency model, 'navigating the organization' refers primarily to:",
+o:["Managing relationships with the organization's board of directors and external governance bodies","Understanding informal power structures, decision-making pathways, and stakeholder dynamics beyond the formal org chart","Developing expertise in the organization's specific industry and competitive environment","Understanding the legal structure of the organization for compliance and governance purposes"],
+c:1,e:"Navigating the organization = understanding how things really work: who influences whom, how decisions actually get made, and where resistance lives — beyond what the org chart shows. Wrong: D is legal/compliance knowledge. C is business acumen. A is board management (a separate leadership sub-competency). SHRM explicitly distinguishes formal structure from informal navigation skills.",
+qAr:"في نموذج كفاءات SHRM، 'التنقل في المنظمة' يشير أساساً إلى:",
+oAr:["إدارة العلاقات مع مجلس الإدارة والمستثمرين","فهم هياكل السلطة غير الرسمية ومسارات صنع القرار والتحالفات المؤثرة","تطوير الخبرة في صناعة المنظمة وبيئتها التنافسية","فهم الهيكل القانوني للمنظمة لأغراض الامتثال والحوكمة"]},
+
+// ══════ ETHICAL PRACTICE (10q) ══════
+{a:"Ethical Practice",t:"KI",d:"medium",
+q:"When HR faces pressure from a senior executive to falsify performance documentation for a termination, the ethical obligation that takes priority is:",
+o:["Deferring the decision until the executive's directive comes in writing for the record","Consulting with outside legal counsel before deciding what action to take","Loyalty to the senior executive who has authority over HR's function and budget","Maintaining accurate, honest documentation regardless of executive pressure or personal risk"],
+c:3,e:"Ethical Practice requires HR to maintain integrity in documentation regardless of hierarchy or personal risk. Falsified documentation creates legal liability and harms the terminated employee unfairly. Wrong: A confuses loyalty with complicity in misconduct. C and A are delay tactics that don't address the core ethical obligation. SHRM's ethics competency explicitly states HR must 'act with integrity even when pressured by leaders.'",
+qAr:"عندما تواجه HR ضغطاً من مسؤول تنفيذي لتزوير وثائق أداء، يقتضي ميثاق SHRM إعطاء الأولوية لـ:",
+oAr:["تأجيل القرار حتى يصدر التوجيه كتابياً","استشارة محامٍ خارجي قبل تحديد الإجراء","الولاء للمسؤول التنفيذي الذي له سلطة على وظيفة HR","الحفاظ على توثيق دقيق وصادق بصرف النظر عن الضغط التنفيذي"]},
+
+{a:"Ethical Practice",t:"SJI",d:"hard",
+s:"HR is conducting a harassment investigation. The General Counsel advises HR to 'document only the facts that support the company's position' and omit unfavorable witness statements from the formal report to reduce legal exposure.",
+q:"HR's MOST ethically and legally appropriate response to this instruction is:",
+o:["Complete the investigation with complete and accurate documentation regardless of outcome favorability","Document unfavorable findings in a separate confidential file not included in the official record","Follow the General Counsel's guidance because legal counsel has authority to direct investigations","Halt the investigation and wait for senior leadership guidance before proceeding further"],
+c:0,e:"Accurate and complete documentation is a non-negotiable HR ethical obligation in investigations. Selective documentation constitutes misconduct, creates spoliation of evidence risk, and exposes the investigator personally to liability. Wrong: A — the General Counsel does not have authority to direct HR to falsify records. D (halt) leaves a potential victim without resolution. B (separate file) is a deceptive workaround that still constitutes spoliation.",
+qAr:"الاستجابة الأكثر أخلاقية وقانونية من HR هي:",
+oAr:["إكمال التحقيق بتوثيق كامل ودقيق بصرف النظر عن طبيعة النتائج","توثيق النتائج غير المواتية في ملف سري منفصل","اتباع توجيه المستشار القانوني لأن له سلطة على قرارات HR","إيقاف التحقيق وانتظار توجيه القيادة العليا"],
+sAr:"تجري HR تحقيقاً في شكوى تحرش. ينصح المستشار القانوني HR بعدم تسجيل النتائج غير المواتية في ملف التحقيق الرسمي."},
+
+{a:"Ethical Practice",t:"KI",d:"medium",
+q:"SHRM's ethics framework identifies 'role morality' as a risk when:",
+o:["HR professionals justify unethical acts by arguing that their organizational role requires them to follow orders","HR professionals become moral authorities who impose their personal values on organizational culture","HR professionals set ethical standards for employees that exceed what HR itself is held accountable for","HR professionals apply different ethical standards to their personal lives than to their professional conduct"],
+c:0,e:"Role morality = using 'I was just following orders' or 'my role required it' to justify behavior that violates ethical principles. It is dangerous because it removes personal moral agency. Wrong: D describes personal/professional value inconsistency. C describes a double standard. B describes moral overreach. SHRM specifically flags role morality as one of the common ethical reasoning errors in the HR context.",
+qAr:"تُحدد إطار أخلاقيات SHRM 'الأخلاق الدورية' كخطر عندما:",
+oAr:["يبرر محترفو HR الأفعال غير الأخلاقية بحجة أن دورهم التنظيمي يتطلبها","يصبح محترفو HR سلطات أخلاقية تفرض قيمهم الشخصية على الآخرين","يضع محترفو HR معايير أخلاقية للموظفين تتجاوز ما تتطلبه القوانين","يطبق محترفو HR معايير أخلاقية مختلفة على حياتهم الشخصية مقارنة بعملهم"]},
+
+{a:"Ethical Practice",t:"SJI",d:"medium",
+s:"An HR manager learns that a colleague is routinely sharing confidential employee salary information with their spouse, who works at a competing company. The colleague is a personal friend and a high performer. The information has not yet caused identifiable harm.",
+q:"The HR manager's MOST appropriate first action is:",
+o:["Monitor the situation to confirm the behavior is ongoing before escalating to avoid damaging the friendship","Address the colleague directly and privately, explain the confidentiality violation and its consequences, and give them the opportunity to self-report or cease immediately","Report the colleague to senior management immediately without prior direct conversation","Consult with the company's ethics hotline anonymously to avoid personal involvement"],
+c:1,e:"Direct and private conversation first honors the relationship while addressing the violation clearly — giving the colleague a chance to correct. Wrong: A (monitor) allows ongoing harm. C (immediate escalation without conversation) skips a proportionate step and may be unnecessarily punitive. D (anonymous ethics hotline) is appropriate for situations where direct conversation is unsafe or impossible, not as a first step with a colleague.",
+qAr:"الإجراء الأول الأنسب لمدير HR هو:",
+oAr:["مراقبة الوضع للتأكد من استمرار السلوك قبل التصعيد","مخاطبة الزميل مباشرة وخاصاً وشرح التزامات السرية","الإبلاغ عن الزميل للإدارة العليا فوراً دون نقاش مسبق","استشارة خط الأخلاقيات بشكل مجهول لتجنب التبعات الشخصية"],
+sAr:"يكتشف مدير HR أن زميله يشارك بشكل منتظم معلومات سرية عن الموظفين مع قائد أعمال خارج صلاحياته."},
+
+{a:"Ethical Practice",t:"KI",d:"medium",
+q:"The ethical obligation of 'professional development' in SHRM's ethics framework requires HR practitioners to:",
+o:["Obtain the maximum number of professional certifications available to demonstrate competence","Report unethical behavior by other HR professionals to SHRM or relevant authorities","Continuously update their knowledge and skills so their advice and decisions remain accurate and current","Develop junior HR staff as a priority over their own professional advancement"],
+c:2,e:"Professional development as an ethical obligation = staying current. Outdated HR advice can harm employees and organizations — inaccurate knowledge is an ethical issue, not just a competency gap. Wrong: A (certifications) is a proxy but not the substance. D (developing others) is part of leadership, not specifically the professional development obligation. B is the reporting/accountability obligation, a separate component.",
+qAr:"يتطلب مبدأ 'التطوير المهني' في إطار أخلاقيات SHRM من محترفي HR:",
+oAr:["الحصول على أكبر عدد ممكن من الشهادات المهنية","الإبلاغ عن السلوك غير الأخلاقي لمحترفي HR الآخرين لـ SHRM","تحديث معارفهم ومهاراتهم باستمرار حتى تبقى نصائحهم وقراراتهم دقيقة","تطوير موظفي HR الجدد كأولوية على حساب تقدمهم الخاص"]},
+
+{a:"Ethical Practice",t:"SJI",d:"hard",
+s:"A hiring manager tells HR they want to reject a highly qualified candidate because 'she has young kids and will probably take a lot of leave.' HR knows this reflects family status bias and violates equal employment principles.",
+q:"HR's MOST appropriate immediate action is:",
+o:["Escalate directly to legal counsel without first addressing the issue with the hiring manager","Process the rejection without comment to preserve the working relationship with the hiring manager","Advise the hiring manager that basing a rejection on parental status creates legal and ethical risk, and redirect the evaluation to documented job-relevant criteria","Note the concern in a personal file without raising it, in case a complaint arises later"],
+c:2,e:"HR's role as ethics guardian requires speaking up in the moment — advising the manager of the risk and redirecting to objective criteria. This protects the candidate, the manager (from their own mistake), and the organization. Wrong: B is complicity. D (private note) fails the candidate entirely. A (immediate legal escalation) skips a proportionate first step.",
+qAr:"الإجراء الفوري الأنسب من HR هو:",
+oAr:["التصعيد مباشرة للمستشار القانوني دون معالجة المسألة أولاً مع المدير","معالجة الرفض دون تعليق للحفاظ على العلاقة العملية","إبلاغ مدير التوظيف بأن رفض المرشح استناداً لوضعه كوالد قد يُشكّل تمييزاً غير قانوني","تدوين المخاوف في ملف شخصي دون إثارتها"],
+sAr:"يخبر مدير توظيف HR أنه يريد رفض مرشح مؤهل قائلاً 'لن يكون متاحاً بالكامل — لديه أطفال صغار.'"},
+
+{a:"Ethical Practice",t:"KI",d:"medium",
+q:"When an employee reports to HR that they witnessed their manager stealing company property, HR's ethical obligation MOST directly requires:",
+o:["Documenting the report but taking no action unless additional witnesses confirm the allegation","Keeping the report confidential and coaching the manager informally to avoid disruption","Referring the employee to the manager's supervisor rather than involving HR directly","Conducting a fair, objective investigation and taking appropriate action regardless of the manager's seniority"],
+c:3,e:"HR's ethics obligation: investigate fairly and act on findings — seniority is not protection from accountability. Wrong: B (informal coaching for theft) is not proportionate and ignores the employee's report. C (refer upward) abandons HR's investigative responsibility. A (wait for corroboration) leaves misconduct unaddressed and may discourage future reporting.",
+qAr:"عندما يُبلغ موظف HR بمشاهدته مديره يسرق ممتلكات الشركة، يقتضي ميثاق SHRM:",
+oAr:["توثيق البلاغ دون اتخاذ إجراء ما لم يتقدم شهود إضافيون","الحفاظ على سرية البلاغ وتوجيه المدير غير رسمياً للتوقف","إحالة الموظف لمشرف المدير بدلاً من تورط HR","إجراء تحقيق عادل وموضوعي واتخاذ إجراء مناسب بصرف النظر عن مستوى المدير"]},
+
+{a:"Ethical Practice",t:"KI",d:"easy",
+q:"The SHRM Code of Ethics principle of 'fairness and justice' in HR practice MOST directly applies to:",
+o:["Creating transparent HR processes that are publicly posted and accessible to all employees","Applying consistent standards in employment decisions and treating employees with respect and impartiality","Following all applicable employment laws regardless of their popularity or organizational convenience","Ensuring HR compensation is commensurate with the strategic value HR delivers to the organization"],
+c:1,e:"Fairness and justice = consistent, impartial application of standards. This is the core of equal treatment in employment. Wrong: D is about HR's own compensation. C is legal compliance (related but distinct). A is transparency/communication, not the fairness standard itself. SHRM's fairness principle is specifically about how HR treats and evaluates individuals.",
+qAr:"يُطبق مبدأ 'العدالة والإنصاف' في ميثاق SHRM الأخلاقي أكثر ما يكون على:",
+oAr:["إنشاء عمليات HR شفافة تُنشر علناً","تطبيق معايير متسقة في قرارات التوظيف ومعاملة جميع الموظفين بكرامة","اتباع جميع قوانين العمل بصرف النظر عن شعبيتها","ضمان أن تعويض HR متناسب مع القيمة الاستراتيجية"]},
+
+{a:"Ethical Practice",t:"SJI",d:"hard",
+s:"HR discovers that the company's new AI hiring algorithm systematically de-prioritizes candidates from minority-serving institutions, resulting in a 61% lower callback rate for Black applicants versus white applicants with equivalent qualifications. The algorithm was certified by the vendor as 'unbiased.'",
+q:"HR's MOST ethically and legally appropriate response is:",
+o:["Continue using the algorithm because vendor certification establishes its validity and neutrality","Adjust the algorithm's threshold settings slightly to improve minority callback rates without suspending use","Immediately suspend use of the algorithm, conduct an independent bias audit, and implement alternative selection criteria until validated tools are in place","Inform applicants of the disparity to satisfy transparency obligations while continuing current operations"],
+c:2,e:"Vendor certification doesn't substitute for independent validation of adverse impact. A 61% disparity far exceeds the 4/5ths threshold — creating clear Title VII disparate impact risk. Ethical obligation: suspend the harmful tool while investigating. Wrong: A relies on a demonstrably inadequate vendor claim. B (threshold adjustment) is insufficient and doesn't address the root cause. D (transparency without action) allows ongoing harm.",
+qAr:"الاستجابة الأكثر أخلاقية وقانونية من HR هي:",
+oAr:["الاستمرار في الاستخدام لأن شهادة البائع تُثبت عدم وجود تحيز","ضبط إعدادات العتبة قليلاً لتحسين نتائج الأقليات دون إيقاف البرنامج","تعليق الاستخدام فوراً وإجراء تحليل مستقل للتأثير المتعارض وتصحيح التحيز","إبلاغ المتقدمين بالتباين لتلبية متطلبات الشفافية"],
+sAr:"تكتشف HR أن خوارزمية فرز السيرة الذاتية المعتمدة على الذكاء الاصطناعي تُقصي النساء بصورة غير متناسبة. قدّم البائع شهادة 'خالية من التحيز'."},
+
+{a:"Ethical Practice",t:"KI",d:"medium",
+q:"HR's 'dual advocacy' role in ethics means HR must:",
+o:["Advocate for the organization's interests in all matters to fulfill HR's fiduciary responsibility","Advocate only for employees since the organization has legal counsel and executives to advocate for its interests","Alternate advocacy roles depending on which party will be most affected by a given decision","Balance advocacy for both employees' wellbeing and the organization's legitimate business needs — without subordinating either"],
+c:3,e:"Dual advocacy = HR serves both employees (fairness, wellbeing) and the organization (effectiveness, legality). This tension is inherent to the HR role. Wrong: A and A are both one-sided. C (alternating) implies HR abandons one party's interests, which misunderstands the dual mandate. SHRM specifically names 'dual advocacy' as a core ethical tension HR must navigate.",
+qAr:"يعني دور 'المناصرة المزدوجة' في أخلاقيات HR أن HR يجب أن:",
+oAr:["تناصر مصالح المنظمة في جميع الأمور لتحقيق وظيفتها الاستراتيجية","تناصر الموظفين فقط لأن المنظمة لديها مستشار قانوني لمصالحها","تتبادل أدوار المناصرة حسب الطرف الأكثر تضرراً","توازن بين مناصرة رفاهية الموظفين وفاعلية المنظمة وسلامتها القانونية"]},
+
+// ══════ DEI (10q) ══════
+{a:"Inclusion & Diversity",t:"KI",d:"medium",
+q:"'Inclusion' in the DEI context refers primarily to:",
+o:["Providing mandatory diversity training to all employees at a minimum annual frequency","Creating an environment where all people feel valued, respected, and able to contribute fully regardless of background","Eliminating any disparity in pay or promotion rates between demographic groups","Achieving demographic representation targets across all levels of the organization"],
+c:1,e:"Inclusion = belonging and full contribution, not just representation. SHRM distinguishes: Diversity (who is present), Equity (fair treatment and access), Inclusion (whether people feel they can contribute fully). Wrong: A defines representation. C defines pay equity. D defines a training intervention, not inclusion itself.",
+qAr:"'الشمول' في سياق I&D يشير أساساً إلى:",
+oAr:["تقديم تدريب تنوع إلزامي لجميع الموظفين","خلق بيئة يشعر فيها الجميع بالتقدير والاحترام والقدرة على المساهمة الكاملة","القضاء على أي تباين في معدلات الأجر أو الترقية بين الفئات السكانية","تحقيق أهداف التمثيل الديموغرافي عبر جميع مستويات المنظمة"]},
+
+{a:"Inclusion & Diversity",t:"SJI",d:"hard",
+s:"A company has equal proportions of women and men at individual contributor level (47% / 53%) but only 18% women in director and above roles. Women and men are nominated for the high-potential leadership program at equal rates by their managers, but women are selected 40% less often after the program committee review.",
+q:"This data MOST clearly indicates a DEI gap at which stage, and what is the appropriate HR intervention?",
+o:["Compensation equity — the promotion disparity likely reflects pay gaps that create disincentives for advancement","Sourcing — the talent pipeline of qualified women is insufficient and sourcing strategies must be expanded","Manager effectiveness — early career managers must be trained to nominate more women for development programs","Selection into the program — the 40% lower selection rate despite equal nominations indicates bias in the program committee review process."],
+c:3,e:"The data isolates the problem to program committee selection: equal nominations but 40% lower selection = the bias is in that committee's decision-making, not the pipeline or nominations. Wrong: B (sourcing) — equal representation at entry level rules this out. A (compensation) — the data doesn't support this inference. C (manager nominations) — managers already nominate equally; the problem is post-nomination.",
+qAr:"تُشير هذه البيانات بوضوح لفجوة I&D في أي مرحلة؟",
+oAr:["العدالة في التعويض — يعكس تباين الترقية فجوات في الأجور","المصادر — خط أنابيب المواهب من النساء المؤهلات غير كافٍ","فاعلية المديرين — يجب تدريب المديرين على ترشيح النساء بنسب أعلى","الاختيار في البرنامج — معدل الاختيار الأدنى بنسبة 40% رغم التمثيل المتساوي يشير لتحيز ضمني"],
+sAr:"تمثل النساء والرجال 50% على مستوى المساهمين الفرديين. في برنامج القيادة: ترشح 38% من الرجال مقابل 22% من النساء. معدل الاختيار: 80% رجال مقابل 48% نساء."},
+
+{a:"Inclusion & Diversity",t:"KI",d:"medium",
+q:"'Equity' in SHRM's DEI framework differs from 'equality' in that equity:",
+o:["Focuses exclusively on outcomes (equal representation) rather than processes (equal treatment)","Treats all employees identically regardless of historical disadvantage or structural barriers","Provides differentiated support based on individual needs to create fair opportunity — recognizing that equal treatment doesn't always produce equal outcomes","Requires the organization to compensate for societal inequities beyond the workplace itself"],
+c:2,e:"Equity = tailored support to address unequal starting points; equality = same treatment for everyone. Example: a ramp and stairs are equal treatment; a ramp for those who need it is equitable. Wrong: A defines equality, not equity. A describes outcomes-only focus, which is an overreach. D extends beyond organizational scope. SHRM tests this distinction because it's foundational to DEI strategy design.",
+qAr:"تختلف 'العدالة' في إطار I&D لـ SHRM عن 'المساواة' في أن العدالة:",
+oAr:["تركز حصرياً على النتائج بدلاً من العمليات","تعامل جميع الموظفين بشكل متطابق بصرف النظر عن الظلم التاريخي","توفر دعماً متمايزاً بناءً على الاحتياجات الفردية لإنشاء تكافؤ حقيقي للفرص","تُلزم المنظمة بالتعويض عن عدم المساواة المجتمعي خارج نطاق عمل المنظمة"]},
+
+{a:"Inclusion & Diversity",t:"SJI",d:"medium",
+s:"HR's analysis shows that the diversity training completed last year (8 hours, all employees) produced no measurable change in hiring demographic diversity, promotion equity, or employee belonging scores. The DEI manager wants to add another 8-hour module this year.",
+q:"HR's MOST evidence-based recommendation is:",
+o:["The training content was insufficiently tailored to the organization and should be rebuilt with internal examples","Training alone rarely changes hiring behavior — structural interventions such as structured interviews and diverse panels are needed alongside education for sustainable results","Individual coaching for managers who received training would transfer concepts more effectively","The training duration was insufficient — doubling to 16 hours would produce the necessary behavioral change"],
+c:1,e:"Research consistently shows standalone diversity training has minimal lasting impact on behavior. Structural interventions (structured interviews, diverse decision panels, objective criteria) change behavior by redesigning the process, not just educating individuals. Wrong: D (more training hours) adds cost with no evidence of effectiveness. C (coaching) improves individual training transfer but doesn't address systemic selection process design. A (customized content) may help marginally but still relies on the training-only approach.",
+qAr:"التوصية الأكثر استناداً للأدلة من HR هي:",
+oAr:["كان محتوى التدريب غير مُصمَّم خصيصاً للمنظمة","التدريب وحده نادراً ما يُغير سلوك التوظيف — التدخلات الهيكلية أكثر فاعلية","التدريب الفردي للمديرين سينقل التعلم لقراراتهم الفعلية","مدة التدريب كانت غير كافية — مضاعفتها ستُحسن النتائج"],
+sAr:"التدريبات على التنوع السابقة (8 ساعات) لم تُغير ممارسات التوظيف. بيانات التوظيف لا تزال تُظهر محاباة للشباب البيض الذكور."},
+
+{a:"Inclusion & Diversity",t:"KI",d:"medium",
+q:"'Implicit bias' affects employment decisions primarily because:",
+o:["It requires conscious discriminatory intent that can be identified and disciplined by the organization","It operates below conscious awareness, causing decision-makers to systematically favor certain groups without realizing their behavior is biased","It is only relevant for protected class categories and does not apply to other types of workplace decisions","It exclusively affects decisions made under time pressure and can be eliminated by allowing more deliberation time"],
+c:1,e:"Implicit bias = automatic, unconscious associations that shape judgments without the decision-maker's awareness. This makes it uniquely dangerous: the actor believes they are being objective while producing biased outcomes. Wrong: A describes explicit discrimination. D is partially supported by research (time pressure does increase bias) but isn't the primary definition. C is false (implicit bias affects all kinds of decisions).",
+qAr:"يؤثر 'التحيز الضمني' على قرارات التوظيف أساساً لأنه:",
+oAr:["يتطلب نية تمييزية واعية يمكن تحديدها وتصحيحها بالتعليم","يعمل دون وعي مما يجعل صانعي القرار يُقيّمون بناءً على أنماط مُستبطنة لا تتوافق مع المعايير المعلنة","يُعد ذا صلة بفئات الخصائص المحمية فقط","يؤثر حصرياً على القرارات المتخذة تحت ضغط الوقت"]},
+
+{a:"Inclusion & Diversity",t:"SJI",d:"hard",
+s:"A company has successfully increased demographic diversity at all levels over 3 years. Exit interviews now show that employees from underrepresented groups are leaving at 2.4× the rate of their peers, citing 'feeling like an outsider,' 'no access to informal networks,' and 'being passed over for stretch assignments.'",
+q:"This data indicates that the organization's DEI strategy has addressed diversity but not:",
+o:["Equity — pay gaps are causing disproportionate turnover among underrepresented employees","Inclusion and retention — successfully attracting diverse talent but failing to create belonging or equal access to opportunity, resulting in a leaking pipeline","Affirmative action compliance — the organization must review its AAP before addressing cultural issues","Training adequacy — the frequency of DEI training must be increased to support cultural change"],
+c:1,e:"The exit interview themes — outsider feeling, excluded from networks, missed stretch assignments — are classic inclusion failures. The organization solved representation (D = diversity) but not the I and E in DEI. Wrong: A (pay gaps) are not evidenced in this data. C (AAP compliance) is not the issue when the problem is culture. D (more training) doesn't address the structural network and opportunity access issues employees cited.",
+qAr:"تُشير هذه البيانات لأن استراتيجية I&D عالجت التنوع لكن ليس:",
+oAr:["العدالة — الفجوات في الأجر تُسبب دوراناً غير متناسباً","الشمول والاحتفاظ — نجحت في الاستقطاب لكن فشلت في إنشاء بيئة تجعلهم يبقون","الامتثال للعمل الإيجابي — يجب مراجعة AAP","كفاية التدريب — يجب زيادة وتيرة تدريب I&D"],
+sAr:"زادت الشركة التمثيل الديموغرافي على مدى 3 سنوات. بيانات الاحتفاظ تُظهر 47% من المرشحين ذوي التنوع الذين تم تعيينهم في الـ 36 شهر الماضية غادروا. مقابلات الخروج تُظهر 'الشعور بالإقصاء'."},
+
+{a:"Inclusion & Diversity",t:"KI",d:"medium",
+q:"Organizational 'psychological safety' is most directly relevant to DEI because:",
+o:["It creates legal protection for organizations against discrimination claims when employees feel safe raising concerns","Employees from underrepresented groups are less likely to contribute, raise concerns, or take risks if they fear that doing so will result in disproportionate negative consequences","It eliminates the need for formal grievance procedures by creating informal channels for conflict resolution","It prevents burnout and improves mental health outcomes across all demographic groups equally"],
+c:1,e:"Psychological safety = the belief that one can speak up without disproportionate negative consequence. It disproportionately affects DEI because underrepresented employees often face higher stakes for speaking up — their concerns may be dismissed, attributed to oversensitivity, or held against them. Wrong: D is about wellbeing broadly. A is false (psychological safety doesn't create legal protections). D confuses psychological safety with grievance process design.",
+qAr:"'السلامة النفسية' أكثر ارتباطاً مباشرة بـ I&D لأن:",
+oAr:["تُنشئ حماية قانونية للمنظمات ضد دعاوى التمييز","الموظفين من المجموعات الأقل تمثيلاً أقل احتمالاً للمساهمة بدون بيئة عمل آمنة","تُلغي الحاجة للإجراءات الرسمية للشكاوى","تمنع الإرهاق وتُحسّن نتائج الصحة العقلية عبر جميع الفئات السكانية"]},
+
+{a:"Inclusion & Diversity",t:"KI",d:"medium",
+q:"A 'diversity business case' argument is MOST accurately framed as:",
+o:["Organizations with diverse and inclusive teams demonstrate better innovation, decision quality, and financial performance — making DEI a competitive advantage","Diversity initiatives should be funded because they reduce legal liability under EEO requirements","Diversity targets must be set and met to fulfill corporate social responsibility commitments","DEI investment reduces employee relations disputes and grievances, lowering HR operational costs"],
+c:0,e:"The business case for DEI: diverse teams bring multiple perspectives that improve innovation, reduce groupthink, and correlate with stronger financial performance (McKinsey research). Wrong: A frames DEI as compliance-driven, not strategic. C frames it as social obligation. D reduces it to dispute cost reduction. SHRM tests the business case because HR must present DEI investments in business terms to gain leadership buy-in.",
+qAr:"حجة 'مبرر الأعمال للتنوع' تُصاغ بدقة أكبر على النحو التالي:",
+oAr:["تُظهر المنظمات ذات الفرق المتنوعة والشاملة أداءً أفضل في الابتكار وحل المشكلات والنتائج المالية","يجب تمويل مبادرات التنوع لأنها تُقلل المخاطر القانونية","يجب وضع أهداف التنوع وتحقيقها للوفاء بمتطلبات المسؤولية الاجتماعية","يُقلل استثمار I&D من نزاعات علاقات الموظفين"]},
+
+{a:"Inclusion & Diversity",t:"SJI",d:"medium",
+s:"An employee reports to HR that their team's weekly meetings always start with 'fantasy football' discussion for 15 minutes, and the team regularly socializes at a sports bar after work. They feel excluded because they don't follow sports and their family commitments prevent evening outings. They feel their career opportunities are being affected by not participating.",
+q:"HR's MOST appropriate initial action is to:",
+o:["Require the manager to eliminate all informal team social activities to prevent further exclusion complaints","Explore with the team manager whether the current team norms are creating unintended barriers to full inclusion and suggest alternative approaches that allow everyone to participate equally","Investigate whether the behavior constitutes illegal discrimination before deciding whether to act","Tell the employee this is informal team bonding and outside HR's jurisdiction to regulate"],
+c:1,e:"Inclusion issues often stem from unintentional cultural norms that systematically exclude certain employees. HR's role: bring the impact to the manager's attention and support redesign of norms. Wrong: A ignores a legitimate inclusion concern. C (legal investigation) is disproportionate for what is currently a cultural issue. A (eliminate all social activities) is overly restrictive and overcorrects.",
+qAr:"الإجراء الأولي الأنسب من HR هو:",
+oAr:["إلزام المدير بإلغاء جميع الأنشطة الاجتماعية غير الرسمية للفريق","استكشاف مع مدير الفريق ما إذا كانت أعراف الفريق تُنشئ عوائق غير رسمية للمشاركة","التحقيق فيما إذا كان السلوك يُشكّل تمييزاً غير قانوني","إبلاغ الموظف بأن هذا تواصل غير رسمي للفريق وخارج صلاحية HR"],
+sAr:"اجتماعات الفريق الأسبوعية تبدأ بـ 10-15 دقيقة 'وقت للتعارف' يتمحور حول رياضة البيسبول وحوارات 'الأولاد'. موظف موهوب يشعر بالاستبعاد."},
+
+{a:"Inclusion & Diversity",t:"KI",d:"easy",
+q:"'Intersectionality' in DEI practice recognizes that:",
+o:["All protected characteristics are equally important and must receive identical programmatic investment","DEI initiatives must address one identity category at a time to prevent focus dilution","An employee's experience is shaped by the combined effect of multiple identities — race, gender, disability, age — which can compound disadvantage in ways single-category analysis misses","Intersectionality applies only to employees with three or more historically marginalized identities"],
+c:2,e:"Intersectionality (Kimberlé Crenshaw): multiple identities interact and compound — a Black woman's experience of discrimination differs from that of a Black man or a white woman. Single-category analysis misses this compounding. Wrong: A misunderstands intersectionality as requiring identical investment. B (sequential categories) ignores the interaction effects. D applies an arbitrary threshold that doesn't exist in the framework.",
+qAr:"'التقاطعية' في ممارسة I&D تعترف بأن:",
+oAr:["جميع الخصائص المحمية ذات أهمية متساوية","يجب أن تعالج مبادرات I&D فئة هوية واحدة في كل مرة","تجربة الموظف تتشكل من خلال التأثير المُركَّب لهويات متعددة تتفاعل بطرق لا تُلتقط بتحليلات الفئة الواحدة","التقاطعية تنطبق فقط على الموظفين الذين لديهم ثلاث خصائص محمية أو أكثر"]},
+
+// ══════ RELATIONSHIP MANAGEMENT (8q) ══════
+{a:"Relationship Management",t:"KI",d:"medium",
+q:"HR's 'influence without authority' capability is MOST critical when:",
+o:["HR is conducting investigations with subpoena authority under legal hold provisions","HR must achieve HR-led organizational changes through collaboration with leaders who have no reporting relationship to HR","HR is implementing legally mandated processes that require universal compliance","HR is delivering performance management training to employees as part of annual compliance cycles"],
+c:1,e:"Influence without authority = achieving outcomes when you can't mandate compliance. Since HR rarely has line authority over business leaders, this is how HR operates most of the time. Wrong: C (mandated processes) can be enforced without influence — compliance is required. D (HR-led training) is directed delivery, not cross-functional influence. A (legal hold) has formal authority.",
+qAr:"قدرة HR في 'التأثير بدون سلطة' الأكثر أهمية عندما:",
+oAr:["تُجري HR تحقيقات بصلاحية الاستدعاء","يجب على HR تحقيق تغييرات تنظيمية من خلال التعاون مع القادة الذين ليس لـ HR سلطة رسمية عليهم","تُطبّق HR عمليات إلزامية قانوناً تتطلب امتثالاً شاملاً","تُقدّم HR تدريباً على إدارة الأداء للموظفين"]},
+
+{a:"Relationship Management",t:"SJI",d:"hard",
+s:"An HR business partner's key client manager is consistently late to performance calibration sessions, submits compensation recommendations after deadlines, and doesn't communicate when there are employee relations issues until they escalate. The HRBP has mentioned this informally twice with no change.",
+q:"The MOST effective HR approach to this relationship challenge is:",
+o:["Have a direct, structured conversation establishing clear expectations, agreed timelines, and mutual accountability — and address what's making the current approach unworkable for the manager","Redesign all HR processes to remove the manager's input requirements and eliminate the dependency","Escalate the manager's non-compliance to their senior leader to obtain a directive for improvement","Document the pattern and wait for a critical business impact before engaging more formally"],
+c:0,e:"Relationship management requires direct, structured expectation-setting before escalation. A mutual conversation addresses the root cause (the manager may have competing priorities or not understand the impact) and builds a working relationship. Wrong: C (escalate first) bypasses direct engagement and damages the relationship. D (wait for impact) allows ongoing operational risk. B (remove dependency) abandons the partnership model.",
+qAr:"النهج الأكثر فاعلية من HR لهذا التحدي في العلاقة هو:",
+oAr:["إجراء محادثة مباشرة ومنظمة تُحدد توقعات واضحة وتُحدد المخاطر بعبارات عمل مهمة للمدير","إعادة تصميم جميع عمليات HR لإزالة متطلبات مدخلات المدير","تصعيد عدم امتثال المدير لقائده للحصول على الامتثال من خلال السلطة العليا","توثيق النمط وانتظار تأثير عمل حاسم قبل المواجهة"],
+sAr:"شريك أعمال HR لاحظ أن المدير يتأخر باستمرار في مراجعات الأداء والتوثيق مما يُتسبب في مخاطر امتثال."},
+
+{a:"Relationship Management",t:"KI",d:"medium",
+q:"In stakeholder management, an 'adversarial stakeholder' who has high power and low alignment with HR priorities MOST requires:",
+o:["Strategic engagement to understand their concerns and find areas of shared interest before the next key decision","Immediate escalation to senior leadership to neutralize their ability to block HR priorities","Minimizing contact to prevent the relationship from worsening further","Documenting all interactions in case their opposition creates legal or compliance issues"],
+c:0,e:"High power + low alignment = your most dangerous and most important stakeholder. Strategic engagement before key decisions allows you to understand objections, co-opt their concerns, and build partial alignment. Wrong: C (minimize contact) forfeits influence. B (escalation) is premature and may entrench opposition. D (documentation) is protective but doesn't address the relationship problem.",
+qAr:"في إدارة المساهمين، يجب التعامل مع 'مساهم عدائي' ذو سلطة عالية وتوافق منخفض بـ:",
+oAr:["مشاركة استراتيجية لفهم مخاوفه وإيجاد مجالات اهتمام مشترك","التصعيد الفوري للقيادة العليا لتحييد قدرته على المعارضة","تقليل الاتصال لمنع تدهور العلاقة","توثيق جميع التفاعلات في حال أن معارضته تُنشئ مخاطر قانونية"]},
+
+{a:"Relationship Management",t:"SJI",d:"medium",
+s:"An HR business partner supports a business unit where the VP openly says 'HR adds no value — we handle our own people issues.' Despite multiple outreach attempts, the VP declines HR's involvement in talent reviews, succession planning, and performance management.",
+q:"The MOST effective long-term strategy for the HR business partner is:",
+o:["Identify a specific business problem the VP cares about (talent retention, productivity, capability gap), demonstrate measurable HR value on that","Report the VP's non-compliance with HR process requirements to the CEO for enforcement","Accept the VP's preference and focus HR resources on more receptive business units","Formalize HR's involvement through a policy mandate requiring all VPs to include HR in talent processes"],
+c:0,e:"Winning skeptical clients requires demonstrating value on their terms — addressing what they care about, not what HR cares about. Wrong: C (accept) allows a dysfunctional situation to persist. D (mandate) can force compliance but won't build the relationship. B (escalate) may create compliance but deep resentment. The strategic approach is to earn credibility through a specific, visible success.",
+qAr:"الاستراتيجية الأكثر فاعلية على المدى البعيد لشريك أعمال HR هي:",
+oAr:["تحديد مشكلة عمل محددة يهتم بها نائب الرئيس وحلها بصمت لإنشاء قيمة موضعية","الإبلاغ عن عدم امتثال نائب الرئيس للرئيس التنفيذي","قبول تفضيل نائب الرئيس وتوجيه موارد HR لوحدات أكثر تقبلاً","إضفاء الطابع الرسمي على مشاركة HR من خلال تفويض سياسة يُلزم جميع نواب الرؤساء"],
+sAr:"نائب رئيس يقول علناً 'HR لا تضيف قيمة — مجرد بيروقراطية.' المشاركة الرسمية في برامج HR منخفضة جداً."},
+
+{a:"Relationship Management",t:"KI",d:"medium",
+q:"'Active listening' in HR practice is distinguished from passive hearing primarily by:",
+o:["Using formal meeting notes to capture everything discussed for accurate HR record-keeping","Recording all employee conversations to ensure HR has documented evidence of what was communicated","Demonstrating understanding through reflecting content and emotion, asking clarifying questions, and withholding judgment while the speaker fully expresses their concern","Providing immediate solutions and recommendations to show HR has understood the issue"],
+c:2,e:"Active listening = reflecting back, clarifying, withholding judgment — the speaker feels truly heard before solutions are offered. Wrong: A (note-taking) is documentation, not listening. B (recording) is surveillance. D (immediate solutions) is the opposite of active listening — it interrupts the speaker's expression and signals HR's agenda over their concern.",
+qAr:"تتميز 'الاستماع الفعّال' في ممارسة HR عن الاستماع السلبي بـ:",
+oAr:["استخدام ملاحظات الاجتماع الرسمية لالتقاط كل ما نوقش","تسجيل جميع محادثات الموظفين لضمان حصول HR على أدلة موثقة","إظهار الفهم من خلال عكس المحتوى والعاطفة وطرح أسئلة توضيحية وتعليق الحكم المبكر","تقديم حلول وتوصيات فورية لإظهار أن HR فهم وقادر على التصرف"]},
+
+{a:"Relationship Management",t:"KI",d:"medium",
+q:"HR's role in managing organizational conflict MOST appropriately involves:",
+o:["Eliminating all workplace conflict through clear policy to prevent productivity loss","Facilitating resolution processes that help parties identify shared interests and develop mutually acceptable solutions","Arbitrating disputes as a neutral third party with final decision authority over outcomes","Deciding the outcome of conflicts between employees to prevent escalation and ensure consistency"],
+c:1,e:"HR as conflict facilitator: guides parties toward their own resolution, preserving relationships and building capability. Wrong: D (HR decides) removes party agency and sets HR up as judge rather than coach. A (eliminate all conflict) is unrealistic — productive tension is valuable. C (arbitration with final authority) may be appropriate in formal grievance systems but is not HR's primary conflict role in most settings.",
+qAr:"يشمل دور HR في إدارة الصراع التنظيمي بشكل أنسب:",
+oAr:["القضاء على جميع الصراعات في مكان العمل من خلال سياسة واضحة","تيسير عمليات حل تُساعد الأطراف على تحديد المصالح المشتركة والحلول القابلة للتطبيق","التحكيم في النزاعات بصفة طرف محايد ذو سلطة قرار نهائية","تحديد نتائج الصراعات بين الموظفين لمنع التصعيد"]},
+
+{a:"Relationship Management",t:"SJI",d:"hard",
+s:"HR receives feedback from an employee engagement survey that employees in one business unit feel 'HR only shows up when there's a problem' and 'doesn't understand our business.' The HR business partner for that unit has excellent technical HR knowledge but spends 90% of time on compliance and administrative tasks.",
+q:"To improve the HRBP relationship with this business unit, the MOST strategic change is:",
+o:["Increase HR's presence in the unit by attending more meetings and distributing more HR communications","Shift the HRBP's time investment toward understanding the unit's strategic priorities and proactively bringing HR insights on talent, capability","Move the HRBP's desk to the business unit's floor to increase informal interaction","Respond to the survey feedback by hosting town halls explaining HR's value proposition"],
+c:1,e:"The feedback indicates transactional HR relationship, not strategic partnership. The fix: rebalance the HRBP's time from compliance/admin toward business-aligned strategic work. Wrong: A (more meetings and communications) adds presence without changing the substance of what HR brings. C (co-location) is potentially helpful but tactical. D (town halls) is marketing HR's brand without changing the underlying relationship quality.",
+qAr:"لتحسين علاقة HRBP بهذه الوحدة التجارية، أكثر تغيير استراتيجي هو:",
+oAr:["زيادة حضور HR في الوحدة بحضور المزيد من الاجتماعات","تحويل استثمار وقت HRBP نحو فهم استراتيجية الوحدة وتحدياتها بدلاً من التركيز على معالجة المعاملات","نقل مكتب HRBP لطابق الوحدة لزيادة التواصل غير الرسمي","الاستجابة لملاحظات الاستبيان بعقد جلسات نقاش مفتوح تشرح قيمة HR"],
+sAr:"الموظفون في وحدة عمل يُقيّمون HR بـ 2.1 من 5 مع تعليقات: 'HR لا تفهم أعمالنا'، 'HR يُبطئ قرارات التوظيف'، 'يصعب الوصول لـ HRBP.' الامتثال يُصنف 4.6/5."},
+
+{a:"Relationship Management",t:"KI",d:"easy",
+q:"The concept of 'psychological contract' in employment relationships refers to:",
+o:["A legally binding employment agreement that supplements the written employment contract","The confidentiality agreement that employees sign regarding proprietary organizational information","The performance management contract that establishes mutual goals between a manager and employee","The set of informal, unwritten mutual expectations between employee and employer about obligations, fairness, and treatment"],
+c:3,e:"Psychological contract = unwritten, perceived mutual obligations. Employees expect fair treatment, development, security; employers expect loyalty, performance, commitment. When either party feels the contract is violated, disengagement or exit follows — even when no formal agreement has been breached. Wrong: A and C are written formal agreements. B is an NDA.",
+qAr:"مفهوم 'العقد النفسي' في علاقات العمل يشير إلى:",
+oAr:["اتفاقية عمل ملزمة قانوناً تكمّل عقد العمل المكتوب","اتفاقية السرية التي يوقعها الموظفون حول المعلومات المسجّلة","عقد إدارة الأداء الذي يُحدد الأهداف المشتركة","مجموعة التوقعات المتبادلة غير الرسمية وغير المكتوبة بين الموظف وصاحب العمل"]},
+
+// ══════ COMMUNICATION (8q) ══════
+{a:"Communication",t:"KI",d:"medium",
+q:"In organizational communication, 'two-way communication' is significant because:",
+o:["It doubles the communication infrastructure cost but produces higher message retention rates","It legally protects the organization by documenting that employees received and acknowledged HR communications","It creates mechanisms for receivers to respond, ask questions, and provide feedback — allowing HR to verify understanding and adjust messaging based on input","It reduces communication frequency by allowing HR to consolidate messages into dialogue sessions"],
+c:2,e:"Two-way communication = dialogue, not broadcast. The value is feedback loops that verify understanding and allow adjustment. Wrong: A is not how SHRM frames two-way communication. B (legal protection) is documentation, not communication quality. D misunderstands frequency as the variable.",
+qAr:"'التواصل ثنائي الاتجاه' في التواصل التنظيمي مهم لأنه:",
+oAr:["يُضاعف تكلفة بنية التواصل لكن يُنتج معدلات فهم أعلى","يحمي المنظمة قانونياً بتوثيق أن الموظفين تلقوا الرسائل الحاسمة","يُنشئ آليات للمستلمين للرد وطرح الأسئلة وتقديم الملاحظات مما يُمكّن من التحقق من الفهم","يُقلل وتيرة التواصل بالسماح لـ HR بدمج الرسائل"]},
+
+{a:"Communication",t:"SJI",d:"hard",
+s:"HR is rolling out a major policy change affecting overtime calculation for 1,400 field workers across 6 regions. Previous HR communications to this group have achieved only 34% comprehension according to follow-up surveys. The workers have low email usage, varying literacy levels, and are rarely in the office.",
+q:"The MOST effective communication approach for this audience is:",
+o:["Hold town halls at headquarters and stream them live to regional employees who cannot attend","Post the policy on the company intranet and send an all-employee email notification","Send the policy documentation via certified mail to ensure legal delivery to all employees","Use multi-channel delivery including in-person team briefings by local supervisors, visual one-page summaries"],
+c:3,e:"This audience requires: channels they actually use (in-person via their supervisors, not email), accessible format (visual summaries vs. policy documents), language accessibility, and active comprehension verification. Wrong: C (certified mail) delivers documents but doesn't achieve understanding. B (intranet + email) ignores the 34% comprehension problem with this channel for this audience. A (HQ town halls + live stream) still requires email/computer access and headquarters availability.",
+qAr:"النهج الأكثر فاعلية في التواصل لهذا الجمهور هو:",
+oAr:["عقد جلسات نقاش مفتوح في المقر الرئيسي وبثها مباشرةً للموظفين الإقليميين","نشر السياسة على الإنترانت وإرسال بريد إلكتروني مع رابط البوابة","إرسال وثائق السياسة بالبريد المسجّل لضمان التسليم القانوني","استخدام التوصيل متعدد القنوات بما يشمل جلسات إحاطة شخصية وتدريباً عملياً وملخصات مكتوبة"],
+sAr:"تطرح HR تغييراً كبيراً في السياسة يؤثر على احتساب العمل الإضافي لـ 1,400 موظف في 8 مواقع. القوى العاملة موزعة جغرافياً وتضم موظفين مكتبيين وعمال خط إنتاج وفرق عمل عن بُعد."},
+
+{a:"Communication",t:"KI",d:"medium",
+q:"HR communication should be 'audience-centered' rather than 'sender-centered,' which means:",
+o:["Communication frequency should be determined by audience preference surveys rather than HR's timeline","All HR communications should be co-written with employee representatives to ensure relevance","HR should survey employees before writing any communication to obtain pre-approval of the content","Communication is designed around what the audience needs to understand and do — not what HR finds important to say"],
+c:3,e:"Audience-centered communication starts with: who is the audience, what do they need to know, what will they do with this information, what are their concerns? Sender-centered communication starts with what HR wants to say. Wrong: C (pre-approval surveys) is a misapplication of audience research. B (co-written) is stakeholder engagement, not audience-centered communication design. D addresses frequency rather than content design.",
+qAr:"يجب أن يكون تواصل HR 'موجهاً للجمهور' وليس 'موجهاً للمرسل'، مما يعني:",
+oAr:["يجب تحديد وتيرة التواصل بتفضيل الجمهور المُقاس بالاستطلاعات","يجب كتابة جميع تواصلات HR بالتعاون مع ممثلي الموظفين","يجب على HR استطلاع الموظفين قبل كتابة أي تواصل للحصول على موافقتهم","التواصل مُصمَّم حول ما يحتاج الجمهور لفهمه والتصرف بناءً عليه"]},
+
+{a:"Communication",t:"SJI",d:"medium",
+s:"An HR director needs to communicate a sensitive restructuring to 3,000 employees across 8 countries in 4 time zones. The news includes 200 redundancies. Leadership wants simultaneous global announcement to prevent information leaks.",
+q:"The MOST critical communication design element for this scenario is:",
+o:["Timing the announcement for the end of the workday Friday to minimize operational disruption","Delegating all communication to regional HR teams to ensure cultural sensitivity","Using a single global communication to maximize consistency of messaging across all regions","Ensuring all employee groups receive the information simultaneously through their direct managers —"],
+c:3,e:"Simultaneous delivery via direct managers (not email blast) is most effective for sensitive restructuring news: managers are the trusted messenger, can address individual concerns immediately, and follow-up dialogue can begin right away. Pre-briefing managers is essential for this to work. Wrong: C (single global message) ignores the manager as communication channel. A (end of Friday) is a crisis communication mistake — employees need immediate support, not a weekend without answers. B (delegate without design) produces inconsistent delivery.",
+qAr:"عنصر تصميم التواصل الأكثر أهمية لهذا السيناريو هو:",
+oAr:["تحديد توقيت الإعلان في نهاية يوم الجمعة لتقليل الاضطراب الفوري","تفويض جميع التواصل لفرق HR الإقليمية لضمان التكيّف الثقافي","استخدام تواصل عالمي موحّد لزيادة اتساق الرسائل","ضمان استلام جميع مجموعات الموظفين للمعلومات في وقت واحد من خلال تواصل متزامن"],
+sAr:"يحتاج مدير HR إيصال إعادة هيكلة حساسة لـ 3,000 موظف عبر 14 دولة بمستويات متفاوتة من الوضوح في الرسائل. بعض الموظفين في مناطق بحساسية ثقافية عالية."},
+
+{a:"Communication",t:"KI",d:"medium",
+q:"The appropriate communication channel for delivering performance feedback to an employee MOST depends on:",
+o:["The preference of the HR department for maintaining consistent documentation practices","The employee's communication preference as stated in their individual employee profile","The time available for the manager, since efficiency determines the optimal channel choice","The complexity and sensitivity of the feedback, the relationship, and the action required — with high-stakes or sensitive feedback requiring more direct, private, face-to-face dialogue"],
+c:3,e:"Channel selection = match to message. Simple, positive feedback can be email. High-stakes, sensitive, or corrective feedback requires synchronous, direct conversation where tone, emotion, and immediate dialogue are possible. Wrong: A (HR preference) serves HR's convenience, not communication effectiveness. B (employee preference) is a factor but not the primary determinant. C (manager time) is logistical, not communication-quality-focused.",
+qAr:"قناة التواصل المناسبة لتقديم ملاحظات الأداء تتحدد أساساً بـ:",
+oAr:["تفضيل قسم HR للحفاظ على توثيق متسق","تفضيل الموظف في التواصل كما ذكره في خطته الفردية","الوقت المتاح للمدير","تعقيد وحساسية الملاحظات والعلاقة والقدرة على الاستجابة الفورية"]},
+
+{a:"Communication",t:"SJI",d:"hard",
+s:"HR surveys reveal that 68% of employees don't read the HR newsletter, 54% say they 'never know about HR policies until after they affect them,' and 71% say they prefer to get HR information from their direct manager rather than HR directly.",
+q:"The MOST strategic insight from this data for redesigning HR communication is:",
+o:["HR should build a mobile app to deliver HR policy notifications directly to employees' phones","The manager is the most trusted and preferred HR communication channel — HR should invest in equipping managers to be accurate","The problem is employee engagement with HR communications, solved by making HR content more entertaining","HR should increase newsletter frequency and improve its visual design to boost readership"],
+c:1,e:"71% manager preference is the strategic signal: stop competing with the manager as channel and invest in enabling the manager. This means: proactive manager briefings before policy changes, manager FAQs and toolkits, and feedback loops to catch manager knowledge gaps. Wrong: D (better newsletter) continues an ineffective channel. A (mobile app) doesn't address the trust differential between HR and managers. C (entertainment) trivializes an organizational design problem.",
+qAr:"أكثر رؤية استراتيجية من هذه البيانات لإعادة تصميم تواصل HR هي:",
+oAr:["يجب أن تبني HR تطبيقاً للهاتف المحمول لتسليم الإشعارات مباشرة","المدير هو القناة الأكثر ثقة وتفضيلاً — يجب إعادة تصميم استراتيجية التواصل لتجعل المدير الحلقة الرئيسية","المشكلة هي انخراط الموظفين في تواصل HR، وتُحلّ بتسويق أفضل","يجب على HR زيادة وتيرة النشرة الإخبارية وتحسين تصميمها"],
+sAr:"الاستطلاعات تُظهر: 68% لا يقرؤون النشرة الإخبارية لـ HR، 54% يتعلمون تحديثات HR من مديريهم، 71% يُصنّفون مدراءهم كأكثر المصادر الموثوقة."},
+
+{a:"Communication",t:"KI",d:"easy",
+q:"'Framing' in HR communication refers to:",
+o:["The physical layout and visual design of HR communication materials and documents","Presenting information in a context that shapes how the audience interprets its meaning and significance","Translating HR jargon into plain language for non-HR audiences to improve comprehension","The legal disclaimers and caveats that must be included in official HR communications"],
+c:1,e:"Framing = how information is presented shapes how it is perceived. Presenting 'this role will have 30% fewer employees' vs. 'this role will grow to focus on higher-value work' conveys identical information with different emotional impact. HR must be intentional about framing — neither dishonest nor accidental in shaping interpretation. Wrong: A is design/layout. D is legal compliance. C is plain language translation (important but different from framing).",
+qAr:"'التأطير' في تواصل HR يشير إلى:",
+oAr:["التصميم الفعلي والمرئي لمواد تواصل HR","تقديم المعلومات في سياق يُشكّل كيفية تفسير الجمهور لمعناها وأهميتها","ترجمة مصطلحات HR إلى لغة بسيطة للجماهير غير المتخصصة","إخلاءات المسؤولية القانونية التي يجب إدراجها في تواصل HR الرسمي"]},
+
+{a:"Communication",t:"KI",d:"medium",
+q:"During a crisis communication, HR's MOST important first priority is to:",
+o:["Coordinate with external PR agencies to ensure media messaging aligns with internal communications","Prepare a comprehensive FAQ document addressing all possible employee questions before releasing any communication","Obtain senior leadership approval for all statements before communicating anything to employees","Communicate promptly with accurate information and acknowledge what is not yet known — rather than delaying for completeness"],
+c:3,e:"Crisis communication principle: speed + honesty + acknowledging uncertainty > delayed perfection. Employees fill information vacuums with rumor and fear. Saying 'here is what we know, here is what we are working to find out, here is when we will update you' is more effective than waiting until all facts are confirmed. Wrong: B (comprehensive FAQ first) causes harmful delay. C (leadership approval first) is important but should be part of pre-established crisis protocols, not a sequencing barrier. A (external PR coordination) is secondary to employee communication.",
+qAr:"في تواصل الأزمات، أولى أولويات HR هي:",
+oAr:["التنسيق مع وكالات علاقات عامة خارجية","إعداد وثيقة أسئلة وأجوبة شاملة قبل التواصل","الحصول على موافقة القيادة العليا لجميع البيانات قبل أي تواصل","التواصل بسرعة بمعلومات دقيقة والاعتراف بما هو معروف وما لا يزال غير معروف"]},
+
+// ══════ GLOBAL & CULTURAL EFFECTIVENESS (6q) ══════
+{a:"Global & Cultural Effectiveness",t:"KI",d:"medium",
+q:"Hofstede's cultural dimension of 'power distance' affects HR practice primarily by influencing:",
+o:["The degree to which employees expect to participate in performance management goal-setting","How comfortable employees are with unequal power distribution — affecting communication, decision-making, and management style expectations across cultures","The importance employees place on individual achievement versus collective group harmony","Employee attitudes toward uncertainty and preference for structured rules and procedures"],
+c:1,e:"Power distance = the degree to which less powerful members accept unequal distribution of power. High PD cultures expect hierarchy and deference; low PD cultures expect consultation and flat structures. Wrong: A (participation in goal-setting) is more closely related to power distance but the option conflates it with performance management specifically. C = Individualism vs. Collectivism. D = Uncertainty Avoidance. SHRM uses Hofstede to help HR adapt management practices across cultures.",
+qAr:"يؤثر بُعد 'مسافة السلطة' لـ Hofstede على ممارسة HR أساساً من خلال التأثير على:",
+oAr:["درجة توقع الموظفين للمشاركة في قرارات إدارة الأداء","مدى ارتياح الموظفين لتوزيع السلطة غير المتكافئ — التأثير على التوقعات القيادية وأساليب التواصل","أهمية الإنجاز الفردي مقارنة بتحقيق المجموعة","مواقف الموظفين من عدم اليقين وتفضيلهم للقواعد المنظمة"]},
+
+{a:"Global & Cultural Effectiveness",t:"SJI",d:"hard",
+s:"A U.S.-based multinational is deploying a 'radical transparency' culture initiative — sharing financial results, team performance data, and individual salary ranges openly. The initiative is highly successful in North America and Northern Europe. Implementation in the company's Southeast Asian operations is creating significant distress: managers feel exposed, employees avoid honest performance discussions, and attrition among senior staff has increased.",
+q:"This implementation failure MOST reflects a gap in which HR competency, and what is the root cause?",
+o:["Business Acumen — the financial modeling for the initiative failed to account for regional implementation costs","Communication — the initiative was not explained thoroughly enough in local languages to overcome resistance","Global & Cultural Effectiveness — the initiative's design didn't account for high power distance and face-saving cultural norms in Southeast Asian contexts where","Consultation — internal HR consultants should have been involved in the initiative design phase"],
+c:2,e:"'Face' (mianzi/kibun) is a critical concept in many East and Southeast Asian cultures — public exposure of performance data can constitute public shaming and loss of face, undermining the psychological safety radical transparency is meant to create. High power distance also means open salary transparency across hierarchies violates expected norms. This is a Global & Cultural Effectiveness failure: a culturally homogeneous design applied universally without adaptation. Wrong: A is a financial modeling issue. B (translation) doesn't address the cultural design flaw. D (consultation) is partially relevant but names the wrong root cause.",
+qAr:"يعكس فشل التطبيق هذا فجوة في أي كفاءة HR؟",
+oAr:["الفطنة التجارية — فشل النمذجة المالية في توقع تكاليف التباين الثقافي","التواصل — لم تُشرح المبادرة بشكل كافٍ في السياقات المحلية","الفاعلية الثقافية العالمية — لم يأخذ التصميم في الاعتبار درجات مسافة السلطة وهوية المجموعة","الاستشارة — كان ينبغي إشراك مستشاري HR الداخليين في التصميم"],
+sAr:"تطلق شركة متعددة الجنسيات مبادرة ثقافة 'الشفافية الجذرية' في جميع مواقعها العالمية. بعد التطبيق في اليابان وكوريا الجنوبية والإمارات يتراجع الموظفون المتمرسون وتنخفض الإنتاجية."},
+
+{a:"Global & Cultural Effectiveness",t:"KI",d:"medium",
+q:"When managing a multicultural team, the HR practice of 'cultural humility' MOST directly involves:",
+o:["Treating all team members identically regardless of cultural background to avoid differential treatment","Applying the dominant culture's norms as the default and accommodating exceptions individually","Recognizing that cultural knowledge is always incomplete and maintaining an ongoing posture of curiosity, learning, and self-reflection about one's own cultural assumptions","Learning the official cultural etiquette of team members' home countries before meetings"],
+c:2,e:"Cultural humility = lifelong learning orientation + self-awareness about one's own cultural lens. It differs from cultural competence (knowledge) by emphasizing ongoing curiosity and acknowledgment of what you don't know. Wrong: D (etiquette memorization) is cultural competence preparation, not humility. B (dominant culture as default) is cultural imperialism. A (identical treatment) ignores cultural context and can create inequity.",
+qAr:"عند إدارة فريق متعدد الثقافات، تؤثر 'التواضع الثقافي' في ممارسة HR أكثر ما يكون على:",
+oAr:["معاملة جميع أعضاء الفريق بشكل متطابق","تطبيق أعراف الثقافة السائدة كافتراضي والتكيّف مع الآخرين عند الحاجة","الاعتراف بأن المعرفة الثقافية ناقصة دائماً والحفاظ على فضول وتواضع حول افتراضاتنا","تعلم آداب السلوك الثقافي الرسمية لبلدان أعضاء الفريق"]},
+
+{a:"Global & Cultural Effectiveness",t:"SJI",d:"medium",
+s:"An HR manager in a U.S. office receives a complaint from a team lead that their new team member (recently relocated from a Middle Eastern office) 'never speaks up in meetings' and 'won't challenge my ideas even when I ask.' The team lead is considering giving the employee a low performance rating for 'not contributing.'",
+q:"HR's MOST culturally informed response is:",
+o:["Explore whether the behavior may reflect cultural communication norms (high context, hierarchical deference) rather than lack of contribution — and facilitate a direct conversation between manager and employee to build shared understanding","Require the employee to complete cultural assimilation training to adapt to U.S. team communication norms","Tell the manager to document the behavior and let it affect the performance rating as a standard would apply to any employee","Advise the manager that the employee's silence is a cultural adaptation period and should not affect performance ratings during the first 6 months"],
+c:0,e:"'Silence in meetings' and 'deferring to authority' are communication norms in many high-context, high-power-distance cultures where disagreeing with a leader publicly is disrespectful, not disengaged. The HR response should build cross-cultural understanding between the manager and employee rather than requiring one-sided assimilation. Wrong: D (6-month blanket exception) doesn't build understanding. B (assimilation training) imposes the dominant culture. C (rate by U.S. norm) is potentially discriminatory cultural bias.",
+qAr:"الاستجابة الأكثر وعياً ثقافياً من HR هي:",
+oAr:["استكشاف ما إذا كان السلوك قد يعكس معايير تواصل ثقافية قبل وضع توقع للتغيير السلوكي","إلزام الموظف بإكمال تدريب على الاندماج الثقافي للتكيّف مع معايير الاجتماعات الأمريكية","نصح المدير بتوثيق السلوك والسماح له بالتأثير على تقييم الأداء","نصح المدير بأن صمت الموظف تكيّف ثقافي طبيعي ولا يمثل مخاوف أداء"],
+sAr:"قائد فريق يشكو من موظفه الجديد من اليابان: 'لا يساهم أبداً في الاجتماعات ولا يشارك حتى عندما يُسأل مباشرة.' العمل المُسلَّم ممتاز."},
+
+{a:"Global & Cultural Effectiveness",t:"KI",d:"medium",
+q:"In the context of global HR, 'localization' refers to:",
+o:["Hiring exclusively local nationals to manage all operations in each country","Translating HR documents from English into local languages without adapting content or process","Reducing global HR standards to the lowest common denominator across all locations","Adapting HR policies, practices, and cultural norms to fit the legal requirements, workforce expectations, and cultural context of each local operating environment"],
+c:3,e:"Localization = adapt substance and process, not just language. It includes: adjusting performance management approaches to cultural context, modifying benefits to local legal and market norms, adapting communication styles, and customizing L&D to local learning preferences. Wrong: B (translation only) is linguistic localization without substantive adaptation. A (local-only hiring) is a polycentric staffing approach, not localization per se. C (lowest common denominator) is a race to the bottom, not localization.",
+qAr:"في سياق HR العالمي، يشير 'التوطين' إلى:",
+oAr:["التوظيف حصرياً من المواطنين المحليين لإدارة جميع العمليات","ترجمة وثائق HR من الإنجليزية إلى اللغات المحلية دون تكييف المحتوى","تخفيض معايير HR العالمية للقاسم المشترك الأدنى","تكييف سياسات HR وممارساتها وأعرافها الثقافية لتتناسب مع المتطلبات القانونية والثقافة المحلية"]},
+
+{a:"Global & Cultural Effectiveness",t:"KI",d:"easy",
+q:"Hofstede's 'individualism vs. collectivism' dimension most directly impacts HR practice in:",
+o:["The importance employees place on formal credentials versus practical experience when evaluating candidates","How organizations design healthcare and insurance benefit structures for employees and their families","Whether performance management and reward systems emphasize individual achievement or team/group outcomes","How organizations structure physical workspaces and office environments for productivity"],
+c:2,e:"Individualism vs. Collectivism directly affects reward design: high-individualism cultures (U.S.) expect individual performance-based pay; high-collectivism cultures (Japan, many East Asian countries) may find individual rankings divisive and prefer team-based rewards. Wrong: D (workspace design) is less directly related. A (credentials vs. experience) is not a collectivism-individualism dimension. B (benefits) may be influenced but is not the primary application.",
+qAr:"يؤثر بُعد 'الفردية مقابل الجماعية' لـ Hofstede أكثر ما يكون على ممارسة HR من خلال:",
+oAr:["أهمية الأوراق الاعتمادية الرسمية مقابل الخبرة العملية","كيفية تصميم المنظمات لهياكل مزايا الرعاية الصحية","ما إذا كانت أنظمة إدارة الأداء والمكافآت تُركّز على المساهمات الفردية أو الجماعية","كيفية تصميم المنظمات للمساحات المادية وبيئات المكتب"]},
+
+// ══════ CONSULTATION (8q) ══════
+{a:"Consultation",t:"KI",d:"medium",
+q:"The HR consultation process model begins with which foundational step?",
+o:["Defining the problem accurately before developing any solutions — distinguishing presenting symptoms from root causes","Building stakeholder buy-in to ensure the recommended solution will be accepted","Benchmarking against industry peers to identify the most widely used approach","Recommending the optimal solution based on HR expertise and best practice"],
+c:0,e:"Effective consultation: define the problem before prescribing solutions. Jumping to solutions based on symptoms leads to solving the wrong problem. Wrong: D (recommend first) skips problem definition. B (build buy-in) comes after solution development. C (benchmarking) informs solution options but not the problem definition stage. SHRM's consultation model is explicitly: entry → diagnosis → data gathering → feedback → solution → implementation → evaluation.",
+qAr:"تبدأ عملية الاستشارة في HR بأي خطوة تأسيسية؟",
+oAr:["تعريف المشكلة بدقة قبل تطوير أي حلول — التمييز بين الأعراض والأسباب الجذرية","بناء تأييد المساهمين لضمان قبول الحل الموصى به","قياس الأداء مع الأقران في الصناعة لتحديد الحلول الأكثر استخداماً","التوصية بالحل الأمثل استناداً لخبرة HR وأفضل الممارسات"]},
+
+{a:"Consultation",t:"SJI",d:"hard",
+s:"A VP of Operations asks HR to 'fix the morale problem on the night shift.' Turnover is at 38%, absences are high, and productivity is declining. HR's initial instinct is to recommend an employee recognition program. Before recommending, HR conducts focus groups. Findings show: supervisors use inconsistent discipline, shift schedules change with <24h notice, safety complaints are unaddressed for weeks.",
+q:"Based on the consultation model, HR's MOST appropriate recommendation is:",
+o:["Request additional data from all shifts before recommending any intervention","Advise the VP that the root causes are operational, not HR problems, and redirect to Operations management","Address the root causes identified in the focus groups: supervisor consistency training, schedule stability policies","Implement the recognition program as initially planned since it directly addresses morale"],
+c:2,e:"The focus group diagnosis revealed that the morale problem is a symptom of operational management failures. The root causes (inconsistent discipline, schedule unpredictability, unaddressed safety) must be addressed first. Recognition won't fix a fundamentally broken operating environment. Wrong: A ignores the diagnostic data. A (more data) delays action on already-clear findings. B (redirect) abandons HR's consultation role — these are people management issues HR owns.",
+qAr:"استناداً لنموذج الاستشارة، توصية HR الأنسب هي:",
+oAr:["طلب بيانات إضافية من جميع الورديات قبل التوصية","نصح نائب الرئيس بأن الأسباب الجذرية تشغيلية وليست مشكلات HR","معالجة الأسباب الجذرية المحددة: اتساق الإشراف وبيئة العمل والاعتراف — ليس برنامج التقدير العام","تطبيق برنامج التقدير كما خطط له في البداية"],
+sAr:"يطلب نائب رئيس العمليات من HR 'إصلاح مشكلة الروح المعنوية في الوردية الليلية.' مجموعات التركيز تُظهر المشكلات الأساسية: اتساق الإشراف، بيئة العمل، عدم الاعتراف، وليس التعويض."},
+
+{a:"Consultation",t:"KI",d:"medium",
+q:"When an HR consultant conducts an 'entry' phase with a client, the primary goal is to:",
+o:["Present preliminary findings from prior investigations to accelerate the diagnostic phase","Establish mutual understanding of the engagement scope, role expectations, access to information, and confidentiality parameters","Obtain formal written agreement on the solution to be implemented before beginning work","Quickly establish HR's authority and expertise to build client confidence in the recommendation"],
+c:1,e:"Entry = contract-setting: clarifying scope, roles, confidentiality, access, and what success looks like. Without this foundation, the consultation risks scope creep, role confusion, and misaligned expectations. Wrong: D (establish authority) is not the purpose of entry — building a working relationship is. A (present findings) is premature without diagnostics. C (agree on solution) is the end of the consultation, not the beginning.",
+qAr:"عندما يُجري مستشار HR مرحلة 'الدخول' مع العميل، الهدف الأساسي هو:",
+oAr:["تقديم نتائج أولية من تحقيقات سابقة لتسريع العمل","إنشاء فهم متبادل لنطاق الارتباط وتوقعات الدور وحدود الأخلاقيات وعمليات التعاون","الحصول على اتفاق مكتوب رسمي على الحل قبل بدء التشخيص","إثبات سلطة HR وخبرتها بسرعة لبناء ثقة العميل"]},
+
+{a:"Consultation",t:"SJI",d:"medium",
+s:"An HR business partner is asked by the CEO to recommend a leadership development program to address declining engagement scores among directors and senior managers. HR conducts needs assessment and finds: the engagement drop correlates with role clarity changes following a restructuring 8 months ago, not leadership capability gaps.",
+q:"The MOST appropriate HR consultation response is:",
+o:["Recommend the leadership development program anyway because executive sponsorship for it is strong","Conduct an additional engagement survey before making any recommendation to strengthen the evidence base","Blend leadership development with role clarity work as a compromise between the CEO's request and the data","Present the needs assessment findings to the CEO: the diagnosis indicates a role clarity and structural problem requiring a different intervention than"],
+c:3,e:"Effective consultation requires presenting what the data shows even when it contradicts the client's pre-formed solution. A misdiagnosed intervention wastes resources and fails to solve the real problem. Wrong: A (recommend anyway) is consulting malpractice. C (blend both) partially addresses the data but endorses an intervention that isn't indicated. B (more survey data) delays a clear finding that already exists.",
+qAr:"أكثر استجابة استشارية أنسب من HR هي:",
+oAr:["التوصية ببرنامج التطوير القيادي في أي حال لأن دعم التنفيذيين يُمثّل تأييداً مهماً","إجراء استطلاع انخراط إضافي قبل تقديم أي توصية","دمج تطوير القيادة مع عمل وضوح الدور كتسوية","تقديم نتائج تقييم الاحتياجات: التشخيص يُشير لمشكلة وضوح الدور وليس قيادة — التوصية بحل متوافق مع السبب الجذري"],
+sAr:"يُطلب من شريك أعمال HR التوصية ببرنامج تطوير قيادي. تقييم الاحتياجات يُظهر: المشكلة الأساسية هي وضوح الدور والتوافق مع الأهداف (82% يُبلّغون بعدم معرفة ما تتوقعه الشركة منهم)، وليس القيادة."},
+
+{a:"Consultation",t:"KI",d:"medium",
+q:"In HR consultation, 'data gathering' methods should be selected based primarily on:",
+o:["Which methods HR has used most successfully in previous engagements with similar clients","What information is needed to accurately diagnose the problem — matching the method to the diagnostic question","The client's preference for qualitative versus quantitative approaches to organizational data","The budget and time constraints of the current engagement as the primary limiting factors"],
+c:1,e:"Method selection follows the question: 'What do I need to know and what method best answers that?' Surveys measure breadth; interviews uncover depth; observation reveals behavior; data analysis shows patterns. Wrong: A (prior successful methods) may be habitual but not diagnostic-question-driven. D (budget/time) is a constraint, not a selection criterion. C (client preference) is a factor but shouldn't override diagnostic rigor.",
+qAr:"في استشارة HR، يجب اختيار طرق 'جمع البيانات' أساساً بناءً على:",
+oAr:["أي الطرق استخدمتها HR بنجاح أكبر في ارتباطات سابقة","ما هي المعلومات المطلوبة لتشخيص المشكلة بدقة — مطابقة الطريقة للنوع والعمق المطلوبين","تفضيل العميل للمناهج الكمية مقابل النوعية","قيود الميزانية والوقت كعامل أولي"]},
+
+{a:"Consultation",t:"SJI",d:"hard",
+s:"After completing a 6-month organizational effectiveness consulting engagement, HR presents findings to the leadership team. The CLO rejects the findings publicly, saying 'this analysis is politically motivated' and 'HR doesn't understand our business.' Two other leaders nod in agreement.",
+q:"HR's MOST effective response to this challenge demonstrates which consultation skill?",
+o:["Acknowledge the CLO's perspective, ask clarifying questions about specific findings they question, and offer to review those data points together — separating the substantive critique from the personal attack","Withdraw the report for revision and represent only the findings the leadership team has already endorsed","Defend the findings vigorously by presenting additional evidence and citing the methodology in detail","Ask for a private meeting with the CEO to address the CLO's challenge outside the group setting"],
+c:0,e:"Effective handling of client pushback: stay curious rather than defensive. Asking what specific data points are contested separates legitimate methodological critique (which HR should address) from political resistance (which direct data review can expose). Wrong: C (vigorous defense) escalates and entrenches positions. B (withdraw findings) validates the CLO's pressure and compromises HR's integrity. D (private CEO meeting) may be needed later but abandons the consultation in the room.",
+qAr:"أكثر استجابة فاعلة من HR لهذا التحدي تُظهر أي مهارة في الاستشارة؟",
+oAr:["الاعتراف بمنظور CLO وطرح أسئلة توضيحية وعرض مراجعة مشتركة لتلك الجوانب","سحب التقرير للمراجعة وإعادة عرض النتائج التي تقبلها القيادة فقط","الدفاع عن النتائج بقوة بتقديم أدلة إضافية","طلب اجتماع خاص مع الرئيس التنفيذي لمعالجة التحدي"],
+sAr:"بعد إكمال ارتباط استشارة من 6 أشهر، تُقدّم HR نتائج لفريق القيادة. يختلف كبير مسؤولي التعلم علناً مع نتائج رئيسية ويُصنّفها 'غير واقعية.'"},
+
+{a:"Consultation",t:"KI",d:"medium",
+q:"The 'evaluation' phase of the HR consultation model is critical because:",
+o:["It creates documentation for HR to use in future similar engagements as a reference template","It satisfies legal requirements for organizations to document organizational change interventions","It determines whether the intervention achieved its intended outcomes — enabling HR to demonstrate value, adjust ineffective approaches, and build an evidence base for future decisions","It provides the basis for billing the client for the consultation engagement based on outcomes delivered"],
+c:2,e:"Evaluation = did it work? Without this phase, HR cannot demonstrate ROI, identify what to do differently, or build organizational learning. Wrong: A (template for future use) is a byproduct, not the purpose. B (legal requirements) is not a driver of evaluation in most HR consultations. D (billing) is not how internal HR consultation works.",
+qAr:"مرحلة 'التقييم' في نموذج استشارة HR حاسمة لأن:",
+oAr:["تُنشئ توثيقاً يستخدمه HR في ارتباطات مستقبلية","تُلبي متطلبات قانونية لتوثيق التدخلات التنظيمية","تُحدد ما إذا كان التدخل حقق نتائجه المقصودة والدروس المستفادة للممارسة المستقبلية","توفر الأساس لإصدار فاتورة للعميل مقابل الارتباط"]},
+
+{a:"Consultation",t:"KI",d:"easy",
+q:"When HR presents feedback findings to a client during an organizational consultation, the MOST effective approach is to:",
+o:["Ask the client to review findings in advance and remove any they disagree with before the formal presentation","Present only findings that the client will be receptive to, to maintain the consulting relationship","Present all relevant findings — including difficult ones — framed in the context of their organizational implications and opportunities for improvement","Present quantitative findings only, since qualitative data is too subjective for evidence-based consultation"],
+c:2,e:"Complete and honest feedback is a consultation integrity requirement. Difficult findings — properly framed as opportunities rather than indictments — build trust and credibility over time. Wrong: B (selective presentation) is consulting malpractice. A (client veto on findings) compromises the entire diagnostic process. D (quantitative only) ignores the rich insight that qualitative data provides on the 'why' behind quantitative patterns.",
+qAr:"عند تقديم HR ملاحظات النتائج لعميل خلال استشارة تنظيمية، النهج الأكثر أخلاقية هو:",
+oAr:["طلب من العميل مراجعة النتائج مسبقاً وإزالة ما يختلف معه","تقديم النتائج التي سيتقبّلها العميل فقط","تقديم جميع النتائج ذات الصلة بما فيها الصعبة في إطار تأثيرها على المنظمة والحلول الممكنة","تقديم النتائج الكمية فقط إذ البيانات النوعية ذاتية جداً"]},
+
+// ══════ BUSINESS ACUMEN (10q) ══════
+{a:"Business Acumen",t:"KI",d:"medium",
+q:"The 'balanced scorecard' framework helps HR demonstrate strategic value by:",
+o:["Ensuring HR KPIs are balanced across all four SHRM competency clusters simultaneously","Scoring individual HR professionals' contributions across a balanced set of performance criteria","Replacing financial metrics with four equally weighted perspectives on organizational performance","Linking learning and growth investments (including HR) to internal processes, customer outcomes, and ultimately financial performance —"],
+c:3,e:"Kaplan and Norton's BSC: Financial ← Customer ← Internal Processes ← Learning & Growth. HR's value in the Learning & Growth perspective flows through internal processes to customer and financial outcomes. Wrong: A misunderstands BSC (financial isn't replaced, it's the end outcome). C misapplies BSC to HR competencies. D misapplies BSC to individual performance.",
+qAr:"يساعد إطار 'بطاقة الأداء المتوازن' HR على إثبات القيمة الاستراتيجية من خلال:",
+oAr:["ضمان أن KPIs لـ HR موزونة عبر جميع تجمعات كفاءات SHRM الأربعة","تسجيل مساهمات محترفي HR الأفراد عبر نطاق نتائج متوازن","استبدال المقاييس المالية بأربع وجهات نظر موزونة بالتساوي","ربط استثمارات التعلم والنمو (بما فيها HR) بالعمليات الداخلية ونتائج العملاء والأداء المالي"]},
+
+{a:"Business Acumen",t:"SJI",d:"hard",
+s:"An HR director presents a proposed $2.4M talent development investment to the CFO. The CFO asks for 'a business case with ROI projections.' HR's proposal currently includes learning hours, completion rates, and manager satisfaction scores.",
+q:"To create a business case that will satisfy the CFO, HR must MOST importantly add:",
+o:["A risk analysis of what happens if the investment is not approved and talent gaps persist","Historical data on employee satisfaction with previous L&D programs","Financial projections linking the talent development investment to measurable business outcomes — such as productivity improvement","A comparison of the proposed investment to industry benchmark spending on L&D per employee"],
+c:2,e:"A CFO business case requires financial outcomes. Learning hours and satisfaction scores are activity and reaction metrics — not business outcomes. HR must connect: investment → capability built → business problem solved → dollar value. Wrong: B (historical satisfaction) is not financial ROI. D (benchmarking) establishes reasonableness but doesn't answer 'what return do we get?' A (risk of no action) is part of a complete business case but not the gap the CFO is identifying.",
+qAr:"لإنشاء مقترح أعمال سيُرضي CFO، يجب على HR إضافة:",
+oAr:["تحليل المخاطر مما يحدث إذا لم يُوافق على الاستثمار","بيانات تاريخية عن رضا الموظفين ببرامج L&D السابقة","تحديات مالية تربط الاستثمار بنتائج أعمال قابلة للقياس — انخفاض الدوران وتحسين الإنتاجية وانخفاض وقت الإلحاق","مقارنة الاستثمار المقترح بمعيار الإنفاق على قطاع الصناعة"],
+sAr:"يُقدّم مدير HR اقتراحاً باستثمار 2.4 مليون دولار في تطوير المواهب لـ CFO الذي يسأل: ما عائد الاستثمار المتوقع؟"},
+
+{a:"Business Acumen",t:"KI",d:"medium",
+q:"Understanding the organization's 'business model' is important for HR because:",
+o:["Business model knowledge allows HR to identify cost-cutting opportunities in HR's own budget","How the organization creates, delivers, and captures value determines what human capital capabilities are most strategically critical for HR to develop and protect","HR needs business model understanding to ensure HR's own reporting structure is optimally designed","HR must be able to explain the business model to new employees during onboarding orientation"],
+c:1,e:"Business model = how the organization creates, delivers, and captures value. HR's talent strategy, succession planning, and capability development must align with what the business needs to create value. Wrong: D (onboarding explanation) is a communication task. A (cost-cutting) is narrow and not the strategic reason. C (HR reporting structure) is organization design, not business model application.",
+qAr:"فهم 'نموذج الأعمال' للمنظمة مهم لـ HR لأن:",
+oAr:["تُتيح معرفة نموذج الأعمال لـ HR تحديد فرص تخفيض التكاليف","كيفية خلق المنظمة وتسليم والتقاط القيمة تُحدد أي قدرات رأس المال البشري يجب على HR إعطاؤها الأولوية","يحتاج HR لفهم نموذج الأعمال لضمان توافق هيكل إعداد التقارير","يجب أن يتمكن HR من شرح نموذج الأعمال للموظفين الجدد خلال الإلحاق"]},
+
+{a:"Business Acumen",t:"SJI",d:"medium",
+s:"A retail company is shifting from a product-focused to a customer-experience-focused strategy. The strategy requires frontline employees who can resolve problems independently, personalize service, and handle complexity. Current hiring and training practices were designed for a transactional role requiring compliance with scripts and procedures.",
+q:"The MOST strategically important HR response is to:",
+o:["Hire a customer experience consulting firm to design the new service model without HR involvement","Update the employee handbook to reflect the new customer service philosophy","Train existing employees on the new strategy through a one-day 'customer experience' workshop","Redesign the entire talent lifecycle for frontline roles — selection criteria, hiring assessments, onboarding, training design"],
+c:3,e:"Strategic HR alignment: when business strategy changes, the entire talent system must change — not just communication or training. The current talent system was designed for the old strategy and will continue to select, develop, and reinforce transactional behaviors. Wrong: B (update handbook) is administrative. C (one-day workshop) is insufficient to produce behavioral change for a fundamental capability shift. A (external consulting without HR) abdicates HR's strategic responsibility.",
+qAr:"تُنشئ 'تحليلات القوى العاملة' قيمة استراتيجية لـ HR أساساً من خلال:",
+oAr:["أتمتة معاملات HR الروتينية لتقليل العبء الإداري","استبدال حكم المدير في قرارات التوظيف بتوصيات خوارزمية","تلبية متطلبات تقارير EEOC والعمل الإيجابي القانونية","تمكين HR من تحديد الأنماط في بيانات القوى العاملة التي تتنبأ بنتائج الأعمال"]},
+
+{a:"Business Acumen",t:"KI",d:"medium",
+q:"'Workforce analytics' creates strategic value for HR primarily by:",
+o:["Enabling HR to identify patterns in workforce data that predict business outcomes — allowing evidence-based decisions on talent investment","Replacing manager judgment in employment decisions with objective algorithmic recommendations","Automating routine HR transactions to reduce administrative burden on HR staff","Satisfying legal reporting requirements for EEOC and affirmative action compliance documentation"],
+c:0,e:"Workforce analytics = using data patterns to predict and improve business outcomes (predicting who will leave, what drives performance, which development interventions work). Wrong: A — analytics informs, not replaces, human judgment. D is compliance reporting (a different use case). C is HR process automation (a different technology function).",
+qAr:"أكثر استجابة HR استراتيجياً هي:",
+oAr:["إعادة تصميم دورة حياة المواهب كاملة للأدوار في الواجهة الأمامية — مؤهلات الاختيار وهياكل التعويض وتصميم الإلحاق والتدريب","تحديث دليل الموظف لعكس فلسفة خدمة العملاء الجديدة","توظيف شركة استشارات تجربة عملاء لتصميم نموذج الخدمة الجديد","تدريب الموظفين الحاليين على الاستراتيجية الجديدة من خلال يوم تدريب"],
+sAr:"شركة تجزئة تنتقل من التركيز على المنتج إلى التركيز على تجربة العميل. مؤهلات الواجهة الأمامية تُقيّم المعرفة بالمنتج حصرياً. التعويض مرتبط بمبيعات الفرد. التدريب قبل الإلحاق يوم واحد."},
+
+{a:"Business Acumen",t:"SJI",d:"hard",
+s:"HR analysis shows that voluntary turnover in the engineering function is 28% annually, costing an estimated $4.2M in replacement costs. Exit data identifies 'career stagnation' as the primary driver (68% of exits). Current L&D spending for engineering is $180K annually. The VP of Engineering asks HR for a solution.",
+q:"HR's business case for increased L&D investment should be built on which logical structure?",
+o:["Present the cost of current L&D per engineer as evidence the budget is insufficient relative to industry benchmarks","Model the financial impact: if increased L&D investment reduces turnover by a specific percentage, calculate the turnover cost savings compared to the L&D investment —","Compare the 28% engineering turnover rate to the company average to establish that engineering is disproportionately affected","Focus the business case on employee satisfaction improvements from career development programs"],
+c:1,e:"The business case logic: Investment X → reduces turnover from 28% to Y% → saves $Z in replacement costs → net benefit = $Z minus X. This connects the HR intervention directly to a financial outcome the CFO and VP can evaluate. Wrong: A (benchmarking spend) establishes reasonableness but doesn't prove ROI. D (satisfaction scores) are the wrong outcome metric for a financial stakeholder. C (comparative rates) establishes the problem size but not the solution value.",
+qAr:"يجب بناء مقترح أعمال HR للاستثمار الإضافي في L&D على أي بنية منطقية؟",
+oAr:["تقديم تكلفة L&D الحالية لكل مهندس كدليل على أن الميزانية غير كافية","نمذجة الأثر المالي: إذا قلّل الاستثمار الإضافي في L&D الدوران بنسبة 15%، احسب المدخرات واطرح تكلفة L&D الإضافية — عرض صافي ROI","مقارنة معدل الدوران 28% بمتوسط الشركة","تركيز مقترح الأعمال على تحسينات رضا الموظفين"],
+sAr:"الدوران الطوعي في الهندسة 28% سنوياً وتكلفة الاستبدال 1.4 مرة الراتب. المهندسون يعزون ذلك لفرص تطوير مهني غير كافية. ميزانية L&D الحالية 2,200 دولار لكل موظف."},
+
+{a:"Business Acumen",t:"KI",d:"medium",
+q:"In SHRM's Business Acumen competency, 'financial literacy' for HR practitioners specifically includes understanding:",
+o:["The mechanics of executive compensation and equity grant administration programs","Ability to perform audits of payroll systems and financial controls as required by SOX regulations","Tax regulations affecting employee compensation and benefits programs","How to read and interpret financial statements — including income statement, balance sheet, and cash flow —"],
+c:3,e:"HR financial literacy = reading financial statements, understanding key metrics (revenue growth, EBITDA, cash position), and translating HR investments into financial outcomes. This enables HR to present in CFO language and make better-informed decisions about HR budgets. Wrong: B (SOX audits) is a compliance/accounting function. A (equity administration) is a specific HR program, not financial literacy broadly. C (tax regulations) is a compliance/legal competency.",
+qAr:"في كفاءة الفطنة التجارية لـ SHRM، 'الإلمام المالي' لممارسي HR يتضمن تحديداً:",
+oAr:["آليات التعويض التنفيذي وإدارة منح الأسهم","القدرة على إجراء تدقيق لأنظمة الرواتب والضوابط المالية","اللوائح الضريبية التي تؤثر على برامج تعويض الموظفين","كيفية قراءة وتفسير البيانات المالية بما فيها قائمة الدخل والميزانية العمومية وبيانات التدفق النقدي"]},
+
+{a:"Business Acumen",t:"SJI",d:"medium",
+s:"A manufacturing company's CHRO learns from the CEO that the board is considering a major acquisition that would double the company's workforce. The acquisition is 9 months away from closing. The CHRO is asked to 'be ready' but given no specifics.",
+q:"The MOST strategically proactive HR action at this stage is to:",
+o:["Begin developing an HR due diligence framework and integration planning template — identifying key data needs (compensation structures, union contracts, headcount","Wait for the deal to close before starting any HR planning to avoid wasted effort if the acquisition falls through","Commission a compensation benchmarking study to prepare for potential salary alignment issues","Hire additional HR staff immediately to prepare for the increased HR workload post-acquisition"],
+c:0,e:"SHRM's business acumen principle: HR anticipates business needs rather than reacting. 9 months is adequate time to build a due diligence framework and integration planning template that can be deployed quickly when specifics become available. Wrong: B (wait) wastes the preparation window. D (hire HR staff) is premature without knowing the integration scope. C (compensation benchmarking) is one element but not the full strategic readiness the situation requires.",
+qAr:"أكثر إجراء HR استباقياً استراتيجياً في هذه المرحلة هو:",
+oAr:["البدء في تطوير إطار العناية الواجبة لـ HR وتخطيط الاندماج يشمل: قائمة مراجعة للأفراد والجداول الزمنية ومتطلبات الموارد","انتظار إغلاق الصفقة قبل بدء أي تخطيط HR","تكليف دراسة معيارية للتعويضات للاستعداد للمقارنة المحتملة","توظيف موظفي HR إضافيين فوراً للاستعداد لحجم العمل الإضافي"],
+sAr:"يعلم CHRO من الرئيس التنفيذي أن المجلس يدرس الاستحواذ على شركة منافسة. لم يُعلَن عن الصفقة رسمياً. من المتوقع إغلاقها في 4-6 أشهر."},
+
+{a:"Business Acumen",t:"KI",d:"easy",
+q:"A SWOT analysis in HR strategic planning is MOST useful for:",
+o:["Setting individual performance targets for HR team members based on organizational goals","Benchmarking HR program effectiveness against industry peers using standardized metrics","Measuring the financial performance of current HR programs relative to investment","Identifying internal HR capabilities and gaps alongside external opportunities and threats to inform HR strategy development"],
+c:3,e:"SWOT: Strengths/Weaknesses (internal) + Opportunities/Threats (external) = situational awareness for strategy development. Wrong: C (financial performance measurement) is an evaluation function. A (individual performance targets) is performance management. B (industry benchmarking) informs the analysis but is not what SWOT itself does.",
+qAr:"تحليل SWOT في التخطيط الاستراتيجي لـ HR الأكثر فائدة لـ:",
+oAr:["وضع أهداف أداء فردية لأعضاء فريق HR","قياس فاعلية برامج HR مقارنة بالأقران في الصناعة","قياس الأداء المالي لبرامج HR الحالية","تحديد قدرات HR الداخلية والفجوات إلى جانب الفرص والتهديدات الخارجية"]},
+
+// ══════ CRITICAL EVALUATION (8q) ══════
+{a:"Analytical Aptitude",t:"KI",d:"medium",
+q:"In HR research and analysis, 'correlation' differs from 'causation' in that correlation:",
+o:["Is a weaker statistical relationship that becomes causation when sample size is large enough","Applies only to experimental research designs and not to observational HR data analysis","Proves that two variables are related because one directly causes changes in the other","Shows that two variables move together statistically without establishing that one causes the other — a third variable may explain both"],
+c:3,e:"Correlation ≠ causation: two variables may co-vary because of a third underlying factor. Classic HR example: ice cream sales and drowning rates both increase in summer — not because ice cream causes drowning, but because heat (a third variable) drives both. Wrong: C is causation, not correlation. C misunderstands the statistics — large samples confirm correlation more reliably but don't establish causation. B is false (correlation is calculated in observational data).",
+qAr:"في بحث وتحليل HR، تختلف 'الارتباط' عن 'السببية' في أن الارتباط:",
+oAr:["علاقة إحصائية أضعف تصبح سببية عندما يكون حجم العينة كافياً","ينطبق فقط على تصاميم البحث التجريبي وليس على الدراسات الرصدية","يُثبت أن متغيرين مرتبطان لأن أحدهما يُسبب مباشرة التغيير في الآخر","يُظهر أن متغيرين يتحركان معاً إحصائياً دون إثبات سبب أو تأثير"]},
+
+{a:"Analytical Aptitude",t:"SJI",d:"hard",
+s:"HR analyzes that employees who complete the company's leadership development program have 40% higher promotion rates over the next 3 years compared to those who did not participate. The head of L&D concludes: 'Our program is driving promotion outcomes.'",
+q:"The MOST significant methodological flaw in this conclusion is:",
+o:["The comparison group (non-participants) may systematically differ from participants in motivation, performance","The 40% difference is not large enough to be statistically significant with a typical HR sample size","Promotion rates are the wrong outcome metric for evaluating a leadership development program","The 3-year timeframe is too short to measure the true impact of leadership development programs"],
+c:0,e:"Selection bias: employees selected for a leadership program are likely already identified as high-potential (hence the nomination) — their higher promotion rate may reflect their pre-existing high potential, not the program's impact. To establish causation, HR needs a control design (randomized or matched) that isolates the program effect from pre-selection effects. Wrong: B (statistical significance) is a real concern but not the 'most significant' flaw. D (timeframe) is a reasonable critique. C (wrong metric) is debatable but promotion is a logical outcome for a leadership program.",
+qAr:"أهم عيب منهجي في هذا الاستنتاج هو:",
+oAr:["مجموعة المقارنة قد تختلف منهجياً — يُختار الموظفون عالو الإمكانية للبرنامج، مما يجعل الترقيات تعكس الإمكانية السابقة لا تأثير البرنامج","الفارق 40% غير كافٍ إحصائياً","معدلات الترقية هي المقياس الخاطئ لتقييم برنامج تطوير قيادي","الإطار الزمني لـ 3 سنوات قصير جداً"],
+sAr:"HR يُحلل أن الموظفين الذين يُكملون برنامج التطوير القيادي يحصلون على ترقيات بنسبة 40% أعلى خلال 3 سنوات. يستنتج فريق HR أن البرنامج يُؤهّل للترقية."},
+
+{a:"Analytical Aptitude",t:"KI",d:"medium",
+q:"When evaluating external HR benchmarking data, HR practitioners should FIRST consider:",
+o:["Whether the benchmark was produced by a reputable organization before accepting its findings","The publication date of the benchmarking study to ensure it reflects current market conditions","Whether the benchmarked organizations are comparable in industry, size, geography, and strategy — since benchmarks from non-comparable organizations have limited applicability","Whether the benchmark shows that the organization is performing above or below the industry average"],
+c:2,e:"Comparability is the first test of benchmark validity. Comparing a 500-person professional services firm's benefits competitiveness to Fortune 500 manufacturing companies produces meaningless results. Wrong: D (above/below average) is the output, not the validity test. B (publication date) is important but secondary to comparability. A (reputation) matters but doesn't ensure the benchmark is applicable to your organization.",
+qAr:"عند تقييم بيانات معيارية خارجية لـ HR، يجب على ممارسي HR مراعاة أولاً:",
+oAr:["ما إذا كانت المعيارية صدرت عن منظمة ذات سمعة","تاريخ نشر الدراسة المعيارية لضمان أنها تعكس الظروف الحالية","ما إذا كانت المنظمات المقارنة مماثلة في الصناعة والحجم والنموذج التشغيلي","ما إذا كانت المعيارية تُظهر أن المنظمة تؤدي فوق أو تحت متوسط الصناعة"]},
+
+{a:"Analytical Aptitude",t:"SJI",d:"medium",
+s:"HR is evaluating whether to implement a new AI-based résumé screening tool. The vendor provides an ROI case showing 60% reduction in time-to-fill and $2.1M in annual recruiter time savings. The vendor's study is based on 12 companies — all large financial services firms.",
+q:"Before adopting the tool, HR's MOST critical analytical question is:",
+o:["Whether competitor companies in the same industry have already adopted similar tools","Whether the vendor's sample (large financial services firms) is comparable to the company's context — and whether the tool has been independently","Whether the 60% time-to-fill reduction is achievable given the company's current ATS infrastructure","Whether the $2.1M savings figure accounts for the full cost of implementation and maintenance"],
+c:1,e:"Two issues: (1) comparability — large financial services firms may not represent this company's hiring context; (2) adverse impact — AI screening tools must be independently validated for disparate impact before deployment. The vendor's ROI case doesn't address either. Wrong: C (ATS infrastructure) is an implementation question, not an analytical question. D (full cost accounting) is important but secondary to validity and legal risk. A (competitor adoption) is market intelligence, not analytical validation.",
+qAr:"قبل اعتماد الأداة، السؤال التحليلي الأكثر أهمية من HR هو:",
+oAr:["ما إذا كانت الشركات المنافسة قد تبنّت بالفعل الأداة","ما إذا كانت عينة البائع مماثلة لمنظمة HR من حيث صناعتها وحجمها وملف المرشحين","ما إذا كان تقليل وقت الملء 60% قابلاً للتحقيق مع الحجم الحالي للشركة","ما إذا كان مبلغ المدخرات 2.1 مليون يأخذ في الاعتبار التكلفة الكاملة للتطبيق"],
+sAr:"يُقيّم HR أداة فرز السيرة الذاتية المبنية على الذكاء الاصطناعي. بيانات البائع: تقليل وقت الملء 60% وتوفير 2.1 مليون دولار. بُنيت على عينة من شركات الخدمات المالية الكبرى."},
+
+{a:"Analytical Aptitude",t:"KI",d:"medium",
+q:"The Kirkpatrick 4-level evaluation model measures training effectiveness at which levels?",
+o:["Efficiency, Effectiveness, Engagement, and Empowerment — four organizational dimensions of L&D performance","Reaction (learner satisfaction), Learning (knowledge/skill acquisition), Behavior (on-the-job application), and Results (business impact)","Input (design quality), Process (delivery quality), Output (completion rates), and Outcome (satisfaction scores)","Individual, Team, Departmental, and Organizational levels of learning impact"],
+c:1,e:"Kirkpatrick: Level 1 = Reaction (did they like it?), Level 2 = Learning (did they learn?), Level 3 = Behavior (are they applying it?), Level 4 = Results (did business outcomes change?). Most training evaluation stops at Level 1 or 2, missing the most important levels. Wrong: A, C, and D are not Kirkpatrick — they represent misremembered or invented models.",
+qAr:"يقيس نموذج Kirkpatrick ذو المستويات الأربعة فاعلية التدريب على أي مستويات؟",
+oAr:["الكفاءة والفاعلية والانخراط والتمكين","ردة الفعل (رضا المتعلمين)، التعلم (اكتساب المعرفة والمهارة)، السلوك (التطبيق)، النتائج (تأثير الأعمال)","المدخلات (جودة التصميم)، العملية (جودة التسليم)، المخرجات (معدلات الإكمال)، الأثر","مستويات التعلم الفردي والجماعي والقسم والمنظمة"]},
+
+{a:"Analytical Aptitude",t:"SJI",d:"hard",
+s:"HR conducts a regression analysis to identify predictors of first-year employee performance ratings. The model finds that 'cultural fit' interview scores predict first-year ratings (r=0.71, p<0.001). HR proposes increasing the weight of cultural fit scores in hiring decisions.",
+q:"The MOST important analytical caution before implementing this change is:",
+o:["'Cultural fit' scores may reflect interviewer bias toward candidates similar to existing employees — and may be capturing demographic similarity rather than genuine","Performance ratings themselves may be biased, which would inflate the apparent predictive validity of cultural fit","The correlation is only valid for the first year and may not predict long-term performance","The regression model should have used a larger sample before being used to change hiring policy"],
+c:0,e:"'Cultural fit' is one of the most legally and analytically dangerous selection criteria: research shows it often predicts hiring of candidates similar to existing employees (same background, style, demographic) rather than alignment with organizational values. Using it as a formal hiring weight based on this correlation could: amplify existing workforce homogeneity, create disparate impact, and perpetuate bias. The analytical question is: what is 'cultural fit' actually measuring? Wrong: C (first-year limitation) is a real concern. D (sample size) is valid but secondary. B (biased ratings inflating validity) is the most sophisticated wrong answer but the question is asking about the risk of implementing, not of the model itself.",
+qAr:"أهم تحذير تحليلي قبل تطبيق هذا التغيير هو:",
+oAr:["درجات 'الملاءمة الثقافية' قد تعكس تحيز المحكّمين تجاه المرشحين المماثلين لهم مما يُضاعف التحيز الضمني","قد تكون تقييمات الأداء ذاتها متحيزة مما يُضخّم الارتباط","الارتباط صالح فقط للسنة الأولى ولا يتنبأ بالأداء طويل المدى","كان ينبغي أن يستخدم نموذج الانحدار عينة أكبر"],
+sAr:"تحليل انحدار HR يُظهر أن أقوى متنبئ للأداء في السنة الأولى هو درجة 'الملاءمة الثقافية' من المحكّمين (r=0.48). التوصية: ضاعف وزن درجات الملاءمة في نموذج الاختيار."},
+
+{a:"Analytical Aptitude",t:"KI",d:"easy",
+q:"HR uses 'return on investment' (ROI) methodology to evaluate HR programs. The basic ROI formula measures:",
+o:["The total cost of an HR program compared to benchmark program costs in the same industry","The net benefit of an intervention (benefit minus cost) divided by the cost — expressed as a percentage","The difference between pre-program and post-program performance metric scores without cost adjustment","The ratio of HR program budget to the number of employees served by the program"],
+c:1,e:"ROI = (Net Benefit / Cost) × 100 = (Benefit - Cost) / Cost × 100. Example: a retention program costs $500K and reduces turnover costs by $900K → net benefit $400K → ROI = ($400K/$500K) × 100 = 80%. Wrong: D describes cost-per-participant efficiency. A describes benchmarking. C describes pre-post change without ROI calculation.",
+qAr:"يستخدم HR منهجية 'عائد الاستثمار' (ROI) لتقييم برامج HR. صيغة ROI الأساسية هي:",
+oAr:["إجمالي تكلفة برنامج HR مقارنة بتكاليف البرامج المعيارية","صافي فائدة التدخل (الفائدة ناقص التكلفة) مقسوم على تكلفة التدخل","الفرق بين مقاييس الأداء قبل البرنامج وبعده","نسبة ميزانية برنامج HR لعدد الموظفين المستفيدين من البرنامج"]},
+
+{a:"Analytical Aptitude",t:"SJI",d:"medium",
+s:"An HRBP is presenting employee engagement survey results showing a 12-point drop in engagement over 18 months. The VP dismisses the data: 'Engagement surveys are just people complaining — they don't predict anything real.' The HRBP wants to defend the data's value.",
+q:"The MOST credible response connects engagement data to:",
+o:["The SHRM certification requirements that recommend regular engagement measurement as HR best practice","The fact that other companies in the industry also conduct engagement surveys, validating the practice","The investment the company made in the survey process, which should not be wasted by dismissing results","Specific business outcomes the VP cares about: research showing correlations between engagement decline and increased voluntary turnover"],
+c:3,e:"To a skeptical business leader, engagement data must be connected to outcomes they care about (business performance, turnover, productivity). Research (Gallup, SHRM, Towers Watson) consistently links engagement to tangible business outcomes. Wrong: B (industry practice) doesn't address the VP's specific skepticism. A (SHRM certification requirements) is an appeal to authority, not a business case. C (sunk cost argument) is a logical fallacy.",
+qAr:"أكثر استجابة موثوقة تربط بيانات الانخراط بـ:",
+oAr:["متطلبات شهادة SHRM التي توصي بقياسات انخراط منتظمة","حقيقة أن شركات أخرى في الصناعة تُجري أيضاً استبيانات انخراط منتظمة","الاستثمار الذي قدّمته الشركة في عملية الاستبيان","نتائج أعمال محددة يهتم بها نائب الرئيس: أبحاث تُظهر ارتباط الانخراط بالإنتاجية والاحتفاظ وجودة الخدمة — مُقيَّم بالدولار"],
+sAr:"يُقدّم HRBP نتائج استبيان انخراط تُظهر انخفاضاً 12 نقطة. يقاطع نائب الرئيس: 'هذا المقياس الناعم غير مفيد — أحتاج تركيز وقت فريقي على نتائج الأعمال الحقيقية.'"},
+
+// ══════ HR EXPERTISE (8q) ══════
+{a:"HR Expertise",t:"KI",d:"medium",
+q:"The 'HR Expertise' competency in SHRM's model encompasses which body of knowledge?",
+o:["The full spectrum of HR functional knowledge including talent acquisition, L&D, total rewards, employee relations, workforce planning","Only the legal compliance requirements that HR must know to protect the organization from employment litigation","The advanced analytics and data science skills needed to interpret HR workforce data","The financial accounting knowledge needed to build HR program ROI cases for executive presentations"],
+c:0,e:"HR Expertise = the full functional body of HR knowledge. SHRM intentionally names this 'Expertise' (not 'Technical Skills') to signal that deep functional knowledge must be applied with context and judgment. Wrong: B (legal compliance only) is too narrow. C (advanced analytics) is one component of HR Expertise but not the full scope. D (financial accounting) is Business Acumen, not HR Expertise.",
+qAr:"تشمل كفاءة 'خبرة HR' في نموذج SHRM أي هيئة معرفية؟",
+oAr:["طيف المعرفة الوظيفية الكاملة لـ HR بما فيها اكتساب المواهب والتعويض والمزايا وعلاقات الموظفين والتطوير وتحليلات القوى العاملة","متطلبات الامتثال القانوني فقط التي يجب على HR معرفتها","المهارات التحليلية والإحصائية المتقدمة المطلوبة لتفسير بيانات HR","المعرفة المالية والمحاسبية المطلوبة لبناء مقترحات ROI"]},
+
+{a:"HR Expertise",t:"SJI",d:"hard",
+s:"An HR team is designing a new performance management system for 2,400 employees. The current system has annual ratings, no mid-year conversation requirement, and a 5-point scale. Engagement data shows managers spend an average of 18 minutes per year on performance conversations. Exit interviews show 44% of voluntary leavers cite 'lack of feedback' as a major reason.",
+q:"The HR team's redesign should MOST fundamentally address which performance management failure?",
+o:["The 5-point rating scale is too complex and should be simplified to a 3-point scale","The feedback deficit — the system must create mandatory, structured, frequent feedback touchpoints throughout the year.","The form design needs to be updated to reflect current competencies and business strategy","A forced distribution should be added to the annual rating to ensure differentiation"],
+c:1,e:"18 minutes per year of performance conversation is the core failure. Research consistently shows that feedback frequency — not rating scale design — is the primary driver of performance management effectiveness and employee perception of fairness. Wrong: A (3-point scale) is a peripheral change. C (form design) won't change manager behavior without structural requirement changes. D (forced distribution) is a rating design change that still doesn't solve the conversation deficit.",
+qAr:"يجب أن يُعالج إعادة التصميم أساساً أي فشل في إدارة الأداء؟",
+oAr:["مقياس التقييم من 5 نقاط معقد جداً ويجب تبسيطه","عجز الملاحظات — يجب أن يُنشئ النظام محادثات إلزامية ومنظمة وتطويرية مستمرة، ليس مراجعة سنوية واحدة","تصميم النموذج يحتاج تحديثاً ليعكس الكفاءات والأهداف الحالية","يجب إضافة توزيع إجباري للتقييم السنوي لضمان التمييز"],
+sAr:"فريق HR يُصمّم نظام إدارة أداء جديد لـ 2,400 موظف. 78% يُبلّغون بعدم تلقي ملاحظات هادفة إطلاقاً طوال العام. 5 نقاط تقييم. 80% من الموظفين عند النقطة 3 أو أعلى."},
+
+{a:"HR Expertise",t:"KI",d:"medium",
+q:"In total rewards strategy, 'direct compensation' refers to:",
+o:["Base salary, overtime pay, and variable/incentive pay (bonuses and commissions) — as distinct from indirect compensation (benefits, leave, non-monetary rewards)","Any compensation that is directly tied to individual performance outcomes rather than time-based payment","Compensation paid on an hourly rate as distinct from salary-based compensation","All compensation elements paid directly to the employee rather than through benefits administrators"],
+c:0,e:"Direct compensation = what you receive in your paycheck: base salary + variable pay (bonus, commission, profit sharing). Indirect compensation = benefits (health insurance, retirement plans, paid leave, perks). Total rewards encompasses both plus non-monetary elements (recognition, development, work environment). Wrong: A conflates payment channel with the concept. C (hourly vs. salary) is a payment structure, not total rewards category. B (performance-tied pay) describes incentive pay specifically, not all direct compensation.",
+qAr:"في استراتيجية إجمالي المكافآت، يشير 'التعويض المباشر' إلى:",
+oAr:["الراتب الأساسي والعمل الإضافي والأجر المتغير والحوافز (المكافآت والعمولات)","أي تعويض مرتبط مباشرة بنتائج الأداء الفردي","التعويض المدفوع بأجر ساعي مقابل التعويض القائم على الراتب","جميع عناصر التعويض المدفوعة مباشرة للموظف بدلاً من الطرف الثالث"]},
+
+{a:"HR Expertise",t:"SJI",d:"medium",
+s:"HR is evaluating the effectiveness of its talent acquisition function. Key metrics show: time-to-fill has decreased from 62 to 41 days, but quality-of-hire scores at 6 months have dropped from 82% to 67% meeting-expectations, and first-year voluntary turnover has increased from 14% to 23%.",
+q:"These metrics MOST suggest that the recruitment process improvement has:",
+o:["Achieved speed at the cost of quality — filling roles faster but selecting less well-matched candidates. The focus must shift to include quality-of-hire and","Succeeded in its goals since time-to-fill reduction is the primary talent acquisition efficiency metric","Reflected a change in manager quality rather than recruitment process quality","Identified a compensation competitiveness issue since higher early turnover often reflects offer-stage failures"],
+c:0,e:"Speed improved but quality degraded: lower quality-of-hire + higher first-year turnover is the classic 'speed/quality' tradeoff in recruiting. Reducing time-to-fill by cutting corners in assessment, reference checks, or candidate evaluation produces this pattern. Wrong: B (time-to-fill as primary metric) illustrates exactly why HR needs a multi-metric dashboard. C (manager quality) is possible but the data points toward selection process, not post-hire management. D (compensation) is possible but not indicated by this specific data.",
+qAr:"هذه المقاييس تُشير أكثر ما يكون إلى أن تحسين عملية التوظيف:",
+oAr:["حقق السرعة على حساب الجودة — ملء الشواغر بسرعة أكبر لكن اختيار مرشحين أقل مناسبة","نجح في أهدافه إذ تقليل وقت الملء هو المقياس الأساسي","يعكس تغيراً في جودة المدير لا تحسين عملية التوظيف","حدّد مشكلة تنافسية تعويض"],
+sAr:"مقاييس HR: وقت الملء انخفض من 58 لـ 31 يوماً. تكلفة التوظيف انخفضت 22%. معدل دوران السنة الأولى ارتفع من 18% لـ 31%. درجات جودة المرشحين من المديرين انخفضت."},
+
+{a:"HR Expertise",t:"KI",d:"medium",
+q:"In workforce planning, 'demand forecasting' involves:",
+o:["Assessing the internal talent supply available to fill projected vacancies from internal development and succession","Estimating the number and type of employees the organization will need to achieve its strategic objectives in a future time horizon","Identifying employees who may voluntarily leave the organization in the next 12-18 months","Predicting which employees will respond positively to new incentive structures based on historical behavior"],
+c:1,e:"Demand forecasting = future workforce requirements. Supply forecasting = future workforce availability. The gap between demand and supply drives the workforce plan. Wrong: C (who might leave) is supply-side attrition forecasting. A (internal talent supply) is supply analysis, not demand. D (response to incentives) is compensation strategy, not workforce planning.",
+qAr:"في التخطيط للقوى العاملة، ينطوي 'توقع الطلب' على:",
+oAr:["تقييم التوريد الداخلي من المواهب المتاحة لملء الشواغر المتوقعة","تقدير عدد ونوع الموظفين الذين ستحتاجهم المنظمة لتحقيق أهدافها التشغيلية والاستراتيجية","تحديد الموظفين الذين قد يغادرون المنظمة طوعاً في المستقبل","التنبؤ بأي الموظفين سيستجيبون إيجابياً لبرامج حوافز جديدة"]},
+
+{a:"HR Expertise",t:"KI",d:"easy",
+q:"'Employee value proposition' (EVP) refers to:",
+o:["The employer's written commitment to provide professional development opportunities to all employees","The set of rewards, experiences, and attributes that differentiate an employer in the talent market and attract, retain, and engage employees","The financial valuation of each employee's productivity contribution to organizational revenue","The legal agreement between employer and employee outlining compensation and working conditions"],
+c:1,e:"EVP = the full employment offer: compensation, career development, culture, benefits, meaningful work, and employer brand. It answers: 'Why would a talented person choose to work here and stay?' Wrong: C (financial valuation of productivity) is human capital accounting, not EVP. D (legal agreement) is the employment contract. A (development commitment) is one EVP element, not the full definition.",
+qAr:"يشير 'عرض قيمة الموظف' (EVP) إلى:",
+oAr:["التزام صاحب العمل المكتوب بتقديم تطوير مهني","مجموعة المكافآت والتجارب والسمات التي تُميّز صاحب العمل وتُؤثر على قرار المواهب بالانضمام والبقاء","التقييم المالي لمساهمة إنتاجية كل موظف لحصة المساهم","الاتفاقية القانونية بين صاحب العمل والموظف التي تُحدد التعويض والمزايا"]},
+
+{a:"HR Expertise",t:"SJI",d:"hard",
+s:"An organization is experiencing 34% annual turnover in its customer service centers. HR analysis shows: turnover is concentrated in months 3-6 of employment, exit interviews consistently cite 'the job wasn't what was described,' and new hire surveys show 71% reporting 'reality shock' in the first 60 days.",
+q:"HR's diagnostic conclusion points MOST directly to a failure in:",
+o:["Manager quality in customer service — early tenure turnover broadly correlates with manager effectiveness","Compensation competitiveness — the market rate for customer service roles has increased beyond current pay levels","Realistic job preview — the recruiting and onboarding process is creating inflated expectations that reality cannot sustain. The fix requires aligning pre-hire information with actual job demands, not compensation adjustment","Training program design — employees who leave in months 3-6 have typically completed training and encountered the real job"],
+c:2,e:"Months 3-6 concentration + 'job wasn't what was described' + 'reality shock' = textbook realistic job preview (RJP) failure. When job messaging creates expectations the actual job doesn't fulfill, early attrition is the predictable result. Wrong: B (compensation) is not supported by the data (exit data cites description mismatch, not pay). A (manager quality) is possible but the specific evidence points to pre-hire expectation setting. D (training) — completing training and encountering the real job is exactly the RJP failure point, but the intervention is pre-hire messaging, not training design.",
+qAr:"استنتاج HR التشخيصي يشير أكثر ما يكون لفشل في:",
+oAr:["جودة المدير في خدمة العملاء","تنافسية التعويض","معاينة الوظيفة الواقعية — عملية التوظيف والإلحاق تُنشئ توقعات لا تتوافق مع الواقع مما يُفضي لصدمة ودوران مبكر","تصميم برنامج التدريب"],
+sAr:"المنظمة تعاني من دوران سنوي 34% في مراكز خدمة العملاء. مقابلات الخروج تُشير للشعور بعدم الاستعداد (45%) وخيبة الأمل من الوظيفة (38%). 68% من المغادرين يغادرون خلال 3-6 أشهر من التعيين."},
+{a:"HR Expertise",t:"KI",d:"medium",q:"When designing a compensation structure, 'broadbanding' refers to:",o:["A compliance strategy ensuring the organization's pay structure spans all required minimum wage requirements","Extending pay ranges beyond market median to attract higher-caliber talent than competitors","Paying all employees in a function the same base salary to eliminate internal pay inequality","Consolidating many narrow pay grades into a smaller number of wide salary bands — providing flexibility for pay positioning while reducing administrative complexity"],c:3,e:"Broadbanding consolidates traditional narrow pay grades (many grades, narrow ranges) into fewer, wider bands. Benefits: flexibility to reward development within a role without promotion, reduced administrative overhead. Tradeoffs: less structure can make equity management harder. Wrong: C (same pay for all) is pay compression. B (above market) is pay strategy. A is not a compensation structure concept.",
+qAr:"عند تصميم هيكل التعويض، يشير 'النطاقات العريضة' (Broadbanding) إلى:",
+oAr:["استراتيجية امتثال تضمن أن هيكل الأجور يغطي جميع المستويات المطلوبة","تمديد نطاقات الأجر فوق متوسط السوق لجذب مواهب أعلى","دفع نفس الراتب الأساسي لجميع الموظفين في وظيفة لإلغاء التفاوت الداخلي","دمج العديد من درجات الأجور الضيقة في عدد أقل من النطاقات الواسعة"]},
+{a:"HR Expertise",t:"KI",d:"medium",q:"The primary purpose of a 'succession plan' in HR talent management is to:",o:["Document the legal chain of authority for organizational decision-making in the absence of key leaders","Ensure critical organizational roles have identified and developed internal candidates ready to fill them when vacancies arise — reducing dependency on reactive external recruiting","Provide all employees with formal career development plans mapping their progression through the organization","Identify employees at risk of voluntary departure and develop retention strategies to keep them"],c:1,e:"Succession planning = proactive pipeline development for critical roles. Reduces time-to-fill for critical vacancies, retains development-focused employees who see a future, and reduces organizational risk from sudden departures. Wrong: D (retention at-risk employees) is a different HR function. A describes a governance/legal document. C is career development, not succession planning specifically.",
+qAr:"الغرض الأساسي من 'خطة التعاقب' في إدارة المواهب هو:",
+oAr:["توثيق سلسلة السلطة القانونية لصنع القرار التنظيمي","ضمان أن الأدوار التنظيمية الحرجة لديها مرشحون داخليون محددون ومُطوَّرون لتولّيها","تزويد جميع الموظفين بخطط تطوير مهني رسمية","تحديد الموظفين المعرضين لخطر المغادرة الطوعية ووضع استراتيجيات احتفاظ"]},
+{a:"Leadership & Navigation",t:"KI",d:"medium",q:"A 'servant leader' approach is distinguished from other leadership styles primarily by:",o:["Prioritizing the organization's financial outcomes above individual employee development needs","Focusing exclusively on employee needs at the expense of organizational performance and accountability","Distributing all decision-making authority equally among team members through consensus processes","Putting the growth, wellbeing, and development of followers ahead of the leader's own agenda — building a culture where people feel empowered and supported"],c:3,e:"Servant leadership (Greenleaf): the leader's primary role is enabling others to flourish — developing capability, removing obstacles, and building trust. This contrasts with authority-centered leadership where followers exist to serve the leader's agenda. Wrong: A is transactional/financial focus. C describes democratic leadership. B is a caricature — servant leaders hold performance expectations; they achieve them through developing people.",
+qAr:"يتميز نهج 'القائد الخادم' (Servant Leader) عن أساليب القيادة الأخرى أساساً بـ:",
+oAr:["إعطاء الأولوية للنتائج المالية للمنظمة فوق تطوير الموظف الفردي","التركيز حصرياً على احتياجات الموظفين على حساب أداء المنظمة","توزيع سلطة صنع القرار بالتساوي بين أعضاء الفريق","وضع نمو ورفاهية وتطوير الأتباع قبل مصلحة القائد الذاتية"]},
+{a:"Business Acumen",t:"SJI",d:"medium",s:"HR is proposing a new flexible work policy allowing remote work up to 3 days per week. The CFO requests a financial analysis before approval. HR currently has only engagement survey data showing 78% employee support.",q:"To make a complete business case, HR MOST needs to additionally analyze:",o:["The financial impact dimensions: real estate cost reduction potential, productivity outcome data from pilot programs or","The legal requirements for remote work accommodation in the relevant jurisdictions","The remote work policies of direct competitors to demonstrate market alignment","Employee satisfaction trends from previous workplace flexibility programs at the company"],c:0,e:"A CFO-credible business case requires financial quantification: real estate cost reduction, productivity research, talent competitiveness impact, and retention cost avoidance. Wrong: C (competitor policies) establishes market context but not financial ROI. D (satisfaction trends) is engagement data the CFO has already discounted. B (legal requirements) is compliance, not business case.",
+qAr:"لإنشاء مقترح أعمال كامل، يحتاج HR أكثر للتحليل الإضافي لـ:",
+oAr:["الأبعاد المالية: إمكانية خفض تكلفة العقارات، أثر الإنتاجية، الاحتفاظ، والتكاليف التقنية — مُترجمة لأرقام مالية","المتطلبات القانونية للعمل عن بُعد في الاختصاص المعني","سياسات العمل عن بُعد للمنافسين المباشرين لإثبات التوافق السوقي","اتجاهات رضا الموظفين من برامج المرونة السابقة"],
+sAr:"HR يقترح سياسة عمل مرنة جديدة تسمح بالعمل عن بُعد حتى 3 أيام أسبوعياً. يطلب CFO تحليلاً مالياً."},
+{a:"Consultation",t:"KI",d:"easy",q:"In HR consultation, the distinction between a 'presenting problem' and a 'root cause' is critical because:",o:["Addressing only the presenting problem typically leads to recurrence since the underlying driver remains unaddressed — sustainable solutions require root cause diagnosis","Root causes are always simpler to address than presenting problems and should be prioritized for efficiency","Presenting problems and root causes require different organizational levels to sponsor and implement","Presenting problems are always more important since they are what the client directly experiences"],c:0,e:"Presenting problem = symptom the client brings. Root cause = underlying condition producing the symptom. Treating only the symptom produces temporary relief. Classic example: presenting problem is 'high turnover.' Root cause may be supervisor behavior, below-market compensation, or poor role clarity — each requiring a different intervention. Wrong: A inverts the priority. B (simplicity) doesn't hold. D may be true but isn't the primary reason the distinction matters.",
+qAr:"في استشارة HR، التمييز بين 'المشكلة الظاهرة' و'السبب الجذري' حاسم لأن:",
+oAr:["معالجة المشكلة الظاهرة فقط تؤدي عادةً للتكرار لأن السبب الكامن يبقى دون حل","الأسباب الجذرية دائماً أبسط في المعالجة","المشاكل الظاهرة والأسباب الجذرية تتطلب مستويات تنظيمية مختلفة","المشاكل الظاهرة دائماً أهم لأنها ما يصفه العميل"]},
+{a:"Communication",t:"SJI",d:"medium",s:"HR must communicate a change to the performance bonus structure that will reduce payouts for 60% of employees due to a company financial shortfall. The message is accurate but will be received negatively.",q:"The MOST effective communication approach for this message is:",o:["Use written email communication to provide employees with a permanent record of the explanation","Delay the communication until bonus calculations are complete to give employees as much certainty as possible","Announce the change at the same time as positive company news to balance the emotional impact","Lead with the business context and rationale, acknowledge the impact honestly, explain what didn't change, and create channels for managers to handle individual"],c:3,e:"For difficult news: context first (employees accept bad news better when they understand why), honest acknowledgment of impact (not minimizing), clarity on what remains constant (reduces fear), and manager-first delivery (most trusted channel). Wrong: B (delay for certainty) extends anxiety unnecessarily. A (email) is insufficient for news with significant personal impact — dialogue is needed. C (pairing with good news) is a communication manipulation that damages trust.",
+qAr:"النهج الأكثر فاعلية في إيصال هذه الرسالة هو:",
+oAr:["استخدام البريد الإلكتروني المكتوب لتوفير سجل دائم","تأخير التواصل حتى تكتمل حسابات المكافآت","الإعلان عن التغيير مع أخبار إيجابية للشركة لموازنة العاطفة","البدء بسياق الأعمال والمبرر، والاعتراف بالأثر بصدق، وشرح الأساس المنطقي، وتوفير قنوات للأسئلة"],
+sAr:"يجب على HR إيصال تغيير في هيكل مكافأة الأداء سيُقلل المدفوعات لـ 60% من الموظفين بسبب تغيير في الأعمال."},
+{a:"Global & Cultural Effectiveness",t:"SJI",d:"medium",s:"An HR manager is leading a virtual team with members from Germany, Japan, India, and Brazil. German members push back on decisions they disagree with; Japanese members rarely speak unless directly addressed; Indian members use indirect language to signal concerns; Brazilian members build relationships before addressing tasks.",q:"The MOST globally effective facilitation approach for this team is:",o:["Require all team members to adapt to the U.S. directness norm as the team's working standard","Focus facilitation efforts on the German and Brazilian members who speak most, since they generate more content","Establish one communication norm for all team members to ensure consistency and fairness","Adapt meeting structures to create multiple contribution modalities: structured turn-taking for those who don't volunteer"],c:3,e:"Global team facilitation requires creating conditions for multiple communication styles to contribute — not forcing convergence on one cultural norm. The adaptations match each cultural tendency: structured turns (Japan/high-PD), written pre-input (India/Japan/high-context), relationship time (Brazil), direct dissent channels (Germany/low-PD). Wrong: C (one norm) forces cultural suppression. A (U.S. norm) is cultural imperialism. D ignores the 3 cultures that don't dominate discussion.",
+qAr:"النهج الأكثر فاعلية عالمياً لتيسير هذا الفريق هو:",
+oAr:["إلزام جميع الأعضاء بالتكيف مع معيار الصراحة الأمريكي","تركيز جهود التيسير على الأعضاء الألمان والبرازيليين الأكثر كلاماً","وضع معيار تواصل واحد لجميع الأعضاء لضمان الاتساق","تكييف هياكل الاجتماعات لإنشاء طرق مساهمة متعددة: جداول أعمال منظمة + مساهمات كتابية مسبقة + أوقات للنقاش المفتوح"],
+sAr:"مدير HR يقود فريقاً افتراضياً بأعضاء من ألمانيا واليابان والهند والبرازيل. يعترض الأعضاء الألمان على أسلوب اجتماعات غير منظم."},
+{a:"Inclusion & Diversity",t:"KI",d:"medium",q:"'Allyship' in the organizational DEI context refers to:",o:["A structured mentoring relationship between a senior employee and a junior colleague from a different background","Formal agreements between departments to share DEI program resources and budget jointly","Collective action taken by employee resource groups to influence organizational policy changes","Active support for underrepresented colleagues through advocacy, amplification, and using one's own privilege to open doors —"],c:3,e:"Allyship = active, not passive. Using whatever platform or privilege one has to amplify underrepresented voices, challenge inequity when observed, and advocate for people who may not be able to advocate for themselves without risk. Wrong: B (departmental agreements) is resource sharing. A describes a specific mentoring structure. C describes ERG collective action — a different mechanism from individual allyship.",
+qAr:"'المناصرة' (Allyship) في سياق I&D التنظيمي تشير إلى:",
+oAr:["علاقة إرشاد منظمة بين موظف كبير وزميل مبتدئ","اتفاقيات رسمية بين الأقسام لمشاركة موارد برامج I&D","عمل جماعي تتخذه مجموعات موارد الموظفين للتأثير","الدعم النشط للزملاء الأقل تمثيلاً من خلال المناصرة والتضخيم والتدخل"]},
+{a:"Relationship Management",t:"SJI",d:"medium",s:"An HR director needs buy-in from three VPs for a new talent management platform. VP A is financially focused and skeptical. VP B is data-driven and risk-aware. VP C is people-focused and emotionally invested in employee experience.",q:"The MOST effective stakeholder engagement approach is:",o:["Hold a single group meeting presenting all benefits to demonstrate consistency across leadership","Obtain CEO endorsement before approaching the VPs to reduce resistance through top-down authority","Develop tailored cases for each VP: ROI and cost analysis for VP A, risk reduction and data quality analysis for VP B","Present only to the most supportive VP first to build momentum before engaging the others"],c:2,e:"Effective stakeholder engagement = speak each stakeholder's language. VP A hears ROI; VP B hears risk mitigation and data quality; VP C hears people impact. Individual pre-alignment before group meetings allows each to ask questions privately and increases group cohesion. Wrong: A (single presentation) misses tailored framing opportunities. D (build momentum sequentially) skips tailored framing. B (CEO first) bypasses HR's relationship-building role.",
+qAr:"النهج الأكثر فاعلية لإشراك أصحاب المصلحة هو:",
+oAr:["عقد اجتماع جماعي واحد يعرض جميع الفوائد لإظهار الاتساق","الحصول على تأييد الرئيس التنفيذي قبل التواصل مع النواب","تطوير حالات مُصمَّمة لكل نائب: ROI وتحليل التكلفة لـ A، خفض المخاطر لـ B، تجربة الموظف لـ C","التقديم لأكثر النواب دعماً أولاً لبناء الزخم"],
+sAr:"مدير HR يحتاج تأييد ثلاثة نواب رؤساء لمنصة إدارة مواهب جديدة. نائب A مالي ومتشكك، نائب B مهتم بالمخاطر، نائب C مهتم بتجربة الموظف."},
+{a:"Analytical Aptitude",t:"KI",d:"medium",q:"When an HR practitioner encounters a vendor claiming a product 'reduces turnover by 40%' without providing methodology details, the MOST rigorous analytical response is:",o:["Reject the claim outright since vendor-provided data is always biased and unreliable","Ask for references from three current customers to triangulate the claim without needing methodological details","Accept the claim at face value since vendors are legally required to substantiate their performance claims","Request details on sample size, comparability of the comparison group, the time period, what 'turnover' was measured, and"],c:3,e:"Critical evaluation of vendor claims: methodology matters. 40% turnover reduction could mean: compared to what group? in what time period? what type of turnover? measured how? at what implementation cost? Without this, the claim is unverifiable marketing. Wrong: C (accept at face value) is uncritical. A (reject outright) is also uncritical in the other direction. B (references) provides testimonials but not the methodological rigor to verify the claim.",
+qAr:"عندما يواجه ممارس HR بائعاً يدّعي أن منتجاً 'يُقلل الدوران بنسبة 40%' دون تقديم منهجية، الإجراء الأنسب:",
+oAr:["رفض الادعاء تماماً لأن بيانات البائع دائماً متحيزة","طلب مراجع من ثلاثة عملاء حاليين دون فحص المنهجية","قبول الادعاء كما هو لأن البائعين ملزمون قانونياً بإثبات ادعاءاتهم","طلب تفاصيل حجم العينة وقابلية مقارنة المجموعة الضابطة والإطار الزمني والمنهجية قبل قبول الادعاء"]},
+{a:"Ethical Practice",t:"SJI",d:"medium",s:"HR discovers through an anonymous ethics hotline report that a senior director has been inflating headcount reports to secure a larger budget. The director is a high performer and the CEO's mentor.",q:"HR's MOST ethically appropriate course of action is:",o:["Investigate quietly and handle the matter informally to protect the director's reputation and CEO relationship","Conduct a proper investigation following standard procedure — and if substantiated, take appropriate corrective action regardless of the director's seniority, relationships, or performance history","Disclose the allegation to the CEO first since their relationship to the director creates a conflict of interest HR cannot manage independently","Archive the report without action since budget inflation is a finance function matter outside HR's jurisdiction"],c:1,e:"Ethical practice requires equal application of standards regardless of seniority, relationships, or performance. Budget fraud is a serious integrity violation. Wrong: A (informal handling) protects a wrongdoer at expense of organizational integrity. C (disclose to CEO first) creates a conflict of interest — the CEO's relationship is exactly why HR must handle this independently. D (finance jurisdiction) — HR owns the integrity investigation regardless of the business function affected.",
+qAr:"مسار العمل الأكثر أخلاقية من HR هو:",
+oAr:["التحقيق بهدوء والتعامل بشكل غير رسمي لحماية سمعة المدير","إجراء تحقيق سليم وفق الإجراء القياسي — وإذا ثبت الادعاء، اتخاذ إجراء مناسب بصرف النظر عن منصب المدير","إفشاء الادعاء للرئيس التنفيذي أولاً","أرشفة البلاغ دون إجراء لأن تضخيم الميزانية وظيفة مالية"],
+sAr:"HR تكتشف عبر بلاغ خط أخلاقيات مجهول أن مديراً كبيراً يُضخّم تقارير عدد الموظفين لتأمين ميزانية إضافية."},
+{a:"HR Expertise",t:"KI",d:"easy",q:"The primary purpose of a 'job analysis' in HR is to:",o:["Assess how many employees are needed to perform a specific function at current workload levels","Determine the market-competitive compensation range for a specific role based on industry benchmarking","Evaluate whether a specific employee's performance meets the expectations defined for their role level","Systematically identify the tasks, responsibilities, required knowledge, skills, and abilities associated with a job —"],c:3,e:"Job analysis = the foundation of HR: it defines what the job IS (tasks, duties) and what the job REQUIRES (KSAs). Every other HR function — selection criteria, compensation grades, performance standards, training needs, ADA accommodation analysis — depends on accurate job analysis. Wrong: B (compensation benchmarking) uses job analysis outputs but is separate. C (performance evaluation) uses job analysis standards but is assessment. A (workforce planning headcount) is a related but separate activity.",
+qAr:"الغرض الأساسي من 'تحليل الوظيفة' (Job Analysis) في HR هو:",
+oAr:["تقييم عدد الموظفين اللازمين لأداء وظيفة محددة","تحديد نطاق التعويض التنافسي السوقي لدور محدد","تقييم ما إذا كان أداء موظف محدد يلبي التوقعات","التحديد المنهجي للمهام والمسؤوليات والمعرفة والمهارات والقدرات المطلوبة لدور"]},
+{a:"Leadership & Navigation",t:"SJI",d:"hard",s:"A new CHRO joins a company where HR has historically been purely administrative. The CEO expects HR to be 'a strategic partner' but hasn't defined what that means. The leadership team views HR as a compliance and payroll function. The CHRO has strong strategic HR capabilities but limited credibility with the current leadership team.",q:"The MOST effective first-year strategy for this CHRO is to:",o:["Request a formal leadership mandate from the CEO defining HR's strategic role before engaging with business leaders","Redesign HR's organizational structure first to signal that HR has changed before attempting to shift leadership perception","Identify one or two business-critical problems the leadership team is experiencing, deliver demonstrable HR value on those specific issues, and use the resulting credibility to expand HR's strategic scope progressively","Immediately present a comprehensive people strategy to the full leadership team to signal strategic ambition"],c:2,e:"Strategic credibility is earned through demonstrating value on problems the client cares about. Quick wins on business-critical issues change how leaders experience HR, creating the foundation for expanding the strategic role. Wrong: D (comprehensive strategy presentation) is premature without credibility — it will be received skeptically. A (CEO mandate) creates compliance but not genuine partnership. B (restructure first) is internal HR theater that leadership will view as reorganizing the compliance function.",
+qAr:"الاستراتيجية الأكثر فاعلية للسنة الأولى لهذا CHRO هي:",
+oAr:["طلب تفويض قيادي رسمي من الرئيس التنفيذي يُحدد دور HR الاستراتيجي","إعادة تصميم هيكل HR التنظيمي أولاً للإشارة لتغيّر HR","تحديد مشكلة أو مشكلتين حرجتين للأعمال يعاني منهما الفريق القيادي وحلهما لإثبات القيمة الاستراتيجية موضعياً","تقديم استراتيجية أفراد شاملة للفريق القيادي كاملاً فوراً"],
+sAr:"CHRO جديد ينضم لشركة كان HR فيها إدارياً بحتاً. الرئيس التنفيذي يتوقع أن يكون HR 'شريكاً استراتيجياً'."},
+{a:"Inclusion & Diversity",t:"KI",d:"medium",q:"'Structural racism' as a concept relevant to DEI in the workplace refers to:",o:["The cumulative and compounding effects of policies, practices, and cultural norms that systematically disadvantage certain racial","The physical structure of workplaces that creates barriers for employees of color","Racial disparities that exist only in industries with a history of explicit segregation","Intentional discrimination by individual managers against employees based on race"],c:0,e:"Structural racism = systems and policies that produce racially disparate outcomes without requiring individual intent. Example: degree requirements that aren't job-related, interview processes that favor certain communication styles, and network-based hiring that perpetuates homogeneous workplaces. HR must address structural factors, not just individual behaviors, to create genuinely equitable outcomes. Wrong: D describes individual discrimination. B is a literal misreading. D limits the concept inappropriately.",
+qAr:"'العنصرية الهيكلية' (Structural Racism) كمفهوم ذي صلة بـ I&D في مكان العمل تشير إلى:",
+oAr:["الآثار التراكمية والمتضاعفة للسياسات والممارسات والأعراف الثقافية التي تُنتج نتائج غير متكافئة عرقياً حتى دون نية تمييزية فردية","الهيكل المادي لأماكن العمل الذي يُنشئ عوائق","التفاوتات العرقية الموجودة فقط في الصناعات ذات تاريخ الفصل الصريح","التمييز المتعمد من مديرين أفراد ضد موظفين بناءً على العرق"]}
+,
+// ── 🆕 أسئلة التحديثات 2025 ──
+{a:"Analytical Aptitude",t:"KI",d:"medium",id:201,q:"The official SHRM BASK name for the competency that involves using data to solve HR problems and make evidence-based recommendations is:",qAr:"الاسم الرسمي في SHRM BASK للكفاءة التي تتعلق باستخدام البيانات لحل مشكلات HR واتخاذ قرارات مبنية على الأدلة هو:",o:["Data Analytics Competency","Analytical Aptitude","HR Evidence-Based Practice","Analytical Aptitude"],oAr:["كفاءة تحليل البيانات","التقييم النقدي","ممارسة HR المبنية على الأدلة","الكفاءة التحليلية"],c:3,e:"The OFFICIAL SHRM BASK name is Analytical Aptitude — NOT Analytical Aptitude. This is frequently tested. Analytical Aptitude measures HR's ability to gather, analyze, and interpret data to inform decisions.",eAr:"الاسم الرسمي في SHRM BASK هو Analytical Aptitude وليس Analytical Aptitude. هذا يُختبر بشكل متكرر. تقيس الكفاءة التحليلية قدرة HR على جمع البيانات وتحليلها وتفسيرها لإعلام القرارات."},
+{a:"Inclusion & Diversity",t:"KI",d:"medium",id:202,q:"According to the SHRM 2025 Learning System, the correct terminology and order for this competency is:",qAr:"وفقاً لنظام SHRM 2025 للتعلم، المصطلح الصحيح والترتيب الصحيح لهذه الكفاءة هو:",o:["Equity, Diversity & Inclusion (EDI)","Inclusion & Diversity (I&D)","Diversity & Inclusion (D&I)","Inclusion & Diversity (I&D)"],oAr:["المساواة والتنوع والشمول (EDI)","الشمول والتنوع (I&D)","التنوع والشمول (D&I)","التنوع والمساواة والشمول (I&D)"],c:1,e:"The 2025 SHRM Learning System changed the order: Inclusion comes FIRST. The correct 2025 term is I&A (Inclusion & Diversity), not I&A. Inclusion is placed first to emphasize that creating an inclusive environment enables diversity to thrive.",eAr:"غيّر نظام SHRM 2025 الترتيب: Inclusion تأتي أولاً. المصطلح الصحيح لـ 2025 هو I&D (Inclusion & Diversity) وليس I&D. تُوضع Inclusion أولاً للتأكيد على أن خلق بيئة شاملة يُمكّن التنوع من الازدهار."},
+
+{id:2501,a:"Analytical Aptitude",t:"KI",d:"medium",
+q:"Which term is the OFFICIAL SHRM BASK name for the competency that involves using data and evidence to support HR decisions?",
+o:["Evidence-Based HR","HR Analytics Competency","Analytical Aptitude","Critical Evaluation"],
+c:2,
+e:"The official SHRM BASK name is 'Analytical Aptitude' — not Critical Evaluation. This competency measures HR's ability to use data to diagnose business problems, identify patterns, and make evidence-based recommendations.",
+qAr:"ما هو الاسم الرسمي في SHRM BASK للكفاءة المتعلقة باستخدام البيانات والأدلة لدعم قرارات HR؟",
+oAr:["HR المبني على الأدلة","كفاءة تحليلات HR","الكفاءة التحليلية","التقييم النقدي"]},
+
+{id:2502,a:"Inclusion & Diversity",t:"KI",d:"easy",
+q:"In SHRM's 2025 BASK, the preferred terminology for the DEI competency is:",
+o:["Inclusion & Diversity (I&D)","Diversity & Inclusion (D&I)","Diversity, Equity & Inclusion (DE&I)","Equity, Inclusion & Diversity (EI&D)"],
+c:0,
+e:"SHRM 2025 changed the order and terminology: Inclusion & Diversity (I&B) — Inclusion comes FIRST, and Equity is embedded within the practice rather than listed separately in the title.",
+qAr:"في SHRM BASK 2025، المصطلح المفضل لكفاءة التنوع والشمول هو:",
+oAr:["الشمول والتنوع (I&D)","التنوع والشمول (D&I)","التنوع والمساواة والشمول (DE&I)","المساواة والشمول والتنوع (EI&D)"]},
+
+{id:2503,a:"Analytical Aptitude",t:"KI",d:"medium",
+q:"Which of the following data analysis techniques were EXPLICITLY ADDED to the Analytical Aptitude key concepts in SHRM 2025?",
+o:["Cost-benefit analysis and break-even analysis","Big Data Analysis, Predictive Analysis, and Data Mining","Qualitative coding and thematic analysis","Regression analysis and hypothesis testing"],
+c:1,
+e:"SHRM 2025 explicitly added to Analytical Aptitude key concepts: Big Data Analysis, Predictive Analysis, Data Cleansing, Data Mining, and Visualization — reflecting the growing role of advanced analytics in HR.",
+qAr:"أي من تقنيات تحليل البيانات التالية أُضيفت صراحةً لمفاهيم Analytical Aptitude في SHRM 2025؟",
+oAr:["تحليل التكلفة والعائد وتحليل نقطة التعادل","تحليل البيانات الضخمة والتحليل التنبؤي واستخراج البيانات","الترميز النوعي والتحليل الموضوعي","تحليل الانحدار واختبار الفرضيات"]},
+
+{id:2504,a:"Inclusion & Diversity",t:"SJI",d:"hard",
+s:"An HR director is designing the organization's annual inclusion survey. A colleague suggests labeling the initiative 'DE&I Program.' The HR director recalls that SHRM's current guidance uses different terminology.",
+q:"The HR director's MOST appropriate response reflects which 2025 update?",
+o:["Change to EDI (Equity, Diversity & Inclusion) to align with international standards","Update to I&D (Inclusion & Diversity) — SHRM 2025 places Inclusion first, signaling that creating an inclusive culture is the d","Use DEI without the ampersand to avoid trademark confusion","Keep DE&I as it is the most widely recognized acronym and SHRM has not changed its guidance"],
+c:1,
+e:"SHRM 2025 changed DE&I to I&C (Inclusion & Diversity), placing Inclusion first. This is not just a cosmetic change — it signals that inclusion is the active practice that must precede and enable diversity. HR professionals should use current SHRM terminology.",
+qAr:"مديرة HR تصمم استبيان الشمول السنوي. زميل يقترح تسمية المبادرة 'برنامج DE&I'. تتذكر مديرة HR أن SHRM 2025 يستخدم مصطلحاً مختلفاً. ما الرد الأنسب؟",
+oAr:["التغيير إلى EDI للتوافق مع المعايير الدولية","التحديث إلى I&D — SHRM 2025 تضع Inclusion أولاً مما يعني أن الشمول هو المحرك الذي يجعل جهود التنوع ذات معنى","استخدام DEI بدون العلامة & لتجنب الالتباس","إبقاء DE&I لأنه الأكثر شيوعاً ولم تغير SHRM توجيهاتها"]}
+];
+
+// ── State ──
+let lang='ar', cur=0, ans=[], Q_shuffled=[];
+const LETTERS=['A','B','C','D'];
+
+
+function pickLang(l){
+  lang=l==='bi'?'bi':l;
+  ['lpAr','lpEn','lpBi'].forEach(id=>{document.getElementById(id).className='lpbtn';});
+  if(l==='ar') document.getElementById('lpAr').className='lpbtn on';
+  else if(l==='en') document.getElementById('lpEn').className='lpbtn on';
+  else document.getElementById('lpBi').className='lpbtn on';
+}
+
+function shuffleArr(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+
+function buildShuffledExam(){
+  // Shuffle OPTIONS within each question + remap correct index, then shuffle question order
+  var arr=Q.map(function(q){
+    var nq=Object.assign({},q);
+    var perm=shuffleArr([0,1,2,3]);
+    nq.o=perm.map(function(k){return q.o[k];});
+    if(q.oAr&&q.oAr.length===4)nq.oAr=perm.map(function(k){return q.oAr[k];});
+    nq.c=perm.indexOf(q.c);
+    return nq;
+  });
+  return shuffleArr(arr);
+}
+
+function startExam(){
+  Q_shuffled=buildShuffledExam();
+  ans=new Array(Q_shuffled.length).fill(null);
+  showScreen('scrExam');
+  document.getElementById('hdrMeta').style.display='flex';
+  renderQ(0);
+}
+
+function showScreen(id){
+  ['scrWelcome','scrExam','scrResults'].forEach(s=>{
+    document.getElementById(s).className='screen'+(s===id?' active':'');
+  });
+}
+
+
+// ── Translation cache ──
+const TR_CACHE = {};
+
+
+// Translation cache
+const _TC = {};
+
+function getQ(q){
+  const id = q.id || q.q.substring(0,30);
+  if(lang==='en') return {q:q.q, opts:q.o, s:q.s||'', e:q.e};
+  
+  if(lang==='ar'){
+    if(q.qAr) return {q:q.qAr, opts:q.oAr||q.o, s:q.sAr||q.s||'', e:q.eAr||q.e};
+    if(_TC[id]) return {q:_TC[id].q, opts:_TC[id].o, s:_TC[id].s||q.s||'', e:q.e};
+    return {q:q.q, opts:q.o, s:q.s||'', e:q.e};
+  }
+  
+  if(lang==='bi'){
+    if(q.qAr){
+      return {
+        q: q.q+'\n\n'+q.qAr,
+        opts: q.o.map((o,i)=>o+(q.oAr&&q.oAr[i]?'\n'+q.oAr[i]:'')),
+        s: q.s?(q.s+(q.sAr?'\n\n'+q.sAr:'')):'',
+        e: q.e
+      };
+    }
+    if(_TC[id]){
+      return {
+        q: q.q+'\n\n'+_TC[id].q,
+        opts: q.o.map((o,i)=>o+(_TC[id].o&&_TC[id].o[i]?'\n'+_TC[id].o[i]:'')),
+        s: q.s?(q.s+(_TC[id].s?'\n\n'+_TC[id].s:'')):'',
+        e: q.e
+      };
+    }
+    return {q:q.q, opts:q.o, s:q.s||'', e:q.e};
+  }
+  return {q:q.q, opts:q.o, s:q.s||'', e:q.e};
+}
+
+let _translating = false;
+
+async function _translateQ(q){
+  if(_translating) return;
+  if(lang==='en') return;
+  if(q.qAr) return;
+  const id = q.id||q.q.substring(0,30);
+  if(_TC[id]) return;
+  
+  _translating = true;
+  
+  // Show translating indicator
+  const qEl = document.getElementById('qText');
+  if(qEl && lang!=='en'){
+    const orig = qEl.innerHTML;
+    qEl.innerHTML += '<div id="_trInd" style="margin-top:8px;font-size:12px;color:#888;font-style:italic">⏳ جارٍ الترجمة...</div>';
+  }
+  
+  try {
+    const s = q.s||'';
+    const prompt = `ترجم للعربية واحتفظ بالمصطلحات التقنية (FMLA,COBRA,ADEA,ADA,Title VII,NLRA,FLSA,WARN,USERRA,PWFA,EEOC,HR,I&D,ROI,OD).
+
+السؤال: ${q.q}${s?'\nالسيناريو: '+s:''}
+أ) ${q.o[0]}
+ب) ${q.o[1]}
+ج) ${q.o[2]}
+د) ${q.o[3]}
+
+أجب بـ JSON فقط: {"q":"","s":"","o":["","","",""]}`;
+
+    const r = await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-20250514',
+        max_tokens:1200,
+        messages:[{role:'user',content:prompt}]
+      })
+    });
+    const d = await r.json();
+    const txt = d.content&&d.content[0]?d.content[0].text:'';
+    const m = txt.match(/\{[\s\S]+\}/);
+    if(m){
+      const tr = JSON.parse(m[0]);
+      _TC[id] = {q:tr.q||q.q, o:tr.o||q.o, s:tr.s||''};
+    }
+  }catch(e){}
+  
+  _translating = false;
+  const ind = document.getElementById('_trInd');
+  if(ind) ind.remove();
+  if(lang!=='en') renderQ(cur);
+}
+
+function setLang(l){
+  lang = l;
+  document.getElementById('lbAr').className='lbtn'+(l==='ar'?' on':'');
+  document.getElementById('lbEn').className='lbtn'+(l==='en'?' on':'');
+  if(document.getElementById('lbBi')) 
+    document.getElementById('lbBi').className='lbtn'+(l==='bi'?' on':'');
+  
+  if(document.getElementById('scrExam').classList.contains('active')){
+    renderQ(cur);
+    if(l !== 'en') translateCurrentQ();
+  }
+}
+
+
+function renderQ(idx){
+  cur=idx;
+  const q=Q_shuffled[idx];
+  const qd=getQ(q);
+  const total=Q_shuffled.length;
+  const isAr = lang==='ar'||lang==='bi';
+  const dir = isAr?'rtl':'ltr';
+  document.getElementById('scrExam').setAttribute('dir', isAr?'rtl':'ltr');
+  
+  document.getElementById('pf').style.width=(((idx+1)/total)*100)+'%';
+  document.getElementById('ptxt').textContent=(idx+1)+' / '+total;
+  
+  const tb=document.getElementById('typeBdg');
+  tb.textContent=q.t==='SJI'?'⚖️ SJI':'📘 KI';
+  tb.className='bdg '+(q.t==='SJI'?'bdg-sji':'bdg-ki');
+  
+  document.getElementById('areaBdg').textContent=q.a;
+  const diffMap={easy:'سهل·Easy',medium:'متوسط·Medium',hard:'متقدم·Advanced'};
+  document.getElementById('diffBdg').textContent=diffMap[q.d]||q.d;
+  
+  // 2025 badge
+  const existing2025 = document.querySelector('.bdg-2025');
+  if(existing2025) existing2025.remove();
+  if(q.id && q.id >= 201){
+    const b2=document.createElement('div');
+    b2.className='bdg bdg-2025';b2.textContent='🆕 2025';
+    document.getElementById('hdrMeta').appendChild(b2);
+  }
+  
+  // Scenario
+  const sb=document.getElementById('scenBox');
+  if(qd.s){
+    sb.style.display='block';
+    document.getElementById('scenText').textContent=qd.s;
+    sb.setAttribute('dir', isAr?'rtl':'ltr');
+  } else {sb.style.display='none';}
+  
+  // Question text
+  const qt=document.getElementById('qText');
+  if(lang==='bi'){
+    const parts=qd.q.split('\n\n');
+    qt.innerHTML='<div style="margin-bottom:10px;">'+parts[0]+'</div>'+(parts[1]?'<div style="font-family:Tajawal,sans-serif;direction:rtl;text-align:right;color:var(--navy);font-size:1.05rem;">'+parts[1]+'</div>':'');
+    qt.removeAttribute('dir');
+  }else{
+    qt.textContent=qd.q;
+    qt.setAttribute('dir', dir);
+  }
+  
+  // Options
+  const ul=document.getElementById('optsList');ul.innerHTML='';
+  const ua=ans[idx], rev=ua!==null;
+  qd.opts.forEach(function(opt,i){
+    const li=document.createElement('li');li.className='opt';
+    if(rev)li.classList.add('dis');
+    if(rev&&i===ua&&i===q.c)li.classList.add('ok');
+    else if(rev&&i===ua&&i!==q.c)li.classList.add('bad');
+    else if(rev&&i===q.c)li.classList.add('hint');
+    else if(!rev&&i===ua)li.classList.add('sel');
+    
+    const letDiv='<div class="olet">'+LETTERS[i]+'</div>';
+    let optContent='';
+    if(lang==='bi'){
+      const parts=opt.split('\n');
+      optContent='<div class="otxt"><div>'+parts[0]+'</div>'+(parts[1]?'<div style="font-family:Tajawal,sans-serif;direction:rtl;text-align:right;font-size:.9rem;color:var(--navy);margin-top:4px;">'+parts[1]+'</div>':'')+'</div>';
+    }else{
+      optContent='<div class="otxt" '+(isAr?'dir="rtl"':'')+'>'+opt+'</div>';
+    }
+    li.innerHTML=letDiv+optContent;
+    if(!rev)(function(ii){li.addEventListener('click',function(){pick(idx,ii);});})(i);
+    ul.appendChild(li);
+  });
+  
+  // Explanation
+  const eb=document.getElementById('expBox');
+  const eh=document.getElementById('expHdr');
+  const ebody=document.getElementById('expBody');
+  if(rev){
+    const ok=ua===q.c;
+    eb.className='exp show '+(ok?'ok':'bad');
+    eh.textContent=ok?(isAr?'✓ صحيح — السبب:':'✓ Correct — Why:'):(isAr?'✗ خطأ — السبب:':'✗ Incorrect — Why:');
+    ebody.textContent=qd.e;
+    ebody.setAttribute('dir', isAr&&q.eAr?'rtl':'ltr');
+  }else{eb.className='exp';}
+  
+  // Nav buttons
+  document.getElementById('btnPrev').style.display=idx===0?'none':'';
+  const bn=document.getElementById('btnNext');
+  if(idx===Q_shuffled.length-1){
+    bn.textContent='إنهاء الامتحان ✓';bn.className='nbtn subbtn';bn.onclick=submitExam;
+  }else{
+    bn.textContent='التالي →';bn.className='nbtn nxbtn';bn.onclick=nextQ;
+  }
+  
+  updateDots();
+  window.scrollTo(0,0);
+}
+
+function pick(idx,i){
+  if(ans[idx]!==null)return;
+  ans[idx]=i;renderQ(idx);
+}
+function nextQ(){if(cur<Q_shuffled.length-1)renderQ(cur+1);}
+function prevQ(){if(cur>0)renderQ(cur-1);}
+
+function updateDots(){
+  const dc=document.getElementById('qDots');dc.innerHTML='';
+  Q_shuffled.forEach(function(_,i){
+    const d=document.createElement('div');
+    d.className='d'+(i===cur?' dcur':'')+(ans[i]!==null?(ans[i]===Q_shuffled[i].c?' dok':' dno'):'');
+    d.onclick=(function(ii){return function(){renderQ(ii);};})(i);
+    dc.appendChild(d);
+  });
+}
+
+function submitExam(){
+  const tot=Q_shuffled.length;
+  const done=ans.filter(a=>a!==null).length;
+  if(done<tot){
+    const unanswered=tot-done;
+    if(!confirm((lang==='ar')?'لديك '+unanswered+' أسئلة بدون إجابة. هل تريدين إنهاء الامتحان؟':'You have '+unanswered+' unanswered questions. Submit anyway?'))return;
+  }
+  
+  let correct=0,kiOk=0,kiTot=0,sjiOk=0,sjiTot=0;
+  Q_shuffled.forEach(function(q,i){
+    const ok=ans[i]===q.c;
+    if(ok)correct++;
+    if(q.t==='KI'){kiTot++;if(ok)kiOk++;}
+    else{sjiTot++;if(ok)sjiOk++;}
+  });
+  
+  const pct=Math.round(correct/tot*100);
+  const pass=pct>=70;
+  showScreen('scrResults');
+  document.getElementById('hdrMeta').style.display='none';
+  
+  const circ=document.getElementById('scoreCirc');
+  circ.textContent=pct+'%';
+  circ.className='scircle '+(pass?'sp':'sf');
+  document.getElementById('resMsg').textContent=pass?'🎉 ممتاز! اجتزت الامتحان':'📚 تحتاجين مزيداً من المراجعة';
+  document.getElementById('rCorrect').textContent=correct;
+  document.getElementById('rWrong').textContent=tot-correct;
+  document.getElementById('rKi').textContent=kiOk+'/'+kiTot;
+  document.getElementById('rSji').textContent=sjiOk+'/'+sjiTot;
+}
+
+function retryExam(){Q_shuffled=buildShuffledExam();ans=new Array(Q_shuffled.length).fill(null);showScreen('scrExam');document.getElementById('hdrMeta').style.display='flex';renderQ(0);}
+function reviewExam(){showScreen('scrExam');document.getElementById('hdrMeta').style.display='flex';renderQ(0);}
+</script>
+</body>
+</html>

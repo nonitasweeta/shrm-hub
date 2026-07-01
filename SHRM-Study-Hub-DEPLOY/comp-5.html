@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ملخص SHRM – الصفحات 401–480</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1a3a5c;
+    --accent:  #c8a84b;
+    --accent2: #e8734a;
+    --bg:      #f7f4ef;
+    --card:    #ffffff;
+    --text:    #2c2c2c;
+    --muted:   #6b7280;
+    --green:   #1e7a4a;
+    --red:     #b91c1c;
+    --purple:  #6d28d9;
+    --teal:    #0f766e;
+    --navy:    #0c2461;
+    --border:  #e2d9c8;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Tajawal','Cairo',sans-serif; background:var(--bg); color:var(--text); line-height:1.85; font-size:16px; }
+
+  .header { background:linear-gradient(135deg,#0a3d62 0%,#1a3a5c 60%,#0f4c75 100%); color:white; padding:48px 40px 44px; position:relative; overflow:hidden; }
+  .header::before { content:''; position:absolute; top:-80px; left:-60px; width:340px; height:340px; border-radius:50%; background:rgba(200,168,75,.12); }
+  .header::after  { content:''; position:absolute; bottom:-90px; right:-50px; width:250px; height:250px; border-radius:50%; background:rgba(15,118,110,.12); }
+  .header-badge { display:inline-block; background:var(--accent); color:var(--primary); font-weight:700; font-size:13px; padding:4px 16px; border-radius:20px; margin-bottom:14px; letter-spacing:1px; }
+  .header h1 { font-size:2.1rem; font-weight:800; margin-bottom:8px; }
+  .header .subtitle { font-size:1rem; opacity:.8; max-width:620px; }
+  .header-meta { display:flex; gap:26px; margin-top:22px; flex-wrap:wrap; }
+  .meta-item { font-size:14px; opacity:.9; }
+
+  .container { max-width:920px; margin:0 auto; padding:44px 24px 90px; }
+
+  .progress-bar-wrap { margin:0 0 40px; }
+  .progress-label { display:flex; justify-content:space-between; font-size:13px; color:var(--muted); margin-bottom:6px; }
+  .progress-bar { height:10px; background:#e2d9c8; border-radius:10px; overflow:hidden; }
+  .progress-fill { height:100%; border-radius:10px; background:linear-gradient(90deg,var(--primary),var(--accent)); }
+
+  .overview-card { background:var(--primary); color:white; border-radius:16px; padding:32px 36px; margin-bottom:40px; position:relative; overflow:hidden; }
+  .overview-card::after { content:'SHRM'; position:absolute; left:-8px; bottom:-28px; font-size:100px; font-weight:900; color:rgba(255,255,255,.04); }
+  .overview-card h2 { font-size:1.25rem; color:var(--accent); margin-bottom:14px; }
+  .overview-card p  { font-size:15px; line-height:1.9; opacity:.92; }
+
+  .section { margin-bottom:44px; }
+  .section-title { display:flex; align-items:center; gap:14px; margin-bottom:22px; }
+  .section-num { background:var(--accent); color:var(--primary); width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:17px; flex-shrink:0; }
+  .section-title h2 { font-size:1.3rem; font-weight:700; color:var(--primary); }
+  .section-title .en-title { font-size:13px; color:var(--muted); font-style:italic; direction:ltr; }
+
+  .card { background:var(--card); border-radius:14px; padding:26px 30px; border:1px solid var(--border); box-shadow:0 2px 14px rgba(0,0,0,.05); margin-bottom:22px; }
+  .card h3 { font-size:1.05rem; font-weight:700; color:var(--primary); margin-bottom:13px; padding-bottom:10px; border-bottom:2px solid var(--border); }
+  .card h3 .en { color:var(--accent2); direction:ltr; display:inline-block; font-size:.85rem; margin-right:8px; }
+  .card p.body-text { font-size:15px; margin-bottom:12px; }
+
+  .info-list { list-style:none; padding:0; }
+  .info-list li { padding:8px 0; border-bottom:1px solid #f0ebe0; font-size:15px; display:flex; gap:10px; align-items:flex-start; }
+  .info-list li:last-child { border-bottom:none; }
+  .bullet { width:8px; height:8px; background:var(--accent); border-radius:50%; margin-top:8px; flex-shrink:0; }
+  .bullet.green  { background:var(--green); }
+  .bullet.teal   { background:var(--teal); }
+  .bullet.red    { background:var(--red); }
+  .bullet.purple { background:var(--purple); }
+  .bullet.navy   { background:var(--navy); }
+
+  .term { background:#f0f6ff; border-right:4px solid var(--primary); padding:10px 16px; margin:9px 0; border-radius:6px; font-size:15px; }
+  .term strong { color:var(--primary); }
+  .term .en-term { color:var(--accent2); font-style:italic; direction:ltr; display:inline-block; }
+
+  .compare-table { width:100%; border-collapse:collapse; font-size:14px; margin-top:14px; }
+  .compare-table th { background:var(--primary); color:white; padding:10px 14px; text-align:right; }
+  .compare-table td { padding:10px 14px; border-bottom:1px solid var(--border); vertical-align:top; }
+  .compare-table tr:nth-child(even) td { background:#f9f6f0; }
+  .compare-table tr:hover td { background:#fff3e0; }
+
+  .theory-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:14px; }
+  @media(max-width:640px){ .theory-grid { grid-template-columns:1fr; } }
+  .theory-item { background:#f9f6f0; border:1px solid var(--border); border-radius:10px; padding:15px 17px; }
+  .theory-item h4 { font-size:14px; font-weight:700; color:var(--primary); margin-bottom:5px; }
+  .theory-item .en { font-size:12px; color:var(--accent2); direction:ltr; display:block; margin-bottom:6px; }
+  .theory-item p { font-size:13px; color:#444; line-height:1.75; }
+
+  .highlight { background:linear-gradient(135deg,#fff8e7,#fef3cd); border:1px solid var(--accent); border-radius:12px; padding:20px 26px; margin:16px 0; }
+  .highlight p { font-size:15px; }
+  .tip-box  { background:#f0fdf4; border:1px solid #86efac; border-radius:12px; padding:18px 22px; margin:16px 0; font-size:15px; }
+  .tip-box strong { color:var(--green); }
+  .note-box { background:#fefce8; border:1px solid #fde047; border-radius:12px; padding:18px 22px; margin:16px 0; font-size:15px; }
+  .note-box strong { color:#854d0e; }
+  .warn-box { background:#fff1f2; border:1px solid #fca5a5; border-radius:12px; padding:18px 22px; margin:16px 0; font-size:15px; }
+  .warn-box strong { color:var(--red); }
+
+  .chips { display:flex; flex-wrap:wrap; gap:10px; margin:14px 0; }
+  .chip { background:var(--primary); color:white; border-radius:30px; padding:7px 18px; font-size:13px; font-weight:600; }
+  .chip.gold   { background:var(--accent); color:var(--primary); }
+  .chip.orange { background:var(--accent2); }
+  .chip.green  { background:var(--green); }
+  .chip.teal   { background:var(--teal); }
+
+  .steps { list-style:none; padding:0; counter-reset:steps; }
+  .steps li { counter-increment:steps; display:flex; gap:14px; align-items:flex-start; padding:12px 0; border-bottom:1px solid #f0ebe0; font-size:15px; }
+  .steps li:last-child { border-bottom:none; }
+  .steps li::before { content:counter(steps); background:var(--primary); color:white; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:13px; flex-shrink:0; }
+
+  /* Change model cards */
+  .change-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:14px; }
+  @media(max-width:640px){ .change-grid { grid-template-columns:1fr; } }
+  .change-card { border-radius:12px; padding:16px 18px; border:1px solid var(--border); }
+  .change-card h4 { font-size:14px; font-weight:700; margin-bottom:8px; }
+  .change-card .en { font-size:12px; direction:ltr; display:block; margin-bottom:8px; font-style:italic; }
+  .change-card p { font-size:13px; color:#444; line-height:1.7; }
+  .change-card.kotter { border-top:4px solid #2563eb; } .change-card.kotter h4 { color:#1d4ed8; }
+  .change-card.lewin  { border-top:4px solid var(--green); } .change-card.lewin h4 { color:var(--green); }
+  .change-card.mckin  { border-top:4px solid var(--purple); } .change-card.mckin h4 { color:var(--purple); }
+  .change-card.jcurve { border-top:4px solid var(--accent2); } .change-card.jcurve h4 { color:var(--accent2); }
+
+  /* Consulting model */
+  .consult-flow { display:flex; gap:8px; margin:14px 0; flex-wrap:wrap; }
+  .consult-step { flex:1; min-width:120px; background:var(--primary); color:white; border-radius:10px; padding:14px 12px; text-align:center; }
+  .consult-step h5 { font-size:13px; font-weight:700; margin-bottom:6px; }
+  .consult-step p { font-size:11.5px; opacity:.85; line-height:1.5; }
+  .arrow { display:flex; align-items:center; color:var(--accent); font-size:24px; font-weight:900; padding-top:6px; }
+
+  /* Financial cards */
+  .fin-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; margin-top:14px; }
+  @media(max-width:640px){ .fin-grid { grid-template-columns:1fr; } }
+  .fin-card { background:#f9f6f0; border:1px solid var(--border); border-radius:12px; padding:16px; }
+  .fin-card h4 { font-size:14px; font-weight:700; color:var(--primary); margin-bottom:8px; }
+  .fin-card .en { font-size:12px; color:var(--accent2); direction:ltr; display:block; margin-bottom:6px; }
+  .fin-card p { font-size:13px; color:#444; line-height:1.7; }
+  .fin-card .formula { background:#fff; border:1px dashed var(--border); border-radius:6px; padding:8px; margin-top:8px; font-size:13px; font-weight:600; color:var(--primary); text-align:center; direction:ltr; }
+
+  .divider { border:none; border-top:2px dashed var(--border); margin:36px 0; }
+  .footer { text-align:center; margin-top:70px; padding:28px; color:var(--muted); font-size:14px; border-top:2px solid var(--border); }
+
+/* ── THEORY EXPANSION BOXES ── */
+.th-box{background:#fff;border:1.5px solid #ddd6c8;border-radius:16px;margin:24px 0;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);}
+.th-header{display:flex;align-items:center;gap:12px;padding:16px 20px;background:linear-gradient(135deg,#0d1b2e,#163456);}
+.th-icon{font-size:1.4rem;flex-shrink:0;}
+.th-title{color:#fff;font-weight:700;font-size:1rem;}
+.th-subtitle{color:rgba(255,255,255,.55);font-size:.8rem;margin-top:2px;}
+.th-body{padding:0 20px 20px;}
+.th-formula{background:#0d1b2e;color:#c8a84b;font-family:'Outfit',monospace,sans-serif;font-weight:700;font-size:.9rem;padding:10px 16px;border-radius:8px;margin:14px 0;text-align:center;letter-spacing:.03em;}
+.th-stage-list{display:flex;flex-direction:column;gap:0;}
+.th-stage{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #f0ede5;}
+.th-stage:last-child{border-bottom:none;}
+.th-sn{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;flex-shrink:0;margin-top:2px;}
+.th-sc{flex:1;font-size:.9rem;line-height:1.65;color:#333;}
+.th-sc strong{color:#0d1b2e;}
+.th-sc em{color:#888;font-size:.85em;}
+.th-example{background:#f0ede5;border-right:3px solid #c8a84b;padding:10px 14px;border-radius:0 8px 8px 0;margin:8px 0;font-size:.88rem;color:#444;line-height:1.65;}
+.th-example strong{color:#0d1b2e;}
+.th-exam-tip{background:#fff8e7;border:1.5px solid #c8a84b;border-radius:10px;padding:12px 16px;margin:14px 0 0;font-size:.88rem;color:#4a3000;line-height:1.65;}
+.th-exam-tip strong{color:#0d1b2e;}
+.th-compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0;}
+@media(max-width:600px){.th-compare{grid-template-columns:1fr;}}
+.th-compare-card{background:#f7f5f0;border-radius:10px;padding:12px 14px;}
+.th-compare-card h4{font-size:.85rem;font-weight:700;color:#0d1b2e;margin-bottom:8px;}
+.th-compare-card li{font-size:.82rem;color:#444;margin-bottom:4px;line-height:1.5;}
+.th-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:12px 0;}
+.th-card{background:#f7f5f0;border-radius:10px;padding:12px 14px;border-top:3px solid #ccc;}
+.th-card h4{font-size:.82rem;font-weight:700;color:#0d1b2e;margin-bottom:6px;}
+.th-card p{font-size:.8rem;color:#555;line-height:1.55;}
+.th-divider{height:1px;background:#f0ede5;margin:16px 0;}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-badge">📚 خطة الدراسة · الجزء الخامس</div>
+  <h1>ملخص الصفحات 401–480</h1>
+  <p class="subtitle">SHRM Learning System 2023 — HR Competencies Module</p>
+  <div class="header-meta">
+    <div class="meta-item">📄 601 صفحة إجمالاً</div>
+    <div class="meta-item">🎯 SHRM-CP / SHRM-SCP</div>
+    <div class="meta-item">🌍 شرح بالعربية · المصطلحات بالإنجليزية</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="progress-bar-wrap">
+    <div class="progress-label"><span>تقدّمك في الكتاب</span><span>480 / 601 صفحة — 80% مكتمل! 🚀</span></div>
+    <div class="progress-bar"><div class="progress-fill" style="width:80%"></div></div>
+  </div>
+
+  <div class="overview-card">
+    <h2>🗺️ نظرة عامة على هذا الجزء</h2>
+    <p>
+      تُكمل الصفحات 401–480 كفاءة <strong>Business Acumen</strong> بتفصيل القوائم المالية الثلاث (الميزانية العمومية، قائمة الدخل، التدفق النقدي) والنسب المالية، ثم تُقدّم كفاءة <strong>Consultation</strong> — نموذج الاستشارة الأربعي وإدارة التغيير — وتنتهي بكفاءة <strong>Analytical Aptitude</strong> وأدوات اتخاذ القرار القائم على الأدلة.
+    </p>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- SECTION 1 — FINANCIAL STATEMENTS -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-num">1</div>
+      <div>
+        <h2>القوائم المالية الثلاث</h2>
+        <div class="en-title">Financial Statements — Balance Sheet · Income Statement · Cash Flow</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>لماذا يحتاج HR فهم القوائم المالية؟</h3>
+      <p class="body-text">HR لا يجب أن يكون محاسباً، لكنه يجب أن يقرأ القوائم المالية ليفهم السياق الذي تتخذ فيه القرارات، ويُبرر مقترحاته بمنطق مالي.</p>
+      <ul class="info-list">
+        <li><span class="bullet green"></span>فهم أسباب القرارات الإدارية (لماذا تُجمّد التوظيف الآن؟)</li>
+        <li><span class="bullet green"></span>تحديد فرص HR لتحسين الأداء المالي (تقليل الدوران = توفير مباشر)</li>
+        <li><span class="bullet green"></span>تقديم Business Case بلغة الأرقام لا بلغة "المشاعر والإدارة"</li>
+      </ul>
+    </div>
+
+    <div class="fin-grid">
+      <div class="fin-card">
+        <h4>الميزانية العمومية</h4>
+        <span class="en">Balance Sheet</span>
+        <p>صورة مالية في لحظة زمنية محددة. تُظهر ما تملكه المنظمة (Assets) وما عليها (Liabilities) وما يعود لأصحابها (Equity).</p>
+        <div class="formula">Assets = Liabilities + Equity</div>
+      </div>
+      <div class="fin-card">
+        <h4>قائمة الدخل</h4>
+        <span class="en">Income Statement (P&L)</span>
+        <p>تُظهر الأداء خلال فترة زمنية. الإيرادات ناقص التكاليف = صافي الدخل. الاتجاه الصاعد أو الهابط في الهامش هو الأهم.</p>
+        <div class="formula">Revenue − Expenses = Net Income</div>
+      </div>
+      <div class="fin-card">
+        <h4>قائمة التدفق النقدي</h4>
+        <span class="en">Cash Flow Statement</span>
+        <p>الربح لا يعني النقد. تُظهر هذه القائمة كيف يدخل ويخرج النقد من العمليات والاستثمار والتمويل.</p>
+        <div class="formula">Operations + Investing + Financing</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>مقارنة القوائم الثلاث <span class="en">Comparison</span></h3>
+      <table class="compare-table">
+        <tr><th>القائمة</th><th>الإجابة على سؤال</th><th>الفترة الزمنية</th><th>ما يراقبه HR؟</th></tr>
+        <tr><td>الميزانية العمومية<br><em>Balance Sheet</em></td><td>ما وضع المنظمة المالي الآن؟</td><td>لحظة زمنية محددة</td><td>مستوى الديون وقدرة المنظمة على الاستثمار</td></tr>
+        <tr><td>قائمة الدخل<br><em>Income Statement</em></td><td>هل المنظمة مربحة؟</td><td>ربع سنوي أو سنوي</td><td>الهامش الصافي — يؤثر على الميزانيات والمكافآت</td></tr>
+        <tr><td>التدفق النقدي<br><em>Cash Flow</em></td><td>هل لدى المنظمة نقد؟</td><td>ربع سنوي أو سنوي</td><td>قدرة الدفع للرواتب والامتيازات والمشاريع</td></tr>
+      </table>
+      <div class="note-box">
+        <strong>📌 الفخ الشائع:</strong> شركة قد تكون مربحة على الورق (Income Statement جيد) لكن تعاني أزمة سيولة (Cash Flow سلبي). HR يفهم الفرق لأن الأزمة النقدية تؤثر مباشرة على قرارات التوظيف والمكافآت.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>النسب المالية الرئيسية وما تعنيه لـ HR <span class="en">Key Financial Ratios</span></h3>
+      <table class="compare-table">
+        <tr><th>النسبة</th><th>ما تقيسه؟</th><th>تأثيرها على HR</th></tr>
+        <tr><td>هامش الربح الإجمالي<br><em>Gross Margin</em></td><td>نسبة الربح قبل المصاريف التشغيلية</td><td>هامش منخفض = ضغط على كل ميزانيات الأقسام</td></tr>
+        <tr><td>هامش الربح الصافي<br><em>Net Profit Margin</em></td><td>الربح المتبقي بعد كل التكاليف</td><td>ينعكس مباشرة على قرارات الزيادات والمكافآت</td></tr>
+        <tr><td>عائد الاستثمار<br><em>ROI</em></td><td>(العائد − التكلفة) ÷ التكلفة</td><td>HR يُحسب ROI لكل مبادرة لإثبات قيمتها</td></tr>
+        <tr><td>نسبة الدين للأصول<br><em>Debt to Asset Ratio</em></td><td>نسبة التمويل بالديون</td><td>ديون عالية تعني قيوداً أكبر على الإنفاق</td></tr>
+        <tr><td>العائد على حقوق الملكية<br><em>Return on Equity</em></td><td>كفاءة توليد الأرباح من الاستثمار</td><td>يؤثر على مستوى مكافآت التنفيذيين</td></tr>
+      </table>
+      <div class="tip-box">
+        <strong>🎯 نصيحة للامتحان:</strong> عندما ترى سيناريو يذكر "ضغطاً مالياً" أو "تراجع إيرادات" — الإجابة الصحيحة ستتضمن غالباً تحليل التكلفة والعائد (ROI) والتركيز على المبادرات ذات الأولوية الاستراتيجية الأعلى.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>المقاييس غير المالية <span class="en">Non-Financial Performance Measures</span></h3>
+      <p class="body-text">الأرقام المالية وحدها لا تعكس الصورة الكاملة. HR يُسهم في مقاييس غير مالية تُبنى عليها قرارات استراتيجية.</p>
+      <div class="theory-grid">
+        <div class="theory-item">
+          <h4>حصة السوق</h4>
+          <span class="en">Market Share</span>
+          <p>تُعكس القوة التنافسية. HR يُساهم بتطوير مواهب المبيعات والتسويق لتحسينها.</p>
+        </div>
+        <div class="theory-item">
+          <h4>انخراط الموظفين</h4>
+          <span class="en">Employee Engagement</span>
+          <p>مرتبط مباشرة بالإنتاجية ورضا العملاء وانخفاض الدوران.</p>
+        </div>
+        <div class="theory-item">
+          <h4>سمعة صاحب العمل</h4>
+          <span class="en">Employer Brand</span>
+          <p>تؤثر على جودة المتقدمين وتكلفة الاستقطاب.</p>
+        </div>
+        <div class="theory-item">
+          <h4>تحليل SWOT</h4>
+          <span class="en">SWOT Analysis</span>
+          <p>نقاط القوة والضعف والفرص والتهديدات — يُحدد أولويات الاستثمار.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>قوى بورتر التنافسية الخمس <span class="en">Porter's Five Forces</span> <span style="background:#1D9E75;color:#fff;font-size:11px;font-weight:800;padding:2px 9px;border-radius:20px;">محدّث ٢٠٢٥</span></h3>
+      <p class="body-text">إطار لتحليل جاذبية صناعة ما وشدّة المنافسة فيها — أداة فطنة تجارية أساسية تُكمّل التحليل المالي:</p>
+      <div class="theory-grid">
+        <div class="theory-item">
+          <h4>المنافسة الحالية</h4>
+          <span class="en">Competitive Rivalry</span>
+          <p>شدّة التنافس بين اللاعبين الحاليين في السوق.</p>
+        </div>
+        <div class="theory-item">
+          <h4>تهديد الداخلين الجدد</h4>
+          <span class="en">Threat of New Entrants</span>
+          <p>سهولة دخول منافسين جدد (حواجز الدخول المنخفضة = تهديد أكبر).</p>
+        </div>
+        <div class="theory-item">
+          <h4>تهديد البدائل</h4>
+          <span class="en">Threat of Substitutes</span>
+          <p>توفّر منتجات/خدمات بديلة تُلبّي الحاجة نفسها.</p>
+        </div>
+        <div class="theory-item">
+          <h4>قوة الموردين</h4>
+          <span class="en">Supplier Power</span>
+          <p>قدرة الموردين التفاوضية على رفع الأسعار أو خفض الجودة.</p>
+        </div>
+        <div class="theory-item">
+          <h4>قوة المشترين</h4>
+          <span class="en">Buyer Power</span>
+          <p>قدرة العملاء التفاوضية على الضغط نحو أسعار أقل.</p>
+        </div>
+      </div>
+      <div class="tip-box" style="margin-top:14px;">
+        <strong>🎯 تمييز امتحاني:</strong> بورتر = تحليل <strong>القطاع</strong> (خارجي) · SWOT = داخلي + خارجي · PESTLE = البيئة الكلّية. وأثره على HR: قطاع شديد التنافس يفرض استراتيجية مكافآت واحتفاظ أكثر قوة للمواهب الحرجة.
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- SECTION 2 — CONSULTATION -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-num">2</div>
+      <div>
+        <h2>كفاءة الاستشارة</h2>
+        <div class="en-title">Consultation Competency</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>ما هي الاستشارة في HR؟ <span class="en">Consultation Definition</span></h3>
+      <p class="body-text">HR الاستراتيجي ليس مُنفّذ تعليمات — بل مستشار داخلي يُشخّص المشاكل ويُصمّم الحلول ويُرافق التنفيذ ويقيس الأثر.</p>
+      <div class="highlight">
+        <p>💡 <strong>الفرق الجوهري:</strong> HR التقليدي يُجيب على السؤال كما طُرح. HR الاستشاري يُعيد صياغة السؤال أولاً ليتأكد أنه يُعالج المشكلة الحقيقية لا أعراضها.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>نموذج الاستشارة الأربعي <span class="en">The 4-Step Consulting Model</span></h3>
+      <div class="consult-flow">
+        <div class="consult-step">
+          <h5>1. تعريف المشكلة</h5>
+          <p>Discovery Phase<br>جمع البيانات وتحديد الفجوة بين الواقع والمأمول</p>
+        </div>
+        <div class="arrow">→</div>
+        <div class="consult-step">
+          <h5>2. تصميم الحل</h5>
+          <p>Design & Implement<br>معايير الحل المثالي وتنفيذه كمشروع منظّم</p>
+        </div>
+        <div class="arrow">→</div>
+        <div class="consult-step">
+          <h5>3. قياس الفاعلية</h5>
+          <p>Measure Effectiveness<br>هل حقق الحل أهدافه؟ دروس مستفادة؟</p>
+        </div>
+        <div class="arrow">→</div>
+        <div class="consult-step">
+          <h5>4. استدامة التحسين</h5>
+          <p>Sustain Improvement<br>ترسيخ القيم والممارسات الجديدة مؤسسياً</p>
+        </div>
+      </div>
+      <div class="note-box" style="margin-top:14px;">
+        <strong>📌 مبدأ ذهبي في الاستشارة:</strong> الناس يدعمون ما يُساعدون في بنائه. إشراك أصحاب المصلحة في تصميم الحل يُقلّل المقاومة ويُحسّن التنفيذ.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>أدوات اتخاذ القرار الجماعي <span class="en">Group Decision-Making Tools</span></h3>
+      <table class="compare-table">
+        <tr><th>الأداة</th><th>كيف تعمل</th><th>متى تُستخدم</th></tr>
+        <tr>
+          <td><strong>SWOT Analysis</strong></td>
+          <td>تحديد نقاط القوة والضعف والفرص والتهديدات بقيم رقمية</td>
+          <td>التخطيط الاستراتيجي وتقييم المبادرات</td>
+        </tr>
+        <tr>
+          <td><strong>SOAR Analysis</strong></td>
+          <td>Strengths, Opportunities, Aspirations, Results — يجمع الواقع مع الطموح</td>
+          <td>عندما تريد تركيزاً إيجابياً تحفيزياً</td>
+        </tr>
+        <tr>
+          <td><strong>Multi-Criteria Decision Analysis (MCDA)</strong></td>
+          <td>مصفوفة لتقييم البدائل وفق معايير محددة ومُرجَّحة</td>
+          <td>عند اختيار بين بدائل متعددة ومعقدة</td>
+        </tr>
+        <tr>
+          <td><strong>Cost-Benefit Analysis (CBA)</strong></td>
+          <td>حساب جميع التكاليف والفوائد المتوقعة للمقارنة</td>
+          <td>تبرير أي مقترح يحتاج موافقة مالية</td>
+        </tr>
+        <tr>
+          <td><strong>Force-Field Analysis</strong></td>
+          <td>تحديد القوى الداعمة والمعارضة للتغيير وتقييم وزن كل منها</td>
+          <td>قبل إطلاق مبادرة تغيير لتقييم قابليتها للنجاح</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- SECTION 3 — CHANGE MANAGEMENT -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-num">3</div>
+      <div>
+        <h2>إدارة التغيير</h2>
+        <div class="en-title">Change Management</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>دور HR في التغيير <span class="en">HR's Role in Change</span></h3>
+      <p class="body-text">HR يجب أن يشارك مبكراً في تخطيط مبادرات التغيير — ليس فقط في التنفيذ. HR يملك معرفة فريدة بالثقافة والسياسات وقنوات التواصل وردود أفعال الموظفين.</p>
+      <ul class="info-list">
+        <li><span class="bullet navy"></span>تحديد البرامج والسياسات التي تُعيق التغيير أو تدعمه</li>
+        <li><span class="bullet navy"></span>تقييم تأثير التغيير على الأشخاص والأقسام (ripple effect)</li>
+        <li><span class="bullet navy"></span>استشارة القيادة حول ثقافة العمل والعمليات المطلوبة</li>
+        <li><span class="bullet navy"></span>التواصل مع أصحاب المصلحة بسرعة وتوازن طوال المسيرة</li>
+        <li><span class="bullet navy"></span>قياس فاعلية التغيير ومتابعة القضايا الناشئة</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>نماذج إدارة التغيير الرئيسية <span class="en">Key Change Management Models</span></h3>
+      <div class="change-grid">
+        <div class="change-card kotter">
+          <h4>نموذج كوتر الثمانية</h4>
+          <span class="en">Kotter's 8-Step Model</span>
+          <p>
+            1. خلق إلحاحية<br>
+            2. بناء فريق قيادي<br>
+            3. وضع رؤية واضحة<br>
+            4. التواصل المكثّف<br>
+            5. تمكين العمل<br>
+            6. انتصارات سريعة<br>
+            7. بناء الزخم<br>
+            8. ترسيخ التغيير
+          </p>
+        </div>
+        <div class="change-card lewin">
+          <h4>نموذج لوين</h4>
+          <span class="en">Lewin's 3-Stage Model</span>
+          <p>
+            <strong>Unfreeze (التذويب):</strong> زعزعة الوضع الراهن وبناء الوعي بالحاجة للتغيير.<br><br>
+            <strong>Change (التغيير):</strong> تطبيق الممارسات والقيم الجديدة.<br><br>
+            <strong>Refreeze (إعادة التجميد):</strong> ترسيخ الجديد حتى يصبح الوضع الطبيعي.
+          </p>
+        </div>
+        <div class="change-card mckin">
+          <h4>إطار McKinsey 7-S</h4>
+          <span class="en">McKinsey 7-S Framework</span>
+          <p>
+            7 عناصر مترابطة:<br>
+            <strong>Strategy</strong> · <strong>Structure</strong> · <strong>Systems</strong><br>
+            <strong>Style</strong> · <strong>Staff</strong> · <strong>Skills</strong><br>
+            <strong>Shared Values</strong> (في المركز — يربط الستة الأخرى)
+          </p>
+        </div>
+        <div class="change-card jcurve">
+          <h4>منحنى J والإنتاجية</h4>
+          <span class="en">The J Curve Effect</span>
+          <p>عند إطلاق أي تغيير تنخفض الإنتاجية أولاً ثم تعود وتتجاوز المستوى الأصلي. HR يُدير هذا الانخفاض بالدعم والتواصل والتدريب لتقليل مدته وعمقه.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>شروط نجاح التغيير <span class="en">Conditions for Successful Change (McKinsey)</span></h3>
+      <ul class="info-list">
+        <li><span class="bullet green"></span><strong>الهدف المشترك (Shared Purpose):</strong> حين يُؤمن الناس بالسبب يتغيّرون طوعاً لا كرهاً.</li>
+        <li><span class="bullet green"></span><strong>أنظمة التعزيز (Reinforcement Systems):</strong> الهياكل والعمليات والمكافآت يجب أن تتوافق مع التغيير المنشود.</li>
+        <li><span class="bullet green"></span><strong>المهارات المطلوبة (Skills for Change):</strong> التدريب ضرورة لا رفاهية — لا يمكن توقع أداء جديد بدون مهارات جديدة.</li>
+        <li><span class="bullet green"></span><strong>نماذج يُحتذى بها (Role Models):</strong> القادة يُجسّدون التغيير قبل أن يطلبوه من غيرهم.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>إدارة ردود الفعل تجاه التغيير <span class="en">Managing Change Reactions</span></h3>
+      <table class="compare-table">
+        <tr><th>نوع الموظف</th><th>ردة الفعل</th><th>كيف يتعامل HR/المدير؟</th></tr>
+        <tr>
+          <td>المقاوم<br><em>Resistant</em></td>
+          <td>خوف، عدم ثقة، إحباط — يمكن أن يؤثر على الآخرين سلباً</td>
+          <td>استمع لمخاوفه، تفقّده باستمرار، قدّم موارد إضافية، وضّح الفوائد الشخصية</td>
+        </tr>
+        <tr>
+          <td>المنتظر<br><em>Undecided</em></td>
+          <td>ينتظر معلومات أكثر قبل الحكم</td>
+          <td>أشرِكه في مهام محددة لزيادة انخراطه، قدّم له البيانات والأسباب</td>
+        </tr>
+        <tr>
+          <td>المتحمّس<br><em>Champion</em></td>
+          <td>يرى الفوائد مبكراً — أصل استراتيجي</td>
+          <td>اجعله سفيراً للتغيير في فريقه، وظّف حماسه لتحفيز الآخرين</td>
+        </tr>
+      </table>
+      <div class="tip-box">
+        <strong>🎯 للامتحان:</strong> في سيناريوهات التغيير — الجواب الصحيح يبدأ دائماً بـ"التواصل المبكر + إشراك أصحاب المصلحة + دعم الانتقال" لا بـ"فرض الحل على الجميع فوراً".
+      </div>
+    </div>
+  </div>
+
+
+<div class="th-box">
+  <div class="th-header">
+    <div class="th-icon">🔄</div>
+    <div>
+      <div class="th-title">نماذج إدارة التغيير — تعمّق مع أمثلة</div>
+      <div class="th-subtitle">Lewin · Kotter · ADKAR · McKinsey 7-S · J-Curve</div>
+    </div>
+  </div>
+  <div class="th-body">
+
+    <div class="th-compare">
+      <div class="th-compare-card" style="border-top:3px solid #1D9E75;">
+        <h4>Lewin (3 مراحل)</h4>
+        <ul class="teb-list" style="padding-right:16px;">
+          <li>مفاهيمي وبسيط</li>
+          <li>Unfreeze = التحضير النفسي</li>
+          <li>Refreeze = ترسيخ في الثقافة</li>
+          <li><em>الخطأ الشائع: المرور عليه سريعاً</em></li>
+        </ul>
+      </div>
+      <div class="th-compare-card" style="border-top:3px solid #185FA5;">
+        <h4>Kotter (8 خطوات)</h4>
+        <ul style="padding-right:16px;font-size:.82rem;color:#444;">
+          <li>تطبيقي وتفصيلي</li>
+          <li>الخطوة 5 (إزالة العوائق) الأكثر إهمالاً</li>
+          <li>الخطوة 8 (الترسيخ) الأهم للاستدامة</li>
+          <li><em>بدونها يعود التغيير للقديم</em></li>
+        </ul>
+      </div>
+      <div class="th-compare-card" style="border-top:3px solid #BA7517;">
+        <h4>ADKAR (فردي)</h4>
+        <ul style="padding-right:16px;font-size:.82rem;color:#444;">
+          <li>يُركّز على الفرد</li>
+          <li>كل خطوة يجب اكتمالها قبل التالية</li>
+          <li>تشخّص أين يتعثّر الفرد</li>
+          <li><em>A→D→K→A→R بالترتيب دائماً</em></li>
+        </ul>
+      </div>
+      <div class="th-compare-card" style="border-top:3px solid #6D28D9;">
+        <h4>McKinsey 7-S</h4>
+        <ul style="padding-right:16px;font-size:.82rem;color:#444;">
+          <li>يُشخّص تناسق المنظمة</li>
+          <li>Shared Values في المركز</li>
+          <li>الصلبة + الناعمة يجب أن تتوافق</li>
+          <li><em>فشل التغيير = عدم توافق العناصر</em></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="th-example"><strong>مثال SJI كلاسيكي:</strong> شركة تُطلق نظام ERP جديداً. بعد 8 أشهر الموظفون يستخدمون الأوراق الاحتياطية. المشكلة في أي نموذج؟<br>→ <strong>Kotter:</strong> تجاوزوا الخطوة 5 (لم يُزيلوا العوائق = الإجراءات القديمة) والخطوة 8 (لم يربطوا الالتزام بالمكافأة).<br>→ <strong>ADKAR:</strong> الموظفون عند Ability (يعرفون كيف لكنهم غير قادرين بكفاءة) → يحتاجون دعماً مستمراً وليس تدريباً إضافياً.<br>→ <strong>Lewin:</strong> Refreeze لم يحدث — السلوك القديم لم يُستبدل.</div>
+
+    <div class="th-example"><strong>منحنى J في التغيير:</strong> عند بدء أي تغيير تنخفض الإنتاجية أولاً (قاع الـ J) قبل أن ترتفع. هذا طبيعي ومتوقع. <strong>خطأ HR:</strong> التراجع عن التغيير عند القاع اعتقاداً أنه فاشل.</div>
+
+    <div class="th-exam-tip">⭐ <strong>في الامتحان:</strong> "ما النموذج الأنسب لبرنامج تغيير مؤسسي واسع؟" → Kotter. "موظف يعرف لماذا التغيير ضروري لكنه لا يشارك؟" → ADKAR، المشكلة في Desire (D). "التغيير نجح لكنه لم يستمر؟" → Lewin، فشل في Refreeze / Kotter، فشل في الخطوة 8.</div>
+  </div>
+</div>
+
+
+
+
+  <hr class="divider">
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- SECTION 4 — ANALYTICAL APTITUDE -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-num">4</div>
+      <div>
+        <h2>الكفاءة التحليلية</h2>
+        <div class="en-title">Analytical Aptitude Competency</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>ما هي الكفاءة التحليلية؟ <span class="en">What is Analytical Aptitude?</span></h3>
+      <p class="body-text">HR يعمل مع أشخاص — وكل ما نعرفه عن الأشخاص هو بيانات. الكفاءة التحليلية هي تحويل هذه البيانات إلى قرارات أفضل.</p>
+      <div class="chips">
+        <div class="chip">📊 Data Advocacy</div>
+        <div class="chip gold">🔍 Data Gathering</div>
+        <div class="chip teal">📈 Data Analysis</div>
+        <div class="chip green">🎯 Evidence-Based Decision Making (EBDM)</div>
+      </div>
+      <div class="highlight" style="margin-top:16px;">
+        <p>💡 <strong>الانتقال الجوهري:</strong> من "ردة الفعل المبنية على الخبرة الشخصية" إلى "القرار المبني على بيانات كافية ومحايدة وذات صلة".</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>خطوات اتخاذ القرار القائم على الأدلة <span class="en">6 Steps of EBDM — Ben Eubanks</span></h3>
+      <ol class="steps">
+        <li><strong>Ask (اسأل):</strong> حوّل المشكلة إلى سؤال قابل للبحث. مثال: "ما سبب ارتفاع الدوران في هذه الوحدة خاصةً؟"</li>
+        <li><strong>Acquire (اجمع):</strong> اجمع معلومات من مصادر متنوعة: بيانات HRIS، مقابلات الخروج، مقارنات قطاعية، أبحاث أكاديمية.</li>
+        <li><strong>Appraise (قيّم):</strong> هل الأدلة ذات صلة؟ موثوقة؟ محايدة؟ كافية؟ ورفض ما لا يستوفي هذه الشروط.</li>
+        <li><strong>Aggregate (اجمع وصنّف):</strong> رتّب البيانات وحدّد الأولوية لكل نوع من المعلومات.</li>
+        <li><strong>Apply (طبّق):</strong> استخرج الأنماط والعلاقات السببية — اتخذ القرار وابنِ عليه الحل.</li>
+        <li><strong>Assess (قيّم الأثر):</strong> راقب الحل ومدى تحقيقه للأهداف — وعدّل إن لزم.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h3>مصادر البيانات في HR <span class="en">HR Data Sources</span></h3>
+      <div class="theory-grid">
+        <div class="theory-item">
+          <h4>المقابلات</h4>
+          <span class="en">Interviews</span>
+          <p>تُعطي عمقاً وسياقاً. مثالية للمعلومات الحساسة. ابدأ بأسئلة محايدة وانتقل للعمق تدريجياً. خطر التحيز عالٍ — تدرّب للحياد.</p>
+        </div>
+        <div class="theory-item">
+          <h4>مجموعات التركيز</h4>
+          <span class="en">Focus Groups</span>
+          <p>6-12 شخصاً يُناقشون موضوعاً محدداً. أقل تكلفة من المقابلات الفردية. خطر التفكير الجمعي (Groupthink) — استخدم إجابات مكتوبة أولاً.</p>
+        </div>
+        <div class="theory-item">
+          <h4>الاستبيانات</h4>
+          <span class="en">Surveys & Questionnaires</span>
+          <p>تصل لأعداد كبيرة وتُتيح المقارنة الكمية. التصميم الجيد حاسم — سؤال غامض يُنتج بيانات غير قابلة للتفسير.</p>
+        </div>
+        <div class="theory-item">
+          <h4>البيانات الموجودة</h4>
+          <span class="en">Existing HRIS Data</span>
+          <p>معدلات الدوران، الأداء، الغياب، التدريب — كنز مُهمَل في كثير من المنظمات. HR يُحوّلها من سجلات إدارية إلى رؤى استراتيجية.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>كيف تصبح HR داعية للبيانات؟ <span class="en">Becoming a Data Advocate</span></h3>
+      <ul class="info-list">
+        <li><span class="bullet teal"></span><strong>طوّر عقلية الفضول:</strong> اسأل دائماً "لماذا؟" و"ما الدليل؟" — لا تقبل "هكذا نفعل دائماً".</li>
+        <li><span class="bullet teal"></span><strong>تابع الأبحاث الأكاديمية:</strong> مجلات HR وأبحاث SHRM تُقدّم أدلة أقوى من التجربة الشخصية وحدها.</li>
+        <li><span class="bullet teal"></span><strong>اجمع البيانات باستمرار:</strong> لا تنتظر الأزمة. البيانات التاريخية تُبني النماذج التنبؤية.</li>
+        <li><span class="bullet teal"></span><strong>تحدّث بلغة البيانات مع القيادة:</strong> أرقام مدعومة بأدلة أقنع من حجج عاطفية.</li>
+        <li><span class="bullet teal"></span><strong>أسّس ثقافة EBDM في HR:</strong> مجموعات دراسة دورية، مشاريع بحثية داخلية.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- GLOSSARY -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-num">📖</div>
+      <div>
+        <h2>المصطلحات الأساسية — الجزء الخامس</h2>
+        <div class="en-title">Key Terms Glossary — Pages 401–480</div>
+      </div>
+    </div>
+    <div class="card">
+      <table class="compare-table">
+        <tr><th>المصطلح العربي</th><th>الإنجليزي</th><th>التعريف المختصر</th></tr>
+        <tr><td>الميزانية العمومية</td><td>Balance Sheet</td><td>صورة مالية لحظية: Assets = Liabilities + Equity</td></tr>
+        <tr><td>قائمة الدخل</td><td>Income Statement (P&L)</td><td>الأداء خلال فترة: Revenue − Expenses = Net Income</td></tr>
+        <tr><td>التدفق النقدي</td><td>Cash Flow Statement</td><td>حركة النقد عبر العمليات والاستثمار والتمويل</td></tr>
+        <tr><td>هامش الربح الصافي</td><td>Net Profit Margin</td><td>Net Income ÷ Revenue — يعكس كفاءة إدارة التكاليف</td></tr>
+        <tr><td>عائد الاستثمار</td><td>Return on Investment (ROI)</td><td>(العائد − التكلفة) ÷ التكلفة — أداة HR لإثبات القيمة</td></tr>
+        <tr><td>الاستشارة الداخلية</td><td>Internal Consultation</td><td>HR كمستشار: تشخيص + تصميم + تنفيذ + قياس</td></tr>
+        <tr><td>تحليل القوى</td><td>Force-Field Analysis</td><td>تحديد القوى الداعمة والمعارضة للتغيير وتقييمها</td></tr>
+        <tr><td>منحنى J</td><td>J Curve Effect</td><td>انخفاض الإنتاجية عند إطلاق التغيير ثم ارتفاعها</td></tr>
+        <tr><td>نموذج كوتر</td><td>Kotter's 8 Steps</td><td>أشهر نموذج لإدارة التغيير: الإلحاحية → الترسيخ</td></tr>
+        <tr><td>إطار 7-S</td><td>McKinsey 7-S</td><td>7 عناصر مترابطة يجب توافقها لنجاح المنظمة</td></tr>
+        <tr><td>القرار القائم على الأدلة</td><td>Evidence-Based Decision Making (EBDM)</td><td>استخدام البيانات الموثوقة بدل الحدس في HR</td></tr>
+        <tr><td>داعية البيانات</td><td>Data Advocate</td><td>HR الذي يُروّج للقرارات المبنية على بيانات في المنظمة</td></tr>
+        <tr><td>خطوات EBDM الست</td><td>Ask, Acquire, Appraise, Aggregate, Apply, Assess</td><td>إطار Eubanks لاتخاذ قرارات HR مبنية على أدلة</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- INTEGRATION -->
+  <div class="overview-card" style="margin-top:30px;">
+    <h2>🔗 تكامل الكفاءات في هذا الجزء</h2>
+    <p style="line-height:2.1;">
+      <strong>Business Acumen + Consultation:</strong> فهم الأرقام يجعل HR مستشاراً أكثر مصداقية — القرارات المدعومة بالبيانات المالية تُقنع القيادة أسرع.<br>
+      <strong>Consultation + Change Management:</strong> نموذج الاستشارة الأربعي هو بالضرورة مسار إدارة التغيير — كل استشارة تُفضي لتغيير يحتاج إدارة.<br>
+      <strong>Analytical Aptitude + كل الكفاءات:</strong> البيانات هي الوقود — بدونها تبقى الكفاءات الأخرى تنظيراً لا أثراً. HR الحديث يثبت قيمته بالأرقام.
+    </p>
+  </div>
+
+  <div class="tip-box" style="margin-top:24px; font-size:15px;">
+    <strong>🎯 نصيحة الدراسة:</strong> أسئلة SJI في هذا الجزء تضع HR في موقف مشكلة مُعقّدة تحتاج تشخيصاً. الفخ الأكثر شيوعاً: القفز للحل قبل جمع البيانات الكافية. الجواب الصحيح دائماً يبدأ بـ"أولاً اجمع البيانات وحدّد السبب الجذري".
+  </div>
+
+  <!-- STUDY PLAN -->
+  <div class="overview-card" style="margin-top:36px; background:linear-gradient(135deg,#0a3d62,#1a3a5c);">
+    <h2>📅 تقدّمك — أكثر من 80% مكتمل! 🚀</h2>
+    <table class="compare-table" style="margin-top:16px; background:rgba(255,255,255,.08);">
+      <tr style="background:rgba(255,255,255,.15);">
+        <th style="background:transparent;color:white;">الجزء</th>
+        <th style="background:transparent;color:white;">الصفحات</th>
+        <th style="background:transparent;color:white;">المحتوى</th>
+        <th style="background:transparent;color:white;">الحالة</th>
+      </tr>
+      <tr style="color:white;font-size:14px;"><td>الأول</td><td>1–100</td><td>المقدمة + Leadership + Ethical Practice</td><td>✅</td></tr>
+      <tr style="color:white;font-size:14px;"><td>الثاني</td><td>101–200</td><td>Ethical Practice (تعمّق) + I&D</td><td>✅</td></tr>
+      <tr style="color:white;font-size:14px;"><td>الثالث</td><td>201–300</td><td>Relationship + Communication + Global Mindset</td><td>✅</td></tr>
+      <tr style="color:white;font-size:14px;"><td>الرابع</td><td>301–400</td><td>Global Mindset (تعمّق) + Business Acumen</td><td>✅</td></tr>
+      <tr style="color:white;font-size:14px;background:rgba(200,168,75,.2);"><td><strong>الخامس</strong></td><td><strong>401–480</strong></td><td><strong>Business Acumen (مالي) + Consultation + Analytical Aptitude</strong></td><td>✅ <strong>أنت هنا</strong></td></tr>
+      <tr style="color:white;font-size:14px;"><td>السادس</td><td>481–560</td><td>Organization Domain + Workplace Domain</td><td>⏳ التالي</td></tr>
+      <tr style="color:white;font-size:14px;"><td>السابع</td><td>561–601</td><td>مراجعة نهائية + مصطلحات + نصائح الامتحان</td><td>⏳</td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <p style="margin-bottom:10px;font-size:15px;">أكثر من 80% مكتمل! 💪 — اطلب الجزء السادس (صفحات 481–560) متى شئت</p>
+    <p style="font-size:13px;color:#aaa;">SHRM Learning System 2023 · ملخص دراسي بالعربية</p>
+  </div>
+
+</div>
+</body>
+</html>

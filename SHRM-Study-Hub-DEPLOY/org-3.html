@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ملخص SHRM Organization – الصفحات 201–300</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#1a3a5c;--accent:#c8a84b;--accent2:#e8734a;--bg:#f7f4ef;--card:#fff;--green:#1e7a4a;--red:#b91c1c;--purple:#6d28d9;--teal:#0f766e;--border:#e2d9c8;--muted:#6b7280;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Tajawal',sans-serif;background:var(--bg);color:#2c2c2c;line-height:1.85;font-size:16px;}
+
+.header{background:linear-gradient(135deg,#4a1e1e 0%,#1a3a5c 50%,#1e4a2c 100%);color:#fff;padding:48px 40px 40px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-60px;left:-60px;width:300px;height:300px;border-radius:50%;background:rgba(200,168,75,.1);}
+.header::after{content:'';position:absolute;bottom:-80px;right:-40px;width:220px;height:220px;border-radius:50%;background:rgba(74,30,30,.12);}
+.badge{display:inline-block;background:var(--accent);color:var(--primary);font-weight:700;font-size:13px;padding:4px 16px;border-radius:20px;margin-bottom:14px;letter-spacing:1px;}
+.header h1{font-size:2rem;font-weight:800;margin-bottom:8px;}
+.header p{font-size:.95rem;opacity:.8;max-width:620px;}
+.meta{display:flex;gap:24px;margin-top:20px;flex-wrap:wrap;}
+.meta span{font-size:13px;opacity:.85;}
+
+.container{max-width:960px;margin:0 auto;padding:40px 24px 80px;}
+.progress-wrap{margin-bottom:36px;}
+.progress-label{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:6px;}
+.progress-bar{height:10px;background:#e2d9c8;border-radius:10px;overflow:hidden;}
+.progress-fill{height:100%;border-radius:10px;background:linear-gradient(90deg,#4a1e1e,#c8a84b);}
+
+.overview{background:var(--primary);color:#fff;border-radius:16px;padding:30px 34px;margin-bottom:36px;position:relative;overflow:hidden;}
+.overview::after{content:'Employee Relations';position:absolute;left:-10px;bottom:-18px;font-size:52px;font-weight:900;color:rgba(255,255,255,.04);white-space:nowrap;}
+.overview h2{font-size:1.2rem;color:var(--accent);margin-bottom:12px;}
+.overview p{font-size:15px;line-height:1.9;opacity:.92;}
+
+.section{margin-bottom:44px;}
+.sec-title{display:flex;align-items:center;gap:14px;margin-bottom:22px;}
+.sec-num{background:var(--accent);color:var(--primary);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0;}
+.sec-title h2{font-size:1.25rem;font-weight:700;color:var(--primary);}
+.sec-title .en{font-size:13px;color:var(--muted);font-style:italic;direction:ltr;}
+
+.card{background:var(--card);border-radius:14px;padding:26px 28px;border:1px solid var(--border);box-shadow:0 2px 12px rgba(0,0,0,.05);margin-bottom:22px;}
+.card h3{font-size:1rem;font-weight:700;color:var(--primary);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--border);}
+.card h3 .en{color:var(--accent2);font-size:.83rem;direction:ltr;display:inline-block;margin-right:6px;}
+.card p.bt{font-size:15px;margin-bottom:12px;line-height:1.85;}
+
+ul.ilist{list-style:none;padding:0;}
+ul.ilist li{padding:8px 0;border-bottom:1px solid #f0ebe0;font-size:15px;display:flex;gap:10px;align-items:flex-start;}
+ul.ilist li:last-child{border-bottom:none;}
+.dot{width:8px;height:8px;background:var(--accent);border-radius:50%;margin-top:8px;flex-shrink:0;}
+.dot.g{background:var(--green);}
+.dot.r{background:var(--red);}
+.dot.t{background:var(--teal);}
+.dot.p{background:var(--purple);}
+
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px;}
+.tbl th{background:var(--primary);color:#fff;padding:10px 14px;text-align:right;}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top;}
+.tbl tr:nth-child(even) td{background:#f9f6f0;}
+.tbl tr:hover td{background:#fff3e0;}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+@media(max-width:640px){.grid2{grid-template-columns:1fr;}}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:14px;}
+@media(max-width:700px){.grid3{grid-template-columns:1fr 1fr;}}
+.gitem{background:#f9f6f0;border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.gitem h4{font-size:14px;font-weight:700;color:var(--primary);margin-bottom:6px;}
+.gitem .en{font-size:11px;color:var(--accent2);direction:ltr;display:block;margin-bottom:5px;}
+.gitem p{font-size:13px;color:#444;line-height:1.7;}
+
+/* ILO standards */
+.ilo-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;}
+.ilo-item{background:#f0f6ff;border-right:4px solid var(--primary);padding:10px 14px;border-radius:6px;font-size:14px;color:#1e3a5f;}
+.ilo-item strong{display:block;color:var(--primary);margin-bottom:3px;}
+
+/* Discipline steps */
+.disc-steps{list-style:none;counter-reset:dsteps;padding:0;}
+.disc-steps li{counter-increment:dsteps;display:flex;gap:14px;padding:12px 0;border-bottom:1px solid #f0ebe0;font-size:15px;align-items:flex-start;}
+.disc-steps li:last-child{border-bottom:none;}
+.disc-steps li::before{content:counter(dsteps);background:var(--red);color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0;margin-top:2px;}
+
+/* Investigation steps */
+.inv-steps{list-style:none;counter-reset:isteps;padding:0;}
+.inv-steps li{counter-increment:isteps;display:flex;gap:14px;padding:10px 0;border-bottom:1px solid #f0ebe0;font-size:14px;align-items:flex-start;}
+.inv-steps li:last-child{border-bottom:none;}
+.inv-steps li::before{content:counter(isteps);background:var(--teal);color:#fff;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;flex-shrink:0;margin-top:2px;}
+
+/* ADR spectrum */
+.adr-spectrum{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:14px;}
+@media(max-width:700px){.adr-spectrum{grid-template-columns:1fr 1fr 1fr;}}
+.adr-item{border-radius:10px;padding:12px 10px;text-align:center;border:1px solid var(--border);}
+.adr-item h5{font-size:12px;font-weight:700;margin-bottom:4px;}
+.adr-item p{font-size:11px;color:#555;line-height:1.5;}
+.adr1{background:#f0fdf4;border-top:3px solid var(--green);} .adr1 h5{color:var(--green);}
+.adr2{background:#f0f6ff;border-top:3px solid #2563eb;} .adr2 h5{color:#1d4ed8;}
+.adr3{background:#fef3cd;border-top:3px solid var(--accent);} .adr3 h5{color:#854d0e;}
+.adr4{background:#ede9fe;border-top:3px solid var(--purple);} .adr4 h5{color:var(--purple);}
+.adr5{background:#fff8f0;border-top:3px solid var(--accent2);} .adr5 h5{color:var(--accent2);}
+.adr6{background:#fff1f2;border-top:3px solid var(--red);} .adr6 h5{color:var(--red);}
+
+/* Due process tests */
+.dp-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;}
+.dp-item{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:10px 14px;font-size:13.5px;color:#1e3a5f;display:flex;gap:10px;align-items:flex-start;}
+.dp-item::before{content:'⚖️';flex-shrink:0;}
+
+/* Deep */
+.deep{background:linear-gradient(135deg,#fff8e7,#fef3cd);border:2px solid var(--accent);border-radius:14px;padding:22px 26px;margin:16px 0;}
+.deep h4{color:var(--primary);font-size:.95rem;font-weight:700;margin-bottom:10px;}
+.deep p,.deep ul{font-size:15px;line-height:1.85;}
+.deep ul{list-style:none;padding:0;}
+.deep ul li{padding:5px 0;display:flex;gap:10px;}
+.deep ul li::before{content:'◆';color:var(--accent);font-size:11px;margin-top:5px;flex-shrink:0;}
+
+.tip{background:#f0fdf4;border:1px solid #86efac;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.tip strong{color:var(--green);}
+.note{background:#fefce8;border:1px solid #fde047;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.note strong{color:#854d0e;}
+.warn{background:#fff1f2;border:1px solid #fca5a5;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.warn strong{color:var(--red);}
+.hl{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1px solid #93c5fd;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.hl strong{color:#1d4ed8;}
+
+.cmp-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+@media(max-width:600px){.cmp-pair{grid-template-columns:1fr;}}
+.cp{border-radius:12px;padding:16px 18px;border:1px solid var(--border);}
+.cp h4{font-size:13px;font-weight:700;margin-bottom:8px;}
+.cp ul{list-style:none;padding:0;}
+.cp ul li{font-size:13px;padding:4px 0;display:flex;gap:8px;}
+.cp ul li::before{content:'•';font-weight:900;flex-shrink:0;}
+.cp.plus{background:#f0fdf4;border-color:#86efac;} .cp.plus h4{color:var(--green);} .cp.plus ul li::before{color:var(--green);}
+.cp.minus{background:#fff1f2;border-color:#fca5a5;} .cp.minus h4{color:var(--red);} .cp.minus ul li::before{color:var(--red);}
+
+.divider{border:none;border-top:2px dashed var(--border);margin:36px 0;}
+.footer{text-align:center;margin-top:60px;padding:22px;color:var(--muted);font-size:13px;border-top:2px solid var(--border);}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="badge">📚 كتاب Organization · الجزء الثالث</div>
+  <h1>ملخص الصفحات 201–300</h1>
+  <p>SHRM Learning System 2023 — Organization Domain · شرح موسّع</p>
+  <div class="meta">
+    <span>📄 402 صفحة إجمالاً</span>
+    <span>🎯 18% من الامتحان</span>
+    <span>⚖️ علاقات الموظفين والعمل + بداية التكنولوجيا</span>
+    <span>🌍 شرح عربي + مصطلحات إنجليزية</span>
+  </div>
+</div>
+
+<div class="container">
+  <div class="progress-wrap">
+    <div class="progress-label"><span>تقدّمك في الكتاب</span><span>300 / 402 صفحة — 75% 🎯</span></div>
+    <div class="progress-bar"><div class="progress-fill" style="width:75%"></div></div>
+  </div>
+
+  <div class="overview">
+    <h2>🗺️ نظرة عامة — الصفحات 201–300</h2>
+    <p>
+      يُفصّل هذا الجزء منطقة <strong>Employee & Labor Relations</strong> بكامل أبعادها: معايير ILO الدولية الثمانية، طبيعة علاقة التوظيف وتأثير الثقافات عليها، الانضباط التدريجي (Progressive Discipline) وخطواته الخمس، اختبارات الإجراءات القانونية الواجبة، إجراء التحقيقات بتسلسله التسعي، حل النزاعات البديل (ADR) بأشكاله الستة، وإجراءات التظلم النقابي. ثم يُدخل في بداية منطقة <strong>Technology Management</strong>.
+    </p>
+  </div>
+
+  <!-- ════ SECTION 1: EMPLOYMENT RELATIONSHIP ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">1</div>
+      <div><h2>علاقة التوظيف — الأساس والتأثيرات</h2><div class="en">The Employment Relationship</div></div>
+    </div>
+
+    <div class="card">
+      <h3>ما يُشكّل علاقة التوظيف <span class="en">Factors Shaping the Employment Relationship</span></h3>
+      <p class="bt">علاقة التوظيف ليست مجرد عقد — بل هي نسيج مُعقّد يتشكّل من عوامل متشابكة:</p>
+      <div class="grid3">
+        <div class="gitem" style="border-top:3px solid var(--primary);">
+          <h4>التاريخ والاقتصاد</h4>
+          <p>تاريخ الصناعة في البلد + الظروف الاقتصادية يُحدّدان توقعات الموظفين وأصحاب العمل.</p>
+        </div>
+        <div class="gitem" style="border-top:3px solid var(--teal);">
+          <h4>الثقافة والمؤسسات</h4>
+          <p>القيم الثقافية، مستوى الفردية/الجماعية، الموقف من السلطة — كلها تؤثر على كيفية إدارة العلاقة.</p>
+        </div>
+        <div class="gitem" style="border-top:3px solid var(--accent2);">
+          <h4>الممارسات الصناعية والقانون</h4>
+          <p>ما هو معيار في الصناعة + ما يُلزم به القانون يُحدّد الحد الأدنى والمعقول.</p>
+        </div>
+      </div>
+      <div class="deep" style="margin-top:14px;">
+        <h4>💡 الفرق بين العلاقة الفردية والجماعية</h4>
+        <ul>
+          <li><strong>العلاقة الفردية:</strong> بين صاحب العمل وموظف واحد — تشمل العقد الفردي، التوقعات الشخصية، والأداء.</li>
+          <li><strong>العلاقة الجماعية:</strong> بين صاحب عمل ومجموعة من الموظفين والأطراف الثالثة (نقابات، مجالس عمال، وكالات حكومية). أكثر تعقيداً وتأثيراً على مستوى الصناعة.</li>
+          <li>HR تُوجّه كلا النوعين: تصميم سياسات عادلة للأفراد + استراتيجية علاقات العمل للجماعات.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ SECTION 2: ILO STANDARDS ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">2</div>
+      <div><h2>معايير منظمة العمل الدولية — ILO</h2><div class="en">International Labour Organization (ILO) — 8 Core Standards</div></div>
+    </div>
+
+    <div class="card">
+      <h3>ما هي ILO؟ <span class="en">About the ILO</span></h3>
+      <p class="bt">منظمة العمل الدولية وكالة متخصصة تابعة للأمم المتحدة، مقرها جنيف. أُسست عام 1919 إثر معاهدة فرساي. عضويتها: 187 دولة + أصحاب عمل + ممثلو العمال. أربعة أهداف استراتيجية:</p>
+      <div class="grid2">
+        <div class="gitem">
+          <h4>1. تعزيز الحقوق في العمل</h4>
+          <p>Promote rights at work</p>
+        </div>
+        <div class="gitem">
+          <h4>2. تشجيع فرص التوظيف اللائق</h4>
+          <p>Encourage decent employment</p>
+        </div>
+        <div class="gitem">
+          <h4>3. تعزيز الحماية الاجتماعية</h4>
+          <p>Enhance social protection</p>
+        </div>
+        <div class="gitem">
+          <h4>4. تقوية الحوار حول قضايا العمل</h4>
+          <p>Strengthen dialogue on work issues</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>المعايير الأساسية الثمانية للعمل <span class="en">8 Core Labour Standards</span></h3>
+      <p class="bt">هذه المعايير تُحدّد حقوق الموظف الأساسية المقبولة دولياً. كل منظمة عالمية يجب أن تعرفها وتسعى لتطبيقها حتى في غياب إلزام قانوني محلي.</p>
+      <div class="ilo-grid">
+        <div class="ilo-item">
+          <strong>1. حرية التجمع وحق التنظيم</strong>
+          يحظر تدخّل السلطات العامة أو اشتراط موافقة أصحاب العمل للتنظيم النقابي.
+        </div>
+        <div class="ilo-item">
+          <strong>2. حق التنظيم والمفاوضة الجماعية</strong>
+          حماية العمال من الانتقام + إلزام أصحاب العمل بالتفاوض مع النقابات.
+        </div>
+        <div class="ilo-item">
+          <strong>3. منع العمل القسري</strong>
+          يحظر العمل الإجباري — استثناءات: الخدمة العسكرية، السجن، حالات الطوارئ.
+        </div>
+        <div class="ilo-item">
+          <strong>4. إلغاء العمل القسري</strong>
+          يحظره كأداة إكراه سياسي أو عقوبة أو انتقام أو تمييز.
+        </div>
+        <div class="ilo-item">
+          <strong>5. الحد الأدنى للسن</strong>
+          يحظر توظيف الأطفال قبل إتمام التعليم الإلزامي. الأعمال الخطرة: فوق 18 فقط.
+        </div>
+        <div class="ilo-item">
+          <strong>6. أسوأ أشكال عمالة الأطفال</strong>
+          يحظر أي عمل يضرّ بصحة الأطفال أو سلامتهم أو أخلاقهم.
+        </div>
+        <div class="ilo-item">
+          <strong>7. المساواة في الأجر</strong>
+          أجر وامتيازات متساوية للرجال والنساء مقابل نفس العمل.
+        </div>
+        <div class="ilo-item">
+          <strong>8. عدم التمييز</strong>
+          يحظر التمييز في التوظيف والتدريب وشروط العمل — يُلزم بتعزيز المساواة.
+        </div>
+      </div>
+      <div class="deep" style="margin-top:14px;">
+        <h4>💡 لماذا تهم ILO الامتحان؟</h4>
+        <ul>
+          <li>حتى لو لم تعكسها قوانين الدولة، فهي تُحدّد معياراً أخلاقياً يسعى أصحاب العمل الجيدون لبلوغه</li>
+          <li>توفير الحد الأدنى من الأجر المعيشي (Living Wage) لا يُجذب الكفاءات فحسب بل يُحسّن سمعة المنظمة عالمياً</li>
+          <li>المنظمات العالمية تستخدم معايير ILO لتوحيد ممارساتها عبر الدول</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ SECTION 3: DISCIPLINE ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">3</div>
+      <div><h2>الانضباط التدريجي — الشرح الكامل</h2><div class="en">Progressive (Constructive) Discipline — Deep Dive</div></div>
+    </div>
+
+    <div class="card">
+      <h3>الانضباط التدريجي: المبدأ والفلسفة <span class="en">Progressive Discipline — Philosophy</span></h3>
+      <p class="bt">الانضباط التدريجي (المُصطلح عليه أحياناً Constructive Discipline) يُطبّق عقوبات متصاعدة الشدة. الهدف ليس المعاقبة — بل تشكيل السلوك وإعطاء الموظف فرصاً حقيقية للتصحيح قبل الوصول للإنهاء.</p>
+      <div class="deep">
+        <h4>💡 الأساس النظري: نظرية Skinner في التعزيز</h4>
+        <ul>
+          <li><strong>العقوبة الإيجابية (Positive Punishment):</strong> إضافة متطلب — مثل إلزام الموظف بإتمام خطة تحسين الأداء (PIP) أو حضور استشارة إدارة الغضب</li>
+          <li><strong>العقوبة السلبية (Negative Punishment):</strong> سحب امتياز مُقدَّر — مثل حجب ترقية أو تعليق بدون أجر</li>
+          <li><strong>تقنية الإطفاء (Extinction):</strong> تجاهل السلوك نظرياً. <strong>في بيئة العمل: خيار خطير!</strong> يُعرّض المنظمة لمخاطر أخلاقية وقانونية ضخمة — لا يُوصى به.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>الخطوات الخمس للانضباط التدريجي <span class="en">5-Step Progressive Discipline Process</span></h3>
+      <ol class="disc-steps">
+        <li>
+          <div>
+            <strong>الإرشاد اللفظي وحل المشكلات — Verbal Counseling</strong>
+            <p style="font-size:14px;margin-top:4px;color:#444;">أخف أنواع الإجراءات. يُقلّل التوترات ويفتح قنوات التواصل. يجب إجراؤه بأسرع وقت ممكن. الهدف: حل المشكلة قبل تفاقمها.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>التحذير الرسمي الأول — First Formal Warning</strong>
+            <p style="font-size:14px;margin-top:4px;color:#444;">رسمي ومُحدَّد — شفهي أو كتابي وفق القوانين المحلية. في مكان خاص دائماً (التوبيخ العلني يُدمّر الثقة). يُحدّد المشكلة والتصحيح المطلوب بوضوح.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>التحذير الثاني (اختياري) — Second Warning</strong>
+            <p style="font-size:14px;margin-top:4px;color:#444;">إذا كان الأول شفهياً، يكون هذا كتابياً للتوثيق. المشكلة والتصحيح بمصطلحات موضوعية محددة. يمكن وضع الموظف في فترة الاختبار (Probation). نسخة موقّعة تُحفظ في ملف الموظف.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>التحذير النهائي — Final Warning</strong>
+            <p style="font-size:14px;margin-top:4px;color:#444;">يتضمن موعداً نهائياً للتحسين + وقف العمل إذا لزم (بأجر أو بدون، حسب القانون والعقود). يُنصّ صراحةً أن الاستمرار يُفضي للإنهاء. يوقّع الموظف إقراراً بالاستلام والفهم.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>الإنهاء أو الخفض الوظيفي — Discharge / Demotion</strong>
+            <p style="font-size:14px;margin-top:4px;color:#444;">الملاذ الأخير للمخالفات المتكررة أو الانتهاكات الجسيمة. يُبلَّغ الموظف شخصياً. تُحفظ كل الوثائق. الإنهاء الفوري (Summary Dismissal) حالات استثنائية تتطلب تحقيقاً فورياً.</p>
+          </div>
+        </li>
+      </ol>
+      <div class="warn"><strong>⚠️ قاعدة لا تتجاوزها:</strong> لا تُنهِ خدمة موظف فوراً حتى في الجرائم الواضحة. أجرِ تحقيقاً شاملاً وموضوعياً أولاً. قد تُعلَّق الخدمة "ريثما يكتمل التحقيق" (Suspended Pending Investigation). كل شيء يُوثَّق.</div>
+    </div>
+
+    <div class="card">
+      <h3>اختبارات الإجراءات القانونية الواجبة <span class="en">7 Tests of Due Process</span></h3>
+      <p class="bt">عند مراجعة أي قرار انضباطي قضائياً، تُطبَّق هذه الاختبارات السبعة لتحديد إذا كان الموظف قد عومل بعدالة:</p>
+      <div class="dp-grid">
+        <div class="dp-item">الموظف أُبلغ بتوقعات صاحب العمل والعواقب المترتبة على عدم تلبيتها</div>
+        <div class="dp-item">الإجراءات الانضباطية متسقة ويمكن التنبؤ بها</div>
+        <div class="dp-item">قرار صاحب العمل مبني على أدلة واقعية</div>
+        <div class="dp-item">يحق للموظف مساءلة الأدلة والدفاع عن نفسه</div>
+        <div class="dp-item">يُستخدم نهج الانضباط البنّاء / التدريجي</div>
+        <div class="dp-item">يحق للموظف استئناف القرار الانضباطي</div>
+        <div class="dp-item">يُعامَل الموظف كفرد — ليس كرقم</div>
+      </div>
+      <div class="tip"><strong>🎯 للامتحان:</strong> هذه الاختبارات السبعة هي الإطار القانوني لحماية المنظمة في النزاعات. أي إجراء انضباطي لا يستوفيها يُصبح عرضة للطعن القانوني.</div>
+    </div>
+
+    <div class="card">
+      <h3>منع المشكلات الانضباطية ابتداءً <span class="en">Preventing Disciplinary Situations</span></h3>
+      <ul class="ilist">
+        <li><span class="dot g"></span><strong>مراجعة قواعد السلوك قبل تطبيقها:</strong> HR تُحدّد عقبات الامتثال وتُعدّل بيئة العمل أو التوقعات استباقياً. حرج خاص عند تطبيق قواعد المقر على العمليات العالمية.</li>
+        <li><span class="dot g"></span><strong>تحديد التوقعات بوضوح:</strong> الوصف الوظيفي يحتوي تفاصيل كافية لكي يعرف الموظف ما المطلوب ومستوى الأداء المتوقع.</li>
+        <li><span class="dot g"></span><strong>الاتساق في الأفعال والقرارات:</strong> مبنية على السياسات والإجراءات. مراجعة سجلات المواقف المشابهة في الماضي.</li>
+        <li><span class="dot g"></span><strong>إرساء ثقافة التواصل المفتوح:</strong> حوار ثنائي مستمر بين الموظف والمشرف. سياسة الباب المفتوح تُعزز التواصل من القاع للقمة.</li>
+        <li><span class="dot t"></span><strong>مراعاة الفروق الثقافية:</strong> بعض الثقافات لا تُشجّع التواصل مع الرؤساء — المديرون يجب أن يُكيّفوا أسلوبهم.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ SECTION 4: WORKPLACE INVESTIGATIONS ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">4</div>
+      <div><h2>إجراء التحقيقات في مكان العمل</h2><div class="en">Workplace Investigations — 9-Step Process</div></div>
+    </div>
+
+    <div class="card">
+      <h3>الخطوات التسع للتحقيق الفعّال <span class="en">9-Step Investigation Process</span></h3>
+      <ol class="inv-steps">
+        <li><strong>ضمان السرية:</strong> يُوضَّح لجميع المعنيين أن كل المعلومات ستُحفظ سرية بأقصى قدر ممكن في إطار التحقيق.</li>
+        <li><strong>توفير الحماية الفورية:</strong> حماية مؤقتة ضد استمرار التحرش أو الانتقام — قد تشمل تغييرات طوعية في الجداول أو الإجازات أو النقل.</li>
+        <li><strong>اختيار المحقق:</strong> موضوعي، ذو خبرة في التحقيق ومعرفة بالقانون، قدرة على التواصل، حذر ومُنتبه للتفاصيل. يمكن أن يكون داخلياً أو خارجياً.</li>
+        <li><strong>إنشاء خطة:</strong> تطوير خطة لجمع الأدلة وإجراء المقابلات.</li>
+        <li><strong>تطوير أسئلة المقابلة:</strong> مُصمّمة لتشجيع التواصل والتركيز على النقاط الحرجة.</li>
+        <li><strong>إجراء المقابلات:</strong> المحقق لا يُعبّر عن آرائه — يحافظ على الموضوعية. تُسجَّل الملاحظات. أسئلة متابعة ضرورية لجمع الأدلة. النهج استقصائي لا عدائي.</li>
+        <li><strong>اتخاذ القرار:</strong> بعد جمع الأدلة بشكل شامل، يوصي المحقق بالإجراء بناءً على الأدلة وسياسات المنظمة وإجراءاتها.</li>
+        <li><strong>إغلاق التحقيق:</strong> إبلاغ المشتكي والمتهم بالنتيجة. التأكد من أن المشتكي مرتاح للعودة للعمل. اتخاذ الخطوات اللازمة لتصحيح السلوك ومنع تكراره.</li>
+        <li><strong>إعداد تقرير كتابي شامل:</strong> يُوثّق الإجراءات المتخذة والمعلومات المجمَّعة. تُستشهد بالسياسات ذات الصلة. تُوصَف الاستنتاجات والإجراءات المتخذة.</li>
+      </ol>
+      <div class="deep" style="margin-top:14px;">
+        <h4>💡 ما الفرق بين التحقيق الجيد والرديء؟</h4>
+        <ul>
+          <li><strong>التحقيق الجيد:</strong> موضوعي، يجمع أدلة من كلا الطرفين، سري، منهجي، موثّق بالكامل، يُفضي لقرار مبرر.</li>
+          <li><strong>التحقيق الرديء:</strong> عدائي أو متحيز، يبحث عن تأكيد رأي مسبق، يتجاهل أدلة الدفاع، غير موثّق.</li>
+          <li>تحقيق جيد = حماية قانونية للمنظمة + بيئة عمل أفضل + علامة تجارية للموظفين أقوى.</li>
+          <li>تحقيق رديء = دعاوى قضائية مكلفة + تآكل الثقة المؤسسية.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>الانتقام في مكان العمل ومنعه <span class="en">Workplace Retaliation Prevention</span></h3>
+      <p class="bt">الانتقام يحدث حين يتخذ صاحب العمل إجراءً ضاراً ضد موظف — في الغالب كرد فعل على شكوى أو نزاع. في كثير من الحالات يُعدّ تمييزاً غير قانوني.</p>
+      <ul class="ilist">
+        <li><span class="dot g"></span><strong>اعتماد سياسة صريحة ضد الانتقام:</strong> تُوضّح أن المنظمة لن تتسامح مع أي سلوك انتقامي</li>
+        <li><span class="dot g"></span><strong>إبلاغ الموظفين بقنوات الإبلاغ:</strong> السياسة تُحدّد إلى من يُبلَّغ عن الانتقام</li>
+        <li><span class="dot g"></span><strong>تدريب المديرين:</strong> من يتهمون بالتمييز قد ينتقمون من المشتكين أو الشهود</li>
+        <li><span class="dot g"></span><strong>مراقبة معاملة الموظفين:</strong> رصد دقيق لأي تغيير في معاملة من قدّموا شكاوى</li>
+        <li><span class="dot g"></span><strong>التحقيق والإجراء التصحيحي:</strong> الانتقام يُوقَف حتى لو لم يرقَ لمستوى الانتهاك القانوني</li>
+        <li><span class="dot t"></span><strong>حماية المبلّغين عن المخالفات (Whistleblowers):</strong> في كثير من الدول، لا يمكن فصل الموظف بسبب تبليغه عن مخالفات — يجب أن تعكس سياسة عدم الانتقام هذه الحماية</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ SECTION 5: DISPUTE RESOLUTION + ADR ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">5</div>
+      <div><h2>حل النزاعات والبدائل عن التقاضي</h2><div class="en">Dispute Resolution & ADR — Deep Dive</div></div>
+    </div>
+
+    <div class="card">
+      <h3>تصاعد مستويات حل النزاعات <span class="en">Escalation Levels in Dispute Resolution</span></h3>
+      <p class="bt">حل النزاعات يتدرّج من الأبسط للأكثر رسمية:</p>
+      <div class="grid3">
+        <div class="gitem" style="border-top:4px solid var(--green);">
+          <h4>المستوى الأول</h4>
+          <span class="en">Level 1: Informal Meeting</span>
+          <p>الموظف + مشرفه المباشر. المشرف يستمع ويطرح أسئلة. إذا حُلّ: يُوضح النقاط الرئيسية ويحصل على اتفاق. إذا لم يُحل: يُوضح الخطوات التالية.</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid #1d4ed8;">
+          <h4>المستوى الثاني</h4>
+          <span class="en">Level 2: Formal Meeting</span>
+          <p>اجتماع أكثر رسمية مع إدارة أعلى أو لجنة داخلية. سري ومُركّز على الوقائع والأدلة. قد ينتهي باتفاق أو بالتزام بمزيد من التحقيق.</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid var(--red);">
+          <h4>المستوى الثالث</h4>
+          <span class="en">Level 3: Third-Party ADR</span>
+          <p>طرف محايد خارجي. وسيط أو محكّم. الأشكال تتراوح من غير الرسمية (الباب المفتوح) للرسمية جداً (التحكيم الملزم).</p>
+        </div>
+      </div>
+      <div class="note"><strong>📌 مبادئ جميع مستويات الحل:</strong> الاستماع الفعّال · إدارة المشاعر · الاتفاق على الأهداف · التركيز على الوقائع لا الشخصيات · النظر في كل وجهات النظر · البحث عن حلول بديلة · الاتفاق على الخطوات التالية.</div>
+    </div>
+
+    <div class="card">
+      <h3>أشكال حل النزاعات البديل — ADR <span class="en">Alternative Dispute Resolution (ADR) — 6 Forms</span></h3>
+      <p class="bt">ADR يستخدم وسيطاً لإيجاد الحلول وتبديد النزاعات. درجات متفاوتة من الحياد والرسمية والتعقيد.</p>
+      <div class="adr-spectrum">
+        <div class="adr-item adr1">
+          <h5>سياسة الباب المفتوح</h5>
+          <span class="en">Open-Door Policy</span>
+          <p>الأبسط — الموظف يلجأ لأي مدير في التسلسل الهرمي. وقائي أو استباقي.</p>
+        </div>
+        <div class="adr-item adr2">
+          <h5>أمين المظالم</h5>
+          <span class="en">Ombudsperson</span>
+          <p>طرف ثالث محايد يتحقق سرياً ويُساعد في الوساطة. لا سلطة على الحل النهائي.</p>
+        </div>
+        <div class="adr-item adr3">
+          <h5>مسؤول معيّن</h5>
+          <span class="en">Single Designated Officer</span>
+          <p>فرد محدد من القيادة العليا مخصص للتحقيق وحل النزاعات.</p>
+        </div>
+        <div class="adr-item adr4">
+          <h5>المسؤول المختار</h5>
+          <span class="en">Chosen Officer</span>
+          <p>الموظف يختار محكّمه من مجموعة أفراد. يُعطي الموظف شعوراً بالتحكم.</p>
+        </div>
+        <div class="adr-item adr5">
+          <h5>مراجعة الأقران</h5>
+          <span class="en">Peer Review</span>
+          <p>لجنة من الموظفين (أو موظفين ومديرين) لسماع الشكاوى وحلها. قد تقترح تغيير السياسات.</p>
+        </div>
+        <div class="adr-item adr6">
+          <h5>الوساطة والتحكيم</h5>
+          <span class="en">Mediation & Arbitration</span>
+          <p>الأكثر رسمية. الوسيط يُسهّل الاتفاق. المحكّم يُصدر قراراً ملزماً (أو غير ملزم).</p>
+        </div>
+      </div>
+      <div class="grid2" style="margin-top:14px;">
+        <div class="cp plus">
+          <h4>✅ الوساطة — Mediation</h4>
+          <ul>
+            <li>طرف ثالث خبير في التفاوض</li>
+            <li>يُساعد الطرفين على إيجاد أرضية مشتركة</li>
+            <li>لا يُصدر حكماً — يُسهّل الاتفاق الطوعي</li>
+            <li>لا يمكن فرض تسوية على أي طرف</li>
+          </ul>
+        </div>
+        <div class="cp minus">
+          <h4>⚠️ التحكيم — Arbitration</h4>
+          <ul>
+            <li>محكّم محايد يستمع لكلا الطرفين</li>
+            <li>يُصدر قراراً نهائياً</li>
+            <li>ملزم = الطرفان ملتزمان قانونياً</li>
+            <li>غير ملزم = يمكن اللجوء لوسائل أخرى بعده</li>
+          </ul>
+        </div>
+      </div>
+      <div class="warn"><strong>⚠️ تحذير دولي:</strong> ليست كل خيارات ADR قانونية أو مقبولة ثقافياً في كل دولة. استشارة الخبراء القانونيين والمحليين ضرورة قبل تطوير سياسات حل النزاعات.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ SECTION 6: COLLECTIVE BARGAINING & UNIONS (مُضاف 2025) ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">6</div>
+      <div><h2>المفاوضة الجماعية والعمل النقابي <span style="background:#1D9E75;color:#fff;font-size:11px;font-weight:800;padding:2px 9px;border-radius:20px;">محدّث ٢٠٢٥</span></h2><div class="en">Collective Bargaining & Union Relations</div></div>
+    </div>
+
+    <div class="card">
+      <h3>التنظيم النقابي <span class="en">Union Organizing</span></h3>
+      <p class="bt">قبل أي مفاوضة جماعية، تمرّ النقابة بعملية اعتماد رسمية يشرف عليها مجلس علاقات العمل الوطني (NLRB):</p>
+      <ul class="ilist">
+        <li><span class="dot r"></span><strong>بطاقات التفويض (Authorization Cards):</strong> توقيع 30% من العمال على الأقل لطلب إجراء انتخاب.</li>
+        <li><span class="dot r"></span><strong>وحدة التفاوض (Bargaining Unit):</strong> مجموعة العمال ذوي المصالح المشتركة الذين تمثّلهم النقابة.</li>
+        <li><span class="dot r"></span><strong>الانتخاب والاعتماد:</strong> فوز الأغلبية (50%+1) ← اعتماد النقابة ممثلاً حصرياً للتفاوض.</li>
+        <li><span class="dot g"></span><strong>دور HR:</strong> الالتزام بالحياد القانوني وتجنّب الممارسات غير العادلة أثناء حملة التنظيم.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>موضوعات المفاوضة الجماعية <span class="en">Bargaining Subjects</span></h3>
+      <p class="bt">يُلزم القانون الطرفين بالتفاوض «بحسن نية» (Good Faith)، وتُصنَّف الموضوعات إلى ثلاث فئات:</p>
+      <table class="tbl">
+        <tr><th>الفئة</th><th>أمثلة</th><th>الإلزام</th></tr>
+        <tr><td><strong>إلزامية (Mandatory)</strong></td><td>الأجور، ساعات العمل، ظروف العمل</td><td>يجب التفاوض عليها</td></tr>
+        <tr><td><strong>اختيارية (Permissive)</strong></td><td>قضايا خارج النطاق الإلزامي</td><td>طوعية — لا إلزام</td></tr>
+        <tr><td><strong>محظورة (Illegal)</strong></td><td>المتجر المغلق، شروط تمييزية</td><td>لا يجوز إدراجها</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>أنواع الأمن النقابي <span class="en">Union Security Arrangements</span></h3>
+      <table class="tbl">
+        <tr><th>النوع</th><th>المعنى</th></tr>
+        <tr><td><strong>المتجر المغلق (Closed Shop)</strong></td><td>العضوية شرط للتعيين — <strong>محظور</strong> بموجب Taft-Hartley.</td></tr>
+        <tr><td><strong>متجر النقابة (Union Shop)</strong></td><td>الانضمام إلزامي خلال مدة بعد التعيين.</td></tr>
+        <tr><td><strong>متجر الوكالة (Agency Shop)</strong></td><td>دفع رسوم التفاوض دون انضمام إجباري.</td></tr>
+        <tr><td><strong>المتجر المفتوح (Open Shop)</strong></td><td>لا إلزام بالعضوية أو الرسوم — سائد في «ولايات الحق في العمل».</td></tr>
+      </table>
+      <div class="deep" style="margin-top:14px;">
+        <h4>💡 ولايات الحق في العمل (Right-to-Work)</h4>
+        <ul><li>قوانين الولاية تمنع اشتراط عضوية النقابة أو دفع رسومها كشرط للعمل، فتُضعِف الأمن النقابي. مصدرها صلاحية منحها Taft-Hartley للولايات.</li></ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>الإضرابات والإغلاق <span class="en">Strikes & Lockouts</span></h3>
+      <p class="bt">عند تعثّر المفاوضة قد يلجأ الطرفان لأدوات ضغط، ونوع الإضراب يحدّد حماية العمال:</p>
+      <table class="tbl">
+        <tr><th>النوع</th><th>الوصف</th><th>حماية العمال</th></tr>
+        <tr><td><strong>اقتصادي (Economic)</strong></td><td>للضغط على الأجور/الظروف</td><td>قابلون للاستبدال الدائم</td></tr>
+        <tr><td><strong>ضد ممارسة غير عادلة (ULP)</strong></td><td>احتجاجاً على مخالفة صاحب العمل</td><td>محميون من الاستبدال الدائم</td></tr>
+        <tr><td><strong>جامح (Wildcat)</strong></td><td>غير مصرَّح به من النقابة</td><td>غير محميين</td></tr>
+        <tr><td><strong>تعاطفي (Sympathy)</strong></td><td>دعماً لنقابة أخرى</td><td>حماية محدودة</td></tr>
+      </table>
+      <div class="warn"><strong>⚠️ الإغلاق (Lockout):</strong> أداة بيد صاحب العمل تمنع العمال من الدخول للضغط في التفاوض — النظير المقابل للإضراب.</div>
+    </div>
+
+    <div class="deep">
+      <h4>🔗 الإطار القانوني — راجعي المرجع</h4>
+      <ul>
+        <li><strong>NLRA (واغنر) §7:</strong> يكفل حق التنظيم والمفاوضة الجماعية.</li>
+        <li><strong>Taft-Hartley:</strong> أضاف ممارسات النقابات غير العادلة، وحظر المتجر المغلق، وأجاز قوانين الحق في العمل.</li>
+        <li><strong>Landrum-Griffin:</strong> وثيقة حقوق أعضاء النقابة وشفافيتها المالية.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ SECTION 7: GRIEVANCES ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">7</div>
+      <div><h2>إجراءات التظلم النقابي</h2><div class="en">Union Grievance Procedures</div></div>
+    </div>
+
+    <div class="card">
+      <h3>لماذا تنشأ التظلمات؟ <span class="en">Why Grievances Arise</span></h3>
+      <p class="bt">التظلم (Grievance) هو عملية رسمية لحل خلافات تنشأ بشأن عقد العمل الجماعي. معظم التظلمات لا تنشأ من نية سيئة — بل من ثغرات في التواصل أو من عدم تناول العقد لقضايا بعينها.</p>
+      <ul class="ilist">
+        <li><span class="dot r"></span>انتهاكات محتملة لبنود العقد</li>
+        <li><span class="dot r"></span>معاملة غير عادلة مُدرَكة في الإجراءات الانضباطية</li>
+        <li><span class="dot r"></span>تجاوز امتيازات الأقدمية</li>
+        <li><span class="dot r"></span>معاملة تمييزية أو إشكاليات مع المشرفين</li>
+        <li><span class="dot g"></span><strong>كيف تمنعها:</strong> كلا الطرفين (إدارة + نقابة) يُقيّمان محل العمل للمشاكل المحتملة، يعرفان العقد بكامله بما في الممارسات السابقة، ويعرفان الموظفين ومشاكلهم.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>مستويات التظلم الأربعة <span class="en">4-Level Grievance Process</span></h3>
+      <table class="tbl">
+        <tr><th>المستوى</th><th>المشاركون</th><th>ما يحدث</th></tr>
+        <tr>
+          <td><strong>1. المشرف المباشر</strong></td>
+          <td>الموظف + مشرفه + مندوب النقابة</td>
+          <td>يُقدَّم التظلم (مكتوب غالباً). المشرف يحدد السبب ويسعى للحل. إذا وافق مندوب النقابة أن لا تظلم حقيقي — تنتهي العملية هنا.</td>
+        </tr>
+        <tr>
+          <td><strong>2. المستوى الوسيط</strong></td>
+          <td>مشرف وسيط / رئيس قسم + مسؤول نقابي أعلى</td>
+          <td>الموظف عادةً غير موجود — تمثله النقابة. كلا الطرفين يوثّقان وقائعهما ومواقفهما بالكامل. الحوار حر دون خوف من تبعات.</td>
+        </tr>
+        <tr>
+          <td><strong>3. الإدارة العليا</strong></td>
+          <td>إدارة عليا + لجنة التظلم النقابي</td>
+          <td>قد يصل حتى أعلى المسؤولين في المنظمة. إذا لم يُحل خلال المهلة المحددة في العقد — ينتقل للمرحلة الأخيرة.</td>
+        </tr>
+        <tr>
+          <td><strong>4. التحكيم من طرف ثالث</strong></td>
+          <td>محكّم خارجي محايد</td>
+          <td>أعلى مستويات كلا الطرفين + المستشارون القانونيون. المحكّم يستمع ويُصدر القرار النهائي.</td>
+        </tr>
+      </table>
+      <div class="deep" style="margin-top:14px;">
+        <h4>💡 أهم قواعد معالجة التظلمات</h4>
+        <ul>
+          <li>تعامل مع كل قضية كأنها قد تصل في النهاية للتحكيم — وثّق كل شيء من البداية</li>
+          <li>التزم بالمهل الزمنية المحددة في العقد — التجاوز قد يُعني القبول الضمني</li>
+          <li>لا تُبرم تسويات مع الموظفين الأفراد بعيداً عن مشاركة النقابة</li>
+          <li>لا تُسوّ تظلماً على أساس ما هو "عادل" — العقد هو المعيار الوحيد</li>
+          <li>لا تبرم تعديلات غير رسمية على العقد — تصبح ممارسات سابقة تُلزمك لاحقاً</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ SECTION 8: TECHNOLOGY MANAGEMENT INTRO ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">8</div>
+      <div><h2>مدخل: إدارة التكنولوجيا</h2><div class="en">Technology Management — Introduction</div></div>
+    </div>
+
+    <div class="card">
+      <h3>دور التكنولوجيا في HR <span class="en">Technology's Role in HR</span></h3>
+      <p class="bt">التكنولوجيا تجعل HR أكثر إنتاجية وعقلانية — تجمع المعلومات وتُنظّمها وتكشف الأنماط وتُمكّن القرارات المبنية على الأدلة. لكنها في الوقت ذاته تُنشئ ثغرات أمنية جديدة.</p>
+      <div class="grid2">
+        <div class="gitem" style="border-top:4px solid var(--green);">
+          <h4>الفرص</h4>
+          <ul class="ilist" style="margin:0;">
+            <li><span class="dot g"></span>تحسين إنتاجية HR وجودة خدماتها</li>
+            <li><span class="dot g"></span>الخدمة الذاتية للموظفين والمديرين</li>
+            <li><span class="dot g"></span>تحليلات تدعم القرار الاستراتيجي</li>
+            <li><span class="dot g"></span>الحوسبة المتنقلة وإمكانية الوصول</li>
+          </ul>
+        </div>
+        <div class="gitem" style="border-top:4px solid var(--red);">
+          <h4>المخاطر</h4>
+          <ul class="ilist" style="margin:0;">
+            <li><span class="dot r"></span>انتهاك خصوصية بيانات الموظفين</li>
+            <li><span class="dot r"></span>الوصول غير المصرح به وسرقة البيانات</li>
+            <li><span class="dot r"></span>التلاعب بالأنظمة والبيانات</li>
+            <li><span class="dot r"></span>التعرض للهجمات الإلكترونية</li>
+          </ul>
+        </div>
+      </div>
+      <div class="hl" style="margin-top:14px;"><strong>💡 مبدأ إدارة المخاطر:</strong> التكنولوجيا في HR تُدار وفق منطق إدارة المخاطر — تعظيم فرص النتائج الإيجابية + تقليل احتمالات النتائج السلبية. HR لا تُتوقع أن تكون خبراء IT — لكن يجب أن تعرف ما يكفي للعمل مع IT بفاعلية.</div>
+    </div>
+
+    <div class="card">
+      <h3>أنواع تكنولوجيا HR الرئيسية <span class="en">Key HR Technology Types</span></h3>
+      <table class="tbl">
+        <tr><th>التكنولوجيا</th><th>الاختصار</th><th>الوظيفة الرئيسية</th></tr>
+        <tr><td><strong>نظام معلومات الموارد البشرية</strong></td><td>HRIS</td><td>إدارة بيانات الموظفين، كشوف الرواتب، المزايا، التدريب، الأداء</td></tr>
+        <tr><td><strong>نظام تتبع المتقدمين</strong></td><td>ATS</td><td>إدارة دورة التوظيف الكاملة من الإعلان حتى التعيين</td></tr>
+        <tr><td><strong>نظام إدارة التعلم</strong></td><td>LMS</td><td>تقديم التدريب وتتبعه وإدارة الدورات والشهادات</td></tr>
+        <tr><td><strong>نظام إدارة الأداء</strong></td><td>PMS</td><td>تقييمات الأداء والأهداف والتغذية الراجعة</td></tr>
+        <tr><td><strong>تحليلات البيانات الضخمة</strong></td><td>Big Data Analytics</td><td>تحليل بيانات HR الكبيرة للكشف عن الأنماط ودعم القرار</td></tr>
+        <tr><td><strong>الذكاء الاصطناعي والتعلم الآلي</strong></td><td>AI / ML</td><td>تحسين الاستقطاب، توقع الدوران، تخصيص التعلم</td></tr>
+        <tr><td><strong>Blockchain</strong></td><td>Blockchain</td><td>التحقق الآمن من بيانات الموظفين والشهادات والسجلات</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- GLOSSARY -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">📖</div>
+      <div><h2>المصطلحات الأساسية — الجزء الثالث</h2></div>
+    </div>
+    <div class="card">
+      <table class="tbl">
+        <tr><th>المصطلح العربي</th><th>الإنجليزي</th><th>التعريف المختصر</th></tr>
+        <tr><td>علاقات الموظفين والعمل</td><td>Employee & Labor Relations</td><td>أي تفاعلات بين المنظمة وموظفيها بشأن شروط وأحكام التوظيف</td></tr>
+        <tr><td>منظمة العمل الدولية</td><td>ILO</td><td>وكالة أممية تضع معايير العمل الدولية — 187 دولة عضو</td></tr>
+        <tr><td>الانضباط التدريجي</td><td>Progressive / Constructive Discipline</td><td>عقوبات متصاعدة الشدة تهدف لتشكيل السلوك لا إيلام الموظف</td></tr>
+        <tr><td>الإجراءات القانونية الواجبة</td><td>Due Process</td><td>7 اختبارات تضمن معاملة الموظف بعدالة في الإجراءات الانضباطية</td></tr>
+        <tr><td>تحقيق مكان العمل</td><td>Workplace Investigation</td><td>تحقيق موضوعي منهجي في 9 خطوات لحل الشكاوى والمخالفات</td></tr>
+        <tr><td>الانتقام في مكان العمل</td><td>Workplace Retaliation</td><td>إجراء ضار ضد موظف كرد فعل على شكوى أو نزاع</td></tr>
+        <tr><td>المبلّغ عن المخالفات</td><td>Whistleblower</td><td>موظف يُبلّغ عن مخالفات — محمي قانونياً في كثير من الدول</td></tr>
+        <tr><td>حل النزاعات البديل</td><td>Alternative Dispute Resolution (ADR)</td><td>استخدام وسيط لإيجاد الحلول بديلاً عن التقاضي</td></tr>
+        <tr><td>الوساطة</td><td>Mediation</td><td>طرف ثالث يُسهّل إيجاد أرضية مشتركة — لا يُصدر حكماً</td></tr>
+        <tr><td>التحكيم</td><td>Arbitration</td><td>طرف ثالث يستمع ويُصدر قراراً (ملزماً أو غير ملزم)</td></tr>
+        <tr><td>أمين المظالم</td><td>Ombudsperson</td><td>طرف محايد يتحقق سرياً ويُساعد في الوساطة لكن بلا سلطة قرار</td></tr>
+        <tr><td>التظلم</td><td>Grievance</td><td>إجراء رسمي لحل خلافات تتعلق ببنود العقد الجماعي</td></tr>
+        <tr><td>الفصل الفوري</td><td>Summary Dismissal</td><td>إنهاء خدمة فوري للجرائم الجسيمة — يتطلب تحقيقاً كاملاً أولاً</td></tr>
+        <tr><td>نظام معلومات HR</td><td>HRIS</td><td>نظام يُدير بيانات الموظفين ويدعم عمليات HR الكاملة</td></tr>
+        <tr><td>الأجر المعيشي</td><td>Living Wage</td><td>أجر يُمكّن الموظف من تلبية احتياجاته الأساسية في منطقته</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- INTEGRATION -->
+  <div class="overview" style="margin-top:30px;">
+    <h2>🔗 تكامل مفاهيم هذا الجزء</h2>
+    <p style="line-height:2.1;">
+      <strong>الانضباط التدريجي + التحقيقات:</strong> الانضباط بدون تحقيق = إجراء مُعيب قانونياً. التحقيق يُوفّر الأدلة اللازمة لتبرير أي قرار انضباطي والدفاع عنه أمام المحاكم.<br>
+      <strong>ADR + إجراءات التظلم:</strong> ADR هو الإطار العام لحل النزاعات، بينما إجراءات التظلم هي آلية ADR المُخصّصة للبيئات النقابية حيث العقد الجماعي هو المرجع الأوحد.<br>
+      <strong>ILO + الممارسة العالمية:</strong> معايير ILO ليست اختيارية أخلاقياً — المنظمات التي تُطبّقها تستقطب أفضل المواهب عالمياً وتحمي سمعتها في كل الأسواق.<br>
+      <strong>إدارة التكنولوجيا + باقي النطاق:</strong> التكنولوجيا ليست منطقة منفصلة — بل تُمكّن وتُعزّز كل المناطق الأخرى: HRIS يدعم إدارة القوى العاملة، ATS يدعم الاستقطاب، LMS يدعم التطوير.
+    </p>
+  </div>
+
+  <div class="tip" style="margin-top:22px;font-size:15px;">
+    <strong>🎯 نصيحة الامتحان:</strong> أسئلة SJI في علاقات الموظفين تُختبر فيها: (1) الخطوة الأولى في أي مشكلة انضباطية = تحقيق، ليس عقوبة فورية. (2) التظلم يُعالَج وفق العقد لا وفق ما هو "عادل". (3) الوساطة لا تُلزم طرفاً بالتسوية — التحكيم يُلزم. (4) سياسة ADR المثلى تبدأ بأبسط أشكال الحل وتتصاعد. والامتحان يُحب أن يسأل عن ADR والفرق بين Mediation وArbitration.
+  </div>
+
+  <!-- STUDY PLAN -->
+  <div class="overview" style="margin-top:36px;background:linear-gradient(135deg,#4a1e1e,#1a3a5c);">
+    <h2>📅 تقدّمك — 75% مكتمل! 🎯</h2>
+    <table class="tbl" style="margin-top:14px;background:rgba(255,255,255,.08);">
+      <tr style="background:rgba(255,255,255,.15);">
+        <th style="background:transparent;color:#fff;">الجزء</th>
+        <th style="background:transparent;color:#fff;">الصفحات</th>
+        <th style="background:transparent;color:#fff;">المحتوى</th>
+        <th style="background:transparent;color:#fff;">الحالة</th>
+      </tr>
+      <tr style="color:#fff;font-size:14px;"><td>الأول</td><td>1–100</td><td>هيكل HR (7 نماذج) + BSC + مراجعات + McKinsey 7S</td><td>✅</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>الثاني</td><td>101–200</td><td>التصميم التنظيمي + RACI + Tuckman + إدارة القوى العاملة + 9-Box + KM</td><td>✅</td></tr>
+      <tr style="color:#fff;font-size:14px;background:rgba(200,168,75,.2);"><td><strong>الثالث ✅</strong></td><td><strong>201–300</strong></td><td><strong>علاقات الموظفين: ILO + الانضباط + التحقيقات + ADR + التظلمات + بداية التكنولوجيا</strong></td><td>✅ أنت هنا</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td><strong>الرابع</strong></td><td><strong>301–402</strong></td><td><strong>التكنولوجيا (كامل) + إدارة النقابات + مراجعة شاملة + نصائح الامتحان</strong></td><td>⏳ الأخير!</td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <p style="font-size:15px;font-weight:700;color:var(--primary);">جزء واحد فقط بقي — اطلب الجزء الرابع والأخير (301–402) متى شئت 🏁</p>
+    <p style="margin-top:6px;color:#aaa;">SHRM Learning System 2023 — Organization Domain · ملخص موسّع بالعربية</p>
+  </div>
+</div>
+</body>
+</html>

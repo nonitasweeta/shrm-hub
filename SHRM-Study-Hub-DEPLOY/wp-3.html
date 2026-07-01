@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHRM Workplace — الجزء 3: CSR + بداية قانون العمل</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>:root{--primary:#1a3a5c;--accent:#c8a84b;--accent2:#e8734a;--bg:#f7f4ef;--card:#fff;--green:#1e7a4a;--red:#b91c1c;--purple:#6d28d9;--teal:#0f766e;--border:#e2d9c8;--muted:#6b7280;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Tajawal',sans-serif;background:var(--bg);color:#2c2c2c;line-height:1.85;font-size:16px;}
+.header{background:linear-gradient(135deg,#1a3a5c 0%,#0f3460 50%,#1e3a2e 100%);color:#fff;padding:48px 40px 40px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-60px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(200,168,75,.08);}
+.badge{display:inline-block;background:var(--accent);color:var(--primary);font-weight:700;font-size:13px;padding:4px 16px;border-radius:20px;margin-bottom:14px;letter-spacing:1px;}
+.header h1{font-size:1.9rem;font-weight:800;margin-bottom:8px;}
+.header p{font-size:.9rem;opacity:.75;max-width:600px;}
+.meta{display:flex;gap:20px;margin-top:18px;flex-wrap:wrap;}
+.meta span{font-size:12px;opacity:.8;}
+.container{max-width:960px;margin:0 auto;padding:40px 24px 80px;}
+.progress-wrap{margin-bottom:32px;}
+.progress-label{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:6px;}
+.progress-bar{height:10px;background:#e2d9c8;border-radius:10px;overflow:hidden;}
+.progress-fill{height:100%;border-radius:10px;background:linear-gradient(90deg,#1a3a5c,#c8a84b);}
+.overview{background:var(--primary);color:#fff;border-radius:16px;padding:28px 32px;margin-bottom:32px;}
+.overview h2{font-size:1.1rem;color:var(--accent);margin-bottom:10px;}
+.overview p{font-size:14.5px;line-height:1.9;opacity:.9;}
+.section{margin-bottom:40px;}
+.sec-title{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+.sec-num{background:var(--accent);color:var(--primary);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex-shrink:0;}
+.sec-title h2{font-size:1.2rem;font-weight:700;color:var(--primary);}
+.sec-title .en{font-size:12px;color:var(--muted);font-style:italic;direction:ltr;}
+.card{background:var(--card);border-radius:14px;padding:24px 26px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,.05);margin-bottom:20px;}
+.card h3{font-size:.95rem;font-weight:700;color:var(--primary);margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+.card h3 .en{color:var(--accent2);font-size:.8rem;direction:ltr;display:inline-block;margin-right:5px;}
+.card p.bt{font-size:15px;margin-bottom:10px;line-height:1.85;}
+.tbl{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:10px;}
+.tbl th{background:var(--primary);color:#fff;padding:9px 12px;text-align:right;}
+.tbl td{padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:top;}
+.tbl tr:nth-child(even) td{background:#f9f6f0;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;}
+@media(max-width:640px){.grid2{grid-template-columns:1fr;}}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:12px;}
+@media(max-width:700px){.grid3{grid-template-columns:1fr 1fr;}}
+.gitem{background:#f9f6f0;border:1px solid var(--border);border-radius:10px;padding:12px 14px;}
+.gitem h4{font-size:13px;font-weight:700;color:var(--primary);margin-bottom:5px;}
+.gitem .en{font-size:10px;color:var(--accent2);direction:ltr;display:block;margin-bottom:4px;}
+.gitem p{font-size:12.5px;color:#444;line-height:1.65;}
+ul.ilist{list-style:none;padding:0;}
+ul.ilist li{padding:7px 0;border-bottom:1px solid #f0ebe0;font-size:14.5px;display:flex;gap:9px;align-items:flex-start;}
+ul.ilist li:last-child{border-bottom:none;}
+.dot{width:7px;height:7px;background:var(--accent);border-radius:50%;margin-top:8px;flex-shrink:0;}
+.dot.g{background:var(--green);} .dot.r{background:var(--red);} .dot.t{background:var(--teal);}
+.deep{background:linear-gradient(135deg,#fff8e7,#fef3cd);border:2px solid var(--accent);border-radius:12px;padding:18px 22px;margin:14px 0;}
+.deep h4{color:var(--primary);font-size:.9rem;font-weight:700;margin-bottom:8px;}
+.deep ul{list-style:none;padding:0;font-size:14.5px;}
+.deep ul li{padding:4px 0;display:flex;gap:8px;}
+.deep ul li::before{content:'◆';color:var(--accent);font-size:10px;margin-top:5px;flex-shrink:0;}
+.tip{background:#f0fdf4;border:1px solid #86efac;border-radius:10px;padding:14px 18px;margin:12px 0;font-size:14.5px;}
+.tip strong{color:var(--green);}
+.note{background:#fefce8;border:1px solid #fde047;border-radius:10px;padding:14px 18px;margin:12px 0;font-size:14.5px;}
+.note strong{color:#854d0e;}
+.warn{background:#fff1f2;border:1px solid #fca5a5;border-radius:10px;padding:14px 18px;margin:12px 0;font-size:14.5px;}
+.warn strong{color:var(--red);}
+.hl{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1px solid #93c5fd;border-radius:10px;padding:14px 18px;margin:12px 0;font-size:14.5px;}
+.hl strong{color:#1d4ed8;}
+.divider{border:none;border-top:2px dashed var(--border);margin:32px 0;}
+.footer{text-align:center;margin-top:50px;padding:20px;color:var(--muted);font-size:13px;border-top:2px solid var(--border);}
+.glos-tbl{width:100%;border-collapse:collapse;font-size:13px;}
+.glos-tbl th{background:var(--primary);color:#fff;padding:8px 12px;text-align:right;}
+.glos-tbl td{padding:8px 12px;border-bottom:1px solid var(--border);vertical-align:top;font-size:13px;}
+.glos-tbl tr:nth-child(even) td{background:#f9f6f0;}
+
+.tbl-3 .n{color:var(--primary);font-weight:700;}
+.sdg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;}
+.sdg-item{background:#f9f6f0;border-radius:8px;padding:10px 12px;font-size:12.5px;border-right:3px solid var(--teal);}
+.csv-cmp{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;}
+.csv-l{background:#fff8f0;border:1px solid var(--border);border-top:4px solid var(--accent2);border-radius:12px;padding:16px;}
+.csv-r{background:#f0fdf4;border:1px solid var(--border);border-top:4px solid var(--green);border-radius:12px;padding:16px;}
+.csv-l h4,.csv-r h4{font-size:13px;font-weight:700;margin-bottom:8px;}
+.csv-l h4{color:var(--accent2);}.csv-r h4{color:var(--green);}
+.csv-l ul,.csv-r ul{list-style:none;padding:0;}
+.csv-l ul li,.csv-r ul li{font-size:13px;padding:4px 0;display:flex;gap:7px;}
+.csv-l ul li::before{content:"•";font-weight:900;color:var(--accent2);flex-shrink:0;}
+.csv-r ul li::before{content:"•";font-weight:900;color:var(--green);flex-shrink:0;}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="badge">📚 Workplace Domain · الجزء الثالث</div>
+  <h1>المسؤولية الاجتماعية للشركات</h1>
+  <p>Corporate Social Responsibility — صص 271–400 + مدخل قانون العمل</p>
+  <div class="meta">
+    <span>🌍 Triple Bottom Line + GRI + ISO 26000 + CSV + SDGs</span>
+    <span>⚖️ بداية قانون العمل الأمريكي</span>
+  </div>
+</div>
+<div class="container">
+  <div class="progress-wrap">
+    <div class="progress-label"><span>تقدّمك في Workplace Domain</span><span>400 / 534 — 75%</span></div>
+    <div class="progress-bar"><div class="progress-fill" style="width:75%"></div></div>
+  </div>
+
+  <div class="overview">
+    <h2>🗺️ نظرة عامة — الجزء الثالث</h2>
+    <p>يُغطي هذا الجزء المنطقة الوظيفية الثالثة: <strong>Corporate Social Responsibility (CSR)</strong> بكاملها — Triple Bottom Line، أطر الإفصاح العالمية (GRI وISO 26000)، أهداف التنمية المستدامة للأمم المتحدة، الفرق الجوهري بين CSR وCSV (Porter)، خطوات تطوير استراتيجية CSR، تطوع الموظفين وأثره الرباعي، والإشكالية العالمي/محلي في الفلانثروبيا الاستراتيجية. ثم يُقدّم مدخل المنطقة الرابعة: قانون العمل الأمريكي.</p>
+  </div>
+
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">1</div>
+      <div><h2>Triple Bottom Line — الأساس الثلاثي</h2><div class="en">People · Planet · Profit</div></div>
+    </div>
+    <div class="card">
+      <h3>لماذا الأساس الثلاثي؟ <span class="en">Why TBL Matters</span></h3>
+      <p class="bt">مفهوم Triple Bottom Line (TBL) يرى أن نجاح المنظمة يُقاس بثلاثة محاور متكاملة وليس بالربح وحده:</p>
+      <table class="tbl">
+        <tr><th>الجانب</th><th>الوصف</th><th>مثال القياس</th></tr>
+        <tr><td><strong>🧑‍🤝‍🧑 People (الناس)</strong></td><td>الأثر الاجتماعي على الموظفين والمجتمعات وأصحاب المصلحة</td><td>معدل دوران الموظفين + الأجر المعيشي + رضا المجتمع المحلي</td></tr>
+        <tr><td><strong>🌿 Planet (الكوكب)</strong></td><td>الأثر البيئي للعمليات على البيئة والموارد الطبيعية</td><td>انبعاثات الكربون + النفايات + استهلاك الطاقة والمياه</td></tr>
+        <tr><td><strong>💰 Profit (الربح)</strong></td><td>الأداء المالي التقليدي المستدام</td><td>الإيرادات + الأرباح + العائد للمساهمين</td></tr>
+      </table>
+      <div class="tip"><strong>🎯 أهمية TBL:</strong> المستثمرون (ESG Investors) والعملاء والموظفون يُقيّمون المنظمات بأبعاد تتجاوز الربح. التقييم البيئي والاجتماعي يؤثر في الاستثمار والاحتفاظ بالمواهب وسمعة العلامة التجارية.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">2</div>
+      <div><h2>الأطر الدولية لـ CSR</h2><div class="en">International CSR Frameworks</div></div>
+    </div>
+    <div class="card">
+      <h3>الأطر والمعايير الرئيسية <span class="en">GRI · ISO 26000 · UN SDGs</span></h3>
+      <table class="tbl">
+        <tr><th>الإطار</th><th>الصادر عن</th><th>الغرض الرئيسي</th><th>الطابع</th></tr>
+        <tr><td><strong>GRI (Global Reporting Initiative)</strong></td><td>منظمة دولية مستقلة</td><td>معيار الإفصاح عن الأداء الاجتماعي والبيئي والاقتصادي — الأكثر استخداماً</td><td>إرشادي</td></tr>
+        <tr><td><strong>ISO 26000</strong></td><td>منظمة المعايير الدولية</td><td>إرشادات المسؤولية الاجتماعية الشاملة — ليست شهادة إلزامية</td><td>إرشادي</td></tr>
+        <tr><td><strong>UN SDGs</strong></td><td>الأمم المتحدة</td><td>17 هدفاً للتنمية المستدامة بحلول 2030 — إطار لتحديد أولويات CSR</td><td>طموحي</td></tr>
+        <tr><td><strong>ISO 14064</strong></td><td>ISO</td><td>قياس وإدارة انبعاثات الغازات الدفيئة (Carbon Footprint)</td><td>قياسي</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3>أهداف التنمية المستدامة UN SDGs <span class="en">17 Sustainable Development Goals</span></h3>
+      <p class="bt">أمثلة من الـ 17 هدفاً التي تتقاطع مع استراتيجية HR وCSR:</p>
+      <div class="sdg-grid">
+        <div class="sdg-item"><strong>SDG 3:</strong> الصحة الجيدة والرفاهية</div>
+        <div class="sdg-item"><strong>SDG 4:</strong> التعليم الجيد</div>
+        <div class="sdg-item"><strong>SDG 5:</strong> المساواة بين الجنسين</div>
+        <div class="sdg-item"><strong>SDG 8:</strong> العمل اللائق والنمو الاقتصادي</div>
+        <div class="sdg-item"><strong>SDG 10:</strong> الحد من أوجه عدم المساواة</div>
+        <div class="sdg-item"><strong>SDG 13:</strong> العمل المناخي</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">3</div>
+      <div><h2>CSR مقابل CSV — الفارق الجوهري</h2><div class="en">CSR vs. Creating Shared Value (Porter & Kramer)</div></div>
+    </div>
+    <div class="card">
+      <h3>من المسؤولية إلى خلق القيمة <span class="en">From Responsibility to Value Creation</span></h3>
+      <div class="csv-cmp">
+        <div class="csv-l">
+          <h4>CSR — المسؤولية الاجتماعية</h4>
+          <ul>
+            <li>تُعيد توزيع القيمة المخلوقة بالفعل على المجتمع</li>
+            <li>تُكلّف المنظمة موارد دون عائد مباشر للأعمال</li>
+            <li>مثال: التبرع للمدارس المحلية</li>
+            <li>يُرى كتكلفة اجتماعية أو ترف</li>
+            <li>قابل للتقليص وقت الأزمات المالية</li>
+          </ul>
+        </div>
+        <div class="csv-r">
+          <h4>CSV — خلق القيمة المشتركة (Porter)</h4>
+          <ul>
+            <li>تُنشئ قيمة اقتصادية + اجتماعية في آنٍ واحد</li>
+            <li>تُطوّر نموذج الأعمال نفسه ليُحقق أهدافاً اجتماعية وتنافسية</li>
+            <li>مثال: تطوير موردين محليين يُقوّي سلسلة التوريد ويُحسّن المجتمع</li>
+            <li>يُرى كاستثمار استراتيجي مستدام</li>
+            <li>مقاوم للضغوط المالية لأنه يُنشئ قيمة تجارية</li>
+          </ul>
+        </div>
+      </div>
+      <div class="deep">
+        <h4>💡 لماذا يُفضّل SHRM نهج CSV؟</h4>
+        <ul>
+          <li>CSV أكثر استدامة لأنه لا يعتمد على "نية الخير" وحدها — بل على المصلحة التجارية المشتركة مع المصلحة الاجتماعية</li>
+          <li>CSR الاستراتيجية المتوافقة مع أهداف الأعمال أفضل من التبرع غير المرتبط</li>
+          <li>الامتحان يختبر قدرتك على التمييز: CSV يُنشئ قيمة، CSR التقليدية تُعيد توزيعها</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">4</div>
+      <div><h2>خطوات تطوير استراتيجية CSR</h2><div class="en">7-Step CSR Strategy Development</div></div>
+    </div>
+    <div class="card">
+      <h3>المنهجية المتكاملة <span class="en">CSR Strategy Framework</span></h3>
+      <table class="tbl">
+        <tr><th>#</th><th>الخطوة</th><th>الوصف</th></tr>
+        <tr><td>1</td><td>تقييم بيئة الأعمال</td><td>تحليل العوامل الاجتماعية والبيئية والاقتصادية المؤثرة على المنظمة</td></tr>
+        <tr><td>2</td><td>تحديد أصحاب المصلحة</td><td>من يتأثر بأنشطة المنظمة + من لديه القدرة على التأثير فيها</td></tr>
+        <tr><td>3</td><td>تحليل الفجوة</td><td>مقارنة الوضع الحالي بالتوقعات الاجتماعية والمعايير القطاعية</td></tr>
+        <tr><td>4</td><td>وضع أهداف CSR</td><td>محددة وقابلة للقياس ومرتبطة باستراتيجية الأعمال (SMART)</td></tr>
+        <tr><td>5</td><td>تطوير برامج CSR</td><td>اختيار المبادرات ذات القيمة المزدوجة (تُفضّل CSV)</td></tr>
+        <tr><td>6</td><td>التنفيذ والتواصل</td><td>إشراك الموظفين والمجتمع + إفصاح خارجي شفاف</td></tr>
+        <tr><td>7</td><td>التقييم والتقرير</td><td>قياس الأثر وإبلاغ أصحاب المصلحة وفق GRI أو معايير أخرى</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">5</div>
+      <div><h2>دور HR في CSR وتطوع الموظفين</h2><div class="en">HR's CSR Role & Employee Volunteerism</div></div>
+    </div>
+    <div class="card">
+      <h3>الأثر الرباعي للتطوع <span class="en">4 Types of Volunteer Benefits (SHRM Foundation)</span></h3>
+      <div class="grid2">
+        <div class="gitem" style="border-top:3px solid var(--primary);">
+          <h4>الفوائد الفردية</h4>
+          <p>التقدير + المهارات المكتسبة + رأس المال الاجتماعي + تطوير القيادة</p>
+        </div>
+        <div class="gitem" style="border-top:3px solid var(--teal);">
+          <h4>فوائد الفريق</h4>
+          <p>مهارات العمل الجماعي + الشعور بالانتماء والترابط + تحسين التعاون</p>
+        </div>
+        <div class="gitem" style="border-top:3px solid var(--green);">
+          <h4>فوائد المنظمة</h4>
+          <p>تقوية الثقافة المؤسسية + تعزيز قيم المنظمة + تحسين مستوى المشاركة</p>
+        </div>
+        <div class="gitem" style="border-top:3px solid var(--accent);">
+          <h4>الفوائد التجارية</h4>
+          <p>تحسين السمعة المؤسسية + تقوية العلامة التجارية + ميزة في استقطاب المواهب</p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>الفلانثروبيا الاستراتيجية — العالمي مقابل المحلي <span class="en">Global vs. Local Philanthropy</span></h3>
+      <table class="tbl">
+        <tr><th>مزايا البرامج العالمية الموحّدة</th><th>مزايا البرامج المحلية المتكيّفة</th></tr>
+        <tr><td>علاقات أقل = تكاليف تشغيلية أقل</td><td>المديرون المحليون أحكم في قراءة احتياجات مجتمعهم</td></tr>
+        <tr><td>تركيز واحد يُتيح تعلماً مشتركاً أعمق</td><td>أصحاب المصلحة المحليون يتأثرون بالمبادرات المحلية أكثر</td></tr>
+        <tr><td>علاقة مهيمنة مع قضية واحدة تُعزّز العلامة التجارية</td><td>المنظمة تُحقق أثراً في ما يحتاجه كل بلد فعلاً</td></tr>
+        <tr><td>تقليل خطر ربط العلامة بقضايا متعددة مجهولة</td><td>تنويع المخاطر عبر شركاء متعددين</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">6</div>
+      <div><h2>مدخل: قانون العمل الأمريكي — مصادر القانون</h2><div class="en">US Employment Law — Sources of Law</div></div>
+    </div>
+    <div class="card">
+      <h3>مصادر القانون في الولايات المتحدة <span class="en">Sources of US Law</span></h3>
+      <ul class="ilist">
+        <li><span class="dot"></span><strong>الدستور (Constitution):</strong> أعلى قانون في البلاد — الأساس الذي بُني عليه كل القانون الأمريكي</li>
+        <li><span class="dot"></span><strong>القوانين (Statutes):</strong> إجراءات صادرة عن الكونغرس والمجالس التشريعية للولايات</li>
+        <li><span class="dot"></span><strong>اللوائح (Regulations):</strong> تُقترحها وتُطبّقها الوكالات الإدارية لتُحدّد كيفية تنفيذ القوانين</li>
+        <li><span class="dot"></span><strong>إرشادات الوكالات (Agency Guidelines):</strong> تفسيرات مكتوبة من EEOC وOSHA وNLRB</li>
+        <li><span class="dot"></span><strong>الأوامر التنفيذية (Executive Orders):</strong> توجيهات من الرئيس للجهاز الحكومي</li>
+        <li><span class="dot t"></span><strong>القانون العرفي (Common Law):</strong> مبني على قرارات المحاكم — يُشكّل السوابق القضائية</li>
+      </ul>
+      <div class="tip"><strong>🎯 الجهات الرئيسية:</strong> EEOC تُطبّق EEO. NLRB تُطبّق NLRA. OSHA تُطبّق قانون السلامة. DOL تُطبّق FMLA وFLSA.</div>
+<div style="background:#fcebeb;border-right:4px solid #A32D2D;padding:14px 18px;margin:16px 0;border-radius:8px;">
+<strong style="color:#A32D2D;">🆕 إضافات قانونية مهمة — 2025</strong><br><br>
+<strong>1. Bostock v. Clayton County (2020) ⭐ مهم جداً</strong><br>
+حكمت المحكمة العليا بأن <strong>التوجه الجنسي والهوية الجندرية</strong> محمية تحت Title VII. 
+ينطبق على أصحاب العمل 15+ موظف في جميع الولايات.<br><br>
+<strong>2. Pregnant Workers Fairness Act — PWFA (2024)</strong><br>
+اللائحة النهائية صدرت يونيو 2024. يُلزم صاحب العمل بتوفير <strong>تسهيلات معقولة</strong> للموظفات 
+ذوات القيود الناشئة عن الحمل أو الولادة — ما لم يسبب "ضائقة لا مبرر لها". 
+ينطبق على الـ accommodation فقط (ليس الإجازة بالضرورة).<br><br>
+<strong>3. PUMP Act — PUMP for Nursing Mothers Act</strong><br>
+يوسّع Break Time for Nursing Mothers ليشمل <strong>جميع الموظفات</strong> (بما فيهن FLSA-exempt). 
+مكان خاص وغير مخصص للحمام + وقت كافٍ للرضاعة الصناعية خلال ساعات العمل.
+</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">📖</div><div><h2>المصطلحات الأساسية — الجزء الثالث</h2></div></div>
+    <div class="card">
+      <table class="glos-tbl">
+        <tr><th>المصطلح</th><th>الإنجليزي</th><th>التعريف</th></tr>
+        <tr><td>الأساس الثلاثي</td><td>Triple Bottom Line</td><td>People + Planet + Profit — نموذج قياس شامل لنجاح المنظمة</td></tr>
+        <tr><td>GRI</td><td>Global Reporting Initiative</td><td>معيار الإفصاح عن الأداء الاجتماعي والبيئي — الأكثر استخداماً عالمياً</td></tr>
+        <tr><td>ISO 26000</td><td>ISO 26000</td><td>إرشادات المسؤولية الاجتماعية — غير إلزامية</td></tr>
+        <tr><td>أهداف التنمية المستدامة</td><td>UN SDGs</td><td>17 هدفاً أممياً للتنمية المستدامة بحلول 2030</td></tr>
+        <tr><td>خلق القيمة المشتركة</td><td>CSV</td><td>قيمة اقتصادية + اجتماعية معاً (Porter & Kramer) — أشمل من CSR</td></tr>
+        <tr><td>أصحاب المصلحة</td><td>Stakeholders</td><td>جميع الأطراف التي تتأثر بأنشطة المنظمة أو تؤثر فيها</td></tr>
+        <tr><td>التطوع الاستراتيجي</td><td>Strategic Volunteerism</td><td>برامج تطوع مدمجة في استراتيجية المنظمة — فوائد رباعية</td></tr>
+        <tr><td>تحليل أصحاب المصلحة</td><td>Stakeholder Analysis</td><td>تحديد الأطراف + قوة تأثيرها + اهتماماتها</td></tr>
+        <tr><td>ESG Investing</td><td>ESG</td><td>الاستثمار المرتبط بالبيئة والمسؤولية الاجتماعية والحوكمة</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>SHRM Learning System 2023 — Workplace Domain · الجزء الثالث</p>
+  </div>
+</div>
+</body>
+</html>

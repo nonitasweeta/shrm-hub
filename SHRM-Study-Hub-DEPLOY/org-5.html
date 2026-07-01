@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ملخص SHRM Organization – إدارة التكنولوجيا: الأمن والخصوصية والسياسات</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#1a3a5c;--accent:#c8a84b;--accent2:#e8734a;--bg:#f7f4ef;--card:#fff;--green:#1e7a4a;--red:#b91c1c;--purple:#6d28d9;--teal:#0f766e;--border:#e2d9c8;--muted:#6b7280;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Tajawal',sans-serif;background:var(--bg);color:#2c2c2c;line-height:1.85;font-size:16px;}
+
+.header{background:linear-gradient(135deg,#0f1923 0%,#1a3a5c 50%,#0d3b2e 100%);color:#fff;padding:48px 40px 40px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-60px;left:-60px;width:300px;height:300px;border-radius:50%;background:rgba(200,168,75,.1);}
+.badge{display:inline-block;background:var(--accent);color:var(--primary);font-weight:700;font-size:13px;padding:4px 16px;border-radius:20px;margin-bottom:14px;letter-spacing:1px;}
+.header h1{font-size:1.9rem;font-weight:800;margin-bottom:8px;}
+.header p{font-size:.95rem;opacity:.8;}
+.meta{display:flex;gap:24px;margin-top:20px;flex-wrap:wrap;}
+.meta span{font-size:13px;opacity:.85;}
+
+.container{max-width:960px;margin:0 auto;padding:40px 24px 80px;}
+
+.overview{background:var(--primary);color:#fff;border-radius:16px;padding:30px 34px;margin-bottom:36px;}
+.overview h2{font-size:1.2rem;color:var(--accent);margin-bottom:12px;}
+.overview p{font-size:15px;line-height:1.9;opacity:.92;}
+
+.section{margin-bottom:44px;}
+.sec-title{display:flex;align-items:center;gap:14px;margin-bottom:22px;}
+.sec-num{background:var(--accent);color:var(--primary);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0;}
+.sec-title h2{font-size:1.25rem;font-weight:700;color:var(--primary);}
+.sec-title .en{font-size:13px;color:var(--muted);font-style:italic;direction:ltr;}
+
+.card{background:var(--card);border-radius:14px;padding:26px 28px;border:1px solid var(--border);box-shadow:0 2px 12px rgba(0,0,0,.05);margin-bottom:22px;}
+.card h3{font-size:1rem;font-weight:700;color:var(--primary);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--border);}
+.card h3 .en{color:var(--accent2);font-size:.83rem;direction:ltr;display:inline-block;margin-right:6px;}
+.card p.bt{font-size:15px;margin-bottom:12px;line-height:1.85;}
+
+ul.ilist{list-style:none;padding:0;}
+ul.ilist li{padding:9px 0;border-bottom:1px solid #f0ebe0;font-size:15px;display:flex;gap:10px;align-items:flex-start;}
+ul.ilist li:last-child{border-bottom:none;}
+.dot{width:8px;height:8px;background:var(--accent);border-radius:50%;margin-top:8px;flex-shrink:0;}
+.dot.g{background:var(--green);}
+.dot.r{background:var(--red);}
+.dot.t{background:var(--teal);}
+.dot.p{background:var(--purple);}
+
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px;}
+.tbl th{background:var(--primary);color:#fff;padding:10px 14px;text-align:right;}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top;}
+.tbl tr:nth-child(even) td{background:#f9f6f0;}
+.tbl tr:hover td{background:#fff3e0;}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+@media(max-width:640px){.grid2{grid-template-columns:1fr;}}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:14px;}
+@media(max-width:700px){.grid3{grid-template-columns:1fr 1fr;}}
+.gitem{background:#f9f6f0;border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.gitem h4{font-size:14px;font-weight:700;color:var(--primary);margin-bottom:6px;}
+.gitem .en{font-size:11px;color:var(--accent2);direction:ltr;display:block;margin-bottom:5px;}
+.gitem p{font-size:13px;color:#444;line-height:1.7;}
+
+/* Threat cards */
+.threat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px;}
+.tc{border-radius:12px;padding:16px;border:1px solid var(--border);}
+.tc h4{font-size:13.5px;font-weight:700;margin-bottom:8px;}
+.tc .en{font-size:11px;direction:ltr;display:block;margin-bottom:6px;color:var(--muted);}
+.tc p{font-size:13px;color:#444;line-height:1.65;}
+.tc.ph{border-top:4px solid var(--red);} .tc.ph h4{color:var(--red);}
+.tc.se{border-top:4px solid var(--purple);} .tc.se h4{color:var(--purple);}
+.tc.rw{border-top:4px solid #854d0e;} .tc.rw h4{color:#854d0e;}
+.tc.ml{border-top:4px solid var(--accent2);} .tc.ml h4{color:var(--accent2);}
+
+/* Security measures */
+.sec-measures{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:14px;}
+@media(max-width:700px){.sec-measures{grid-template-columns:1fr 1fr;}}
+.sm-item{background:#f0fdf4;border:1px solid #86efac;border-radius:10px;padding:13px 15px;}
+.sm-item h5{font-size:13px;font-weight:700;color:var(--green);margin-bottom:5px;}
+.sm-item p{font-size:12.5px;color:#333;line-height:1.65;}
+
+/* GDPR table */
+.gdpr-tbl{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:12px;}
+.gdpr-tbl th{background:#1d4ed8;color:#fff;padding:10px 14px;text-align:right;}
+.gdpr-tbl td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top;}
+.gdpr-tbl tr:nth-child(even) td{background:#eff6ff;}
+.gdpr-tbl tr:hover td{background:#dbeafe;}
+
+/* BYOD sections */
+.byod-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+.byod-item{border-radius:12px;padding:16px;border:1px solid var(--border);}
+.byod-item h4{font-size:13.5px;font-weight:700;margin-bottom:8px;}
+.byod-item ul{list-style:none;padding:0;}
+.byod-item ul li{font-size:13px;padding:4px 0;display:flex;gap:8px;}
+.byod-item ul li::before{content:'•';font-weight:900;flex-shrink:0;}
+.byod-plus{background:#f0fdf4;border-color:#86efac;} .byod-plus h4{color:var(--green);} .byod-plus ul li::before{color:var(--green);}
+.byod-minus{background:#fff1f2;border-color:#fca5a5;} .byod-minus h4{color:var(--red);} .byod-minus ul li::before{color:var(--red);}
+
+/* Social media risk */
+.sm-risk{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px;}
+.smr{border-radius:10px;padding:14px;border:1px solid var(--border);}
+.smr h4{font-size:13px;font-weight:700;margin-bottom:6px;}
+.smr p{font-size:12.5px;color:#444;line-height:1.65;}
+.smr.org{background:#fff8f0;border-top:3px solid var(--accent2);} .smr.org h4{color:var(--accent2);}
+.smr.emp{background:#f0f6ff;border-top:3px solid #1d4ed8;} .smr.emp h4{color:#1d4ed8;}
+
+/* Data risk 3 categories */
+.risk3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:14px;}
+@media(max-width:700px){.risk3{grid-template-columns:1fr;}}
+.r3{border-radius:12px;padding:16px;border:1px solid var(--border);text-align:center;}
+.r3 .icon{font-size:2rem;margin-bottom:8px;}
+.r3 h4{font-size:13px;font-weight:700;margin-bottom:6px;}
+.r3 p{font-size:12.5px;color:#444;line-height:1.65;}
+.r3.sec{border-top:4px solid var(--red);background:#fff1f2;} .r3.sec h4{color:var(--red);}
+.r3.priv{border-top:4px solid #1d4ed8;background:#eff6ff;} .r3.priv h4{color:#1d4ed8;}
+.r3.eth{border-top:4px solid var(--purple);background:#f5f3ff;} .r3.eth h4{color:var(--purple);}
+
+.deep{background:linear-gradient(135deg,#fff8e7,#fef3cd);border:2px solid var(--accent);border-radius:14px;padding:22px 26px;margin:16px 0;}
+.deep h4{color:var(--primary);font-size:.95rem;font-weight:700;margin-bottom:10px;}
+.deep ul{list-style:none;padding:0;font-size:15px;}
+.deep ul li{padding:5px 0;display:flex;gap:10px;}
+.deep ul li::before{content:'◆';color:var(--accent);font-size:11px;margin-top:5px;flex-shrink:0;}
+
+.tip{background:#f0fdf4;border:1px solid #86efac;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.tip strong{color:var(--green);}
+.note{background:#fefce8;border:1px solid #fde047;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.note strong{color:#854d0e;}
+.warn{background:#fff1f2;border:1px solid #fca5a5;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.warn strong{color:var(--red);}
+.hl{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1px solid #93c5fd;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.hl strong{color:#1d4ed8;}
+
+.case-box{background:#f9f6f0;border:2px solid var(--border);border-radius:14px;padding:20px 24px;margin:14px 0;border-right:5px solid var(--teal);}
+.case-box h4{color:var(--teal);font-size:.9rem;font-weight:700;margin-bottom:10px;}
+.case-box p{font-size:14.5px;line-height:1.85;}
+
+.exam-tip{background:linear-gradient(135deg,var(--primary),#0c2461);color:#fff;border-radius:14px;padding:22px 26px;margin:16px 0;}
+.exam-tip h4{color:var(--accent);font-size:.95rem;margin-bottom:10px;}
+.exam-tip ul{list-style:none;padding:0;}
+.exam-tip li{padding:5px 0;font-size:14px;opacity:.9;display:flex;gap:8px;}
+.exam-tip li::before{content:'✓';color:var(--accent);font-weight:900;flex-shrink:0;}
+
+.glos-tbl{width:100%;border-collapse:collapse;font-size:13px;}
+.glos-tbl th{background:var(--primary);color:#fff;padding:9px 12px;text-align:right;}
+.glos-tbl td{padding:8px 12px;border-bottom:1px solid var(--border);vertical-align:top;font-size:13px;}
+.glos-tbl tr:nth-child(even) td{background:#f9f6f0;}
+
+.divider{border:none;border-top:2px dashed var(--border);margin:36px 0;}
+.footer{text-align:center;margin-top:60px;padding:22px;color:var(--muted);font-size:13px;border-top:2px solid var(--border);}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="badge">📚 كتاب Organization · التكملة — إدارة التكنولوجيا المتقدمة</div>
+  <h1>أمن البيانات · GDPR · سياسات التكنولوجيا</h1>
+  <p>SHRM Learning System 2023 — Organization Domain · الجزء الرابع تكملة موسّعة</p>
+  <div class="meta">
+    <span>🔐 أمن البيانات والخصوصية</span>
+    <span>📋 GDPR وتأثيره على HR</span>
+    <span>📱 BYOD وسياسات التواصل الاجتماعي</span>
+    <span>⚠️ المخاطر الأخلاقية للتكنولوجيا</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="overview">
+    <h2>🗺️ لماذا هذا الملخص التكميلي؟</h2>
+    <p>
+      إدارة التكنولوجيا في SHRM تمتد لتشمل ثلاثة أبعاد حيوية يجب إتقانها للامتحان: <strong>أمن البيانات والأنظمة</strong> (التهديدات والحماية)، <strong>خصوصية البيانات</strong> (GDPR وتأثيره المباشر على HR)، <strong>السياسات التنظيمية</strong> (BYOD، وسائل التواصل الاجتماعي، التعاون الرقمي). هذه المفاهيم تظهر كثيراً في أسئلة SJI تحت شعار "ماذا يجب على HR فعله أولاً؟"
+    </p>
+  </div>
+
+  <!-- ════ SECTION 1: DATA RISKS (3 CATEGORIES) ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">1</div>
+      <div><h2>فئات مخاطر التكنولوجيا الثلاث</h2><div class="en">3 Categories of Technology Risks</div></div>
+    </div>
+
+    <div class="card">
+      <h3>التصنيف الجوهري لمخاطر التكنولوجيا <span class="en">Core Risk Categories</span></h3>
+      <p class="bt">التكنولوجيا تُيسّر العمل لكنها تُنشئ مخاطر متعددة يجب على HR استباقها والسيطرة عليها:</p>
+      <div class="risk3">
+        <div class="r3 sec">
+          <div class="icon">🔒</div>
+          <h4>أمن البيانات والأنظمة</h4>
+          <p>البيانات من أهم أصول المنظمة — يجب حمايتها من الوصول والاستخدام غير المصرح بهما.</p>
+        </div>
+        <div class="r3 priv">
+          <div class="icon">🛡️</div>
+          <h4>خصوصية البيانات</h4>
+          <p>جمع البيانات وتخزينها واستخدامها يجب أن يكون شفافاً ومتوافقاً مع اللوائح الحكومية.</p>
+        </div>
+        <div class="r3 eth">
+          <div class="icon">⚖️</div>
+          <h4>الأبعاد الاجتماعية والأخلاقية</h4>
+          <p>جمع البيانات يطرح أسئلة كيفية استخدامها. إدماج التكنولوجيا يُثير قضايا العدالة والإنصاف.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ SECTION 2: DATA SECURITY ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">2</div>
+      <div><h2>أمن البيانات والأنظمة</h2><div class="en">Data & System Security — Deep Dive</div></div>
+    </div>
+
+    <div class="card">
+      <h3>ما الذي يجب حمايته؟ <span class="en">What Must Be Protected</span></h3>
+      <ul class="ilist">
+        <li><span class="dot r"></span><strong>كشف البيانات الحساسة المُخزَّنة إلكترونياً:</strong> البيانات الشخصية للموظفين، معلومات المزايا الصحية والمالية</li>
+        <li><span class="dot r"></span><strong>فقدان بيانات الموظفين الحساسة:</strong> يمكن سرقتها للاحتيال — طلبات ائتمان مزوّرة، سرقة الهوية</li>
+        <li><span class="dot r"></span><strong>تعديلات غير مصرح بها على البيانات الرئيسية:</strong> تعديل سجلات الرواتب يُعطّل العمل ويُحقق الاحتيال</li>
+        <li><span class="dot r"></span><strong>سجلات الوصول الأمني:</strong> تعديلها يُتيح اختراقات للمرافق المادية أو أنظمة المعلومات</li>
+        <li><span class="dot r"></span><strong>المعلومات الملكية:</strong> الأسرار التجارية والمعلومات الاستراتيجية يمكن سرقتها من قِبل جهات داخلية أو خارجية</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>تدابير الحماية الأساسية <span class="en">General Security Protections</span></h3>
+      <div class="sec-measures">
+        <div class="sm-item">
+          <h5>🚧 الجدران النارية</h5>
+          <p>Firewalls تُرشّح الاتصالات الواردة والصادرة وفق قواعد مُحددة مسبقاً — حاجز حماية أساسي.</p>
+        </div>
+        <div class="sm-item">
+          <h5>🔐 التشفير</h5>
+          <p>Encryption تحويل البيانات لصيغة تُخفي معناها. HTTPS (القفل في المتصفح) = تشفير البيانات المُرسَلة.</p>
+        </div>
+        <div class="sm-item">
+          <h5>👁️ التحقق البيومتري</h5>
+          <p>بصمات الأصابع، التعرف على الوجه — حماية أقوى من كلمات المرور وحدها.</p>
+        </div>
+        <div class="sm-item">
+          <h5>🔑 إدارة الوصول</h5>
+          <p>كل مستخدم يصل فقط لما يحتاجه. مستويات وصول مُدرَّجة موثّقة في سجل رقمي قابل للتدقيق.</p>
+        </div>
+        <div class="sm-item">
+          <h5>📝 مسار التدقيق</h5>
+          <p>Audit Trail يُسجّل كل معاملة — من وصل، متى، وماذا فعل. أداة محاسبة وشفافية.</p>
+        </div>
+        <div class="sm-item">
+          <h5>🎓 تدريب المستخدمين</h5>
+          <p>المستخدم هو الحلقة الأضعف. تدريب دوري على الأمن السيبراني وتشغيل رسائل تصيّد مُحاكاة.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>أساليب الاختراق — الهندسة الاجتماعية <span class="en">Hacking & Social Engineering Attacks</span></h3>
+      <p class="bt">الهندسة الاجتماعية (Social Engineering) = خداع المستخدم لمشاركة معلومات تُستخدم للوصول للأنظمة. أكثر فاعلية من الاختراق التقني لأنها تستغل الإنسان لا البرنامج.</p>
+      <div class="threat-grid">
+        <div class="tc ph">
+          <h4>التصيّد الإلكتروني</h4>
+          <span class="en">Phishing</span>
+          <p>رسائل بريد/نصوص/مكالمات تطلب معلومات أو تحتوي روابط ضارة. "Spear Phishing" يستخدم بيانات حقيقية عن الهدف لإضفاء مصداقية (مثل: رسالة تبدو من رئيسك).</p>
+        </div>
+        <div class="tc se">
+          <h4>التنكّر الموثوق</h4>
+          <span class="en">Fake Cards / Security Alerts</span>
+          <p>رسائل تتنكّر كبطاقة تهنئة أو تنبيه أمني أو فرصة وظيفية من صديق — المرفقات تحتوي برامج ضارة تُصيب الجهاز.</p>
+        </div>
+        <div class="tc rw">
+          <h4>هجمات الفدية</h4>
+          <span class="en">Ransomware</span>
+          <p>بمجرد اختراق النظام يمكن: احتجاز البيانات مقابل فدية، حذفها، تعديلها، أو تعطيل النظام بالكامل (Denial-of-Service).</p>
+        </div>
+        <div class="tc ml">
+          <h4>البرامج الضارة</h4>
+          <span class="en">Malware</span>
+          <p>تُدخل في النظام لتغيير العمليات أو تدمير البيانات أو التجسس على المستخدمين. تُنشَر عبر روابط "اضغط هنا" على مواقع وشبكات التواصل.</p>
+        </div>
+      </div>
+      <div class="deep" style="margin-top:14px;">
+        <h4>💡 ممارسات المستخدم الآمنة — ما يجب تعليمه لكل موظف</h4>
+        <ul>
+          <li>لا تُفصح عن كلمة مرورك لأحد — حتى لو بدا المصدر رسمياً</li>
+          <li>لا تُشارك معلومات خاصة مع أشخاص غير معروفين أو غير محتاجين لها</li>
+          <li>اضغط روابط من مصادر موثوقة فقط — إذا كان المصدر غير مألوف، تحقق أولاً</li>
+          <li>احذف الرسائل غير المطلوبة — لا تفتحها أو تُعيد إرسالها أو تضغط روابطها</li>
+          <li>إذا بدا طلب غريباً (مثل: مديرك يطلب بيانات موظفين عبر البريد بشكل غير معتاد) — اتصل هاتفياً للتأكد</li>
+        </ul>
+      </div>
+      <div class="note"><strong>📌 التدريب الأفضل:</strong> بعض خدمات الأمن السيبراني تُرسل رسائل تصيّد مُحاكاة. إذا استجاب الموظف: يتلقى تغذية راجعة فورية. إذا أبلّغ عنها: يتلقى تقييماً إيجابياً. هذا التدريب التفاعلي أكثر فاعلية من الوحدات النظرية.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ SECTION 3: GDPR ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">3</div>
+      <div><h2>GDPR وتأثيره الجوهري على HR</h2><div class="en">GDPR — Deep Impact on HR Practices</div></div>
+    </div>
+
+    <div class="card">
+      <h3>ما هو GDPR؟ <span class="en">General Data Protection Regulation</span></h3>
+      <p class="bt">لائحة الاتحاد الأوروبي لحماية البيانات — صدرت 2016، طُبّقت 2018. أصبحت المعيار العالمي بسبب نطاقها الواسع وعقوباتها الضخمة.</p>
+      <div class="grid2">
+        <div class="gitem" style="border-top:4px solid var(--red);">
+          <h4>النطاق الواسع — من يخضع لها؟</h4>
+          <p>أي منظمة تعالج بيانات الموظفين في دولة من دول الاتحاد الأوروبي — <strong>حتى لو لم يكن مقرها في الاتحاد الأوروبي.</strong> بمعنى: إذا وظّفتَ أحداً في ألمانيا، يسري عليك GDPR.</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid var(--red);">
+          <h4>العقوبات — لماذا مهم جداً؟</h4>
+          <p>حتى <strong>4% من الإيرادات السنوية الكلية</strong> أو 20 مليون يورو — أيهما أكبر. هذه العقوبة وحدها كافية لإفلاس شركات متوسطة.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>تأثير GDPR على ممارسات HR — جدول شامل <span class="en">GDPR Impact on HR Practices</span></h3>
+      <table class="gdpr-tbl">
+        <tr><th>مبدأ GDPR</th><th>ما يجب على HR فعله</th></tr>
+        <tr>
+          <td><strong>الشفافية</strong><br><em>Transparency</em></td>
+          <td>تحديث إشعارات الخصوصية للموظفين والمتقدمين التي تطلب إذناً صريحاً باستخدام البيانات</td>
+        </tr>
+        <tr>
+          <td><strong>حق الوصول الفردي والتحكم</strong><br><em>Individual Rights</em></td>
+          <td>تحديد مَن يملك البيانات (الموظف؟ المنظمة؟ المزوّد؟) + ضمان الرد السريع على طلبات الوصول أو التصحيح</td>
+        </tr>
+        <tr>
+          <td><strong>قانونية المعالجة</strong><br><em>Legality of Processing</em></td>
+          <td>إزالة أي إشارة لـ"موافقة الموظف على استخدام بياناته" من الأدلة والعقود — الموافقة وحدها غير كافية قانونياً. يجب توثيق المسوّغ القانوني لكل عملية معالجة</td>
+        </tr>
+        <tr>
+          <td><strong>جودة البيانات وتقليلها</strong><br><em>Data Minimization</em></td>
+          <td>تحديد حدود الاحتفاظ بالبيانات مع المزوّدين الداخليين والخارجيين + وضع سياسات جمع البيانات والاحتفاظ بها</td>
+        </tr>
+        <tr>
+          <td><strong>مشاركة البيانات</strong><br><em>Data Sharing</em></td>
+          <td>تطبيق اتفاقيات مشاركة البيانات مع الجهات الداخلية والمزوّدين الخارجيين</td>
+        </tr>
+        <tr>
+          <td><strong>نقل البيانات</strong><br><em>Data Transfers</em></td>
+          <td>رسم خريطة التدفق الداخلي للبيانات لتحديد ما يخضع لقواعد GDPR</td>
+        </tr>
+        <tr>
+          <td><strong>خروقات البيانات</strong><br><em>Data Breaches</em></td>
+          <td>تطبيق تدابير أمن البيانات + وضع سياسات تُوجب الإبلاغ عن الخروقات <strong>خلال 72 ساعة</strong></td>
+        </tr>
+        <tr>
+          <td><strong>المساءلة</strong><br><em>Accountability</em></td>
+          <td>الاحتفاظ بسجلات شاملة للسلطات + تعيين مسؤول حماية البيانات الداخلي + تدريب وأنظمة حوكمة</td>
+        </tr>
+      </table>
+      <div class="hl" style="margin-top:14px;"><strong>💡 أهم إجراء عملي:</strong> تدقيق الامتثال (Compliance Audit) لجميع العمليات التي تستخدم بيانات الموظفين/المتقدمين. يشمل أيضاً تقييم استعداد موظفي HR للامتثال للوائح خصوصية البيانات.</div>
+    </div>
+
+    <div class="card">
+      <h3>الأبعاد الاجتماعية والأخلاقية للتكنولوجيا <span class="en">Social & Ethical Tech Dimensions</span></h3>
+      <ul class="ilist">
+        <li><span class="dot p"></span><strong>الوصول المتكافئ للرقمية:</strong> استراتيجيات التوظيف القائمة كلياً على الإنترنت قد تُعيق المتقدمين الذين يفتقرون للوصول المستمر للإنترنت. منصات الخدمة الذاتية قد تُضرّ بالعمال عن بُعد ذوي الاتصال البطيء.</li>
+        <li><span class="dot p"></span><strong>البحث في وسائل التواصل الاجتماعي:</strong> إعطاء أصحاب العمل قدرة على اكتشاف معلومات أكثر — لكن: هل هي عادلة؟ هل دقيقة؟ هل تُفسَّر بدون تحيّز؟</li>
+        <li><span class="dot p"></span><strong>البيانات التاريخية للموظفين:</strong> هل يمكن ضمان عدم استخدام البيانات الصحية أو العائلية المحفوظة ضد ترقية الموظف؟</li>
+        <li><span class="dot p"></span><strong>التحيّز في الذكاء الاصطناعي:</strong> الخوارزميات تبدو موضوعية — لكنها قد تُبنى على بيانات منحازة. مثال: يرى الموظفون فرصاً داخلية مختلفة بحسب موقعهم أو عمرهم أو خلفيتهم.</li>
+      </ul>
+      <div class="warn"><strong>⚠️ الخطر الجوهري:</strong> التحيّز الخوارزمي أكثر خطورة من التحيّز البشري لأنه مُنظَّم ومُعمَّم. إذا كانت الخوارزمية تُميّز، فهي تُميّز ضد آلاف الحالات في آنٍ واحد — وتبدو "موضوعية".</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ SECTION 4: BYOD ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">4</div>
+      <div><h2>سياسة الأجهزة الشخصية في العمل</h2><div class="en">Bring Your Own Device (BYOD) Policy</div></div>
+    </div>
+
+    <div class="card">
+      <h3>الواقع والإشكالية <span class="en">BYOD Reality & Challenges</span></h3>
+      <p class="bt">انتشار الأجهزة الرقمية وتراخّي الحدود بين وقت العمل والوقت الشخصي جعل استخدام الأجهزة الشخصية للعمل حتمية في كثير من البيئات.</p>
+      <div class="byod-grid">
+        <div class="byod-item byod-plus">
+          <h4>✅ مبررات BYOD</h4>
+          <ul>
+            <li>راحة للموظف — أجهزته المفضّلة</li>
+            <li>إنتاجية أعلى — وصول مرن ومستمر</li>
+            <li>توفير تكاليف الأجهزة على المنظمة</li>
+            <li>مثالي لمن يعملون عن بُعد أو أثناء السفر</li>
+          </ul>
+        </div>
+        <div class="byod-item byod-minus">
+          <h4>❌ مخاطر BYOD</h4>
+          <ul>
+            <li>أجهزة غير محمية تُشكّل ثغرات أمنية</li>
+            <li>مسؤولية المنظمة عن ساعات العمل الإضافية</li>
+            <li>صعوبة استرداد البيانات الملكية عند مغادرة الموظف</li>
+            <li>استنزاف وقت IT في دعم أجهزة متنوعة</li>
+          </ul>
+        </div>
+      </div>
+      <div class="note"><strong>📌 الحقيقة العملية:</strong> معظم خبراء IT يؤكدون أن حظر BYOD تاماً غير واقعي — الموظفون يفعلونه على أي حال. الأذكى: سياسة BYOD واقعية تُنظّم الاستخدام وتُحدد قواعد الوصول للشبكة بدلاً من المحظورات غير المُطبَّقة.</div>
+    </div>
+
+    <div class="card">
+      <h3>عناصر سياسة BYOD الفعّالة <span class="en">Effective BYOD Policy Elements</span></h3>
+      <ul class="ilist">
+        <li><span class="dot g"></span><strong>تقييد الاستخدام خلال ساعات العمل:</strong> تحديد الاستخدامات المسموحة وغير المسموحة في مكان العمل لتقليل خسائر الإنتاجية والمسؤوليات القانونية وحماية خصوصية الآخرين.</li>
+        <li><span class="dot g"></span><strong>تحديد الأجهزة المدعومة:</strong> ذكر الأجهزة التي يدعمها IT ومتطلبات الاستخدام (موافقة IT، تكوين التطبيقات، أدوات الأمان الكافية).</li>
+        <li><span class="dot g"></span><strong>توضيح الترتيبات المالية:</strong> هل يُعوَّض الموظف عن استخدام جهازه؟ ما الحقوق القانونية للمنظمة في مسح الجهاز عند الحاجة؟</li>
+        <li><span class="dot g"></span><strong>تحديد تدابير الأمان:</strong> حماية بكلمة مرور قوية، حظر تنزيل تطبيقات غير مُعتمدة، حظر الوصول للـ VPN بجهاز غير مُهيَّأ أمنياً.</li>
+        <li><span class="dot t"></span><strong>قائمة مغادرة الموظفين:</strong> HR يضيف إلى checklist المغادرة: سحب صلاحيات الوصول من جميع الأجهزة الشخصية للموظف المغادر.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ SECTION 5: SOCIAL MEDIA ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">5</div>
+      <div><h2>إدارة وسائل التواصل الاجتماعي</h2><div class="en">Social Media Management & Policy</div></div>
+    </div>
+
+    <div class="card">
+      <h3>الفرص والمخاطر <span class="en">Opportunities & Risks</span></h3>
+      <p class="bt">وسائل التواصل الاجتماعي أداة HR قوية جداً — للتوظيف، بناء العلامة التجارية، فهم مشاعر الموظفين والعملاء — لكنها مصدر مخاطر حقيقية تستوجب سياسات واضحة.</p>
+      <div class="sm-risk">
+        <div class="smr org">
+          <h4>🏢 مخاطر المنظمة</h4>
+          <p>موظفون ينشرون تعليقات ضارة عن المنظمة أو عملائها · إفصاح عن معلومات ملكية · الانتقادات تُلحق ضرراً بالسمعة قبل أن تتمكن المنظمة من الرد</p>
+        </div>
+        <div class="smr emp">
+          <h4>👤 مخاطر الموظفين</h4>
+          <p>موظف يُسيء لزميله أو يُهدده عبر الوسائل الاجتماعية · إفصاح عن بيانات شخصية لزملاء · المنظمة مسؤولة عن حماية موظفيها من تصرفات بعضهم</p>
+        </div>
+      </div>
+
+      <div class="case-box" style="margin-top:14px;">
+        <h4>📋 درس واقعي من الكتاب: قضية فيسبوك والموظف</h4>
+        <p>شركة توزيع بدأت تتلقى مكالمات من وسائل الإعلام ومنظمات حقوق الحيوان تطالب بفصل موظف فوري بسبب صورة إساءة لكلب ظهرت على صفحته. المدير الأول في HR أوقف الموظف مع صرف راتبه ريثما يكتمل التحقيق. التحقيق كشف: الصورة أُضيفت خطأً من شخص آخر — الموظف بريء تماماً. التحدي التالي: إصلاح سمعة الموظف والمنظمة. <strong>الدرس: المطالبات الخارجية بالفصل الفوري يجب مقاومتها — التحقيق الموضوعي أولاً دائماً.</strong></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>خطوات تطوير سياسة التواصل الاجتماعي <span class="en">Developing Social Media Policy — Key Steps</span></h3>
+      <ul class="ilist">
+        <li><span class="dot"></span><strong>تحديد المخاطر الرئيسية:</strong> مثلاً: خصوصية المرضى أولوية قصوى في المستشفيات</li>
+        <li><span class="dot"></span><strong>مراجعة دليل الموظفين:</strong> للسياسات ذات الصلة الموجودة وتحديد ما إذا كانت تُعالج التقنيات الجديدة</li>
+        <li><span class="dot"></span><strong>التشاور مع IT والمستشار القانوني:</strong> قبل صياغة أي سياسة نهائية</li>
+        <li><span class="dot"></span><strong>التوافق مع ثقافة المنظمة وقيمها:</strong> سياسة تقييدية جداً تُضرّ بعلاقة المنظمة بموظفيها</li>
+        <li><span class="dot g"></span><strong>تطوير سياسات كتابية شاملة تتضمن:</strong> حقوق المراقبة والرصد · حظر الإفصاح عن المعلومات الملكية · الاستخدام الشخصي مقابل الاستخدام المهني · صفر تسامح مع التحرش والتنمر الإلكتروني</li>
+        <li><span class="dot g"></span><strong>التواصل والإقرار بالاستلام:</strong> توقيع الموظفين على استلام وفهم السياسة</li>
+        <li><span class="dot g"></span><strong>التطبيق المتسق:</strong> على الموظفين والإدارة على حد سواء</li>
+        <li><span class="dot g"></span><strong>التحديث المستمر:</strong> وسائل التواصل الاجتماعي تتطور — السياسة يجب أن تتطور معها</li>
+      </ul>
+      <div class="deep" style="margin-top:14px;">
+        <h4>💡 الرصد المستمر — ضرورة لا ترف</h4>
+        <ul>
+          <li>تعيين فرد مسؤول عن مراجعة المحتوى (Social Media Content Reviewer) يرصد المواقع باستمرار</li>
+          <li>يحذف المحتوى المسيء أو الملكي فوراً، ويُوجّه الأفكار المهمة للأشخاص المناسبين</li>
+          <li>إشعار الموظفين مسبقاً بأن اتصالاتهم قد تُراقَب = رادع للاستخدام غير اللائق</li>
+          <li>إذا أُبلغ الموظف مسبقاً بأن اتصالاته غير خاصة، يصعب عليه لاحقاً الادعاء بانتهاك سريته</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>إدارة مخاطر التعاون الرقمي <span class="en">Managing Collaboration Risks</span></h3>
+      <p class="bt">أدوات التعاون الرقمي (Groupware، VoIP، تطبيقات مشاركة الملفات) تُنشئ فرصاً وتحديات في الوقت ذاته. أفضل الممارسات:</p>
+      <div class="grid2">
+        <div class="gitem" style="border-top:3px solid var(--green);">
+          <h4>إدارة الاجتماعات الفعّالة</h4>
+          <p>تحديد مواعيد تناسب أكبر عدد ممكن · جداول أعمال واضحة مع توقيت · تسجيل الجلسات للغائبين · كلمات مرور لضمان وصول المدعوّين فقط</p>
+        </div>
+        <div class="gitem" style="border-top:3px solid var(--primary);">
+          <h4>حماية المستندات المشتركة</h4>
+          <p>هرمية وصول (قراءة/كتابة) للمستندات الرئيسية · تتبع التعديلات · إخلاء المسؤولية القانونية في كل المستندات · توازن بين الأمان وسهولة الوصول للمستخدمين</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ SECTION 6: EXAM TIPS ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">🎯</div>
+      <div><h2>نصائح الامتحان — التكنولوجيا والمخاطر</h2></div>
+    </div>
+
+    <div class="exam-tip">
+      <h4>السيناريوهات الأكثر ظهوراً في أسئلة SJI</h4>
+      <ul>
+        <li>خرق بيانات ظهر: الإجراء الأول = تأمين النظام + إبلاغ الجهات المختصة + توثيق الخرق (72 ساعة بموجب GDPR)</li>
+        <li>ضغط خارجي لفصل موظف بسبب وسائل التواصل: الإجابة الصحيحة دائماً = أجرِ تحقيقاً أولاً، لا تستجب للضغط</li>
+        <li>موظف يستخدم جهازه الشخصي بدون سياسة واضحة: الحل = سياسة BYOD واقعية، ليس حظراً أعمى</li>
+        <li>اكتشاف تحيّز في خوارزمية HR: أوقف استخدامها + أجرِ تدقيق التأثير المتباين + أعد التصميم</li>
+        <li>موظف يُبلّغ عن خرق أمني عبر البريد: التحقق من صحة الطلب هاتفياً قبل الاستجابة</li>
+      </ul>
+    </div>
+
+    <div class="exam-tip">
+      <h4>الأرقام والحقائق المهمة للحفظ</h4>
+      <ul>
+        <li>GDPR — عقوبة: حتى 4% من الإيرادات السنوية أو 20 مليون يورو (أيهما أكبر)</li>
+        <li>GDPR — الإبلاغ عن خرق البيانات: خلال 72 ساعة</li>
+        <li>GDPR — مُطبَّق منذ: مايو 2018 (صدر 2016)</li>
+        <li>HTTPS = Hypertext Transfer Protocol Secure = البيانات المُرسَلة مُشفَّرة</li>
+        <li>Phishing (تصيّد) + Spear Phishing (تصيّد مُخصَّص) = أكثر أشكال الهندسة الاجتماعية شيوعاً</li>
+        <li>VPN = Virtual Private Network = شبكة خاصة افتراضية تُمدّد الشبكة الداخلية للعمل عن بُعد</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ════ GLOSSARY ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">📖</div>
+      <div><h2>المصطلحات التقنية الجوهرية</h2></div>
+    </div>
+    <div class="card">
+      <table class="glos-tbl">
+        <tr><th>المصطلح</th><th>الإنجليزي</th><th>التعريف</th></tr>
+        <tr><td>التشفير</td><td>Encryption</td><td>تحويل البيانات لصيغة تُخفي معناها — يحمي البيانات المُرسَلة والمُخزَّنة</td></tr>
+        <tr><td>الهندسة الاجتماعية</td><td>Social Engineering</td><td>خداع المستخدم لمشاركة معلومات (كلمات مرور، بيانات) تُستخدم للوصول للأنظمة</td></tr>
+        <tr><td>التصيّد الإلكتروني</td><td>Phishing</td><td>رسائل احتيالية تطلب معلومات أو تحتوي روابط ضارة تبدو من مصادر موثوقة</td></tr>
+        <tr><td>التصيّد المُخصَّص</td><td>Spear Phishing</td><td>تصيّد يستخدم بيانات شخصية عن الهدف لإضفاء مصداقية على الرسالة</td></tr>
+        <tr><td>هجوم الفدية</td><td>Ransomware</td><td>برنامج ضار يحتجز بيانات المنظمة ويطلب فدية مالية للإفراج عنها</td></tr>
+        <tr><td>القرصنة</td><td>Hacking</td><td>محاولة الوصول للبيانات أو الأنظمة بدون إذن — داخلي أو خارجي</td></tr>
+        <tr><td>الجدار الناري</td><td>Firewall</td><td>برمجية/أجهزة تُرشّح الاتصالات وفق قواعد مُحددة لمنع الوصول غير المصرح به</td></tr>
+        <tr><td>GDPR</td><td>General Data Protection Regulation</td><td>لائحة الاتحاد الأوروبي لخصوصية البيانات 2018 — مرجعية عالمية للامتثال</td></tr>
+        <tr><td>سياسة BYOD</td><td>Bring Your Own Device</td><td>سياسة تُنظّم استخدام الأجهزة الشخصية للوصول لبيانات وشبكة المنظمة</td></tr>
+        <tr><td>الشبكة الخاصة الافتراضية</td><td>VPN (Virtual Private Network)</td><td>تُمدّد الشبكة الداخلية المحمية للمستخدمين عن بُعد عبر الإنترنت</td></tr>
+        <tr><td>مسار التدقيق</td><td>Audit Trail</td><td>سجل رقمي لكل المعاملات يُحدد من وصل للنظام، متى، وماذا فعل</td></tr>
+        <tr><td>التحيّز الخوارزمي</td><td>Algorithmic Bias</td><td>عندما تُنتج خوارزمية AI نتائج متحيزة بسبب بيانات تدريب منحازة أو عيوب في التصميم</td></tr>
+        <tr><td>مراجعة محتوى وسائل التواصل</td><td>Social Media Content Reviewer</td><td>فرد مُعيَّن لرصد المحتوى على منصات التواصل الداخلية وإزالة المحتوى المخالف</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="overview" style="margin-top:30px;background:linear-gradient(135deg,#0f1923,#1a3a5c,#0d3b2e);">
+    <h2>🏆 Organization Domain — مكتمل الآن بالكامل!</h2>
+    <p style="line-height:2.1;">
+      مع هذا الملخص التكميلي، أصبح كتاب Organization Domain (402 صفحة) مغطىً بشكل شامل عبر 5 ملفات:<br>
+      <strong>الجزء 1:</strong> هيكل HR + BSC + McKinsey 7S ✅<br>
+      <strong>الجزء 2:</strong> التصميم التنظيمي + RACI + Tuckman + 9-Box + KM ✅<br>
+      <strong>الجزء 3:</strong> علاقات الموظفين + ILO + الانضباط + التحقيقات + ADR ✅<br>
+      <strong>الجزء 4:</strong> التكنولوجيا الأساسية: Big Data + IS + ERP vs BOB + AI + ESS/MSS ✅<br>
+      <strong>التكملة ✅:</strong> أمن البيانات + Hacking + GDPR + BYOD + سياسات التواصل الاجتماعي
+    </p>
+  </div>
+
+  <div class="footer">
+    <p style="font-size:15px;font-weight:700;color:var(--primary);">🎉 الكتب الثلاثة مكتملة — 1,747 صفحة في 18 ملخصاً موسّعاً بالعربية 🏆</p>
+    <p style="margin-top:6px;color:#aaa;">SHRM Learning System 2023 — Organization Domain · ملخص موسّع بالعربية</p>
+  </div>
+</div>
+</body>
+</html>

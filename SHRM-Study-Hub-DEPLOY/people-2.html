@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ملخص SHRM People – الصفحات 101–200</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#1a3a5c;--accent:#c8a84b;--accent2:#e8734a;--bg:#f7f4ef;--card:#fff;--green:#1e7a4a;--red:#b91c1c;--purple:#6d28d9;--teal:#0f766e;--border:#e2d9c8;--muted:#6b7280;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Tajawal',sans-serif;background:var(--bg);color:#2c2c2c;line-height:1.85;font-size:16px;}
+
+/* HEADER */
+.header{background:linear-gradient(135deg,#0a3d62 0%,#1a3a5c 60%,#1e5f74 100%);color:#fff;padding:48px 40px 40px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-60px;left:-60px;width:300px;height:300px;border-radius:50%;background:rgba(200,168,75,.12);}
+.header::after{content:'';position:absolute;bottom:-80px;right:-40px;width:220px;height:220px;border-radius:50%;background:rgba(30,95,116,.15);}
+.badge{display:inline-block;background:var(--accent);color:var(--primary);font-weight:700;font-size:13px;padding:4px 16px;border-radius:20px;margin-bottom:14px;letter-spacing:1px;}
+.header h1{font-size:2rem;font-weight:800;margin-bottom:8px;}
+.header p{font-size:.95rem;opacity:.8;max-width:620px;}
+.meta{display:flex;gap:24px;margin-top:20px;flex-wrap:wrap;}
+.meta span{font-size:13px;opacity:.85;}
+
+/* LAYOUT */
+.container{max-width:920px;margin:0 auto;padding:40px 24px 80px;}
+.progress-wrap{margin-bottom:36px;}
+.progress-label{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:6px;}
+.progress-bar{height:10px;background:#e2d9c8;border-radius:10px;overflow:hidden;}
+.progress-fill{height:100%;border-radius:10px;background:linear-gradient(90deg,var(--primary),var(--accent));}
+
+/* OVERVIEW */
+.overview{background:var(--primary);color:#fff;border-radius:16px;padding:30px 34px;margin-bottom:36px;position:relative;overflow:hidden;}
+.overview::after{content:'People';position:absolute;left:-10px;bottom:-22px;font-size:90px;font-weight:900;color:rgba(255,255,255,.04);}
+.overview h2{font-size:1.2rem;color:var(--accent);margin-bottom:12px;}
+.overview p{font-size:15px;line-height:1.9;opacity:.92;}
+
+/* SECTION */
+.section{margin-bottom:40px;}
+.sec-title{display:flex;align-items:center;gap:14px;margin-bottom:20px;}
+.sec-num{background:var(--accent);color:var(--primary);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0;}
+.sec-title h2{font-size:1.25rem;font-weight:700;color:var(--primary);}
+.sec-title .en{font-size:13px;color:var(--muted);font-style:italic;direction:ltr;}
+
+/* CARD */
+.card{background:var(--card);border-radius:14px;padding:26px 28px;border:1px solid var(--border);box-shadow:0 2px 12px rgba(0,0,0,.05);margin-bottom:20px;}
+.card h3{font-size:1rem;font-weight:700;color:var(--primary);margin-bottom:12px;padding-bottom:10px;border-bottom:2px solid var(--border);}
+.card h3 .en{color:var(--accent2);font-size:.83rem;direction:ltr;display:inline-block;margin-right:6px;}
+.card p.body-txt{font-size:15px;margin-bottom:12px;line-height:1.85;}
+
+/* LISTS */
+ul.ilist{list-style:none;padding:0;}
+ul.ilist li{padding:8px 0;border-bottom:1px solid #f0ebe0;font-size:15px;display:flex;gap:10px;align-items:flex-start;}
+ul.ilist li:last-child{border-bottom:none;}
+.dot{width:8px;height:8px;background:var(--accent);border-radius:50%;margin-top:8px;flex-shrink:0;}
+.dot.g{background:var(--green);}
+.dot.r{background:var(--red);}
+.dot.t{background:var(--teal);}
+.dot.p{background:var(--purple);}
+
+/* TERMS */
+.term{background:#f0f6ff;border-right:4px solid var(--primary);padding:10px 16px;margin:8px 0;border-radius:6px;font-size:15px;}
+.term strong{color:var(--primary);}
+.term .en-t{color:var(--accent2);font-style:italic;direction:ltr;display:inline-block;}
+
+/* TABLES */
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px;}
+.tbl th{background:var(--primary);color:#fff;padding:10px 14px;text-align:right;}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top;}
+.tbl tr:nth-child(even) td{background:#f9f6f0;}
+.tbl tr:hover td{background:#fff3e0;}
+
+/* GRID */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px;}
+@media(max-width:640px){.grid2{grid-template-columns:1fr;}}
+.gitem{background:#f9f6f0;border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.gitem h4{font-size:14px;font-weight:700;color:var(--primary);margin-bottom:5px;}
+.gitem .en{font-size:11px;color:var(--accent2);direction:ltr;display:block;margin-bottom:5px;}
+.gitem p{font-size:13px;color:#444;line-height:1.7;}
+
+/* COMPARE BOX */
+.compare-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+@media(max-width:600px){.compare-pair{grid-template-columns:1fr;}}
+.cp-box{border-radius:12px;padding:16px 18px;border:1px solid var(--border);}
+.cp-box h4{font-size:13px;font-weight:700;margin-bottom:8px;}
+.cp-box p{font-size:13px;color:#444;line-height:1.7;}
+.cp-box ul{list-style:none;padding:0;}
+.cp-box ul li{font-size:13px;padding:4px 0;display:flex;gap:8px;}
+.cp-box ul li::before{content:'•';color:var(--accent);font-weight:900;flex-shrink:0;}
+.cp-box.plus{background:#f0fdf4;border-color:#86efac;}
+.cp-box.plus h4{color:var(--green);}
+.cp-box.minus{background:#fff1f2;border-color:#fca5a5;}
+.cp-box.minus h4{color:var(--red);}
+.cp-box.int{background:#f0f6ff;border-color:#93c5fd;}
+.cp-box.int h4{color:#1d4ed8;}
+.cp-box.ext{background:#fef3cd;border-color:#fde047;}
+.cp-box.ext h4{color:#854d0e;}
+
+/* HIGHLIGHT / TIP / NOTE */
+.hl{background:linear-gradient(135deg,#fff8e7,#fef3cd);border:1px solid var(--accent);border-radius:12px;padding:18px 24px;margin:14px 0;}
+.hl p{font-size:15px;}
+.tip{background:#f0fdf4;border:1px solid #86efac;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.tip strong{color:var(--green);}
+.note{background:#fefce8;border:1px solid #fde047;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.note strong{color:#854d0e;}
+.warn{background:#fff1f2;border:1px solid #fca5a5;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.warn strong{color:var(--red);}
+
+/* STEPS */
+.steps{list-style:none;padding:0;counter-reset:steps;}
+.steps li{counter-increment:steps;display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #f0ebe0;font-size:15px;}
+.steps li:last-child{border-bottom:none;}
+.steps li::before{content:counter(steps);background:var(--primary);color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0;}
+
+/* METRICS CHIPS */
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0;}
+.chip{background:var(--primary);color:white;border-radius:30px;padding:7px 18px;font-size:13px;font-weight:600;}
+.chip.gold{background:var(--accent);color:var(--primary);}
+.chip.teal{background:var(--teal);}
+.chip.green{background:var(--green);}
+.chip.orange{background:var(--accent2);}
+
+/* INTERVIEW TYPE CARDS */
+.int-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:14px;}
+@media(max-width:700px){.int-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.int-grid{grid-template-columns:1fr;}}
+.int-card{border-radius:10px;padding:14px 15px;border:1px solid var(--border);}
+.int-card h4{font-size:13px;font-weight:700;margin-bottom:5px;}
+.int-card .en{font-size:11px;direction:ltr;display:block;margin-bottom:5px;}
+.int-card p{font-size:12.5px;color:#555;line-height:1.65;}
+.int-card.s{border-top:4px solid var(--primary);} .int-card.s h4{color:var(--primary);}
+.int-card.b{border-top:4px solid var(--green);} .int-card.b h4{color:var(--green);}
+.int-card.sit{border-top:4px solid var(--purple);} .int-card.sit h4{color:var(--purple);}
+.int-card.p{border-top:4px solid var(--accent2);} .int-card.p h4{color:var(--accent2);}
+.int-card.u{border-top:4px solid var(--muted);} .int-card.u h4{color:var(--muted);}
+.int-card.st{border-top:4px solid var(--red);} .int-card.st h4{color:var(--red);}
+
+/* DIVIDER / FOOTER */
+.divider{border:none;border-top:2px dashed var(--border);margin:32px 0;}
+.footer{text-align:center;margin-top:60px;padding:22px;color:var(--muted);font-size:13px;border-top:2px solid var(--border);}
+
+/* ── FORMULA WORKED EXAMPLES ── */
+.fe-box{background:#fff;border:1.5px solid #ddd6c8;border-radius:16px;margin:24px 0;overflow:hidden;}
+.fe-hdr{background:linear-gradient(135deg,#0d1b2e,#163456);padding:14px 20px;display:flex;align-items:center;gap:12px;}
+.fe-hdr-icon{font-size:1.3rem;}
+.fe-hdr-text{color:#fff;font-weight:700;font-size:.95rem;}
+.fe-hdr-sub{color:rgba(255,255,255,.5);font-size:.78rem;margin-top:2px;}
+.fe-body{padding:18px 20px;}
+.fe-formula{background:#0d1b2e;color:#c8a84b;font-family:'Outfit',monospace,sans-serif;font-weight:700;font-size:.92rem;padding:10px 16px;border-radius:8px;margin:0 0 16px;text-align:center;direction:ltr;}
+.fe-steps{display:flex;flex-direction:column;gap:12px;}
+.fe-step{display:flex;gap:12px;align-items:flex-start;}
+.fe-step-n{background:#e8f2fb;color:#163456;font-weight:700;font-size:.8rem;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.fe-step-body{flex:1;font-size:.88rem;color:#333;line-height:1.65;}
+.fe-step-body strong{color:#0d1b2e;}
+.fe-calc{background:#f7f5f0;border:1px solid #e0dbd2;border-radius:8px;padding:10px 14px;margin:8px 0;font-family:'Outfit',monospace,sans-serif;font-size:.87rem;direction:ltr;color:#163456;}
+.fe-calc .result{color:#1D9E75;font-weight:700;font-size:.95rem;}
+.fe-interp{background:#e1f5ee;border-right:3px solid #1D9E75;padding:10px 14px;border-radius:0 8px 8px 0;margin:8px 0;font-size:.87rem;color:#1a3a2e;line-height:1.6;}
+.fe-warn{background:#fff8e7;border-right:3px solid #c8a84b;padding:10px 14px;border-radius:0 8px 8px 0;margin:8px 0;font-size:.87rem;color:#4a3000;line-height:1.6;}
+.fe-compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0;}
+@media(max-width:580px){.fe-compare{grid-template-columns:1fr;}}
+.fe-compare-card{background:#f7f5f0;border-radius:10px;padding:12px 14px;border-top:3px solid #ddd;}
+.fe-compare-card h4{font-size:.83rem;font-weight:700;color:#0d1b2e;margin-bottom:8px;}
+.fe-compare-card p,.fe-compare-card li{font-size:.82rem;color:#444;line-height:1.6;margin-bottom:3px;}
+.fe-exam-tip{background:#fff8e7;border:1.5px solid #c8a84b;border-radius:10px;padding:12px 16px;margin:14px 0 0;font-size:.87rem;color:#4a3000;line-height:1.65;}
+.fe-exam-tip strong{color:#0d1b2e;}
+.fe-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.85rem;}
+.fe-table th{background:#0d1b2e;color:#c8a84b;padding:8px 12px;text-align:right;font-weight:600;}
+.fe-table td{padding:8px 12px;border-bottom:1px solid #f0ede5;color:#333;}
+.fe-table tr:nth-child(even) td{background:#f7f5f0;}
+.fe-divider{height:1px;background:#f0ede5;margin:16px 0;}
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="badge">📚 كتاب People · الجزء الثاني</div>
+  <h1>ملخص الصفحات 101–200</h1>
+  <p>SHRM Learning System 2023 — People Domain</p>
+  <div class="meta">
+    <span>📄 744 صفحة إجمالاً</span>
+    <span>🎯 18% من الامتحان</span>
+    <span>🌍 شرح بالعربية · المصطلحات بالإنجليزية</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- PROGRESS -->
+  <div class="progress-wrap">
+    <div class="progress-label"><span>تقدّمك في الكتاب</span><span>200 / 744 صفحة — 27%</span></div>
+    <div class="progress-bar"><div class="progress-fill" style="width:27%"></div></div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div class="overview">
+    <h2>🗺️ نظرة عامة — الصفحات 101–200</h2>
+    <p>
+      يُكمل هذا الجزء نهاية <strong>HR Strategy</strong> (توصيل النتائج الاستراتيجية) ثم يدخل بعمق في كامل منطقة <strong>Talent Acquisition</strong> — من الاستراتيجية الاستقطابية والعلامة التجارية لصاحب العمل (EVP + Employer Branding)، مروراً بوصف الوظائف وتحليلها ومصادر الاستقطاب وتقنياته، وصولاً إلى مراحل عملية الاختيار الكاملة (الفرز، المقابلات) ومقاييس Talent Acquisition.
+    </p>
+  </div>
+
+  <!-- ════════════════════════════════ -->
+  <!-- S1: HR STRATEGY COMPLETION -->
+  <!-- ════════════════════════════════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">1</div>
+      <div><h2>استكمال HR Strategy — توصيل النتائج</h2><div class="en">Communicating Strategic Results</div></div>
+    </div>
+
+    <div class="card">
+      <h3>كيف تُقدّم نتائج HR للقيادة؟ <span class="en">Data Storytelling</span></h3>
+      <p class="body-txt">التحدي الحقيقي ليس في جمع البيانات بل في تحويلها إلى قصة واضحة تُقنع. البيانات وحدها (جداول وشرائح) تُشتّت الجمهور — لكن <strong>الرواية التي تدعمها البيانات</strong> تُحرّك القرار.</p>
+      <div class="hl">
+        <p>💡 <strong>القاعدة الذهبية:</strong> البيانات لا تقود التقرير — الرواية تقوده. ابدأ بالسؤال أو الرسالة الجوهرية، ثم استخدم البيانات كأدلة تدعمها.</p>
+      </div>
+      <ul class="ilist">
+        <li><span class="dot g"></span><strong>مخطط Pareto:</strong> يُظهر أين يتمركز 80% من المشكلة في 20% من الأسباب</li>
+        <li><span class="dot g"></span><strong>مخطط التشتّت (Scattergram):</strong> يكشف العلاقة بين متغيّرين — مثل قناة التوظيف وطول مدة بقاء الموظف</li>
+        <li><span class="dot g"></span><strong>المخطط الشريطي المقارن:</strong> الواقع الفعلي مقابل الهدف المخطّط — يُظهر الفجوات بوضوح</li>
+        <li><span class="dot g"></span><strong>مخطط الشجرة:</strong> تصوير الأسباب المحتملة بأوزان احتمالية للمقارنة</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════════════════════════════════ -->
+  <!-- S2: TALENT ACQUISITION STRATEGY -->
+  <!-- ════════════════════════════════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">2</div>
+      <div><h2>استراتيجية استقطاب المواهب</h2><div class="en">Talent Acquisition Strategy</div></div>
+    </div>
+
+    <div class="card">
+      <h3>التوظيف الاستراتيجي <span class="en">Strategic Staffing</span></h3>
+      <p class="body-txt">HR الاستراتيجي لا ينتظر الشاغر ليُجنّد — بل يتوقع احتياجات المواهب للمستقبل ويُوفّرها مُسبقاً. الهدف ليس ملء وظائف بل بناء القوى العاملة التي تُنفّذ الاستراتيجية.</p>
+      <ul class="ilist">
+        <li><span class="dot"></span><strong>تخطيط القوى العاملة (Workforce Planning):</strong> تحديد الاحتياجات المستقبلية + تقييم العرض الداخلي والخارجي + تحديد الفجوات + خطة للإغلاق</li>
+        <li><span class="dot"></span><strong>التعيين الثقافي (Hiring for Cultural Fit):</strong> مطابقة الشخصية مع قيم المنظمة — لا الكفاءات التقنية وحدها</li>
+        <li><span class="dot"></span><strong>الدمج والاستحواذ (M&A):</strong> HR يشارك في العناية الواجبة — الاحتفاظ بالمواهب الرئيسية تحدٍّ فوري</li>
+        <li><span class="dot"></span><strong>العمليات الجديدة (Greenfield Operations):</strong> HR يُوظّف جميع الموظفين من الصفر + فهم القوانين المحلية</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>فئات التوظيف <span class="en">Employment Categories</span></h3>
+      <table class="tbl">
+        <tr><th>الفئة</th><th>الوصف</th><th>الاعتبارات القانونية</th></tr>
+        <tr><td>دوام كامل (Full-time)</td><td>موظف دائم بمزايا كاملة</td><td>تختلف المعايير بين الدول والتشريعات</td></tr>
+        <tr><td>دوام جزئي (Part-time)</td><td>ساعات أقل — مزايا أقل أو محدودة</td><td>ERISA في أمريكا تُحدد حد ساعات الأهلية للمزايا</td></tr>
+        <tr><td>عقد (Contract)</td><td>لمشروع أو مدة محددة</td><td>خطر التصنيف الخاطئ — قد يكون موظفاً فعلياً</td></tr>
+        <tr><td>مؤقت (Temporary)</td><td>لتغطية احتياج قصير</td><td>كثيراً ما يأتي عبر وكالات — تختلف الالتزامات</td></tr>
+        <tr><td>متدرب (Intern)</td><td>للتعلم أو التقييم</td><td>بعض التشريعات تشترط الأجر حتى للمتدربين</td></tr>
+        <tr><td>عن بُعد (Remote)</td><td>خارج مقر العمل — القانون الروسي ينظّمه تحديداً</td><td>يستلزم اتفاقية خاصة في بعض الدول</td></tr>
+      </table>
+      <div class="note"><strong>📌 أهمية التصنيف الصحيح:</strong> التصنيف الخاطئ للموظف (Misclassification) من أكثر الأخطاء القانونية تكلفةً — يُفضي إلى دعاوى قضائية ومطالبات بالمزايا المستحقة.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════════════════════════════════ -->
+  <!-- S3: EMPLOYER BRANDING + EVP -->
+  <!-- ════════════════════════════════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">3</div>
+      <div><h2>العلامة التجارية لصاحب العمل وقيمة العرض</h2><div class="en">Employer Branding & EVP</div></div>
+    </div>
+
+    <div class="card">
+      <h3>علاقة EVP والعلامة التجارية <span class="en">EVP as Foundation of Employer Brand</span></h3>
+      <p class="body-txt">العلامة التجارية للتوظيف = الهوية التي تُقدّمها المنظمة كصاحب عمل. <strong>EVP</strong> هو العمود الفقري لهذه الهوية — يُجيب عن سؤالين: لماذا يُريد الموهوب الانضمام؟ ولماذا يبقى؟</p>
+      <div class="compare-pair">
+        <div class="cp-box int">
+          <h4>EVP الملموس</h4>
+          <ul>
+            <li>الراتب التنافسي والمكافآت</li>
+            <li>التأمين الصحي والمزايا</li>
+            <li>التطوير المهني والشهادات</li>
+            <li>فرص الترقية الواضحة</li>
+          </ul>
+        </div>
+        <div class="cp-box ext">
+          <h4>EVP غير الملموس</h4>
+          <ul>
+            <li>المعنى والغرض من العمل</li>
+            <li>الثقافة والانتماء</li>
+            <li>الاستقلالية والمرونة</li>
+            <li>الأثر الاجتماعي والبيئي</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tip"><strong>🎯 قاعدة EVP:</strong> يجب أن يعكس الواقع بدقة — أي فجوة بين ما تَعِد به وما يجده الموظف فعلاً تُدمّر المصداقية وترفع معدل الدوران.</div>
+    </div>
+
+    <div class="card">
+      <h3>مخرجات العلامة التجارية القوية <span class="en">Positive Outcomes of Strong Employer Brand</span></h3>
+      <ul class="ilist">
+        <li><span class="dot g"></span>الاعتراف بالمنظمة كـ "صاحب عمل مفضّل" (Employer of Choice) — يستقطب الأفضل</li>
+        <li><span class="dot g"></span>زيادة عدد وجودة المتقدمين المؤهلين</li>
+        <li><span class="dot g"></span>ترويج التنوع كقيمة — يستقطب مواهب من خلفيات متنوعة</li>
+        <li><span class="dot g"></span>ارتفاع معدلات الإحالة من الموظفين الحاليين</li>
+        <li><span class="dot g"></span>بناء خطوط مواهب (Talent Pipelines) استراتيجية</li>
+        <li><span class="dot g"></span>رفع معدل قبول العروض وتسريع الملء</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>وسائل نقل رسالة العلامة التجارية <span class="en">Employer Branding Channels</span></h3>
+      <div class="grid2">
+        <div class="gitem"><h4>الرقمية</h4><span class="en">Digital Channels</span><p>الموقع الإلكتروني، وسائل التواصل الاجتماعي (LinkedIn, Instagram)، إعلانات الوظائف الإلكترونية، التقييمات على Glassdoor وIndeed.</p></div>
+        <div class="gitem"><h4>التقليدية</h4><span class="en">Traditional Channels</span><p>معارض التوظيف، الجامعات والمعاهد، الفعاليات المجتمعية، الإعلانات المطبوعة.</p></div>
+        <div class="gitem"><h4>الكلام الشفهي</h4><span class="en">Word of Mouth</span><p>الموظفون الحاليون والسابقون والمتقاعدون — الأكثر تصديقاً وأثراً في بعض الثقافات.</p></div>
+        <div class="gitem"><h4>ثقافات خاصة</h4><span class="en">Cultural Nuance</span><p>في بعض الثقافات الآسيوية والشرق أوسطية يُبنى العلامة مع الأسرة أيضاً — لأن الأهل يؤثرون في قرارات أبنائهم الوظيفية.</p></div>
+      </div>
+      <div class="note"><strong>📌 وسائل التواصل الاجتماعي:</strong> رسالة واحدة متسقة عبر كل المنصات — لكن تُكيَّف أسلوباً وتنسيقاً لكل منصة. قياس ROI للعلامة الرقمية ضرورة، لا خيار.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════════════════════════════════ -->
+  <!-- S4: JOB DESCRIPTIONS -->
+  <!-- ════════════════════════════════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">4</div>
+      <div><h2>وصف الوظيفة وتحليلها</h2><div class="en">Job Descriptions & Job Analysis</div></div>
+    </div>
+
+    <div class="card">
+      <h3>مكوّنات وصف الوظيفة <span class="en">Job Description Elements</span></h3>
+      <table class="tbl">
+        <tr><th>العنصر</th><th>المحتوى</th></tr>
+        <tr><td><strong>تعريف الوظيفة</strong></td><td>المسمى الوظيفي، القسم، الموقع، تاريخ الوصف، خط الإبلاغ</td></tr>
+        <tr><td><strong>ملخص المنصب</strong></td><td>4-5 جمل: الغرض من الوظيفة، النتائج المتوقعة، درجة الاستقلالية</td></tr>
+        <tr><td><strong>المؤهلات الدنيا</strong></td><td>المعرفة والمهارات والقدرات الأساسية للأداء المرضي — ليس الأمثل</td></tr>
+        <tr><td><strong>الواجبات والمسؤوليات</strong></td><td>المهام الأساسية مرتّبة حسب الأهمية والتكرار</td></tr>
+        <tr><td><strong>عوامل النجاح</strong></td><td>الكفاءات السلوكية التي تُميّز الأداء المتفوق</td></tr>
+        <tr><td><strong>المتطلبات الجسدية</strong></td><td>الحد الأدنى من القدرات الجسدية المطلوبة</td></tr>
+        <tr><td><strong>بيئة العمل</strong></td><td>الظروف البيئية — خاصةً أي ظروف غير مريحة أو خطرة</td></tr>
+        <tr><td><strong>معايير الأداء</strong></td><td>كيف يُقيَّم الشاغل — الجودة، السلامة، الإنتاجية</td></tr>
+      </table>
+      <div class="note"><strong>📌 الوظائف الجوهرية (Essential Functions):</strong> المهام التي لا يمكن حذفها — يجب أن يستطيع الموظف أداءها، بمساعدة معقولة أو بدونها. مهمة لحماية المنظمة قانونياً في الدول التي تُلزم بالتيسير.</div>
+    </div>
+
+    <div class="card">
+      <h3>الفرق بين الكفاءات الوظيفية والمواصفات <span class="en">Job Competencies vs. Specifications</span></h3>
+      <div class="compare-pair">
+        <div class="cp-box int">
+          <h4>الكفاءات الوظيفية — Job Competencies</h4>
+          <p>مجموعات من المعارف والمهارات والقدرات (KSAs) التي تُولّد السلوكيات اللازمة للأداء المتميّز. شخصية بالموظف — يحملها من وظيفة لأخرى ومن مؤسسة لأخرى.</p>
+        </div>
+        <div class="cp-box ext">
+          <h4>المواصفات الوظيفية — Job Specifications</h4>
+          <p>الحد الأدنى من المؤهلات اللازمة للأداء المرضي — الخبرة، التعليم، الشهادات، المهارات العقلية والجسدية. يجب أن تكون مبنية على متطلبات حقيقية لا تفضيلات.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>أساليب تحليل الوظيفة <span class="en">Job Analysis Methods</span></h3>
+      <table class="tbl">
+        <tr><th>الأسلوب</th><th>الوصف</th><th>الأنسب لـ</th></tr>
+        <tr><td><strong>الملاحظة المباشرة</strong><br><em>Observation</em></td><td>مراقبة الموظف أثناء العمل وتسجيل ما يفعله</td><td>الوظائف اليدوية القصيرة الدورة</td></tr>
+        <tr><td><strong>المقابلات</strong><br><em>Interviews</em></td><td>أسئلة مسبقة للموظف والمشرفين والزملاء</td><td>الوظائف المهنية والمعقدة</td></tr>
+        <tr><td><strong>يوميات العمل</strong><br><em>Work Diary / Log</em></td><td>يُسجّل الموظف نشاطاته بنفسه لفترة ممتدة</td><td>الوظائف الإدارية ومراكز الاتصال</td></tr>
+        <tr><td><strong>قائمة المهام</strong><br><em>Task Inventory</em></td><td>قائمة شاملة بكل المهام مع تقييم الأهمية والتكرار والصعوبة</td><td>وظائف متعددة المهام</td></tr>
+        <tr><td><strong>تقنية الحوادث الحرجة</strong><br><em>Critical Incident Technique</em></td><td>جمع حوادث أداء متميزة وضعيفة فعلية لاستخلاص KSAs</td><td>تحديد السلوكيات الحاسمة</td></tr>
+        <tr><td><strong>استبيان PAQ</strong><br><em>Position Analysis Questionnaire</em></td><td>استبيان قياسي يقيس 6 أبعاد للوظيفة: مدخلات المعلومة، العمليات الذهنية، المخرجات، العلاقات، السياق، المتغيرات</td><td>أي وظيفة — غير متخصص بصناعة</td></tr>
+      </table>
+      <div class="tip"><strong>🎯 للامتحان:</strong> CIT (Critical Incident Technique) تُركّز على حوادث حقيقية لاستخراج KSAs غير مرئية. PAQ غير متخصص بصناعة وسريع وغير مكلف — مزايا مهمة للمنظمات العالمية.</div>
+    </div>
+
+    <div class="card">
+      <h3>وصف الوظيفة في البيئة العالمية <span class="en">Global Job Descriptions</span></h3>
+      <p class="body-txt">في المنظمات متعددة الجنسيات تكتسب وصف الوظيفة قيمة إضافية:</p>
+      <ul class="ilist">
+        <li><span class="dot t"></span><strong>إدارة المسار الوظيفي:</strong> رسم مسارات عالمية بمتطلبات موحّدة لكل وظيفة</li>
+        <li><span class="dot t"></span><strong>مقارنة الرواتب عبر الحدود:</strong> المقارنات الراتبية صالحة فقط عند توحيد وصف الوظائف</li>
+        <li><span class="dot t"></span><strong>مواءمة العمليات:</strong> تسهيل التسليم بين الأقسام عبر الدول</li>
+        <li><span class="dot r"></span><strong>التحديات:</strong> تفسيرات مختلفة للمسمّيات، قوانين عمل متباينة، بيئات عمل متفاوتة المتطلبات</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════════════════════════════════ -->
+  <!-- S5: SOURCING & RECRUITING -->
+  <!-- ════════════════════════════════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">5</div>
+      <div><h2>الاستقطاب والتجنيد</h2><div class="en">Sourcing & Recruiting</div></div>
+    </div>
+
+    <div class="card">
+      <h3>الفرق بين Sourcing وRecruiting <span class="en">Sourcing vs. Recruiting</span></h3>
+      <div class="compare-pair">
+        <div class="cp-box int">
+          <h4>الاستقطاب — Sourcing</h4>
+          <p>سابق للتجنيد. بناء قاعدة بيانات من المرشحين المحتملين النشطين والخاملين. يشمل المرشحين الذين لا يبحثون حالياً عن وظيفة (Passive Candidates).</p>
+        </div>
+        <div class="cp-box ext">
+          <h4>التجنيد — Recruiting</h4>
+          <p>تشجيع المرشحين على التقدم للوظائف المفتوحة. يعتمد على مخرجات Sourcing. الهدف: الكمية الكافية + الجودة العالية.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>مصادر التوظيف الداخلية مقابل الخارجية <span class="en">Internal vs. External Recruiting</span></h3>
+      <div class="compare-pair">
+        <div class="cp-box plus">
+          <h4>✅ مزايا التوظيف الداخلي</h4>
+          <ul>
+            <li>يكافئ الأداء الجيد ويُحفّز الموظفين</li>
+            <li>المرشح يعرف الثقافة والمنظمة مسبقاً</li>
+            <li>أقل تكلفةً وأسرع في الغالب</li>
+            <li>يرفع الروح المعنوية ويبني مسارات وظيفية</li>
+          </ul>
+        </div>
+        <div class="cp-box minus">
+          <h4>❌ مخاطر التوظيف الداخلي</h4>
+          <ul>
+            <li>قد يُنتج "التكاثر التنظيمي" — رؤية ضيقة</li>
+            <li>عبء ثقيل على برامج التطوير</li>
+            <li>قد يُولّد تنافساً ضاراً بين الموظفين</li>
+          </ul>
+        </div>
+      </div>
+      <div class="compare-pair" style="margin-top:12px;">
+        <div class="cp-box plus">
+          <h4>✅ مزايا التوظيف الخارجي</h4>
+          <ul>
+            <li>يجلب أفكاراً وكفاءات جديدة</li>
+            <li>رؤى من صناعات أخرى</li>
+            <li>يدعم أهداف التنوع والشمول</li>
+          </ul>
+        </div>
+        <div class="cp-box minus">
+          <h4>❌ مخاطر التوظيف الخارجي</h4>
+          <ul>
+            <li>تكلفة أعلى + وقت Onboarding أطول</li>
+            <li>قد يؤثر سلباً على الروح المعنوية للداخليين</li>
+            <li>خطر التوظيف الخاطئ أعلى</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>أبرز مصادر التوظيف <span class="en">Common Recruiting Sources</span></h3>
+      <table class="tbl">
+        <tr><th>المصدر</th><th>النوع</th><th>الوصف المختصر</th></tr>
+        <tr><td>الإحالات الداخلية</td><td>داخلي</td><td>توصيات الموظفين الحاليين والسابقين — من أعلى المصادر جودةً</td></tr>
+        <tr><td>الإعلانات الوظيفية</td><td>داخلي/خارجي</td><td>موقع الشركة، LinkedIn، Monster، Indeed، نقابات مهنية</td></tr>
+        <tr><td>خطوط المواهب (Pipelines)</td><td>داخلي/خارجي</td><td>قاعدة مرشحين مؤهلين جاهزة مسبقاً — تُقلّل وقت الملء</td></tr>
+        <tr><td>تخطيط الخلافة</td><td>داخلي</td><td>مرشحون مُطوَّرون مسبقاً للأدوار القيادية</td></tr>
+        <tr><td>الجامعات والمؤسسات</td><td>خارجي</td><td>معارض التوظيف الجامعية، برامج التدريب الداخلي</td></tr>
+        <tr><td>الشبكات الاجتماعية</td><td>خارجي</td><td>LinkedIn، Twitter، Facebook — الأكثر فاعليةً مع المرشحين الخاملين</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>التوظيف الإلكتروني والذكاء الاصطناعي <span class="en">E-Recruiting & AI in Talent Acquisition</span></h3>
+      <div class="compare-pair">
+        <div class="cp-box plus">
+          <h4>✅ مزايا التوظيف الإلكتروني</h4>
+          <ul>
+            <li>وصول أوسع: مرشحون نشطون وخاملون</li>
+            <li>استجابة فورية لإعلانات الوظائف</li>
+            <li>تصفية وفرز آلي يوفّر الوقت</li>
+            <li>تستهدف مهارات ومواصفات محددة</li>
+          </ul>
+        </div>
+        <div class="cp-box minus">
+          <h4>❌ تحديات التوظيف الإلكتروني</h4>
+          <ul>
+            <li>حجم هائل من الطلبات غير المؤهلة</li>
+            <li>تحيز الخوارزمية (Algorithmic Bias)</li>
+            <li>قوانين خصوصية البيانات تُقيّد الاستخدام</li>
+            <li>غير فعّال في ثقافات تُفضّل التواصل الوجاهي</li>
+          </ul>
+        </div>
+      </div>
+      <div class="term"><strong>نظام ATS</strong> <span class="en-t">Applicant Tracking System</span> — يُؤتمت إدارة عملية التوظيف من استقبال الطلبات حتى تقديم العرض. يفرز السير الذاتية بالكلمات المفتاحية ويتتبّع مصدر المرشح.</div>
+      <div class="warn"><strong>⚠️ تحذير ATS:</strong> المرشحون باتوا يُحشون السير الذاتية بالكلمات المفتاحية. كما أن ATS قد يُقصي مرشحين مؤهلين بشكل غير مقصود — مما يُضرّ بجهود I&D.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════════════════════════════════ -->
+  <!-- S6: TALENT SELECTION PROCESS -->
+  <!-- ════════════════════════════════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">6</div>
+      <div><h2>عملية الاختيار — الفرز والمقابلات</h2><div class="en">Talent Selection: Screening & Interviews</div></div>
+    </div>
+
+    <div class="card">
+      <h3>مراحل عملية الاختيار <span class="en">Steps in the Selection Process</span></h3>
+      <ol class="steps">
+        <li><strong>الفرز (Screen):</strong> تحليل الطلبات والسير الذاتية والـ CV لتحديد المستوفين للمعايير الدنيا</li>
+        <li><strong>المقابلة (Interview):</strong> مقابلات منظمة + سلوكية + موقفية لتقييم الكفاءات</li>
+        <li><strong>التقييم (Assess & Evaluate):</strong> اختبارات معرفية ونفسية ومراكز تقييم لإتمام الصورة</li>
+        <li><strong>التحقق والمراجع (References & Background):</strong> التحقق من المعلومات وفحص الماضي</li>
+        <li><strong>تقديم العرض (Offer):</strong> التفاوض وإتمام الإجراءات القانونية</li>
+        <li><strong>الإعداد الوظيفي (Onboarding):</strong> دمج الموظف الجديد في المنظمة</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h3>الفرق بين CV والسيرة الذاتية <span class="en">CV vs. Résumé</span></h3>
+      <div class="compare-pair">
+        <div class="cp-box int">
+          <h4>Curriculum Vitae (CV)</h4>
+          <p>تفصيلي شامل — أبحاث ونشرات وجوائز ومؤتمرات. يستخدم في الأوساط الأكاديمية والبحثية. طويل — قد يصل لعشرات الصفحات. يُحدَّث بشكل متكرر.</p>
+        </div>
+        <div class="cp-box ext">
+          <h4>Résumé</h4>
+          <p>موجز ومُكيَّف للوظيفة المحددة — 1-2 صفحة. يُبرز ما يهم صاحب العمل فقط. غالباً مرفق بخطاب تغطية (Cover Letter). الأكثر استخداماً في القطاع الخاص.</p>
+        </div>
+      </div>
+      <div class="note"><strong>📌 فروق ثقافية:</strong> في أمريكا وكندا لا يُفضَّل إرفاق الصورة (خطر قانوني). في أمريكا اللاتينية الصورة معيار. في ألمانيا الصورة متوقعة. HR يعرف الفارق قبل الطلب.</div>
+    </div>
+
+    <div class="card">
+      <h3>أنواع المقابلات الستة <span class="en">6 Interview Types</span></h3>
+      <div class="int-grid">
+        <div class="int-card s">
+          <h4>المنظّمة</h4>
+          <span class="en">Structured Interview</span>
+          <p>نفس الأسئلة لكل المرشحين. الأقل تحيزاً. يُسهّل المقارنة الموضوعية.</p>
+        </div>
+        <div class="int-card b">
+          <h4>السلوكية</h4>
+          <span class="en">Behavioral (STAR)</span>
+          <p>Situation + Task + Action + Result — مواقف حقيقية سابقة. الأداء الماضي يتنبأ بالمستقبل.</p>
+        </div>
+        <div class="int-card sit">
+          <h4>الموقفية</h4>
+          <span class="en">Situational</span>
+          <p>سيناريوهات افتراضية: "ماذا ستفعل لو…" — تكشف التفكير والحكم دون خبرة سابقة.</p>
+        </div>
+        <div class="int-card p">
+          <h4>الجماعية (لجنة)</h4>
+          <span class="en">Panel Interview</span>
+          <p>فريق من المحاورين — وجهات نظر متعددة، يُقلّل التحيز الفردي.</p>
+        </div>
+        <div class="int-card u">
+          <h4>غير المنظّمة</h4>
+          <span class="en">Unstructured</span>
+          <p>محادثة حرة — تعتمد على التفاعل الاجتماعي. صعوبة المقارنة بين المرشحين.</p>
+        </div>
+        <div class="int-card st">
+          <h4>ضغط الإجهاد</h4>
+          <span class="en">Stress Interview</span>
+          <p>ضغط متعمّد لقياس ردود الفعل. تُستخدم للوظائف عالية الضغط فقط.</p>
+        </div>
+      </div>
+      <div class="tip"><strong>🎯 للامتحان:</strong> المنظّمة + السلوكية = الأفضل للتنبؤ بالأداء وللعدالة القانونية. المقابلة غير المنظّمة أقل موثوقية وصلاحية وأكثر عرضة للتحيز.</div>
+    </div>
+
+    <div class="card">
+      <h3>أسئلة المقابلة: المشروعة وغير المشروعة <span class="en">Legal vs. Illegal Questions</span></h3>
+      <p class="body-txt">المبدأ القانوني العالمي: أسئلة المقابلة يجب أن تتعلق بمتطلبات الوظيفة فقط.</p>
+      <div class="compare-pair">
+        <div class="cp-box plus">
+          <h4>✅ يُسأل عنه (مشروع)</h4>
+          <ul>
+            <li>الخبرة في مجال معين</li>
+            <li>مهارات تقنية وبرمجيات</li>
+            <li>التعليم والشهادات المهنية</li>
+            <li>التوافر والجاهزية للسفر</li>
+            <li>إجازات عمل وتصاريح (حيث يكون ذا صلة)</li>
+          </ul>
+        </div>
+        <div class="cp-box minus">
+          <h4>❌ محظور السؤال عنه</h4>
+          <ul>
+            <li>العمر أو تاريخ الميلاد</li>
+            <li>الجنس والحمل والوضع الأسري</li>
+            <li>الدين والمعتقدات الشخصية</li>
+            <li>العرق والجنسية والأصل القومي</li>
+            <li>الإعاقات غير ذات الصلة بالوظيفة</li>
+            <li>التوجه الجنسي (في معظم الولايات القضائية)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>نموذج STAR في المقابلات السلوكية <span class="en">STAR Method</span></h3>
+      <p class="body-txt">يُطلب من المرشح وصف موقف حقيقي وفق هذه البنية:</p>
+      <div class="grid2">
+        <div class="gitem"><h4>S — الموقف (Situation)</h4><span class="en">What was the context?</span><p>ما الإطار والسياق الذي حدثت فيه القصة؟</p></div>
+        <div class="gitem"><h4>T — المهمة (Task)</h4><span class="en">What was your responsibility?</span><p>ما المهمة أو الهدف المُكلَّف به المرشح؟</p></div>
+        <div class="gitem"><h4>A — الإجراء (Action)</h4><span class="en">What did YOU do?</span><p>ما الخطوات التي اتخذها المرشح تحديداً؟</p></div>
+        <div class="gitem"><h4>R — النتيجة (Result)</h4><span class="en">What was the outcome?</span><p>ما الذي تحقق؟ ويُفضَّل أن يكون قابلاً للقياس.</p></div>
+      </div>
+      <div class="hl"><p>💡 <strong>المبدأ الجوهري:</strong> الأداء الماضي هو أفضل مؤشر للأداء المستقبلي. STAR يُخرج قصصاً حقيقية قابلة للتحقق — لا وعوداً نظرية.</p></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════════════════════════════════ -->
+  <!-- S7: TALENT ACQUISITION METRICS -->
+  <!-- ════════════════════════════════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">7</div>
+      <div><h2>مقاييس استقطاب المواهب</h2><div class="en">Talent Acquisition Metrics</div></div>
+    </div>
+
+    <div class="card">
+      <h3>المقاييس الأساسية وصيغها <span class="en">Core TA Metrics & Formulas</span></h3>
+      <table class="tbl">
+        <tr><th>المقياس</th><th>الصيغة</th><th>ماذا يُخبرنا؟</th></tr>
+        <tr><td><strong>تكلفة التوظيف</strong><br><em>Cost per Hire (CPH)</em></td><td>(التكاليف الخارجية + الداخلية) ÷ عدد التعيينات</td><td>كفاءة الإنفاق على التوظيف</td></tr>
+        <tr><td><strong>نسبة التكلفة للتوظيف</strong><br><em>Recruitment Cost Ratio (RCR)</em></td><td>CPH ÷ أجر السنة الأولى</td><td>10% تعني: 10 سنتات مقابل كل دولار من الراتب الأول</td></tr>
+        <tr><td><strong>وقت الملء</strong><br><em>Time to Fill</em></td><td>أيام من فتح الطلب حتى قبول العرض</td><td>كفاءة دورة التوظيف</td></tr>
+        <tr><td><strong>معدل العائد</strong><br><em>Yield Ratios</em></td><td>مرحلة N ÷ مرحلة N-1 × 100%</td><td>فاعلية كل مرحلة من مراحل الاختيار</td></tr>
+        <tr><td><strong>معدل الانسحاب المبكر</strong><br><em>New-Hire Attrition</em></td><td>الموظفون المغادرون × 100 ÷ المُعيَّنون في نفس الفترة</td><td>جودة الاختيار وفاعلية Onboarding</td></tr>
+        <tr><td><strong>تعداد الموظفين</strong><br><em>Head Count / FTE</em></td><td>عدد الموظفين في لحظة محددة</td><td>قاعدة لبناء جميع مقاييس HR الأخرى</td></tr>
+      </table>
+      <div class="hl">
+        <p>💡 <strong>المثلث الذهبي:</strong> وقت الملء + تكلفة التوظيف + جودة التعيين — تحسين واحد قد يُضرّ بالآخرَين. لا تُحسّن مقياساً واحداً بمعزل — انظر للصورة الكاملة.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>تحليل القوى العاملة والتحليل التنبؤي <span class="en">Workforce Analytics & Predictive Analytics</span></h3>
+      <p class="body-txt">HR الحديث يتحوّل من "قياس الأنشطة" إلى "قياس التأثير". أدوات Analytics تُحوّل بيانات HR إلى رؤى استراتيجية.</p>
+      <div class="chips">
+        <div class="chip">📊 Descriptive — ماذا حدث؟</div>
+        <div class="chip gold">🔍 Diagnostic — لماذا حدث؟</div>
+        <div class="chip teal">🔮 Predictive — ماذا سيحدث؟</div>
+        <div class="chip green">🎯 Prescriptive — ماذا نفعل؟</div>
+      </div>
+      <ul class="ilist">
+        <li><span class="dot p"></span><strong>التحليل التنبؤي في التوظيف:</strong> تحديد السمات المرتبطة بالنجاح، إيجاد مرشحين أفضل، تقليل وقت الملء</li>
+        <li><span class="dot p"></span><strong>مثال Google:</strong> تلقّي 2 مليون سيرة ذاتية سنوياً — تحليل البيانات يُعيد فحص الطلبات المرفوضة لاكتشاف مواهب تناسب أدواراً أخرى</li>
+        <li><span class="dot p"></span><strong>المبدأ الحاكم:</strong> "لا يمكنك إدارة ما لا تقيسه" — لكن القياس الصحيح للقرار هو أهم من مجرد جمع البيانات</li>
+      </ul>
+    </div>
+  </div>
+
+
+<div class="fe-box">
+  <div class="fe-hdr">
+    <div class="fe-hdr-icon">💰</div>
+    <div>
+      <div class="fe-hdr-text">Cost Per Hire + Quality of Hire — أمثلة عددية كاملة</div>
+      <div class="fe-hdr-sub">معادلات التوظيف الأساسية مع تفسيرات الامتحان</div>
+    </div>
+  </div>
+  <div class="fe-body">
+
+    <div class="fe-formula">Cost Per Hire = (تكاليف داخلية + تكاليف خارجية) ÷ عدد التعيينات</div>
+
+    <div class="fe-steps">
+      <div class="fe-step">
+        <div class="fe-step-n">1</div>
+        <div class="fe-step-body">
+          <strong>مثال محلول — حساب Cost Per Hire:</strong><br>
+          شركة وظّفت 20 شخصاً هذا الربع. التكاليف:
+          <div class="fe-calc">
+            رواتب فريق HR للتوظيف:  $40,000<br>
+            إعلانات الوظائف:         $8,000<br>
+            وكالات التوظيف:          $30,000<br>
+            اختبارات وتقييمات:       $5,000<br>
+            سفر المرشحين:            $7,000<br>
+            ─────────────────────────────────<br>
+            إجمالي التكاليف:         $90,000<br>
+            عدد التعيينات:           ÷ 20<br>
+            <span class="result">Cost Per Hire = $4,500 لكل موظف</span>
+          </div>
+        </div>
+      </div>
+      <div class="fe-step">
+        <div class="fe-step-n">2</div>
+        <div class="fe-step-body">
+          <strong>تفسير النتيجة:</strong>
+          <div class="fe-interp">
+            $4,500 وحده لا يخبرك شيئاً — يجب مقارنته:<br>
+            • مع السنوات السابقة (هل ارتفع؟)<br>
+            • مع متوسط الصناعة (SHRM Benchmark: ~$4,700)<br>
+            • مع جودة التعيينات المقابلة (هل انخفض لأننا وظّفنا أقل جودة؟)
+          </div>
+          <div class="fe-warn">⚠️ Cost Per Hire منخفض جداً قد يعني اختصارات في التحقق والتقييم → تكاليف إخفاق أعلى لاحقاً.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fe-divider"></div>
+    <div class="fe-formula">Quality of Hire = (أداء الموظف الجديد + انخراطه + معدل احتفاظه) ÷ 3</div>
+
+    <div class="fe-steps">
+      <div class="fe-step">
+        <div class="fe-step-n">3</div>
+        <div class="fe-step-body">
+          <strong>مثال محلول — حساب Quality of Hire:</strong>
+          <table class="fe-table">
+            <tr><th>المقياس</th><th>القيمة</th><th>المصدر</th></tr>
+            <tr><td>أداء الموظف الجديد (90 يوم)</td><td>85%</td><td>تقييم المدير</td></tr>
+            <tr><td>معدل الانخراط</td><td>78%</td><td>استبيان الإلحاق</td></tr>
+            <tr><td>معدل الاحتفاظ (سنة أولى)</td><td>90%</td><td>بيانات HR</td></tr>
+          </table>
+          <div class="fe-calc">
+            Quality of Hire = (85 + 78 + 90) ÷ 3<br>
+            = 253 ÷ 3<br>
+            <span class="result">= 84.3% — جودة توظيف عالية</span>
+          </div>
+        </div>
+      </div>
+      <div class="fe-step">
+        <div class="fe-step-n">4</div>
+        <div class="fe-step-body">
+          <strong>في الامتحان:</strong>
+          <div class="fe-interp">Quality of Hire هو المقياس الأكثر قيمةً لفاعلية التوظيف — لكنه الأصعب قياساً. Cost Per Hire يقيس <em>الكفاءة</em>. Quality of Hire يقيس <em>الفاعلية</em>. الاستراتيجية الناجحة تُحسّن كليهما.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fe-exam-tip">⭐ <strong>سؤال امتحاني نموذجي:</strong> "شركة خفّضت تكاليف التوظيف 40% لكن معدل إخفاق الموظفين الجدد ارتفع 60%" → Cost Per Hire تحسّن لكن Quality of Hire انخفض. القرار كان خاطئاً استراتيجياً.</div>
+  </div>
+</div>
+
+
+
+
+  <!-- GLOSSARY -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">📖</div>
+      <div><h2>المصطلحات الأساسية — الجزء الثاني</h2><div class="en">Key Terms</div></div>
+    </div>
+    <div class="card">
+      <table class="tbl">
+        <tr><th>المصطلح العربي</th><th>الإنجليزي</th><th>التعريف المختصر</th></tr>
+        <tr><td>قيمة العرض للموظف</td><td>Employee Value Proposition (EVP)</td><td>ما تُقدّمه المنظمة مقابل جهد الموظف ومساهمته</td></tr>
+        <tr><td>العلامة التجارية للتوظيف</td><td>Employer Branding</td><td>تموضع المنظمة كصاحب عمل مفضّل في السوق</td></tr>
+        <tr><td>الكفاءات الوظيفية</td><td>Job Competencies</td><td>مجموعات KSA تُولّد السلوكيات اللازمة للأداء المتميّز</td></tr>
+        <tr><td>تحليل الوظيفة</td><td>Job Analysis</td><td>دراسة منهجية للوظيفة لتحديد مهامها ومتطلباتها</td></tr>
+        <tr><td>تقنية الحوادث الحرجة</td><td>Critical Incident Technique (CIT)</td><td>جمع حوادث أداء حقيقية لاستخلاص KSAs الجوهرية</td></tr>
+        <tr><td>استبيان PAQ</td><td>Position Analysis Questionnaire</td><td>أداة تحليل وظيفة قياسية — غير متخصصة بصناعة</td></tr>
+        <tr><td>الاستقطاب</td><td>Sourcing</td><td>بناء قاعدة مرشحين نشطين وخاملين قبل بدء التجنيد</td></tr>
+        <tr><td>المرشح الخامل</td><td>Passive Candidate</td><td>شخص مؤهل لا يبحث فعلياً عن وظيفة</td></tr>
+        <tr><td>نظام ATS</td><td>Applicant Tracking System</td><td>برنامج يُؤتمت إدارة عملية التوظيف كاملاً</td></tr>
+        <tr><td>المقابلة السلوكية</td><td>Behavioral Interview</td><td>STAR — أسئلة عن مواقف حقيقية سابقة</td></tr>
+        <tr><td>المقابلة الموقفية</td><td>Situational Interview</td><td>سيناريوهات افتراضية لقياس التفكير والحكم</td></tr>
+        <tr><td>تكلفة التوظيف</td><td>Cost per Hire (CPH)</td><td>إجمالي التكاليف ÷ عدد التعيينات — مؤشر كفاءة</td></tr>
+        <tr><td>وقت الملء</td><td>Time to Fill</td><td>أيام من فتح الطلب حتى قبول العرض</td></tr>
+        <tr><td>معدل العائد</td><td>Yield Ratio</td><td>نسبة المرشحين المنتقلين من مرحلة لأخرى</td></tr>
+        <tr><td>التحليل التنبؤي</td><td>Predictive Analytics</td><td>استخدام البيانات للتنبؤ بنتائج مستقبلية في التوظيف</td></tr>
+        <tr><td>التصنيف الخاطئ</td><td>Misclassification</td><td>تصنيف الموظف في فئة خاطئة — تبعات قانونية مُكلِفة</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- INTEGRATION NOTE -->
+  <div class="overview" style="margin-top:30px;">
+    <h2>🔗 تكامل المفاهيم في هذا الجزء</h2>
+    <p style="line-height:2.1; margin-bottom:12px;">
+      <strong>EVP + Employer Branding:</strong> الـ EVP هو الجوهر والعلامة التجارية هي الواجهة — كل فجوة بينهما تُكلّف المنظمة مصداقيتها ومواهبها.<br>
+      <strong>Job Analysis → Job Description → Selection:</strong> تحليل الوظيفة يُنتج الوصف، والوصف يُحدد معايير الاختيار — سلسلة متصلة. أي خلل في البداية يُضر بكل ما يليها.<br>
+      <strong>Talent Acquisition Metrics + Business Acumen:</strong> مقاييس HR لا قيمة لها ما لم تُربط بالأثر التجاري — CPH وTime-to-Fill أدوات لتحسين الكفاءة، لكن "جودة التعيين" هي التي تُحدد النجاح الاستراتيجي.
+    </p>
+  </div>
+
+  <div class="tip" style="margin-top:22px;font-size:15px;">
+    <strong>🎯 نصيحة للامتحان:</strong> أسئلة Talent Acquisition في SJI تُركّز كثيراً على: (1) التوظيف لا يتجاوز ملء الوظيفة — بل يُوافق الاستراتيجية، (2) الأسئلة غير المشروعة في المقابلات، (3) أهمية RJP في تقليل الدوران المبكر، (4) ATS يُسرّع لكن يحتاج رقابة بشرية.
+  </div>
+
+  <!-- STUDY PLAN -->
+  <div class="overview" style="margin-top:36px; background:linear-gradient(135deg,#0a3d62,#1a3a5c);">
+    <h2>📅 تقدّمك في خطة الدراسة</h2>
+    <table class="tbl" style="margin-top:14px;background:rgba(255,255,255,.08);">
+      <tr style="background:rgba(255,255,255,.15);">
+        <th style="background:transparent;color:#fff;">الجزء</th>
+        <th style="background:transparent;color:#fff;">الصفحات</th>
+        <th style="background:transparent;color:#fff;">المحتوى</th>
+        <th style="background:transparent;color:#fff;">الحالة</th>
+      </tr>
+      <tr style="color:#fff;font-size:14px;"><td>الأول</td><td>1–100</td><td>HR Strategy: PESTLE، SWOT، مراحل الاستراتيجية، التفكير النظمي</td><td>✅</td></tr>
+      <tr style="color:#fff;font-size:14px;background:rgba(200,168,75,.2);"><td><strong>الثاني ✅</strong></td><td><strong>101–200</strong></td><td><strong>Talent Acquisition كامل: EVP + Branding + Job Analysis + Sourcing + Interviews + Metrics</strong></td><td>✅ أنت هنا</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>الثالث</td><td>201–300</td><td>استكمال الاختيار (Assessment Methods) + بداية Employee Engagement</td><td>⏳ التالي</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>الرابع</td><td>301–400</td><td>Engagement & Retention: استبيانات + مقابلات البقاء + برامج الاحتفاظ</td><td>⏳</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>الخامس</td><td>401–500</td><td>Learning & Development كامل: Andragogy + ADDIE + Kirkpatrick</td><td>⏳</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>السادس</td><td>501–600</td><td>Total Rewards: الفلسفة والأنظمة والمزايا</td><td>⏳</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>السابع</td><td>601–744</td><td>Total Rewards (تكملة) + مراجعة شاملة + نصائح الامتحان</td><td>⏳</td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <p>اطلب الجزء الثالث (صفحات 201–300) متى شئت 🚀</p>
+    <p style="margin-top:6px;color:#aaa;">SHRM Learning System 2023 — People Domain · ملخص دراسي بالعربية</p>
+  </div>
+
+</div>
+</body>
+</html>

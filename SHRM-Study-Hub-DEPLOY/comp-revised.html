@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="الملخص المعدّل الكامل — كتاب Competencies (الكفاءات السلوكية التسع) SHRM 2025">
+<title>الكفاءات — الملخص المعدّل الكامل | SHRM 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#0d1b2e;--navy2:#163456;--gold:#c8a84b;--gold2:#e8c96a;
+  --blue:#185FA5;--green:#1D9E75;--purple:#6d28d9;--orange:#BA7517;--red:#A32D2D;
+  --bg:#f4f1ea;--card:#fff;--border:#e0d9cc;--text:#1a1a1a;--muted:#6b6357;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--text);line-height:1.75;padding-bottom:60px;}
+a{text-decoration:none;color:inherit;}
+
+.topbar{background:var(--navy);color:#fff;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(200,168,75,.25);}
+.topbar a.home{font-size:13px;color:var(--gold2);font-weight:600;}
+.topbar .brand{font-size:13px;font-weight:700;opacity:.85;}
+
+.hero{background:linear-gradient(160deg,#0d1b2e,#163456 60%,#1a3a5c);color:#fff;padding:46px 20px 40px;text-align:center;}
+.hero .eyebrow{display:inline-block;background:rgba(200,168,75,.15);border:1px solid rgba(200,168,75,.35);border-radius:30px;padding:5px 18px;font-size:12px;font-weight:700;color:var(--gold);margin-bottom:16px;}
+.hero h1{font-size:clamp(1.6rem,5vw,2.5rem);font-weight:900;line-height:1.2;}
+.hero h1 em{color:var(--gold);font-style:normal;}
+.hero p{opacity:.72;max-width:560px;margin:10px auto 0;font-size:.95rem;}
+
+.container{max-width:880px;margin:0 auto;padding:0 18px;}
+
+/* legend */
+.legend{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 18px;margin:26px 0;font-size:.9rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:16px;align-items:center;}
+.legend b{color:var(--navy);}
+.tag-new{display:inline-block;background:#1D9E75;color:#fff;font-size:10px;font-weight:800;padding:2px 8px;border-radius:20px;vertical-align:middle;}
+
+/* cluster band */
+.cluster{margin:40px 0 18px;border-radius:16px;padding:18px 22px;color:#fff;}
+.cluster h2{font-size:1.3rem;font-weight:900;}
+.cluster p{font-size:.86rem;opacity:.85;margin-top:3px;}
+.cl-lead{background:linear-gradient(135deg,#0d1b2e,#185FA5);}
+.cl-inter{background:linear-gradient(135deg,#0f766e,#1D9E75);}
+.cl-biz{background:linear-gradient(135deg,#5a1fc0,#8b5cf6);}
+
+/* competency */
+.comp{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px 24px;margin-bottom:16px;border-right:5px solid var(--gold);}
+.comp > h3{font-size:1.18rem;font-weight:900;color:var(--navy);display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.comp .en-name{font-size:.82rem;color:var(--muted);font-weight:600;}
+.comp .definition{background:#faf7f0;border-radius:10px;padding:11px 14px;margin:12px 0;font-size:.94rem;border-right:3px solid var(--gold);}
+.sub{font-size:.8rem;color:var(--blue);font-weight:700;margin:14px 0 6px;}
+
+.concept{margin:12px 0;}
+.concept .ctitle{font-weight:800;color:var(--navy);font-size:1rem;margin-bottom:4px;}
+.concept .ctitle .en{color:var(--muted);font-weight:600;font-size:.82rem;}
+.concept p{font-size:.93rem;margin-bottom:5px;}
+.concept ul{list-style:none;margin:5px 0;}
+.concept li{font-size:.9rem;padding-right:20px;position:relative;margin-bottom:4px;}
+.concept li::before{content:'◂';position:absolute;right:0;color:var(--gold);font-size:.75rem;top:2px;}
+.formula{background:var(--navy);color:var(--gold);font-weight:700;font-size:.86rem;padding:9px 14px;border-radius:8px;margin:8px 0;text-align:center;direction:ltr;font-family:'Outfit',monospace,sans-serif;}
+.tip{background:#fbf6e7;border-radius:8px;padding:9px 13px;font-size:.88rem;color:#5b4a1e;margin-top:6px;}
+.tip b{color:#7a5e16;}
+.divider{height:1px;background:var(--border);margin:14px 0;}
+
+footer{text-align:center;padding:36px 20px 10px;color:var(--muted);font-size:13px;}
+footer a{color:var(--blue);font-weight:700;}
+@media(max-width:520px){.comp{padding:18px 16px;}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="home" href="https://shrm-arabic-hub.netlify.app/">← المرجع الرئيسي</a>
+  <span class="brand">Competencies · الملخص المعدّل</span>
+</div>
+
+<section class="hero">
+  <span class="eyebrow">📘 الملخص المعدّل الكامل · SHRM BASK 2025</span>
+  <h1>الكفاءات السلوكية <em>التسع</em></h1>
+  <p>ملخص موحّد محدَّث لكتاب Competencies، يدمج كل النظريات والنماذج والمفاهيم المُضافة في مراجعة 2025، منظَّماً في عناقيد الكفاءات الثلاثة.</p>
+</section>
+
+<div class="container">
+
+  <div class="legend">
+    <span><b>كيف تقرئين هذا الملخص:</b> الكفاءات التسع في ثلاثة عناقيد (القيادة · التفاعل · الأعمال).</span>
+    <span><span class="tag-new">جديد</span> = مفهوم أُضيف أو وُسِّع في مراجعة 2025.</span>
+  </div>
+
+  <!-- ============ CLUSTER 1: LEADERSHIP ============ -->
+  <div class="cluster cl-lead">
+    <h2>عنقود القيادة — Leadership Cluster</h2>
+    <p>القيادة والتوجيه · الممارسة الأخلاقية</p>
+  </div>
+
+  <!-- 1. Leadership & Navigation -->
+  <div class="comp">
+    <h3>1. القيادة والتوجيه <span class="en-name">Leadership & Navigation</span></h3>
+    <div class="definition">الـ KSAOs اللازمة لصياغة رؤية ورسالة لـ HR تتوافق مع التوجه الاستراتيجي للمنظمة، وتحقيق أهداف HR والمنظمة، وقيادة التغيير، والإبحار داخل المنظمة، وإدارة تنفيذ مبادرات HR.</div>
+
+    <div class="sub">الكفاءات الفرعية</div>
+    <div class="concept"><ul>
+      <li><b>القيادة (Leadership):</b> بناء المصداقية، وتحديد أهداف قابلة للتنفيذ، وتسهيل القرار، وحشد الموارد.</li>
+      <li><b>إدارة مبادرات HR:</b> ترجمة الرؤية إلى برامج وممارسات وسياسات منفّذة.</li>
+      <li><b>الإبحار في المنظمة (Navigating the Organization):</b> فهم السياسة التنظيمية واستخدام التأثير لكسب الدعم.</li>
+    </ul></div>
+
+    <div class="sub">نظريات القيادة</div>
+    <div class="concept">
+      <div class="ctitle">نظرية السمات <span class="en">Trait Theory</span> <span class="tag-new">جديد</span></div>
+      <p>أقدم المقاربات: القائد يُولد بسمات مميِّزة (الذكاء، الثقة، الحزم). انتُقدت لإهمالها المهارات المكتسبة وأثر الموقف.</p>
+    </div>
+    <div class="concept">
+      <div class="ctitle">المقاربة السلوكية — الشبكة الإدارية <span class="en">Blake-Mouton Grid</span> <span class="tag-new">جديد</span></div>
+      <p>تصنّف القائد على محورين: الاهتمام بالإنتاج × الاهتمام بالناس. الأمثل 9,9 (قيادة الفريق).</p>
+      <ul><li>9,1 سلطة-طاعة (مهمة) · 1,9 نادي الريف (ناس) · 5,5 منتصف الطريق · 1,1 متهالك</li></ul>
+    </div>
+    <div class="concept">
+      <div class="ctitle">نموذج الطوارئ لفيدلر <span class="en">Fiedler's Contingency</span> <span class="tag-new">جديد</span></div>
+      <p>الفعالية = توافق أسلوب القائد (مهمة/علاقة، يُقاس بـ LPC) مع مواتاة الموقف. الأسلوب ثابت، فنغيّر الموقف لا القائد.</p>
+    </div>
+    <div class="concept">
+      <div class="ctitle">نظرية المسار-الهدف <span class="en">Path-Goal (House)</span> <span class="tag-new">جديد</span></div>
+      <p>القائد يمهّد المسار للهدف بإزالة العقبات، ويكيّف أسلوبه: توجيهي / داعم / مشارك / موجَّه بالإنجاز — حسب الموظف والمهمة.</p>
+    </div>
+    <div class="concept">
+      <div class="ctitle">القيادة الظرفية <span class="en">Hersey-Blanchard Situational</span></div>
+      <p>يغيّر القائد أسلوبه (توجيه/إقناع/مشاركة/تفويض) حسب نضج الموظف. <b>الفرق عن فيدلر:</b> هنا القائد يغيّر أسلوبه، عند فيدلر الأسلوب ثابت.</p>
+    </div>
+    <div class="concept">
+      <div class="ctitle">التحويلية مقابل التبادلية <span class="en">Transformational vs Transactional</span></div>
+      <p>التحويلية: تُلهم وتغيّر القيم نحو رؤية. التبادلية: تبادل مكافأة مقابل أداء (عصا وجزرة).</p>
+    </div>
+    <div class="concept">
+      <div class="ctitle">القيادة الخادمة <span class="en">Servant Leadership</span> <span class="tag-new">جديد</span></div>
+      <p>يضع القائد نموَّ الفريق ورفاهيته أولاً، فيقود بالخدمة لا بسلطة المنصب.</p>
+    </div>
+    <div class="concept">
+      <div class="ctitle">أساليب جولمان الستة <span class="en">Goleman's 6 Styles</span></div>
+      <ul><li>القسري · الموجِّه (الرؤيوي) · التآلفي · الديمقراطي · ضابط الوتيرة · المدرِّب</li>
+      <li>القائد الفعّال يبدّل بينها حسب الموقف؛ الإفراط في القسري وضابط الوتيرة يضرّ المناخ.</li></ul>
+    </div>
+
+    <div class="sub">نظريات التحفيز</div>
+    <div class="concept"><ul>
+      <li><b>هرم ماسلو:</b> خمسة مستويات؛ يُشبَع الأدنى قبل الأعلى.</li>
+      <li><b>هيرزبرغ (العاملان):</b> عوامل الصحة (تمنع الاستياء) مقابل المحفّزات (تخلق الرضا).</li>
+      <li><b>ماكجريجور X/Y:</b> افتراضان متعارضان عن الموظفين.</li>
+      <li><b>التوقع لفروم:</b> الدافعية = التوقع × الوسيلة × التكافؤ.</li>
+      <li><b>العدالة لآدامز:</b> الموظف يقارن نسبة مخرجاته/مدخلاته بالآخرين.</li>
+      <li><b>الاحتياجات لماكليلاند:</b> الإنجاز · الانتماء · السلطة.</li>
+      <li><b>التعزيز لسكينر <span class="tag-new">جديد</span>:</b> السلوك دالة نتائجه — تعزيز إيجابي/سلبي يزيده، عقاب/إطفاء يقلّله.</li>
+    </ul></div>
+    <div class="tip"><b>نصيحة:</b> «التعزيز السلبي» ليس عقاباً — هو إزالة شيء مزعج لتقوية سلوك مرغوب.</div>
+
+    <div class="sub">إدارة التغيير</div>
+    <div class="concept"><ul>
+      <li><b>لوين (3 مراحل):</b> إذابة ← تغيير ← إعادة تجميد.</li>
+      <li><b>كوتر (8 خطوات):</b> من خلق الإلحاح إلى ترسيخ التغيير في الثقافة.</li>
+      <li><b>ADKAR:</b> وعي ← رغبة ← معرفة ← قدرة ← تعزيز (تغيير فردي).</li>
+    </ul></div>
+  </div>
+
+  <!-- 2. Ethical Practice -->
+  <div class="comp">
+    <h3>2. الممارسة الأخلاقية <span class="en-name">Ethical Practice</span></h3>
+    <div class="definition">الـ KSAOs اللازمة لدمج القيم الأساسية والنزاهة والمساءلة في كل ممارسات المنظمة وأعمالها.</div>
+    <div class="sub">الكفاءات الفرعية الثلاث</div>
+    <div class="concept"><ul>
+      <li><b>النزاهة الشخصية (Personal Integrity):</b> الصدق والشفافية والأصالة في السلوك الذاتي.</li>
+      <li><b>النزاهة المهنية (Professional Integrity):</b> الالتزام بالمعايير المهنية ومدونة أخلاقيات SHRM.</li>
+      <li><b>الوكيل الأخلاقي (Ethical Agent):</b> تعزيز ثقافة أخلاقية ومعالجة المخالفات.</li>
+    </ul></div>
+    <div class="sub">المفاهيم الأساسية</div>
+    <div class="concept"><ul>
+      <li><b>بيئة العمل الأخلاقية:</b> الشفافية + الصدق (تجنّب تعارض المصالح) + الأصالة.</li>
+      <li><b>مدونات السلوك (Codes of Conduct):</b> صياغتها، وإيصالها، وآلية التطبيق والإبلاغ.</li>
+      <li><b>التحقيقات الداخلية:</b> السرّية، الحياد، توثيق الأدلّة، الإنصاف الإجرائي.</li>
+      <li><b>المدونات في المنظمات العالمية:</b> الموازنة بين التوحيد العالمي والتكيّف المحلي.</li>
+    </ul></div>
+    <div class="tip"><b>في المواقف:</b> HR هو «الضمير الأخلاقي» للمنظمة — الإجابة الأفضل غالباً تحمي السرّية والإنصاف الإجرائي وتعالج الجذر لا الشخص.</div>
+  </div>
+
+  <!-- ============ CLUSTER 2: INTERPERSONAL ============ -->
+  <div class="cluster cl-inter">
+    <h2>عنقود التفاعل — Interpersonal Cluster</h2>
+    <p>إدارة العلاقات · الاتصال · العقلية العالمية · الشمول والتنوع</p>
+  </div>
+
+  <!-- 3. Relationship Management -->
+  <div class="comp">
+    <h3>3. إدارة العلاقات <span class="en-name">Relationship Management</span></h3>
+    <div class="definition">الـ KSAOs اللازمة لإدارة التفاعلات وبناء علاقات داخل المنظمة وخارجها لتقديم خدمة وأداء.</div>
+    <div class="sub">المفاهيم الأساسية</div>
+    <div class="concept"><ul>
+      <li><b>الشبكات المهنية:</b> جهات داخلية وخارجية، مرشدون، متعاونون، «موصِّلون» (Connectors).</li>
+      <li><b>أصحاب المصلحة (Stakeholders):</b> تحديدهم وإدارة توقعاتهم.</li>
+      <li><b>عوامل بناء الثقة (Hurley):</b> القيم المشتركة، توافق المصالح، الحرص على الآخر، الكفاءة، الاتساق، التواصل الصادق.</li>
+    </ul></div>
+    <div class="concept">
+      <div class="ctitle">إدارة النزاع — Thomas-Kilmann <span class="tag-new">جديد</span></div>
+      <p>خمسة أنماط على محوري الحزم × التعاون: تنافس · تعاون · تسوية · تجنّب · تكيّف. يُختار حسب أهمية القضية × أهمية العلاقة.</p>
+    </div>
+    <div class="concept">
+      <div class="ctitle">التفاوض — Distributive/Integrative & BATNA <span class="tag-new">جديد</span></div>
+      <ul><li>توزيعي: كعكة ثابتة (رابح-خاسر) · تكاملي: توسيع المنفعة (رابح-رابح).</li>
+      <li>BATNA = أفضل بديل عن الاتفاق المتفاوَض عليه — يحدّد نقطة الانسحاب وقوّتك.</li></ul>
+    </div>
+    <div class="concept">
+      <div class="ctitle">مراحل الفريق — Tuckman <span class="en">Team Stages</span></div>
+      <p>التشكّل ← العصف ← التنظيم ← الأداء ← (الإنهاء). كل مرحلة تحتاج تدخّلاً قيادياً مختلفاً.</p>
+    </div>
+  </div>
+
+  <!-- 4. Communication -->
+  <div class="comp">
+    <h3>4. الاتصال <span class="en-name">Communication</span></h3>
+    <div class="definition">الـ KSAOs اللازمة لتبادل المعلومات والأفكار بفاعلية مع أصحاب المصلحة بصيغ واضحة ومقنعة.</div>
+    <div class="concept">
+      <div class="ctitle">نموذج عملية الاتصال <span class="en">Communication Process Model</span> <span class="tag-new">جديد</span></div>
+      <div class="formula">مُرسِل → ترميز → رسالة/قناة → فكّ ترميز → مُستقبِل → تغذية راجعة (مع تشويش)</div>
+      <ul>
+        <li><b>التشويش (Noise):</b> مادي (ضجيج) · نفسي (تحيّز) · دلالي (مصطلحات غامضة).</li>
+        <li><b>التغذية الراجعة:</b> الدليل على وصول الرسالة وفهمها صحيحاً.</li>
+      </ul>
+    </div>
+    <div class="concept">
+      <div class="ctitle">الإصغاء الفعّال <span class="en">Active Listening</span> <span class="tag-new">جديد</span></div>
+      <p>الانتباه الكامل، إعادة الصياغة للتأكّد، طرح أسئلة توضيحية، تأجيل الحكم. مهارة محورية في الاستشارة وحل النزاع.</p>
+    </div>
+    <div class="concept">
+      <div class="ctitle">القنوات والاتجاه <span class="en">Channels & Direction</span></div>
+      <ul>
+        <li><b>القناة:</b> اختيارها حسب ثراء الرسالة (وجهاً لوجه للقضايا الحسّاسة، بريد للمعلومات البسيطة).</li>
+        <li><b>الاتجاه:</b> هابط · صاعد · أفقي · قطري — كلٌّ له مخاطره (تشويه المعلومة صعوداً مثلاً).</li>
+      </ul>
+    </div>
+    <div class="tip"><b>في المواقف:</b> عند سوء الفهم، الجواب الأفضل غالباً «تأكّدي من الفهم عبر التغذية الراجعة» لا مجرد إعادة الإرسال.</div>
+  </div>
+
+  <!-- 5. Global Mindset -->
+  <div class="comp">
+    <h3>5. العقلية العالمية <span class="en-name">Global Mindset</span></h3>
+    <div class="definition">الـ KSAOs اللازمة للعمل بفاعلية مع أشخاص وثقافات متنوّعة، وإدارة التنوّع الثقافي العالمي.</div>
+    <div class="concept">
+      <div class="ctitle">الثقافة كـ«برمجيات العقل» — Hofstede</div>
+      <p><b>الأبعاد الستة:</b> مسافة السلطة · الفردية/الجماعية · تجنّب عدم اليقين · الذكورية/الأنوثة · التوجه الزمني · الانطلاق/الكبح.</p>
+    </div>
+    <div class="concept">
+      <div class="ctitle">ثقافات Hall عالية/منخفضة السياق <span class="en">High/Low Context</span></div>
+      <ul><li>عالية السياق: تلميح وعلاقات وصمت معبِّر (اليابان، الخليج).</li>
+      <li>منخفضة السياق: صراحة وتوثيق مكتوب (ألمانيا، أمريكا).</li></ul>
+    </div>
+    <div class="concept"><ul>
+      <li><b>ترومبينارز (7 توترات):</b> مثل العالمية مقابل الخصوصية، الفرد مقابل الجماعة.</li>
+      <li><b>طبقات شاين للثقافة:</b> المصنوعات ← القيم المعلنة ← الافتراضات الضمنية.</li>
+      <li><b>الذكاء الثقافي (CQ):</b> القدرة على التكيّف عبر الثقافات (إدراكي/جسدي/دافعي).</li>
+      <li><b>الإثنومركزية:</b> اعتبار ثقافة المرء معياراً — عقبة رئيسة أمام التفاهم.</li>
+      <li><b>EPRG (Perlmutter):</b> توجّهات الشركة العالمية (إثني/متعدد/إقليمي/جيوسنتري).</li>
+    </ul></div>
+  </div>
+
+  <!-- 6. Inclusion & Diversity -->
+  <div class="comp">
+    <h3>6. الشمول والتنوع <span class="en-name">Inclusion & Diversity (I&D)</span></h3>
+    <div class="definition">الـ KSAOs اللازمة لبناء قوى عاملة متنوّعة وبيئة شاملة منصفة تطلق العنان لقيمة الاختلاف. <span class="tag-new">جديد</span> الاسم المحدَّث I&D (بدل DE&I).</div>
+    <div class="concept"><ul>
+      <li><b>التنوع (Diversity):</b> «مَن نُدخل؟» — أنواعه: موروث (Inherent)، تجريبي (Experiential)، فكري (Thought).</li>
+      <li><b>الإنصاف (Equity):</b> توفير ما يحتاجه كلٌّ للنجاح (≠ المساواة الشكلية Equality).</li>
+      <li><b>الشمول (Inclusion):</b> «هل صوت الجميع مسموع ومُقدَّر؟»</li>
+      <li><b>الجدوى:</b> التنوع والشمول يرفعان الابتكار والإيراد واتخاذ القرار.</li>
+    </ul></div>
+    <div class="concept">
+      <div class="ctitle">أنواع التحيّز اللاواعي <span class="en">Unconscious Bias</span> <span class="tag-new">جديد</span></div>
+      <p>تحيّز التشابه، التأكيد، الهالة، المجموعة الخارجية، التحيّز ضد التنوّع العصبي (Neurodiversity). علاجه: الوعي + معايير قرار منظَّمة.</p>
+    </div>
+  </div>
+
+  <!-- ============ CLUSTER 3: BUSINESS ============ -->
+  <div class="cluster cl-biz">
+    <h2>عنقود الأعمال — Business Cluster</h2>
+    <p>الفطنة التجارية · الاستشارة · القدرة التحليلية</p>
+  </div>
+
+  <!-- 7. Business Acumen -->
+  <div class="comp">
+    <h3>7. الفطنة التجارية <span class="en-name">Business Acumen</span></h3>
+    <div class="definition">الـ KSAOs اللازمة لفهم عمليات المنظمة ووظائفها وماليّتها والبيئة الخارجية، وتطبيق ذلك في قرارات HR.</div>
+    <div class="sub">المالية</div>
+    <div class="concept"><ul>
+      <li><b>القوائم الثلاث:</b> الميزانية العمومية (لحظة زمنية) · قائمة الدخل (فترة) · التدفق النقدي (حركة النقد).</li>
+      <li><b>النسب المالية:</b> السيولة، الربحية، الرفع المالي، الكفاءة — وما تعنيه لقرارات HR.</li>
+      <li><b>المقاييس غير المالية:</b> حصة السوق، الانخراط، سمعة صاحب العمل.</li>
+    </ul></div>
+    <div class="sub">أدوات الاستراتيجية</div>
+    <div class="concept"><ul>
+      <li><b>SWOT:</b> القوة/الضعف (داخلي) + الفرص/التهديدات (خارجي).</li>
+      <li><b>PESTLE:</b> تحليل البيئة الكلّية (سياسي/اقتصادي/اجتماعي/تقني/قانوني/بيئي).</li>
+      <li><b>سلسلة القيمة (Value Chain):</b> الأنشطة الأساسية والداعمة المولِّدة للقيمة.</li>
+      <li><b>BCG / دورة حياة المنتج:</b> تصنيف المنتجات (نجوم/أبقار/علامات استفهام/كلاب).</li>
+    </ul></div>
+    <div class="concept">
+      <div class="ctitle">قوى بورتر التنافسية الخمس <span class="en">Porter's Five Forces</span> <span class="tag-new">جديد</span></div>
+      <p>إطار تحليل جاذبية القطاع: المنافسة الحالية · تهديد الداخلين الجدد · تهديد البدائل · قوة الموردين · قوة المشترين.</p>
+      <div class="tip"><b>فرّقي:</b> بورتر = تحليل القطاع (خارجي) · SWOT = داخلي+خارجي · PESTLE = البيئة الكلّية.</div>
+    </div>
+  </div>
+
+  <!-- 8. Consultation -->
+  <div class="comp">
+    <h3>8. الاستشارة <span class="en-name">Consultation</span></h3>
+    <div class="definition">الـ KSAOs اللازمة للعمل كمستشار موثوق لأصحاب المصلحة في قضايا HR وإدارة التغيير.</div>
+    <div class="concept">
+      <div class="ctitle">نموذج الاستشارة الأربعي <span class="en">4-Step Consulting Model</span></div>
+      <div class="formula">التقييم → التشخيص → التدخّل/التنفيذ → التقييم والمتابعة</div>
+    </div>
+    <div class="concept">
+      <div class="ctitle">أدوات القرار الجماعي <span class="en">Group Decision Tools</span></div>
+      <ul>
+        <li><b>العصف الذهني:</b> توليد أفكار بلا نقد أولي.</li>
+        <li><b>التقنية الاسمية (NGT):</b> توليد فردي ثم تصويت منظَّم — يقلّل هيمنة الأصوات العالية.</li>
+        <li><b>دلفي (Delphi):</b> جولات خبراء مجهولة متكرّرة للوصول لتوافق.</li>
+        <li><b>الخريطة الذهنية:</b> تنظيم بصري للأفكار المترابطة.</li>
+      </ul>
+    </div>
+    <div class="tip"><b>تذكّري:</b> NGT ودلفي يعالجان «التفكير الجمعي» وهيمنة الأقوياء بإتاحة إسهام متكافئ.</div>
+  </div>
+
+  <!-- 9. Analytical Aptitude -->
+  <div class="comp">
+    <h3>9. القدرة التحليلية <span class="en-name">Analytical Aptitude</span> <span class="tag-new">الاسم الرسمي 2025</span></h3>
+    <div class="definition">الـ KSAOs اللازمة لجمع البيانات وتحليلها وتفسيرها لاتخاذ قرارات HR قائمة على الأدلّة.</div>
+    <div class="concept"><ul>
+      <li><b>مصادر البيانات وتقييمها:</b> أسئلة صحّة المصدر، ومقارنة المصادر (مسوحات، مقابلات، سجلات).</li>
+      <li><b>الموثوقية مقابل الصحة (Reliability vs Validity):</b> الموثوقية = اتساق التكرار · الصحة = قياس ما يُراد قياسه فعلاً. <b>قد تكون أداة موثوقة وغير صحيحة.</b></li>
+      <li><b>مقاييس النزعة المركزية:</b> المتوسط · الوسيط · المنوال — والوسيط أفضل عند القيم المتطرّفة.</li>
+      <li><b>الانحراف المعياري:</b> منخفض = تجانس البيانات · مرتفع = تشتّتها.</li>
+    </ul></div>
+    <div class="concept">
+      <div class="ctitle">التحيّزات الإحصائية <span class="en">Statistical Biases</span></div>
+      <p>تحيّز الاختيار، تحيّز التأكيد، تحيّز البقاء، تحيّز المعاينة — تشوّه نتائج التحليل وقراراته.</p>
+    </div>
+    <div class="tip"><b>تكامل:</b> هذه الكفاءة هي محرّك «HR القائم على الأدلّة» — اربطيها بمعادلات المقاييس (الدوران، العائد) في المرجع.</div>
+  </div>
+
+</div>
+
+<footer>
+  الملخص المعدّل الكامل — كتاب Competencies · SHRM BASK 2025 · جزء من
+  <a href="https://shrm-arabic-hub.netlify.app/">SHRM Study Hub</a><br>
+  المفاهيم المعلَّمة بـ«جديد» أُضيفت أو وُسِّعت في هذه المراجعة.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ملخص SHRM – الصفحات 101–200</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1a3a5c;
+    --accent:  #c8a84b;
+    --accent2: #e8734a;
+    --bg:      #f7f4ef;
+    --card:    #ffffff;
+    --text:    #2c2c2c;
+    --muted:   #6b7280;
+    --green:   #1e7a4a;
+    --red:     #b91c1c;
+    --purple:  #6d28d9;
+    --border:  #e2d9c8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Tajawal', 'Cairo', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.85;
+    font-size: 16px;
+  }
+
+  /* ── HEADER ───────────────────────────────── */
+  .header {
+    background: linear-gradient(135deg, #1a3a5c 0%, #2d5a8e 100%);
+    color: white;
+    padding: 48px 40px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content:'';position:absolute;top:-80px;left:-60px;
+    width:340px;height:340px;border-radius:50%;
+    background:rgba(200,168,75,.12);
+  }
+  .header::after {
+    content:'';position:absolute;bottom:-90px;right:-50px;
+    width:250px;height:250px;border-radius:50%;
+    background:rgba(232,115,74,.10);
+  }
+  .header-badge {
+    display:inline-block;background:var(--accent);
+    color:var(--primary);font-weight:700;font-size:13px;
+    padding:4px 16px;border-radius:20px;margin-bottom:14px;letter-spacing:1px;
+  }
+  .header h1 { font-size:2.1rem;font-weight:800;margin-bottom:8px; }
+  .header .subtitle { font-size:1rem;opacity:.8;max-width:620px; }
+  .header-meta { display:flex;gap:26px;margin-top:22px;flex-wrap:wrap; }
+  .meta-item { display:flex;align-items:center;gap:8px;font-size:14px;opacity:.9; }
+
+  /* ── CONTAINER ───────────────────────────── */
+  .container { max-width:920px;margin:0 auto;padding:44px 24px 90px; }
+
+  /* ── OVERVIEW CARD ───────────────────────── */
+  .overview-card {
+    background:var(--primary);color:white;
+    border-radius:16px;padding:32px 36px;margin-bottom:40px;
+    position:relative;overflow:hidden;
+  }
+  .overview-card::after {
+    content:'SHRM';position:absolute;left:-8px;bottom:-28px;
+    font-size:100px;font-weight:900;color:rgba(255,255,255,.05);
+  }
+  .overview-card h2 { font-size:1.25rem;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:10px; }
+  .overview-card p  { font-size:15px;line-height:1.9;opacity:.92; }
+
+  /* ── SECTION ─────────────────────────────── */
+  .section { margin-bottom:44px; }
+  .section-title { display:flex;align-items:center;gap:14px;margin-bottom:22px; }
+  .section-num {
+    background:var(--accent);color:var(--primary);
+    width:40px;height:40px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:17px;flex-shrink:0;
+  }
+  .section-title h2 { font-size:1.3rem;font-weight:700;color:var(--primary); }
+  .section-title .en-title { font-size:13px;color:var(--muted);font-style:italic;direction:ltr; }
+
+  /* ── CARD ────────────────────────────────── */
+  .card {
+    background:var(--card);border-radius:14px;
+    padding:26px 30px;border:1px solid var(--border);
+    box-shadow:0 2px 14px rgba(0,0,0,.05);margin-bottom:22px;
+  }
+  .card h3 {
+    font-size:1.05rem;font-weight:700;color:var(--primary);
+    margin-bottom:13px;padding-bottom:10px;border-bottom:2px solid var(--border);
+  }
+  .card h3 .en { color:var(--accent2);direction:ltr;display:inline-block;font-size:.85rem;margin-right:8px; }
+
+  /* ── LIST ────────────────────────────────── */
+  .info-list { list-style:none;padding:0; }
+  .info-list li {
+    padding:8px 0;border-bottom:1px solid #f0ebe0;
+    font-size:15px;display:flex;gap:10px;align-items:flex-start;
+  }
+  .info-list li:last-child { border-bottom:none; }
+  .bullet { width:8px;height:8px;background:var(--accent);border-radius:50%;margin-top:8px;flex-shrink:0; }
+  .bullet.green { background:var(--green); }
+  .bullet.red   { background:var(--red); }
+  .bullet.blue  { background:#2563eb; }
+  .bullet.purple{ background:var(--purple); }
+
+  /* ── TERM ────────────────────────────────── */
+  .term {
+    background:#f0f6ff;border-right:4px solid var(--primary);
+    padding:10px 16px;margin:9px 0;border-radius:6px;font-size:15px;
+  }
+  .term strong { color:var(--primary); }
+  .term .en-term { color:var(--accent2);font-style:italic;direction:ltr;display:inline-block; }
+
+  /* ── TABLE ───────────────────────────────── */
+  .compare-table { width:100%;border-collapse:collapse;font-size:14px;margin-top:14px; }
+  .compare-table th { background:var(--primary);color:white;padding:10px 14px;text-align:right; }
+  .compare-table td { padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top; }
+  .compare-table tr:nth-child(even) td { background:#f9f6f0; }
+  .compare-table tr:hover td { background:#fff3e0; }
+
+  /* ── HIGHLIGHT ───────────────────────────── */
+  .highlight {
+    background:linear-gradient(135deg,#fff8e7,#fef3cd);
+    border:1px solid var(--accent);border-radius:12px;
+    padding:20px 26px;margin:16px 0;
+  }
+  .highlight .icon { font-size:22px;margin-bottom:8px; }
+  .highlight p { font-size:15px; }
+
+  /* ── THEORY GRID ─────────────────────────── */
+  .theory-grid { display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px; }
+  @media(max-width:640px){ .theory-grid { grid-template-columns:1fr; } }
+  .theory-item {
+    background:#f9f6f0;border:1px solid var(--border);
+    border-radius:10px;padding:15px 17px;
+  }
+  .theory-item h4 { font-size:14px;font-weight:700;color:var(--primary);margin-bottom:6px; }
+  .theory-item .en { font-size:12px;color:var(--accent2);direction:ltr;display:block;margin-bottom:6px; }
+  .theory-item p { font-size:13px;color:#444;line-height:1.75; }
+
+  /* ── TIP / NOTE ──────────────────────────── */
+  .tip-box {
+    background:#f0fdf4;border:1px solid #86efac;
+    border-radius:12px;padding:18px 22px;margin:16px 0;font-size:15px;
+  }
+  .tip-box strong { color:var(--green); }
+
+  .note-box {
+    background:#fefce8;border:1px solid #fde047;
+    border-radius:12px;padding:18px 22px;margin:16px 0;font-size:15px;
+  }
+  .note-box strong { color:#854d0e; }
+
+  .warn-box {
+    background:#fff1f2;border:1px solid #fca5a5;
+    border-radius:12px;padding:18px 22px;margin:16px 0;font-size:15px;
+  }
+  .warn-box strong { color:var(--red); }
+
+  /* ── TAG CHIPS ───────────────────────────── */
+  .chips { display:flex;flex-wrap:wrap;gap:10px;margin:14px 0; }
+  .chip {
+    background:var(--primary);color:white;
+    border-radius:30px;padding:7px 18px;font-size:13px;font-weight:600;
+  }
+  .chip.gold   { background:var(--accent);color:var(--primary); }
+  .chip.orange { background:var(--accent2); }
+  .chip.green  { background:var(--green); }
+  .chip.purple { background:var(--purple); }
+
+  /* ── BIAS GRID ───────────────────────────── */
+  .bias-grid { display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:14px; }
+  @media(max-width:700px){ .bias-grid { grid-template-columns:1fr 1fr; } }
+  @media(max-width:480px){ .bias-grid { grid-template-columns:1fr; } }
+  .bias-item {
+    border-radius:10px;padding:14px 16px;
+    border:1px solid var(--border);background:#fff;
+    border-top:4px solid var(--accent2);
+  }
+  .bias-item h4 { font-size:13px;font-weight:700;color:var(--primary);margin-bottom:4px; }
+  .bias-item .en { font-size:11px;color:var(--accent2);direction:ltr;display:block;margin-bottom:5px; }
+  .bias-item p { font-size:12.5px;color:#555;line-height:1.6; }
+
+  /* ── DIVIDER ─────────────────────────────── */
+  .divider { border:none;border-top:2px dashed var(--border);margin:36px 0; }
+
+  /* ── DEI SECTION ─────────────────────────── */
+  .dei-row {
+    display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin:16px 0;
+  }
+  @media(max-width:640px){ .dei-row { grid-template-columns:1fr; } }
+  .dei-card {
+    border-radius:12px;padding:20px;text-align:center;
+  }
+  .dei-card.d { background:#dbeafe;border:1px solid #93c5fd; }
+  .dei-card.e { background:#d1fae5;border:1px solid #6ee7b7; }
+  .dei-card.i { background:#ede9fe;border:1px solid #c4b5fd; }
+  .dei-card h4 { font-size:1.1rem;font-weight:800;margin-bottom:8px; }
+  .dei-card.d h4 { color:#1e40af; }
+  .dei-card.e h4 { color:#065f46; }
+  .dei-card.i h4 { color:#5b21b6; }
+  .dei-card p { font-size:13px;line-height:1.7; }
+  .dei-card .question { font-size:14px;font-weight:700;margin-bottom:8px; }
+
+  /* ── STEPS ───────────────────────────────── */
+  .steps { list-style:none;padding:0;counter-reset:steps; }
+  .steps li {
+    counter-increment:steps;
+    display:flex;gap:14px;align-items:flex-start;
+    padding:12px 0;border-bottom:1px solid #f0ebe0;font-size:15px;
+  }
+  .steps li:last-child { border-bottom:none; }
+  .steps li::before {
+    content:counter(steps);
+    background:var(--primary);color:white;
+    width:28px;height:28px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:13px;flex-shrink:0;
+  }
+
+  /* ── NAV CHIPS ───────────────────────────── */
+  .nav-chips { display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px; }
+  .nav-chip {
+    background:var(--card);border:1px solid var(--border);
+    border-radius:30px;padding:8px 18px;font-size:13px;
+    font-weight:600;color:var(--primary);cursor:pointer;
+  }
+  .nav-chip:hover { background:var(--primary);color:white; }
+
+  /* ── FOOTER ──────────────────────────────── */
+  .footer {
+    text-align:center;margin-top:70px;padding:28px;
+    color:var(--muted);font-size:14px;border-top:2px solid var(--border);
+  }
+
+  /* ── PROGRESS BAR ────────────────────────── */
+  .progress-bar-wrap { margin:0 0 40px; }
+  .progress-label { display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:6px; }
+  .progress-bar { height:10px;background:#e2d9c8;border-radius:10px;overflow:hidden; }
+  .progress-fill { height:100%;border-radius:10px;background:linear-gradient(90deg, var(--primary), var(--accent)); }
+</style>
+</head>
+<body>
+
+<!-- ════ HEADER ════ -->
+<div class="header">
+  <div class="header-badge">📚 خطة الدراسة · الجزء الثاني</div>
+  <h1>ملخص الصفحات 101–200</h1>
+  <p class="subtitle">SHRM Learning System 2023 — HR Competencies Module</p>
+  <div class="header-meta">
+    <div class="meta-item">📄 601 صفحة إجمالاً</div>
+    <div class="meta-item">🎯 SHRM-CP / SHRM-SCP</div>
+    <div class="meta-item">🌍 شرح بالعربية · المصطلحات بالإنجليزية</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- progress -->
+  <div class="progress-bar-wrap">
+    <div class="progress-label"><span>تقدّمك في الكتاب</span><span>201 / 601 صفحة</span></div>
+    <div class="progress-bar"><div class="progress-fill" style="width:33%"></div></div>
+  </div>
+
+  <!-- overview -->
+  <div class="overview-card">
+    <h2>🗺️ نظرة عامة على هذا الجزء</h2>
+    <p>
+      تكمل الصفحات 101–200 الكفاءة الثانية <strong>Ethical Practice</strong> وتُعمّق مفاهيمها (إنشاء بيئة أخلاقية، مدونات السلوك، ضوابط التحقيق الداخلي)، ثم تنتقل بالكامل إلى الكفاءة الثالثة الكبرى
+      <strong>Inclusion &amp; Diversity (I&amp;D)</strong> — من التعريفات الجوهرية وصولاً إلى الأدوات العملية لقياس نجاح مبادرات I&amp;D. وتنتهي بدخول الكفاءة الرابعة <strong>Relationship Management</strong>.
+    </p>
+  </div>
+
+  <!-- ═══════════════════════════════════ -->
+  <!-- SECTION 1 — ETHICAL PRACTICE CONT -->
+  <!-- ═══════════════════════════════════ -->
+  <div class="section" id="s1">
+    <div class="section-title">
+      <div class="section-num">1</div>
+      <div>
+        <h2>استكمال الممارسة الأخلاقية</h2>
+        <div class="en-title">Ethical Practice — Continuation</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>إنشاء بيئة عمل أخلاقية <span class="en">Creating an Ethical Workplace</span></h3>
+      <ul class="info-list">
+        <li><span class="bullet green"></span>القيادة تُعرّف القيم وتُجسّدها أمام الجميع — الأفعال أبلغ من الكلمات.</li>
+        <li><span class="bullet green"></span>القصص المؤسسية التي تُحتفى بها ترسّخ القيم في الثقافة تدريجياً.</li>
+        <li><span class="bullet green"></span>بيئة العمل الأخلاقية تجذب المواهب وتُقلّل المخاطر القانونية والمالية.</li>
+        <li><span class="bullet red"></span>المنظمة تحمي موظفيها: بيئة آمنة جسدياً ونفسياً، عمل عادل، حماية الخصوصية.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>الشفافية والصدق والأصالة <span class="en">Transparency, Honesty & Authenticity</span></h3>
+      <div class="theory-grid">
+        <div class="theory-item">
+          <h4>الشفافية</h4>
+          <span class="en">Transparency</span>
+          <p>الإفصاح لأصحاب المصلحة عن التعاملات والقرارات التي تمسّهم. تعزّز الثقة حين لا تكون الأفعال مشهودة مباشرةً.</p>
+        </div>
+        <div class="theory-item">
+          <h4>الصدق وتعارض المصالح</h4>
+          <span class="en">Honesty & Conflicts of Interest</span>
+          <p>تعارض المصالح يحدث حين تتداخل المصلحة الشخصية مع المهنية. الرشوة (Bribery) محظورة بقانوني FCPA الأمريكي وBribery Act البريطاني.</p>
+        </div>
+        <div class="theory-item">
+          <h4>الأصالة</h4>
+          <span class="en">Authenticity</span>
+          <p>كن كالحرباء: تتكيّف مع الظروف لكنك تبقى نفسك. الاتساق بين قيمك وسلوكك يبني الثقة ويُسهّل الحوارات الحساسة.</p>
+        </div>
+        <div class="theory-item">
+          <h4>برامج مكافحة الفساد</h4>
+          <span class="en">Anti-Corruption Programs</span>
+          <p>تحديد مناطق المخاطر ← ضوابط الدفع ← تدريب مناسب ثقافياً ← مراقبة وتدقيق دوري ← مراجعة دورية للحوكمة.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>مدونات السلوك <span class="en">Codes of Conduct</span></h3>
+      <p style="margin-bottom:14px; font-size:15px;">مدونة السلوك ليست كتاب قواعد ثابت — بل أداة يستخدمها الموظف لفحص سلوكه واتخاذ قرارات أخلاقية صحيحة.</p>
+      <div class="note-box">
+        <strong>📌 مكوّنان أساسيان:</strong><br>
+        <strong>القسم القيمي (Values-based):</strong> رؤية المنظمة، مهمتها، قيمها، وواجباتها تجاه أصحاب المصلحة.<br>
+        <strong>القسم التشريعي (Rules-based):</strong> السلوكيات المتوقعة، أمثلة على المخالفات، إجراءات الإبلاغ والتحقيق والعقوبات.
+      </div>
+      <h4 style="margin:16px 0 8px; font-size:14px; font-weight:700; color:var(--primary);">خطوات إنشاء مدونة فعّالة:</h4>
+      <ol class="steps">
+        <li>جمع المعلومات من الموظفين والمديرين عبر استبيانات ومجموعات تركيز</li>
+        <li>صياغة المدونة بلغة واضحة قابلة للفهم — تُترجم لجميع اللغات المستخدمة في المنظمة</li>
+        <li>اعتمادها رسمياً وتقديمها لجميع الموظفين (ليس مجرد توزيع)</li>
+        <li>مراقبة الامتثال بشكل منتظم وتوثيق النتائج</li>
+        <li>مراجعتها دورياً لمواكبة تغيّرات البيئة والقوانين</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h3>التحقيقات الداخلية <span class="en">Internal Ethics Investigations</span></h3>
+      <ul class="info-list">
+        <li><span class="bullet"></span><strong>المحقق (Investigator):</strong> شخص محايد وذو خبرة — من HR أو طرف ثالث أو مستشار قانوني.</li>
+        <li><span class="bullet"></span><strong>السرية (Confidentiality):</strong> مبدأ لا يُكسر — حماية جميع الأطراف.</li>
+        <li><span class="bullet"></span><strong>التوثيق (Documentation):</strong> وقائع موضوعية فقط — بلا آراء شخصية.</li>
+        <li><span class="bullet"></span><strong>المصداقية (Credibility):</strong> أصعب جزء — الحكم على الروايات المتضاربة بناءً على الأدلة.</li>
+        <li><span class="bullet"></span><strong>الاستنتاجات (Conclusions):</strong> تقرير سري يُسلَّم لصانع القرار، لا للمحقق نفسه.</li>
+      </ul>
+      <div class="warn-box">
+        <strong>⚠️ تحذير:</strong> التحقيق المُخطأ قد يُفضي إلى دعاوى إنهاء خدمة تعسفي أو خرق السرية — مما يُكلّف المنظمة قانونياً ومعنوياً.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>مدونات السلوك في المنظمات العالمية <span class="en">Global Codes of Conduct</span></h3>
+      <p style="font-size:15px; margin-bottom:12px;">التحدي الحقيقي: ما هو مقبول في ثقافة ما قد يكون مرفوضاً في ثقافة أخرى. لكن بعض المبادئ كعمالة الأطفال والرشوة لا يُساوَم عليها.</p>
+      <ul class="info-list">
+        <li><span class="bullet blue"></span>شكّل فريق عمل دولي يمثّل جميع الثقافات المعنية.</li>
+        <li><span class="bullet blue"></span>تجنّب التحيّز لثقافة البلد الأم في الصياغة والمصطلحات.</li>
+        <li><span class="bullet blue"></span>استخدم معايير دولية كـ OECD بدلاً من قوانين محلية كـ FCPA فقط.</li>
+        <li><span class="bullet blue"></span>وفّر الترجمات الدقيقة وتأكّد من منطقيتها لدى المستخدمين المحليين.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════════════════════════════ -->
+  <!-- SECTION 2 — DEI -->
+  <!-- ════════════════════════════ -->
+  <div class="section" id="s2">
+    <div class="section-title">
+      <div class="section-num">2</div>
+      <div>
+        <h2>الشمول والتنوع</h2>
+        <div class="en-title">Inclusion & Diversity (I&D)</div>
+      </div>
+    </div>
+
+    <!-- DEI triple def -->
+    <div class="dei-row">
+      <div class="dei-card d">
+        <div class="question">السؤال الجوهري:</div>
+        <h4>Diversity 🌍</h4>
+        <p>التنوع</p>
+        <p style="margin-top:10px;">"من نُدخل إلى المنظمة؟"<br>الاختلافات في الهوية: عرق، جنس، سن، قدرة، خلفية، تفكير...</p>
+      </div>
+      <div class="dei-card e">
+        <div class="question">السؤال الجوهري:</div>
+        <h4>Equity ⚖️</h4>
+        <p>المساواة التوزيعية</p>
+        <p style="margin-top:10px;">"كيف نضمن تكافؤ الفرص الحقيقية؟"<br>توفير الموارد بحسب الاحتياج — ليس نفس الشيء للجميع.</p>
+      </div>
+      <div class="dei-card i">
+        <div class="question">السؤال الجوهري:</div>
+        <h4>Inclusion 🤝</h4>
+        <p>الشمول والاندماج</p>
+        <p style="margin-top:10px;">"كيف نجعلهم يشعرون بالانتماء؟"<br>بيئة يُشعر فيها الجميع بالتقدير والمشاركة الفعلية.</p>
+      </div>
+    </div>
+
+    <div class="highlight">
+      <div class="icon">💡</div>
+      <p><strong>مقارنة لا تُنسى — Equality vs. Equity:</strong><br>
+      <strong>Equality (المساواة):</strong> نفس الصندوق لكل شخص للوقوف عليه لرؤية المباراة.<br>
+      <strong>Equity (العدالة):</strong> الصندوق المناسب لكلٍّ منهم بحسب احتياجه الفعلي ليرى بنفس الوضوح.<br>
+      <em>الهدف ليس تطابق المخرجات بل تكافؤ الفرص الحقيقية.</em></p>
+    </div>
+
+    <div class="card">
+      <h3>أنواع التنوع الثلاثة <span class="en">Three Types of Diversity</span></h3>
+      <div class="theory-grid">
+        <div class="theory-item">
+          <h4>التنوع الموروث</h4>
+          <span class="en">Legacy Diversity</span>
+          <p>الصفات الظاهرة والقابلة للملاحظة: العرق، الجنس، الجنسية، السن، اللغة، الصفات الجسدية.</p>
+        </div>
+        <div class="theory-item">
+          <h4>التنوع التجريبي</h4>
+          <span class="en">Experiential Diversity</span>
+          <p>التنوع بناءً على التجارب المعاشة: مكان النشأة، المدرسة، الهوايات، الظروف الأسرية.</p>
+        </div>
+        <div class="theory-item">
+          <h4>تنوع التفكير</h4>
+          <span class="en">Thought Diversity</span>
+          <p>اختلاف طرق التفكير وحل المشاكل — يحمي من GroupThink ويُعزّز الابتكار.</p>
+        </div>
+        <div class="theory-item">
+          <h4>القوة الكامنة</h4>
+          <span class="en">Strategic Value</span>
+          <p>الأهم ليس وجود التنوع بل استثماره — الأفكار والوجهات النظر المختلفة هي الميزة التنافسية.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>فوائد I&D للمنظمة <span class="en">Business Benefits of I&D</span></h3>
+      <div class="chips">
+        <div class="chip">🧠 إبداع وابتكار أعلى</div>
+        <div class="chip gold">🎯 استقطاب مواهب أفضل</div>
+        <div class="chip orange">🌐 فهم أعمق للأسواق</div>
+        <div class="chip green">📈 عائد مالي أعلى</div>
+        <div class="chip purple">🏆 علامة تجارية أقوى</div>
+        <div class="chip">⚖️ بيئة عمل أعدل</div>
+      </div>
+      <div class="note-box">
+        <strong>📌 بحث Katherine Phillips (Columbia):</strong> مجرّد معرفة أن أحد أعضاء الفريق لديه خلفية مختلفة يجعل الباقين يُفكّرون بعمق أكبر في افتراضاتهم وأكثر انفتاحاً على الأفكار البديلة.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>خصائص بيئة العمل الديناميكية والشاملة <span class="en">Dynamic & Inclusive Workplace</span></h3>
+      <table class="compare-table">
+        <tr><th>الخاصية</th><th>الوصف</th><th>الفائدة الرئيسية</th></tr>
+        <tr>
+          <td>متعددة الأجيال<br><em>Multigenerational</em></td>
+          <td>أجيال مختلفة تعمل معاً وتتعلم من بعضها</td>
+          <td>نقل المعرفة + حلول إبداعية بين الأجيال</td>
+        </tr>
+        <tr>
+          <td>متعددة الثقافات<br><em>Multicultural</em></td>
+          <td>خلفيات ثقافية متنوعة</td>
+          <td>رؤى للتوسع في أسواق جديدة</td>
+        </tr>
+        <tr>
+          <td>متعددة اللغات<br><em>Multilingual</em></td>
+          <td>موظفون يتحدثون لغات متعددة</td>
+          <td>تحسين التواصل مع العملاء والفروع</td>
+        </tr>
+        <tr>
+          <td>متعددة المواهب<br><em>Multitalented</em></td>
+          <td>مهارات متنوعة تتكيف مع المتغيرات</td>
+          <td>مرونة تشغيلية أعلى</td>
+        </tr>
+        <tr>
+          <td>متعددة الأجناس<br><em>Multigendered</em></td>
+          <td>تنوع بين الجنسين وهويات الجندر</td>
+          <td>تفكير أكثر تنوعاً + جذب المواهب</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>خطوات بناء بيئة شاملة <span class="en">Building Inclusive Workplaces — 6 Steps (SHRM)</span></h3>
+      <ol class="steps">
+        <li><strong>ثقّف قياداتك:</strong> تدريب إلزامي للمديرين على I&D مع سيناريوهات واقعية</li>
+        <li><strong>أنشئ مجلس الشمول:</strong> 8–12 عضواً من مستويات مختلفة ومتنوعة، تحت القيادة العليا مباشرةً</li>
+        <li><strong>احتفل بالاختلافات:</strong> ادعُ الموظفين لمشاركة خلفياتهم وتقاليدهم في بيئة العمل</li>
+        <li><strong>استمع للموظفين:</strong> استبيانات ومجموعات تركيز لفهم الواقع الفعلي</li>
+        <li><strong>اجتماعات فعّالة:</strong> مرونة في التوقيت، توزيع الثناء، مراعاة أنماط التواصل</li>
+        <li><strong>حدد أهدافاً SMART وقِس التقدم:</strong> أهداف محددة وقابلة للقياس ومُراجَعة دورياً</li>
+      </ol>
+      <div class="tip-box">
+        <strong>🎯 العوامل الحاسمة للنجاح:</strong> دعم القيادة ← رعاية تنفيذية ← مجموعات ERG ← برامج Allyship ← تدريب على التحيز اللاواعي ← الأمان النفسي.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>أبرز أدوات I&D المؤسسية <span class="en">I&D Tools & Programs</span></h3>
+      <div class="theory-grid">
+        <div class="theory-item">
+          <h4>مجموعات موارد الموظفين</h4>
+          <span class="en">Employee Resource Groups (ERGs)</span>
+          <p>مجموعات طوعية حول بُعد تنوع مشترك (عرق، جنس، توجه...). تُقدّم للمنظمة رؤى السوق والمجتمع بشكل فريد.</p>
+        </div>
+        <div class="theory-item">
+          <h4>التضامن المهني</h4>
+          <span class="en">Allyship</span>
+          <p>المتضامن يُنمّذج التعاطف ويفتح أبواباً للمهمّشين. الأمر ليس إيماءة رمزية — يجب أن يكون مستمراً وملموساً.</p>
+        </div>
+        <div class="theory-item">
+          <h4>تدريب التحيز اللاواعي</h4>
+          <span class="en">Unconscious Bias Training</span>
+          <p>يُظهر للموظفين تحيزاتهم الخفية وكيف تُؤثر في قراراتهم. يجب قياس أثره الفعلي على السلوك لا مجرّد الحضور.</p>
+        </div>
+        <div class="theory-item">
+          <h4>الأمان النفسي</h4>
+          <span class="en">Psychological Safety</span>
+          <p>الموظف يشعر أنه يستطيع التعبير والخطأ وطلب المساعدة دون خوف. القيادة تُنمّذجه عبر: التمكين + المساءلة + الشجاعة + التواضع.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════════════════════════════ -->
+  <!-- SECTION 3 — BIAS -->
+  <!-- ════════════════════════════ -->
+  <div class="section" id="s3">
+    <div class="section-title">
+      <div class="section-num">3</div>
+      <div>
+        <h2>أنواع التحيز وعوائق I&D</h2>
+        <div class="en-title">Barriers to I&D Success — Bias Types</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>التحيز الواعي vs اللاواعي <span class="en">Conscious vs Unconscious Bias</span></h3>
+      <table class="compare-table">
+        <tr>
+          <th>المعيار</th>
+          <th>التحيز الواعي  Conscious Bias</th>
+          <th>التحيز اللاواعي  Unconscious Bias</th>
+        </tr>
+        <tr>
+          <td>الوعي</td>
+          <td>الشخص يعلم بوجوده</td>
+          <td>الشخص لا يعلم — لكنه يُؤثّر في قراراته</td>
+        </tr>
+        <tr>
+          <td>التعبير</td>
+          <td>قد يظهر في مضايقات متعمّدة أو إقصاء مباشر</td>
+          <td>في أنماط التوظيف والترقية وتوزيع المهام</td>
+        </tr>
+        <tr>
+          <td>سهولة المعالجة</td>
+          <td>أسهل للتشخيص والعلاج</td>
+          <td>أصعب — يتحدى صورة الشخص عن نفسه</td>
+        </tr>
+        <tr>
+          <td>النطاق</td>
+          <td>فردي</td>
+          <td>فردي وممتد للمستوى المؤسسي</td>
+        </tr>
+      </table>
+      <div class="note-box">
+        <strong>📌 نقطة حاسمة (Donovan & Kaplan):</strong> التحيز اللاواعي شامل وعالمي — لدى الجميع. تأثيره وإن بدا صغيراً، إلا أنه يتراكم ليُشكّل تجربة مختلفة تماماً لأعضاء خارج المجموعة.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>أنواع التحيز الأكثر شيوعاً <span class="en">Common Types of Bias</span></h3>
+      <div class="bias-grid">
+        <div class="bias-item">
+          <h4>التمييز الجندري</h4>
+          <span class="en">Gender-Based Discrimination</span>
+          <p>افتراضات بناءً على جنس الشخص تُعيق قدرته على القيادة أو التأثير.</p>
+        </div>
+        <div class="bias-item">
+          <h4>التحيز لهوية الجنس</h4>
+          <span class="en">Gender Identity Bias</span>
+          <p>تحيز تجاه الأشخاص المتحوّلين جنسياً أو غير الثنائيين.</p>
+        </div>
+        <div class="bias-item">
+          <h4>التحيز للتوجه الجنسي</h4>
+          <span class="en">Sexual Orientation Bias</span>
+          <p>الجنسية ليست مجرّد سلوك — تمسّ هوية الشخص كاملةً وتؤثر في الثقة والعلاقات.</p>
+        </div>
+        <div class="bias-item">
+          <h4>العنصرية ومنها المؤسسية</h4>
+          <span class="en">Racism (incl. Systemic)</span>
+          <p>فردية ← داخلية ← مؤسسية. الأخطر المؤسسي: سياسات وإجراءات تُنتج تمييزاً بغضّ النظر عن النوايا.</p>
+        </div>
+        <div class="bias-item">
+          <h4>الصور النمطية</h4>
+          <span class="en">Stereotypes</span>
+          <p>تعميمات مُبالَغ فيها ومُقاوِمة للتغيير. قد تُولّد "تهديد الصورة النمطية" فتُحقّق ما تُخشى.</p>
+        </div>
+        <div class="bias-item">
+          <h4>التحيز العمري</h4>
+          <span class="en">Ageism</span>
+          <p>افتراضات بناءً على جيل الشخص — تُعيق تكامل الأجيال وتُقلّل فرص كلٍّ منها.</p>
+        </div>
+        <div class="bias-item">
+          <h4>تحيز الجماعة / خارجها</h4>
+          <span class="en">Ingroup / Outgroup Bias</span>
+          <p>المجموعة الداخلية أقل وعياً بالعوائق التي يواجهها الخارجيون — وهذا نفسه عائق.</p>
+        </div>
+        <div class="bias-item">
+          <h4>التحيز للتشابه</h4>
+          <span class="en">Affinity Bias</span>
+          <p>نفضّل من شاركنا الجامعة أو المدينة. يُضيّق تنوع المرشحين ويُعزّز GroupThink.</p>
+        </div>
+        <div class="bias-item">
+          <h4>تحيز الانبساطية</h4>
+          <span class="en">Extroversion/Introversion Bias</span>
+          <p>بيئات العمل تميل لمكافأة المنبسطين. المنطويون يُقدّمون قيمة فريدة تستحق الاستثمار المتعمّد.</p>
+        </div>
+        <div class="bias-item">
+          <h4>تحيز التنوع المعرفي</h4>
+          <span class="en">Neurodiversity Bias</span>
+          <p>ADD, ADHD, ASD — أشخاص بطرق تفكير مختلفة قد يُبدعون حيث يعجز "النمط الاعتيادي".</p>
+        </div>
+        <div class="bias-item">
+          <h4>الإساءة الخفية</h4>
+          <span class="en">Microaggressions</span>
+          <p>إهانات خفية سريعة متكررة. كلٌّ منها يبدو "تافهاً" لكن مجموعها يُشكّل بيئة مُعادية.</p>
+        </div>
+        <div class="bias-item">
+          <h4>متلازمة المحتال</h4>
+          <span class="en">Impostor Syndrome</span>
+          <p>شعور أن النجاح بالحظ لا الكفاءة. يجعل الموظف يتراجع ويتجنّب الأضواء خشية الانكشاف.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>مفاهيم I&D خاصة تحتاج تعمّقاً <span class="en">Special I&D Concepts</span></h3>
+      <div class="term">
+        <strong>إخفاء الهوية</strong> <span class="en-term">Covering</span>
+        — الموظف يُكيّف مظهره أو انتماءاته أو مناصرته لهويته حتى "يندمج". الضرر مزدوج: للفرد نفسياً وللمنظمة التي تفقد قيمة التنوع.
+      </div>
+      <div class="term">
+        <strong>الضريبة الثقافية</strong> <span class="en-term">Cultural Taxation</span>
+        — عبء العمل الإضافي الملقى على الأقليات في المنظمة لمجرد تمثيل مجموعاتهم. يُؤدّي للإرهاق ويُعيق الأداء.
+      </div>
+      <div class="term">
+        <strong>الضمائر المُفضَّلة</strong> <span class="en-term">Preferred Gender Pronouns</span>
+        — استخدام "they/them" وغيرها بدلاً من الضمائر الجنسانية. الاستخدام الخاطئ المتعمّد قد يُعدّ مضايقة في بعض الولايات.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>حلول مكان العمل الشاملة <span class="en">Workplace Solutions</span></h3>
+      <ul class="info-list">
+        <li><span class="bullet green"></span><strong>خيارات رعاية الأسرة (Caregiver Options):</strong> مرونة للعناية بالأطفال أو ذوي الاحتياجات الخاصة.</li>
+        <li><span class="bullet green"></span><strong>سياسات المرونة (Workplace Flexibility):</strong> العمل الهجين والجداول المرنة — جذّاب لأجيال وفئات متنوعة.</li>
+        <li><span class="bullet green"></span><strong>إجازة مدفوعة محايدة جندرياً (Paid Parental Leave):</strong> تُقلّل الفجوة في المسار المهني بين الجنسين.</li>
+        <li><span class="bullet green"></span><strong>مساعدة الرسوم الدراسية (Tuition Reimbursement):</strong> تُساعد الفئات الأقل حظاً على سدّ الفجوة التعليمية.</li>
+        <li><span class="bullet green"></span><strong>تسهيلات جسدية (Physical Accommodations):</strong> منحدرات الكراسي المتحركة، Braille، التعليق المغلق (Closed Captioning)، دورات مياه محايدة جندرياً.</li>
+        <li><span class="bullet green"></span><strong>غرف الهدوء/الصلاة (Prayer Rooms):</strong> تُتيح للموظفين أن يكونوا أنفسهم الحقيقية دينياً.</li>
+        <li><span class="bullet green"></span><strong>غرف الرضاعة (Lactation Rooms):</strong> مطلوبة قانونياً في كثير من الدول — تُقلّل الغياب وتدعم الصحة.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════════════════════════════ -->
+  <!-- SECTION 4 — MEASURING DEI -->
+  <!-- ════════════════════════════ -->
+  <div class="section" id="s4">
+    <div class="section-title">
+      <div class="section-num">4</div>
+      <div>
+        <h2>قياس مبادرات I&D</h2>
+        <div class="en-title">Measuring I&D — Metrics & Tools</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>لماذا القياس ضروري؟</h3>
+      <p style="font-size:15px; margin-bottom:12px;">I&D لا يمكن اختزاله بأرقام محاسبية بسيطة، لكنه بلا قياس يُصبح مجرد نوايا حسنة. القياس يُصحّح المسار ويُثبت الأثر.</p>
+      <div class="theory-grid">
+        <div class="theory-item">
+          <h4>مقاييس العملية</h4>
+          <span class="en">Process Measures</span>
+          <p>"كيف نفّذنا؟" — عدد المشاركين في برنامج الإرشاد، آراؤهم، ما نجح وما لم ينجح.</p>
+        </div>
+        <div class="theory-item">
+          <h4>مقاييس النتائج</h4>
+          <span class="en">Results Measures</span>
+          <p>"ما الفارق الذي أحدثناه؟" — انخفاض الدوران بنسبة كم؟ وكم وفّر ذلك مالياً؟</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>مؤشرات I&D الرئيسية <span class="en">Key I&D Metrics</span></h3>
+      <table class="compare-table">
+        <tr><th>المؤشر</th><th>ما يقيسه</th><th>الاستخدام</th></tr>
+        <tr>
+          <td>تنوع الجنس<br><em>Gender Diversity</em></td>
+          <td>توزيع الموظفين بحسب الجنس</td>
+          <td>كشف تحيز في التوظيف والترقية</td>
+        </tr>
+        <tr>
+          <td>تنوع العرق<br><em>Race Diversity</em></td>
+          <td>توزيع الموظفين بحسب العرق والإثنية</td>
+          <td>كشف فجوات التمثيل</td>
+        </tr>
+        <tr>
+          <td>معدل احتفاظ الفئات المتنوعة<br><em>Retention Rates</em></td>
+          <td>هل الموظفون من الفئات المتنوعة يبقون؟</td>
+          <td>قياس فاعلية برامج الشمول الفعلية</td>
+        </tr>
+        <tr>
+          <td>SHRM Empathy Index</td>
+          <td>5 مكوّنات: الانتماء، الشمول، الانفتاح، إدارة الصراعات، الممارسات غير التمييزية</td>
+          <td>قياس سريع وشامل للشمول المُعاش</td>
+        </tr>
+        <tr>
+          <td>تنوع أصحاب المصلحة الخارجيين<br><em>External Stakeholder Diversity</em></td>
+          <td>هل من يُشكّل توجهات المنظمة متنوّعون؟</td>
+          <td>تحسين مبادرات I&D بمدخلات أشمل</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>قياس المساواة في الأجر <span class="en">Pay Equity Measures</span></h3>
+      <div class="term">
+        <strong>مراجعات الأجور</strong> <span class="en-term">Pay Audits</span>
+        — تحليل الرواتب في المنظمة للكشف عن فجوات بحسب الجنس أو العرق أو أبعاد تنوع أخرى.
+      </div>
+      <div class="term">
+        <strong>تقارير المساواة في الأجور</strong> <span class="en-term">Pay Equity Reports</span>
+        — الإفصاح عن نتائج المراجعات. مطلوبة قانونياً في دول عديدة. تُستخدم لكشف التحيز في الترقية أيضاً.
+      </div>
+      <div class="term">
+        <strong>شفافية الأجور</strong> <span class="en-term">Pay Transparency</span>
+        — نشر سلالم الرواتب. يُقلّل الفجوة بين المجموعات، ويُعزّز ثقة الموظفين، ويُستخدم أداةً تنافسية في الاستقطاب.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>استبيانات I&D — ما الذي تسأل عنه؟ <span class="en">I&D Survey Dimensions</span></h3>
+      <ul class="info-list">
+        <li><span class="bullet purple"></span><strong>الثقافة العامة:</strong> هل القيادة تُشجّع الشمول؟ هل بيئة العمل مريحة للجميع؟</li>
+        <li><span class="bullet purple"></span><strong>التوظيف والاستقطاب:</strong> هل تُبحث مجمّعات مواهب متنوعة؟ هل المتقدمون يلتقون بوجوه متنوعة؟</li>
+        <li><span class="bullet purple"></span><strong>التطوير الوظيفي:</strong> هل الجميع يُشجَّع على التقدم للترقيات؟ هل مسار الترقية عادل؟</li>
+        <li><span class="bullet purple"></span><strong>التجارب الشخصية:</strong> هل تشعر بالانتماء؟ هل واجهت صعوبة في التواصل مع زملاء من خلفيات مختلفة؟</li>
+        <li><span class="bullet purple"></span><strong>السياسات والإجراءات:</strong> هل تعلم بسياسات I&D؟ هل تثق في تطبيقها عند الحاجة؟</li>
+      </ul>
+      <div class="tip-box">
+        <strong>🎯 خطأ شائع في تحليل الاستبيانات:</strong> إذا أظهر الاستبيان أن كلاً من الرجال السود والنساء البيض راضون، لا تستنتج أن الأمور جيدة — قد تعاني النساء السود من مشكلة مُخفاة خلف هذين المتوسطين. انظر دائماً إلى تقاطع الأبعاد.
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════════════════════════════ -->
+  <!-- SECTION 5 — RELATIONSHIP MGT -->
+  <!-- ════════════════════════════ -->
+  <div class="section" id="s5">
+    <div class="section-title">
+      <div class="section-num">5</div>
+      <div>
+        <h2>مدخل لإدارة العلاقات</h2>
+        <div class="en-title">Relationship Management — Introduction</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>ما تُغطيه هذه الكفاءة</h3>
+      <p style="font-size:15px;">إدارة العلاقات كفاءة تُركّب ثلاثة محاور كبيرة:</p>
+      <div class="chips" style="margin-top:12px;">
+        <div class="chip">🌐 بناء الشبكات المهنية</div>
+        <div class="chip gold">👥 العمل الجماعي وقيادة الفِرق</div>
+        <div class="chip orange">⚡ إدارة النزاعات والتفاوض</div>
+      </div>
+      <div class="note-box" style="margin-top:16px;">
+        <strong>📌 لماذا تُعدّ هذه الكفاءة محورية لـ HR؟</strong><br>
+        HR لا يُنجز شيئاً وحده — كل مبادرة تحتاج دعم الآخرين. فهم احتياجات أصحاب المصلحة وبناء شبكة ثقة يُحوّل HR من مُنفّذ تعليمات إلى شريك استراتيجي.
+      </div>
+      <p style="font-size:15px; margin-top:12px;">سيستكمل الجزء التالي (صفحات 201–300) هذه الكفاءة بالتفصيل — بناء الثقة، الذكاء العاطفي، إدارة النزاعات، الشبكات المهنية.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════════════════════════════ -->
+  <!-- GLOSSARY -->
+  <!-- ════════════════════════════ -->
+  <div class="section" id="s6">
+    <div class="section-title">
+      <div class="section-num">📖</div>
+      <div>
+        <h2>المصطلحات الأساسية — الجزء الثاني</h2>
+        <div class="en-title">Key Terms Glossary — Pages 101–200</div>
+      </div>
+    </div>
+    <div class="card">
+      <table class="compare-table">
+        <tr><th>المصطلح العربي</th><th>الإنجليزي</th><th>التعريف المختصر</th></tr>
+        <tr><td>مدونة السلوك</td><td>Code of Conduct</td><td>وثيقة تُحدد القيم والتوقعات والعواقب في المنظمة</td></tr>
+        <tr><td>تعارض المصالح</td><td>Conflicts of Interest</td><td>تداخل المصلحة الشخصية مع المهنية بشكل يُضرّ بالنزاهة</td></tr>
+        <tr><td>الرشوة</td><td>Bribery</td><td>تبادل قيمة للتأثير في قرارات — محظورة قانونياً دولياً</td></tr>
+        <tr><td>الأصالة</td><td>Authenticity</td><td>الاتساق بين قيم الشخص الحقيقية وسلوكه المهني</td></tr>
+        <tr><td>التنوع</td><td>Diversity</td><td>الاختلافات في الهوية: عرق، جنس، سن، قدرة، فكر...</td></tr>
+        <tr><td>المساواة التوزيعية</td><td>Equity</td><td>توفير الموارد بحسب الاحتياج لضمان تكافؤ الفرص الحقيقية</td></tr>
+        <tr><td>الشمول</td><td>Inclusion</td><td>بيئة يشعر فيها الجميع بالانتماء والمشاركة الفعلية</td></tr>
+        <tr><td>التحيز اللاواعي</td><td>Unconscious Bias</td><td>تحيزات خفية تؤثر في القرارات دون وعي صاحبها</td></tr>
+        <tr><td>الإساءة الخفية</td><td>Microaggressions</td><td>إهانات خفية متكررة تتراكم لتُشكّل بيئة مُعادية</td></tr>
+        <tr><td>إخفاء الهوية</td><td>Covering</td><td>تكييف المظهر أو الهوية للاندماج على حساب الأصالة</td></tr>
+        <tr><td>الضريبة الثقافية</td><td>Cultural Taxation</td><td>عبء إضافي على الأقليات لتمثيل مجموعاتهم في مبادرات I&D</td></tr>
+        <tr><td>الأمان النفسي</td><td>Psychological Safety</td><td>شعور الموظف بأمان التعبير والخطأ وطلب المساعدة</td></tr>
+        <tr><td>مجموعات الموارد</td><td>Employee Resource Groups (ERGs)</td><td>مجموعات طوعية حول بُعد تنوع مشترك — تخدم الموظف والمنظمة</td></tr>
+        <tr><td>التضامن المهني</td><td>Allyship</td><td>دعم المهمّشين بأفعال مستمرة تفتح أبواباً وتُصحّح فجوات</td></tr>
+        <tr><td>متلازمة المحتال</td><td>Impostor Syndrome</td><td>الاعتقاد بأن النجاح بالحظ — يُعيق الأداء والمبادرة</td></tr>
+        <tr><td>مراجعة الأجور</td><td>Pay Audit</td><td>تحليل رواتب المنظمة لكشف فجوات غير عادلة</td></tr>
+        <tr><td>شفافية الأجور</td><td>Pay Transparency</td><td>نشر سلالم الرواتب — يُقلّل الفجوات ويُعزّز الثقة</td></tr>
+        <tr><td>العنصرية المؤسسية</td><td>Systemic Racism</td><td>سياسات وإجراءات تُنتج تمييزاً عرقياً بصرف النظر عن النوايا</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════ -->
+  <!-- COMPARISON INSIGHT -->
+  <!-- ════════════════════════════ -->
+  <div class="overview-card" style="margin-top:30px;">
+    <h2>🔗 تكامل الكفاءات في هذا الجزء</h2>
+    <p>
+      الكفاءتان في هذا الجزء ليستا منفصلتين عن بعضهما أو عن كفاءات أخرى — بل متشابكتان:
+    </p>
+    <ul style="margin-top:12px; padding-right:20px; list-style:disc;">
+      <li style="margin-bottom:8px;"><strong>Ethical Practice + I&D:</strong> الأخلاق تتطلب التعامل العادل مع الجميع — I&D هي الترجمة العملية لهذا العدل.</li>
+      <li style="margin-bottom:8px;"><strong>I&D + Relationship Management:</strong> الشمول الحقيقي يُبنى على علاقات ثقة — الشبكة المتنوعة تُقوّي HR.</li>
+      <li style="margin-bottom:8px;"><strong>I&D + Business Acumen:</strong> قيمة I&D يجب تقديمها بلغة الأعمال والمؤشرات للحصول على دعم القيادة.</li>
+      <li><strong>I&D + Analytical Aptitude:</strong> بدون بيانات وقياس لا توجد مبادرة I&D حقيقية — المقاييس هي البوصلة.</li>
+    </ul>
+  </div>
+
+  <div class="tip-box" style="margin-top:24px; font-size:15px;">
+    <strong>🎯 نصيحة الدراسة لهذا الجزء:</strong> عند مراجعة أنواع التحيز، لا تحفظ التعريفات — فكّر في موقف واقعي رأيته أو سمعته لكل نوع. هذا يجعل الإجابة في أسئلة SJI طبيعية ومباشرة.
+  </div>
+
+  <!-- ════════════════════════════ -->
+  <!-- STUDY PLAN OVERVIEW -->
+  <!-- ════════════════════════════ -->
+  <div class="overview-card" style="margin-top:36px; background: linear-gradient(135deg,#1a3a5c,#2d5a8e);">
+    <h2>📅 خطة الدراسة الكاملة — تقدّمك</h2>
+    <table class="compare-table" style="background:rgba(255,255,255,.08); margin-top:16px;">
+      <tr style="background:rgba(255,255,255,.15);">
+        <th style="background:transparent; color:white;">الجزء</th>
+        <th style="background:transparent; color:white;">الصفحات</th>
+        <th style="background:transparent; color:white;">المحتوى</th>
+        <th style="background:transparent; color:white;">الحالة</th>
+      </tr>
+      <tr style="color:white; font-size:14px;">
+        <td>الأول</td><td>1–100</td>
+        <td>المقدمة + نظام التعلم + الشهادتان + Leadership + Ethical Practice (أساسيات)</td>
+        <td>✅ مكتمل</td>
+      </tr>
+      <tr style="color:white; font-size:14px; background:rgba(200,168,75,.2);">
+        <td><strong>الثاني</strong></td><td><strong>101–200</strong></td>
+        <td><strong>Ethical Practice (تعمّق) + I&D كامل + بداية Relationship Mgmt</strong></td>
+        <td>✅ <strong>أنت هنا</strong></td>
+      </tr>
+      <tr style="color:white; font-size:14px;">
+        <td>الثالث</td><td>201–300</td>
+        <td>Relationship Mgmt + Communication + Global Mindset + Business Acumen</td>
+        <td>⏳ التالي</td>
+      </tr>
+      <tr style="color:white; font-size:14px;">
+        <td>الرابع</td><td>301–400</td>
+        <td>Consultation + Analytical Aptitude + People Domain</td>
+        <td>⏳</td>
+      </tr>
+      <tr style="color:white; font-size:14px;">
+        <td>الخامس</td><td>401–480</td>
+        <td>Organization Domain</td>
+        <td>⏳</td>
+      </tr>
+      <tr style="color:white; font-size:14px;">
+        <td>السادس</td><td>481–560</td>
+        <td>Workplace Domain</td>
+        <td>⏳</td>
+      </tr>
+      <tr style="color:white; font-size:14px;">
+        <td>السابع</td><td>561–601</td>
+        <td>مراجعة نهائية + مصطلحات + نصائح الامتحان</td>
+        <td>⏳</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <p style="margin-bottom:10px; font-size:15px;">
+      اطلب الجزء الثالث (صفحات 201–300) في أي وقت 🚀
+    </p>
+    <p style="font-size:13px; color:#aaa;">SHRM Learning System 2023 · ملخص دراسي بالعربية</p>
+  </div>
+
+</div><!-- /container -->
+</body>
+</html>

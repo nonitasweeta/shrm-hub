@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ملخص SHRM People – الصفحات 401–500</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#1a3a5c;--accent:#c8a84b;--accent2:#e8734a;--bg:#f7f4ef;--card:#fff;--green:#1e7a4a;--red:#b91c1c;--purple:#6d28d9;--teal:#0f766e;--border:#e2d9c8;--muted:#6b7280;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Tajawal',sans-serif;background:var(--bg);color:#2c2c2c;line-height:1.85;font-size:16px;}
+
+.header{background:linear-gradient(135deg,#1a3a5c 0%,#0d4060 50%,#1a5c3a 100%);color:#fff;padding:48px 40px 40px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-60px;left:-60px;width:300px;height:300px;border-radius:50%;background:rgba(200,168,75,.12);}
+.header::after{content:'';position:absolute;bottom:-80px;right:-40px;width:220px;height:220px;border-radius:50%;background:rgba(26,92,58,.15);}
+.badge{display:inline-block;background:var(--accent);color:var(--primary);font-weight:700;font-size:13px;padding:4px 16px;border-radius:20px;margin-bottom:14px;letter-spacing:1px;}
+.header h1{font-size:2rem;font-weight:800;margin-bottom:8px;}
+.header p{font-size:.95rem;opacity:.8;max-width:620px;}
+.meta{display:flex;gap:24px;margin-top:20px;flex-wrap:wrap;}
+.meta span{font-size:13px;opacity:.85;}
+
+.container{max-width:920px;margin:0 auto;padding:40px 24px 80px;}
+.progress-wrap{margin-bottom:36px;}
+.progress-label{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:6px;}
+.progress-bar{height:10px;background:#e2d9c8;border-radius:10px;overflow:hidden;}
+.progress-fill{height:100%;border-radius:10px;background:linear-gradient(90deg,var(--primary),var(--accent));}
+
+.overview{background:var(--primary);color:#fff;border-radius:16px;padding:30px 34px;margin-bottom:36px;position:relative;overflow:hidden;}
+.overview::after{content:'L&D';position:absolute;left:-10px;bottom:-22px;font-size:90px;font-weight:900;color:rgba(255,255,255,.05);}
+.overview h2{font-size:1.2rem;color:var(--accent);margin-bottom:12px;}
+.overview p{font-size:15px;line-height:1.9;opacity:.92;}
+
+.section{margin-bottom:40px;}
+.sec-title{display:flex;align-items:center;gap:14px;margin-bottom:20px;}
+.sec-num{background:var(--accent);color:var(--primary);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0;}
+.sec-title h2{font-size:1.25rem;font-weight:700;color:var(--primary);}
+.sec-title .en{font-size:13px;color:var(--muted);font-style:italic;direction:ltr;}
+
+.card{background:var(--card);border-radius:14px;padding:26px 28px;border:1px solid var(--border);box-shadow:0 2px 12px rgba(0,0,0,.05);margin-bottom:20px;}
+.card h3{font-size:1rem;font-weight:700;color:var(--primary);margin-bottom:12px;padding-bottom:10px;border-bottom:2px solid var(--border);}
+.card h3 .en{color:var(--accent2);font-size:.83rem;direction:ltr;display:inline-block;margin-right:6px;}
+.card p.bt{font-size:15px;margin-bottom:12px;line-height:1.85;}
+
+ul.ilist{list-style:none;padding:0;}
+ul.ilist li{padding:8px 0;border-bottom:1px solid #f0ebe0;font-size:15px;display:flex;gap:10px;align-items:flex-start;}
+ul.ilist li:last-child{border-bottom:none;}
+.dot{width:8px;height:8px;background:var(--accent);border-radius:50%;margin-top:8px;flex-shrink:0;}
+.dot.g{background:var(--green);}
+.dot.r{background:var(--red);}
+.dot.t{background:var(--teal);}
+.dot.p{background:var(--purple);}
+
+.term{background:#f0f6ff;border-right:4px solid var(--primary);padding:10px 16px;margin:8px 0;border-radius:6px;font-size:15px;}
+.term strong{color:var(--primary);}
+.term .en-t{color:var(--accent2);font-style:italic;direction:ltr;display:inline-block;}
+
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px;}
+.tbl th{background:var(--primary);color:#fff;padding:10px 14px;text-align:right;}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top;}
+.tbl tr:nth-child(even) td{background:#f9f6f0;}
+.tbl tr:hover td{background:#fff3e0;}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px;}
+@media(max-width:640px){.grid2{grid-template-columns:1fr;}}
+.gitem{background:#f9f6f0;border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.gitem h4{font-size:14px;font-weight:700;color:var(--primary);margin-bottom:5px;}
+.gitem .en{font-size:11px;color:var(--accent2);direction:ltr;display:block;margin-bottom:5px;}
+.gitem p{font-size:13px;color:#444;line-height:1.7;}
+
+/* ADDIE FLOW */
+.addie-flow{display:flex;gap:0;margin:14px 0;overflow-x:auto;}
+.addie-box{flex:1;min-width:90px;padding:16px 10px;text-align:center;}
+.addie-box .ltr{font-size:2rem;font-weight:900;margin-bottom:4px;}
+.addie-box h5{font-size:13px;font-weight:700;margin-bottom:4px;}
+.addie-box p{font-size:11px;line-height:1.5;}
+.addie-arrow{display:flex;align-items:center;color:var(--accent);font-size:22px;font-weight:900;flex-shrink:0;}
+.a1{background:#dbeafe;border-radius:10px 0 0 10px;}.a1 .ltr,.a1 h5{color:#1d4ed8;}
+.a2{background:#fef3cd;}.a2 .ltr,.a2 h5{color:#854d0e;}
+.a3{background:#d1fae5;}.a3 .ltr,.a3 h5{color:var(--green);}
+.a4{background:#ede9fe;}.a4 .ltr,.a4 h5{color:var(--purple);}
+.a5{background:#fee2e2;border-radius:0 10px 10px 0;}.a5 .ltr,.a5 h5{color:var(--red);}
+
+/* BLOOM'S */
+.bloom-stack{display:flex;flex-direction:column;gap:4px;margin:12px 0;}
+.bloom-lvl{padding:10px 16px;border-radius:8px;display:flex;justify-content:space-between;align-items:center;}
+.bloom-lvl .ar{font-weight:700;font-size:14px;color:#fff;}
+.bloom-lvl .en{font-size:12px;color:rgba(255,255,255,.75);direction:ltr;}
+.bl1{background:#475569;} .bl2{background:#0d6b5e;} .bl3{background:#1d4ed8;} .bl4{background:#7c3aed;} .bl5{background:#b45309;} .bl6{background:#b91c1c;}
+
+/* DELIVERY METHODS */
+.del-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px;}
+@media(max-width:600px){.del-grid{grid-template-columns:1fr;}}
+.del-card{border-radius:12px;padding:16px;border:1px solid var(--border);}
+.del-card h4{font-size:13.5px;font-weight:700;margin-bottom:6px;}
+.del-card .en{font-size:11px;direction:ltr;display:block;margin-bottom:6px;}
+.del-card .pros{color:var(--green);font-size:12.5px;margin-bottom:3px;}
+.del-card .cons{color:var(--red);font-size:12.5px;}
+.dc1{border-top:4px solid var(--primary);}  .dc1 h4{color:var(--primary);}
+.dc2{border-top:4px solid var(--teal);}     .dc2 h4{color:var(--teal);}
+.dc3{border-top:4px solid var(--green);}    .dc3 h4{color:var(--green);}
+.dc4{border-top:4px solid var(--purple);} .dc4 h4{color:var(--purple);}
+
+/* CAREER DEV */
+.career-flow{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:14px 0;}
+@media(max-width:600px){.career-flow{grid-template-columns:1fr;}}
+.cf-box{border-radius:12px;padding:18px;}
+.cf-box h4{font-size:14px;font-weight:700;margin-bottom:10px;}
+.cf-box ul{list-style:none;padding:0;}
+.cf-box ul li{font-size:13px;padding:4px 0;display:flex;gap:8px;}
+.cf-box ul li::before{content:'•';font-weight:900;flex-shrink:0;}
+.cf-ind{background:#dbeafe;border:1px solid #93c5fd;} .cf-ind h4{color:#1d4ed8;} .cf-ind ul li::before{color:#1d4ed8;}
+.cf-org{background:#d1fae5;border:1px solid #6ee7b7;} .cf-org h4{color:var(--green);} .cf-org ul li::before{color:var(--green);}
+
+.hl{background:linear-gradient(135deg,#fff8e7,#fef3cd);border:1px solid var(--accent);border-radius:12px;padding:18px 24px;margin:14px 0;}
+.hl p{font-size:15px;}
+.tip{background:#f0fdf4;border:1px solid #86efac;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.tip strong{color:var(--green);}
+.note{background:#fefce8;border:1px solid #fde047;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.note strong{color:#854d0e;}
+.warn{background:#fff1f2;border:1px solid #fca5a5;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.warn strong{color:var(--red);}
+
+.divider{border:none;border-top:2px dashed var(--border);margin:32px 0;}
+.footer{text-align:center;margin-top:60px;padding:22px;color:var(--muted);font-size:13px;border-top:2px solid var(--border);}
+
+/* ── THEORY EXPANSION BOXES ── */
+.th-box{background:#fff;border:1.5px solid #ddd6c8;border-radius:16px;margin:24px 0;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);}
+.th-header{display:flex;align-items:center;gap:12px;padding:16px 20px;background:linear-gradient(135deg,#0d1b2e,#163456);}
+.th-icon{font-size:1.4rem;flex-shrink:0;}
+.th-title{color:#fff;font-weight:700;font-size:1rem;}
+.th-subtitle{color:rgba(255,255,255,.55);font-size:.8rem;margin-top:2px;}
+.th-body{padding:0 20px 20px;}
+.th-formula{background:#0d1b2e;color:#c8a84b;font-family:'Outfit',monospace,sans-serif;font-weight:700;font-size:.9rem;padding:10px 16px;border-radius:8px;margin:14px 0;text-align:center;}
+.th-stage-list{display:flex;flex-direction:column;gap:0;}
+.th-stage{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #f0ede5;}
+.th-stage:last-child{border-bottom:none;}
+.th-sn{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;flex-shrink:0;margin-top:2px;}
+.th-sc{flex:1;font-size:.9rem;line-height:1.65;color:#333;}
+.th-sc strong{color:#0d1b2e;}
+.th-sc em{color:#888;font-size:.85em;}
+.th-example{background:#f0ede5;border-right:3px solid #c8a84b;padding:10px 14px;border-radius:0 8px 8px 0;margin:8px 0;font-size:.88rem;color:#444;line-height:1.65;}
+.th-example strong{color:#0d1b2e;}
+.th-exam-tip{background:#fff8e7;border:1.5px solid #c8a84b;border-radius:10px;padding:12px 16px;margin:14px 0 0;font-size:.88rem;color:#4a3000;line-height:1.65;}
+.th-exam-tip strong{color:#0d1b2e;}
+.th-compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0;}
+@media(max-width:600px){.th-compare{grid-template-columns:1fr;}}
+.th-compare-card{background:#f7f5f0;border-radius:10px;padding:12px 14px;}
+.th-compare-card h4{font-size:.85rem;font-weight:700;color:#0d1b2e;margin-bottom:8px;}
+.th-divider{height:1px;background:#f0ede5;margin:16px 0;}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="badge">📚 كتاب People · الجزء الخامس</div>
+  <h1>ملخص الصفحات 401–500</h1>
+  <p>SHRM Learning System 2023 — People Domain</p>
+  <div class="meta">
+    <span>📄 744 صفحة إجمالاً</span>
+    <span>🎯 18% من الامتحان</span>
+    <span>🌍 شرح بالعربية · المصطلحات بالإنجليزية</span>
+  </div>
+</div>
+
+<div class="container">
+  <div class="progress-wrap">
+    <div class="progress-label"><span>تقدّمك في الكتاب</span><span>500 / 744 صفحة — 67% 🎯</span></div>
+    <div class="progress-bar"><div class="progress-fill" style="width:67%"></div></div>
+  </div>
+
+  <div class="overview">
+    <h2>🗺️ نظرة عامة — الصفحات 401–500</h2>
+    <p>
+      يُقدّم هذا الجزء منطقة <strong>Learning & Development</strong> بالتفصيل الكامل: Andragogy وأساليب تعلّم البالغين، نموذج ADDIE بمراحله الخمس، تصنيف Bloom، أساليب التقديم (ذاتي، وجاهي، OJT، متمازج، إلكتروني)، ثم يدخل في <strong>التطوير الوظيفي</strong> (IDP، مسارات الترقية، الإرشاد والتدريب) وتطوير القادة.
+    </p>
+  </div>
+
+  <!-- ════ S1: ANDRAGOGY ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">1</div>
+      <div><h2>تعلّم البالغين — Andragogy</h2><div class="en">Adult Learning Principles (Knowles)</div></div>
+    </div>
+
+    <div class="card">
+      <h3>الافتراضات الستة لـ Knowles <span class="en">6 Assumptions of Andragogy</span></h3>
+      <table class="tbl">
+        <tr><th>الافتراض</th><th>المعنى</th><th>التطبيق في L&D</th></tr>
+        <tr><td><strong>مفهوم الذات</strong></td><td>البالغ يتحرك من الاعتمادية إلى الاستقلالية</td><td>أشركه في تخطيط تطوير نفسه</td></tr>
+        <tr><td><strong>الخبرة السابقة</strong></td><td>رصيد متراكم يستند إليه في التعلم</td><td>ابنِ على ما يعرفه — لا تبدأ من الصفر</td></tr>
+        <tr><td><strong>الاستعداد للتعلم</strong></td><td>يتعلم ما يحتاجه لدوره الحالي والمستقبلي</td><td>اربط التدريب باحتياجاته الآنية</td></tr>
+        <tr><td><strong>التوجه نحو التطبيق</strong></td><td>تحول من المعرفة المؤجلة إلى التطبيق الفوري</td><td>أظهر تطبيق المهارة فوراً في العمل</td></tr>
+        <tr><td><strong>الدافعية الداخلية</strong></td><td>تتعاظم بالنضج — لا تعتمد على المكافأة الخارجية</td><td>أوضح الفائدة الشخصية والمهنية (WIIFM)</td></tr>
+        <tr><td><strong>"تعلّم الأنساء"</strong></td><td>البالغ راسخ في طريقته — يحتاج مساعدة على تقبّل الجديد</td><td>اطعن في المسلّمات بلطف وادعُ لمنظور مختلف</td></tr>
+      </table>
+      <div class="hl"><p>💡 <strong>WIIFM — What's In It For Me?</strong> هو أول سؤال في ذهن أي متعلم بالغ. أجب عنه صراحةً في أول دقائق أي برنامج تدريبي — وإلا ستفقد انتباهه.</p></div>
+    </div>
+
+    <div class="card">
+      <h3>أنماط التعلم الثلاثة <span class="en">3 Learning Styles — VAK</span></h3>
+      <div class="grid2">
+        <div class="gitem" style="border-top:4px solid #2563eb;">
+          <h4 style="color:#1d4ed8;">👁️ البصري — Visual</h4>
+          <span class="en">Learns best through seeing</span>
+          <p>مخططات، صور، PowerPoint، مقاطع فيديو. يُفضّل الجلوس في المقدمة. يأخذ ملاحظات مفصّلة لاستيعاب المادة.</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid var(--teal);">
+          <h4 style="color:var(--teal);">👂 السمعي — Auditory</h4>
+          <span class="en">Learns best through hearing</span>
+          <p>محاضرات، نقاشات، قراءة بصوت عالٍ. يستوعب من نبرة الصوت والإيقاع. المكتوب لا يكفيه حتى يسمعه.</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid var(--green);">
+          <h4 style="color:var(--green);">🤝 الحركي — Kinesthetic</h4>
+          <span class="en">Learns best through doing</span>
+          <p>يستكشف ويُجرّب يدوياً. يجد صعوبة في الجلوس لفترات طويلة. الممارسة العملية هي ترسيخه الحقيقي.</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid var(--accent2);">
+          <h4 style="color:var(--accent2);">⚠️ تحذير المصمّم</h4>
+          <span class="en">Designer's Trap</span>
+          <p>تصمّم كما تحب أن تتعلم أنت! إذا كنت سمعياً ستُصمّم محاضرات للجميع. الحل: نوّع دائماً في أساليب التقديم.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>عوائق التعلم لدى البالغين <span class="en">Obstacles to Adult Learning</span></h3>
+      <ul class="ilist">
+        <li><span class="dot r"></span><strong>انخفاض تقبّل التغيير:</strong> قدّم التعلم كفرصة لنمو مهني — لا كتهديد للوظيفة</li>
+        <li><span class="dot r"></span><strong>غياب الثقة:</strong> أشرك الموظف في تصميم خطة تطويره — يقلّل المقاومة</li>
+        <li><span class="dot r"></span><strong>ضغط مجموعة الأقران:</strong> عالج التصورات السلبية السائدة وأثبت ارتباط التدريب بالأهداف</li>
+        <li><span class="dot r"></span><strong>تجارب سابقة سلبية:</strong> ركّز على "ما المكسب لك؟" وأثبت اختلاف هذا البرنامج</li>
+        <li><span class="dot r"></span><strong>غياب التزام المنظمة:</strong> المدير المباشر يجب أن يدعم حضور التدريب وتطبيق مخرجاته</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ S2: ADDIE ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">2</div>
+      <div><h2>نموذج ADDIE</h2><div class="en">ADDIE Instructional Design Model</div></div>
+    </div>
+
+    <div class="card">
+      <h3>المراحل الخمس <span class="en">5 Phases</span></h3>
+      <div class="addie-flow">
+        <div class="addie-box a1"><div class="ltr">A</div><h5>التحليل</h5><p>Analysis<br>تحديد الفجوات والاحتياجات</p></div>
+        <div class="addie-arrow">→</div>
+        <div class="addie-box a2"><div class="ltr">D</div><h5>التصميم</h5><p>Design<br>الأهداف والهيكل</p></div>
+        <div class="addie-arrow">→</div>
+        <div class="addie-box a3"><div class="ltr">D</div><h5>التطوير</h5><p>Development<br>بناء المواد</p></div>
+        <div class="addie-arrow">→</div>
+        <div class="addie-box a4"><div class="ltr">I</div><h5>التنفيذ</h5><p>Implementation<br>التقديم للجمهور</p></div>
+        <div class="addie-arrow">→</div>
+        <div class="addie-box a5"><div class="ltr">E</div><h5>التقييم</h5><p>Evaluation<br>قياس الأثر</p></div>
+      </div>
+      <div class="note"><strong>📌 الطابع الدوري:</strong> نجاح كل مرحلة يعتمد على الوقت والجهد المبذول في المرحلة السابقة. تخطّي التحليل = برنامج لا يُعالج المشكلة الحقيقية.</div>
+    </div>
+
+    <div class="card">
+      <h3>مرحلة التحليل — تحليل الاحتياجات <span class="en">Analysis Phase — Needs Analysis</span></h3>
+      <p class="bt">يُحدد الفجوة بين الأداء الفعلي والأداء المطلوب. ثلاثة مستويات:</p>
+      <table class="tbl">
+        <tr><th>المستوى</th><th>السؤال</th><th>المثال</th></tr>
+        <tr><td><strong>التنظيمي</strong></td><td>أين يحتاج التدريب في المنظمة؟</td><td>أقسام ذات دوران عالٍ أو أداء منخفض</td></tr>
+        <tr><td><strong>المهام</strong></td><td>ماذا يجب تعليمه لأداء الوظيفة؟</td><td>انتقال من النماذج الورقية إلى البيانات الرقمية</td></tr>
+        <tr><td><strong>الفردي</strong></td><td>من يحتاج التدريب وماذا؟</td><td>مراجعة أداء تكشف فجوة → خطة تطوير فردية</td></tr>
+      </table>
+      <p class="bt" style="margin-top:12px;"><strong>أدوات جمع البيانات:</strong> مقابلات المصلحين → مراقبة الأداء → استبيانات المنظمة الواسعة.</p>
+    </div>
+
+    <div class="card">
+      <h3>مرحلة التصميم — Bloom's Taxonomy <span class="en">Design Phase + Bloom's Taxonomy</span></h3>
+      <p class="bt">أهداف التعلم تُبنى وفق تصنيف Bloom الهرمي — من الأدنى للأعلى:</p>
+      <div class="bloom-stack">
+        <div class="bloom-lvl bl1"><span class="ar">1 — المعرفة: تذكّر الحقائق</span><span class="en">Knowledge — Remember</span></div>
+        <div class="bloom-lvl bl2"><span class="ar">2 — الفهم: التعرف حين يُعرَض بشكل مختلف</span><span class="en">Comprehension — Understand</span></div>
+        <div class="bloom-lvl bl3"><span class="ar">3 — التطبيق: استخدام المعرفة في سياق</span><span class="en">Application — Apply</span></div>
+        <div class="bloom-lvl bl4"><span class="ar">4 — التحليل: تشخيص الأسباب والنتائج</span><span class="en">Analysis — Analyze</span></div>
+        <div class="bloom-lvl bl5"><span class="ar">5 — التقييم: إصدار حكم على القيمة</span><span class="en">Evaluation — Evaluate</span></div>
+        <div class="bloom-lvl bl6"><span class="ar">6 — الإبداع: توليد حلول جديدة</span><span class="en">Synthesis/Creation — Create</span></div>
+      </div>
+      <div class="tip"><strong>🎯 مثال عملي:</strong> تدريب على التعامل مع التنمر في مكان العمل — لا يكفي أن يعرف الموظف تعريف التنمر (مستوى 1)، بل يجب أن يستطيع الاستجابة بشكل صحيح عند مواجهة حادثة فعلية (مستوى 3).</div>
+    </div>
+
+    <div class="card">
+      <h3>مرحلة التطوير والتنفيذ <span class="en">Development & Implementation</span></h3>
+      <div class="grid2">
+        <div class="gitem">
+          <h4>أنشطة التعلم التشاركية</h4>
+          <span class="en">Participatory Activities</span>
+          <p>دراسات حالة، تمارين الدور (Role Plays)، تمارين المحاكاة، مجموعة السمكة (Fishbowl)، العمل الجماعي. أعلى مستويات الاستيعاب.</p>
+        </div>
+        <div class="gitem">
+          <h4>اختبار تجريبي أولاً</h4>
+          <span class="en">Pilot Testing</span>
+          <p>يُقدَّم لعيّنة صغيرة قبل الإطلاق الرسمي. يكشف: تسلسل المحتوى، الوقت المخصص، ملاءمة الأنشطة الثقافية، الفجوات الإجرائية.</p>
+        </div>
+        <div class="gitem">
+          <h4>اختيار المدرّب</h4>
+          <span class="en">Instructor Selection</span>
+          <p>معايير: خبرة في التدريب، تخصص في الموضوع، مهارات استشارية، مصداقية لدى الجمهور المحلي، الإلمام الثقافي.</p>
+        </div>
+        <div class="gitem">
+          <h4>الاعتبارات اللوجستية</h4>
+          <span class="en">Logistical Considerations</span>
+          <p>الموقع، المعدات، المناطق الزمنية، الجداول المتعارضة، متطلبات الترجمة، الوصول للإنترنت، ترتيبات القاعة.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>مرحلة التقييم — Kirkpatrick <span class="en">Evaluation Phase — Kirkpatrick's 4 Levels</span></h3>
+      <table class="tbl">
+        <tr><th>المستوى</th><th>السؤال</th><th>كيف يُقاس؟</th></tr>
+        <tr><td><strong>1 — ردة الفعل</strong><br><em>Reaction</em></td><td>هل أحب المشاركون التدريب؟</td><td>استبيان رضا فوري بعد الجلسة</td></tr>
+        <tr><td><strong>2 — التعلم</strong><br><em>Learning</em></td><td>هل اكتسبوا معرفة ومهارة جديدة؟</td><td>اختبارات قبل/بعد، ملاحظة سلوكية</td></tr>
+        <tr><td><strong>3 — السلوك</strong><br><em>Behavior</em></td><td>هل طبّقوا ما تعلموه في العمل؟</td><td>ملاحظة 60-90 يوماً بعد التدريب</td></tr>
+        <tr><td><strong>4 — النتائج</strong><br><em>Results</em></td><td>هل تحسّن أداء المنظمة؟</td><td>مؤشرات أعمال: إنتاجية، جودة، إيرادات، دوران</td></tr>
+      </table>
+      <div class="note"><strong>📌 ROI كمستوى خامس:</strong> بعض المتخصصين يضيفون مستوى 5 — Return on Investment: (قيمة الفوائد − تكلفة البرنامج) ÷ تكلفة البرنامج × 100%.</div>
+    </div>
+
+    <div class="card">
+      <h3>نماذج تكميلية لـ ADDIE <span class="en">Alternative / Complementary Models</span></h3>
+      <div class="grid2">
+        <div class="gitem">
+          <h4>نموذج SAM</h4>
+          <span class="en">Successive Approximation Model (Allen)</span>
+          <p>نسخة مرنة من ADDIE — يجمع التغذية الراجعة من البداية عبر "Savvy Start" وتصميم متكرر. مناسب للمشاريع المتغيّرة.</p>
+        </div>
+        <div class="gitem">
+          <h4>رسم الإجراء</h4>
+          <span class="en">Action Mapping (Cathy Moore)</span>
+          <p>يربط التدريب مباشرةً بمقاييس الأداء المحددة. يرفض "إلقاء المعلومات" ويُركّز على ما يجب فعله فعلاً في العمل.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ S3: DELIVERY METHODS ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">3</div>
+      <div><h2>أساليب تقديم التدريب</h2><div class="en">Training Delivery Methods & Tools</div></div>
+    </div>
+
+    <div class="card">
+      <h3>الأساليب الأربعة الرئيسية <span class="en">4 Main Delivery Approaches</span></h3>
+      <div class="del-grid">
+        <div class="del-card dc1">
+          <h4>التعلم الذاتي</h4>
+          <span class="en">Self-Directed Study</span>
+          <div class="pros">✅ مرن ذاتي الإيقاع، فعّال التكلفة، متسق الرسالة</div>
+          <div class="cons">❌ يحتاج دافعية عالية، محدود التغذية الراجعة، قد يُفوّت مفاهيم</div>
+        </div>
+        <div class="del-card dc2">
+          <h4>تدريب وجاهي بمدرّب</h4>
+          <span class="en">Instructor-Led Training (ILT)</span>
+          <div class="pros">✅ تغذية راجعة فورية، أنشطة متنوعة، تبادل أفكار جماعي</div>
+          <div class="cons">❌ مكلف زمنياً وإدارياً، تقلّ المشاركة مع ازدياد العدد</div>
+        </div>
+        <div class="del-card dc3">
+          <h4>أثناء العمل OJT</h4>
+          <span class="en">On-the-Job Training</span>
+          <div class="pros">✅ تطبيق فوري في البيئة الحقيقية، تغذية راجعة مباشرة</div>
+          <div class="cons">❌ يحتاج توقيتاً دقيقاً، قد يشتت الزملاء، خطر سلامة محتمل</div>
+        </div>
+        <div class="del-card dc4">
+          <h4>التعلم المتمازج</h4>
+          <span class="en">Blended Learning</span>
+          <div class="pros">✅ يُدمج مزايا الأساليب، مرن ثقافياً، أعلى فاعلية بحسب البحوث</div>
+          <div class="cons">❌ يحتاج تنسيقاً أعلى، تكاليف كل أسلوب يجب مراعاتها</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>أدوات التقديم التكنولوجية <span class="en">Technology-Based Delivery Tools</span></h3>
+      <table class="tbl">
+        <tr><th>الأداة</th><th>ما تُقدّمه</th><th>المزية الأبرز</th></tr>
+        <tr><td><strong>E-Learning</strong></td><td>محتوى إلكتروني: متزامن (Synchronous) أو غير متزامن (Asynchronous)</td><td>توزيع واسع + مرونة الجدول</td></tr>
+        <tr><td><strong>LMS</strong><br><em>Learning Management System</em></td><td>نظام لإدارة التسجيل، تتبع الإتمام، الشهادات، المسارات</td><td>يُوفّر إدارة مركزية لكل برامج التدريب</td></tr>
+        <tr><td><strong>Webinar / Webconference</strong></td><td>تدريب مباشر عبر الإنترنت — أحادي أو ثنائي الاتجاه</td><td>فوائد الفصل الدراسي بتكاليف أقل</td></tr>
+        <tr><td><strong>التعلم عبر الجوال</strong><br><em>Mobile Learning</em></td><td>محتوى للهواتف والأجهزة اللوحية — بودكاست، تمارين، تقييمات</td><td>التعلم "في الوقت المناسب" أينما كان الموظف</td></tr>
+        <tr><td><strong>المحاكاة الافتراضية</strong><br><em>VR Simulation</em></td><td>بيئة عمل افتراضية — يتدرب في موقف واقعي بأمان</td><td>للمهارات الخطرة أو النادرة</td></tr>
+        <tr><td><strong>الذكاء الاصطناعي</strong><br><em>AI in L&D</em></td><td>تعلم مُخصَّص، Chatbots للإرشاد، تقييمات ذكية</td><td>تجربة تعلم شخصية لكل موظف</td></tr>
+      </table>
+      <div class="hl">
+        <p>💡 <strong>Gamification:</strong> تحويل عناصر الألعاب (نقاط، قوائم صدارة، تحديات) إلى بيئة التدريب. يرفع الانخراط — خاصةً للجيل Z.<br>
+        <strong>Microlearning:</strong> وحدات تعلم قصيرة جداً (3-5 دقائق). سهلة الوصول وعالية الاستيعاب للموظف المشغول.<br>
+        <strong>Just-in-Time Learning:</strong> المعلومة المطلوبة في اللحظة التي تُحتاج فيها — بدلاً من تدريب وقائي مرتفع التكلفة.</p>
+      </div>
+<div style="background:#e6f1fb;border-right:4px solid #185FA5;padding:14px 18px;margin:16px 0;border-radius:8px;">
+<strong style="color:#163456;">🆕 إضافات 2025 — Learning & Development</strong><br>
+أضافت نسخة 2025 صراحةً ضمن تقنيات التعلم والتطوير:<br>
+• <strong>Artificial Intelligence</strong> — الذكاء الاصطناعي في التعلم والتطوير<br>
+• <strong>Virtual Reality (VR)</strong> — الواقع الافتراضي في التدريب<br>
+• <strong>Chatbots</strong> — روبوتات المحادثة في التعلم<br>
+• <strong>Gamification</strong> — التلعيب في برامج التطوير<br>
+• <strong>Microlearning</strong> — التعلم المُصغَّر<br>
+• <strong>Podcasts & Infographics</strong> — محتوى التعلم الحديث
+</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ S4: CAREER DEVELOPMENT ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">4</div>
+      <div><h2>التطوير الوظيفي</h2><div class="en">Career Development</div></div>
+    </div>
+
+    <div class="card">
+      <h3>التطوير الوظيفي مسؤولية مشتركة <span class="en">Shared Responsibility</span></h3>
+      <div class="career-flow">
+        <div class="cf-box cf-ind">
+          <h4>👤 مسؤولية الفرد — Career Planning</h4>
+          <ul>
+            <li>تحديد القدرات والاهتمامات</li>
+            <li>وضع الأهداف المهنية</li>
+            <li>التواصل مع المدير حول الطموحات</li>
+            <li>المشاركة الفعّالة في فرص التطوير</li>
+          </ul>
+        </div>
+        <div class="cf-box cf-org">
+          <h4>🏢 مسؤولية المنظمة — Career Management</h4>
+          <ul>
+            <li>تحديد احتياجات القوى العاملة المستقبلية</li>
+            <li>بناء مسارات وظيفية واضحة</li>
+            <li>مطابقة احتياجات المنظمة بقدرات الأفراد</li>
+            <li>توفير فرص التطوير والتدريب</li>
+          </ul>
+        </div>
+      </div>
+      <div class="note"><strong>📌 القاعدة الجديدة:</strong> "الفرد يُقرّر والمنظمة تُهيّئ" — زحف توجّه الأجيال الجديدة نحو الملكية الشخصية للمسار المهني. المنظمة الذكية تدعم هذا التوجه.</div>
+    </div>
+
+    <div class="card">
+      <h3>خطة التطوير الفردية <span class="en">Individual Development Plan (IDP)</span></h3>
+      <p class="bt">IDP هو وثيقة تُحدّد نوايا الموظف وأهدافه التنموية والدعم المطلوب. يجب أن تشمل:</p>
+      <ul class="ilist">
+        <li><span class="dot"></span><strong>الملف الوظيفي:</strong> الاسم، المسمى، المشرف</li>
+        <li><span class="dot"></span><strong>الأهداف المهنية:</strong> أدوار قصيرة وطويلة الأمد مع جداول زمنية</li>
+        <li><span class="dot"></span><strong>أهداف التطوير:</strong> تربط الأهداف التنظيمية بطموحات الموظف</li>
+        <li><span class="dot g"></span><strong>التدخلات التدريبية:</strong> برامج رسمية، تدريب OJT، إرشاد، مشاريع</li>
+        <li><span class="dot g"></span><strong>مؤشرات القياس:</strong> كيف يُعرف أن الهدف تحقق؟</li>
+        <li><span class="dot g"></span><strong>توقيع الموظف والمشرف:</strong> مسؤولية مشتركة مُوثَّقة</li>
+      </ul>
+      <div class="tip"><strong>🎯 IDP فعّال = أهداف SMART:</strong> Specific (محدد) + Measurable (قابل للقياس) + Achievable (قابل للتحقيق) + Relevant (ذو صلة) + Time-based (محدد بوقت).</div>
+    </div>
+
+    <div class="card">
+      <h3>أشكال التطوير الوظيفي <span class="en">Career Development Methods</span></h3>
+      <div class="grid2">
+        <div class="gitem"><h4>رسم المسار الوظيفي</h4><span class="en">Career Mapping / Pathing</span><p>خريطة مُصمَّمة للموظف تُظهر الأدوار المستقبلية والمهارات اللازمة للوصول إليها.</p></div>
+        <div class="gitem"><h4>مسارات مهنية مزدوجة</h4><span class="en">Dual Career Ladders</span><p>مسار ترقٍّ للمتخصصين التقنيين دون فرض الإدارة. يُقلّل الدوران ويُحفّز المتفوقين.</p></div>
+        <div class="gitem"><h4>التنقل الداخلي</h4><span class="en">Internal Mobility</span><p>ترقية + نقل أفقي + إعادة توزيع + برامج السفر الدولي — يُوسّع الخبرة ويربط الموظف.</p></div>
+        <div class="gitem"><h4>التمرّن</h4><span class="en">Apprenticeship</span><p>جمع بين العمل الفعلي والتدريب الرسمي — شائع في المهن التقنية.</p></div>
+        <div class="gitem"><h4>البرامج الجامعية</h4><span class="en">Tuition Reimbursement</span><p>المنظمة تُموّل التعليم المستمر المرتبط بالوظيفة — استثمار في الكفاءات المستقبلية.</p></div>
+        <div class="gitem"><h4>مشاريع ولجان خاصة</h4><span class="en">Special Projects & Committees</span><p>تُعرّض الموظف لأجزاء مختلفة من المنظمة وتبني مهارات التعاون متعدد الثقافات.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ S5: COACHING VS MENTORING ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">5</div>
+      <div><h2>التدريب والإرشاد</h2><div class="en">Coaching vs. Mentoring</div></div>
+    </div>
+
+    <div class="card">
+      <h3>مقارنة التدريب والإرشاد <span class="en">Coaching vs. Mentoring — Key Differences</span></h3>
+      <table class="tbl">
+        <tr><th>البُعد</th><th>التدريب — Coaching</th><th>الإرشاد — Mentoring</th></tr>
+        <tr><td>التركيز</td><td>تحسين أداء محدد أو مهارة بعينها</td><td>النمو الشامل والمسار المهني</td></tr>
+        <tr><td>المدة</td><td>قصيرة الأمد — أسابيع أو أشهر</td><td>طويلة الأمد — أشهر أو سنوات</td></tr>
+        <tr><td>الأجندة</td><td>المدرّب لديه أجندة محددة لتغيير السلوك</td><td>المتعلم يُشكّل الأجندة بمساعدة المرشد</td></tr>
+        <tr><td>العلاقة</td><td>محترف مدرّب يطرح أسئلة</td><td>علاقة محايدة القوة — المرشد ليس المشرف المباشر</td></tr>
+        <tr><td>الهدف</td><td>أداء أفضل في الدور الحالي</td><td>تطوير القيادة والمسار الكامل</td></tr>
+      </table>
+      <div class="hl">
+        <p>💡 <strong>المرشد الرسمي vs غير الرسمي:</strong> الرسمي يُحدده HR ضمن برنامج منظّم مرتبط بالاستراتيجية، له أهداف وجدول زمني. غير الرسمي ينشأ طبيعياً من إعجاب المتعلم بالمرشد. كلاهما قيّم — لكن الرسمي يضمن التكافؤ في الوصول.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ S6: LEADER DEVELOPMENT ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">6</div>
+      <div><h2>تطوير القادة</h2><div class="en">Leader Development</div></div>
+    </div>
+
+    <div class="card">
+      <h3>لماذا تطوير القادة أولوية؟ <span class="en">Why Leader Development Matters</span></h3>
+      <ul class="ilist">
+        <li><span class="dot r"></span>ثلث رؤساء Fortune 500 يمكثون أقل من 3 سنوات</li>
+        <li><span class="dot r"></span>معدلات الفشل بين المسؤولين: 30-75%</li>
+        <li><span class="dot r"></span>أكثر من نصف المديرين الجدد يتعثّرون في البداية</li>
+        <li><span class="dot g"></span>جودة القيادة التنفيذية تُفسّر ما يصل إلى 45% من أداء المنظمة</li>
+        <li><span class="dot g"></span>3% فقط من المسؤولين يرون أن مؤسساتهم تُطوّر القادة جيداً!</li>
+      </ul>
+      <div class="note"><strong>📌 مفهوم القيادة في السياق الدولي:</strong> القيادة ليست مرتبطة بالمنصب أو السلطة الرسمية. القائد العالمي يُؤثّر عبر الثقافات — لا يفرض نموذجه المركزي.</div>
+    </div>
+
+    <div class="card">
+      <h3>أسباب فشل القادة <span class="en">Fatal Flaws of Leaders — Zenger & Folkman</span></h3>
+      <div class="grid2">
+        <div class="gitem" style="border-top:4px solid var(--red);">
+          <h4 style="color:var(--red);">5 عيوب قاتلة (Zenger & Folkman)</h4>
+          <span class="en">5 Fatal Flaws</span>
+          <p>① عدم التعلم من الأخطاء ② ضعف المهارات الشخصية ③ انغلاق الذهن ④ غياب المساءلة ⑤ نقص المبادرة</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid var(--accent2);">
+          <h4 style="color:var(--accent2);">7 عادات المسؤولين الفاشلين (Finkelstein)</h4>
+          <span class="en">7 Habits of Unsuccessful Executives</span>
+          <p>① الهيمنة ② التماهي الكامل مع الشركة ③ "امتلاك كل الإجابات" ④ قمع المعارضة ⑤ هوس الصورة ⑥ التقليل من العقبات ⑦ التمسك بما نجح سابقاً</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>أفضل ممارسات تطوير القادة <span class="en">CCL's Best Practices for Leader Development</span></h3>
+      <ul class="ilist">
+        <li><span class="dot g"></span><strong>المهام التحدية (70%):</strong> البدء من الصفر، إصلاح ما انكسر، مهام خارج بلد المنشأ، الانتقال بين الأدوار</li>
+        <li><span class="dot g"></span><strong>الإرشاد والتدريب (20%):</strong> تعلّم من رؤساء جيدين وسيئين — كلاهما مُعلِّم</li>
+        <li><span class="dot g"></span><strong>التدريب الرسمي (10%):</strong> أكثر فاعلية حين يأتي وقت الحاجة الفعلية وليس مُجدوَلاً</li>
+        <li><span class="dot g"></span><strong>التعلم الفعّال (Action Learning):</strong> تطبيق فوري لما تعلّم — يُجبر القائد على الأخذ بالتعلم جدياً</li>
+      </ul>
+      <div class="tip"><strong>🎯 قاعدة CCL:</strong> تطوير القادة يحدث أساساً عبر التجارب الوظيفية — لا التدريب في الفصول. الأسوأ أن يصبح الشخص خبيراً في شيء واحد فقط — يُضيّق أفقه ويُعيق نموه.</div>
+    </div>
+
+    <div class="card">
+      <h3>تقييم كفاءات القيادة <span class="en">Competency Assessment Tools for Leaders</span></h3>
+      <table class="tbl">
+        <tr><th>الأداة</th><th>ما تقيس</th><th>الاستخدام الأمثل</th></tr>
+        <tr><td><strong>تقييم 360 درجة</strong></td><td>بيانات كاملة: المشرف + الزملاء + المرؤوسون + العملاء</td><td>تطوير القادة وإحداث وعي ذاتي</td></tr>
+        <tr><td><strong>تقييم 180 درجة</strong></td><td>المشرف + الزملاء + المرؤوسون فقط (لا عملاء خارجيين)</td><td>المراجعات الداخلية</td></tr>
+        <tr><td><strong>SJTs</strong><br><em>Situation Judgment Tests</em></td><td>كيف يستجيب القائد لسيناريوهات واقعية</td><td>اختيار القادة وتقييم الكفاءة</td></tr>
+        <tr><td><strong>مراكز تقييم القيادة</strong><br><em>Assessment Centers</em></td><td>سلة بريد، محاكاة، نقاشات جماعية، مقابلات</td><td>ترقيات الإدارة والقيادة العليا</td></tr>
+        <tr><td><strong>تقييم الشخصية</strong><br><em>Personality Assessments</em></td><td>سمات القيادة: النزاهة، التوجه نحو الآخرين</td><td>فلترة المرشحين لبرامج المواهب</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- GLOSSARY -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">📖</div>
+      <div><h2>المصطلحات الأساسية — الجزء الخامس</h2></div>
+    </div>
+    <div class="card">
+      <table class="tbl">
+        <tr><th>المصطلح العربي</th><th>الإنجليزي</th><th>التعريف المختصر</th></tr>
+        <tr><td>أندراغوجي</td><td>Andragogy</td><td>علم تعليم البالغين — 6 افتراضات تُميّزه عن تعليم الأطفال</td></tr>
+        <tr><td>WIIFM</td><td>What's In It For Me?</td><td>أول سؤال في ذهن المتعلم البالغ — أجب عنه أولاً</td></tr>
+        <tr><td>ADDIE</td><td>Analysis/Design/Development/Implementation/Evaluation</td><td>نموذج تصميم تعليمي دوري وشامل</td></tr>
+        <tr><td>تصنيف Bloom</td><td>Bloom's Taxonomy</td><td>هرم أهداف التعلم: معرفة → فهم → تطبيق → تحليل → تقييم → إبداع</td></tr>
+        <tr><td>الاختبار التجريبي</td><td>Pilot Testing</td><td>تقديم البرنامج لعيّنة صغيرة قبل الإطلاق الرسمي</td></tr>
+        <tr><td>Kirkpatrick</td><td>4-Level Evaluation</td><td>ردة الفعل → التعلم → السلوك → النتائج</td></tr>
+        <tr><td>نموذج SAM</td><td>Successive Approximation Model</td><td>نسخة مرنة وتكرارية من ADDIE</td></tr>
+        <tr><td>رسم الإجراء</td><td>Action Mapping</td><td>ربط التدريب بمقاييس الأداء المحددة — يرفض إلقاء المعلومات</td></tr>
+        <tr><td>التعلم المتزامن</td><td>Synchronous Learning</td><td>تفاعل في الوقت الفعلي — فصل افتراضي مباشر</td></tr>
+        <tr><td>التعلم غير المتزامن</td><td>Asynchronous Learning</td><td>الوصول في أوقات مختلفة — وحدات إلكترونية مسجّلة</td></tr>
+        <tr><td>Microlearning</td><td>Microlearning</td><td>وحدات تعلم قصيرة جداً (3-5 دقائق) مُركّزة</td></tr>
+        <tr><td>التعلم في الوقت المناسب</td><td>Just-in-Time Learning</td><td>المعلومة المطلوبة في لحظة الحاجة الفعلية</td></tr>
+        <tr><td>خطة التطوير الفردية</td><td>IDP</td><td>وثيقة أهداف تنموية بمؤشرات ومسؤوليات مُوثَّقة</td></tr>
+        <tr><td>أهداف SMART</td><td>SMART Goals</td><td>محدد + قابل للقياس + قابل للتحقيق + ذو صلة + محدد بوقت</td></tr>
+        <tr><td>تقييم 360 درجة</td><td>360-Degree Assessment</td><td>تقييم من جميع الاتجاهات: مشرف + أقران + مرؤوسون</td></tr>
+        <tr><td>تعلم الأفعال</td><td>Action Learning</td><td>تطبيق فوري للمُتعلَّم على مشاكل حقيقية أثناء التعلم</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- INTEGRATION -->
+  <div class="overview" style="margin-top:30px;">
+    <h2>🔗 تكامل المفاهيم في هذا الجزء</h2>
+    <p style="line-height:2.1;">
+      <strong>Andragogy + ADDIE:</strong> مبادئ تعلّم البالغين تُحدّد أسلوب التصميم — إذا جاهلت Andragogy فـ ADDIE لن يُنتج برنامجاً فعّالاً.<br>
+      <strong>Kirkpatrick + Business Acumen:</strong> لا يكفي قياس المستوى 1 فقط (رضا المتدربين). القيادة تريد مستوى 4 (هل تحسّن الأداء فعلاً؟). HR يُبني الارتباط بين التدريب والنتائج التجارية.<br>
+      <strong>IDP + Employee Engagement:</strong> الموظف الذي يرى مسار نموه الواضح في المنظمة يبقى أكثر — الاستثمار في IDP استثمار في الاحتفاظ.
+    </p>
+<div style="background:#e1f5ee;border-right:4px solid #1D9E75;padding:14px 18px;margin:16px 0;border-radius:8px;">
+<strong style="color:#085041;">🆕 إضافات 2025 — Employee Engagement</strong><br>
+أضافت نسخة 2025 صراحةً:<br>
+• <strong>Stay Interviews</strong> (مقابلات البقاء) — أضيفت رسمياً لقائمة أساليب قياس انخراط الموظفين<br>
+• <strong>Retention Metrics</strong> — معدل دوران طوعي + معدل الشغور + جودة التوظيف<br>
+• <strong>Turnover at specific location or level</strong> — تحليل الدوران حسب الموقع أو المستوى الوظيفي
+</div>
+
+
+<div class="th-box">
+  <div class="th-header">
+    <div class="th-icon">⚡</div>
+    <div>
+      <div class="th-title">نظريات تصميم الوظيفة والانخراط — مع أمثلة</div>
+      <div class="th-subtitle">Hackman & Oldham · Bandura · Self-Efficacy · Job Design</div>
+    </div>
+  </div>
+  <div class="th-body">
+
+    <div class="th-formula">MPS = (Skill Variety + Task Identity + Task Significance) / 3 × Autonomy × Feedback</div>
+
+    <div class="th-stage-list">
+
+      <div class="th-stage">
+        <div class="th-sn" style="background:#e1f5ee;color:#085041;">1</div>
+        <div class="th-sc">
+          <strong>Hackman & Oldham — Job Characteristics Model</strong><br>
+          5 خصائص وظيفية تُنتج دافعية داخلية:<br>
+          • <strong>Skill Variety:</strong> تنوع المهارات → يُنتج شعوراً بالمعنى<br>
+          • <strong>Task Identity:</strong> إنجاز مهمة كاملة → شعور بالإنجاز<br>
+          • <strong>Task Significance:</strong> التأثير على الآخرين → قيمة العمل<br>
+          • <strong>Autonomy:</strong> الاستقلالية → إحساس بالمسؤولية<br>
+          • <strong>Feedback:</strong> معرفة النتائج → تحسين الأداء
+          <div class="th-example"><strong>مثال امتحاني:</strong> موظف data entry يُدخل بيانات متطابقة يومياً → Skill Variety منخفض + Task Significance منخفض → إنهاك وملل. الحل: Job Enrichment — إضافة مسؤولية تحليل البيانات وتقديم توصيات.</div>
+          <div class="th-example"><strong>الفروق المهمة:</strong><br>
+          Job Enrichment = مسؤوليات أعلى مستوى (رأسياً — نوعياً أفضل)<br>
+          Job Enlargement = مهام إضافية بنفس المستوى (أفقياً — كمياً أكثر)<br>
+          Job Rotation = تناوب بين أدوار مختلفة (تنوع ومنع الملل)</div>
+        </div>
+      </div>
+
+      <div class="th-stage">
+        <div class="th-sn" style="background:#e6f1fb;color:#0c447c;">2</div>
+        <div class="th-sc">
+          <strong>Bandura's Self-Efficacy — الفاعلية الذاتية</strong><br>
+          الاعتقاد الشخصي بالقدرة على أداء مهمة معينة = محدد قوي للأداء الفعلي.<br>
+          4 مصادر لبناء Self-Efficacy (من الأقوى للأضعف):<br>
+          1. <strong>Mastery Experiences:</strong> تجارب النجاح الشخصية (الأقوى)<br>
+          2. <strong>Vicarious Learning:</strong> مشاهدة الآخرين ينجحون<br>
+          3. <strong>Verbal Persuasion:</strong> تشجيع المدير والمحيط<br>
+          4. <strong>Physiological States:</strong> إدارة القلق والتوتر
+          <div class="th-example"><strong>مثال امتحاني:</strong> موظف مؤهل يتجنّب قيادة الاجتماعات الكبيرة. المشكلة: Self-Efficacy منخفض (وليس نقص كفاءة). الحل الأمثل لـ HR: تكليفه بقيادة اجتماع صغير أولاً (Mastery Experience) → نجاح → ثقة → اجتماعات أكبر.</div>
+          <div class="th-example"><strong>في الامتحان:</strong> "يمتلك المهارة لكنه يتجنّب المهمة" → Self-Efficacy. "لا يمتلك المهارة" → Training. الفرق جوهري في الحل.</div>
+        </div>
+      </div>
+
+      <div class="th-stage">
+        <div class="th-sn" style="background:#fff8e7;color:#633806;">3</div>
+        <div class="th-sc">
+          <strong>Goal-Setting Theory (Locke & Latham)</strong><br>
+          الأهداف المحددة الصعبة تُنتج أداءً أعلى من الأهداف الغامضة أو السهلة.<br>
+          شروط الفاعلية: <em>محدد + قابل للقياس + صعب لكن قابل للتحقيق + مقبول من الموظف</em>
+          <div class="th-example"><strong>مثال:</strong> "افعل قصارى جهدك" (هدف غامض) ← أداء أدنى من ← "حقّق 95% رضا العملاء هذا الشهر" (هدف SMART). الغموض = عدم يقين = أداء متذبذب.</div>
+        </div>
+      </div>
+
+      <div class="th-stage">
+        <div class="th-sn" style="background:#f3effe;color:#5b21b6;">4</div>
+        <div class="th-sc">
+          <strong>Pygmalion Effect في الإدارة</strong><br>
+          توقعات المدير العالية → تُنتج أداءً أعلى (نبوءة تُحقق ذاتها). توقعاته المنخفضة → أداء أدنى.
+          <div class="th-example"><strong>مثال HR:</strong> مدير يُعامل الموظف الجديد كموظف واعد (يُعطيه مهاماً صعبة، يثق به) → الموظف يرتقي للتوقعات. مدير يُعامله كضعيف → يصبح ضعيفاً فعلاً.</div>
+          <div class="th-example"><strong>تطبيق في التوظيف:</strong> تدريب المحكّمين على تجنّب Pygmalion Effect في المقابلات — التوقعات المسبقة (من السيرة الذاتية) تُؤثر على تقييم المقابلة.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="th-exam-tip">⭐ <strong>نصيحة الامتحان:</strong> Hackman & Oldham = تصميم الوظيفة. Bandura = الثقة بالنفس والأداء. Locke = قوة الأهداف الواضحة. Pygmalion = تأثير توقعات المدير.</div>
+  </div>
+</div>
+
+
+
+  </div>
+
+  <div class="tip" style="margin-top:22px;font-size:15px;">
+    <strong>🎯 نصيحة الامتحان:</strong> L&D سؤال مُفضَّل في الامتحان. الأسئلة المتكررة: الفرق بين مستويات Kirkpatrick (خاصةً 3 و4)، تصنيف Bloom وتطبيقه، الفرق بين التدريب والتطوير، ومتى تستخدم Coaching مقابل Mentoring. في SJI: الجواب الصحيح دائماً يبدأ بـ "حلّل الاحتياجات أولاً" قبل تصميم أي برنامج.
+  </div>
+
+  <!-- STUDY PLAN -->
+  <div class="overview" style="margin-top:36px;background:linear-gradient(135deg,#1a3a5c,#0d4060);">
+    <h2>📅 تقدّمك — 67% مكتمل 🎯</h2>
+    <table class="tbl" style="margin-top:14px;background:rgba(255,255,255,.08);">
+      <tr style="background:rgba(255,255,255,.15);">
+        <th style="background:transparent;color:#fff;">الجزء</th>
+        <th style="background:transparent;color:#fff;">الصفحات</th>
+        <th style="background:transparent;color:#fff;">المحتوى</th>
+        <th style="background:transparent;color:#fff;">الحالة</th>
+      </tr>
+      <tr style="color:#fff;font-size:14px;"><td>الأول</td><td>1–100</td><td>HR Strategy كامل</td><td>✅</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>الثاني</td><td>101–200</td><td>Talent Acquisition كامل</td><td>✅</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>الثالث</td><td>201–300</td><td>Talent Selection + Engagement مقدمة</td><td>✅</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>الرابع</td><td>301–400</td><td>Engagement (كامل) + إدارة الأداء + L&D مدخل</td><td>✅</td></tr>
+      <tr style="color:#fff;font-size:14px;background:rgba(200,168,75,.2);"><td><strong>الخامس ✅</strong></td><td><strong>401–500</strong></td><td><strong>L&D كامل: Andragogy + ADDIE + Kirkpatrick + أساليب التقديم + Career Dev + Leader Dev</strong></td><td>✅ أنت هنا</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>السادس</td><td>501–600</td><td>Total Rewards: الفلسفة + الأنظمة + المزايا</td><td>⏳ التالي</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>السابع</td><td>601–744</td><td>Total Rewards (تكملة) + مراجعة شاملة + نصائح الامتحان</td><td>⏳</td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <p>اطلب الجزء السادس (صفحات 501–600) متى شئت 🚀</p>
+    <p style="margin-top:6px;color:#aaa;">SHRM Learning System 2023 — People Domain · ملخص دراسي بالعربية</p>
+  </div>
+</div>
+</body>
+</html>

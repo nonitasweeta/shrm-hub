@@ -1,0 +1,2040 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHRM Flash Cards — بطاقات المراجعة 2023</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f0ede5;--card-bg:#fff;--navy:#0d1b2e;--navy2:#163456;
+  --gold:#c8a84b;--gold2:#e8c96a;--border:#ddd6c8;--text:#1a1a1a;--muted:#777;
+  --comp:#1a3a5c;--people:#1e7a4a;--org:#6d28d9;--wp:#c2410c;
+  --comp-l:#e8f2fb;--people-l:#e8f8ef;--org-l:#f3effe;--wp-l:#fff4ee;
+  --green:#15803d;--red:#b91c1c;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+
+/* ── HEADER ── */
+.hdr{background:linear-gradient(160deg,#0d1b2e 0%,#163456 60%,#1a3a1a 100%);padding:28px 24px 32px;color:#fff;text-align:center;}
+.hdr-badge{display:inline-flex;gap:7px;align-items:center;background:rgba(200,168,75,.15);border:1px solid rgba(200,168,75,.3);border-radius:30px;padding:5px 18px;font-size:12px;font-weight:600;color:var(--gold);letter-spacing:.04em;margin-bottom:14px;}
+.hdr h1{font-size:clamp(1.4rem,4vw,2rem);font-weight:800;margin-bottom:6px;}
+.hdr h1 em{color:var(--gold);font-style:normal;}
+.hdr p{font-size:.85rem;opacity:.6;margin-bottom:20px;}
+.hdr-stats{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+.hstat{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:9px 18px;text-align:center;}
+.hstat-n{font-size:1.2rem;font-weight:800;color:var(--gold);}
+.hstat-l{font-size:10px;opacity:.5;margin-top:2px;}
+
+/* ── BOOK TABS ── */
+.tabs-wrap{background:var(--navy);padding:0 16px;display:flex;gap:4px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.tabs-wrap::-webkit-scrollbar{display:none;}
+.tab{padding:13px 18px;font-size:13px;font-weight:600;font-family:'Tajawal',sans-serif;color:rgba(255,255,255,.45);border:none;background:none;cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap;display:flex;align-items:center;gap:7px;}
+.tab.active{color:#fff;border-bottom-color:var(--gold);}
+.tab-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+
+/* ── CONTROLS ── */
+.controls{padding:16px 20px;background:var(--card-bg);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.search-box{flex:1;min-width:160px;position:relative;}
+.search-box input{width:100%;padding:9px 36px 9px 14px;border:1.5px solid var(--border);border-radius:10px;font-size:13.5px;font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--text);outline:none;transition:border-color .15s;}
+.search-box input:focus{border-color:var(--gold);}
+.search-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);opacity:.4;font-size:15px;}
+.ctrl-btn{padding:8px 16px;border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-weight:600;font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--text);cursor:pointer;transition:all .15s;white-space:nowrap;}
+.ctrl-btn:hover{background:var(--navy);color:#fff;border-color:var(--navy);}
+.ctrl-btn.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+.prog-info{font-size:12px;color:var(--muted);white-space:nowrap;}
+
+/* ── PROGRESS BAR ── */
+.prog-bar{height:4px;background:var(--border);}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));transition:width .4s;}
+
+/* ── CARDS GRID ── */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:28px;padding:28px;}
+@media(max-width:640px){.cards-grid{grid-template-columns:1fr;padding:16px;gap:20px;}}
+
+/* ── FLIP CARD ── */
+.flip-wrap{perspective:1200px;}
+.flip-inner{position:relative;width:100%;min-height:260px;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.4,0,.2,1);cursor:pointer;}
+.flip-wrap.flipped .flip-inner{transform:rotateY(180deg);}
+.flip-front,.flip-back{position:absolute;width:100%;min-height:260px;backface-visibility:hidden;border-radius:18px;padding:20px;display:flex;flex-direction:column;border:1px solid var(--border);box-shadow:0 2px 12px rgba(0,0,0,.06);}
+.flip-back{transform:rotateY(180deg);direction:rtl;padding:24px;}
+
+/* FRONT */
+.flip-front{background:var(--card-bg);padding:24px;}
+.fc-book-tag{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:20px;display:inline-block;margin-bottom:12px;}
+.fc-cat{font-size:11px;color:var(--muted);margin-bottom:8px;font-family:'Outfit',sans-serif;}
+.fc-term-ar{font-size:1.35rem;font-weight:800;color:var(--navy);line-height:1.4;margin-bottom:10px;}
+.fc-term-en{font-size:.95rem;font-weight:500;color:var(--muted);font-family:'Outfit',sans-serif;font-style:italic;direction:ltr;text-align:right;}
+.fc-hint{margin-top:auto;padding-top:12px;font-size:11.5px;color:var(--muted);display:flex;align-items:center;justify-content:space-between;}
+.fc-hint-txt{opacity:.6;}
+.fc-flip-icon{font-size:18px;opacity:.35;}
+.fc-status{display:flex;gap:8px;margin-top:auto;padding-top:16px;}
+.status-btn{flex:1;padding:7px 4px;border:1.5px solid var(--border);border-radius:9px;font-size:12px;font-weight:700;font-family:'Tajawal',sans-serif;cursor:pointer;transition:all .15s;background:var(--bg);color:var(--text);}
+.status-btn.know{border-color:var(--green);color:var(--green);}
+.status-btn.know:hover,.status-btn.know.sel{background:var(--green);color:#fff;border-color:var(--green);}
+.status-btn.review{border-color:var(--gold);color:#92400e;}
+.status-btn.review:hover,.status-btn.review.sel{background:var(--gold);color:var(--navy);border-color:var(--gold);}
+.status-btn.hard{border-color:var(--red);color:var(--red);}
+.status-btn.hard:hover,.status-btn.hard.sel{background:var(--red);color:#fff;border-color:var(--red);}
+
+/* BACK */
+.flip-back{background:linear-gradient(160deg,#0d1b2e 0%,#163456 100%);}
+.fb-label{font-size:10px;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,.4);text-transform:uppercase;margin-bottom:10px;font-family:'Outfit',sans-serif;}
+.fb-def-ar{font-size:1rem;font-weight:500;color:#fff;line-height:1.75;margin-bottom:12px;}
+.fb-def-en{font-size:.85rem;color:rgba(255,255,255,.55);line-height:1.65;font-family:'Outfit',sans-serif;direction:ltr;text-align:right;font-style:italic;}
+.fb-formula{background:rgba(200,168,75,.15);border:1px solid rgba(200,168,75,.3);border-radius:10px;padding:10px 14px;margin:10px 0;font-size:.9rem;color:var(--gold);font-family:'Outfit',sans-serif;direction:ltr;text-align:center;font-weight:600;}
+.fb-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto;padding-top:12px;}
+.fb-tag{background:rgba(255,255,255,.08);border-radius:20px;padding:3px 10px;font-size:11px;color:rgba(255,255,255,.5);}
+.fb-back-btn{background:rgba(255,255,255,.1);border:none;border-radius:8px;padding:6px 14px;font-size:12px;color:rgba(255,255,255,.5);cursor:pointer;font-family:'Tajawal',sans-serif;margin-top:10px;transition:background .15s;}
+.fb-back-btn:hover{background:rgba(255,255,255,.18);}
+
+/* CARD STATUS INDICATORS */
+.flip-wrap[data-status="know"] .flip-front{border-color:var(--green);border-width:2px;}
+.flip-wrap[data-status="review"] .flip-front{border-color:var(--gold);border-width:2px;}
+.flip-wrap[data-status="hard"] .flip-front{border-color:var(--red);border-width:2px;}
+
+/* ── EMPTY STATE ── */
+.empty{text-align:center;padding:60px 20px;color:var(--muted);}
+.empty-ico{font-size:3rem;margin-bottom:12px;opacity:.4;}
+.empty-msg{font-size:.95rem;}
+
+/* ── BOOK COLORS ── */
+.book-comp .fc-book-tag{background:var(--comp-l);color:var(--comp);}
+.book-people .fc-book-tag{background:var(--people-l);color:var(--people);}
+.book-org .fc-book-tag{background:var(--org-l);color:var(--org);}
+.book-wp .fc-book-tag{background:var(--wp-l);color:var(--wp);}
+
+/* ── SUMMARY BAR ── */
+.summary{display:flex;gap:10px;padding:12px 20px;background:var(--card-bg);border-bottom:1px solid var(--border);flex-wrap:wrap;}
+.sum-item{display:flex;align-items:center;gap:6px;font-size:12.5px;}
+.sum-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+
+/* ── HERO MODE (single card) ── */
+.hero-mode .cards-grid{grid-template-columns:1fr;max-width:560px;margin:0 auto;}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="hdr-badge">📇 Flash Cards — بطاقات المراجعة</div>
+  <div class="hdr-badge" style="background:rgba(21,128,61,.15);border-color:rgba(21,128,61,.35);color:#4ade80;">✅ مُحدَّثة بتغييرات 2025</div>
+  <h1>SHRM 2023 — <em>بطاقات المراجعة الشاملة</em></h1>
+  <p>250 بطاقة · عربي وإنجليزي · الكتب الأربعة · محدَّثة بتغييرات نسخ 2024-2025</p>
+  <div class="hdr-stats">
+    <div class="hstat"><div class="hstat-n">250</div><div class="hstat-l">بطاقة</div></div>
+    <div class="hstat"><div class="hstat-n" id="knownCount">0</div><div class="hstat-l">أتقنتها ✓</div></div>
+    <div class="hstat"><div class="hstat-n" id="reviewCount">0</div><div class="hstat-l">للمراجعة</div></div>
+    <div class="hstat"><div class="hstat-n" id="hardCount">0</div><div class="hstat-l">صعبة</div></div>
+  </div>
+</div>
+
+<div class="tabs-wrap" id="tabsWrap"></div>
+<div class="prog-bar"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+
+<div class="controls">
+  <div class="search-box">
+    <span class="search-icon">🔍</span>
+    <input type="text" placeholder="ابحث عن مصطلح..." id="searchInput" oninput="filterCards()">
+  </div>
+  <button class="ctrl-btn" onclick="filterStatus('all')" id="btn-all">الكل</button>
+  <button class="ctrl-btn" onclick="filterStatus('know')" id="btn-know">✓ أعرفها</button>
+  <button class="ctrl-btn" onclick="filterStatus('review')" id="btn-review">⟳ للمراجعة</button>
+  <button class="ctrl-btn" onclick="filterStatus('hard')" id="btn-hard">✗ صعبة</button>
+  <button class="ctrl-btn" onclick="shuffleCards()">🔀 خلط</button>
+  <span class="prog-info" id="progInfo">0 / 250</span>
+</div>
+
+<div class="summary" id="summaryBar"></div>
+<div class="cards-grid" id="cardsGrid"></div>
+
+<script>
+// ══════════════════════════════════════════════════════════
+// ALL FLASH CARDS DATA — 200 Cards
+// ══════════════════════════════════════════════════════════
+const ALL_CARDS = [
+
+// ─────────────────────────────────────────
+// BOOK 1: COMPETENCIES (50 cards)
+// ─────────────────────────────────────────
+{id:1,book:"comp",bookName:"Competencies",cat:"Leadership",
+ar:"أسلوب القيادة التوجيهي",en:"Commanding Leadership Style",
+defAr:"يُناسب حالات الأزمات والانضباط — يُصدر أوامر واضحة ويتوقع الامتثال الفوري دون نقاش",
+defEn:"Best for crisis/compliance situations. Leader gives clear directives and expects immediate compliance. Low empathy, high control.",
+tags:["Goleman","Leadership Styles"]},
+
+{id:2,book:"comp",bookName:"Competencies",cat:"Leadership",
+ar:"أسلوب القيادة التدريبي",en:"Coaching Leadership Style",
+defAr:"يُناسب الموظفين الراغبين في التطوير — يربط المهام بالأهداف المهنية الشخصية للموظف",
+defEn:"Best when employees want to grow. Leader connects assignments to the employee's personal career development goals.",
+tags:["Goleman","Leadership Styles"]},
+
+{id:3,book:"comp",bookName:"Competencies",cat:"Leadership",
+ar:"أسلوب القيادة الانسجامي",en:"Affiliative Leadership Style",
+defAr:"يُناسب بناء التناسق العاطفي وإصلاح الثقة — يضع الناس والعلاقات فوق الأهداف",
+defEn:"Best for healing rifts and building harmony. People and emotions come first. Avoids confrontation.",
+tags:["Goleman","Leadership Styles"]},
+
+{id:4,book:"comp",bookName:"Competencies",cat:"Leadership",
+ar:"أسلوب القيادة الديمقراطي",en:"Democratic Leadership Style",
+defAr:"يُناسب بناء التوافق — يشرك الفريق في القرارات ويحصل على الالتزام عبر المشاركة",
+defEn:"Best for building consensus and commitment. Engages the team in decision-making through participation and discussion.",
+tags:["Goleman","Leadership Styles"]},
+
+{id:5,book:"comp",bookName:"Competencies",cat:"Leadership",
+ar:"أسلوب القيادة الاستشرافي",en:"Visionary Leadership Style",
+defAr:"يُناسب الحاجة إلى توجيه جديد — يُلهم الفريق نحو رؤية مشتركة مقنعة للمستقبل",
+defEn:"Best when a new direction is needed. Inspires the team by articulating a compelling vision of where they're going.",
+tags:["Goleman","Leadership Styles"]},
+
+{id:6,book:"comp",bookName:"Competencies",cat:"Leadership",
+ar:"أسلوب القيادة بالقدوة",en:"Pacesetting Leadership Style",
+defAr:"يُناسب الفرق عالية الأداء المحفوزة — يضع القائد معايير أداء عالية ويُظهرها بنفسه",
+defEn:"Best for highly motivated, competent teams. Leader models high performance standards. Can be demoralizing if overused.",
+tags:["Goleman","Leadership Styles"]},
+
+{id:7,book:"comp",bookName:"Competencies",cat:"Change Management",
+ar:"نموذج التغيير ثلاثي المراحل",en:"Lewin's Change Model",
+defAr:"ثلاث مراحل: إذابة الجليد (Unfreeze) ← التغيير (Change) ← إعادة التجميد (Refreeze)",
+defEn:"Three phases: Unfreeze (prepare for change) → Change (implement) → Refreeze (anchor new behaviors). Foundational change model.",
+formula:"Unfreeze → Change → Refreeze",
+tags:["Change Management","Lewin"]},
+
+{id:8,book:"comp",bookName:"Competencies",cat:"Change Management",
+ar:"نموذج كوتر — 8 خطوات",en:"Kotter's 8-Step Change Model",
+defAr:"يوسّع نموذج Lewin إلى 8 خطوات تفصيلية — من بناء الإلحاح حتى ترسيخ التغيير في الثقافة",
+defEn:"Expands Lewin into 8 operational steps: Urgency → Coalition → Vision → Communicate → Empower → Wins → Build → Anchor.",
+tags:["Change Management","Kotter"]},
+
+{id:9,book:"comp",bookName:"Competencies",cat:"Change Management",
+ar:"ترسيخ التغيير (الخطوة 8)",en:"Anchoring Change — Kotter Step 8",
+defAr:"جعل السلوكيات الجديدة هي الافتراضية عبر ربطها بالثقافة وأنظمة التوظيف والترقية والأداء",
+defEn:"Making new behaviors the default by embedding them in culture, hiring/promotion decisions, and HR systems. Without this, change reverts.",
+tags:["Kotter","Change Management"]},
+
+{id:10,book:"comp",bookName:"Competencies",cat:"Situational Leadership",
+ar:"القيادة الظرفية — Hersey & Blanchard",en:"Situational Leadership Model",
+defAr:"أسلوب القيادة يجب أن يتطابق مع مستوى نضج الموظف (كفاءة + التزام) في كل مهمة محددة",
+defEn:"Leadership style must match the employee's development level for each specific task. 4 styles: Directing, Coaching, Supporting, Delegating.",
+tags:["Hersey","Blanchard","Leadership"]},
+
+{id:11,book:"comp",bookName:"Competencies",cat:"Situational Leadership",
+ar:"التفويض (D4) — قيادة ظرفية",en:"Delegating Style — D4",
+defAr:"يُناسب الموظف عالي الكفاءة والالتزام — القائد يُفوّض بشكل كامل مع أدنى توجيه أو دعم",
+defEn:"Used for D4 employees: high competence + high commitment. Leader provides low task and low relationship behavior — hands off.",
+tags:["Situational Leadership"]},
+
+{id:12,book:"comp",bookName:"Competencies",cat:"Ethics",
+ar:"الأخلاق المهنية التنظيمية (Role Morality)",en:"Role Morality",
+defAr:"مخاطر تبرير سلوك غير أخلاقي بحجة 'دوري يتطلب ذلك' — يُزيل المسؤولية الأخلاقية الشخصية",
+defEn:"Risk of justifying unethical behavior by saying 'my role requires it.' A dangerous reasoning error that removes personal moral agency.",
+tags:["Ethics","SHRM Code"]},
+
+{id:13,book:"comp",bookName:"Competencies",cat:"Ethics",
+ar:"المناصرة المزدوجة",en:"Dual Advocacy",
+defAr:"HR يجب أن يُناصر كلاً من الموظفين (العدالة والرفاهية) والمنظمة (الفاعلية والقانونية) في آنٍ واحد",
+defEn:"HR serves both employees (fairness/wellbeing) and the organization (effectiveness/legality) simultaneously without subordinating either.",
+tags:["Ethics","HR Role"]},
+
+{id:14,book:"comp",bookName:"Competencies",cat:"DEI",
+ar:"التمييز الإيجابي مقابل المساواة",en:"Equity vs. Equality",
+defAr:"المساواة = نفس المعاملة للجميع. العدالة = دعم متباين بحسب الاحتياجات لضمان تكافؤ الفرص الحقيقي",
+defEn:"Equality = same treatment for all. Equity = differentiated support based on individual needs to create genuinely fair opportunities.",
+tags:["DEI","Core Concepts"]},
+
+{id:15,book:"comp",bookName:"Competencies",cat:"DEI",
+ar:"التحيز الضمني",en:"Implicit Bias",
+defAr:"تحيزات تعمل تحت مستوى الوعي — يعتقد صاحبها أنه موضوعي بينما تؤثر على قراراته بشكل منهجي",
+defEn:"Automatic unconscious associations that shape judgments without awareness. The actor believes they're being objective while producing biased outcomes.",
+tags:["DEI","Bias"]},
+
+{id:16,book:"comp",bookName:"Competencies",cat:"DEI",
+ar:"التقاطعية",en:"Intersectionality",
+defAr:"هويات الفرد المتعددة (عرق، جنس، إعاقة) تتفاعل وتتراكم — التحليل بفئة واحدة يُغفل هذا التراكم",
+defEn:"Multiple identities (race, gender, disability, age) interact and compound disadvantage in ways single-category analysis misses. Coined by Kimberlé Crenshaw.",
+tags:["DEI","Intersectionality"]},
+
+{id:17,book:"comp",bookName:"Competencies",cat:"DEI",
+ar:"الأمان النفسي",en:"Psychological Safety",
+defAr:"الإيمان بأن التحدث أو المخاطرة لن يُفضي إلى عواقب سلبية غير متناسبة — حيوي لمشاركة الموظفين من المجموعات المهمّشة",
+defEn:"The belief one can speak up without disproportionate negative consequences. Disproportionately affects underrepresented groups who face higher stakes.",
+tags:["DEI","Engagement"]},
+
+{id:18,book:"comp",bookName:"Competencies",cat:"Communication",
+ar:"التواصل ذو الاتجاهين",en:"Two-Way Communication",
+defAr:"يُنشئ آليات للمستلمين للرد والسؤال وتقديم ردود الفعل — يُتيح للتأكد من الفهم وتعديل الرسالة",
+defEn:"Creates feedback loops that verify understanding and allow adjustment. The value is dialogue, not broadcast. Critical for HR program adoption.",
+tags:["Communication"]},
+
+{id:19,book:"comp",bookName:"Competencies",cat:"Communication",
+ar:"الإطار / التأطير",en:"Framing",
+defAr:"تقديم المعلومات في سياق يُشكّل كيفية تفسير الجمهور لمعناها وأهميتها — يُؤثر الإطار على الإدراك",
+defEn:"How information is presented shapes how it's perceived. '30% fewer employees' vs. 'focusing on higher-value work' — same fact, different impact.",
+tags:["Communication"]},
+
+{id:20,book:"comp",bookName:"Competencies",cat:"Consultation",
+ar:"نموذج عملية الاستشارة",en:"HR Consultation Process Model",
+defAr:"دخول → تشخيص → جمع بيانات → تغذية راجعة → حل → تنفيذ → تقييم. التشخيص قبل الحل دائماً",
+defEn:"Entry → Diagnosis → Data gathering → Feedback → Solution → Implementation → Evaluation. Always diagnose before prescribing.",
+formula:"Entry → Diagnose → Data → Feedback → Solve → Implement → Evaluate",
+tags:["Consultation"]},
+
+{id:21,book:"comp",bookName:"Competencies",cat:"Consultation",
+ar:"المشكلة الظاهرة مقابل السبب الجذري",en:"Presenting Problem vs. Root Cause",
+defAr:"المشكلة الظاهرة هي العَرَض. السبب الجذري هو المحرّك الكامن. معالجة العَرَض وحده تُعيد المشكلة مجدداً",
+defEn:"Presenting problem = the symptom. Root cause = the underlying driver. Treating only the symptom leads to recurrence. Always diagnose the root cause.",
+tags:["Consultation"]},
+
+{id:22,book:"comp",bookName:"Competencies",cat:"Business Acumen",
+ar:"بطاقة الأداء المتوازن",en:"Balanced Scorecard",
+defAr:"ربط استثمارات التعلم والنمو (بما فيها HR) بالعمليات الداخلية ثم نتائج العملاء ثم الأداء المالي",
+defEn:"Links Learning & Growth (including HR) → Internal Processes → Customer Outcomes → Financial Performance. Makes the people-to-profit causal chain visible.",
+formula:"Learning & Growth → Processes → Customers → Financial",
+tags:["Business Acumen","Kaplan Norton"]},
+
+{id:23,book:"comp",bookName:"Competencies",cat:"Business Acumen",
+ar:"تحليل SWOT في استراتيجية HR",en:"SWOT Analysis in HR Strategy",
+defAr:"نقاط القوة والضعف (داخلية) + الفرص والتهديدات (خارجية) = وعي موقفي لتطوير استراتيجية HR",
+defEn:"Strengths/Weaknesses (internal) + Opportunities/Threats (external) = situational awareness for HR strategy development.",
+formula:"S+W (internal) + O+T (external)",
+tags:["Business Acumen","Strategy"]},
+
+{id:24,book:"comp",bookName:"Competencies",cat:"Critical Evaluation",
+ar:"الارتباط ≠ السببية",en:"Correlation ≠ Causation",
+defAr:"متغيّران يتحركان معاً إحصائياً دون إثبات أن أحدهما يُسبّب الآخر — متغير ثالث قد يُفسّر كليهما",
+defEn:"Two variables moving together statistically doesn't prove causation. A third (confounding) variable may explain both. Critical for HR data interpretation.",
+tags:["Critical Evaluation","Analytics"]},
+
+{id:25,book:"comp",bookName:"Competencies",cat:"Critical Evaluation",
+ar:"نموذج كيركباتريك — 4 مستويات",en:"Kirkpatrick 4-Level Model",
+defAr:"المستوى 1: ردة الفعل. المستوى 2: التعلم. المستوى 3: السلوك. المستوى 4: النتائج. معظم التدريب يتوقف عند 1-2",
+defEn:"Level 1: Reaction (satisfaction). Level 2: Learning (knowledge). Level 3: Behavior (application). Level 4: Results (business impact).",
+formula:"Reaction → Learning → Behavior → Results",
+tags:["L&D","Kirkpatrick"]},
+
+{id:26,book:"comp",bookName:"Competencies",cat:"Critical Evaluation",
+ar:"عائد الاستثمار في HR",en:"HR ROI Formula",
+defAr:"صافي الفائدة (الفائدة − التكلفة) مقسوماً على التكلفة × 100 — يُترجم استثمار HR إلى لغة مالية",
+defEn:"(Net Benefit / Cost) × 100 = ROI%. Example: Program costs $500K, saves $900K in turnover → Net Benefit $400K → ROI = 80%.",
+formula:"ROI = (Benefit − Cost) / Cost × 100",
+tags:["Business Acumen","ROI"]},
+
+{id:27,book:"comp",bookName:"Competencies",cat:"HR Expertise",
+ar:"عرض قيمة الموظف",en:"Employee Value Proposition (EVP)",
+defAr:"مجموعة المكافآت والتجارب والسمات التي تُميّز صاحب العمل وتُؤثر على لماذا يختار الموهوب العمل هنا",
+defEn:"The full set of attributes, rewards, and experiences that distinguish an employer and influence why talent chooses and stays. Answers 'Why work here?'",
+tags:["Talent Acquisition","EVP"]},
+
+{id:28,book:"comp",bookName:"Competencies",cat:"HR Expertise",
+ar:"تحليل الوظيفة",en:"Job Analysis",
+defAr:"تحديد المهام والواجبات والمعرفة والمهارات والقدرات لوظيفة ما — الأساس لكل وظائف HR الأخرى",
+defEn:"Systematically identifying tasks, duties, KSAs for a job. The foundation for valid selection, compensation, performance management, and training.",
+tags:["HR Expertise","Job Design"]},
+
+{id:29,book:"comp",bookName:"Competencies",cat:"HR Expertise",
+ar:"نسبة Compa-Ratio",en:"Compa-Ratio",
+defAr:"الراتب الفعلي ÷ منتصف النطاق المرجعي. 1.0 = عند المنتصف، <1.0 تحت المنتصف، >1.0 فوق المنتصف",
+defEn:"Actual Pay ÷ Range Midpoint. 1.0 = at midpoint (market competitive). Below 1.0 = below market. Above 1.0 = above market. Used for pay equity analysis.",
+formula:"Compa-Ratio = Actual Pay ÷ Midpoint",
+tags:["Total Rewards","Compensation"]},
+
+{id:30,book:"comp",bookName:"Competencies",cat:"HR Expertise",
+ar:"تخطيط الخلافة الوظيفية",en:"Succession Planning",
+defAr:"بناء خطوط أنابيب استباقية لمرشحين داخليين مؤهلين للأدوار الحاسمة — يُقلل الاعتماد على التوظيف الخارجي الطارئ",
+defEn:"Proactively building pipelines of qualified internal candidates for critical roles. Reduces time-to-fill for critical vacancies and retains development-focused employees.",
+tags:["HR Expertise","Succession"]},
+
+{id:31,book:"comp",bookName:"Competencies",cat:"Relationship Management",
+ar:"التأثير بدون سلطة",en:"Influence Without Authority",
+defAr:"تحقيق نتائج من خلال التعاون مع القادة الذين لا علاقة تبعية بينهم وبين HR — المهارة الأساسية للـ HRBP",
+defEn:"Achieving outcomes when you can't mandate compliance. Since HR rarely has line authority over business leaders, this is how HR operates most of the time.",
+tags:["Relationship Management"]},
+
+{id:32,book:"comp",bookName:"Competencies",cat:"Relationship Management",
+ar:"العقد النفسي",en:"Psychological Contract",
+defAr:"مجموعة التوقعات المتبادلة غير المكتوبة بين الموظف وصاحب العمل — انتهاكه يُفضي إلى انفصال الموظف",
+defEn:"The informal, unwritten set of mutual expectations between employee and employer. When violated, disengagement or exit follows even without formal breach.",
+tags:["Relationship Management","Engagement"]},
+
+{id:33,book:"comp",bookName:"Competencies",cat:"Global",
+ar:"نموذج هوفستيد — المسافة من السلطة",en:"Hofstede: Power Distance",
+defAr:"درجة قبول الأعضاء الأقل قوة للتوزيع غير المتساوي للسلطة — يُؤثر على أسلوب التواصل والإدارة",
+defEn:"Degree to which less powerful members accept unequal power distribution. High PD = expect hierarchy/deference. Low PD = expect consultation/flat structures.",
+tags:["Global","Hofstede"]},
+
+{id:34,book:"comp",bookName:"Competencies",cat:"Global",
+ar:"نموذج هوفستيد — الفردية مقابل الجماعية",en:"Hofstede: Individualism vs. Collectivism",
+defAr:"يُؤثر مباشرةً على تصميم أنظمة المكافآت — الثقافات الفردية تتوقع مكافآت أداء فردية، الجماعية تُفضّل المكافآت الجماعية",
+defEn:"Directly impacts reward design. High individualism (US) expects individual performance pay. High collectivism may find individual rankings divisive.",
+tags:["Global","Hofstede"]},
+
+{id:35,book:"comp",bookName:"Competencies",cat:"Global",
+ar:"التواضع الثقافي",en:"Cultural Humility",
+defAr:"توجّه تعلّم مستمر + وعي ذاتي حول افتراضاتنا الثقافية — يختلف عن الكفاءة الثقافية بالتأكيد على الفضول المستمر",
+defEn:"Lifelong learning orientation + self-awareness about one's own cultural assumptions. Differs from cultural competence by emphasizing ongoing curiosity over mastery.",
+tags:["Global","Cultural Effectiveness"]},
+
+{id:36,book:"comp",bookName:"Competencies",cat:"Leadership",
+ar:"القيادة الخادمة",en:"Servant Leadership (Greenleaf)",
+defAr:"الدور الأول للقائد هو تمكين الآخرين من الازدهار — يضع احتياجات الأتباع قبل أجندة القائد الخاصة",
+defEn:"Leader's primary role is enabling others to flourish — developing capability, removing obstacles, building trust. Followers exist to be served, not the reverse.",
+tags:["Leadership Styles"]},
+
+{id:37,book:"comp",bookName:"Competencies",cat:"Leadership",
+ar:"القيادة التحويلية مقابل التبادلية",en:"Transformational vs. Transactional",
+defAr:"التحويلية: إلهام الأتباع نحو رؤية تتجاوز مصلحتهم الذاتية. التبادلية: أداء مقابل مكافأة — تبادل منظّم",
+defEn:"Transformational: inspiring followers toward a vision beyond self-interest. Transactional: exchange-based — performance for reward, monitoring, short-term.",
+tags:["Leadership Styles"]},
+
+{id:38,book:"comp",bookName:"Competencies",cat:"DEI",
+ar:"الرعاية (Sponsorship) مقابل الإرشاد (Mentorship)",en:"Sponsorship vs. Mentorship",
+defAr:"الإرشاد: نصيحة وتوجيه في محادثة مباشرة. الرعاية: استخدام رأس المال التنظيمي للمناصرة والترشيح عندما لا يكون الشخص حاضراً",
+defEn:"Mentorship = advice in conversation. Sponsorship = using organizational capital to advocate for someone in rooms they don't attend. Sponsorship is more powerful for advancement.",
+tags:["DEI","Career Development"]},
+
+{id:39,book:"comp",bookName:"Competencies",cat:"Business Acumen",
+ar:"نموذج الأعمال",en:"Business Model",
+defAr:"كيف تخلق المنظمة وتُقدّم وتلتقط القيمة — فهمه يُحدد أي القدرات البشرية هي الأكثر أهمية استراتيجياً لـ HR",
+defEn:"How the organization creates, delivers, and captures value. Understanding it determines what human capital capabilities HR must prioritize protecting and developing.",
+tags:["Business Acumen","Strategy"]},
+
+{id:40,book:"comp",bookName:"Competencies",cat:"Critical Evaluation",
+ar:"تحيز الاختيار في الأبحاث",en:"Selection Bias",
+defAr:"عندما تختلف مجموعة المقارنة منهجياً عن مجموعة التدخل — يجعل استنتاجات السببية مشككاً فيها",
+defEn:"When the comparison group systematically differs from the intervention group (e.g., high-potential employees selected for leadership programs). Makes causal conclusions suspect.",
+tags:["Critical Evaluation","Analytics"]},
+
+{id:41,book:"comp",bookName:"Competencies",cat:"HR Expertise",
+ar:"إدارة الأداء — تكرار التغذية الراجعة",en:"Performance Management: Feedback Frequency",
+defAr:"تكرار التغذية الراجعة — وليس تصميم نموذج التقييم — هو المحرك الأساسي لفاعلية إدارة الأداء",
+defEn:"Feedback frequency — not rating scale design — is the primary driver of performance management effectiveness. Annual reviews cannot substitute for ongoing developmental dialogue.",
+tags:["HR Expertise","Performance"]},
+
+{id:42,book:"comp",bookName:"Competencies",cat:"HR Expertise",
+ar:"تحليل احتياجات التدريب",en:"Training Needs Analysis",
+defAr:"الخطوة الأولى: تحديد ما إذا كانت الفجوة ناجمة عن نقص المعرفة/المهارة (التدريب مفيد) أم عوامل أخرى (التدريب لن يُساعد)",
+defEn:"First step: determine if the gap is caused by knowledge/skill deficiency (training helps) or process/motivation/resource issues (training won't help). Don't train for non-training problems.",
+tags:["L&D","Needs Analysis"]},
+
+{id:43,book:"comp",bookName:"Competencies",cat:"HR Expertise",
+ar:"نموذج 70-20-10",en:"70-20-10 Learning Model",
+defAr:"70% من التجربة الميدانية والمهام التحدية. 20% من العلاقات والتوجيه. 10% من التدريب الرسمي",
+defEn:"70% = on-the-job experience and stretch assignments. 20% = relationships, mentors, coaches, feedback. 10% = formal training and courses.",
+formula:"70% Experiential + 20% Social + 10% Formal",
+tags:["L&D","Learning Design"]},
+
+{id:44,book:"comp",bookName:"Competencies",cat:"HR Expertise",
+ar:"التخطيط للقوى العاملة — توقع الطلب",en:"Workforce Planning: Demand Forecasting",
+defAr:"تقدير عدد ونوع الموظفين الذين ستحتاجهم المنظمة لتحقيق أهدافها الاستراتيجية في أفق زمني محدد",
+defEn:"Estimating the number and type of employees needed to achieve strategic objectives in a future time horizon. The demand side of the workforce plan.",
+tags:["HR Expertise","Workforce Planning"]},
+
+{id:45,book:"comp",bookName:"Competencies",cat:"HR Expertise",
+ar:"الأجر المتغير",en:"Variable Pay",
+defAr:"يكون الأكثر فاعلية عندما: الأداء قابل للقياس + خط بصري واضح بين السلوك والمقياس + الخطة تموّل نفسها بالتحسين",
+defEn:"Most effective when: performance is measurable, line of sight between behavior and metric is clear, and the plan is self-funded by the performance improvement it drives.",
+tags:["Total Rewards","Variable Pay"]},
+
+{id:46,book:"comp",bookName:"Competencies",cat:"Consultation",
+ar:"تحيز الاختيار في أبحاث تأثير البرامج",en:"Selection Bias in Program Evaluation",
+defAr:"الموظفون المُختارون لبرنامج قيادي غالباً عالو الإمكانات مسبقاً — نجاحهم قد يعكس ذلك لا البرنامج ذاته",
+defEn:"Employees selected for leadership programs are often already high-potential. Their success may reflect pre-existing potential, not the program's impact. Requires control group.",
+tags:["Critical Evaluation","L&D"]},
+
+{id:47,book:"comp",bookName:"Competencies",cat:"Change Management",
+ar:"التغيير الأكثر إهمالاً — إدارة المقاومة",en:"Managing Resistance — Kotter Step 7",
+defAr:"إزالة العوائق: المديرون والهياكل والعمليات التي تُعيق التغيير يجب تحديدها وإزالتها أو إصلاحها بفاعلية",
+defEn:"Removing obstacles: managers, structures, and processes blocking change must be identified and actively addressed. This step is most often skipped — causing change failure.",
+tags:["Kotter","Change Management"]},
+
+{id:48,book:"comp",bookName:"Competencies",cat:"Ethics",
+ar:"الإبلاغ عن المخالفات — واجب HR",en:"Whistleblowing — HR's Obligation",
+defAr:"HR ملزم بالتحقيق بعدالة واتخاذ إجراء مناسب — بصرف النظر عن مستوى وعلاقات المتهم. الجميع أمام المعايير سواء",
+defEn:"HR must investigate fairly and act on findings regardless of seniority, relationships, or performance. Equal accountability is both an ethical and legal requirement.",
+tags:["Ethics","Investigations"]},
+
+{id:49,book:"comp",bookName:"Competencies",cat:"HR Expertise",
+ar:"التوظيف المهمل",en:"Negligent Hiring",
+defAr:"مسؤولية صاحب العمل عن عدم التحقق من سجل المرشح — خاصةً للأدوار ذات الوصول إلى الفئات الضعيفة",
+defEn:"Employer liability for failing to check a candidate's background for roles with access to vulnerable populations. Balanced by FCRA requirements on adverse action process.",
+tags:["HR Expertise","Legal Risk"]},
+
+{id:50,book:"comp",bookName:"Competencies",cat:"HR Expertise",
+ar:"التحيز الضمني في التوظيف بالذكاء الاصطناعي",en:"AI Hiring Tools & Adverse Impact",
+defAr:"أدوات التوظيف بالذكاء الاصطناعي خاضعة لنفس معايير عدم التمييز كالمحكمين البشريين — التحقق المستقل من التأثير المتعارض مطلوب",
+defEn:"AI hiring tools are subject to the same non-discrimination standards as human raters. Independent adverse impact validation is required before deployment. Vendor certification is insufficient.",
+tags:["HR Expertise","Technology","Legal"]},
+
+// ─────────────────────────────────────────
+// BOOK 2: PEOPLE DOMAIN (50 cards)
+// ─────────────────────────────────────────
+{id:51,book:"people",bookName:"People Domain",cat:"Talent Acquisition",
+ar:"نسبة الخُمسة الأرباع (80%)",en:"4/5ths Rule (Adverse Impact)",
+defAr:"إذا كان معدل اختيار أي مجموعة أقل من 80% من معدل المجموعة الأعلى → مؤشر على التأثير المتعارض",
+defEn:"If any group's selection rate is less than 80% of the highest-selected group's rate → adverse impact is indicated. Example: 30% ÷ 50% = 60% < 80%.",
+formula:"Adverse Impact if: (Group Rate ÷ Highest Rate) < 80%",
+tags:["Talent Acquisition","Legal","EEO"]},
+
+{id:52,book:"people",bookName:"People Domain",cat:"Talent Acquisition",
+ar:"المقابلة المنظّمة",en:"Structured Interview",
+defAr:"نفس الأسئلة + نفس الترتيب + معايير تقييم موحّدة لجميع المرشحين = صدق وثبات وقابلية للدفاع قانونياً",
+defEn:"Same questions, same order, standardized scoring rubric for all candidates. Improves reliability, validity, and legal defensibility over unstructured interviews.",
+tags:["Talent Acquisition","Selection"]},
+
+{id:53,book:"people",bookName:"People Domain",cat:"Talent Acquisition",
+ar:"تقنية STAR في المقابلات",en:"STAR Behavioral Interview Technique",
+defAr:"الموقف → المهمة → الإجراء (الأهم: ماذا فعل هو بالتحديد؟) → النتيجة. الإجراء هو جوهر الكشف عن السلوك الفعلي",
+defEn:"Situation → Task → Action (most critical: what did THEY specifically do?) → Result. Action separates individual contribution from team or contextual factors.",
+formula:"Situation → Task → Action → Result",
+tags:["Talent Acquisition","Interviewing"]},
+
+{id:54,book:"people",bookName:"People Domain",cat:"Talent Acquisition",
+ar:"معاينة الوظيفة الواقعية",en:"Realistic Job Preview (RJP)",
+defAr:"تزويد المرشحين بمعلومات دقيقة عن الجوانب الإيجابية والصعبة معاً — يُقلل دوران الموظفين المبكر وصدمة الواقع",
+defEn:"Providing candidates with accurate information about both positive and challenging aspects of the role. Reduces early voluntary turnover and expectation misalignment.",
+tags:["Talent Acquisition","Onboarding"]},
+
+{id:55,book:"people",bookName:"People Domain",cat:"Talent Acquisition",
+ar:"نسبة العائد في التوظيف",en:"Yield Ratio",
+defAr:"نسبة المرشحين الذين ينتقلون من مرحلة لأخرى في مسار التوظيف — يُحدد أين يفقد المسار المرشحين",
+defEn:"Proportion of candidates who advance from one recruitment stage to the next. Tracking across stages identifies bottlenecks in the recruiting funnel.",
+tags:["Talent Acquisition","Metrics"]},
+
+{id:56,book:"people",bookName:"People Domain",cat:"Talent Acquisition",
+ar:"الإلحاق (Onboarding) مقابل التوجيه",en:"Onboarding vs. Orientation",
+defAr:"التوجيه = إجراءات إدارية في اليوم الأول. الإلحاق = عملية تكامل كاملة 30-90 يوماً: ثقافة + شبكات + وضوح الدور",
+defEn:"Orientation = Day 1 administrative process. Onboarding = 30-90+ day integration: culture, networks, role clarity, manager relationships, early performance milestones.",
+tags:["Talent Acquisition","Onboarding"]},
+
+{id:57,book:"people",bookName:"People Domain",cat:"Talent Acquisition",
+ar:"قانون FCRA — الإجراء ما قبل السلبي",en:"FCRA Pre-Adverse Action",
+defAr:"قبل رفض مرشح بسبب نتيجة تحقق الخلفية: تزويده بنسخة من التقرير + ملخص حقوقه للطعن في الأخطاء",
+defEn:"Before taking adverse action based on background check: provide applicant with (1) copy of the report AND (2) FCRA rights summary. Gives opportunity to dispute errors.",
+tags:["Talent Acquisition","FCRA","Legal"]},
+
+{id:58,book:"people",bookName:"People Domain",cat:"Talent Acquisition",
+ar:"الاستعداد الفوري للمرشحين (Pipeline)",en:"Talent Pipeline Strategy",
+defAr:"بناء علاقات مع المرشحين المحتملين قبل نشوء الشواغر — يُقلل وقت الملء ويُحسّن جودة التوظيف",
+defEn:"Building and maintaining relationships with potential candidates before roles open. Creates a ready pool that reduces time-to-fill and improves hire quality.",
+tags:["Talent Acquisition","Strategy"]},
+
+{id:59,book:"people",bookName:"People Domain",cat:"Talent Acquisition",
+ar:"الإنصاف الداخلي في الأجور",en:"Internal Pay Equity",
+defAr:"عدالة الأجر عبر الأدوار داخل المنظمة — هل الوظائف ذات القيمة المتشابهة تحصل على تعويض متشابه؟",
+defEn:"Fairness of pay relationships between jobs inside the organization. Are jobs of similar value compensated similarly? Distinct from external market competitiveness.",
+tags:["Total Rewards","Compensation"]},
+
+{id:60,book:"people",bookName:"People Domain",cat:"Talent Acquisition",
+ar:"التسعير السوقي للوظيفة",en:"Market Pricing a Job",
+defAr:"جمع بيانات رواتب الوظائف المماثلة في سوق العمل المعني لتحديد نطاق التنافسية التعويضية للوظيفة",
+defEn:"Gathering pay data for comparable jobs in the relevant labor market to establish the competitive pay range (minimum/midpoint/maximum) for the role.",
+tags:["Total Rewards","Compensation"]},
+
+{id:61,book:"people",bookName:"People Domain",cat:"Employee Engagement",
+ar:"الرضا مقابل الانخراط الوظيفي",en:"Satisfaction vs. Engagement",
+defAr:"الرضا = راض عن الوضع الحالي (سلبي). الانخراط = التزام عاطفي + جهد تقديري + استثمار في نجاح المنظمة (إيجابي نشط)",
+defEn:"Satisfaction = content with current state (passive). Engagement = active commitment + discretionary effort + emotional investment in organizational success.",
+tags:["Engagement","Core Concepts"]},
+
+{id:62,book:"people",bookName:"People Domain",cat:"Employee Engagement",
+ar:"نموذج Hackman & Oldham — الاستقلالية",en:"Job Characteristics Model — Autonomy",
+defAr:"الاستقلالية تُنتج إحساساً بالمسؤولية الشخصية عن النتائج → يُؤدي إلى دافعية داخلية أعلى",
+defEn:"Autonomy → experienced personal responsibility for outcomes → higher internal motivation. When employees control their methods, they feel accountable for results.",
+formula:"Autonomy → Responsibility → Internal Motivation",
+tags:["Engagement","Job Design"]},
+
+{id:63,book:"people",bookName:"People Domain",cat:"Employee Engagement",
+ar:"مقابلة البقاء",en:"Stay Interview",
+defAr:"أداة استباقية للاحتفاظ تُجرى مع الموظفين الحاليين لفهم ما يُبقيهم وما قد يدفعهم للمغادرة — قبل القرار",
+defEn:"Proactive retention tool conducted with active employees to understand what keeps them and what might push them to leave — while there's still time to act.",
+tags:["Engagement","Retention"]},
+
+{id:64,book:"people",bookName:"People Domain",cat:"Employee Engagement",
+ar:"نقاط المروّج الصافية للموظفين eNPS",en:"Employee Net Promoter Score (eNPS)",
+defAr:"المروّجون (9-10) ناقص المنتقدون (0-6) — نطاق من -100 إلى +100. سؤال واحد: 'هل تُوصي بهذه المنظمة مكاناً للعمل؟'",
+defEn:"Promoters (9-10) minus Detractors (0-6). Range: -100 to +100. Single question: 'How likely are you to recommend this organization as a place to work?'",
+formula:"eNPS = %Promoters − %Detractors",
+tags:["Engagement","Metrics"]},
+
+{id:65,book:"people",bookName:"People Domain",cat:"Employee Engagement",
+ar:"تكلفة دوران الموظفين الطوعي",en:"Voluntary Turnover Cost",
+defAr:"تكلفة المغادرة + تكلفة الشغور + تكلفة الاستبدال + الإلحاق والتدريب + فقدان الإنتاجية = 50-200% من الراتب السنوي",
+defEn:"Departure + vacancy + replacement + onboarding + productivity ramp-up costs combined. SHRM estimates 50-200% of annual salary depending on role complexity.",
+formula:"Departure + Vacancy + Replacement + Onboarding + Ramp-up",
+tags:["Engagement","Retention","Metrics"]},
+
+{id:66,book:"people",bookName:"People Domain",cat:"Employee Engagement",
+ar:"نظرية العاملين — هرزبرج",en:"Herzberg's Two-Factor Theory",
+defAr:"عوامل النظافة (أجر، سياسات): غيابها يُسبّب عدم الرضا لكن وجودها لا يُحفّز. المُحفّزات (إنجاز، تقدير): تُحفّز فعلاً",
+defEn:"Hygiene factors (pay, policy): absence causes dissatisfaction, presence doesn't motivate. Motivators (achievement, recognition, growth): these actually motivate.",
+tags:["Engagement","Motivation Theories"]},
+
+{id:67,book:"people",bookName:"People Domain",cat:"Employee Engagement",
+ar:"تصميم الوظيفة الإبداعي (Job Crafting)",en:"Job Crafting",
+defAr:"يُبادر الموظف بإعادة تشكيل مهامه وعلاقاته وإدراكه للعمل لزيادة معناه دون تغيير وصف الوظيفة الرسمي",
+defEn:"Employee-initiated proactive reshaping of tasks, relationships, and perceptions of work to increase meaning and alignment with strengths — without formal job description changes.",
+tags:["Engagement","Job Design"]},
+
+{id:68,book:"people",bookName:"People Domain",cat:"Employee Engagement",
+ar:"تأثير بيغماليون في الإدارة",en:"Pygmalion Effect in Management",
+defAr:"التوقعات العالية التي يُعبّر عنها القائد تُنتج أداءً أعلى من الأتباع — التوقعات تُحقق نفسها بنفسها",
+defEn:"High expectations communicated by a leader produce higher performance from followers. Low expectations produce lower performance. Expectations become self-fulfilling.",
+tags:["Engagement","Leadership"]},
+
+{id:69,book:"people",bookName:"People Domain",cat:"L&D",
+ar:"نموذج ADDIE",en:"ADDIE Instructional Design Model",
+defAr:"تحليل → تصميم → تطوير → تنفيذ → تقييم — النموذج الأساسي في تصميم التعليم",
+defEn:"Analyze → Design → Develop → Implement → Evaluate. The foundational systematic instructional design model for creating effective training programs.",
+formula:"Analyze → Design → Develop → Implement → Evaluate",
+tags:["L&D","ADDIE"]},
+
+{id:70,book:"people",bookName:"People Domain",cat:"L&D",
+ar:"انتقال التدريب",en:"Transfer of Training",
+defAr:"درجة تطبيق المتعلمين لما تعلموه في التدريب على أدائهم الفعلي في العمل وتثبيت ذلك التطبيق بمرور الوقت",
+defEn:"The degree to which learners apply what they learned in training to actual job performance and sustain that application over time. The most critical and most often missing L&D measure.",
+tags:["L&D","Training"]},
+
+{id:71,book:"people",bookName:"People Domain",cat:"L&D",
+ar:"منظمة التعلم — سينج",en:"Learning Organization — Senge",
+defAr:"ثقافة حيث يتوسّع الناس باستمرار في قدرتهم على خلق النتائج ونماذج التفكير الجديدة — ليست مجرد ساعات تدريب عالية",
+defEn:"Culture where people continually expand capacity to create results. Systems thinking + personal mastery + mental models + shared vision + team learning. Not just high training hours.",
+tags:["L&D","Senge"]},
+
+{id:72,book:"people",bookName:"People Domain",cat:"L&D",
+ar:"التعلم المُصغَّر",en:"Microlearning",
+defAr:"لحظات تعلم قصيرة (3-5 دقائق) مُوجّهة للتطبيق الفوري — الأنسب لتحديثات المعرفة وتذكير الامتثال",
+defEn:"Short (3-5 minute) focused learning moments designed for immediate application. Most appropriate for product updates, software tips, compliance refreshers — not complex skill development.",
+tags:["L&D","Learning Design"]},
+
+{id:73,book:"people",bookName:"People Domain",cat:"L&D",
+ar:"الاستشارة في الأداء (Performance Consulting)",en:"Performance Consulting Approach",
+defAr:"L&D يُشخّص أسباب فجوات الأداء قبل التوصية بالتدريب — قد يُوصي بحلول غير تدريبية إذا لم تكن المشكلة نقص معرفة",
+defEn:"L&D diagnoses performance gap root causes before recommending training. May recommend non-training solutions (process redesign, incentives) when the gap isn't knowledge-based.",
+tags:["L&D","Consultation"]},
+
+{id:74,book:"people",bookName:"People Domain",cat:"L&D",
+ar:"الفصل الدراسي المعكوس",en:"Flipped Classroom",
+defAr:"المحتوى الأساسي يُسلَّم قبل الجلسة (فيديو، قراءة). وقت الجلسة المباشرة يُستخدم للتطبيق والممارسة والنقاش",
+defEn:"Foundational content delivered before the live session (video, readings). Live session time used for application, practice, problem-solving, and discussion — not lecture.",
+tags:["L&D","Learning Design"]},
+
+{id:75,book:"people",bookName:"People Domain",cat:"Total Rewards",
+ar:"المكافآت الإجمالية",en:"Total Rewards",
+defAr:"الراتب + الأجر المتغير + المزايا + برامج التوازن بين العمل والحياة + إدارة الأداء والتقدير + تطوير المسيرة الوظيفية",
+defEn:"Compensation (base+variable) + Benefits + Work-Life + Performance & Recognition + Career Development. The full employment value proposition beyond just base pay.",
+tags:["Total Rewards","Compensation"]},
+
+{id:76,book:"people",bookName:"People Domain",cat:"Total Rewards",
+ar:"نطاقات الرواتب العريضة",en:"Broadbanding",
+defAr:"دمج درجات الراتب الضيقة التقليدية في نطاقات أقل عدداً لكن أوسع — يُوفر مرونة للمكافأة دون الحاجة للترقية",
+defEn:"Consolidating many narrow pay grades into fewer, wider salary bands. Provides flexibility to reward development within a role without promotion. Reduces administrative overhead.",
+tags:["Total Rewards","Compensation"]},
+
+{id:77,book:"people",bookName:"People Domain",cat:"Total Rewards",
+ar:"حوافز طويلة الأمد (LTI)",en:"Long-Term Incentive (LTI)",
+defAr:"ربط مكافأة كبار المديرين بأداء الأعمال على مدى 3-5 سنوات — الأسهم الأدائية تُحاذي مصالحهم مع المساهمين",
+defEn:"Links senior manager reward to 3-5 year business performance. Performance shares directly connecting reward to specific outcomes are strongest for shareholder alignment.",
+tags:["Total Rewards","Executive Compensation"]},
+
+{id:78,book:"people",bookName:"People Domain",cat:"Total Rewards",
+ar:"تحليل عدالة الأجر",en:"Pay Equity Analysis",
+defAr:"فجوة إحصائية بعد التحكم في العوامل الشرعية = مشكلة عدالة هيكلية تستوجب التحقيق — ليس دليلاً تلقائياً على التمييز",
+defEn:"Statistically significant gap after controlling for legitimate factors = potential structural equity problem requiring investigation — not automatic proof of discrimination.",
+tags:["Total Rewards","Pay Equity","Legal"]},
+
+{id:79,book:"people",bookName:"People Domain",cat:"Total Rewards",
+ar:"قانون ERISA — واجب الأمانة",en:"ERISA Fiduciary Duty",
+defAr:"مديرو خطط المنافع ملزمون بالتصرف فقط لصالح المشاركين والمستفيدين بالعناية والمهارة التي يُبديها الشخص الحذر",
+defEn:"Plan administrators must act solely in participants' and beneficiaries' interest with the care, skill, and prudence that a prudent, knowledgeable person would use.",
+tags:["Total Rewards","ERISA","Legal"]},
+
+{id:80,book:"people",bookName:"People Domain",cat:"Total Rewards",
+ar:"المزايا المرنة (Cafeteria Plan)",en:"Flexible Benefits / Cafeteria Plan",
+defAr:"يسمح للموظفين بتخصيص ميزانية مزاياهم نحو ما يُقدّرونه — نفس الميزانية الإجمالية، قيمة مُدركة أعلى",
+defEn:"Allows employees to allocate their benefits budget toward what they personally value. Same total budget, higher perceived value when employees choose what matters to them.",
+tags:["Total Rewards","Benefits"]},
+
+{id:81,book:"people",bookName:"People Domain",cat:"Employee Relations",
+ar:"الإنضباط التدريجي",en:"Progressive Discipline",
+defAr:"تحذير شفهي → تحذير خطي → إيقاف → إنهاء. الهدف: إتاحة فرصة للتصحيح — الإنهاء هو الملاذ الأخير",
+defEn:"Verbal warning → Written warning → Suspension → Termination. Purpose: give employees fair notice and opportunity to correct. Termination is a last resort after documented improvement opportunities.",
+formula:"Verbal → Written → Suspension → Termination",
+tags:["Employee Relations","Discipline"]},
+
+{id:82,book:"people",bookName:"People Domain",cat:"Employee Relations",
+ar:"الإنهاء الضمني / البنّاء",en:"Constructive Discharge",
+defAr:"صاحب العمل يجعل ظروف العمل لا تُطاق لدرجة أن الموظف يُضطر للاستقالة — المحاكم تعامله كإنهاء قسري",
+defEn:"Employer makes working conditions so intolerable that a reasonable person would feel compelled to resign. Courts treat it as the legal equivalent of an involuntary termination.",
+tags:["Employee Relations","Legal"]},
+
+{id:83,book:"people",bookName:"People Domain",cat:"Employee Relations",
+ar:"حقوق Weingarten",en:"Weingarten Rights (NLRB v. Weingarten 1975)",
+defAr:"الموظف في بيئة نقابية له حق طلب ممثل نقابي في مقابلة تحقيقية إذا اعتقد معقولاً أنها قد تُفضي إلى عقوبة",
+defEn:"Unionized employee's right to request union representation in an investigative interview if they reasonably believe it might result in discipline. Employer must grant, end, or change the interview.",
+tags:["Employee Relations","NLRA","Labor"]},
+
+{id:84,book:"people",bookName:"People Domain",cat:"Employee Relations",
+ar:"واجب التفاوض بحسن نية",en:"Duty to Bargain in Good Faith (NLRA)",
+defAr:"الأطراف ملزمة بالالتقاء والتفاوض بجدية دون أن تُلزَم بالموافقة على أي مقترح محدد — المواجهة المشروعة جائزة",
+defEn:"Parties must meet, engage genuinely in negotiation, and exchange relevant information. Neither party is required to agree to any specific proposal — impasse after genuine bargaining is permissible.",
+tags:["Employee Relations","NLRA","Labor"]},
+
+{id:85,book:"people",bookName:"People Domain",cat:"Employee Relations",
+ar:"الحماية بموجب المادة 7 من NLRA",en:"NLRA Section 7 — Concerted Activity",
+defAr:"تحمي جميع الموظفين في القطاع الخاص (نقابيين وغير نقابيين) في مناقشة أجورهم وظروف عملهم معاً",
+defEn:"Protects ALL private sector employees (union and non-union) discussing wages and working conditions with coworkers. Blanket salary confidentiality policies violate Section 7.",
+tags:["Employee Relations","NLRA"]},
+
+{id:86,book:"people",bookName:"People Domain",cat:"Employee Relations",
+ar:"الحماية من الانتقام — NLRA",en:"Retaliation Protection — NLRA",
+defAr:"إنهاء خدمة موظف لتقديمه شكوى EEOC أو نشاطه النقابي = انتهاك منفصل مستقل عن صحة الادعاء الأصلي",
+defEn:"Terminating an employee for filing an EEOC charge or union activity = a separate federal violation independent of whether the underlying claim is valid. Timing matters as evidence.",
+tags:["Employee Relations","Legal"]},
+
+{id:87,book:"people",bookName:"People Domain",cat:"Employee Relations",
+ar:"التوظيف حسب الإرادة (At-Will)",en:"Employment At-Will",
+defAr:"أي طرف يمكنه إنهاء العلاقة في أي وقت لأي سبب أو بدون سبب — استثناءات: القوانين، العقود، السياسة العامة",
+defEn:"Either party may end the employment relationship at any time for any reason or no reason — exceptions: illegal reasons (discrimination, retaliation), contracts, public policy protections.",
+tags:["Employee Relations","Legal"]},
+
+{id:88,book:"people",bookName:"People Domain",cat:"Employee Relations",
+ar:"معيار حسن الأسباب (Just Cause)",en:"Just Cause Standard",
+defAr:"الاختبارات السبعة: إشعار كافٍ + قاعدة معقولة + تحقيق + تحقيق عادل + إثبات المخالفة + تطبيق متسق + تناسب العقوبة",
+defEn:"7 tests: adequate notice + reasonable rule + investigation conducted + fair investigation + proof of violation + consistent application + proportional discipline. Employer bears the burden.",
+tags:["Employee Relations","Labor","Just Cause"]},
+
+{id:89,book:"people",bookName:"People Domain",cat:"Employee Relations",
+ar:"حل النزاعات البديل (ADR)",en:"Alternative Dispute Resolution (ADR)",
+defAr:"الوساطة (الطرفان يحلان بأنفسهم) + التحكيم (محايد يُصدر قراراً) + مجالس النظراء — أسرع وأرخص من التقاضي",
+defEn:"Mediation (parties resolve themselves) + Arbitration (neutral issues award) + Peer review panels. Generally faster, cheaper, and relationship-preserving compared to litigation.",
+tags:["Employee Relations","ADR"]},
+
+{id:90,book:"people",bookName:"People Domain",cat:"Employee Relations",
+ar:"حماية المُبلّغين عن المخالفات",en:"Whistleblower Protection",
+defAr:"قوانين فيدرالية وولائية متعددة تحمي من الانتقام — SOX للشركات العامة، Dodd-Frank للخدمات المالية، وغيرها",
+defEn:"Multiple overlapping federal and state statutes protect from retaliation: SOX (public companies), Dodd-Frank (financial services), OSHA, EPA, FCA. Applies to internal AND external reports.",
+tags:["Employee Relations","Legal","Whistleblower"]},
+
+{id:91,book:"people",bookName:"People Domain",cat:"Talent Acquisition",
+ar:"نطاق الراتب (Pay Band)",en:"Salary Band / Pay Grade",
+defAr:"نطاق الأجر (الحد الأدنى، المنتصف، الحد الأقصى) الذي ينطبق على وظائف ذات قيمة مماثلة — يُحقق الانصاف الداخلي والمرونة",
+defEn:"The pay range (minimum, midpoint, maximum) applying to jobs of equivalent value. Provides structure for internal equity while allowing flexibility for individual experience and performance.",
+tags:["Total Rewards","Compensation"]},
+
+{id:92,book:"people",bookName:"People Domain",cat:"Talent Acquisition",
+ar:"شفافية الأجور",en:"Pay Transparency",
+defAr:"مشاركة معلومات التعويض مع الموظفين — من الإفصاح عن نطاقات الأجور إلى نشر جميع الرواتب. يُقلل الفجوات غير المبررة",
+defEn:"Sharing compensation information with employees — from disclosing pay ranges to fully publishing all salaries. Reduces unjustified pay gaps and improves offer acceptance rates.",
+tags:["Total Rewards","Compensation"]},
+
+{id:93,book:"people",bookName:"People Domain",cat:"Employee Engagement",
+ar:"برامج تقدير الموظفين الفعّالة",en:"Effective Employee Recognition",
+defAr:"التقدير الفعّال: محدد (ماذا فعلوا) + في وقته (قريب من السلوك) + مرتبط بالسلوكيات المطلوبة — رسمياً أو غير رسمياً",
+defEn:"Effective recognition: specific (what they did), timely (close to the behavior), tied to valued behaviors. Immediate informal manager recognition often more powerful than formal programs.",
+tags:["Engagement","Recognition"]},
+
+{id:94,book:"people",bookName:"People Domain",cat:"Employee Engagement",
+ar:"الرفاهية الوظيفية الشاملة",en:"Employee Wellbeing Programs",
+defAr:"استباقية وشاملة (جسدي + ذهني + مالي + اجتماعي) — تختلف عن برامج المساعدة EAP التي تكون رد فعل على الأزمات",
+defEn:"Proactive and holistic: physical + mental + financial + social wellbeing. Distinct from traditional EAPs which are primarily reactive crisis support programs.",
+tags:["Engagement","Wellbeing"]},
+
+{id:95,book:"people",bookName:"People Domain",cat:"Employee Engagement",
+ar:"الالتزام التنظيمي — نموذج Meyer & Allen",en:"Organizational Commitment — 3 Components",
+defAr:"عاطفي (يريد البقاء) + استمراري (يحتاج البقاء — تكاليف المغادرة عالية) + معياري (يشعر بالالتزام بالبقاء)",
+defEn:"Affective (want to stay — emotional attachment) + Continuance (need to stay — high costs of leaving) + Normative (feel obligated to stay). Predicts discretionary effort and retention.",
+tags:["Engagement","Retention"]},
+
+{id:96,book:"people",bookName:"People Domain",cat:"L&D",
+ar:"إطار الكفاءات",en:"Competency Framework",
+defAr:"تعريف المعارف والمهارات والسلوكيات لدور ما — لغة مشتركة تدمج الاختيار والتطوير وإدارة الأداء والتخطيط للخلافة",
+defEn:"Defines knowledge, skills, behaviors required for effective performance. Creates integrated talent language for selection, development, performance management, and succession planning.",
+tags:["L&D","Talent Management"]},
+
+{id:97,book:"people",bookName:"People Domain",cat:"L&D",
+ar:"التكرار المتباعد في التصميم التعليمي",en:"Spaced Repetition",
+defAr:"توزيع محتوى التعلم على جلسات متعددة عبر الزمن — يُحسّن الاحتفاظ طويل المدى بموجب نظرية منحنى النسيان",
+defEn:"Distributing learning content across multiple sessions over time. Improves long-term retention due to the spacing effect (Ebbinghaus forgetting curve). Opposite of massed practice.",
+tags:["L&D","Learning Design"]},
+
+{id:98,book:"people",bookName:"People Domain",cat:"Employee Relations",
+ar:"قانون WARN — إشعار التسريح الجماعي",en:"WARN Act",
+defAr:"100+ موظف → إشعار 60 يوماً قبل إغلاق منشأة (50+) أو تسريح جماعي (500+ أو 50-499 تمثل 33% من القوى العاملة)",
+defEn:"Covered employers (100+): 60 calendar days advance notice before plant closing (50+ employees) or mass layoff (500+ OR 50-499 representing ≥33% of workforce). Penalty: 60 days back pay.",
+formula:"100+ employees → 60 days notice",
+tags:["Employee Relations","WARN","Legal"]},
+
+{id:99,book:"people",bookName:"People Domain",cat:"Employee Relations",
+ar:"قانون OWBPA — التنازل عن حقوق ADEA",en:"OWBPA: ADEA Waiver in Group Programs",
+defAr:"45 يوماً للتفكير (ليس 21) + 7 أيام للتراجع + الإفصاح عن بيانات الوحدة (أعمار وألقاب المُختارين وغير المُختارين)",
+defEn:"Group termination programs: 45 days (not 21) to consider + 7-day revocation + decisional unit disclosure (ages and titles of ALL selected AND not-selected). Missing any element = unenforceable waiver.",
+formula:"45 days + 7-day revocation + Decisional Unit Info",
+tags:["Employee Relations","ADEA","OWBPA"]},
+
+{id:100,book:"people",bookName:"People Domain",cat:"L&D",
+ar:"التصميم التعليمي الهجين",en:"Hybrid/Blended Learning Design",
+defAr:"دمج الأساليب الرسمية (فصل دراسي، إلكتروني) مع الأساليب الاجتماعية (مجموعات النظراء) والتجريبية (مشاريع عمل فعلية)",
+defEn:"Combines formal methods (classroom, eLearning) with social methods (peer circles, coaching) and experiential methods (stretch assignments, action learning). Addresses all 70-20-10 dimensions.",
+tags:["L&D","Learning Design"]},
+
+// ─────────────────────────────────────────
+// BOOK 3: ORGANIZATION DOMAIN (50 cards)
+// ─────────────────────────────────────────
+{id:101,book:"org",bookName:"Organization Domain",cat:"HR Strategy",
+ar:"نموذج McKinsey 7S",en:"McKinsey 7S Framework",
+defAr:"الاستراتيجية + الهيكل + الأنظمة (صلبة) + القيم المشتركة + المهارات + الأسلوب + الموظفون (ناعمة) — يجب أن تتوافق جميعها",
+defEn:"Strategy + Structure + Systems (hard) + Shared Values + Skills + Style + Staff (soft). All 7 elements must be aligned for effective organizational performance.",
+tags:["HR Strategy","Organization Design"]},
+
+{id:102,book:"org",bookName:"Organization Domain",cat:"HR Strategy",
+ar:"نموذج أولريش — الأدوار الأربعة",en:"Ulrich's HR Roles",
+defAr:"شريك استراتيجي + خبير إداري + بطل للموظفين + عامل تغيير — HR يُنفّذ الأدوار الأربعة لتحقيق القيمة الاستراتيجية",
+defEn:"Strategic Partner + Administrative Expert + Employee Champion + Change Agent. HR must perform all four roles to deliver strategic organizational value.",
+tags:["HR Strategy","Ulrich"]},
+
+{id:103,book:"org",bookName:"Organization Domain",cat:"HR Strategy",
+ar:"شريك أعمال HR (HRBP)",en:"HR Business Partner (HRBP)",
+defAr:"HR مُدمج في وحدات الأعمال — يُقدّم رؤى استراتيجية للقيادة بدلاً من مجرد تقديم الخدمات الإدارية",
+defEn:"HR embedded in business units to provide strategic insights to leadership rather than just administrative services. Must demonstrate business value through talent outcomes.",
+tags:["HR Strategy","HRBP"]},
+
+{id:104,book:"org",bookName:"Organization Domain",cat:"Organization Design",
+ar:"تمركز HR مقابل لا مركزيته",en:"Centralized vs. Decentralized HR",
+defAr:"المركزي: اتساق وكفاءة. اللامركزي: تكيّف محلي وشراكة أعمال أقوى. النموذج الهجين يجمع مزايا الاثنين",
+defEn:"Centralized: consistency and efficiency. Decentralized: local adaptation and stronger business partnership. Hybrid model: shared services + HRBPs + Centers of Excellence.",
+tags:["Organization Design","HR Structure"]},
+
+{id:105,book:"org",bookName:"Organization Domain",cat:"Organization Design",
+ar:"مراكز الخدمات المشتركة",en:"Shared Services Model",
+defAr:"توحيد المهام التشغيلية المتكررة في مركز واحد — يُحرر HRBPs للتركيز على الشراكة الاستراتيجية",
+defEn:"Consolidating repetitive operational HR tasks into one center. Frees HR Business Partners to focus on strategic partnership. Core of the three-legged stool HR model.",
+tags:["Organization Design","HR Structure"]},
+
+{id:106,book:"org",bookName:"Organization Domain",cat:"HR Metrics",
+ar:"مؤشرات الأداء الرئيسية لـ HR",en:"HR Key Performance Indicators (KPIs)",
+defAr:"مقاييس محددة وقابلة للقياس تتتبع فاعلية وظائف HR — يجب أن ترتبط بالأهداف الاستراتيجية للأعمال",
+defEn:"Specific, measurable metrics tracking HR function effectiveness. Must be linked to strategic business objectives. Examples: time-to-fill, cost-per-hire, turnover rate, quality of hire.",
+tags:["HR Metrics","Strategy"]},
+
+{id:107,book:"org",bookName:"Organization Domain",cat:"HR Technology",
+ar:"نظام معلومات الموارد البشرية (HRIS)",en:"HRIS — Human Resource Information System",
+defAr:"نظام متكامل يدير بيانات الموظفين والرواتب والمزايا وإدارة الأداء — يُتيح للـ HR التركيز على العمل الاستراتيجي",
+defEn:"Integrated system managing employee data, payroll, benefits, and performance management. Automates routine HR transactions, enabling HR to focus on strategic work.",
+tags:["HR Technology","HRIS"]},
+
+{id:108,book:"org",bookName:"Organization Domain",cat:"HR Technology",
+ar:"تحليلات القوى العاملة",en:"Workforce Analytics",
+defAr:"استخدام أنماط بيانات القوى العاملة للتنبؤ بنتائج الأعمال وتمكين قرارات مبنية على الأدلة حول الاستثمار في المواهب",
+defEn:"Using workforce data patterns to predict business outcomes and enable evidence-based decisions on talent investment, retention, and workforce planning.",
+tags:["HR Technology","Analytics"]},
+
+{id:109,book:"org",bookName:"Organization Domain",cat:"Performance Management",
+ar:"إدارة الأداء المستمرة",en:"Continuous Performance Management",
+defAr:"محادثات منتظمة طوال العام بدلاً من مراجعة سنوية واحدة — تكرار التغذية الراجعة هو المحرك الرئيسي للفاعلية",
+defEn:"Regular conversations throughout the year rather than one annual review. Feedback frequency — not rating scale design — is the primary driver of performance management effectiveness.",
+tags:["Performance Management"]},
+
+{id:110,book:"org",bookName:"Organization Domain",cat:"Performance Management",
+ar:"التوزيع الإجباري (Forced Distribution)",en:"Forced Distribution / Forced Ranking",
+defAr:"نسب ثابتة لكل مستوى أداء — يُحقق التمييز رياضياً لكن قد يُحبط الفرق وقد لا يعكس الأداء الفعلي",
+defEn:"Fixed percentages for each performance level. Ensures differentiation mathematically but can demotivate teams and may not reflect actual performance distribution.",
+tags:["Performance Management"]},
+
+{id:111,book:"org",bookName:"Organization Domain",cat:"Org Development",
+ar:"ثقافة المنظمة",en:"Organizational Culture",
+defAr:"القيم والافتراضات والممارسات المشتركة التي تُشكّل كيفية سلوك الناس في المنظمة — أقوى من السياسات والإجراءات",
+defEn:"Shared values, assumptions, and practices shaping how people behave. Stronger than policies and procedures. 'Culture eats strategy for breakfast' — strategy must align with culture.",
+tags:["Org Development","Culture"]},
+
+{id:112,book:"org",bookName:"Organization Domain",cat:"Org Development",
+ar:"نماذج إدارة التغيير — المقارنة",en:"Change Models Comparison",
+defAr:"Lewin (3 مراحل) + Kotter (8 خطوات) + ADKAR (فردي: وعي-رغبة-معرفة-قدرة-تعزيز) — كل نموذج لسياق مختلف",
+defEn:"Lewin (3 phases, simple) + Kotter (8 steps, organizational) + ADKAR (individual change: Awareness-Desire-Knowledge-Ability-Reinforcement). Each model suited to different contexts.",
+tags:["Change Management","Org Development"]},
+
+{id:113,book:"org",bookName:"Organization Domain",cat:"Org Development",
+ar:"نموذج ADKAR للتغيير الفردي",en:"ADKAR Change Model",
+defAr:"وعي (سبب التغيير) + رغبة (المشاركة) + معرفة (كيفية التغيير) + قدرة (التنفيذ) + تعزيز (الثبات)",
+defEn:"Awareness (why) + Desire (participate) + Knowledge (how to change) + Ability (implement) + Reinforcement (sustain). Focuses on individual change — often used alongside Kotter.",
+formula:"Awareness → Desire → Knowledge → Ability → Reinforcement",
+tags:["Change Management","ADKAR"]},
+
+{id:114,book:"org",bookName:"Organization Domain",cat:"HR Strategy",
+ar:"تحليل الفجوة الاستراتيجية في HR",en:"HR Strategic Gap Analysis",
+defAr:"مقارنة وضع HR الحالي بالوضع المطلوب لدعم الاستراتيجية — تُحدد الأولويات التي تحتاج استثماراً أو تغييراً",
+defEn:"Comparing HR's current state to the required state for strategy support. Identifies capability gaps, resource gaps, and structural gaps that require investment or redesign.",
+tags:["HR Strategy","Analysis"]},
+
+{id:115,book:"org",bookName:"Organization Domain",cat:"HR Strategy",
+ar:"تفويض الموارد البشرية",en:"HR Outsourcing / HR BPO",
+defAr:"تفويض وظائف HR لمزودين خارجيين — يُقلل التكاليف لكن قد يُقلل من استجابة HR الاستراتيجية للأعمال",
+defEn:"Delegating HR functions to external providers. Reduces costs but may reduce HR's strategic responsiveness to the business. Common for payroll, benefits administration, and recruiting.",
+tags:["HR Strategy","Outsourcing"]},
+
+{id:116,book:"org",bookName:"Organization Domain",cat:"HR Metrics",
+ar:"قياس عائد الاستثمار في رأس المال البشري",en:"Human Capital ROI",
+defAr:"(إيرادات − تكاليف العمالة) ÷ تكاليف العمالة — يقيس الإنتاجية لكل وحدة استثمار في رأس المال البشري",
+defEn:"(Revenue − Labor Costs) ÷ Labor Costs. Measures productivity per unit of human capital investment. Useful for comparing workforce productivity across departments or time periods.",
+formula:"(Revenue − Labor Cost) ÷ Labor Cost",
+tags:["HR Metrics","Human Capital"]},
+
+{id:117,book:"org",bookName:"Organization Domain",cat:"Organization Design",
+ar:"هيكل المصفوفة التنظيمية",en:"Matrix Organizational Structure",
+defAr:"الموظفون لهم مديران أو أكثر: مدير وظيفي + مدير مشروع/منتج — يُعزز التعاون لكن يُعقّد السلطة والمساءلة",
+defEn:"Employees have two or more reporting lines: functional manager + project/product manager. Enhances cross-functional collaboration but complicates authority and accountability.",
+tags:["Organization Design","Structure"]},
+
+{id:118,book:"org",bookName:"Organization Domain",cat:"Organization Design",
+ar:"نطاق السيطرة الإدارية",en:"Span of Control",
+defAr:"عدد الموظفين الذين يُشرف عليهم مدير واحد مباشرةً — التوسيع يُقلل طبقات الإدارة، التضييق يُحسّن التوجيه",
+defEn:"Number of employees directly supervised by one manager. Wider spans reduce management layers; narrower spans improve coaching. Technology and job complexity affect optimal span.",
+tags:["Organization Design","Structure"]},
+
+{id:119,book:"org",bookName:"Organization Domain",cat:"HR Technology",
+ar:"الذكاء الاصطناعي في HR — المخاطر الأخلاقية",en:"AI in HR — Ethical Risks",
+defAr:"أدوات الذكاء الاصطناعي المبنية على بيانات التوظيف التاريخية تُضخّم التحيزات الموجودة — الشركة مسؤولة قانونياً عن تأثيراتها",
+defEn:"AI tools trained on historical biased hiring data amplify existing biases at scale. The employing organization — not the vendor — retains legal liability for adverse impact outcomes.",
+tags:["HR Technology","Ethics","Legal"]},
+
+{id:120,book:"org",bookName:"Organization Domain",cat:"HR Technology",
+ar:"HRIS مقابل ATS مقابل HCM",en:"HRIS vs. ATS vs. HCM",
+defAr:"HRIS: إدارة بيانات الموظفين. ATS: تتبع المتقدمين للوظائف. HCM: مجموعة شاملة تدمج كل دورة حياة الموظف",
+defEn:"HRIS: employee data management. ATS: applicant tracking system. HCM (Human Capital Management): comprehensive suite integrating the full employee lifecycle from recruit to retire.",
+tags:["HR Technology"]},
+
+{id:121,book:"org",bookName:"Organization Domain",cat:"HR Strategy",
+ar:"تصنيف HR — نموذج ديف أولريش",en:"HR Value Chain",
+defAr:"ممارسات HR → مخرجات HR (معرفة ومهارات الموظفين) → تأثيرات HR على الأعمال (إنتاجية، جودة) → قيمة المساهمين",
+defEn:"HR Practices → HR Outcomes (employee KSAs) → HR Business Effects (productivity, quality) → Shareholder Value. Makes the HR → Business → Value causal chain explicit.",
+formula:"HR Practices → Employee KSAs → Business Effects → Value",
+tags:["HR Strategy","Value Chain"]},
+
+{id:122,book:"org",bookName:"Organization Domain",cat:"Performance Management",
+ar:"التقييم بزاوية 360 درجة",en:"360-Degree Feedback",
+defAr:"تقييم من الرئيس المباشر + الزملاء + المرؤوسين + العملاء — يُوفر صورة متعددة الأبعاد لأداء الفرد",
+defEn:"Feedback from direct supervisor + peers + direct reports + customers. Provides a multi-dimensional performance picture. Most valuable for development, not high-stakes evaluations.",
+tags:["Performance Management","Development"]},
+
+{id:123,book:"org",bookName:"Organization Domain",cat:"Org Development",
+ar:"فترات خلع (OD Interventions)",en:"OD Interventions",
+defAr:"تدخلات التطوير التنظيمي: إعادة هيكلة الفريق، تصميم العمل، تطوير الثقافة، تحليل العمليات، تطوير المنظمة كنظام",
+defEn:"OD interventions: team restructuring, work design, culture development, process analysis, large-system change. Distinguish from training interventions — OD changes the system not just individuals.",
+tags:["Org Development","OD"]},
+
+{id:124,book:"org",bookName:"Organization Domain",cat:"HR Metrics",
+ar:"تحليل الروابط (Linkage Analysis)",en:"Linkage Research / Analytics",
+defAr:"ربط بيانات انخراط الموظفين ببيانات الأداء التشغيلي ورضا العملاء والنتائج المالية لإثبات العلاقة السببية",
+defEn:"Linking employee engagement data to operational performance, customer satisfaction, and financial results. Establishes the business case for HR investment with causal evidence.",
+tags:["HR Metrics","Analytics"]},
+
+{id:125,book:"org",bookName:"Organization Domain",cat:"HR Strategy",
+ar:"النمذجة التنبؤية في HR",en:"Predictive HR Analytics",
+defAr:"استخدام البيانات التاريخية لبناء نماذج تتنبأ بنتائج مستقبلية — من سيغادر؟ ما الذي يُؤدي إلى الإنتاجية العالية؟",
+defEn:"Using historical data to build models predicting future outcomes — who will leave? What drives high performance? Turns descriptive HR data into proactive intervention opportunities.",
+tags:["HR Analytics","Strategy","Technology"]},
+
+{id:126,book:"org",bookName:"Organization Domain",cat:"HR Strategy",
+ar:"استراتيجية بناء مقابل الشراء مقابل الاستئجار",en:"Build vs. Buy vs. Borrow Talent Strategy",
+defAr:"بناء: تطوير داخلي. شراء: توظيف خارجي. استئجار: عقود مؤقتة. المزيج المثالي يعتمد على توافر المهارات وسرعة الحاجة وتكاليف التطوير",
+defEn:"Build (internal development) + Buy (external hiring) + Borrow (contractors/temp) + Bot (automation). Optimal mix depends on skill availability, urgency, and development costs.",
+tags:["HR Strategy","Talent Management"]},
+
+{id:127,book:"org",bookName:"Organization Domain",cat:"Org Development",
+ar:"إدارة المعرفة",en:"Knowledge Management",
+defAr:"تحديد وتوثيق ومشاركة المعرفة التنظيمية — يُحول المعرفة الضمنية (في رؤوس الأفراد) إلى معرفة صريحة (موثّقة)",
+defEn:"Identifying, documenting, and sharing organizational knowledge. Converts tacit knowledge (in people's heads) to explicit knowledge (documented). Critical for succession and continuity.",
+tags:["Org Development","Knowledge"]},
+
+{id:128,book:"org",bookName:"Organization Domain",cat:"HR Technology",
+ar:"نظام إدارة التعلم (LMS)",en:"Learning Management System (LMS)",
+defAr:"منصة رقمية تتتبع إكمال التدريب والكفاءات وبيانات التعلم — أداة للإدارة ليس حلاً لمشاكل فاعلية التعلم",
+defEn:"Digital platform tracking training completion, competencies, and learning data. An administrative tool — not a solution to learning effectiveness problems. Good data ≠ good learning.",
+tags:["HR Technology","L&D"]},
+
+{id:129,book:"org",bookName:"Organization Domain",cat:"HR Metrics",
+ar:"مؤشرات البيانات الرائدة مقابل التاريخية",en:"Leading vs. Lagging HR Metrics",
+defAr:"التاريخية: تقيس ما حدث (معدل دوران). الرائدة: تتنبأ بما سيحدث (معدل الانخراط، الغياب). الجمع بينهما يُوفر إدارة استباقية",
+defEn:"Lagging: measure what happened (turnover rate). Leading: predict what will happen (engagement score, absenteeism). Combining both enables proactive management before problems materialize.",
+tags:["HR Metrics","Analytics"]},
+
+{id:130,book:"org",bookName:"Organization Domain",cat:"Performance Management",
+ar:"المعايير الذكية للأهداف",en:"SMART Goals Framework",
+defAr:"محددة + قابلة للقياس + قابلة للتحقيق + ذات صلة + محددة بوقت — أساس إعداد أهداف الأداء الفعّالة",
+defEn:"Specific + Measurable + Achievable + Relevant + Time-bound. Foundation for effective performance goal-setting. Goals meeting all 5 criteria significantly improve performance outcomes.",
+formula:"Specific + Measurable + Achievable + Relevant + Time-bound",
+tags:["Performance Management"]},
+
+{id:131,book:"org",bookName:"Organization Domain",cat:"HR Strategy",
+ar:"رأس المال البشري مقابل رأس المال الاجتماعي",en:"Human Capital vs. Social Capital",
+defAr:"رأس المال البشري: المعرفة والمهارات التي يمتلكها الأفراد. الاجتماعي: قيمة شبكات وعلاقات الموظفين داخل وخارج المنظمة",
+defEn:"Human capital: knowledge and skills individuals possess. Social capital: value of employees' networks and relationships inside and outside the organization. Both are strategic assets.",
+tags:["HR Strategy","Human Capital"]},
+
+{id:132,book:"org",bookName:"Organization Domain",cat:"Org Development",
+ar:"إعادة الهيكلة مقابل إعادة التصميم",en:"Restructuring vs. Reorganization vs. Redesign",
+defAr:"إعادة الهيكلة: تغيير هيكل الإبلاغ. إعادة التنظيم: تغيير تجميع الوحدات. إعادة التصميم: تغيير طريقة إنجاز العمل نفسها",
+defEn:"Restructuring: changing reporting lines. Reorganization: changing how units are grouped. Redesign: changing how work itself is done. HR must distinguish — each requires different change interventions.",
+tags:["Org Development","Organization Design"]},
+
+{id:133,book:"org",bookName:"Organization Domain",cat:"HR Technology",
+ar:"الخصوصية وحماية البيانات في HR",en:"Data Privacy in HR — GDPR",
+defAr:"اللائحة الأوروبية لحماية البيانات تُلزم بالحصول على موافقة صريحة لجمع بيانات الموظفين وتحديد وقت الاحتفاظ وإمكانية الحذف",
+defEn:"GDPR requires explicit consent for employee data collection, defined retention periods, right to deletion, and data portability. Applies to any organization with EU employees.",
+tags:["HR Technology","Legal","Privacy"]},
+
+{id:134,book:"org",bookName:"Organization Domain",cat:"HR Strategy",
+ar:"تخطيط السيناريوهات في تخطيط القوى العاملة",en:"Scenario Planning in Workforce Planning",
+defAr:"تطوير سيناريوهات مستقبلية متعددة للقوى العاملة (متفائل، متشائم، محتمل) للاستعداد لحالات عدم اليقين الاستراتيجية",
+defEn:"Developing multiple future workforce scenarios (optimistic, pessimistic, most likely) to prepare for strategic uncertainty. Enables proactive vs. reactive workforce decisions.",
+tags:["HR Strategy","Workforce Planning"]},
+
+{id:135,book:"org",bookName:"Organization Domain",cat:"Org Development",
+ar:"نظرية الدفع",en:"Nudge Theory (Thaler & Sunstein)",
+defAr:"تصميم البيئة والخيارات لتحفيز السلوك المطلوب دون إلزام — يُطبّق في HR لتحسين المشاركة في الاستبيانات والخطط الصحية",
+defEn:"Designing choice environments to encourage desired behaviors without mandating them. Applied in HR for improving survey participation, retirement savings enrollment, wellness program adoption.",
+tags:["Org Development","Behavioral Economics"]},
+
+{id:136,book:"org",bookName:"Organization Domain",cat:"Performance Management",
+ar:"تعيين المواهب (Talent Calibration)",en:"Talent Calibration Sessions",
+defAr:"جلسات يُقارن فيها المديرون توصياتهم ويُبررونها — يُفرض التمييز الحقيقي ويُصحَّح تحيز التجمّع في المنتصف",
+defEn:"Sessions where managers compare and justify their performance recommendations. Enforces meaningful differentiation and corrects clustering bias. Key to effective performance/bonus differentiation.",
+tags:["Performance Management","Calibration"]},
+
+{id:137,book:"org",bookName:"Organization Domain",cat:"HR Strategy",
+ar:"استراتيجية الاستحواذ والاندماج — دور HR",en:"M&A Due Diligence — HR's Role",
+defAr:"HR يُحدد المخاطر الخاصة به: الهياكل التعويضية + عقود النقابات + التزامات المعاشات غير الممولة + التقاضي المعلّق + التوافق الثقافي",
+defEn:"HR identifies people-specific liabilities: compensation structures, union contracts, unfunded pension liabilities, employment litigation, and cultural incompatibilities that affect deal value.",
+tags:["HR Strategy","M&A"]},
+
+{id:138,book:"org",bookName:"Organization Domain",cat:"HR Technology",
+ar:"مشاركة الموظفين في العصر الرقمي",en:"Digital Employee Experience",
+defAr:"تجربة الموظف الرقمية تؤثر على الإنتاجية والانخراط — أنظمة HR المعقدة تُعيق وتحبط، البسيطة تُحرر وتُمكّن",
+defEn:"Employee digital experience directly affects productivity and engagement. Complex HR systems create friction and frustration. Simple, intuitive tools empower and enable discretionary effort.",
+tags:["HR Technology","Employee Experience"]},
+
+{id:139,book:"org",bookName:"Organization Domain",cat:"HR Metrics",
+ar:"معدل دوران الموظفين المرغوب فيه",en:"Dysfunctional vs. Functional Turnover",
+defAr:"الدوران الوظيفي = أداء منخفض يغادر (مفيد). الدوران المختل = أداء عالٍ يغادر (ضار). HR يجب أن يُميّز بينهما",
+defEn:"Functional turnover = low performers leaving (beneficial). Dysfunctional turnover = high performers leaving (harmful). HR must distinguish — high overall turnover rate can mask this difference.",
+tags:["HR Metrics","Retention"]},
+
+{id:140,book:"org",bookName:"Organization Domain",cat:"HR Strategy",
+ar:"التكامل الاستراتيجي لـ HR",en:"Strategic HR Integration",
+defAr:"ممارسات HR (توظيف، تطوير، تعويض، أداء) مُصمّمة لتعزيز الاستراتيجية التنافسية للمنظمة وليس كعمليات مستقلة",
+defEn:"HR practices (recruiting, development, compensation, performance) designed to reinforce the organization's competitive strategy — not operating as independent silos.",
+tags:["HR Strategy","Integration"]},
+
+{id:141,book:"org",bookName:"Organization Domain",cat:"Org Development",
+ar:"الذكاء الاصطناعي التوليدي في HR",en:"Generative AI in HR",
+defAr:"يُسرّع: صياغة أوصاف الوظائف، تلخيص المراجعات، إنشاء مواد تدريب. لا يُحل محله: الحكم الأخلاقي، التحقيق، القرارات الحساسة",
+defEn:"Accelerates: job description drafting, review summarization, training material creation. Cannot replace: ethical judgment, investigation work, sensitive employment decisions. Human oversight required.",
+tags:["HR Technology","AI"]},
+
+{id:142,book:"org",bookName:"Organization Domain",cat:"HR Strategy",
+ar:"نماذج الكفاءة — أنواعها",en:"Competency Model Types",
+defAr:"الكفاءات الأساسية (للجميع) + الكفاءات الوظيفية (لكل وظيفة) + الكفاءات القيادية (للمديرين) = الإطار الشامل",
+defEn:"Core competencies (all employees) + Functional competencies (role-specific) + Leadership competencies (managers). Integrated framework connects selection, development, and performance.",
+tags:["HR Strategy","Competencies"]},
+
+{id:143,book:"org",bookName:"Organization Domain",cat:"Performance Management",
+ar:"التغذية الراجعة المستمرة والتطوير",en:"Continuous Feedback Culture",
+defAr:"ثقافة يُعطي فيها المديرون والزملاء تغذية راجعة بانتظام وعلى الفور — تُقلل أثر الهالة والتعصب وتحيزات الاستحضار",
+defEn:"Culture where managers and peers give regular, immediate feedback. Reduces halo effect, recency bias, and recall bias common in annual reviews. Requires psychological safety.",
+tags:["Performance Management","Culture"]},
+
+{id:144,book:"org",bookName:"Organization Domain",cat:"HR Metrics",
+ar:"تكلفة التوظيف الواحد",en:"Cost Per Hire",
+defAr:"(التكاليف الداخلية + التكاليف الخارجية) ÷ إجمالي التوظيفات في الفترة — معيار لكفاءة التوظيف وليس جودته",
+defEn:"(Internal costs + External costs) ÷ Total number of hires. A measure of recruiting efficiency — NOT quality. Must be paired with quality-of-hire metrics for strategic value.",
+formula:"(Internal + External Costs) ÷ Total Hires",
+tags:["HR Metrics","Talent Acquisition"]},
+
+{id:145,book:"org",bookName:"Organization Domain",cat:"HR Metrics",
+ar:"جودة التوظيف",en:"Quality of Hire",
+defAr:"مؤشر مركّب: أداء الموظف الجديد + انخراطه + احتفاظه × مقسوم على عدد المتغيرات المُستخدمة",
+defEn:"Composite indicator: new hire performance rating + engagement score + retention rate (÷ number of variables). Most valuable hiring metric but hardest to measure accurately.",
+tags:["HR Metrics","Talent Acquisition"]},
+
+{id:146,book:"org",bookName:"Organization Domain",cat:"Org Development",
+ar:"أسلوب التساؤل الاستقدامي",en:"Appreciative Inquiry (AI)",
+defAr:"أسلوب تطوير تنظيمي يُركّز على تضخيم ما يُنجح (بدلاً من إصلاح ما يفشل) — اكتشاف + حلم + تصميم + مصير",
+defEn:"OD approach focusing on amplifying what works (rather than fixing what fails). Discover → Dream → Design → Destiny. Builds on strengths rather than problems.",
+formula:"Discover → Dream → Design → Destiny",
+tags:["Org Development","OD"]},
+
+{id:147,book:"org",bookName:"Organization Domain",cat:"HR Technology",
+ar:"أمن وسائل التواصل الاجتماعي في بيئة العمل",en:"Social Media in the Workplace — Legal",
+defAr:"سياسات وسائل التواصل الواسعة التي تحظر مناقشة ظروف العمل قد تنتهك المادة 7 من NLRA — يجب صياغتها بدقة",
+defEn:"Overbroad social media policies prohibiting discussion of working conditions may violate NLRA Section 7. Policies must narrowly target confidential information without sweeping in protected speech.",
+tags:["HR Technology","Legal","NLRA"]},
+
+{id:148,book:"org",bookName:"Organization Domain",cat:"HR Strategy",
+ar:"الثقافة التنظيمية — نموذج Competing Values",en:"Competing Values Framework (Quinn)",
+defAr:"أربعة أربعاع: التعاون (قبيلة) + إبداع (عشوائي) + سيطرة (هرمي) + تنافس (سوق) — كل منظمة لها مزيج فريد",
+defEn:"Four quadrants: Collaborate (clan) + Create (adhocracy) + Control (hierarchy) + Compete (market). Each organization has a unique blend. Useful for culture assessment and alignment.",
+tags:["HR Strategy","Culture","Organization Design"]},
+
+{id:149,book:"org",bookName:"Organization Domain",cat:"Org Development",
+ar:"التطوير التنظيمي — المبادئ الجوهرية",en:"OD Core Principles",
+defAr:"نظامي + تشاركي + مبني على البيانات + يُركّز على الثقافة والعمليات + يُتيح حل الفرد والفريق والمنظمة للمشكلة",
+defEn:"Systemic + Participative + Data-driven + Focuses on culture and processes + Enables problem-solving at individual, team, and organizational levels. OD changes systems, not just behaviors.",
+tags:["Org Development","OD"]},
+
+{id:150,book:"org",bookName:"Organization Domain",cat:"HR Metrics",
+ar:"مؤشر رضا HR (HRSAT)",en:"HR Satisfaction Score (HRSAT)",
+defAr:"يقيس رضا الموظفين وقادة الأعمال عن خدمات وشراكات HR — مفيد لتحديد فجوات تجربة HR وأولويات التحسين",
+defEn:"Measures employee and business leader satisfaction with HR services and partnerships. Useful for identifying HR experience gaps and improvement priorities. Distinct from employee engagement.",
+tags:["HR Metrics","HR Effectiveness"]},
+
+// ─────────────────────────────────────────
+// BOOK 4: WORKPLACE DOMAIN (50 cards)
+// ─────────────────────────────────────────
+{id:151,book:"wp",bookName:"Workplace Domain",cat:"Global Workforce",
+ar:"الكولنة — تعريف فريدمان",en:"Globalization — Friedman's Definition",
+defAr:"التكامل الحتمي للأسواق والدول والتقنيات — يُتيح للجميع الوصول حول العالم بشكل أبعد وأسرع وأعمق وأرخص",
+defEn:"The inevitable integration of markets, nation-states, and technologies enabling individuals, corporations, and nations to reach the world farther, faster, deeper, and cheaper.",
+tags:["Global Workforce","Globalization"]},
+
+{id:152,book:"wp",bookName:"Workplace Domain",cat:"Global Workforce",
+ar:"نموذج Perlmutter — أثنوسنتري",en:"Perlmutter: Ethnocentric Orientation",
+defAr:"المقر يتحكم بالكامل في الفروع. 'طريقة واحدة مثلى.' المديرون من PCN يطبّقون ثقافة المقر عالمياً",
+defEn:"Headquarters controls all subsidiaries. 'One best way.' Parent-country nationals (PCNs) lead subsidiaries. Home-country policies applied globally. Risk: cultural blindness.",
+tags:["Global Workforce","Perlmutter"]},
+
+{id:153,book:"wp",bookName:"Workplace Domain",cat:"Global Workforce",
+ar:"نموذج Perlmutter — بوليسنتري",en:"Perlmutter: Polycentric Orientation",
+defAr:"الفروع مستقلة طالما مربحة. 'طرق مثلى متعددة.' HCNs يقودون محلياً بسياسات HR مطوّرة محلياً",
+defEn:"Subsidiaries operate independently as long as profitable. 'Multiple best ways.' HCNs lead locally with locally-developed HR policies. Risk: global inconsistency.",
+tags:["Global Workforce","Perlmutter"]},
+
+{id:154,book:"wp",bookName:"Workplace Domain",cat:"Global Workforce",
+ar:"نموذج Perlmutter — جيوسنتري",en:"Perlmutter: Geocentric Orientation",
+defAr:"شبكة تشاركية: 'طريقة الفريق.' أفضل المواهب في أي مكان تُوجَّه للمناصب الأنسب بصرف النظر عن الجنسية",
+defEn:"Collaborative network: 'The team way.' Best talent globally deployed to most suitable positions regardless of nationality. Most complex to execute. Requires sophisticated global talent infrastructure.",
+tags:["Global Workforce","Perlmutter"]},
+
+{id:155,book:"wp",bookName:"Workplace Domain",cat:"Global Workforce",
+ar:"مصفوفة GI-LR — استراتيجية Transnational",en:"GI-LR Matrix: Transnational Strategy",
+defAr:"GI مرتفع + LR مرتفع في آنٍ معاً — الأكثر تعقيداً والأصعب تنفيذاً. أنشطة سلسلة القيمة في أفضل المواقع + تكيّف محلي",
+defEn:"High global integration AND high local responsiveness simultaneously. Most complex to execute. Value chain activities in most advantageous locations + local product adaptation.",
+formula:"High GI + High LR = Transnational",
+tags:["Global Workforce","GI-LR Matrix"]},
+
+{id:156,book:"wp",bookName:"Workplace Domain",cat:"Global Workforce",
+ar:"مصفوفة GI-LR — الاستراتيجيات الأربع",en:"GI-LR Matrix — 4 Strategies",
+defAr:"دولية (GI↓ LR↓) + متعددة المحلية (GI↓ LR↑) + عالمية (GI↑ LR↓) + عابرة للحدود (GI↑ LR↑)",
+defEn:"International (low GI, low LR) + Multidomestic (low GI, high LR) + Global (high GI, low LR) + Transnational (high GI, high LR). Each fits different industry/competitive contexts.",
+formula:"Int'l | Multidomestic | Global | Transnational",
+tags:["Global Workforce","GI-LR Matrix"]},
+
+{id:157,book:"wp",bookName:"Workplace Domain",cat:"Global Workforce",
+ar:"المغترب (PCN) مقابل المحلي (HCN) مقابل الطرف الثالث (TCN)",en:"PCN vs. HCN vs. TCN",
+defAr:"PCN: من بلد المقر — أعلى تكلفة، أعلى توافق استراتيجي. HCN: من البلد المضيف — أرخص، أكثر معرفة محلية. TCN: من بلد ثالث",
+defEn:"PCN (parent-country national): most expensive, strongest strategic alignment. HCN (host-country national): cheapest, best local knowledge. TCN (third-country national): international experience.",
+tags:["Global Workforce","International Assignment"]},
+
+{id:158,book:"wp",bookName:"Workplace Domain",cat:"Global Workforce",
+ar:"إعادة توطين المغترب (Repatriation)",en:"Repatriation",
+defAr:"المرحلة الأكثر إهمالاً في دورة التعيين الدولي — ابدأ التخطيط قبل الانتهاء بـ 6-12 شهراً لتجنب 'صدمة العودة'",
+defEn:"The most neglected phase of international assignment. Start planning 6-12 months before assignment end. Challenges: reverse culture shock, role uncertainty, loss of benefits and status.",
+tags:["Global Workforce","International Assignment"]},
+
+{id:159,book:"wp",bookName:"Workplace Domain",cat:"Global Workforce",
+ar:"Offshoring مقابل Nearshoring مقابل Onshoring",en:"Offshoring vs. Nearshoring vs. Onshoring",
+defAr:"Offshoring: نقل العمل لبلد بعيد. Nearshoring: لبلد مجاور. Onshoring: لمنطقة أرخص داخل نفس البلد",
+defEn:"Offshoring: move work to a distant country. Nearshoring: move to a geographically proximate country (same time zone, cultural proximity). Onshoring: move within the same country.",
+tags:["Global Workforce","Work Transfer"]},
+
+{id:160,book:"wp",bookName:"Workplace Domain",cat:"Global Workforce",
+ar:"تأشيرة H-1B",en:"H-1B Visa",
+defAr:"للعمالة في 'المهن المتخصصة' التي تتطلب درجة جامعية أو ما يعادلها + تخصص متميز + عرض عمل من صاحب عمل USA",
+defEn:"For 'specialty occupation' workers. Requirements: bachelor's degree or equivalent in specific specialty field + specialized job + US employer petition. Annual cap: 65,000 + 20,000 advanced degree.",
+tags:["Global Workforce","Immigration","Visa"]},
+
+{id:161,book:"wp",bookName:"Workplace Domain",cat:"Global Workforce",
+ar:"نموذج I-9 — متطلبات الإكمال",en:"Form I-9 — Completion Requirements",
+defAr:"الموظف يكمل القسم 1 في أو قبل اليوم الأول. صاحب العمل يكمل القسم 2 خلال 3 أيام عمل. إلزامي لجميع موظفي USA",
+defEn:"Employee completes Section 1 on or before Day 1. Employer completes Section 2 within 3 business days of start. Mandatory for ALL US employees regardless of nationality.",
+formula:"Employee: Day 1 | Employer: 3 Business Days",
+tags:["Global Workforce","I-9","Immigration"]},
+
+{id:162,book:"wp",bookName:"Workplace Domain",cat:"Risk Management",
+ar:"إدارة مخاطر المنشأة (ERM)",en:"Enterprise Risk Management (ERM)",
+defAr:"نهج منهجي شامل لتحديد وتقييم وإدارة المخاطر عبر المنظمة — الهدف: تحسين القرارات لحماية وخلق القيمة",
+defEn:"Systematic approach to identifying, assessing, and managing risks across the organization. Goal: improve decisions about risks to both protect and create organizational value.",
+tags:["Risk Management","ERM"]},
+
+{id:163,book:"wp",bookName:"Workplace Domain",cat:"Risk Management",
+ar:"مبدأ MECE في تحديد المخاطر",en:"MECE Principle in Risk Identification",
+defAr:"متبادلة الاستثناء (لا تداخل) + شاملة استنفاداً (لا فجوات) — التداخل يُضيع الموارد ويُشوّش المسؤولية",
+defEn:"Mutually Exclusive (no overlap) + Comprehensively Exhaustive (no gaps). Overlap wastes resources and confuses ownership. Gaps leave risks unmanaged. Both conditions required.",
+formula:"Mutually Exclusive + Comprehensively Exhaustive",
+tags:["Risk Management","MECE"]},
+
+{id:164,book:"wp",bookName:"Workplace Domain",cat:"Risk Management",
+ar:"بطاقة تقييم المخاطر — مؤشر A×B×C×D",en:"Risk Scorecard: A×B×C×D",
+defAr:"A=احتمالية (1-3) × B=سرعة الظهور (1-3) × C=ضعف الإجراءات الحالية (1-3) × D=خطورة التأثير (1-3) = الأولوية",
+defEn:"A=Probability (1-3) × B=Speed of onset (1-3) × C=Weakness of current controls (1-3) × D=Severity of impact (1-3) = Priority index. Higher score = higher priority.",
+formula:"A (Probability) × B (Speed) × C (Controls) × D (Impact)",
+tags:["Risk Management","Scorecard"]},
+
+{id:165,book:"wp",bookName:"Workplace Domain",cat:"Risk Management",
+ar:"نموذج PAPA لأولوية المخاطر",en:"PAPA Risk Prioritization Model",
+defAr:"استعدّ (بطيء+منخفض) + تصرّف (سريع+عالٍ) + أجّل (بطيء+منخفض) + تكيّف (بطيء+عالٍ) حسب السرعة × الاحتمالية",
+defEn:"Prepare (fast+unlikely: contingency plans) + Act (fast+likely: immediate response) + Park (slow+unlikely: monitor only) + Adapt (slow+likely: gradual management).",
+formula:"Prepare | Act | Park | Adapt",
+tags:["Risk Management","PAPA"]},
+
+{id:166,book:"wp",bookName:"Workplace Domain",cat:"Risk Management",
+ar:"مؤشرات المخاطر الرئيسية (KRIs)",en:"Key Risk Indicators (KRIs)",
+defAr:"مقاييس إنذار مبكر تُنذر بتزايد تعرّض المنظمة للمخاطر قبل أن تتحوّل لأزمات — إهمالها = الخطر بلا حراسة",
+defEn:"Early warning metrics signaling increasing risk exposure before events materialize. Proactive vs. lagging. Must be monitored and acted upon — unused KRIs provide no value.",
+tags:["Risk Management","KRIs"]},
+
+{id:167,book:"wp",bookName:"Workplace Domain",cat:"Risk Management",
+ar:"استراتيجيات معالجة المخاطر — الخمس",en:"5 Risk Treatment Strategies",
+defAr:"تجنّب + تخفيض + تقاسم/نقل + قبول + المخاطر المتبقية. الملكية الأخلاقية لا تُنقل كلياً حتى مع التأمين",
+defEn:"Avoidance + Reduction + Sharing/Transfer + Retention/Accept + Residual Risk. Moral ownership can't be fully transferred — even insured risks retain reputational/ethical exposure.",
+tags:["Risk Management","Treatment"]},
+
+{id:168,book:"wp",bookName:"Workplace Domain",cat:"Risk Management",
+ar:"واجب الرعاية (Duty of Care)",en:"Duty of Care",
+defAr:"التزام المنظمة باتخاذ كل الخطوات المعقولة لضمان صحة وسلامة الموظفين — يمتد للمغتربين والعاملين عن بُعد وأحياناً أُسرهم",
+defEn:"Obligation to take all reasonably possible steps to ensure employee health, safety, and wellbeing. Extends beyond primary workplace to expatriates, remote workers, and sometimes families.",
+tags:["Risk Management","Duty of Care"]},
+
+{id:169,book:"wp",bookName:"Workplace Domain",cat:"Risk Management",
+ar:"قانون OSHA — الالتزام العام",en:"OSHA General Duty Clause",
+defAr:"صاحب العمل ملزم بتوفير مكان عمل خالٍ من المخاطر المعترف بها — حتى في غياب معيار OSHA محدد",
+defEn:"Employer must provide a workplace free from recognized hazards likely to cause death or serious physical harm — even when no specific OSHA standard addresses that hazard.",
+tags:["Risk Management","OSHA","Safety"]},
+
+{id:170,book:"wp",bookName:"Workplace Domain",cat:"Risk Management",
+ar:"الإبلاغ عن الحوادث — OSHA",en:"OSHA Incident Reporting",
+defAr:"وفاة: الإبلاغ خلال 8 ساعات. دخول المستشفى (3 موظفين+): الإبلاغ خلال 24 ساعة. سجل OSHA 300: التوثيق السنوي",
+defEn:"Death: report within 8 hours. Hospitalization of 3+ employees: report within 24 hours. OSHA 300 Log: document all recordable injuries/illnesses annually.",
+formula:"Death: 8h | 3+ Hospitalized: 24h | Log: Annual",
+tags:["Risk Management","OSHA","Safety"]},
+
+{id:171,book:"wp",bookName:"Workplace Domain",cat:"CSR",
+ar:"الأساس الثلاثي — TBL",en:"Triple Bottom Line (TBL)",
+defAr:"الناس (أثر اجتماعي) + الكوكب (أثر بيئي) + الربح (أداء مالي) — نجاح المنظمة يُقاس بالمحاور الثلاثة وليس المالي وحده",
+defEn:"People (social impact) + Planet (environmental impact) + Profit (financial performance). Organizational success measured across all three dimensions, not profit alone.",
+formula:"People + Planet + Profit",
+tags:["CSR","Triple Bottom Line"]},
+
+{id:172,book:"wp",bookName:"Workplace Domain",cat:"CSR",
+ar:"ISO 26000 — المسؤولية الاجتماعية",en:"ISO 26000",
+defAr:"معيار دولي لإرشادات المسؤولية الاجتماعية — ليس شهادة إلزامية، لا يمكن التحقق منها. يختلف عن ISO 14001 و9001",
+defEn:"International standard for social responsibility guidance — NOT a certifiable standard. Organizations cannot be 'ISO 26000 certified.' Guidance only, unlike ISO 9001 and 14001.",
+tags:["CSR","ISO 26000"]},
+
+{id:173,book:"wp",bookName:"Workplace Domain",cat:"CSR",
+ar:"CSV مقابل CSR — الفرق الجوهري",en:"CSV vs. CSR (Porter & Kramer)",
+defAr:"CSR: تُعيد توزيع القيمة المخلوقة. CSV: تُنشئ قيمة اقتصادية + اجتماعية في آنٍ واحد من خلال إعادة تصميم نموذج الأعمال",
+defEn:"CSR: redistributes already-created value. CSV (Creating Shared Value): creates economic AND social value simultaneously through business model redesign. CSV is more strategically durable.",
+tags:["CSR","CSV","Porter"]},
+
+{id:174,book:"wp",bookName:"Workplace Domain",cat:"CSR",
+ar:"أهداف التنمية المستدامة — SDGs",en:"UN Sustainable Development Goals (SDGs)",
+defAr:"17 هدفاً للأمم المتحدة بحلول 2030 — إطار طوعي لتحديد أولويات CSR ومواءمتها مع أجندة عالمية معترف بها",
+defEn:"17 UN goals for 2030. Voluntary framework for prioritizing CSR commitments and aligning them with a globally recognized agenda. Not legally binding for corporations.",
+tags:["CSR","SDGs"]},
+
+{id:175,book:"wp",bookName:"Workplace Domain",cat:"CSR",
+ar:"GRI — مبادرة الإفصاح العالمي",en:"Global Reporting Initiative (GRI)",
+defAr:"أكثر أُطر الإفصاح عن الاستدامة استخداماً — يُعرّف مؤشرات موحّدة تُمكّن المقارنة عبر المنظمات والصناعات",
+defEn:"Most widely used sustainability disclosure framework. Defines standardized indicators enabling comparison across organizations and industries. Voluntary but widely adopted by ESG investors.",
+tags:["CSR","GRI"]},
+
+{id:176,book:"wp",bookName:"Workplace Domain",cat:"CSR",
+ar:"مادية CSR (Materiality)",en:"CSR Materiality",
+defAr:"قضية جوهرية عندما تعكس تأثيرات كبيرة للمنظمة أو تُؤثر جوهرياً على تقييمات أصحاب المصلحة — تحدد أولويات التقرير",
+defEn:"An issue is material when it reflects the organization's significant impacts OR substantially influences stakeholder assessments. Determines CSR reporting priorities. Core to GRI framework.",
+tags:["CSR","Materiality"]},
+
+{id:177,book:"wp",bookName:"Workplace Domain",cat:"CSR",
+ar:"الفوائد الرباعية للتطوع الوظيفي",en:"Employee Volunteerism — 4 Benefits",
+defAr:"فردية (تقدير + مهارات) + فريق (عمل جماعي + انتماء) + منظمة (تقوية الثقافة) + تجارية (سمعة + علامة تجارية)",
+defEn:"Individual (recognition, skills) + Team (teamwork, camaraderie) + Organizational (culture strengthening) + Business (reputation, brand value). SHRM Foundation's four-category framework.",
+formula:"Individual + Team + Organizational + Business",
+tags:["CSR","Volunteerism"]},
+
+{id:178,book:"wp",bookName:"Workplace Domain",cat:"US Employment Law",
+ar:"Title VII — قانون الحقوق المدنية 1964",en:"Title VII — Civil Rights Act 1964",
+defAr:"يحمي ضد التمييز في العمل بسبب: العرق، اللون، الدين، الجنس (بما يشمل الحمل)، الأصل القومي. 15+ موظف",
+defEn:"Prohibits employment discrimination based on: race, color, religion, sex (including pregnancy), national origin. Applies to employers with 15+ employees. EEOC enforces.",
+tags:["US Employment Law","EEO","Title VII"]},
+
+{id:179,book:"wp",bookName:"Workplace Domain",cat:"US Employment Law",
+ar:"التمييز الصريح مقابل التأثير المتعارض",en:"Disparate Treatment vs. Disparate Impact",
+defAr:"الصريح: معاملة تمييزية متعمدة (يتطلب نية). المتعارض: سياسة محايدة ذات تأثير متباين سلبي (لا تتطلب نية)",
+defEn:"Disparate Treatment: intentional different treatment based on protected characteristic (requires intent). Disparate Impact: facially neutral policy with adverse statistical effect (no intent required).",
+tags:["US Employment Law","EEO"]},
+
+{id:180,book:"wp",bookName:"Workplace Domain",cat:"US Employment Law",
+ar:"ADEA — قانون التمييز بسبب السن 1967",en:"Age Discrimination in Employment Act (ADEA)",
+defAr:"يحمي من هم 40 سنة فأكثر من التمييز — ينطبق على أصحاب العمل 20+ موظف. EEOC تُطبّقه",
+defEn:"Protects workers 40 and over from employment discrimination based on age. Applies to employers with 20+ employees. Covers hiring, firing, compensation, promotion, training.",
+formula:"Protects: 40+ years | Threshold: 20+ employees",
+tags:["US Employment Law","ADEA"]},
+
+{id:181,book:"wp",bookName:"Workplace Domain",cat:"US Employment Law",
+ar:"ADA — قانون الأمريكيين ذوي الإعاقة 1990",en:"Americans with Disabilities Act (ADA)",
+defAr:"يحمي ذوي الإعاقة + يُلزم بالتيسير المعقول. 15+ موظف. لا يُلزم بخلق وظائف جديدة أو إلغاء الوظائف الجوهرية",
+defEn:"Protects individuals with disabilities from discrimination + requires reasonable accommodation. 15+ employees. Does NOT require creating new positions or eliminating essential functions.",
+tags:["US Employment Law","ADA"]},
+
+{id:182,book:"wp",bookName:"Workplace Domain",cat:"US Employment Law",
+ar:"FLSA — اختبارات الإعفاء الثلاثية",en:"FLSA Exemption: Triple Test",
+defAr:"للإعفاء من الأجر الإضافي يجب اجتياز: (1) اختبار الراتب ≥$684/أسبوع + (2) اختبار المهام الوظيفية المحددة. كلاهما مطلوب",
+defEn:"Exemption requires: (1) Salary test: ≥$684/week AND (2) Specific duties test (executive/administrative/professional/outside sales/computer). Both tests must be satisfied.",
+formula:"Salary Test + Duties Test = Both Required",
+tags:["US Employment Law","FLSA"]},
+
+{id:183,book:"wp",bookName:"Workplace Domain",cat:"US Employment Law",
+ar:"FMLA — شروط الأهلية الخمسة",en:"FMLA Eligibility Requirements",
+defAr:"12 أسبوعاً إجازة محمية وظيفياً. الأهلية: 50+ موظف في نطاق 75 ميلاً + عمل 12 شهراً + 1,250 ساعة في آخر 12 شهراً",
+defEn:"12 weeks protected leave. Eligibility: 50+ employees within 75 miles of worksite + employed 12 months + worked 1,250 hours in preceding 12 months. All three conditions required.",
+formula:"50+ employees (75mi) + 12 months + 1,250 hours",
+tags:["US Employment Law","FMLA"]},
+
+{id:184,book:"wp",bookName:"Workplace Domain",cat:"US Employment Law",
+ar:"COBRA — مدد التغطية الثلاث",en:"COBRA Coverage Periods",
+defAr:"18 شهراً (إنهاء/تقليص ساعات) + 29 شهراً (إعاقة ADA) + 36 شهراً (طلاق/وفاة/Medicare). التكلفة: 100%+2% على المستفيد",
+defEn:"18 months (termination/hour reduction) + 29 months (ADA disability within first 60 days) + 36 months (divorce/death/Medicare). Cost: 100% + 2% admin fee paid by beneficiary.",
+formula:"18 months | 29 months | 36 months",
+tags:["US Employment Law","COBRA"]},
+
+{id:185,book:"wp",bookName:"Workplace Domain",cat:"US Employment Law",
+ar:"USERRA — حماية المحاربين",en:"USERRA — Uniformed Services Rights",
+defAr:"يحمي حقوق التوظيف للعسكريين. لا حد لحجم صاحب العمل — ينطبق على الجميع. خدمة 5 سنوات فأقل = حق إعادة التوظيف",
+defEn:"Protects employment rights for military service members. NO employer size threshold — applies to all employers. Service ≤5 years = reemployment right in same or comparable position.",
+formula:"Applies to ALL employers (no size minimum)",
+tags:["US Employment Law","USERRA"]},
+
+{id:186,book:"wp",bookName:"Workplace Domain",cat:"US Employment Law",
+ar:"NLRA — المادة 7 والأنشطة المشتركة",en:"NLRA Section 7 — Concerted Activities",
+defAr:"تحمي جميع الموظفين (نقابيين وغير نقابيين) في مناقشة الأجور وظروف العمل. سياسات السرية الشاملة للرواتب تنتهك المادة 7",
+defEn:"Protects ALL private sector employees (union AND non-union) discussing wages and working conditions. Blanket salary confidentiality policies violate Section 7.",
+tags:["US Employment Law","NLRA"]},
+
+{id:187,book:"wp",bookName:"Workplace Domain",cat:"US Employment Law",
+ar:"GINA — قانون عدم التمييز الجيني 2008",en:"Genetic Information Nondiscrimination Act (GINA)",
+defAr:"يحظر استخدام المعلومات الجينية (بما فيها التاريخ الطبي العائلي) في قرارات التوظيف. 15+ موظف. برامج رعاية الصحة محفوفة بالمخاطر",
+defEn:"Prohibits using genetic information (including family medical history) in employment decisions. 15+ employees. Wellness programs offering financial incentives for family health history = high GINA risk.",
+tags:["US Employment Law","GINA"]},
+
+{id:188,book:"wp",bookName:"Workplace Domain",cat:"US Employment Law",
+ar:"قانون Lilly Ledbetter 2009",en:"Lilly Ledbetter Fair Pay Act 2009",
+defAr:"كل شيك راتب تمييزي يُجدّد مهلة التقاضي — بدلاً من الحساب من أول قرار راتب تمييزي. أول قانون وقّعه أوباما",
+defEn:"Each discriminatory paycheck resets the statute of limitations clock — not just the original discriminatory pay decision. First law signed by President Obama. Overturned Ledbetter v. Goodyear 2007.",
+tags:["US Employment Law","Pay Equity"]},
+
+{id:189,book:"wp",bookName:"Workplace Domain",cat:"US Employment Law",
+ar:"حقوق Weingarten في القطاع العام",en:"Weingarten Rights in Unionized Workplace",
+defAr:"الموظف النقابي يحق له طلب ممثل نقابي في أي مقابلة تحقيقية إذا اعتقد معقولاً أنها قد تُفضي إلى عقوبة",
+defEn:"Unionized employee may request union representation in investigative interview if they reasonably believe it might result in discipline. Employer must grant request, end interview, or change its nature.",
+tags:["US Employment Law","NLRA","Weingarten"]},
+
+{id:190,book:"wp",bookName:"Workplace Domain",cat:"US Employment Law",
+ar:"قانون الإصلاح والسيطرة على الهجرة — IRCA",en:"IRCA 1986 — Immigration Reform & Control Act",
+defAr:"يمنع التوظيف المتعمد لغير المؤهلين عبر إلزامية I-9. يحظر التمييز بسبب الجنسية أو الوضع المواطني",
+defEn:"Prevents intentional hiring of unauthorized workers via mandatory I-9 verification. Also prohibits employment discrimination based on national origin or citizenship status.",
+tags:["US Employment Law","IRCA","Immigration"]},
+
+{id:191,book:"wp",bookName:"Workplace Domain",cat:"US Employment Law",
+ar:"قانون FCRA — فحوصات الخلفية",en:"Fair Credit Reporting Act (FCRA)",
+defAr:"قبل الإجراء السلبي: تزويد المتقدم بنسخة من التقرير + ملخص الحقوق. إشعار بعد الإجراء السلبي. معلومات جنائية: 7 سنوات",
+defEn:"Pre-adverse action: provide (1) copy of report + (2) FCRA rights summary before finalizing adverse decision. Post-adverse action notice required. Criminal info retention: 7 years (most cases).",
+formula:"Pre-adverse: Copy + Rights | Post-adverse: Notice",
+tags:["US Employment Law","FCRA"]},
+
+{id:192,book:"wp",bookName:"Workplace Domain",cat:"US Employment Law",
+ar:"WARN Act — قانون التسريح الجماعي",en:"WARN Act",
+defAr:"100+ موظف → إشعار 60 يوماً. إغلاق منشأة (50+) أو تسريح جماعي (500+ أو 50-499 = 33%+ من العمالة) → 60 يوم راتب جزاء",
+defEn:"100+ employees: 60 calendar days notice before qualifying plant closing (50+) or mass layoff (500+ OR 50-499 representing ≥33%). Penalty: 60 days back pay per affected employee.",
+formula:"100+ employees → 60 days notice",
+tags:["US Employment Law","WARN"]},
+
+{id:193,book:"wp",bookName:"Workplace Domain",cat:"US Employment Law",
+ar:"قانون Davis-Bacon 1931",en:"Davis-Bacon Act 1931",
+defAr:"عقود البناء الفيدرالية التي تتجاوز 2,000$ → الأجر السائد لعمال البناء في الموقع كما تُحدده DOL",
+defEn:"Federally-funded construction contracts over $2,000 must pay locally determined 'prevailing wages' for construction workers. DOL's Wage and Hour Division determines prevailing wage rates.",
+formula:"Federal Construction > $2,000 → Prevailing Wage",
+tags:["US Employment Law","Davis-Bacon"]},
+
+{id:194,book:"wp",bookName:"Workplace Domain",cat:"US Employment Law",
+ar:"نظرية العدالة — آدامز",en:"Adams' Equity Theory",
+defAr:"الموظفون يقارنون نسبة مساهماتهم/مكافآتهم بنسبة الآخرين. عدم المساواة المُدرَكة تُؤدي إلى خفض الجهد أو مغادرة المنظمة",
+defEn:"Employees compare their input/outcome ratio with others'. Perceived inequity (positive or negative) leads to behavior change: reduce effort, demand more pay, or leave.",
+tags:["US Employment Law","Motivation","Total Rewards"]},
+
+{id:195,book:"wp",bookName:"Workplace Domain",cat:"Global Workforce",
+ar:"درجة Hofstede — تجنّب الغموض",en:"Hofstede: Uncertainty Avoidance",
+defAr:"مستوى ارتياح الثقافة مع عدم اليقين والغموض — تأثيره: الحاجة لقواعد وإجراءات مكتوبة مقابل تقبّل القرارات التكيفية",
+defEn:"Degree of discomfort with uncertainty and ambiguity. High UA cultures need written rules and procedures. Low UA cultures tolerate adaptive decision-making and ambiguity.",
+tags:["Global Workforce","Hofstede"]},
+
+{id:196,book:"wp",bookName:"Workplace Domain",cat:"Risk Management",
+ar:"سجل المخاطر",en:"Risk Register",
+defAr:"قائمة رسمية بكل المخاطر: فئة + حدث + تصنيف + مؤشرات KRI + إجراءات الإدارة + صاحب المسؤولية + متطلبات الإبلاغ",
+defEn:"Formal list of all identified risks including: category, event, classification, KRIs, management controls, risk owner, and reporting requirements. Makes risk management visible and accountable.",
+tags:["Risk Management","Risk Register"]},
+
+{id:197,book:"wp",bookName:"Workplace Domain",cat:"CSR",
+ar:"قضية مسؤولية العمل في سلسلة التوريد",en:"Supply Chain Labor Responsibility",
+defAr:"CSR يمتد لسلسلة القيمة — الانتهاكات في مصانع الموردين تخلق مخاطر علامة تجارية وتنظيمية وقانونية لصاحب العمل الرئيسي",
+defEn:"CSR accountability extends to the value chain. Supplier labor violations create brand, regulatory (US Customs), and legal risk for the primary employer. Remediation preferred over exit (CSV).",
+tags:["CSR","Supply Chain"]},
+
+{id:198,book:"wp",bookName:"Workplace Domain",cat:"US Employment Law",
+ar:"قانون المساواة في الأجر 1963",en:"Equal Pay Act (EPA) 1963",
+defAr:"يحظر فجوات الأجر بين الجنسين لنفس العمل في نفس المنشأة. الدفاعيات: الأقدمية، الجدارة، جودة/كمية الإنتاج، أي عامل غير الجنس",
+defEn:"Prohibits pay differentials between men and women performing equal work in the same establishment. Defenses: seniority, merit, production quality/quantity, or any factor other than sex.",
+tags:["US Employment Law","Pay Equity","EPA"]},
+
+{id:199,book:"wp",bookName:"Workplace Domain",cat:"US Employment Law",
+ar:"الإنهاء المبرر (Just Cause) — المعيار",en:"Just Cause vs. At-Will Termination",
+defAr:"التوظيف حسب الإرادة (الافتراضي بـ USA): لا سبب مطلوب. Just Cause (عقود النقابات): صاحب العمل يُثبت المبرر + 7 اختبارات",
+defEn:"At-will (US default): no reason required for termination. Just cause (union contracts): employer must prove justification using 7 tests (notice, reasonableness, investigation, etc.).",
+tags:["US Employment Law","Labor Relations"]},
+
+{id:200,book:"wp",bookName:"Workplace Domain",cat:"CSR",
+ar:"الرأسمالية مع أصحاب المصلحة",en:"Stakeholder Capitalism",
+defAr:"غرض الأعمال يشمل: قيمة للعملاء + استثمار في الموظفين + عدالة مع الموردين + دعم المجتمعات + حماية البيئة — لا مساهمين وحدهم",
+defEn:"Business purpose encompasses value for customers, employees, suppliers, communities, and the environment — not maximizing shareholder value alone. 2019 Business Roundtable statement.",
+tags:["CSR","Stakeholder Capitalism"]},
+
+  {id:201,book:"comp",bookName:"Competencies",cat:"Leadership",
+   ar:"نظرية الحاجات لماكليلاند",en:"McClelland's Needs Theory",
+   defAr:"ثلاث حاجات مكتسبة تحرّك السلوك: الإنجاز (nAch)، الانتماء (nAff)، السلطة (nPow). أصحاب الإنجاز العالي قد لا يصلحون مديرين.",
+   defEn:"Three acquired needs drive behavior: achievement (nAch), affiliation (nAff), power (nPow). High-achievement individuals may not make good managers.",
+   tags:["Motivation","McClelland"]},
+
+  {id:202,book:"comp",bookName:"Competencies",cat:"Leadership",
+   ar:"نظرية تحديد الأهداف (لوك)",en:"Goal-Setting Theory (Locke & Latham)",
+   defAr:"الأهداف المحدّدة والصعبة (لكن الواقعية) مع التغذية الراجعة ترفع الأداء أكثر من «ابذل أفضل ما لديك». أساس أهداف SMART.",
+   defEn:"Specific, difficult-yet-attainable goals with feedback drive higher performance than 'do your best'. The foundation of SMART goals.",
+   tags:["Motivation","Goal-Setting"]},
+
+  {id:203,book:"comp",bookName:"Competencies",cat:"HR Expertise",
+   ar:"الإصغاء الفعّال",en:"Active Listening",
+   defAr:"انتباه كامل، إعادة صياغة للتأكّد، أسئلة توضيحية، وتأجيل الحكم. مهارة محورية في الاستشارة وحل النزاع.",
+   defEn:"Full attention, paraphrasing to confirm, clarifying questions, and suspending judgment. A core skill in consultation and conflict resolution.",
+   tags:["Communication","Listening"]},
+
+  {id:204,book:"comp",bookName:"Competencies",cat:"Global Workforce",
+   ar:"ثقافات Hall عالية/منخفضة السياق",en:"Hall's High/Low-Context Cultures",
+   defAr:"عالية السياق تعتمد التلميح والعلاقات (اليابان، الخليج)؛ منخفضة السياق تعتمد الصراحة والتوثيق المكتوب (ألمانيا، أمريكا).",
+   defEn:"High-context cultures rely on implicit cues and relationships (Japan, Gulf); low-context rely on explicit words and documentation (Germany, US).",
+   tags:["Global","Culture"]},
+
+  {id:205,book:"comp",bookName:"Competencies",cat:"Global Workforce",
+   ar:"أبعاد ترومبينارز الثقافية",en:"Trompenaars' Cultural Dimensions",
+   defAr:"سبعة توترات ثقافية مثل العالمية مقابل الخصوصية، والفرد مقابل الجماعة، والحياد مقابل العاطفية — لإدارة الفرق متعدّدة الثقافات.",
+   defEn:"Seven cultural dilemmas such as universalism vs particularism, individualism vs communitarianism, neutral vs affective — for managing multicultural teams.",
+   tags:["Global","Culture"]},
+
+  {id:206,book:"comp",bookName:"Competencies",cat:"Org Development",
+   ar:"مستويات الثقافة لشاين",en:"Schein's Three Levels of Culture",
+   defAr:"المصنوعات الظاهرة ← القيم المعلنة ← الافتراضات الضمنية العميقة (الأصعب تغييراً والأقوى تأثيراً).",
+   defEn:"Visible artifacts ← espoused values ← deep underlying assumptions (the hardest to change and the most influential).",
+   tags:["Culture","Schein"]},
+
+  {id:207,book:"comp",bookName:"Competencies",cat:"Global Workforce",
+   ar:"الذكاء الثقافي (CQ)",en:"Cultural Intelligence (CQ)",
+   defAr:"القدرة على العمل بفاعلية عبر الثقافات، بأربعة أبعاد: ما وراء المعرفي، المعرفي، الدافعي، السلوكي.",
+   defEn:"The capability to function effectively across cultures, across four dimensions: metacognitive, cognitive, motivational, behavioral.",
+   tags:["Global","Cultural Intelligence"]},
+
+  {id:208,book:"comp",bookName:"Competencies",cat:"Org Development",
+   ar:"تحليل مجال القوى (لوين)",en:"Lewin's Force Field Analysis",
+   defAr:"أداة تغيير تُحلّل القوى الدافعة نحو التغيير مقابل القوى المقاوِمة. يتحقّق التغيير بتقوية الدافعة أو إضعاف المقاوِمة.",
+   defEn:"A change tool mapping driving forces for change against restraining forces. Change occurs by strengthening drivers or weakening restrainers.",
+   tags:["Change","Lewin"]},
+
+  {id:209,book:"org",bookName:"Organization",cat:"Org Development",
+   ar:"نموذج الانتقال لبريدجز",en:"Bridges' Transition Model",
+   defAr:"يركّز على الجانب النفسي للتغيير عبر ثلاث مراحل: النهاية/الخسارة ← المنطقة المحايدة ← البداية الجديدة. (التغيير حدث، والانتقال تجربة داخلية).",
+   defEn:"Focuses on the psychological side of change in three phases: Ending/Loss ← Neutral Zone ← New Beginning. (Change is external; transition is internal.)",
+   tags:["Change","Bridges"]},
+
+  {id:210,book:"wp",bookName:"Workplace",cat:"US Employment Law",
+   ar:"أنواع صدق الاختيار",en:"Selection Validity Types",
+   defAr:"المحكّي (يتنبّأ بالأداء)، المحتوى (يمثّل الوظيفة فعلاً)، البنائي (يقيس سمة نظرية كالذكاء). الصدق ضروري قانونياً لاختبارات الاختيار.",
+   defEn:"Criterion-related (predicts performance), content (samples the actual job), construct (measures a theoretical trait like intelligence). Validity is legally essential for selection tests.",
+   tags:["Selection","Validity"]},
+
+  {id:211,book:"wp",bookName:"Workplace",cat:"US Employment Law",
+   ar:"الإرشادات الموحّدة لاختيار الموظفين",en:"Uniform Guidelines on Employee Selection",
+   defAr:"معايير الوكالات الفيدرالية لإجراءات الاختيار العادلة؛ مصدر «قاعدة الـ٤/٥» للأثر التمييزي وشرط إثبات صدق الأدوات.",
+   defEn:"Federal agencies' standards for fair selection procedures; the source of the 4/5ths rule for adverse impact and the requirement to validate tools.",
+   tags:["Selection","Compliance"]},
+
+  {id:212,book:"wp",bookName:"Workplace",cat:"US Employment Law",
+   ar:"قانون ساربينز-أوكسلي (SOX)",en:"Sarbanes-Oxley (SOX 2002)",
+   defAr:"حوكمة مالية للشركات العامة + حماية المُبلِّغين عن الاحتيال من الانتقام. صلته بـ HR: حماية المُبلِّغين والاحتفاظ بالسجلّات.",
+   defEn:"Financial governance for public companies + whistleblower anti-retaliation protection. HR relevance: whistleblower protection and records retention.",
+   tags:["Governance","Whistleblower"]},
+
+  {id:213,book:"wp",bookName:"Workplace",cat:"US Employment Law",
+   ar:"قانون VEVRAA للمحاربين 1974",en:"VEVRAA (1974)",
+   defAr:"يفرض التمييز الإيجابي وعدم التمييز للمحاربين المحميين لدى مقاولي الحكومة (≥ $150,000). ما زال سارياً بعد إلغاء EO 11246.",
+   defEn:"Requires affirmative action and nondiscrimination for protected veterans by federal contractors (≥ $150,000). Still in effect after EO 11246's revocation.",
+   tags:["Affirmative Action","Veterans"]},
+
+  {id:214,book:"wp",bookName:"Workplace",cat:"US Employment Law",
+   ar:"قانون مكان العمل الخالي من المخدرات 1988",en:"Drug-Free Workplace Act (1988)",
+   defAr:"يُلزم مقاولي/ممنوحي الحكومة (≥ $100,000) بسياسة مكتوبة وبرنامج توعية — ولا يفرض فحص المخدرات.",
+   defEn:"Requires federal contractors/grantees (≥ $100,000) to maintain a written policy and awareness program — does NOT mandate drug testing.",
+   tags:["Compliance","Drug-Free"]},
+
+  {id:215,book:"wp",bookName:"Workplace",cat:"US Employment Law",
+   ar:"قانون البوابة إلى البوابة 1947",en:"Portal-to-Portal Act (1947)",
+   defAr:"يوضّح «ساعات العمل» المدفوعة بموجب FLSA: التنقّل العادي غير مدفوع؛ الأنشطة الجوهرية (كارتداء معدّات السلامة) قد تُحتسب.",
+   defEn:"Clarifies compensable 'hours worked' under FLSA: ordinary commuting is unpaid; integral activities (like donning safety gear) may count.",
+   tags:["Wage Law","Hours Worked"]},
+
+  {id:216,book:"people",bookName:"People",cat:"Total Rewards",
+   ar:"اتساع نطاق الأجر",en:"Range Spread Formula",
+   defAr:"الاتساع % = ((الحد الأعلى − الحد الأدنى) ÷ الحد الأدنى) × 100. النطاقات الإدارية أوسع (50%+) من الدنيا (20–40%).",
+   defEn:"Spread % = ((max − min) ÷ min) × 100. Managerial ranges are wider (50%+) than entry-level ranges (20–40%).",
+   tags:["Metrics","Compensation"]},
+
+  {id:217,book:"people",bookName:"People",cat:"HR Metrics",
+   ar:"معادلة معدّل الغياب",en:"Absence Rate Formula",
+   defAr:"الغياب % = (أيام الغياب ÷ (متوسط عدد الموظفين × أيام العمل)) × 100. معادلة مكتب إحصاءات العمل (BLS).",
+   defEn:"Absence % = (days absent ÷ (avg employees × workdays)) × 100. The Bureau of Labor Statistics (BLS) formula.",
+   tags:["Metrics","Absence"]},
+
+  {id:218,book:"people",bookName:"People",cat:"Total Rewards",
+   ar:"طرق تقييم الوظائف",en:"Job Evaluation Methods",
+   defAr:"غير كمّية: الترتيب، التصنيف. كمّية: نقاط العوامل (Point-Factor، الأشهر)، مقارنة العوامل. تحدّد القيمة الداخلية النسبية للوظيفة.",
+   defEn:"Non-quantitative: ranking, classification. Quantitative: point-factor (most common), factor comparison. They establish a job's relative internal worth.",
+   tags:["Compensation","Job Evaluation"]},
+
+  {id:219,book:"wp",bookName:"Workplace",cat:"US Employment Law",
+   ar:"المؤهّل المهني الحقيقي (BFOQ)",en:"Bona Fide Occupational Qualification (BFOQ)",
+   defAr:"استثناء ضيّق يجيز التمييز حين تكون الصفة (كالجنس أو السن) ضرورية جوهرياً لأداء الوظيفة. لا ينطبق أبداً على العرق.",
+   defEn:"A narrow exception permitting discrimination when a trait (e.g., sex or age) is genuinely essential to job performance. Never applies to race.",
+   tags:["EEO Law","BFOQ"]},
+
+  {id:220,book:"wp",bookName:"Workplace",cat:"Risk Management",
+   ar:"تعويضات العمال",en:"Workers' Compensation",
+   defAr:"نظام تأمين بلا خطأ (No-Fault) يعوّض الموظفين عن إصابات/أمراض العمل، مقابل تنازلهم غالباً عن حق مقاضاة صاحب العمل.",
+   defEn:"A no-fault insurance system compensating employees for work-related injuries/illnesses, in exchange for generally waiving the right to sue the employer.",
+   tags:["Safety","Workers Comp"]},
+
+  {id:221,book:"comp",bookName:"Competencies",cat:"Leadership",
+   ar:"نظرية السمات في القيادة",en:"Trait Theory of Leadership",
+   defAr:"أقدم مقاربات القيادة: القائد يُولد بسمات فطرية (ذكاء، ثقة، حزم، نزاهة). انتُقدت لإهمالها المهارات المكتسبة وأثر الموقف.",
+   defEn:"Earliest leadership approach — leaders are born with distinguishing innate traits (intelligence, confidence, determination, integrity). Criticized for ignoring learned skills and situational context.",
+   tags:["Leadership Theory","Trait"]},
+
+  {id:222,book:"comp",bookName:"Competencies",cat:"Leadership",
+   ar:"الشبكة الإدارية (بليك وموتون)",en:"Blake-Mouton Managerial Grid",
+   defAr:"تصنّف القائد على محورين: الاهتمام بالإنتاج × الاهتمام بالناس. الأمثل 9,9 (قيادة الفريق)؛ 9,1 مهمة، 1,9 ناس، 1,1 متهالك.",
+   defEn:"Plots leadership on two axes — concern for production × concern for people. Ideal is 9,9 (team leader); 9,1 task-focused, 1,9 country club, 1,1 impoverished.",
+   tags:["Leadership Theory","Behavioral"]},
+
+  {id:223,book:"comp",bookName:"Competencies",cat:"Leadership",
+   ar:"نموذج الطوارئ لفيدلر",en:"Fiedler's Contingency Model",
+   defAr:"فعالية القائد = توافق أسلوبه (مهمة/علاقة، يُقاس بمقياس LPC) مع مواتاة الموقف. الأسلوب ثابت، فنغيّر الموقف لا القائد.",
+   defEn:"Leader effectiveness = match between style (task vs relationship, measured by the LPC scale) and situational favorableness. Style is fixed, so change the situation, not the leader.",
+   tags:["Leadership Theory","Contingency"]},
+
+  {id:224,book:"comp",bookName:"Competencies",cat:"Leadership",
+   ar:"نظرية المسار-الهدف (هاوس)",en:"Path-Goal Theory (House)",
+   defAr:"القائد يمهّد المسار نحو الهدف بإزالة العقبات، ويكيّف أسلوبه (توجيهي/داعم/مشارك/موجَّه بالإنجاز) حسب الموظف والمهمة.",
+   defEn:"The leader clears the path to goals by removing obstacles, adapting style (directive/supportive/participative/achievement-oriented) to the employee and the task.",
+   tags:["Leadership Theory","Path-Goal"]},
+
+  {id:225,book:"comp",bookName:"Competencies",cat:"Leadership",
+   ar:"هرم ماسلو للحاجات",en:"Maslow's Hierarchy of Needs",
+   defAr:"خمسة مستويات للحاجات (فسيولوجية، أمان، انتماء، تقدير، تحقيق الذات)؛ يُشبَع الأدنى قبل أن يحفّز الأعلى.",
+   defEn:"Five levels of needs (physiological, safety, belonging, esteem, self-actualization); lower needs must be satisfied before higher ones motivate.",
+   tags:["Motivation","Maslow"]},
+
+  {id:226,book:"comp",bookName:"Competencies",cat:"Leadership",
+   ar:"نظرية X وY لماكجريجور",en:"McGregor's Theory X/Y",
+   defAr:"افتراضان متعارضان: X يرى الموظفين كسالى يحتاجون رقابة؛ Y يراهم طموحين يحبون المسؤولية ويحفّزهم التمكين.",
+   defEn:"Two opposing assumptions: Theory X sees workers as lazy needing control; Theory Y sees them as ambitious, responsibility-seeking, motivated by empowerment.",
+   tags:["Motivation","McGregor"]},
+
+  {id:227,book:"comp",bookName:"Competencies",cat:"Leadership",
+   ar:"نظرية التوقّع لفروم",en:"Vroom's Expectancy Theory",
+   defAr:"الدافعية = التوقّع × الوسيلة × التكافؤ. ينهار الحافز إذا انعدم أي عنصر (لا أقدر / لن أُكافأ / المكافأة بلا قيمة لي).",
+   defEn:"Motivation = Expectancy × Instrumentality × Valence. Motivation collapses if any factor is zero (can't do it / won't be rewarded / reward is worthless to me).",
+   tags:["Motivation","Expectancy"]},
+
+  {id:228,book:"comp",bookName:"Competencies",cat:"Leadership",
+   ar:"نظرية التعزيز لسكينر",en:"Reinforcement Theory (Skinner)",
+   defAr:"السلوك دالة نتائجه: التعزيز الإيجابي/السلبي يزيده، والعقاب/الإطفاء يقلّله. تنبيه: التعزيز السلبي ليس عقاباً — هو إزالة مزعج.",
+   defEn:"Behavior is a function of its consequences: positive/negative reinforcement increases it; punishment/extinction decreases it. Note: negative reinforcement is NOT punishment — it removes an aversive stimulus.",
+   tags:["Motivation","Reinforcement"]},
+
+  {id:229,book:"comp",bookName:"Competencies",cat:"Leadership",
+   ar:"أنماط ثوماس-كيلمان لإدارة النزاع",en:"Thomas-Kilmann Conflict Modes",
+   defAr:"خمسة أنماط على محوري الحزم × التعاون: تنافس، تعاون، تسوية، تجنّب، تكيّف. (ليست Blake-Mouton — تلك شبكة قيادية).",
+   defEn:"Five modes on the axes of assertiveness × cooperativeness: competing, collaborating, compromising, avoiding, accommodating. (Not Blake-Mouton — that is a leadership grid.)",
+   tags:["Conflict","Thomas-Kilmann"]},
+
+  {id:230,book:"comp",bookName:"Competencies",cat:"Leadership",
+   ar:"التفاوض: التوزيعي/التكاملي وBATNA",en:"Negotiation: Distributive/Integrative & BATNA",
+   defAr:"التوزيعي = كعكة ثابتة (رابح-خاسر)؛ التكاملي = توسيع المنفعة المشتركة (رابح-رابح). BATNA = أفضل بديل عن الاتفاق، ويحدّد نقطة الانسحاب.",
+   defEn:"Distributive splits a fixed pie (win-lose); integrative expands mutual value (win-win). BATNA = Best Alternative To a Negotiated Agreement, setting your walk-away point.",
+   tags:["Negotiation","BATNA"]},
+
+  {id:231,book:"comp",bookName:"Competencies",cat:"HR Expertise",
+   ar:"نموذج عملية الاتصال",en:"Communication Process Model",
+   defAr:"مُرسِل ← ترميز ← رسالة/قناة ← فكّ ترميز ← مُستقبِل ← تغذية راجعة، مع «تشويش» قد يشوّه أي مرحلة. التغذية الراجعة دليل الفهم.",
+   defEn:"Sender → encode → message/channel → decode → receiver → feedback, with noise potentially distorting any stage. Feedback is the proof of understanding.",
+   tags:["Communication","Process Model"]},
+
+  {id:232,book:"comp",bookName:"Competencies",cat:"Leadership",
+   ar:"مراحل تطوّر الفريق (Tuckman)",en:"Tuckman's Team Development Stages",
+   defAr:"التشكّل ← العصف ← التنظيم ← الأداء ← (الإنهاء). كل مرحلة تتطلّب تدخّلاً قيادياً مختلفاً، والعصف هو الأصعب.",
+   defEn:"Forming → Storming → Norming → Performing → (Adjourning). Each stage needs a different leadership intervention; Storming is the most challenging.",
+   tags:["Teams","Tuckman"]},
+
+  {id:233,book:"comp",bookName:"Competencies",cat:"HR Strategy",
+   ar:"قوى بورتر التنافسية الخمس",en:"Porter's Five Forces",
+   defAr:"إطار تحليل جاذبية القطاع: المنافسة الحالية، تهديد الداخلين الجدد، تهديد البدائل، قوة الموردين، قوة المشترين.",
+   defEn:"Framework for industry attractiveness: competitive rivalry, threat of new entrants, threat of substitutes, supplier power, buyer power.",
+   tags:["Strategy","Porter"]},
+
+  {id:234,book:"comp",bookName:"Competencies",cat:"HR Strategy",
+   ar:"تحليل PESTLE",en:"PESTLE Analysis",
+   defAr:"مسح البيئة الكلّية الخارجية عبر ستة عوامل: سياسية، اقتصادية، اجتماعية، تقنية، قانونية، بيئية — لرصد الفرص والتهديدات.",
+   defEn:"Macro-environment scan across six factors: Political, Economic, Social, Technological, Legal, Environmental — to surface opportunities and threats.",
+   tags:["Strategy","PESTLE"]},
+
+  {id:235,book:"comp",bookName:"Competencies",cat:"HR Strategy",
+   ar:"مصفوفة BCG (النمو/الحصة)",en:"BCG Growth-Share Matrix",
+   defAr:"تصنّف وحدات الأعمال: نجوم (نمو عالٍ/حصة عالية)، أبقار نقدية، علامات استفهام، كلاب — لتوجيه الاستثمار.",
+   defEn:"Classifies business units: Stars (high growth/high share), Cash Cows, Question Marks, Dogs — to guide investment decisions.",
+   tags:["Strategy","Portfolio"]},
+
+  {id:236,book:"org",bookName:"Organization",cat:"Org Development",
+   ar:"التفكير الجمعي (جانيس)",en:"Groupthink (Janis)",
+   defAr:"سعي الجماعة المتماسكة للتوافق يقمع الرأي المخالف فيؤدي لقرارات رديئة. علاجه: محامي الشيطان، تشجيع المعارضة، آراء خارجية.",
+   defEn:"A cohesive group's drive for consensus suppresses dissent, leading to poor decisions. Remedies: devil's advocate, encouraging dissent, outside input.",
+   tags:["Decision Making","Groupthink"]},
+
+  {id:237,book:"org",bookName:"Organization",cat:"Employee Relations",
+   ar:"موضوعات المفاوضة الجماعية",en:"Collective Bargaining Subjects",
+   defAr:"إلزامية (الأجور، الساعات، ظروف العمل) · اختيارية (طوعية) · محظورة (كالمتجر المغلق). والتفاوض بحسن نية التزام قانوني.",
+   defEn:"Mandatory (wages, hours, working conditions) · Permissive (voluntary) · Illegal (e.g., closed shop). Good-faith bargaining is a legal duty.",
+   tags:["Labor Relations","Collective Bargaining"]},
+
+  {id:238,book:"org",bookName:"Organization",cat:"Employee Relations",
+   ar:"أنواع الأمن النقابي",en:"Union Security Arrangements",
+   defAr:"المتجر المغلق (محظور بـ Taft-Hartley) · متجر النقابة (الانضمام إلزامي بعد التعيين) · متجر الوكالة (رسوم دون انضمام) · المتجر المفتوح (لا إلزام).",
+   defEn:"Closed shop (banned by Taft-Hartley) · Union shop (join after hire) · Agency shop (pay fees, no membership) · Open shop (no requirement — common in right-to-work states).",
+   tags:["Labor Relations","Union Security"]},
+
+  {id:239,book:"org",bookName:"Organization",cat:"Employee Relations",
+   ar:"الإضرابات والإغلاق",en:"Strikes & Lockouts",
+   defAr:"اقتصادي (استبدال دائم ممكن) · ضد ممارسة غير عادلة ULP (محمي) · جامح (غير مصرّح) · تعاطفي. والإغلاق أداة بيد صاحب العمل.",
+   defEn:"Economic (permanent replacement allowed) · ULP strike (protected) · Wildcat (unauthorized) · Sympathy. A lockout is the employer's counterpart tool.",
+   tags:["Labor Relations","Strikes"]},
+
+  {id:240,book:"wp",bookName:"Workplace",cat:"US Employment Law",
+   ar:"قانون تافت-هارتلي (LMRA 1947)",en:"Taft-Hartley Act (LMRA 1947)",
+   defAr:"عدّل قانون واغنر: أضاف ممارسات النقابات غير العادلة، وحظر المتجر المغلق، وأتاح للولايات قوانين «الحق في العمل»، وأجاز أمر 80 يوماً للطوارئ.",
+   defEn:"Amended the Wagner Act: added union unfair labor practices, banned the closed shop, allowed state right-to-work laws, and permitted an 80-day national-emergency injunction.",
+   tags:["Labor Law","Taft-Hartley"]},
+
+  {id:241,book:"wp",bookName:"Workplace",cat:"US Employment Law",
+   ar:"قانون لاندروم-غريفين (LMRDA 1959)",en:"Landrum-Griffin Act (LMRDA 1959)",
+   defAr:"يضع «وثيقة حقوق» لأعضاء النقابات ويفرض شفافية مالية وإفصاحاً على النقابات. يحمي العضو من نقابته لا من صاحب العمل.",
+   defEn:"Establishes a bill of rights for union members and imposes financial transparency on unions. Protects the member from their union, not the employer.",
+   tags:["Labor Law","Landrum-Griffin"]},
+
+  {id:242,book:"wp",bookName:"Workplace",cat:"US Employment Law",
+   ar:"قانون الحقوق المدنية 1991",en:"Civil Rights Act of 1991",
+   defAr:"عدّل Title VII: أتاح المحاكمة أمام هيئة محلّفين والتعويضات التعويضية/التأديبية (سقوف $50k–$300k حسب الحجم)، وقنّن الأثر التمييزي.",
+   defEn:"Amended Title VII: allowed jury trials and compensatory/punitive damages (caps $50k–$300k by employer size), and codified disparate impact.",
+   tags:["EEO Law","Damages"]},
+
+  {id:243,book:"wp",bookName:"Workplace",cat:"US Employment Law",
+   ar:"قانون إعادة التأهيل 1973",en:"Rehabilitation Act of 1973",
+   defAr:"يحظر التمييز بالإعاقة: §501 للوكالات الفيدرالية، §503 لمقاولي الحكومة، §504 للبرامج المموّلة فيدرالياً. سلف ADA.",
+   defEn:"Prohibits disability discrimination: §501 federal agencies, §503 federal contractors, §504 federally-funded programs. Precursor to the ADA.",
+   tags:["Disability Law","Rehabilitation Act"]},
+
+  {id:244,book:"wp",bookName:"Workplace",cat:"US Employment Law",
+   ar:"الأمر التنفيذي 11246 — أُلغي 2025",en:"Executive Order 11246 — Revoked 2025",
+   defAr:"ألزم تاريخياً مقاولي الحكومة بالتمييز الإيجابي (العرق/الجنس). أُلغي بالأمر EO 14173 في يناير 2025؛ لكن §503 وVEVRAA وTitle VII ما زالت سارية.",
+   defEn:"Historically required federal contractors' affirmative action (race/sex). Revoked by EO 14173 in January 2025; however §503, VEVRAA, and Title VII remain in effect.",
+   tags:["Affirmative Action","2025 Update"]},
+
+  {id:245,book:"wp",bookName:"Workplace",cat:"US Employment Law",
+   ar:"قانون HIPAA 1996",en:"HIPAA (1996)",
+   defAr:"بُعدان: قابلية نقل التأمين الصحي عند تغيير الوظيفة، وخصوصية وأمن المعلومات الصحية المحمية (PHI) بمبدأ «الحدّ الأدنى الضروري».",
+   defEn:"Two dimensions: portability of health coverage when changing jobs, and privacy/security of Protected Health Information (PHI) under the 'minimum necessary' standard.",
+   tags:["Benefits Law","HIPAA"]},
+
+  {id:246,book:"wp",bookName:"Workplace",cat:"US Employment Law",
+   ar:"قانون الرعاية الميسّرة (ACA) 2010",en:"Affordable Care Act (ACA 2010)",
+   defAr:"يُلزم أصحاب العمل الكبار (50+ موظفاً بدوام كامل معادل) بتقديم تغطية ميسورة وذات قيمة دنيا أو دفع غرامة (مسؤولية مشتركة).",
+   defEn:"Requires Applicable Large Employers (50+ full-time-equivalent) to offer affordable, minimum-value coverage or pay a penalty (employer shared responsibility).",
+   tags:["Benefits Law","ACA"]},
+
+  {id:247,book:"wp",bookName:"Workplace",cat:"US Employment Law",
+   ar:"قوانين الأجر السائد للعقود الحكومية",en:"Government Contractor Wage Laws",
+   defAr:"الثلاثي: Davis-Bacon (إنشاءات >$2,000) · Walsh-Healey (سلع/تصنيع >$10,000) · McNamara-O'Hara (خدمات >$2,500) — تفرض «الأجر السائد».",
+   defEn:"The trio: Davis-Bacon (construction >$2,000) · Walsh-Healey (supply/manufacturing >$10,000) · McNamara-O'Hara (services >$2,500) — all require the 'prevailing wage'.",
+   tags:["Wage Law","Government Contracts"]},
+
+  {id:248,book:"people",bookName:"People",cat:"HR Metrics",
+   ar:"معادلة معدّل الدوران",en:"Turnover Rate Formula",
+   defAr:"معدّل الدوران % = (عدد المغادرين ÷ متوسط عدد الموظفين) × 100. الأخطر هو الدوران الطوعي لعالي الأداء (Regrettable).",
+   defEn:"Turnover % = (separations ÷ average headcount) × 100. The most damaging is regrettable (voluntary) turnover of high performers.",
+   tags:["Metrics","Turnover"]},
+
+  {id:249,book:"people",bookName:"People",cat:"HR Metrics",
+   ar:"زمن الإشغال مقابل زمن التعيين",en:"Time to Fill vs Time to Hire",
+   defAr:"Time to Fill = أيام من فتح الشاغر إلى قبول العرض (كفاءة العملية). Time to Hire = أيام من تقدّم المرشّح إلى قبوله (تجربة المرشّح).",
+   defEn:"Time to Fill = days from opening the requisition to offer acceptance (process efficiency). Time to Hire = days from a candidate applying to acceptance (candidate experience).",
+   tags:["Metrics","Talent Acquisition"]},
+
+  {id:250,book:"wp",bookName:"Workplace",cat:"Risk Management",
+   ar:"معدّل إصابات OSHA (TRIR)",en:"OSHA Incident Rate (TRIR)",
+   defAr:"TRIR = (عدد الحوادث المسجَّلة × 200,000) ÷ إجمالي ساعات العمل. الثابت 200,000 = 100 عامل × 40 ساعة × 50 أسبوعاً. DART للحالات الأشد.",
+   defEn:"TRIR = (recordable incidents × 200,000) ÷ total hours worked. The constant 200,000 = 100 workers × 40 hours × 50 weeks. DART covers more severe (days away/restricted/transferred) cases.",
+   tags:["Safety","OSHA"]}
+];
+
+// ══════════════════════════════════════════
+// ENGINE
+// ══════════════════════════════════════════
+const BOOKS = [
+  {id:'all', label:'الكل (250)', color:'#c8a84b', dot:'#c8a84b'},
+  {id:'comp', label:'📘 Competencies', color:'#1a3a5c', dot:'#4a8fc4'},
+  {id:'people', label:'👥 People', color:'#1e7a4a', dot:'#4ade80'},
+  {id:'org', label:'🏢 Organization', color:'#6d28d9', dot:'#a78bfa'},
+  {id:'wp', label:'⚖️ Workplace', color:'#c2410c', dot:'#fb923c'},
+];
+
+let userStatus = {};
+let currentBook = 'all';
+let currentStatusFilter = 'all';
+let searchTerm = '';
+let shuffled = [...ALL_CARDS];
+
+function getFiltered() {
+  return shuffled.filter(c => {
+    const matchBook = currentBook === 'all' || c.book === currentBook;
+    const matchStatus = currentStatusFilter === 'all' || userStatus[c.id] === currentStatusFilter;
+    const matchSearch = !searchTerm ||
+      c.ar.includes(searchTerm) ||
+      c.en.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      c.defAr.includes(searchTerm) ||
+      c.cat.includes(searchTerm) ||
+      c.defEn.toLowerCase().includes(searchTerm.toLowerCase());
+    return matchBook && matchStatus && matchSearch;
+  });
+}
+
+function buildTabs() {
+  const wrap = document.getElementById('tabsWrap');
+  wrap.innerHTML = '';
+  BOOKS.forEach(b => {
+    const btn = document.createElement('button');
+    btn.className = 'tab' + (b.id === currentBook ? ' active' : '');
+    btn.innerHTML = `<span class="tab-dot" style="background:${b.dot}"></span>${b.label}`;
+    btn.onclick = () => { currentBook = b.id; buildTabs(); renderCards(); };
+    wrap.appendChild(btn);
+  });
+}
+
+function renderCards() {
+  const cards = getFiltered();
+  const grid = document.getElementById('cardsGrid');
+  grid.innerHTML = '';
+  document.getElementById('progInfo').textContent = cards.length + ' / ' + shuffled.length;
+  updateSummary();
+  updateHeaderStats();
+  updateProgress();
+  if (!cards.length) {
+    grid.innerHTML = '<div class="empty"><div class="empty-ico">🔍</div><div class="empty-msg">لا توجد بطاقات مطابقة للبحث</div></div>';
+    return;
+  }
+  cards.forEach(card => {
+    const st = userStatus[card.id] || '';
+    const bookColor = {comp:'#1a3a5c',people:'#1e7a4a',org:'#6d28d9',wp:'#c2410c'}[card.book] || '#666';
+    const el = document.createElement('div');
+    el.className = 'flip-wrap book-' + card.book;
+    if (st) el.setAttribute('data-status', st);
+    el.id = 'card-' + card.id;
+    el.innerHTML = `
+      <div class="flip-inner" onclick="flipCard(this)">
+        <div class="flip-front">
+          <span class="fc-book-tag">${card.bookName}</span>
+          <div class="fc-cat">${card.cat}</div>
+          <div class="fc-term-ar">${card.ar}</div>
+          <div class="fc-term-en">${card.en}</div>
+          <div class="fc-hint">
+            <span class="fc-hint-txt">اضغط لرؤية التعريف الكامل</span>
+            <span class="fc-flip-icon">↻</span>
+          </div>
+          <div class="fc-status" onclick="event.stopPropagation()">
+            <button class="status-btn know ${st==='know'?'sel':''}" onclick="setStatus(${card.id},'know',this)">✓ أعرفها</button>
+            <button class="status-btn review ${st==='review'?'sel':''}" onclick="setStatus(${card.id},'review',this)">⟳ مراجعة</button>
+            <button class="status-btn hard ${st==='hard'?'sel':''}" onclick="setStatus(${card.id},'hard',this)">✗ صعبة</button>
+          </div>
+        </div>
+        <div class="flip-back">
+          <div class="fb-label">التعريف</div>
+          <div class="fb-def-ar">${card.defAr}</div>
+          ${card.formula ? `<div class="fb-formula">${card.formula}</div>` : ''}
+          <div class="fb-def-en">${card.defEn}</div>
+          <div class="fb-tags">${(card.tags||[]).map(t=>`<span class="fb-tag">${t}</span>`).join('')}</div>
+          <button class="fb-back-btn" onclick="event.stopPropagation();flipBack(this)">← العودة للمصطلح</button>
+        </div>
+      </div>`;
+    grid.appendChild(el);
+  });
+}
+
+function flipCard(inner) {
+  const wrap = inner.closest('.flip-wrap');
+  wrap.classList.toggle('flipped');
+}
+function flipBack(btn) {
+  const wrap = btn.closest('.flip-wrap');
+  wrap.classList.remove('flipped');
+}
+function setStatus(id, status, btn) {
+  const prev = userStatus[id];
+  if (prev === status) { delete userStatus[id]; }
+  else { userStatus[id] = status; }
+  // Update card
+  const wrap = document.getElementById('card-' + id);
+  if (wrap) {
+    if (userStatus[id]) wrap.setAttribute('data-status', userStatus[id]);
+    else wrap.removeAttribute('data-status');
+    wrap.querySelectorAll('.status-btn').forEach(b => b.classList.remove('sel'));
+    if (userStatus[id]) {
+      const selBtn = wrap.querySelector('.status-btn.' + userStatus[id]);
+      if (selBtn) selBtn.classList.add('sel');
+    }
+  }
+  updateSummary(); updateHeaderStats(); updateProgress();
+}
+
+function updateHeaderStats() {
+  const cards = currentBook === 'all' ? ALL_CARDS : ALL_CARDS.filter(c => c.book === currentBook);
+  let k=0,r=0,h=0;
+  cards.forEach(c => {
+    if (userStatus[c.id]==='know') k++;
+    else if (userStatus[c.id]==='review') r++;
+    else if (userStatus[c.id]==='hard') h++;
+  });
+  document.getElementById('knownCount').textContent = k;
+  document.getElementById('reviewCount').textContent = r;
+  document.getElementById('hardCount').textContent = h;
+}
+
+function updateProgress() {
+  const total = currentBook === 'all' ? ALL_CARDS.length : ALL_CARDS.filter(c=>c.book===currentBook).length;
+  const done = (currentBook === 'all' ? ALL_CARDS : ALL_CARDS.filter(c=>c.book===currentBook))
+    .filter(c => userStatus[c.id]).length;
+  document.getElementById('progFill').style.width = (done/total*100) + '%';
+}
+
+function updateSummary() {
+  const cards = currentBook === 'all' ? ALL_CARDS : ALL_CARDS.filter(c => c.book === currentBook);
+  let k=0,r=0,h=0,u=0;
+  cards.forEach(c => {
+    const s = userStatus[c.id];
+    if (s==='know') k++;
+    else if (s==='review') r++;
+    else if (s==='hard') h++;
+    else u++;
+  });
+  const bar = document.getElementById('summaryBar');
+  bar.innerHTML = `
+    <div class="sum-item"><div class="sum-dot" style="background:var(--border)"></div>${u} غير مراجعة</div>
+    <div class="sum-item"><div class="sum-dot" style="background:var(--green)"></div>${k} أتقنتها</div>
+    <div class="sum-item"><div class="sum-dot" style="background:var(--gold)"></div>${r} للمراجعة</div>
+    <div class="sum-item"><div class="sum-dot" style="background:var(--red)"></div>${h} صعبة</div>
+    <div class="sum-item" style="margin-right:auto">إجمالي: ${cards.length}</div>`;
+}
+
+function filterStatus(s) {
+  currentStatusFilter = s;
+  document.querySelectorAll('.ctrl-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('btn-'+s).classList.add('active');
+  renderCards();
+}
+
+function filterCards() {
+  searchTerm = document.getElementById('searchInput').value;
+  renderCards();
+}
+
+function shuffleCards() {
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i],
+
+// ─────────────────────────────────────────
+// 🆕 بطاقات التحديثات 2025 — الكتب الأربعة
+// ─────────────────────────────────────────
+
+// ── COMPETENCIES UPDATES ──
+{id:201,book:"comp",bookName:"Competencies",cat:"Analytical Aptitude",
+ar:"الكفاءة التحليلية — الاسم الرسمي",en:"Analytical Aptitude — Official SHRM Name",
+defAr:"الاسم الرسمي في SHRM BASK هو Analytical Aptitude وليس Critical Evaluation — يُقيس قدرة HR على استخدام البيانات لحل مشكلات الأعمال وتقديم توصيات مبنية على الأدلة",
+defEn:"The OFFICIAL SHRM BASK name is Analytical Aptitude — NOT Critical Evaluation. Measures HR's ability to use data to diagnose business problems and make evidence-based recommendations.",
+formula:"Analytical Aptitude = الاسم الرسمي الوحيد",
+tags:["2025 Update","Analytical Aptitude","SHRM BASK"]},
+
+{id:202,book:"comp",bookName:"Competencies",cat:"Analytical Aptitude",
+ar:"تقنيات تحليل البيانات — 2025",en:"Data Analysis Techniques — 2025",
+defAr:"المفاهيم الرئيسية المضافة في 2025: تنظيف البيانات (Data Cleansing) + استخراج البيانات (Data Mining) + التصور البياني (Visualization) + تحليل البيانات الضخمة (Big Data Analysis) + التحليل التنبؤي (Predictive Analysis)",
+defEn:"2025 explicitly added: Data Cleansing + Data Mining + Visualization + Big Data Analysis + Statistical Analysis + Predictive Analysis as key Analytical Aptitude concepts.",
+formula:"Data Cleansing → Mining → Analysis → Visualization → Prediction",
+tags:["2025 Update","Analytical Aptitude"]},
+
+{id:203,book:"comp",bookName:"Competencies",cat:"Inclusion & Diversity",
+ar:"I&D — الترتيب الجديد 2025",en:"Inclusion & Diversity (I&D) — New Order 2025",
+defAr:"2025 غيّرت الترتيب: Inclusion تأتي أولاً قبل Diversity. المصطلح الرسمي الآن: I&D (Inclusion & Diversity) وليس DE&I. كما أُضيف SHRM Empathy Index + Pay Transparency كأدوات قياس",
+defEn:"2025 changed order: Inclusion comes FIRST. Official term: I&D (Inclusion & Diversity). Added: SHRM Empathy Index + Pay Transparency + Pay Audits as equity measurement tools.",
+formula:"I&D = Inclusion FIRST, then Diversity",
+tags:["2025 Update","I&D","Inclusion"]},
+
+{id:204,book:"comp",bookName:"Competencies",cat:"Leadership & Navigation",
+ar:"Growth Mindset + نظريات التحفيز الجديدة",en:"Growth Mindset + New Motivation Theories",
+defAr:"أضافت 2025 للقيادة: Growth Mindset (عقلية النمو) كصفة قيادية شخصية. وأضافت Self-Determination Theory + Attribution Theory ضمن نظريات التحفيز",
+defEn:"2025 added: Growth Mindset as personal leadership quality. Self-Determination Theory + Attribution Theory added explicitly to motivation theories list.",
+tags:["2025 Update","Leadership","Motivation"]},
+
+// ── PEOPLE DOMAIN UPDATES ──
+{id:205,book:"people",bookName:"People Domain",cat:"Learning & Development",
+ar:"تقنيات L&D الجديدة — 2025",en:"L&D Technologies — 2025 Additions",
+defAr:"أضافت 2025 صراحةً ضمن تقنيات التعلم والتطوير: الذكاء الاصطناعي (AI) + الواقع الافتراضي (Virtual Reality) + روبوتات المحادثة (Chatbots) + التلعيب (Gamification) + التعلم المُصغَّر (Microlearning)",
+defEn:"2025 explicitly added to L&D technologies: Artificial Intelligence + Virtual Reality (VR) + Chatbots + Gamification + Microlearning + Podcasts + Infographics.",
+formula:"AI + VR + Chatbots + Gamification + Microlearning",
+tags:["2025 Update","L&D","Technology"]},
+
+{id:206,book:"people",bookName:"People Domain",cat:"Employee Engagement",
+ar:"Stay Interviews — مضافة رسمياً",en:"Stay Interviews — Officially Added 2025",
+defAr:"أُضيفت Stay Interviews رسمياً في 2025 لقائمة أساليب قياس الانخراط جنباً إلى جنب مع الاستبيانات ومجموعات التركيز. أداة استباقية لفهم دوافع البقاء قبل قرار المغادرة",
+defEn:"Stay Interviews officially added in 2025 to engagement assessment methods alongside surveys and focus groups. Proactive retention tool conducted with active employees.",
+tags:["2025 Update","Engagement","Retention","Stay Interviews"]},
+
+{id:207,book:"people",bookName:"People Domain",cat:"Employee Engagement",
+ar:"مقاييس الاحتفاظ — 2025",en:"Retention Metrics — 2025",
+defAr:"أضافت 2025 مقاييس الاحتفاظ والدوران: معدل الدوران الطوعي + جودة التوظيف (Quality of Hire) + معدل الشغور + تحليل الدوران حسب الموقع أو المستوى الوظيفي",
+defEn:"2025 added retention metrics: voluntary turnover rate + quality of hire + vacancy rate + turnover at specific location or level. More granular turnover analysis.",
+formula:"Voluntary Turnover + Quality of Hire + Vacancy Rate + Location Analysis",
+tags:["2025 Update","Retention","Metrics"]},
+
+{id:208,book:"people",bookName:"People Domain",cat:"Total Rewards",
+ar:"شفافية الأجور — Pay Transparency",en:"Pay Transparency — Added 2025",
+defAr:"أُضيف Pay Transparency رسمياً لقائمة ممارسات الأجور في 2025. يشمل: مشاركة نطاقات الرواتب مع الموظفين والمتقدمين. يُقلل الفجوات غير المبررة ويُحسّن نسب قبول العروض",
+defEn:"Pay Transparency officially added to pay practices in 2025. Includes: sharing pay ranges with employees and applicants. Reduces unjustified pay gaps, improves offer acceptance.",
+tags:["2025 Update","Total Rewards","Pay Transparency"]},
+
+// ── ORGANIZATION UPDATES ──
+{id:209,book:"org",bookName:"Organization Domain",cat:"HR Technology",
+ar:"Blockchain + Machine Learning في HR — 2025",en:"Blockchain + Machine Learning in HR — 2025",
+defAr:"أضافت 2025 صراحةً لتقنيات HR: Blockchain (البلوك تشين لأمن وتوثيق بيانات HR) + Machine Learning (التعلم الآلي في تحليلات HR المتقدمة) + Big Data Analytics Software + Collaboration Software",
+defEn:"2025 explicitly added to HR Tech key concepts: Blockchain (for HR data security/verification) + Machine Learning (for advanced HR analytics) + Big Data Analytics + Collaboration Software.",
+formula:"HRIS + ATS + LMS + Blockchain + Machine Learning",
+tags:["2025 Update","HR Technology","Blockchain","Machine Learning"]},
+
+// ── WORKPLACE UPDATES — الأهم ──
+{id:210,book:"wp",bookName:"Workplace Domain",cat:"US Employment Law",
+ar:"Bostock v. Clayton County (2020) ⭐",en:"Bostock v. Clayton County (2020) — CRITICAL",
+defAr:"حكمت المحكمة العليا بأن Title VII يحمي التوجه الجنسي (Sexual Orientation) والهوية الجندرية (Gender Identity) من التمييز في العمل. ينطبق على أصحاب العمل 15+ موظف في جميع الولايات الأمريكية",
+defEn:"Supreme Court ruled Title VII protects sexual orientation AND gender identity from employment discrimination. Applies to employers with 15+ employees in ALL US states. Added explicitly in 2025.",
+formula:"Title VII + LGBTQ+ Protection = Bostock (2020)",
+tags:["2025 Update","US Law","Title VII","Bostock","EEO"]},
+
+{id:211,book:"wp",bookName:"Workplace Domain",cat:"US Employment Law",
+ar:"PWFA — Pregnant Workers Fairness Act (2024)",en:"Pregnant Workers Fairness Act — PWFA 2024",
+defAr:"اللائحة النهائية صدرت يونيو 2024. يُلزم صاحب العمل بتوفير تسهيلات معقولة (Reasonable Accommodation) للقيود الناشئة عن الحمل أو الولادة. ينطبق على الـ Accommodation فقط ما لم يسبب Undue Hardship",
+defEn:"Final regulation issued June 2024. Requires covered employers to provide reasonable accommodation for limitations from pregnancy/childbirth/related conditions — unless undue hardship. Accommodation-focused.",
+formula:"Pregnancy Limitation → Reasonable Accommodation (unless Undue Hardship)",
+tags:["2025 Update","US Law","PWFA","Pregnancy"]},
+
+{id:212,book:"wp",bookName:"Workplace Domain",cat:"US Employment Law",
+ar:"PUMP Act — حقوق الرضاعة الجديدة",en:"PUMP for Nursing Mothers Act",
+defAr:"يوسّع Break Time for Nursing Mothers ليشمل جميع الموظفات بصرف النظر عن تصنيفهن (FLSA-exempt وnon-exempt). يُلزم بمكان خاص وغير مخصص للحمام + وقت كافٍ للرضاعة خلال ساعات العمل",
+defEn:"Expands Break Time for Nursing Mothers to ALL employees — including FLSA-exempt workers. Requires: private non-bathroom space + reasonable break time for lactation during the workday.",
+formula:"ALL employees (exempt + non-exempt) = PUMP Act protection",
+tags:["2025 Update","US Law","PUMP Act","FLSA"]},
+
+{id:213,book:"wp",bookName:"Workplace Domain",cat:"US Employment Law",
+ar:"McLaren Macomb — بنود السرية في الفصل",en:"McLaren Macomb — NLRB Severance Clauses",
+defAr:"قرار NLRB 2023: اتفاقيات الفصل التي تتضمن بنوداً واسعة للسرية أو عدم الانتقاد قد تنتهك NLRA المادة 7 إذا قيّدت حق الموظفين في مناقشة ظروف العمل مع زملائهم",
+defEn:"NLRB McLaren Macomb (2023): Severance agreements with broad confidentiality or non-disparagement clauses may violate NLRA Section 7 by restricting employees' right to discuss working conditions.",
+formula:"Broad Severance Confidentiality ≠ Allowed under NLRA Section 7",
+tags:["2025 Update","US Law","NLRA","Labor Relations"]},
+
+// ── SUMMARY CARDS — Quick Reference ──
+{id:214,book:"wp",bookName:"Workplace Domain",cat:"Quick Reference",
+ar:"قائمة مقارنة — التحديثات الرئيسية 2025",en:"2025 Key Changes — Quick Reference",
+defAr:"Analytical Aptitude (لا Critical Evaluation) · I&D (لا DE&I) · Bostock=Title VII+LGBTQ · PWFA=تسهيلات الحمل2024 · PUMP=رضاعة للجميع · McLaren=سرية الفصل+NLRA · AI+VR في L&D · Blockchain في HR Tech",
+defEn:"Analytical Aptitude (NOT Critical Evaluation) · I&D (NOT DE&I) · Bostock=Title VII+LGBTQ · PWFA=Pregnancy accommodation 2024 · PUMP=Nursing all employees · McLaren=Severance+NLRA · AI+VR in L&D · Blockchain in HR Tech",
+formula:"Analytical Aptitude · I&D · Bostock · PWFA · PUMP · McLaren",
+tags:["2025 Update","Quick Reference","All Books"]},
+
+{id:215,book:"comp",bookName:"Competencies",cat:"Quick Reference",
+ar:"حفظ — الكفاءات التسع الرسمية",en:"9 Behavioral Competencies — Official Names",
+defAr:"1-قيادة وملاحة · 2-ممارسة أخلاقية · 3-الشمول والتنوع (I&D) · 4-إدارة العلاقات · 5-التواصل · 6-العقلية العالمية · 7-الاستشارة · 8-الفطنة التجارية · 9-الكفاءة التحليلية (Analytical Aptitude)",
+defEn:"1-Leadership & Navigation · 2-Ethical Practice · 3-Inclusion & Diversity (I&D) · 4-Relationship Management · 5-Communication · 6-Global Mindset · 7-Consultation · 8-Business Acumen · 9-Analytical Aptitude",
+formula:"9 Behavioral + HR Expertise (Technical) = SHRM BASK",
+tags:["Quick Reference","Competencies","SHRM BASK"]},
+
+{id:216,book:"people",bookName:"People Domain",cat:"Quick Reference",
+ar:"مقارنة سريعة — تقنيات L&D",en:"L&D Technologies Quick Reference",
+defAr:"LMS (نظام إدارة التعلم) + AI (ذكاء اصطناعي) + VR (واقع افتراضي) + Chatbots + Gamification (تلعيب) + Microlearning (تعلم مُصغَّر) + e-learning + Webinars + Podcasts + Infographics",
+defEn:"LMS + AI + Virtual Reality + Chatbots + Gamification + Microlearning + e-learning + Blended Learning + Webinars + Podcasts + Infographics + Self-directed learning.",
+tags:["Quick Reference","L&D","Technology"]},
+
+{id:217,book:"wp",bookName:"Workplace Domain",cat:"Quick Reference",
+ar:"أحجام أصحاب العمل — حدود القوانين",en:"Employer Size Thresholds — Quick Reference",
+defAr:"15+ موظف: Title VII · ADA · GINA · Bostock (2020) | 20+ موظف: ADEA | 50+ موظف: FMLA (75 ميل) | 100+ موظف: WARN Act | جميع أصحاب العمل: FLSA · USERRA · EPA",
+defEn:"15+ employees: Title VII, ADA, GINA, Bostock (2020) | 20+ employees: ADEA | 50+ employees: FMLA (within 75 miles) | 100+ employees: WARN Act | ALL employers: FLSA, USERRA, EPA",
+formula:"15(EEO) · 20(ADEA) · 50(FMLA) · 100(WARN) · ALL(FLSA,USERRA)",
+tags:["Quick Reference","US Law","Employer Thresholds"]},
+
+{id:218,book:"org",bookName:"Organization Domain",cat:"Quick Reference",
+ar:"مقارنة سريعة — نماذج التغيير",en:"Change Models Quick Reference",
+defAr:"Lewin: Unfreeze→Change→Refreeze (3 مراحل) | Kotter: 8 خطوات (إلحاح→تحالف→رؤية→تواصل→تمكين→انتصارات→بناء→ترسيخ) | ADKAR: Awareness→Desire→Knowledge→Ability→Reinforcement",
+defEn:"Lewin: 3 phases (Unfreeze→Change→Refreeze) | Kotter: 8 steps (Urgency→Coalition→Vision→Communicate→Empower→Wins→Build→Anchor) | ADKAR: 5 individual change elements.",
+formula:"Lewin(3) · Kotter(8) · ADKAR(5)",
+tags:["Quick Reference","Change Management","Organization"]},
+
+{id:219,book:"wp",bookName:"Workplace Domain",cat:"Quick Reference",
+ar:"COBRA — المدد الثلاث للحفظ",en:"COBRA Coverage Periods",
+defAr:"18 شهراً: إنهاء الخدمة أو تقليص الساعات | 29 شهراً: إعاقة ADA تُشخَّص خلال أول 60 يوم | 36 شهراً: طلاق، وفاة الموظف، أو انتقاله لـ Medicare. التكلفة: 102% (100% + 2% رسوم إدارية)",
+defEn:"18 months: termination or hour reduction | 29 months: ADA disability diagnosed within first 60 days | 36 months: divorce, employee death, or Medicare entitlement. Cost: 102% paid by beneficiary.",
+formula:"Termination=18m · Disability=29m · Divorce/Death=36m · Cost=102%",
+tags:["Quick Reference","US Law","COBRA","Benefits"]},
+
+{id:220,book:"people",bookName:"People Domain",cat:"Quick Reference",
+ar:"Kirkpatrick + ROI — 5 مستويات",en:"Kirkpatrick + Phillips ROI — 5 Levels",
+defAr:"1: ردة الفعل (Reaction) · 2: التعلم (Learning) · 3: السلوك (Behavior) · 4: النتائج (Results) · 5: عائد الاستثمار ROI = (فائدة - تكلفة) ÷ تكلفة × 100",
+defEn:"Level 1: Reaction (satisfaction) · Level 2: Learning (knowledge gained) · Level 3: Behavior (on-the-job application) · Level 4: Results (business impact) · Level 5 (Phillips): ROI = (Benefit-Cost)/Cost×100",
+formula:"Reaction→Learning→Behavior→Results→ROI",
+tags:["Quick Reference","L&D","Kirkpatrick","ROI"]}
+
+];
+  }
+  renderCards();
+}
+
+// Init
+buildTabs();
+filterStatus('all');
+document.getElementById('progInfo').textContent = ALL_CARDS.length + ' / ' + ALL_CARDS.length;
+</script>
+</body>
+</html>

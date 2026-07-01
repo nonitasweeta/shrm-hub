@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="خطة دراسة SHRM-CP مؤرّخة يوم بيوم — ٣٠ يوماً مع متابعة التقدّم">
+<title>خطة الدراسة — SHRM-CP في ٣٠ يوماً</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#0d1b2e;--navy2:#163456;--gold:#c8a84b;--gold2:#e8c96a;
+  --blue:#2563a8;--green:#1e7a4a;--teal:#0f766e;--red:#b91c1c;--purple:#6d28d9;--orange:#c2410c;
+  --bg:#f4f1ea;--card:#fff;--border:#e0d9cc;--text:#1a1a1a;--muted:#6b6357;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding-bottom:60px;}
+a{text-decoration:none;color:inherit;}
+
+/* ── TOP BAR ── */
+.topbar{background:var(--navy);color:#fff;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(200,168,75,.25);}
+.topbar a.home{font-size:13px;color:var(--gold2);font-weight:600;}
+.topbar .brand{font-size:13px;font-weight:700;letter-spacing:.04em;opacity:.85;}
+
+/* ── HERO / STATUS ── */
+.hero{background:linear-gradient(160deg,#0d1b2e 0%,#163456 55%,#1a3a2a 100%);color:#fff;padding:46px 20px 40px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-140px;left:50%;transform:translateX(-50%);width:640px;height:640px;border-radius:50%;background:rgba(200,168,75,.06);pointer-events:none;}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(200,168,75,.15);border:1px solid rgba(200,168,75,.35);border-radius:30px;padding:5px 18px;font-size:12px;font-weight:600;color:var(--gold);letter-spacing:.05em;margin-bottom:18px;}
+.hero h1{font-size:clamp(1.7rem,5vw,2.7rem);font-weight:900;line-height:1.2;margin-bottom:8px;}
+.hero h1 em{color:var(--gold);font-style:normal;}
+.hero .sub{font-size:.95rem;opacity:.72;max-width:520px;margin:0 auto 26px;}
+
+/* live status chips */
+.status{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+.st{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:14px;padding:13px 20px;min-width:120px;}
+.st-n{font-size:1.9rem;font-weight:900;color:var(--gold);line-height:1;}
+.st-l{font-size:11.5px;opacity:.6;margin-top:5px;letter-spacing:.02em;}
+
+/* progress ring under hero */
+.progwrap{max-width:780px;margin:-22px auto 0;padding:0 20px;position:relative;z-index:5;}
+.progcard{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px 22px;box-shadow:0 10px 34px rgba(13,27,46,.1);display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+.progcard .ring{flex-shrink:0;}
+.progcard .pinfo{flex:1;min-width:160px;}
+.progcard .pinfo h3{font-size:1rem;color:var(--navy);font-weight:800;margin-bottom:3px;}
+.progcard .pinfo p{font-size:13px;color:var(--muted);}
+.progcard .pbar{height:9px;background:#ece6da;border-radius:20px;overflow:hidden;margin-top:9px;}
+.progcard .pbar > span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:20px;transition:width .5s ease;}
+.btn-today{background:var(--navy);color:#fff;border:none;border-radius:50px;padding:11px 22px;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:transform .15s,box-shadow .15s;}
+.btn-today:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(13,27,46,.28);}
+.btn-reset{background:none;border:1px solid var(--border);color:var(--muted);border-radius:50px;padding:9px 16px;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;}
+
+/* ── CONTAINER ── */
+.container{max-width:840px;margin:0 auto;padding:0 18px;}
+.section{padding:42px 0 8px;}
+.sec-head{margin-bottom:22px;}
+.sec-head h2{font-size:1.35rem;font-weight:900;color:var(--navy);}
+.sec-head p{font-size:.92rem;color:var(--muted);margin-top:4px;}
+
+/* exam facts */
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:8px 0 4px;}
+.fact{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:15px 16px;}
+.fact .fn{font-size:1.5rem;font-weight:900;color:var(--navy);line-height:1;}
+.fact .fl{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.5;}
+.fact .fn small{font-size:.78rem;color:var(--gold);font-weight:700;}
+
+/* guide boxes */
+.guide{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px 24px;margin-bottom:16px;border-right:5px solid var(--gold);}
+.guide.sji{border-right-color:var(--green);}
+.guide.time{border-right-color:var(--red);}
+.guide.routine{border-right-color:var(--blue);}
+.guide h3{font-size:1.08rem;font-weight:800;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;gap:9px;}
+.guide ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.guide li{font-size:.94rem;padding-right:22px;position:relative;color:#33302b;}
+.guide li::before{content:'◂';position:absolute;right:0;top:1px;color:var(--gold);font-size:.8rem;}
+.guide.sji li::before{color:var(--green);}
+.guide.time li::before{color:var(--red);}
+.guide.routine li::before{color:var(--blue);}
+.guide li b{color:var(--navy);font-weight:800;}
+
+/* ── PHASE BANDS ── */
+.phase{margin:36px 0 14px;display:flex;align-items:center;gap:14px;}
+.phase .pnum{flex-shrink:0;width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.15rem;font-weight:900;color:#fff;}
+.phase .ptxt h2{font-size:1.18rem;font-weight:900;color:var(--navy);}
+.phase .ptxt p{font-size:12.5px;color:var(--muted);}
+.ph1 .pnum{background:linear-gradient(135deg,#1a3a5c,#2f73b8);}
+.phPT .pnum{background:linear-gradient(135deg,#b08423,#e8c96a);}
+.ph2 .pnum{background:linear-gradient(135deg,#15683f,#34c574);}
+.ph3 .pnum{background:linear-gradient(135deg,#5a1fc0,#a78bfa);}
+.phEx .pnum{background:linear-gradient(135deg,#8f1414,#e0533a);}
+
+/* ── DAY CARDS ── */
+.day{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px 18px;margin-bottom:11px;transition:box-shadow .2s,border-color .2s;position:relative;overflow:hidden;}
+.day::before{content:'';position:absolute;top:0;right:0;width:5px;height:100%;}
+.day.ph1::before{background:#2f73b8;}
+.day.phPT::before{background:var(--gold);}
+.day.ph2::before{background:#34c574;}
+.day.ph3::before{background:#a78bfa;}
+.day.phEx::before{background:var(--red);}
+.day:hover{box-shadow:0 8px 26px rgba(13,27,46,.08);}
+.day.istoday{border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,168,75,.22);}
+.day.done-all{opacity:.62;}
+.day-head{display:flex;align-items:flex-start;gap:13px;margin-bottom:11px;}
+.day-num{flex-shrink:0;text-align:center;min-width:52px;}
+.day-num .dn{font-size:1.5rem;font-weight:900;color:var(--navy);line-height:1;}
+.day-num .dl{font-size:10px;color:var(--muted);margin-top:2px;}
+.day-meta{flex:1;}
+.day-meta .dt{font-size:12.5px;color:var(--muted);font-weight:600;}
+.day-meta .dtitle{font-size:1.02rem;font-weight:800;color:var(--navy);margin-top:1px;}
+.day-time{flex-shrink:0;background:#f4f1ea;border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-size:11.5px;font-weight:700;color:var(--muted);white-space:nowrap;}
+.todaytag{display:inline-block;background:var(--gold);color:var(--navy);font-size:10px;font-weight:800;padding:2px 9px;border-radius:20px;margin-right:7px;vertical-align:middle;}
+
+/* tasks */
+.tasks{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.task{display:flex;align-items:flex-start;gap:10px;font-size:.93rem;}
+.task input{appearance:none;-webkit-appearance:none;flex-shrink:0;width:19px;height:19px;border:2px solid var(--border);border-radius:6px;margin-top:2px;cursor:pointer;position:relative;transition:background .15s,border-color .15s;}
+.task input:checked{background:var(--green);border-color:var(--green);}
+.task input:checked::after{content:'✓';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:900;}
+.task label{cursor:pointer;color:#33302b;}
+.task input:checked + label{text-decoration:line-through;color:var(--muted);}
+.task a{color:var(--blue);font-weight:700;border-bottom:1px dashed rgba(37,99,168,.4);}
+.task a:hover{color:var(--navy);}
+.milestone-note{background:#fbf6e7;border:1px dashed var(--gold);border-radius:12px;padding:12px 14px;margin-top:11px;font-size:.9rem;color:#5b4a1e;}
+.milestone-note b{color:#7a5e16;}
+
+footer{text-align:center;padding:40px 20px 10px;color:var(--muted);font-size:13px;}
+footer a{color:var(--blue);font-weight:700;}
+
+@media(max-width:520px){
+  .day-time{font-size:11px;padding:3px 9px;}
+  .day-num{min-width:42px;}
+  .day-num .dn{font-size:1.3rem;}
+}
+@media print{
+  .topbar,.btn-today,.btn-reset,.hero::before{display:none;}
+  .day,.guide,.fact{break-inside:avoid;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="home" href="https://shrm-arabic-hub.netlify.app/">← المرجع الرئيسي</a>
+  <span class="brand">SHRM-CP · خطة الدراسة</span>
+</div>
+
+<section class="hero">
+  <span class="hero-badge">⏱ خطة مؤرّخة · ٣٠ يوماً</span>
+  <h1>طريقك إلى <em>SHRM-CP</em> — يوماً بيوم</h1>
+  <p class="sub">موادك جاهزة. هذه الخطة تركّب الملخصات والبطاقات والامتحانات على جدول واقعي ٢–٣ ساعات يومياً، مع متابعة لتقدّمك حتى يوم الامتحان.</p>
+  <div class="status">
+    <div class="st"><div class="st-n" id="stDay">—</div><div class="st-l">اليوم من ٣٠</div></div>
+    <div class="st"><div class="st-n" id="stPre">—</div><div class="st-l">يوم حتى الـ Pre-Test</div></div>
+    <div class="st"><div class="st-n" id="stExam">—</div><div class="st-l">يوم حتى الامتحان</div></div>
+  </div>
+</section>
+
+<div class="progwrap">
+  <div class="progcard">
+    <svg class="ring" width="64" height="64" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="27" fill="none" stroke="#ece6da" stroke-width="8"/>
+      <circle id="ringFill" cx="32" cy="32" r="27" fill="none" stroke="#c8a84b" stroke-width="8"
+              stroke-linecap="round" stroke-dasharray="169.6" stroke-dashoffset="169.6"
+              transform="rotate(-90 32 32)" style="transition:stroke-dashoffset .6s ease"/>
+      <text id="ringPct" x="32" y="37" text-anchor="middle" font-size="15" font-weight="800" fill="#0d1b2e">0%</text>
+    </svg>
+    <div class="pinfo">
+      <h3>تقدّمك في الخطة</h3>
+      <p><span id="doneCount">0</span> من <span id="totalCount">0</span> مهمّة مكتملة</p>
+      <div class="pbar"><span id="pbarFill"></span></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <button class="btn-today" id="goToday">اذهبي إلى مهام اليوم ↓</button>
+      <button class="btn-reset" id="resetBtn">تصفير التقدّم</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- EXAM FACTS -->
+  <section class="section" style="padding-top:34px;">
+    <div class="sec-head"><h2>حقائق الامتحان — اعرفي ساحة اللعب</h2>
+      <p>من مصادر SHRM الرسمية لنسخة ٢٠٢٦. كل قراراتنا في الخطة مبنية على هذه الأرقام.</p></div>
+    <div class="facts">
+      <div class="fact"><div class="fn">134</div><div class="fl">سؤالاً إجمالاً<br>(110 محتسبة + 24 تجريبية)</div></div>
+      <div class="fact"><div class="fn">80<small> KI</small> · 54<small> SJI</small></div><div class="fl">معرفية · مواقف<br>(40% منها مواقف)</div></div>
+      <div class="fact"><div class="fn">3:40</div><div class="fl">ساعة · قسمان<br>كل قسم 110 دقيقة</div></div>
+      <div class="fact"><div class="fn">~90<small> ثانية</small></div><div class="fl">للسؤال الواحد<br>إيقاعك المستهدف</div></div>
+      <div class="fact"><div class="fn">200</div><div class="fl">درجة النجاح<br>(المقياس 120–200)</div></div>
+      <div class="fact"><div class="fn">68%</div><div class="fl">نسبة النجاح<br>(مايو–يوليو 2025)</div></div>
+    </div>
+  </section>
+
+  <!-- HOW TO STUDY ROUTINE -->
+  <section class="section" style="padding-top:30px;">
+    <div class="sec-head"><h2>قالب جلستك الليلية (٢–٣ ساعات)</h2></div>
+    <div class="guide routine">
+      <h3>🌙 رتّبي كل جلسة هكذا</h3>
+      <ul>
+        <li><b>إحماء (٥ د):</b> خلط سريع لبطاقات المراجعة من اليوم السابق — تذكير لا تعلّم جديد.</li>
+        <li><b>القراءة الأساسية (٦٠–٩٠ د):</b> ملخص اليوم بتركيز كامل. علّمي المصطلحات والنماذج الحاسمة.</li>
+        <li><b>الاستدعاء النشط (٣٠–٤٥ د):</b> أغلقي الملخص واسترجعي المفاهيم من ذاكرتك، ثم حلّي أسئلة الجزء.</li>
+        <li><b>سجل الأخطاء (٥ د):</b> اكتبي كل مفهوم أخطأتِ فيه في دفتر واحد — هذا الدفتر هو ذهبك في الأسبوع الأخير.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ PLAN ============ -->
+  <section class="section" style="padding-top:14px;">
+    <div class="sec-head"><h2>الخطة — ٣٠ يوماً</h2>
+      <p>الروابط تفتح موادك المنشورة على Netlify مباشرةً. التواريخ مرجعية من اليوم (٢٢ يونيو) — عدّليها لتطابق موعدك الفعلي في Prometric.</p></div>
+    <div id="planRoot"></div>
+  </section>
+
+  <!-- SJI GUIDE -->
+  <section class="section" style="padding-top:8px;">
+    <div class="sec-head"><h2>إطار أسئلة المواقف (SJI) — 40٪ من الامتحان</h2>
+      <p>راجعيه قبل كل جلسة مواقف، واطبعيه في ذهنك ليوم الامتحان.</p></div>
+    <div class="guide sji">
+      <h3>🧭 منطق اختيار الإجابة الأفضل</h3>
+      <ul>
+        <li><b>اختاري «الأفضل» لا «المقبول»:</b> غالباً أكثر من خيار صحيح، لكن واحداً فقط هو الأمثل بنظر لجنة الخبراء.</li>
+        <li><b>عدسة الشريك الاستراتيجي (HRBP):</b> SHRM تريد HR شريكاً للأعمال يحلّ الجذور، لا منفّذاً يطفئ الحرائق.</li>
+        <li><b>اجمعي الحقائق أولاً:</b> قبل أي قرار حاسم، الخيار الذي يبدأ بالتقصّي/الفهم غالباً أقوى.</li>
+        <li><b>عالجي السبب الجذري لا العَرَض،</b> والتزمي بالسياسة والقانون والسرّية والأخلاقيات دائماً.</li>
+        <li><b>استبعدي الطرفين المتطرّفين:</b> «لا تفعلي شيئاً» و«الفصل/التصعيد الفوري» نادراً ما يكونان الأفضل.</li>
+        <li><b>فضّلي:</b> الاستباقي ← على ردّ الفعل، والتشاوري ← على الآمر، والتصعيد للجهة الصحيحة عند الحاجة فقط.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- EXAM DAY TIME -->
+  <section class="section" style="padding-top:8px;">
+    <div class="sec-head"><h2>إدارة الوقت يوم الامتحان</h2></div>
+    <div class="guide time">
+      <h3>⏱ قواعد الإيقاع</h3>
+      <ul>
+        <li><b>~٩٠ ثانية للسؤال.</b> قسمان كل واحد ١١٠ دقيقة (~٦٧ سؤالاً). خذي الاستراحة (١٥ د) بين القسمين.</li>
+        <li><b>المرور الأول:</b> أجيبي ما تعرفينه بسرعة (أقل من ٦٠ ثانية)، علّمي (flag) الصعب وتجاوزيه فوراً.</li>
+        <li><b>لا تتركي سؤالاً فارغاً</b> — لا خصم على الخطأ، خمّني بعد استبعاد الخيارات.</li>
+        <li><b>أسلوب الشطب (cross-out):</b> استبعدي الخيارات الواضحة الخطأ أولاً ليتقلّص الاختيار.</li>
+        <li><b>الرياضيات:</b> تتوفّر آلة حاسبة على الشاشة — لا داعي للحفظ القلق.</li>
+        <li><b>الهدف:</b> أنهي المرور الأول مع ~٢٠ دقيقة احتياطية لمراجعة الأسئلة المعلّمة.</li>
+      </ul>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  بُنيت لتنضمّ إلى <a href="https://shrm-arabic-hub.netlify.app/" target="_blank" rel="noopener">SHRM Study Hub</a> · تقدّمك يُحفظ تلقائياً على هذا الجهاز.<br>
+  بالتوفيق يا ندى — الشغل اللي عملتيه أساس متين، والباقي تنظيم وثبات. 💪
+</footer>
+
+<script>
+// ===== CONFIG: عدّلي هذين التاريخين ليطابقا موعدك الفعلي =====
+const START_DATE   = new Date(2026,5,22);  // 22 يونيو (يونيو = الشهر 5 صفرياً)
+const PRETEST_DATE = new Date(2026,6,3);   // 3 يوليو — الـ Pre-Test
+const EXAM_DATE    = new Date(2026,6,22);  // 22 يوليو — الامتحان
+// رابط موقعك المنشور — غيّريه لو تغيّر اسم الموقع
+const BASE = 'https://shrm-arabic-hub.netlify.app/';
+
+const AR_MONTH = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+const AR_DOW   = ['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
+const fmtDate = d => `${AR_DOW[d.getDay()]} · ${d.getDate()} ${AR_MONTH[d.getMonth()]}`;
+
+// ===== PLAN DATA =====
+// phase: ph1 | phPT | ph2 | ph3 | phEx
+const PLAN = [
+ {n:1, phase:'ph1', title:'توجيه + الكفاءات (١–٢)', time:'2.5 س', tasks:[
+   {t:'اقرئي "حقائق الامتحان" أعلاه وثبّتي إيقاع ٩٠ ثانية في ذهنك'},
+   {t:'الكفاءات — الجزء ١', href:'comp-1'},
+   {t:'الكفاءات — الجزء ٢', href:'comp-2'},
+   {t:'ابدئي بطاقات مجموعة الكفاءات (~٢٥ بطاقة)', href:'shrm-flash-cards'}]},
+ {n:2, phase:'ph1', title:'الكفاءات (٣–٤)', time:'2.5 س', tasks:[
+   {t:'الكفاءات — الجزء ٣', href:'comp-3'},
+   {t:'الكفاءات — الجزء ٤', href:'comp-4'},
+   {t:'مراجعة بطاقات الكفاءات', href:'shrm-flash-cards'}]},
+ {n:3, phase:'ph1', title:'الكفاءات (٥–٦) + أول اختبار', time:'3 س', tasks:[
+   {t:'الكفاءات — الجزء ٥', href:'comp-5'},
+   {t:'الكفاءات — الجزء ٦', href:'comp-6'},
+   {t:'امتحان الكفاءات — أول ٥٠ سؤالاً (وضع تعلّم، غير موقوت)', href:'exam-competencies'}]},
+ {n:4, phase:'ph1', title:'People (١–٢)', time:'2.5 س', tasks:[
+   {t:'People — الجزء ١', href:'people-1'},
+   {t:'People — الجزء ٢', href:'people-2'},
+   {t:'بطاقات People', href:'shrm-flash-cards'}]},
+ {n:5, phase:'ph1', title:'People (٣–٤)', time:'2.5 س', tasks:[
+   {t:'People — الجزء ٣', href:'people-3'},
+   {t:'People — الجزء ٤', href:'people-4'},
+   {t:'مراجعة بطاقات People', href:'shrm-flash-cards'}]},
+ {n:6, phase:'ph1', title:'People (٥–٦)', time:'2.5 س', tasks:[
+   {t:'People — الجزء ٥', href:'people-5'},
+   {t:'People — الجزء ٦', href:'people-6'},
+   {t:'مراجعة البطاقات', href:'shrm-flash-cards'}]},
+ {n:7, phase:'ph1', title:'People (٧) + اختبار', time:'2.5 س', tasks:[
+   {t:'People — الجزء ٧', href:'people-7'},
+   {t:'امتحان People — أول ٥٠ سؤالاً (وضع تعلّم)', href:'exam-people'}]},
+ {n:8, phase:'ph1', title:'Organization (١–٢)', time:'2.5 س', tasks:[
+   {t:'Organization — الجزء ١', href:'org-1'},
+   {t:'Organization — الجزء ٢', href:'org-2'},
+   {t:'بطاقات Organization', href:'shrm-flash-cards'}]},
+ {n:9, phase:'ph1', title:'Organization (٣–٤)', time:'2.5 س', tasks:[
+   {t:'Organization — الجزء ٣', href:'org-3'},
+   {t:'Organization — الجزء ٤', href:'org-4'},
+   {t:'مراجعة البطاقات', href:'shrm-flash-cards'}]},
+ {n:10, phase:'ph1', title:'Organization (٥) + Workplace (١)', time:'2.5 س', tasks:[
+   {t:'Organization — الجزء ٥', href:'org-5'},
+   {t:'Workplace — الجزء ١ (القوى العاملة العالمية)', href:'wp-1'},
+   {t:'امتحان Organization — أول ٦٠ سؤالاً (وضع تعلّم)', href:'exam-org'}]},
+ {n:11, phase:'ph1', title:'Workplace (٢–٤) + المرجع', time:'3 س', tasks:[
+   {t:'Workplace — الجزء ٢ (إدارة المخاطر)', href:'wp-2'},
+   {t:'Workplace — الجزء ٣ (المسؤولية الاجتماعية)', href:'wp-3'},
+   {t:'Workplace — الجزء ٤ (قانون العمل)', href:'wp-4'},
+   {t:'تصفّحي المرجع الشامل — ركّزي على القوانين والأرقام', href:'reference'}]},
+ {n:12, phase:'phPT', title:'★ الـ Pre-Test التشخيصي', time:'3 س', milestone:'هذا اليوم هو محور الخطة كلها. اجلسي للامتحان الشامل <b>موقوتاً</b> وكأنه الحقيقي، ثم سجّلي نتيجتك لكل مجال. النتيجة هنا تُشكّل المرحلة الثانية بالكامل — رتّبي مجالاتك من الأضعف إلى الأقوى.', tasks:[
+   {t:'الامتحان الشامل — ١٠٠ سؤال موقوت في جلسة واحدة', href:'exam-comprehensive'},
+   {t:'سجّلي نسبتك في كل مجال (Competencies / People / Org / Workplace)'},
+   {t:'رتّبي المجالات: ١=الأضعف ... ٤=الأقوى — ستقود المرحلة الثانية'}]},
+
+ {n:13, phase:'ph2', title:'أضعف مجال — قراءة (١)', time:'2.5 س', tasks:[
+   {t:'حلّلي أخطاء الـ Pre-Test وافتحي دفتر سجل الأخطاء'},
+   {t:'أعيدي قراءة الجزء الأول من <b>أضعف</b> مجال عندك'},
+   {t:'بطاقات ذلك المجال', href:'shrm-flash-cards'}]},
+ {n:14, phase:'ph2', title:'أضعف مجال — قراءة + اختبار', time:'3 س', tasks:[
+   {t:'أكملي بقية أجزاء أضعف مجال'},
+   {t:'أعيدي النصف الأصعب من امتحان ذلك المجال (الأسئلة التي تجاوزتِها)'}]},
+ {n:15, phase:'ph2', title:'ثاني أضعف مجال — قراءة', time:'2.5 س', tasks:[
+   {t:'أعيدي قراءة ملخصات ثاني أضعف مجال'},
+   {t:'بطاقات ذلك المجال', href:'shrm-flash-cards'}]},
+ {n:16, phase:'ph2', title:'ثاني أضعف مجال — اختبار', time:'2.5 س', tasks:[
+   {t:'أعيدي امتحان ثاني أضعف مجال (تركيز على المعلّم سابقاً)'},
+   {t:'حدّثي دفتر سجل الأخطاء'}]},
+ {n:17, phase:'ph2', title:'★ يوم أسئلة المواقف (SJI)', time:'2.5 س', tasks:[
+   {t:'راجعي "إطار أسئلة المواقف" أسفل الخطة جيداً'},
+   {t:'حلّي كل أسئلة المواقف عبر الامتحانات الأربعة وطبّقي الإطار', href:'exam-comprehensive'},
+   {t:'بعد كل سؤال: لماذا هذا الخيار "الأفضل" وليس "المقبول"؟'}]},
+ {n:18, phase:'ph2', title:'ثالث مجال — مراجعة سريعة', time:'2 س', tasks:[
+   {t:'مراجعة سريعة لملخصات المجال الثالث (تصفّح ما علّمتِه فقط)'},
+   {t:'فلتر البطاقات على "صعبة" وأتقنيها', href:'shrm-flash-cards'}]},
+ {n:19, phase:'ph2', title:'رابع مجال — مراجعة سريعة', time:'2 س', tasks:[
+   {t:'مراجعة سريعة لأقوى مجال (تثبيت لا إعادة بناء)'},
+   {t:'بطاقات "صعبة" المتبقية', href:'shrm-flash-cards'}]},
+ {n:20, phase:'ph2', title:'★ يوم المرجع — حفظ', time:'2.5 س', tasks:[
+   {t:'احفظي القوانين والنظريات والأرقام من المرجع الشامل', href:'reference'},
+   {t:'اختبار ذاتي: غطّي العمود واسترجعي كل قانون ورقم'}]},
+ {n:21, phase:'ph2', title:'إعادة امتحان الكفاءات (كامل)', time:'2.75 س', tasks:[
+   {t:'امتحان الكفاءات — ١٠٠ سؤال كامل وموقوت', href:'exam-competencies'},
+   {t:'قارني نتيجتك بالـ Pre-Test — لاحظي التحسّن'}]},
+ {n:22, phase:'ph2', title:'إعادة امتحان People (كامل)', time:'2.75 س', tasks:[
+   {t:'امتحان People — ١٠٠ سؤال كامل وموقوت', href:'exam-people'},
+   {t:'حدّثي سجل الأخطاء بالمتبقّي'}]},
+ {n:23, phase:'ph2', title:'إتقان البطاقات (٢٠٠)', time:'2 س', tasks:[
+   {t:'مرّي على كل البطاقات حتى تصير كلها "أعرفها"', href:'shrm-flash-cards'},
+   {t:'لا تتركي أي بطاقة على "صعبة"'}]},
+ {n:24, phase:'ph2', title:'★ يوم سجل الأخطاء', time:'2.5 س', tasks:[
+   {t:'أعيدي حلّ كل سؤال أخطأتِ فيه منذ بداية الخطة'},
+   {t:'كل خطأ متكرر = مفهوم يحتاج جلسة قراءة قصيرة الليلة'}]},
+
+ {n:25, phase:'ph3', title:'★ محاكاة كاملة ١', time:'3 س', tasks:[
+   {t:'الامتحان الشامل موقوتاً في جلسة واحدة — قسمان + استراحة ١٥ د', href:'exam-comprehensive'},
+   {t:'طبّقي قواعد إدارة الوقت يوم الامتحان (flag وتجاوز)'},
+   {t:'سجّلي النتيجة والوقت المستغرق'}]},
+ {n:26, phase:'ph3', title:'مراجعة المحاكاة ١', time:'2.5 س', tasks:[
+   {t:'راجعي كل خطأ من المحاكاة ١ بالتفصيل'},
+   {t:'قراءة موجّهة سريعة لأي مفهوم تكرّر خطؤه'}]},
+ {n:27, phase:'ph3', title:'★ محاكاة كاملة ٢', time:'3 س', tasks:[
+   {t:'امتحانا Organization + Workplace مدمجين موقوتين كجلسة كاملة', href:'exam-org'},
+   {t:'…ثم Workplace', href:'exam-workplace'},
+   {t:'الهدف: إنهاء المرور الأول مع احتياطي وقت'}]},
+ {n:28, phase:'ph3', title:'مراجعة خفيفة — لا مادة جديدة', time:'2 س', tasks:[
+   {t:'المرجع الشامل (تصفّح)', href:'reference'},
+   {t:'بطاقات "صعبة" المتبقية', href:'shrm-flash-cards'},
+   {t:'اقرئي إطار SJI وقواعد الوقت مرة أخيرة'}]},
+ {n:29, phase:'ph3', title:'راحة + لوجستيات', time:'1 س', tasks:[
+   {t:'خلط سريع للبطاقات + نظرة على دفتر الأخطاء (خفيف فقط)'},
+   {t:'جهّزي: الهوية، عنوان مركز Prometric، الوصول قبل ١٥–٣٠ دقيقة'},
+   {t:'نوم مبكّر — راحتك جزء من المذاكرة'}]},
+ {n:30, phase:'ph3', title:'ما قبل الامتحان', time:'30 د', tasks:[
+   {t:'مراجعة خفيفة جداً صباحاً فقط (أرقام ومرجع)'},
+   {t:'توقّفي عن المذاكرة مساءً تماماً — ثقة ونوم باكر'}]},
+];
+
+const EXAM_CARD = {title:'يوم الامتحان 🎓', tasks:[
+   {t:'وجبة جيدة + وصول مبكّر للمركز'},
+   {t:'~٩٠ ثانية للسؤال · علّمي وتجاوزي · لا سؤال فارغاً · خذي الاستراحة بين القسمين'},
+   {t:'عدسة الشريك الاستراتيجي في كل سؤال مواقف — أنتِ جاهزة 💪'}]};
+
+const PHASE_HEADERS = {
+ ph1:{cls:'ph1', num:'1', t:'المرحلة ١ — التأسيس والمرور الأول', p:'الأيام ١–١١ · مرور كامل على كل المواد، مجالاً مجالاً'},
+ phPT:{cls:'phPT', num:'★', t:'المحطة المحورية — الـ Pre-Test', p:'اليوم ١٢ · تشخيص يقيس جاهزيتك ويوجّه ما بعده'},
+ ph2:{cls:'ph2', num:'2', t:'المرحلة ٢ — التعزيز المُوجَّه', p:'الأيام ١٣–٢٤ · علاج نقاط الضعف + إتقان المواقف والبطاقات والمرجع'},
+ ph3:{cls:'ph3', num:'3', t:'المرحلة ٣ — المحاكاة والصقل', p:'الأيام ٢٥–٣٠ · امتحانات كاملة موقوتة ثم راحة وثقة'},
+};
+
+// ===== RENDER =====
+const root = document.getElementById('planRoot');
+let lastPhase = null;
+const todayMid = new Date(); todayMid.setHours(0,0,0,0);
+let todayDayN = null;
+
+PLAN.forEach(day=>{
+  if(day.phase!==lastPhase){
+    const h = PHASE_HEADERS[day.phase];
+    const ph = document.createElement('div');
+    ph.className = 'phase '+h.cls;
+    ph.innerHTML = `<div class="pnum">${h.num}</div><div class="ptxt"><h2>${h.t}</h2><p>${h.p}</p></div>`;
+    root.appendChild(ph);
+    lastPhase = day.phase;
+  }
+  const date = new Date(START_DATE); date.setDate(date.getDate()+(day.n-1));
+  const isToday = date.getTime()===todayMid.getTime();
+  if(isToday) todayDayN = day.n;
+
+  const card = document.createElement('div');
+  card.className = 'day '+day.phase + (isToday?' istoday':'');
+  card.id = 'day'+day.n;
+
+  let tasksHtml = day.tasks.map((task,i)=>{
+    const id = `d${day.n}-t${i}`;
+    const url = task.href ? (/^https?:/.test(task.href)?task.href:BASE+task.href) : null;
+    const label = url ? `<a href="${url}" target="_blank" rel="noopener">${task.t}</a>` : task.t;
+    return `<li class="task"><input type="checkbox" id="${id}" data-id="${id}"><label for="${id}">${label}</label></li>`;
+  }).join('');
+
+  card.innerHTML = `
+    <div class="day-head">
+      <div class="day-num"><div class="dn">${day.n}</div><div class="dl">اليوم</div></div>
+      <div class="day-meta">
+        <div class="dt">${fmtDate(date)}${isToday?'<span class="todaytag">اليوم</span>':''}</div>
+        <div class="dtitle">${day.title}</div>
+      </div>
+      <div class="day-time">${day.time}</div>
+    </div>
+    <ul class="tasks">${tasksHtml}</ul>
+    ${day.milestone?`<div class="milestone-note">📍 <b>محطة:</b> ${day.milestone}</div>`:''}
+  `;
+  root.appendChild(card);
+});
+
+// exam day capstone card
+const exDate = EXAM_DATE;
+const exCard = document.createElement('div');
+exCard.className='day phEx';
+const exToday = exDate.getTime()===todayMid.getTime();
+exCard.innerHTML = `
+  <div class="phase phEx" style="margin:6px 0 14px;"><div class="pnum">🎓</div>
+    <div class="ptxt"><h2>يوم الامتحان</h2><p>${fmtDate(exDate)}</p></div></div>
+  <div class="day-head"><div class="day-meta"><div class="dtitle">${EXAM_CARD.title}</div></div></div>
+  <ul class="tasks">${EXAM_CARD.tasks.map((task,i)=>{const id=`ex-t${i}`;return `<li class="task"><input type="checkbox" id="${id}" data-id="${id}"><label for="${id}">${task.t}</label></li>`;}).join('')}</ul>`;
+root.appendChild(exCard);
+
+// ===== STORAGE + PROGRESS =====
+const KEY='shrm-plan-v1';
+function loadState(){try{return JSON.parse(localStorage.getItem(KEY))||{};}catch(e){return {};}}
+function saveState(s){try{localStorage.setItem(KEY,JSON.stringify(s));}catch(e){}}
+let state = loadState();
+
+const boxes = [...document.querySelectorAll('.task input')];
+boxes.forEach(b=>{
+  if(state[b.dataset.id]) b.checked=true;
+  b.addEventListener('change',()=>{
+    state[b.dataset.id]=b.checked; saveState(state); updateProgress(); markDayDone(b);
+  });
+});
+
+function markDayDone(box){
+  const card = box.closest('.day');
+  const all = [...card.querySelectorAll('.task input')];
+  card.classList.toggle('done-all', all.length>0 && all.every(x=>x.checked));
+}
+function updateProgress(){
+  const done = boxes.filter(b=>b.checked).length;
+  const total = boxes.length;
+  const pct = total? Math.round(done/total*100):0;
+  document.getElementById('doneCount').textContent=done;
+  document.getElementById('totalCount').textContent=total;
+  document.getElementById('pbarFill').style.width=pct+'%';
+  const C=169.6;
+  document.getElementById('ringFill').style.strokeDashoffset = C-(C*pct/100);
+  document.getElementById('ringPct').textContent=pct+'%';
+}
+boxes.forEach(markDayDone);
+updateProgress();
+
+// ===== COUNTDOWN =====
+function daysBetween(a,b){return Math.round((b-a)/86400000);}
+(function(){
+  const dPre = daysBetween(todayMid,PRETEST_DATE);
+  const dEx  = daysBetween(todayMid,EXAM_DATE);
+  document.getElementById('stPre').textContent  = dPre>0?dPre:(dPre===0?'اليوم':'—');
+  document.getElementById('stExam').textContent = dEx>0?dEx:(dEx===0?'اليوم':'تمّ');
+  let dn = daysBetween(START_DATE,todayMid)+1;
+  document.getElementById('stDay').textContent = (dn>=1&&dn<=30)?dn:(dn<1?'قريباً':'30+');
+})();
+
+// ===== BUTTONS =====
+document.getElementById('goToday').addEventListener('click',()=>{
+  const target = todayDayN ? document.getElementById('day'+todayDayN) : document.querySelector('.istoday')||document.getElementById('day1');
+  (target||document.getElementById('day1')).scrollIntoView({behavior:'smooth',block:'center'});
+});
+document.getElementById('resetBtn').addEventListener('click',()=>{
+  if(confirm('تصفير كل علامات التقدّم؟ لا يمكن التراجع.')){
+    state={}; saveState(state); boxes.forEach(b=>{b.checked=false;markDayDone(b);}); updateProgress();
+  }
+});
+</script>
+</body>
+</html>

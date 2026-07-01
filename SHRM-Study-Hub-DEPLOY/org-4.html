@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ملخص SHRM Organization – الصفحات 301–402 + المراجعة الشاملة</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#1a3a5c;--accent:#c8a84b;--accent2:#e8734a;--bg:#f7f4ef;--card:#fff;--green:#1e7a4a;--red:#b91c1c;--purple:#6d28d9;--teal:#0f766e;--border:#e2d9c8;--muted:#6b7280;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Tajawal',sans-serif;background:var(--bg);color:#2c2c2c;line-height:1.85;font-size:16px;}
+
+.header{background:linear-gradient(135deg,#1e3a5c 0%,#0d3b2e 50%,#2c1654 100%);color:#fff;padding:48px 40px 40px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-60px;left:-60px;width:300px;height:300px;border-radius:50%;background:rgba(200,168,75,.1);}
+.badge{display:inline-block;background:var(--accent);color:var(--primary);font-weight:700;font-size:13px;padding:4px 16px;border-radius:20px;margin-bottom:14px;letter-spacing:1px;}
+.header h1{font-size:2rem;font-weight:800;margin-bottom:8px;}
+.header p{font-size:.95rem;opacity:.8;}
+.meta{display:flex;gap:24px;margin-top:20px;flex-wrap:wrap;}
+.meta span{font-size:13px;opacity:.85;}
+
+.container{max-width:960px;margin:0 auto;padding:40px 24px 80px;}
+.progress-wrap{margin-bottom:36px;}
+.progress-label{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:6px;}
+.progress-bar{height:12px;background:#e2d9c8;border-radius:10px;overflow:hidden;}
+.progress-fill{height:100%;border-radius:10px;background:linear-gradient(90deg,#1e3a5c,#c8a84b,#1e7a4a);}
+
+.celebration{background:linear-gradient(135deg,#c8a84b,#d4a843);color:#1a3a5c;border-radius:16px;padding:28px 32px;text-align:center;margin-bottom:32px;}
+.celebration h2{font-size:1.8rem;font-weight:800;margin-bottom:8px;}
+.celebration p{font-size:15px;opacity:.85;}
+
+.overview{background:var(--primary);color:#fff;border-radius:16px;padding:30px 34px;margin-bottom:36px;position:relative;overflow:hidden;}
+.overview::after{content:'Technology';position:absolute;left:-10px;bottom:-18px;font-size:62px;font-weight:900;color:rgba(255,255,255,.04);white-space:nowrap;}
+.overview h2{font-size:1.2rem;color:var(--accent);margin-bottom:12px;}
+.overview p{font-size:15px;line-height:1.9;opacity:.92;}
+
+.section{margin-bottom:44px;}
+.sec-title{display:flex;align-items:center;gap:14px;margin-bottom:22px;}
+.sec-num{background:var(--accent);color:var(--primary);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0;}
+.sec-title h2{font-size:1.25rem;font-weight:700;color:var(--primary);}
+.sec-title .en{font-size:13px;color:var(--muted);font-style:italic;direction:ltr;}
+
+.card{background:var(--card);border-radius:14px;padding:26px 28px;border:1px solid var(--border);box-shadow:0 2px 12px rgba(0,0,0,.05);margin-bottom:22px;}
+.card h3{font-size:1rem;font-weight:700;color:var(--primary);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--border);}
+.card h3 .en{color:var(--accent2);font-size:.83rem;direction:ltr;display:inline-block;margin-right:6px;}
+.card p.bt{font-size:15px;margin-bottom:12px;line-height:1.85;}
+
+ul.ilist{list-style:none;padding:0;}
+ul.ilist li{padding:8px 0;border-bottom:1px solid #f0ebe0;font-size:15px;display:flex;gap:10px;align-items:flex-start;}
+ul.ilist li:last-child{border-bottom:none;}
+.dot{width:8px;height:8px;background:var(--accent);border-radius:50%;margin-top:8px;flex-shrink:0;}
+.dot.g{background:var(--green);}
+.dot.r{background:var(--red);}
+.dot.t{background:var(--teal);}
+.dot.p{background:var(--purple);}
+
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px;}
+.tbl th{background:var(--primary);color:#fff;padding:10px 14px;text-align:right;}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top;}
+.tbl tr:nth-child(even) td{background:#f9f6f0;}
+.tbl tr:hover td{background:#fff3e0;}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+@media(max-width:640px){.grid2{grid-template-columns:1fr;}}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:14px;}
+@media(max-width:700px){.grid3{grid-template-columns:1fr 1fr;}}
+.gitem{background:#f9f6f0;border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.gitem h4{font-size:14px;font-weight:700;color:var(--primary);margin-bottom:6px;}
+.gitem .en{font-size:11px;color:var(--accent2);direction:ltr;display:block;margin-bottom:5px;}
+.gitem p{font-size:13px;color:#444;line-height:1.7;}
+
+/* IS tiers */
+.tier-flow{display:flex;flex-direction:column;gap:8px;margin:14px 0;}
+.tier-row{border-radius:10px;padding:14px 18px;display:flex;gap:14px;align-items:flex-start;}
+.tier-row .icon{font-size:1.5rem;flex-shrink:0;margin-top:2px;}
+.tier-row .content h5{font-size:14px;font-weight:700;margin-bottom:4px;}
+.tier-row .content p{font-size:13.5px;color:#333;line-height:1.7;}
+.t-pres{background:#eff6ff;border-right:4px solid #2563eb;} .t-pres h5{color:#1d4ed8;}
+.t-logic{background:#f0fdf4;border-right:4px solid var(--green);} .t-logic h5{color:var(--green);}
+.t-data{background:#fff8f0;border-right:4px solid var(--accent2);} .t-data h5{color:var(--accent2);}
+.t-comm{background:#f5f3ff;border-right:4px solid var(--purple);} .t-comm h5{color:var(--purple);}
+
+/* Tech compare */
+.tc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+@media(max-width:640px){.tc-grid{grid-template-columns:1fr;}}
+.tc{border-radius:12px;padding:16px;border:1px solid var(--border);}
+.tc h4{font-size:13.5px;font-weight:700;margin-bottom:8px;}
+.tc ul{list-style:none;padding:0;}
+.tc ul li{font-size:13px;padding:4px 0;display:flex;gap:8px;}
+.tc ul li::before{content:'•';font-weight:900;flex-shrink:0;}
+.tc.plus{background:#f0fdf4;border-color:#86efac;} .tc.plus h4{color:var(--green);} .tc.plus ul li::before{color:var(--green);}
+.tc.minus{background:#fff1f2;border-color:#fca5a5;} .tc.minus h4{color:var(--red);} .tc.minus ul li::before{color:var(--red);}
+.tc.info{background:#eff6ff;border-color:#93c5fd;} .tc.info h4{color:#1d4ed8;} .tc.info ul li::before{color:#1d4ed8;}
+.tc.warn-c{background:#fefce8;border-color:#fde047;} .tc.warn-c h4{color:#854d0e;} .tc.warn-c ul li::before{color:#854d0e;}
+
+/* Master review */
+.master-tbl{width:100%;border-collapse:collapse;font-size:13px;margin-top:14px;}
+.master-tbl th{background:var(--primary);color:#fff;padding:10px 12px;text-align:right;}
+.master-tbl td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;}
+.master-tbl tr:nth-child(even) td{background:#f9f6f0;}
+
+/* Exam tips */
+.exam-tip{background:linear-gradient(135deg,var(--primary),#0c2461);color:#fff;border-radius:14px;padding:22px 26px;margin:16px 0;}
+.exam-tip h4{color:var(--accent);font-size:.95rem;margin-bottom:10px;}
+.exam-tip ul{list-style:none;padding:0;}
+.exam-tip li{padding:5px 0;font-size:14px;opacity:.9;display:flex;gap:8px;}
+.exam-tip li::before{content:'✓';color:var(--accent);font-weight:900;flex-shrink:0;}
+
+/* Glossary */
+.glos-tbl{width:100%;border-collapse:collapse;font-size:13px;}
+.glos-tbl th{background:var(--primary);color:#fff;padding:9px 12px;text-align:right;}
+.glos-tbl td{padding:8px 12px;border-bottom:1px solid var(--border);vertical-align:top;font-size:13px;}
+.glos-tbl tr:nth-child(even) td{background:#f9f6f0;}
+
+.deep{background:linear-gradient(135deg,#fff8e7,#fef3cd);border:2px solid var(--accent);border-radius:14px;padding:22px 26px;margin:16px 0;}
+.deep h4{color:var(--primary);font-size:.95rem;font-weight:700;margin-bottom:10px;}
+.deep ul{list-style:none;padding:0;font-size:15px;}
+.deep ul li{padding:5px 0;display:flex;gap:10px;}
+.deep ul li::before{content:'◆';color:var(--accent);font-size:11px;margin-top:5px;flex-shrink:0;}
+
+.tip{background:#f0fdf4;border:1px solid #86efac;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.tip strong{color:var(--green);}
+.note{background:#fefce8;border:1px solid #fde047;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.note strong{color:#854d0e;}
+.warn{background:#fff1f2;border:1px solid #fca5a5;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.warn strong{color:var(--red);}
+.hl{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1px solid #93c5fd;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.hl strong{color:#1d4ed8;}
+
+.divider{border:none;border-top:2px dashed var(--border);margin:36px 0;}
+.footer{text-align:center;margin-top:60px;padding:22px;color:var(--muted);font-size:13px;border-top:2px solid var(--border);}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="badge">📚 كتاب Organization · الجزء الرابع والأخير + المراجعة الشاملة</div>
+  <h1>ملخص الصفحات 301–402 + المرجع الكامل</h1>
+  <p>SHRM Learning System 2023 — Organization Domain · إدارة التكنولوجيا + مراجعة شاملة + نصائح الامتحان</p>
+  <div class="meta">
+    <span>📄 402 صفحة — مكتملة ✅</span>
+    <span>🎯 18% من الامتحان</span>
+    <span>💻 Technology Management كامل</span>
+    <span>🌍 شرح عربي + مصطلحات إنجليزية</span>
+  </div>
+</div>
+
+<div class="container">
+  <div class="progress-wrap">
+    <div class="progress-label"><span>تقدّمك في الكتاب</span><span>402 / 402 صفحة — 100% 🎉🎉🎉</span></div>
+    <div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div>
+  </div>
+
+  <div class="celebration">
+    <h2>🎓 أنجزت كتاب Organization كاملاً!</h2>
+    <p>402 صفحة في 4 ملخصات موسّعة — المراجعة الشاملة + المصطلحات + نصائح الامتحان بين يديك</p>
+  </div>
+
+  <div class="overview">
+    <h2>🗺️ نظرة عامة — الصفحات 301–402</h2>
+    <p>يُقدّم هذا الجزء منطقة <strong>Technology Management</strong> بالكامل: Big Data وأبعاده الثلاثة، مكوّنات نظام المعلومات الرباعية، أنواع أنظمة HR (HRIS، ATS، LMS)، الذكاء الاصطناعي والتعلم الآلي، الخدمة الذاتية (ESS وMSS)، نظام SaaS، عملية شراء التكنولوجيا، وإدارة مخاطر البيانات. ثم المراجعة الشاملة للكتاب كله ونصائح الامتحان.</p>
+  </div>
+<div style="background:#e6f1fb;border-right:4px solid #185FA5;padding:14px 18px;margin:16px 0;border-radius:8px;">
+<strong style="color:#163456;">🆕 إضافات 2025 — HR Technology</strong><br>
+أضافت نسخة 2025 صراحةً للمفاهيم الرئيسية:<br>
+• <strong>Blockchain</strong> — تقنية البلوك تشين لأمن وتوثيق بيانات HR<br>
+• <strong>Machine Learning</strong> — التعلم الآلي في تحليلات HR المتقدمة<br>
+• <strong>Big Data Analytics Software</strong> — برمجيات تحليل البيانات الضخمة<br>
+• <strong>Collaboration Software</strong> — برامج التعاون والعمل عن بُعد
+</div>
+
+  <!-- ════ SECTION 1: BIG DATA ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">1</div>
+      <div><h2>البيانات الضخمة وأثرها على HR</h2><div class="en">Big Data & HR Analytics</div></div>
+    </div>
+
+    <div class="card">
+      <h3>الأبعاد الثلاثة للبيانات الضخمة <span class="en">3 Vs of Big Data</span></h3>
+      <p class="bt">ظهر مصطلح Big Data في نهاية القرن العشرين مع انفجار البيانات الناتج عن الحوسبة والتواصل. ثلاثة أبعاد غيّرت متطلبات التكنولوجيا:</p>
+      <div class="grid3">
+        <div class="gitem" style="border-top:4px solid #1d4ed8;">
+          <h4>الحجم — Volume</h4>
+          <span class="en">Scale of data</span>
+          <p>مجموعات البيانات ضخمة جداً لدرجة أن أدوات جديدة ضرورية لتخزينها والوصول إليها وتحليلها. الحل: الحوسبة السحابية (Cloud Computing).</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid var(--accent2);">
+          <h4>السرعة — Velocity</h4>
+          <span class="en">Speed of data flow</span>
+          <p>تتدفق البيانات بسرعة هائلة تجعل حداثتها إشكالية. التحليل يستلزم معلومات فورية أو شبه فورية. يجب تحديث البيانات باستمرار عبر كل نقاط النظام.</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid var(--green);">
+          <h4>التنوع — Variety</h4>
+          <span class="en">Types of data</span>
+          <p>البيانات ليست أرقاماً فقط — صور ثابتة، مقاطع فيديو، تسجيلات صوتية، وسائل التواصل الاجتماعي، أجهزة الاستشعار. الأنظمة يجب أن تستوعب هذا التنوع وتُدمجه.</p>
+        </div>
+      </div>
+      <div class="deep" style="margin-top:14px;">
+        <h4>💡 Big Data وHR — 3 فرص تحويلية</h4>
+        <ul>
+          <li><strong>جمع بيانات جديدة:</strong> متى وأين وكيف يؤدي الموظفون عملهم — رؤى لتحسين العمليات وتقليل الأخطاء</li>
+          <li><strong>استخدام البيانات الحالية بفاعلية أكبر:</strong> فهم دوافع الموظفين ومستوى انخراطهم ولماذا يتصرفون كما يتصرفون</li>
+          <li><strong>تحليل استراتيجي أفضل:</strong> رسم خريطة تدفق المعلومات داخل المنظمة والعلاقات التي يعتمد عليها الموظفون في إنجاز عملهم</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ SECTION 2: INFORMATION SYSTEMS ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">2</div>
+      <div><h2>مكوّنات نظام المعلومات الرباعية</h2><div class="en">Information System Components — Deep Dive</div></div>
+    </div>
+
+    <div class="card">
+      <h3>فهم نظام المعلومات — ضرورة لـ HR <span class="en">Understanding IS — Why HR Must Know This</span></h3>
+      <p class="bt">نظام المعلومات (IS) ببساطة: طريقة لجمع البيانات وتنظيمها وتخزينها وتحليلها ومشاركتها. فهم مكوّناته يجعل HR مُشتريين تقنيين أفضل وشركاء أكثر فاعلية مع IT.</p>
+      <div class="tier-flow">
+        <div class="tier-row t-pres">
+          <div class="icon">🖥️</div>
+          <div class="content">
+            <h5>طبقة العرض — Presentation Tier</h5>
+            <p>واجهة المستخدم مع النظام. نقطة الإدخال واستقبال الاستجابات. يمكن أن تكون شاشة تقليدية أو جهازاً محمولاً. يجب أن تتضمن أمناً للتحكم في الوصول وتكون قابلة للتكيّف مع احتياجات المستخدمين ذوي الإعاقات.</p>
+          </div>
+        </div>
+        <div class="tier-row t-logic">
+          <div class="icon">⚙️</div>
+          <div class="content">
+            <h5>طبقة المنطق / الأعمال — Logic Tier</h5>
+            <p>تتكون من برمجيات النظام (OS) وبرمجيات التطبيقات التي تُمكّن العمليات. التطبيقات على الجهاز أو الخادم الداخلي أو عبر السحابة. أفضل البرمجيات تستخدم رسومات سهلة الفهم وتقنيات سهلة الاستخدام.</p>
+          </div>
+        </div>
+        <div class="tier-row t-data">
+          <div class="icon">🗄️</div>
+          <div class="content">
+            <h5>طبقة البيانات — Data Tier</h5>
+            <p>تُخزّن المعلومات التي ستستخدمها التطبيقات. يمكن تخزينها محلياً، على خوادم داخلية، أو عبر السحابة. التحدي: تقليل وقت الانتظار + ضمان حداثة البيانات (تحديث دفعي أو مستمر).</p>
+          </div>
+        </div>
+        <div class="tier-row t-comm">
+          <div class="icon">🌐</div>
+          <div class="content">
+            <h5>طبقة الاتصالات — Communications Tier</h5>
+            <p>تُمكّن مشاركة البيانات والتطبيقات عبر ربط الأجهزة بشبكات. يمكن أن تكون خاصة (LAN، VPN) أو عامة (الإنترنت/السحابة). VPN تُمدّد الشبكات الخاصة الآمنة للعمال عن بُعد.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>التكامل والقابلية للتوسع <span class="en">Integration & Scalability</span></h3>
+      <div class="grid2">
+        <div class="gitem" style="border-top:4px solid var(--primary);">
+          <h4>التكامل — Integration</h4>
+          <span class="en">ERP Systems</span>
+          <p>مدى قدرة المستخدمين على مشاركة نفس البيانات. أنظمة ERP مُصمَّمة لتتيح مختلف أجزاء المنظمة الوصول لنفس البيانات في الوقت الفعلي. تتضمن HR كوحدة متكاملة تسمى HRIS.</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid var(--teal);">
+          <h4>القابلية للتوسع — Scalability</h4>
+          <span class="en">Cloud Computing Solution</span>
+          <p>كيفية زيادة تخزين البيانات دون زيادة وقت المعالجة. المشترك يدفع فقط مقابل ما يستخدمه. الحل الأبسط للمستخدمين عن بُعد والأوفر للمنظمات التي تتفادى شراء خوادم.</p>
+        </div>
+      </div>
+      <div class="deep" style="margin-top:14px;">
+        <h4>💡 ERP مقابل نظام "أفضل من نوعه" (BOB)</h4>
+        <ul>
+          <li><strong>ERP (نظام متكامل):</strong> نظام موحّد يشمل كل وظائف المنظمة. تكامل سهل، واجهة موحّدة، إدارة مورّد واحد. لكن: تخصيص محدود، ترقيات مُكلفة، قد لا يُقدّم أفضل حل لكل وظيفة.</li>
+          <li><strong>BOB (Best-of-Breed):</strong> نظام مُتخصّص في وظيفة محددة — أفضل حل لكل منطقة وظيفية. لكن: تكامل البيانات صعب، موردون متعددون، منحنيات تعلّم متعددة.</li>
+          <li>كثير من المنظمات لديها ERP لـ HR ونظام BOB لوظيفة محددة (مثل التعلم) — يتطلب دعم IT مستمر للتكامل.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ SECTION 3: HR TECH APPS ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">3</div>
+      <div><h2>تطبيقات تكنولوجيا HR الرئيسية</h2><div class="en">Key HR Technology Applications</div></div>
+    </div>
+
+    <div class="card">
+      <h3>الأنظمة الأساسية مقابل أنظمة إدارة المواهب <span class="en">Core vs. Talent Management Applications</span></h3>
+      <div class="grid2">
+        <div class="gitem" style="border-top:4px solid var(--primary);">
+          <h4>التطبيقات الأساسية</h4>
+          <span class="en">Core Applications</span>
+          <p>سجلات الموظفين · كشوف الرواتب · إدارة الوقت والحضور · إدارة الإجازات · إدارة المزايا · برامج التواصل · تحليل البيانات · توليد التقارير · الذكاء الاصطناعي · البلوك تشين</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid var(--teal);">
+          <h4>تطبيقات إدارة المواهب</h4>
+          <span class="en">Talent Management Applications</span>
+          <p>استقطاب المواهب (ATS) · ما قبل التوظيف والتقييم · الإعداد الوظيفي · إدارة الأداء · تخطيط الخلافة · إدارة التعويضات · نظام إدارة التعلم (LMS) · التخطيط الاستراتيجي للقوى العاملة · التعلم الآلي</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>الذكاء الاصطناعي في HR <span class="en">Artificial Intelligence & Machine Learning in HR</span></h3>
+      <p class="bt">الذكاء الاصطناعي (AI) = قدرة الحاسوب على محاكاة التفكير والسلوك البشري. التعلم الآلي (ML) = مجموعة فرعية من AI تُمكّن الآلة من محاكاة التعلم البشري وتحسين دقتها تدريجياً.</p>
+      <div class="grid3">
+        <div class="gitem" style="border-top:3px solid var(--purple);">
+          <h4>الآلات ذاتية التعلم</h4>
+          <p>تُغيّر سلوكها بناءً على الاستجابات التي تتلقاها — تُطور نماذج وتُطبّقها على حالات فردية. مثال: تحسين خطوط مساعدة العملاء.</p>
+        </div>
+        <div class="gitem" style="border-top:3px solid var(--accent2);">
+          <h4>التعرف الضوئي والصوتي</h4>
+          <p>يعزز تعلم الآلة ويجعلها أكثر سهولة للمستخدمين ذوي الإعاقات الجسدية.</p>
+        </div>
+        <div class="gitem" style="border-top:3px solid var(--teal);">
+          <h4>الممثلون الافتراضيون</h4>
+          <p>Virtualization تُتيح إنشاء ممثلين سمعيين أو بصريين يتواصلون بسهولة مع المستخدمين.</p>
+        </div>
+      </div>
+      <div class="hl" style="margin-top:14px;"><strong>💡 الفرق الجوهري:</strong> AI = التكنولوجيا التي تُمكّن الآلة من محاكاة السلوك البشري. ML = جزء من AI يُركّز على تحسين الدقة وتحديد الأنماط. ML أداة داخل AI وليس بديلاً عنه. والأهم: AI قادرة على تعزيز قدرات البشر في أدوارهم الحالية — لا مجرد استبدالهم.</div>
+    </div>
+
+    <div class="card">
+      <h3>تقنيات الخدمة الذاتية — ESS وMSS <span class="en">Self-Service Technologies</span></h3>
+      <div class="grid2">
+        <div class="gitem" style="border-top:4px solid var(--green);">
+          <h4>الخدمة الذاتية للموظفين</h4>
+          <span class="en">Employee Self-Service (ESS)</span>
+          <p>يُتيح للموظفين الوصول لبياناتهم الشخصية وإنجاز معاملات كثيرة كانت تتطلب التواصل مع HR أو الإدارة: تسجيل الوقت، طلب الإجازات، تحديث البيانات الشخصية، التسجيل في المزايا، الوصول لفرص التعلم والتطوير الوظيفي.</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid #1d4ed8;">
+          <h4>الخدمة الذاتية للمديرين</h4>
+          <span class="en">Manager Self-Service (MSS)</span>
+          <p>يُتيح للمديرين الوصول للبيانات الحالية عن موظفيهم وميزانياتهم وإنجاز معاملات: الموافقة على الزيادات والترقيات والإجازات، إدارة إدارة الأداء وتخطيط الخلافة والإعداد الوظيفي.</p>
+        </div>
+      </div>
+      <div class="deep" style="margin-top:14px;">
+        <h4>💡 لماذا ESS وMSS مُحوّلة استراتيجياً؟</h4>
+        <ul>
+          <li>ESS: توفر تكاليف كبيرة لـ HR + راحة للموظفين (متاحة 24/7 من أي مكان) + تخدم القوى العاملة الموزّعة عبر مناطق زمنية مختلفة</li>
+          <li>MSS: تُلغي دورات البريد الإلكتروني وتُتيح للمديرين إجراء التعديلات والمضي قُدماً + أمان أكبر للبيانات (تبقى داخل النظام لا في رسائل غير آمنة)</li>
+          <li>الأثر الاستراتيجي: المديرون يرون HR أقل كأداة تحويلية وأكثر كمورد استراتيجي — هذا هو التحوّل الجوهري في تصوّر HR</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>نظام SaaS — الخدمة كاشتراك <span class="en">Software as a Service (SaaS)</span></h3>
+      <p class="bt">SaaS هو برنامج مملوك ومُسلَّم ومُدار عن بُعد من قِبل مزوّد واحد أو أكثر ومُقدَّم عبر الإنترنت للمشتركين — على أساس الدفع عند الاستخدام أو اشتراك دوري.</p>
+      <div class="grid2">
+        <div class="tc plus">
+          <h4>✅ مزايا SaaS</h4>
+          <ul>
+            <li>لا شراء أجهزة أو تثبيت برامج</li>
+            <li>تحديثات تلقائية ومستمرة بدون تعقيدات</li>
+            <li>مرونة عالية وتكاليف أقل (خاصةً للمنظمات الصغيرة والمتوسطة)</li>
+            <li>وصول عبر الإنترنت من أي جهاز</li>
+            <li>قابلية التوسع السريع مع نمو المنظمة</li>
+          </ul>
+        </div>
+        <div class="tc warn-c">
+          <h4>⚠️ اعتبارات SaaS</h4>
+          <ul>
+            <li>التحقق من أمان التخزين ومنع الوصول غير المصرح به</li>
+            <li>خطر الاعتماد الكامل على المزوّد (Vendor Lock-in)</li>
+            <li>قد لا يلبّي احتياجات التخصيص العميق</li>
+            <li>ضمان التوافق مع الأنظمة الداخلية الموجودة</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ SECTION 4: TECH PROCUREMENT ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">4</div>
+      <div><h2>عملية شراء التكنولوجيا</h2><div class="en">IT Purchasing Process</div></div>
+    </div>
+
+    <div class="card">
+      <h3>المبدأ الأساسي <span class="en">Core Principle</span></h3>
+      <div class="hl">
+        <p><strong>💡 المبدأ الأول:</strong> التكنولوجيا المتاحة لا تُحدّد الاحتياجات. وجود تقنية قادرة على إنجاز مهمة ما لا يعني بالضرورة أنها مطلوبة أو الحل الصحيح. العملية تبدأ دائماً بالتقييم الداخلي للاحتياج الحقيقي.</p>
+      </div>
+      <p class="bt"><strong>IT كشريك جوهري:</strong> IT مصدر رئيسي للمعلومات عن التكنولوجيا الحالية ومتطلباتها، ويُؤثّر التكنولوجيا الجديدة في بنيتهم، وهم المُنفّذون للتقنيات والدعم التقني. الإشراك المبكر لـ IT = عملية أسلس وتقنية أفضل.</p>
+    </div>
+
+    <div class="card">
+      <h3>خطوات عملية الشراء <span class="en">Technology Acquisition Steps</span></h3>
+      <table class="tbl">
+        <tr><th>الخطوة</th><th>الوصف</th><th>الأسئلة الجوهرية</th></tr>
+        <tr>
+          <td><strong>1. تقييم الاحتياجات</strong></td>
+          <td>تحديد ما تريده HR من التكنولوجيا. استطلاع جميع المستخدمين المحتملين.</td>
+          <td>ما الأهداف التي تخدمها؟ ما المشاكل التي تحلّها؟ ما القيود والمتطلبات؟</td>
+        </tr>
+        <tr>
+          <td><strong>2. تحديد أولويات المتطلبات</strong></td>
+          <td>إنتاج قائمة المتطلبات لمراجعة الحلول المتاحة وتضييق الخيارات.</td>
+          <td>ما المرونة والتحكم المطلوبان؟ SaaS أم On-Premises أم Hosted؟</td>
+        </tr>
+        <tr>
+          <td><strong>3. تحديد أهداف الأداء</strong></td>
+          <td>المعايير التي ستُقيَّم عليها التقنية المُقتناة.</td>
+          <td>الميزانية المستهدفة؟ تاريخ الإطلاق؟ مستوى الأداء المطلوب؟</td>
+        </tr>
+        <tr>
+          <td><strong>4. تحديد المزوّدين وتقييم العروض</strong></td>
+          <td>البحث في الإنترنت، التقارير التحليلية، توصيات الزملاء، المؤتمرات.</td>
+          <td>هل يفهم المزوّد احتياجاتنا؟ هل يُقدّم دعماً كافياً بعد البيع؟</td>
+        </tr>
+        <tr>
+          <td><strong>5. اختيار المزوّد وبناء حجة الأعمال</strong></td>
+          <td>توزيع RFP، تقييم العروض بمعايير مُرجَّحة، تقديم حجة الأعمال للإدارة.</td>
+          <td>ما العائد على الاستثمار؟ كيف تتوافق مع الاستراتيجية؟</td>
+        </tr>
+        <tr>
+          <td><strong>6. التنفيذ والتقييم</strong></td>
+          <td>اختبار تجريبي ثم طرح واسع. إدارة التغيير. جمع التغذية الراجعة المستمرة.</td>
+          <td>هل تحققت أهداف الأداء؟ ما مستوى رضا المستخدمين؟</td>
+        </tr>
+      </table>
+      <div class="note"><strong>📌 إطار المفاضلة بين التحكم والمرونة:</strong> الامتلاك المباشر للأجهزة أو البرامج يزيد التحكم لكن يُقلّل المرونة والرشاقة. SaaS يعكس هذه المعادلة. HR تُوازن بين الاثنين بحسب طبيعة المنظمة واستراتيجيتها.</div>
+    </div>
+
+    <div class="card">
+      <h3>الحلول المتكاملة (ERP) مقابل الأفضل من نوعها (BOB) <span class="en">Integrated vs. BOB Solutions</span></h3>
+      <div class="tc-grid">
+        <div class="tc info">
+          <h4>✅ مزايا الحلول المتكاملة (ERP)</h4>
+          <ul>
+            <li>واجهة موحّدة تسهّل التعلم والانتقال</li>
+            <li>تكامل بيانات أسهل بين وظائف HR المختلفة</li>
+            <li>مورّد واحد يُبسّط الإدارة</li>
+            <li>تكلفة أقل لكل تطبيق مقارنةً بـ BOB</li>
+          </ul>
+        </div>
+        <div class="tc minus">
+          <h4>❌ سلبيات الحلول المتكاملة (ERP)</h4>
+          <ul>
+            <li>خيارات تخصيص محدودة — ليست الأفضل لكل منطقة</li>
+            <li>الترقيات معقدة ومُكلفة (تؤثر على كل الوحدات)</li>
+            <li>بطء في إدخال الميزات والتحسينات الجديدة</li>
+          </ul>
+        </div>
+        <div class="tc plus">
+          <h4>✅ مزايا الأفضل من نوعها (BOB)</h4>
+          <ul>
+            <li>"أفضل حل" لكل منطقة وظيفية</li>
+            <li>تنفيذ أسرع — أبسط ويؤثر على موظفين أقل</li>
+            <li>مزوّدون أكثر استجابةً لاحتياجات المستخدم</li>
+            <li>شراء ما تحتاجه فقط</li>
+          </ul>
+        </div>
+        <div class="tc warn-c">
+          <h4>❌ سلبيات الأفضل من نوعها (BOB)</h4>
+          <ul>
+            <li>صعوبة تكامل البيانات بين التطبيقات المختلفة</li>
+            <li>منحنيات تعلّم متعددة بسبب تعدد الواجهات</li>
+            <li>إدارة علاقات موردين متعددين</li>
+            <li>متطلبات التوافق قد تكون مُكلفة</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ SECTION 5: TECH RISKS & POLICIES ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">5</div>
+      <div><h2>إدارة مخاطر التكنولوجيا والسياسات</h2><div class="en">Technology Risks & Policies</div></div>
+    </div>
+
+    <div class="card">
+      <h3>المخاطر التقنية الرئيسية <span class="en">Key Technology Risks</span></h3>
+      <ul class="ilist">
+        <li><span class="dot r"></span><strong>ثغرات أمنية عبر التكامل:</strong> المزوّدون الذين يصلون لأنظمة المنظمة يجب أن يصلوا لمناطق محدودة فقط — لا أبواب خلفية للوصول غير المصرح به.</li>
+        <li><span class="dot r"></span><strong>إدارة مستويات الأمان للمستخدمين:</strong> كل مستخدم يُمنح صلاحيات وصول محددة فقط للمناطق التي يحتاجها في نظام المعلومات.</li>
+        <li><span class="dot r"></span><strong>الحوكمة الرقمية:</strong> التكنولوجيا يجب أن توثّق كل المعاملات — من وصل، متى، وماذا فعل. ضرورة للمحاسبة والشفافية.</li>
+        <li><span class="dot r"></span><strong>خصوصية البيانات:</strong> بيانات الموظفين حساسة للغاية. HR تُطوّر سياسات للسرية والإفصاح والاحتفاظ والنسخ الاحتياطي والأمن السيبراني.</li>
+        <li><span class="dot t"></span><strong>التكنولوجيا القابلة للارتداء (Wearable Tech):</strong> تجمع بيانات صحية وموقعية عن الموظفين. HR تفحص القوانين المحلية والوطنية لتحديد ما يمكن جمعه وتخزينه وما لا يمكن.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>سياسات التكنولوجيا في مكان العمل <span class="en">Technology Use Policies</span></h3>
+      <div class="grid3">
+        <div class="gitem" style="border-top:3px solid var(--red);">
+          <h4>سياسة BYOD</h4>
+          <span class="en">Bring Your Own Device</span>
+          <p>تنظّم استخدام الأجهزة الشخصية في العمل — المخاطر الأمنية وحدود الوصول للبيانات المؤسسية.</p>
+        </div>
+        <div class="gitem" style="border-top:3px solid var(--purple);">
+          <h4>الوصول عن بُعد</h4>
+          <span class="en">Offsite Network Access</span>
+          <p>قواعد الاتصال بشبكة المنظمة من خارجها — استخدام VPN وأمن البيانات في البيئات غير الآمنة.</p>
+        </div>
+        <div class="gitem" style="border-top:3px solid var(--accent2);">
+          <h4>وسائل التواصل الاجتماعي</h4>
+          <span class="en">Social Media Policy</span>
+          <p>تُوضح ما يمكن وما لا يمكن نشره عن المنظمة. التوازن بين الحق في التعبير وحماية المنظمة.</p>
+        </div>
+      </div>
+      <div class="warn"><strong>⚠️ درس وسائل التواصل الاجتماعي:</strong> قضية الموظف الذي أُشير له خطأً في صورة على Facebook تُبيّن أن الضغط الخارجي لاتخاذ قرارات متسرعة يجب مقاومته. HR تُحافظ على هدوئها وتُجري تحقيقاً قبل أي إجراء — هذا هو القيادة الأخلاقية.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ MASTER REVIEW ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">⭐</div>
+      <div><h2>المراجعة الشاملة — المناطق الوظيفية الخمس</h2><div class="en">Complete Review — All 5 Functional Areas</div></div>
+    </div>
+
+    <div class="card">
+      <h3>خريطة كتاب Organization الكاملة</h3>
+      <table class="master-tbl">
+        <tr><th>المنطقة الوظيفية</th><th>الجوهر</th><th>المفاهيم الحاسمة للامتحان</th></tr>
+        <tr>
+          <td><strong>هيكل وظيفة HR</strong><br><em>صص 1–100</em></td>
+          <td>تنظيم HR لتقديم خدماتها بكفاءة</td>
+          <td>7 نماذج (Centralized, Decentralized, Functional, Dedicated, SSC, COE, Business Partners, Matrix, Global) · عملية Outsourcing التسع خطوات · BSC الأربعة منظورات · أربعة أنواع HR Audits · HR metrics (HC ROI, HCVA, Cost per Hire)</td>
+        </tr>
+        <tr>
+          <td><strong>الفاعلية والتطوير التنظيمي</strong><br><em>صص 1–200</em></td>
+          <td>تشخيص المنظمة وإزالة عوائق الأداء</td>
+          <td>McKinsey 7S (3 صلبة + 4 ليّنة) · OED interventions (Proactive vs Remedial) · 4 هياكل تنظيمية (Functional, Product, Geographic, Matrix) · RACI (R واحد فقط، A واحد فقط) · Tuckman (4 مراحل) · Benne & Sheats (Task/Social/Dysfunctional Roles) · Performance Gap Analysis (4 أبعاد)</td>
+        </tr>
+        <tr>
+          <td><strong>إدارة القوى العاملة</strong><br><em>صص 101–200</em></td>
+          <td>توافر العدد والكفاءة الصحيحة في الوقت الصحيح</td>
+          <td>6 مراحل تخطيط القوى العاملة · Build/Buy/Borrow/Bridge · 4 محرّكات إعادة الهيكلة + تكنولوجيا الذكاء الاصطناعي · Due Diligence في M&A · RIF وبدائله · Talent Pools · Succession vs. Replacement Planning · 9-Box Grid · 4 خطوات KM رسمي</td>
+        </tr>
+        <tr>
+          <td><strong>علاقات الموظفين والعمل</strong><br><em>صص 201–300</em></td>
+          <td>إدارة العلاقة مع الموظفين وضمان بيئة عادلة</td>
+          <td>8 معايير ILO الأساسية · الانضباط التدريجي 5 خطوات (Skinner) · 7 اختبارات Due Process · 9 خطوات التحقيق · Whistleblower Protection · 6 أشكال ADR (Open-Door, Ombudsperson, Peer Review, Mediation, Arbitration) · 4 مستويات التظلم النقابي</td>
+        </tr>
+        <tr>
+          <td><strong>إدارة التكنولوجيا</strong><br><em>صص 301–402</em></td>
+          <td>استخدام التكنولوجيا لدعم HR وإدارة مخاطرها</td>
+          <td>Big Data 3Vs (Volume, Velocity, Variety) · 4 طبقات IS (Presentation, Logic, Data, Communications) · ERP vs BOB · SaaS · AI vs ML · ESS وMSS · عملية شراء التكنولوجيا · On-Premises vs Hosted vs SaaS · سياسات التكنولوجيا (BYOD, Social Media)</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ MEGA GLOSSARY ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">📖</div>
+      <div><h2>المصطلحات الشاملة — المرجع الكامل</h2><div class="en">Complete Glossary</div></div>
+    </div>
+    <div class="card">
+      <table class="glos-tbl">
+        <tr><th>المصطلح</th><th>الإنجليزي</th><th>التعريف</th></tr>
+        <!-- Structure -->
+        <tr><td>مركز الخدمات المشتركة</td><td>Shared Services Center (SSC)</td><td>خدمات HR مشتركة بين الوحدات — غالباً تحويلية</td></tr>
+        <tr><td>مراكز التميز</td><td>Center of Excellence (COE)</td><td>خبرة استراتيجية متخصصة تُعزّز النمو والابتكار</td></tr>
+        <tr><td>شريك الأعمال HR</td><td>HR Business Partner (HRBP)</td><td>متخصص HR منتشر داخل وحدة الأعمال بفهم أعمق للأعمال</td></tr>
+        <tr><td>الاستعانة بمصادر خارجية</td><td>Outsourcing</td><td>تعاقد مع طرف ثالث لتنفيذ مهام HR محددة</td></tr>
+        <tr><td>Cosourcing</td><td>Cosourcing</td><td>متعاقدون خارجيون داخل HR مع احتفاظ بقدر أعلى من التحكم</td></tr>
+        <tr><td>بطاقة الأداء المتوازن</td><td>Balanced Scorecard (BSC)</td><td>قياس من 4 منظورات: مالي + عملاء + عمليات + تعلم</td></tr>
+        <!-- OED -->
+        <tr><td>نموذج McKinsey 7S</td><td>McKinsey 7S Framework</td><td>7 عناصر تنظيمية متشابكة (3 صلبة + 4 ليّنة) يجب توافقها</td></tr>
+        <tr><td>مصفوفة RACI</td><td>RACI Matrix</td><td>توضيح الأدوار: مسؤول تنفيذ (R) · مساءَل (A) · مستشار (C) · مُبلَّغ (I)</td></tr>
+        <tr><td>الهيكل المصفوفي</td><td>Matrix Structure</td><td>يُدمج التقسيم الوظيفي والمشاريع — موظف يُبلّغ لمديرَين</td></tr>
+        <tr><td>نموذج Tuckman</td><td>Tuckman's Stages</td><td>Forming→Storming→Norming→Performing</td></tr>
+        <tr><td>الواجب القانوني المسبق</td><td>Due Diligence</td><td>تحقيق شامل في القرار قبل إتمامه للكشف عن المخاطر والفرص</td></tr>
+        <!-- Workforce -->
+        <tr><td>تحليل القوى العاملة</td><td>Workforce Analysis</td><td>جمع بيانات القوى العاملة وتوقع الاحتياجات المستقبلية عبر 6 مراحل</td></tr>
+        <tr><td>تقليص الحجم</td><td>Reduction in Force (RIF)</td><td>إنهاء عمل الموظفين لأسباب غير أداء</td></tr>
+        <tr><td>إدارة المواهب</td><td>Talent Management</td><td>تطوير ودمج عمليات HR للاحتفاظ بالمهارات الرئيسية</td></tr>
+        <tr><td>تخطيط الخلافة</td><td>Succession Planning</td><td>تحديد وتطوير ذوي الإمكانات العالية للمناصب المستقبلية (12-36 شهراً)</td></tr>
+        <tr><td>تخطيط الاستبدال</td><td>Replacement Planning</td><td>تحديد بدائل فورية للمناصب الرئيسية (0-12 شهراً)</td></tr>
+        <tr><td>شبكة التسعة مربعات</td><td>9-Box Grid</td><td>تصنيف الموظفين بحسب الأداء والإمكانات في 9 فئات</td></tr>
+        <tr><td>إدارة المعرفة</td><td>Knowledge Management (KM)</td><td>إنشاء المعرفة ومشاركتها وإدارتها لتعزيز الأداء</td></tr>
+        <!-- Employee Relations -->
+        <tr><td>منظمة العمل الدولية</td><td>ILO</td><td>وكالة أممية — 8 معايير عمل أساسية ملزمة أخلاقياً</td></tr>
+        <tr><td>الانضباط التدريجي</td><td>Progressive Discipline</td><td>عقوبات متصاعدة تهدف لتشكيل السلوك لا إيلام الموظف</td></tr>
+        <tr><td>الإجراءات القانونية الواجبة</td><td>Due Process</td><td>7 اختبارات تضمن معاملة الموظف بعدالة</td></tr>
+        <tr><td>تحقيق مكان العمل</td><td>Workplace Investigation</td><td>تحقيق منهجي موضوعي في 9 خطوات</td></tr>
+        <tr><td>حل النزاعات البديل</td><td>ADR</td><td>استخدام وسيط لحل النزاعات بديلاً عن التقاضي</td></tr>
+        <tr><td>الوساطة</td><td>Mediation</td><td>طرف ثالث يُسهّل الاتفاق الطوعي — لا يُصدر حكماً</td></tr>
+        <tr><td>التحكيم</td><td>Arbitration</td><td>طرف ثالث يستمع ويُصدر قراراً (ملزماً أو غير ملزم)</td></tr>
+        <tr><td>التظلم</td><td>Grievance</td><td>إجراء رسمي لحل خلافات تتعلق ببنود العقد الجماعي</td></tr>
+        <!-- Technology -->
+        <tr><td>البيانات الضخمة</td><td>Big Data</td><td>بيانات ضخمة (Volume) سريعة (Velocity) متنوعة (Variety) تتطلب أدوات جديدة</td></tr>
+        <tr><td>نظام معلومات الموارد البشرية</td><td>HRIS</td><td>نظام يجمع ويخزن ويحلل بيانات HR</td></tr>
+        <tr><td>نظام تخطيط موارد المؤسسة</td><td>ERP</td><td>برنامج يُدمج وظائف المنظمة المختلفة في قاعدة بيانات واحدة</td></tr>
+        <tr><td>الخدمة كاشتراك</td><td>SaaS</td><td>برمجيات مُسلَّمة عبر الإنترنت على أساس الاشتراك الدوري</td></tr>
+        <tr><td>الذكاء الاصطناعي</td><td>Artificial Intelligence (AI)</td><td>قدرة الحاسوب على محاكاة التفكير والسلوك البشري</td></tr>
+        <tr><td>التعلم الآلي</td><td>Machine Learning (ML)</td><td>مجموعة فرعية من AI تُحسّن دقتها وتحدد الأنماط تدريجياً</td></tr>
+        <tr><td>الخدمة الذاتية للموظفين</td><td>Employee Self-Service (ESS)</td><td>يُتيح للموظفين الوصول لبياناتهم وإنجاز معاملاتهم ذاتياً</td></tr>
+        <tr><td>الخدمة الذاتية للمديرين</td><td>Manager Self-Service (MSS)</td><td>يُتيح للمديرين الوصول لبيانات فريقهم وإنجاز معاملاتهم ذاتياً</td></tr>
+        <tr><td>الحوسبة السحابية</td><td>Cloud Computing</td><td>تخزين ومعالجة البيانات عبر خوادم بعيدة متصلة بالإنترنت</td></tr>
+        <tr><td>الأفضل من نوعه</td><td>Best-of-Breed (BOB)</td><td>نظام HR متخصص في وظيفة محددة — أفضل حل لمنطقة بعينها</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ EXAM TIPS ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">🎯</div>
+      <div><h2>نصائح الامتحان الذهبية — Organization Domain</h2><div class="en">Golden Exam Tips</div></div>
+    </div>
+
+    <div class="exam-tip">
+      <h4>المفاهيم الأكثر ظهوراً في الامتحان</h4>
+      <ul>
+        <li>McKinsey 7S: الأسئلة تتعلق بـ "لماذا يفشل التغيير" — دائماً العناصر الليّنة مُهمَلة</li>
+        <li>RACI: يجب A واحد فقط. وجود A متعدد = مصدر الفوضى في السؤال</li>
+        <li>Tuckman: القائد يلعب دوراً مختلفاً في كل مرحلة. Storming ضرورية ومؤقتة</li>
+        <li>9-Box Grid: المربعات 5,8,9 = تحتاج انتباهاً فورياً. المربع 1 = النجم المطلق</li>
+        <li>Succession vs. Replacement: أفق زمني مختلف، درجة الالتزام مختلفة جوهرياً</li>
+        <li>ADR: الوساطة لا تُلزم بالتسوية — التحكيم الملزم يُلزم. اعرف الفرق جيداً</li>
+        <li>الانضباط التدريجي: الخطوة الأولى = إرشاد لفظي ليس تحذير رسمي</li>
+        <li>ERP vs BOB: تحكم أعلى = مرونة أقل. هذه المقايضة هي جوهر القرار</li>
+        <li>SSC vs COE: SSC = مهام تحويلية. COE = خبرة استراتيجية</li>
+      </ul>
+    </div>
+
+    <div class="exam-tip">
+      <h4>استراتيجية أسئلة SJI في Organization Domain</h4>
+      <ul>
+        <li>في أسئلة هيكل HR: الإجابة الصحيحة تُوازن بين الكفاءة وجودة الخدمة</li>
+        <li>في أسئلة OED: قبل أي تدخل = تشخيص أولاً. "حلّل ثم تدخّل" قاعدة لا استثناء</li>
+        <li>في أسئلة الانضباط: لا تُنهِ فوراً حتى في الجرائم الواضحة. حقّق أولاً</li>
+        <li>في أسئلة التحقيق: المحقق موضوعي دائماً — لا يُعبّر عن آرائه ولا يتهم</li>
+        <li>في أسئلة التكنولوجيا: الاحتياج يُحدّد التقنية، ليس العكس</li>
+        <li>في أسئلة M&A: HR تُحقق في كل شيء قبل الإتمام — الغفلة مُكلفة جداً</li>
+      </ul>
+    </div>
+
+    <div class="exam-tip">
+      <h4>الأخطاء الأكثر شيوعاً في هذا النطاق</h4>
+      <ul>
+        <li>الخلط بين SSC (تحويلي) وCOE (استراتيجي)</li>
+        <li>الخلط بين Outsourcing (تعاقد خارجي) وCosourcing (متعاقدون داخل HR)</li>
+        <li>نسيان أن A في RACI يجب أن يكون واحداً فقط</li>
+        <li>ظن أن Storming مشكلة يجب تجنبها — بل هي مرحلة حتمية ومفيدة</li>
+        <li>الخلط بين الوساطة (غير ملزمة) والتحكيم (ملزم)</li>
+        <li>اعتقاد أن الانضباط التدريجي يبدأ بتحذير رسمي — الصواب: إرشاد لفظي أولاً</li>
+        <li>الخلط بين AI (محاكاة السلوك) وML (محاكاة التعلم — جزء من AI)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FINAL STUDY PLAN -->
+  <div class="overview" style="margin-top:30px;background:linear-gradient(135deg,#1e3a5c,#0d3b2e);">
+    <h2>🏆 رحلة كتاب Organization — 402 صفحة في 4 ملخصات موسّعة!</h2>
+    <table class="tbl" style="margin-top:16px;background:rgba(255,255,255,.08);">
+      <tr style="background:rgba(255,255,255,.15);">
+        <th style="background:transparent;color:#fff;">الجزء</th>
+        <th style="background:transparent;color:#fff;">الصفحات</th>
+        <th style="background:transparent;color:#fff;">المحتوى</th>
+        <th style="background:transparent;color:#fff;">الحالة</th>
+      </tr>
+      <tr style="color:#fff;font-size:14px;"><td>الأول</td><td>1–100</td><td>هيكل HR (7 نماذج) + BSC + مراجعات HR + McKinsey 7S</td><td>✅</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>الثاني</td><td>101–200</td><td>التصميم التنظيمي + RACI + Tuckman + إدارة القوى العاملة + 9-Box + KM</td><td>✅</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>الثالث</td><td>201–300</td><td>علاقات الموظفين: ILO + الانضباط + التحقيقات + ADR + التظلمات</td><td>✅</td></tr>
+      <tr style="color:#fff;font-size:14px;background:rgba(200,168,75,.2);"><td><strong>الرابع ✅</strong></td><td><strong>301–402</strong></td><td><strong>التكنولوجيا كاملاً + مراجعة شاملة + نصائح الامتحان</strong></td><td>✅ مكتمل!</td></tr>
+    </table>
+  </div>
+
+  <div class="tip" style="margin-top:24px;font-size:16px;padding:24px;">
+    <strong>🌟 الكلمة الأخيرة — Organization Domain:</strong><br><br>
+    أكملت الآن الكتاب الثالث! الكتب الثلاثة لـ SHRM 2023 مُلخَّصة بالكامل:<br>
+    📚 <strong>Competencies</strong> (601 صفحة) → 6 ملخصات ✅<br>
+    📚 <strong>People</strong> (744 صفحة) → 7 ملخصات ✅<br>
+    📚 <strong>Organization</strong> (402 صفحة) → 4 ملخصات ✅<br><br>
+    إجمالي: <strong>1,747 صفحة في 17 ملخصاً موسّعاً بالعربية</strong> 🎓
+  </div>
+
+  <div class="footer">
+    <p style="font-size:16px;font-weight:700;color:var(--primary);">🎉 الكتب الثلاثة مكتملة — بالتوفيق في امتحان SHRM-CP / SHRM-SCP 🏆</p>
+    <p style="margin-top:6px;color:#aaa;">SHRM Learning System 2023 — Organization Domain · ملخص موسّع بالعربية</p>
+  </div>
+</div>
+</body>
+</html>

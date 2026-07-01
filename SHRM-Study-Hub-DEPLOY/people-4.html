@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ملخص SHRM People – الصفحات 301–400</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#1a3a5c;--accent:#c8a84b;--accent2:#e8734a;--bg:#f7f4ef;--card:#fff;--green:#1e7a4a;--red:#b91c1c;--purple:#6d28d9;--teal:#0f766e;--border:#e2d9c8;--muted:#6b7280;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Tajawal',sans-serif;background:var(--bg);color:#2c2c2c;line-height:1.85;font-size:16px;}
+
+.header{background:linear-gradient(135deg,#0d3b2e 0%,#1a3a5c 50%,#2c1654 100%);color:#fff;padding:48px 40px 40px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-60px;left:-60px;width:300px;height:300px;border-radius:50%;background:rgba(200,168,75,.12);}
+.header::after{content:'';position:absolute;bottom:-80px;right:-40px;width:220px;height:220px;border-radius:50%;background:rgba(44,22,84,.15);}
+.badge{display:inline-block;background:var(--accent);color:var(--primary);font-weight:700;font-size:13px;padding:4px 16px;border-radius:20px;margin-bottom:14px;letter-spacing:1px;}
+.header h1{font-size:2rem;font-weight:800;margin-bottom:8px;}
+.header p{font-size:.95rem;opacity:.8;max-width:620px;}
+.meta{display:flex;gap:24px;margin-top:20px;flex-wrap:wrap;}
+.meta span{font-size:13px;opacity:.85;}
+
+.container{max-width:920px;margin:0 auto;padding:40px 24px 80px;}
+.progress-wrap{margin-bottom:36px;}
+.progress-label{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:6px;}
+.progress-bar{height:10px;background:#e2d9c8;border-radius:10px;overflow:hidden;}
+.progress-fill{height:100%;border-radius:10px;background:linear-gradient(90deg,var(--primary),var(--accent));}
+
+.overview{background:var(--primary);color:#fff;border-radius:16px;padding:30px 34px;margin-bottom:36px;position:relative;overflow:hidden;}
+.overview::after{content:'People';position:absolute;left:-10px;bottom:-22px;font-size:90px;font-weight:900;color:rgba(255,255,255,.04);}
+.overview h2{font-size:1.2rem;color:var(--accent);margin-bottom:12px;}
+.overview p{font-size:15px;line-height:1.9;opacity:.92;}
+
+.section{margin-bottom:40px;}
+.sec-title{display:flex;align-items:center;gap:14px;margin-bottom:20px;}
+.sec-num{background:var(--accent);color:var(--primary);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0;}
+.sec-title h2{font-size:1.25rem;font-weight:700;color:var(--primary);}
+.sec-title .en{font-size:13px;color:var(--muted);font-style:italic;direction:ltr;}
+
+.card{background:var(--card);border-radius:14px;padding:26px 28px;border:1px solid var(--border);box-shadow:0 2px 12px rgba(0,0,0,.05);margin-bottom:20px;}
+.card h3{font-size:1rem;font-weight:700;color:var(--primary);margin-bottom:12px;padding-bottom:10px;border-bottom:2px solid var(--border);}
+.card h3 .en{color:var(--accent2);font-size:.83rem;direction:ltr;display:inline-block;margin-right:6px;}
+.card p.bt{font-size:15px;margin-bottom:12px;line-height:1.85;}
+
+ul.ilist{list-style:none;padding:0;}
+ul.ilist li{padding:8px 0;border-bottom:1px solid #f0ebe0;font-size:15px;display:flex;gap:10px;align-items:flex-start;}
+ul.ilist li:last-child{border-bottom:none;}
+.dot{width:8px;height:8px;background:var(--accent);border-radius:50%;margin-top:8px;flex-shrink:0;}
+.dot.g{background:var(--green);}
+.dot.r{background:var(--red);}
+.dot.t{background:var(--teal);}
+.dot.p{background:var(--purple);}
+
+.term{background:#f0f6ff;border-right:4px solid var(--primary);padding:10px 16px;margin:8px 0;border-radius:6px;font-size:15px;}
+.term strong{color:var(--primary);}
+.term .en-t{color:var(--accent2);font-style:italic;direction:ltr;display:inline-block;}
+
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px;}
+.tbl th{background:var(--primary);color:#fff;padding:10px 14px;text-align:right;}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top;}
+.tbl tr:nth-child(even) td{background:#f9f6f0;}
+.tbl tr:hover td{background:#fff3e0;}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px;}
+@media(max-width:640px){.grid2{grid-template-columns:1fr;}}
+.gitem{background:#f9f6f0;border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.gitem h4{font-size:14px;font-weight:700;color:var(--primary);margin-bottom:5px;}
+.gitem .en{font-size:11px;color:var(--accent2);direction:ltr;display:block;margin-bottom:5px;}
+.gitem p{font-size:13px;color:#444;line-height:1.7;}
+
+/* APPRAISAL METHOD CARDS */
+.ap-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:14px;}
+@media(max-width:700px){.ap-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.ap-grid{grid-template-columns:1fr;}}
+.ap-card{border-radius:10px;padding:14px 15px;border:1px solid var(--border);}
+.ap-card h4{font-size:13px;font-weight:700;margin-bottom:5px;}
+.ap-card .en{font-size:11px;direction:ltr;display:block;margin-bottom:5px;}
+.ap-card p{font-size:12.5px;color:#555;line-height:1.65;}
+.ap1{border-top:4px solid #2563eb;}.ap1 h4{color:#1d4ed8;}
+.ap2{border-top:4px solid var(--accent2);}.ap2 h4{color:var(--accent2);}
+.ap3{border-top:4px solid var(--green);}.ap3 h4{color:var(--green);}
+.ap4{border-top:4px solid var(--purple);}.ap4 h4{color:var(--purple);}
+.ap5{border-top:4px solid var(--teal);}.ap5 h4{color:var(--teal);}
+
+/* LIFECYCLE FLOW */
+.lc-flow{display:flex;gap:0;margin:14px 0;overflow-x:auto;}
+.lc-box{flex:1;min-width:110px;padding:14px 10px;text-align:center;}
+.lc-box h5{font-size:13px;font-weight:700;margin-bottom:6px;}
+.lc-box p{font-size:11.5px;line-height:1.5;}
+.lc-arrow{display:flex;align-items:center;color:var(--accent);font-size:20px;font-weight:900;flex-shrink:0;}
+.lc-box.rec{background:#dbeafe;border-radius:10px 0 0 10px;}.lc-box.rec h5{color:#1d4ed8;}
+.lc-box.int{background:#d1fae5;}.lc-box.int h5{color:var(--green);}
+.lc-box.dev{background:#fef3cd;}.lc-box.dev h5{color:#854d0e;}
+.lc-box.tra{background:#ede9fe;border-radius:0 10px 10px 0;}.lc-box.tra h5{color:var(--purple);}
+
+/* ERRORS GRID */
+.err-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;}
+@media(max-width:600px){.err-grid{grid-template-columns:1fr;}}
+.err-item{background:#fff1f2;border-radius:8px;padding:10px 14px;font-size:13px;border-right:3px solid var(--red);line-height:1.6;}
+.err-item strong{color:var(--red);display:block;margin-bottom:3px;}
+
+/* KELLEHER STEPS */
+.k-steps{counter-reset:ksteps;}
+.k-step{counter-increment:ksteps;display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #f0ebe0;font-size:14px;}
+.k-step:last-child{border-bottom:none;}
+.k-step::before{content:counter(ksteps);background:var(--teal);color:#fff;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;flex-shrink:0;}
+
+/* WLB GRID */
+.wlb-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:12px;}
+@media(max-width:640px){.wlb-grid{grid-template-columns:1fr 1fr;}}
+.wlb-item{background:#f9f6f0;border:1px solid var(--border);border-radius:8px;padding:10px 12px;text-align:center;}
+.wlb-item .icon{font-size:1.5rem;margin-bottom:4px;}
+.wlb-item h4{font-size:12px;font-weight:700;color:var(--primary);margin-bottom:3px;}
+.wlb-item p{font-size:11px;color:var(--muted);}
+
+.hl{background:linear-gradient(135deg,#fff8e7,#fef3cd);border:1px solid var(--accent);border-radius:12px;padding:18px 24px;margin:14px 0;}
+.hl p{font-size:15px;}
+.tip{background:#f0fdf4;border:1px solid #86efac;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.tip strong{color:var(--green);}
+.note{background:#fefce8;border:1px solid #fde047;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.note strong{color:#854d0e;}
+.warn{background:#fff1f2;border:1px solid #fca5a5;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.warn strong{color:var(--red);}
+
+.divider{border:none;border-top:2px dashed var(--border);margin:32px 0;}
+.footer{text-align:center;margin-top:60px;padding:22px;color:var(--muted);font-size:13px;border-top:2px solid var(--border);}
+
+/* ── THEORY EXPANSION BOXES ── */
+.th-box{background:#fff;border:1.5px solid #ddd6c8;border-radius:16px;margin:24px 0;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);}
+.th-header{display:flex;align-items:center;gap:12px;padding:16px 20px;background:linear-gradient(135deg,#0d1b2e,#163456);}
+.th-icon{font-size:1.4rem;flex-shrink:0;}
+.th-title{color:#fff;font-weight:700;font-size:1rem;}
+.th-subtitle{color:rgba(255,255,255,.55);font-size:.8rem;margin-top:2px;}
+.th-body{padding:0 20px 20px;}
+.th-formula{background:#0d1b2e;color:#c8a84b;font-family:'Outfit',monospace,sans-serif;font-weight:700;font-size:.9rem;padding:10px 16px;border-radius:8px;margin:14px 0;text-align:center;letter-spacing:.03em;}
+.th-stage-list{display:flex;flex-direction:column;gap:0;}
+.th-stage{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #f0ede5;}
+.th-stage:last-child{border-bottom:none;}
+.th-sn{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;flex-shrink:0;margin-top:2px;}
+.th-sc{flex:1;font-size:.9rem;line-height:1.65;color:#333;}
+.th-sc strong{color:#0d1b2e;}
+.th-sc em{color:#888;font-size:.85em;}
+.th-example{background:#f0ede5;border-right:3px solid #c8a84b;padding:10px 14px;border-radius:0 8px 8px 0;margin:8px 0;font-size:.88rem;color:#444;line-height:1.65;}
+.th-example strong{color:#0d1b2e;}
+.th-exam-tip{background:#fff8e7;border:1.5px solid #c8a84b;border-radius:10px;padding:12px 16px;margin:14px 0 0;font-size:.88rem;color:#4a3000;line-height:1.65;}
+.th-exam-tip strong{color:#0d1b2e;}
+.th-compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0;}
+@media(max-width:600px){.th-compare{grid-template-columns:1fr;}}
+.th-compare-card{background:#f7f5f0;border-radius:10px;padding:12px 14px;}
+.th-compare-card h4{font-size:.85rem;font-weight:700;color:#0d1b2e;margin-bottom:8px;}
+.th-compare-card li{font-size:.82rem;color:#444;margin-bottom:4px;line-height:1.5;}
+.th-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:12px 0;}
+.th-card{background:#f7f5f0;border-radius:10px;padding:12px 14px;border-top:3px solid #ccc;}
+.th-card h4{font-size:.82rem;font-weight:700;color:#0d1b2e;margin-bottom:6px;}
+.th-card p{font-size:.8rem;color:#555;line-height:1.55;}
+.th-divider{height:1px;background:#f0ede5;margin:16px 0;}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="badge">📚 كتاب People · الجزء الرابع</div>
+  <h1>ملخص الصفحات 301–400</h1>
+  <p>SHRM Learning System 2023 — People Domain</p>
+  <div class="meta">
+    <span>📄 744 صفحة إجمالاً</span>
+    <span>🎯 18% من الامتحان</span>
+    <span>🌍 شرح بالعربية · المصطلحات بالإنجليزية</span>
+  </div>
+</div>
+
+<div class="container">
+  <div class="progress-wrap">
+    <div class="progress-label"><span>تقدّمك في الكتاب</span><span>400 / 744 صفحة — 54% ✨ أكثر من النصف!</span></div>
+    <div class="progress-bar"><div class="progress-fill" style="width:54%"></div></div>
+  </div>
+
+  <div class="overview">
+    <h2>🗺️ نظرة عامة — الصفحات 301–400</h2>
+    <p>
+      يُكمل هذا الجزء منطقة <strong>Employee Engagement & Retention</strong> بدروس إدارة الاستبيانات (Kelleher)، مقابلات البقاء، برامج التوازن بين العمل والحياة، أنظمة المكافأة والتقدير، إدارة الأداء كاملاً (معايير + أساليب + أخطاء + معايرة). ثم يفتح باب منطقة <strong>Learning & Development</strong> — المنظمة المتعلّمة، الفرق بين التدريب والتطوير، نموذج 70-20-10، وأساليب الاحتفاظ بالمعرفة.
+    </p>
+  </div>
+
+  <!-- ════ S1: SURVEY MANAGEMENT ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">1</div>
+      <div><h2>إدارة برامج الاستبيانات — دروس Kelleher</h2><div class="en">Managing Survey Programs Effectively</div></div>
+    </div>
+
+    <div class="card">
+      <h3>11 درساً ذهبياً من Bob Kelleher <span class="en">Kelleher's Lessons</span></h3>
+      <div class="k-steps">
+        <div class="k-step">لا تُجرِ الاستبيان ما لم تكن القيادة مُلتزمة فعلاً بالتصرف بناءً على نتائجه — السخرية تدمر الانخراط</div>
+        <div class="k-step">شارك جهة استشارية لضمان السرية ومقارنة نتائجك بالصناعة (Benchmarking)</div>
+        <div class="k-step">روّج للاستبيان مسبقاً وشارك ما تحقق من الاستبيان السابق لبناء الثقة</div>
+        <div class="k-step">أشرك المستشار في تقديم النتائج لفريق القيادة — لتوفير السياق وتقليل القلق</div>
+        <div class="k-step">أنشئ لجنة متقاطعة (قادة + موظفون بنسب متساوية) لمراجعة النتائج وتقديم التوصيات</div>
+        <div class="k-step">على المستوى المحلي: شكّل لجاناً فرعية لمراجعة نتائج كل وحدة وعيّن قادة محليين</div>
+        <div class="k-step">استخدم نموذجاً موحداً لخطط العمل وانشره داخلياً لتشجيع التشارك وأفضل الممارسات</div>
+        <div class="k-step">ابقِ الأمر بسيطاً ونفّذ بإتقان — لا تعِد بأكثر مما تستطيع تحقيقه</div>
+        <div class="k-step">خطّط لآليات تغذية راجعة مستمرة — لا تنتظر الاستبيان التالي</div>
+        <div class="k-step">لا تُطلق استبياناً جديداً حتى تُحلّل وتستجيب للسابق — البحث يُثبت أن السنوي أفضل من كل عامين</div>
+        <div class="k-step">أنفق أقل على تقنية الاستبيان وأكثر على تحليل النتائج والتواصل والتصرف بناءً عليها</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>تحديد محرّكات الانخراط من نتائج الاستبيان <span class="en">Identifying Engagement Drivers</span></h3>
+      <p class="bt">ليس كل ما يُكشف في الاستبيان يمكن معالجته — الأذكياء يُحدّدون الأثر العالي وينركّزون عليه.</p>
+      <ul class="ilist">
+        <li><span class="dot g"></span>حدّد المحرّكات في كل استبيان — تتغير مع تطور المنظمة ومعالجة قضايا سابقة</li>
+        <li><span class="dot g"></span>ركّز على المحرّكات القابلة للمعالجة بالموارد المتاحة فعلاً</li>
+        <li><span class="dot g"></span>اجعل خطط العمل واقعية وقابلة للقياس — لا مجرد إجراءات حسن النية</li>
+        <li><span class="dot g"></span>تتبّع الجهود وأعلن عنها — حتى يرى الموظفون أن أصواتهم تُحدث فرقاً</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ S2: STAY INTERVIEWS ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">2</div>
+      <div><h2>مقابلات البقاء</h2><div class="en">Stay Interviews</div></div>
+    </div>
+
+    <div class="card">
+      <h3>مقابلة البقاء vs مقابلة الخروج <span class="en">Stay Interview vs Exit Interview</span></h3>
+      <div class="grid2">
+        <div class="gitem" style="border-top:4px solid var(--green);">
+          <h4 style="color:var(--green);">✅ مقابلة البقاء — Stay Interview</h4>
+          <span class="en">PROACTIVE — while employee is still here</span>
+          <p>تُجرى مع الموظف الحالي — تسأل: لماذا تبقى؟ وما الذي قد يدفعك للمغادرة؟ الوقت لا يزال مناسباً للتصرف والاحتفاظ.</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid var(--red);">
+          <h4 style="color:var(--red);">❌ مقابلة الخروج — Exit Interview</h4>
+          <span class="en">REACTIVE — after the decision is made</span>
+          <p>تُجرى مع الموظف المُغادِر — مفيدة لفهم الأنماط، لكن فات الأوان لاحتجاز هذا الموظف.</p>
+        </div>
+      </div>
+      <div class="hl" style="margin-top:16px;">
+        <p>💡 <strong>الأفضل هو من يُجري مقابلة البقاء؟</strong> المدير المباشر — لأنه الأقدر على تغيير ظروف العمل فعلاً. HR يدرّب المديرين ويُساعد في الحالات الصعبة فقط.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ S3: RETENTION PROGRAMS ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">3</div>
+      <div><h2>برامج الاحتفاظ وتحسين الانخراط</h2><div class="en">Retention & Engagement Programs</div></div>
+    </div>
+
+    <div class="card">
+      <h3>دورة حياة الموظف كمسار للانخراط <span class="en">Employee Life Cycle (ELC)</span></h3>
+      <div class="lc-flow">
+        <div class="lc-box rec"><h5>الاستقطاب</h5><p>Recruitment<br>بداية العلاقة</p></div>
+        <div class="lc-arrow">→</div>
+        <div class="lc-box int"><h5>الاندماج</h5><p>Integration<br>Onboarding وتكيّف ثقافي</p></div>
+        <div class="lc-arrow">→</div>
+        <div class="lc-box dev"><h5>التطوير</h5><p>Development<br>تدريب وأهداف أداء</p></div>
+        <div class="lc-arrow">→</div>
+        <div class="lc-box tra"><h5>الانتقال</h5><p>Transition<br>استقالة، ترقية، تقاعد</p></div>
+      </div>
+      <div class="note"><strong>📌 الفكرة الجوهرية:</strong> في كل مرحلة فرصة لتعميق الانخراط أو خسارته. HR يُحوّل "اللحظات الفارقة" إلى تجربة ذات معنى.</div>
+    </div>
+
+    <div class="card">
+      <h3>التوقع الوظيفي الواقعي <span class="en">Realistic Job Preview (RJP)</span></h3>
+      <p class="bt">RJP هو إعطاء المرشح صورة صادقة وكاملة عن الوظيفة — إيجابياتها وسلبياتها معاً — قبل التعيين.</p>
+      <div class="grid2">
+        <div class="gitem">
+          <h4>أهداف RJP الثلاثة</h4>
+          <span class="en">3 Objectives</span>
+          <p>① تمكين المرشح من اتخاذ قرار مدروس. ② تقديم الوظيفة بشكل موضوعي. ③ تحسين التطابق بين الشخص والوظيفة.</p>
+        </div>
+        <div class="gitem">
+          <h4>نتائج RJP</h4>
+          <span class="en">Outcomes</span>
+          <p>يُبدّد التوقعات غير الواقعية. يُقلّل الدوران المبكر. يزيد رضا الموظفين. يُعزّز الاختيار الذاتي (Self-selection).</p>
+        </div>
+      </div>
+      <div class="tip"><strong>🎯 للامتحان:</strong> RJP من أكثر موضوعات الاحتفاظ ظهوراً. الإجابة الصحيحة دائماً: الصدق في التوقعات المبكرة يُقلّل الدوران — ليس "الترويج" للوظيفة.</div>
+    </div>
+
+    <div class="card">
+      <h3>التوازن بين العمل والحياة <span class="en">Work/Life Balance (WLB) Programs</span></h3>
+      <div class="wlb-grid">
+        <div class="wlb-item"><div class="icon">🕐</div><h4>مرونة العمل</h4><p>ساعات مرنة، ضغط الأسبوع، جداول متغيّرة</p></div>
+        <div class="wlb-item"><div class="icon">🏠</div><h4>العمل عن بُعد</h4><p>Telecommuting + هجين</p></div>
+        <div class="wlb-item"><div class="icon">👥</div><h4>تقاسم الوظائف</h4><p>Job Sharing</p></div>
+        <div class="wlb-item"><div class="icon">👶</div><h4>دعم الأسرة</h4><p>رعاية الأطفال، إجازة الأبوة</p></div>
+        <div class="wlb-item"><div class="icon">🎓</div><h4>التطوير</h4><p>سداد قروض الدراسة، تعويض الرسوم</p></div>
+        <div class="wlb-item"><div class="icon">💪</div><h4>الصحة والرفاهية</h4><p>Wellness Programs + EAP</p></div>
+        <div class="wlb-item"><div class="icon">🚌</div><h4>الانتقال</h4><p>دعم المواصلات والوجبات</p></div>
+        <div class="wlb-item"><div class="icon">📚</div><h4>التقاعد</h4><p>التخطيط المالي والمعاش</p></div>
+        <div class="wlb-item"><div class="icon">🛍️</div><h4>خدمات الراحة</h4><p>غسيل ملابس، خدمات منزلية</p></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>أنظمة المكافأة والتقدير <span class="en">Rewards & Recognition Programs</span></h3>
+      <p class="bt">التقدير يُعالج الحاجات النفسية (الموافقة، التميّز، النمو). المكافأة أكثر تبادلية — منافع مالية وغير مالية مقابل الأداء المتميّز.</p>
+      <div class="grid2">
+        <div class="gitem"><h4>أنواع برامج التقدير</h4><span class="en">Recognition Types</span><p>مكافأة سنوية (Year-End Bonus) · نظام النقاط (Points-Based) · جائزة فورية (Spot Award) · تقدير الزملاء (Peer-to-Peer Recognition).</p></div>
+        <div class="gitem"><h4>التقدير غير المالي</h4><span class="en">Non-Financial Recognition</span><p>مدح علني أو خاص · استقلالية أكبر · وصول حصري لبرامج تطوير · تكليف بمشاريع عالية الظهور · جداول مرنة.</p></div>
+      </div>
+      <div class="hl">
+        <p>💡 <strong>نتيجة بحث SHRM-Globoforce:</strong> برامج التقدير المرتبطة بقيم المنظمة تُحقق نتائج أفضل بـ 9 أضعاف! والإنفاق بأكثر من 1% من كشوف المرتبات يُحسّن التوظيف والاحتفاظ والأداء المالي.</p>
+      </div>
+      <div class="note"><strong>📌 معيارا التصميم:</strong> ① التقدير مرتبط بالأداء الذي يُحقق الأهداف الاستراتيجية. ② شكل التقدير له معنى للمتلقي — ليس "بطاقة بريدية للجميع".</div>
+    </div>
+
+    <div class="card">
+      <h3>المبادرات عند المغادرة — شبكات الخريجين <span class="en">Alumni Networks & Boomerang Employees</span></h3>
+      <ul class="ilist">
+        <li><span class="dot g"></span><strong>الخريجون كسفراء للعلامة التجارية:</strong> الموظف السابق الراضي يُحيل مرشحين ويصبح عميلاً محتملاً</li>
+        <li><span class="dot g"></span><strong>الموظف البومرانج (Boomerang):</strong> يعود بخبرة أوسع ومعرفة داخلية — سرعة وصوله للإنتاجية أعلى من موظف جديد</li>
+        <li><span class="dot g"></span><strong>الذكاء الصناعي:</strong> الخريجون مصدر قيّم لمعلومات الصناعة والأسواق</li>
+        <li><span class="dot g"></span><strong>إحالات الوظائف:</strong> من أفضل من يعرف المنظمة ليُرشّح مرشحين مناسبين؟</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ S4: PERFORMANCE MANAGEMENT ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">4</div>
+      <div><h2>إدارة الأداء</h2><div class="en">Performance Management</div></div>
+    </div>
+
+    <div class="card">
+      <h3>نظام إدارة الأداء الكامل <span class="en">Performance Management System</span></h3>
+      <p class="bt">إدارة الأداء ليست حدثاً سنوياً — بل عملية مستمرة تربط الأهداف الاستراتيجية بمساهمات الأفراد وتُفضي إلى نتائج أعمال ملموسة.</p>
+      <div class="grid2">
+        <div class="gitem"><h4>شروط نجاح النظام</h4><span class="en">Conditions for Success</span><p>دعم القيادة العليا. قبول المديرين لقيمة النظام وفهمه. تثقيف الموظفين عن كيفية الاستفادة منه. التقييم الدوري وتكيّفه مع الاستراتيجية والثقافة.</p></div>
+        <div class="gitem"><h4>لوحة المعلومات (Dashboard)</h4><span class="en">Performance Dashboard</span><p>تمثيل بصري لمقاييس الأداء الرئيسية. تُوفّر رؤية شاملة آنية. مُخصَّصة لاحتياجات كل مستخدم. تُتيح التدخل السريع عند الانحراف.</p></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>معايير الأداء <span class="en">Performance Standards</span></h3>
+      <p class="bt">معايير الأداء تُخبر الموظف ماذا يفعل وكيف يفعله. يجب أن تكون:</p>
+      <ul class="ilist">
+        <li><span class="dot g"></span><strong>الجودة (Quality):</strong> مدى دقة وفاعلية الناتج</li>
+        <li><span class="dot g"></span><strong>الكمية (Quantity):</strong> حجم العمل المُنتَج</li>
+        <li><span class="dot g"></span><strong>التوقيت (Timeliness):</strong> الوفاء بالمواعيد</li>
+        <li><span class="dot g"></span><strong>الفاعلية التكلفية (Cost-Effectiveness):</strong> الالتزام بالميزانية</li>
+      </ul>
+      <div class="note"><strong>📌 القاعدة:</strong> لا يجب أن تكون نتائج مراجعة الأداء مفاجأة للموظف — هو وحده. التغذية الراجعة المستمرة تجعل المراجعة الرسمية تأكيداً لا صدمة.</div>
+    </div>
+
+    <div class="card">
+      <h3>أساليب تقييم الأداء <span class="en">Appraisal Methods</span></h3>
+      <div class="ap-grid">
+        <div class="ap-card ap1">
+          <h4>أساليب التصنيف</h4>
+          <span class="en">Category Rating</span>
+          <p>Graphic Scale · Checklist · Forced Choice. بسيطة وكمية — لكن المعايير قد تكون غامضة.</p>
+        </div>
+        <div class="ap-card ap2">
+          <h4>أساليب المقارنة</h4>
+          <span class="en">Comparative</span>
+          <p>Ranking · Paired-Comparison · Forced Distribution (Bell Curve). تُقارن الموظفين ببعض — قد تُسبب خلافات.</p>
+        </div>
+        <div class="ap-card ap3">
+          <h4>أساليب السردية</h4>
+          <span class="en">Narrative</span>
+          <p>Essay · Critical Incidents · Field Review. تصف بالتفصيل — لكن صعبة المقارنة وتستهلك وقتاً.</p>
+        </div>
+        <div class="ap-card ap4">
+          <h4>الإدارة بالأهداف</h4>
+          <span class="en">MBO</span>
+          <p>الموظف يُشارك في وضع أهدافه. مبنية على أهداف المنظمة. تُعزز الالتزام — لكن تستهلك وقتاً.</p>
+        </div>
+        <div class="ap-card ap5">
+          <h4>BARS</h4>
+          <span class="en">Behaviorally Anchored Rating Scale</span>
+          <p>أمثلة سلوكية محددة لكل مستوى أداء. الأكثر دقةً وموضوعيةً — لكن يستهلك وقتاً طويلاً في البناء.</p>
+        </div>
+      </div>
+      <div class="tip"><strong>🎯 BARS للامتحان:</strong> يُحدّد بدقة السلوك المرتبط بكل درجة — يُقلّل الذاتية ويُوضّح التوقعات. الأفضل حين كثير من الموظفين يؤدون نفس الوظيفة.</div>
+    </div>
+
+    <div class="card">
+      <h3>أخطاء التقييم الشائعة <span class="en">Appraisal Errors</span></h3>
+      <div class="err-grid">
+        <div class="err-item"><strong>تأثير الهالة / القرن (Halo/Horn Effect)</strong>صفة واحدة إيجابية أو سلبية تؤثر على التقييم الكلي</div>
+        <div class="err-item"><strong>خطأ الحداثة (Recency Error)</strong>ترجيح الأحداث الأخيرة على حساب كامل الفترة</div>
+        <div class="err-item"><strong>خطأ الأولوية (Primacy Error)</strong>ترجيح الأحداث الأولى على حساب الأداء الأخير</div>
+        <div class="err-item"><strong>التحيز (Bias)</strong>قيم ومعتقدات المُقيِّم تُشوّه التقييم — واعياً أو لا</div>
+        <div class="err-item"><strong>التشدد (Strictness)</strong>المُقيِّم يرفع المعايير بشكل شخصي فيُعطي درجات منخفضة للجميع</div>
+        <div class="err-item"><strong>التساهل (Leniency)</strong>المُقيِّم لا يريد إعطاء درجات منخفضة فيُعطي الجميع درجات عالية</div>
+        <div class="err-item"><strong>النزعة المركزية (Central Tendency)</strong>المُقيِّم يُقيِّم الجميع في نطاق ضيق حول المتوسط</div>
+        <div class="err-item"><strong>التباين (Contrast Error)</strong>يُقارن الموظف بزميله لا بالمعايير الموضوعية</div>
+      </div>
+      <div class="hl" style="margin-top:14px;">
+        <p>💡 <strong>الحل: معايرة الأداء (Performance Calibration)</strong> — جلسات جماعية للمديرين لمواءمة معايير التقييم قبل إجرائه، تمنع التحيزات الفردية وتُنتج تقييمات أكثر عدلاً ودقةً.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>مقاييس الاحتفاظ <span class="en">Retention Metrics</span></h3>
+      <table class="tbl">
+        <tr><th>المقياس</th><th>الصيغة</th><th>ما يُظهره</th></tr>
+        <tr><td><strong>معدل الاحتفاظ</strong><br><em>Retention Rate</em></td><td>الموظفون المحتفَظ بهم طوال الفترة ÷ عددهم في البداية × 100%</td><td>استقرار القوى العاملة</td></tr>
+        <tr><td><strong>معدل الدوران</strong><br><em>Turnover Rate</em></td><td>عدد المغادرين ÷ متوسط الموظفين × 100%</td><td>حجم التآكل — لا يُظهر جودة المغادرين</td></tr>
+        <tr><td><strong>معدل الشواغر</strong><br><em>Vacancy Rate</em></td><td>الوظائف الشاغرة بنشاط ÷ إجمالي الوظائف × 100%</td><td>التأثير التشغيلي للدوران</td></tr>
+        <tr><td><strong>جودة التعيين</strong><br><em>Quality of Hire</em></td><td>أداء الموظف + احتفاظه + توافق ثقافي</td><td>فاعلية برامج الاستقطاب والاحتفاظ</td></tr>
+        <tr><td><strong>الإيراد لكل موظف</strong><br><em>Revenue per Employee</em></td><td>إجمالي الإيراد ÷ عدد الموظفين</td><td>انخفاضه قد يرتبط بانخفاض الانخراط</td></tr>
+      </table>
+      <div class="warn"><strong>⚠️ الدوران المخفي:</strong> معظم المنظمات لا تتتبع جميع تكاليف الدوران — التوظيف، التأهيل، الإنتاجية الضائعة، رضا العملاء، الخبرة المفقودة. التكلفة الحقيقية دائماً أكبر مما يُعتقد.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ S5: L&D INTRODUCTION ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">5</div>
+      <div><h2>مدخل التعلم والتطوير</h2><div class="en">Learning & Development — Introduction</div></div>
+    </div>
+
+    <div class="card">
+      <h3>التدريب مقابل التطوير <span class="en">Training vs. Development</span></h3>
+      <div class="grid2">
+        <div class="gitem" style="border-top:4px solid var(--teal);">
+          <h4 style="color:var(--teal);">التدريب — Training</h4>
+          <span class="en">Short-term · Current Role · Skill Gap</span>
+          <p>يُزوّد بمعارف ومهارات وقدرات محددة لوظيفة بعينها. تطبيق فوري. حلّ لفجوة مهارية قصيرة الأمد. مثال: تدريب مدير المبيعات على بناء الفرق عالية الأداء.</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid var(--purple);">
+          <h4 style="color:var(--purple);">التطوير — Development</h4>
+          <span class="en">Long-term · Future Roles · Capacity Building</span>
+          <p>أعمق وأوسع — يُعدّ للمسؤوليات المستقبلية ويُنمّي القدرات الكاملة. مثال: نفس المدير يُحدَّد كقائد مستقبلي ويُطوَّر مهارات القيادة الاستراتيجية.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>نموذج 70-20-10 للتعلم <span class="en">70-20-10 Learning Model</span></h3>
+      <p class="bt">صمّمه Center for Creative Leadership من خلال دراسة كيف يتعلم المديرون التنفيذيون:</p>
+      <table class="tbl">
+        <tr><th>النسبة</th><th>النوع</th><th>الأمثلة</th></tr>
+        <tr><td style="font-size:1.3rem;font-weight:800;color:var(--primary);">70%</td><td>المهام التحدية والتجارب الوظيفية الفعلية</td><td>مشاريع ممتدة، مناصب جديدة، حل مشاكل حقيقية</td></tr>
+        <tr><td style="font-size:1.3rem;font-weight:800;color:var(--teal);">20%</td><td>التعلم من الآخرين عبر العلاقات</td><td>الإرشاد، التدريب، التغذية الراجعة من الزملاء</td></tr>
+        <tr><td style="font-size:1.3rem;font-weight:800;color:var(--accent2);">10%</td><td>التعلم الرسمي (الدورات والتدريب)</td><td>حصص في الفصل، e-learning، شهادات</td></tr>
+      </table>
+    </div>
+<div style="background:#e6f1fb;border-right:4px solid #185FA5;padding:14px 18px;margin:16px 0;border-radius:8px;">
+<strong style="color:#163456;">🆕 إضافات 2025 — Learning & Development</strong><br>
+أضافت نسخة 2025 صراحةً ضمن تقنيات التعلم والتطوير:<br>
+• <strong>Artificial Intelligence</strong> — الذكاء الاصطناعي في التعلم والتطوير<br>
+• <strong>Virtual Reality (VR)</strong> — الواقع الافتراضي في التدريب<br>
+• <strong>Chatbots</strong> — روبوتات المحادثة في التعلم<br>
+• <strong>Gamification</strong> — التلعيب في برامج التطوير<br>
+• <strong>Microlearning</strong> — التعلم المُصغَّر<br>
+• <strong>Podcasts & Infographics</strong> — محتوى التعلم الحديث
+</div>
+
+    <div class="card">
+      <h3>المنظمة المتعلّمة — Peter Senge <span class="en">The Learning Organization (Senge's 5 Disciplines)</span></h3>
+      <p class="bt">المنظمة المتعلّمة هي التي تكتسب معارف جديدة باستمرار وتُغيّر سلوكها بناءً عليها. بيتر سينج حدّد 5 تخصصات مترابطة تُبنى بها:</p>
+      <table class="tbl">
+        <tr><th>التخصص</th><th>الإنجليزي</th><th>الجوهر</th></tr>
+        <tr><td><strong>التفكير النظمي</strong></td><td>Systems Thinking</td><td>رؤية الأنماط والترابطات — كيف تُؤثر الأجزاء في بعض</td></tr>
+        <tr><td><strong>النماذج الذهنية</strong></td><td>Mental Models</td><td>افتراضاتنا العميقة التي تُشكّل تصرفاتنا — نُعيد تفحّصها</td></tr>
+        <tr><td><strong>الإتقان الشخصي</strong></td><td>Personal Mastery</td><td>مستوى عالٍ من الكفاءة في مجال ما — يُحرّك التعلم</td></tr>
+        <tr><td><strong>تعلّم الفريق</strong></td><td>Team Learning</td><td>مواءمة وتطوير قدرة الفريق لتحقيق ما يصبو إليه</td></tr>
+        <tr><td><strong>الرؤية المشتركة</strong></td><td>Shared Vision</td><td>صورة مستقبلية تحفّز الالتزام الحقيقي — لا مجرد الامتثال</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>الاحتفاظ بالمعرفة التنظيمية <span class="en">Knowledge Retention</span></h3>
+      <div class="grid2">
+        <div class="gitem">
+          <h4>المعرفة الصريحة</h4>
+          <span class="en">Explicit Knowledge</span>
+          <p>قابلة للتدوين والنقل بسهولة — إجراءات، قوانين، وثائق. تُحفظ في قواعد بيانات وأنظمة Wiki.</p>
+        </div>
+        <div class="gitem">
+          <h4>المعرفة الضمنية</h4>
+          <span class="en">Tacit Knowledge</span>
+          <p>شخصية ومبنية على التجربة — خبرات، حدس، "كيف تعمل الأمور فعلاً". تُنقل عبر الإرشاد والتدريب والمحادثات.</p>
+        </div>
+        <div class="gitem">
+          <h4>خرائط المعرفة</h4>
+          <span class="en">Knowledge Maps</span>
+          <p>تمثيل بصري لتوزيع المعرفة في المنظمة — يُحدّد الاختناقات والمخاطر (مثل موظف وحيد يعرف عملية نادرة).</p>
+        </div>
+        <div class="gitem">
+          <h4>المقهى المعرفي</h4>
+          <span class="en">Knowledge Café</span>
+          <p>لقاءات غير رسمية يتشارك فيها موظفون من أقسام مختلفة معرفتهم حول موضوع مشترك — يُعزز حل المشاكل والتواصل.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GLOSSARY -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">📖</div>
+      <div><h2>المصطلحات الأساسية — الجزء الرابع</h2></div>
+    </div>
+    <div class="card">
+      <table class="tbl">
+        <tr><th>المصطلح العربي</th><th>الإنجليزي</th><th>التعريف المختصر</th></tr>
+        <tr><td>مقابلة البقاء</td><td>Stay Interview</td><td>مقابلة مع الموظف الحالي لفهم دوافع بقائه ومخاوف مغادرته</td></tr>
+        <tr><td>التوقع الوظيفي الواقعي</td><td>Realistic Job Preview (RJP)</td><td>صورة صادقة عن الوظيفة قبل التعيين — يُقلّل الدوران المبكر</td></tr>
+        <tr><td>الموظف البومرانج</td><td>Boomerang Employee</td><td>موظف سابق يعود للمنظمة بخبرة أوسع</td></tr>
+        <tr><td>التوازن بين العمل والحياة</td><td>Work/Life Balance (WLB)</td><td>برامج تُتيح للموظف الموازنة بين مسؤولياته المهنية والشخصية</td></tr>
+        <tr><td>معايرة الأداء</td><td>Performance Calibration</td><td>جلسات جماعية للمديرين لمواءمة معايير التقييم</td></tr>
+        <tr><td>BARS</td><td>Behaviorally Anchored Rating Scale</td><td>أساليب تقييم تستخدم أمثلة سلوكية محددة لكل درجة</td></tr>
+        <tr><td>الإدارة بالأهداف</td><td>MBO (Management by Objectives)</td><td>الموظف يُشارك في وضع أهدافه المرتبطة بأهداف المنظمة</td></tr>
+        <tr><td>خطأ الهالة / القرن</td><td>Halo / Horn Effect</td><td>صفة واحدة تؤثر على التقييم الكلي إيجاباً أو سلباً</td></tr>
+        <tr><td>خطأ الحداثة</td><td>Recency Error</td><td>ترجيح الأحداث الأخيرة على حساب كامل الفترة</td></tr>
+        <tr><td>معدل الاحتفاظ</td><td>Retention Rate</td><td>نسبة الموظفين الذين بقوا طوال الفترة المقيسة</td></tr>
+        <tr><td>جودة التعيين</td><td>Quality of Hire</td><td>مقياس يجمع أداء الموظف + احتفاظه + توافقه الثقافي</td></tr>
+        <tr><td>المنظمة المتعلّمة</td><td>Learning Organization (Senge)</td><td>منظمة تتكيّف باستمرار وتُغيّر سلوكها بناءً على الدروس المستفادة</td></tr>
+        <tr><td>المعرفة الضمنية</td><td>Tacit Knowledge</td><td>معرفة شخصية مبنية على التجربة — يصعب تدوينها ونقلها</td></tr>
+        <tr><td>خريطة المعرفة</td><td>Knowledge Map</td><td>تمثيل بصري لتوزيع المعرفة في المنظمة وحركتها</td></tr>
+        <tr><td>نموذج 70-20-10</td><td>70-20-10 Model</td><td>70% تجربة + 20% علاقات + 10% تدريب رسمي</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- INTEGRATION -->
+  <div class="overview" style="margin-top:30px;">
+    <h2>🔗 تكامل المفاهيم في هذا الجزء</h2>
+    <p style="line-height:2.1;">
+      <strong>Performance Management + Employee Engagement:</strong> نظام الأداء الجيد يُعزّز الانخراط — الأهداف الواضحة والتغذية الراجعة المستمرة يُشعران الموظف بالمعنى والاتجاه.<br>
+      <strong>RJP + Onboarding + Retention:</strong> التوقعات الصادقة مبكراً + إعداد وظيفي شخصي = انخراط مبكر وتقليل الدوران في السنة الأولى الحاسمة.<br>
+      <strong>L&D + Knowledge Retention:</strong> المنظمة المتعلّمة لا تكتفي بتدريب الأفراد — بل تحتفظ بالمعرفة المؤسسية وتتكيّف باستمرار. المعرفة الضمنية تحتاج "أنظمة ناعمة" — ليس فقط قواعد بيانات.
+    </p>
+  </div>
+
+  <div class="tip" style="margin-top:22px;font-size:15px;">
+    <strong>🎯 نصيحة الامتحان:</strong> أسئلة Performance Management تعشق BARS وCalibration وأخطاء التقييم — احفظ الفروق بين الأخطاء الثمانية بمثال لكل منها. وفي L&D: الفرق بين Training وDevelopment سؤال متكرر، وكذلك 70-20-10.
+  </div>
+
+  <!-- STUDY PLAN -->
+  <div class="overview" style="margin-top:36px;background:linear-gradient(135deg,#0d3b2e,#1a3a5c);">
+    <h2>📅 تقدّمك — أكثر من نصف الكتاب! ✨</h2>
+    <table class="tbl" style="margin-top:14px;background:rgba(255,255,255,.08);">
+      <tr style="background:rgba(255,255,255,.15);">
+        <th style="background:transparent;color:#fff;">الجزء</th>
+        <th style="background:transparent;color:#fff;">الصفحات</th>
+        <th style="background:transparent;color:#fff;">المحتوى</th>
+        <th style="background:transparent;color:#fff;">الحالة</th>
+      </tr>
+      <tr style="color:#fff;font-size:14px;"><td>الأول</td><td>1–100</td><td>HR Strategy كامل</td><td>✅</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>الثاني</td><td>101–200</td><td>Talent Acquisition كامل</td><td>✅</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>الثالث</td><td>201–300</td><td>Talent Selection (Assessments) + Engagement (مقدمة + Q12)</td><td>✅</td></tr>
+      <tr style="color:#fff;font-size:14px;background:rgba(200,168,75,.2);"><td><strong>الرابع ✅</strong></td><td><strong>301–400</strong></td><td><strong>Engagement (استبيانات + مقابلات البقاء + WLB + تقدير + أداء) + L&D مدخل</strong></td><td>✅ أنت هنا</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>الخامس</td><td>401–500</td><td>Learning & Development كامل: Andragogy + ADDIE + Kirkpatrick</td><td>⏳ التالي</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>السادس</td><td>501–600</td><td>Total Rewards: الفلسفة + الأنظمة + المزايا</td><td>⏳</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>السابع</td><td>601–744</td><td>Total Rewards (تكملة) + مراجعة شاملة + نصائح الامتحان</td><td>⏳</td></tr>
+    </table>
+  </div>
+
+
+<div class="th-box">
+  <div class="th-header">
+    <div class="th-icon">📚</div>
+    <div>
+      <div class="th-title">نظريات التعلم والتطوير — مع أمثلة تطبيقية</div>
+      <div class="th-subtitle">Kirkpatrick · Bloom · Kolb · Andragogy · 70-20-10 · Senge</div>
+    </div>
+  </div>
+  <div class="th-body">
+
+    <div class="th-formula">Kirkpatrick: Reaction → Learning → Behavior → Results (→ ROI)</div>
+
+    <div class="th-stage-list">
+
+      <div class="th-stage">
+        <div class="th-sn" style="background:#e1f5ee;color:#085041;">1</div>
+        <div class="th-sc">
+          <strong>Kirkpatrick 4 Levels + Phillips ROI</strong><br>
+          المستوى 1 (Reaction): هل أحبّ المشاركون التدريب؟ — الأكثر قياساً والأقل قيمةً.<br>
+          المستوى 2 (Learning): هل اكتسبوا معرفة أو مهارة؟<br>
+          المستوى 3 (Behavior): هل طبّقوا ما تعلّموه؟ — الأصعب قياساً.<br>
+          المستوى 4 (Results): هل تحسّنت مؤشرات الأعمال؟<br>
+          المستوى 5 - Phillips (ROI): هل العائد يتجاوز التكلفة؟
+          <div class="th-example"><strong>مثال امتحاني:</strong> "برنامج السلامة نجح في الاستبيانات (المستوى 1) لكن حوادث العمل لم تتغير" → المقياس خاطئ. يجب قياس المستوى 3 (هل تغيّر السلوك فعلاً؟) والمستوى 4 (هل انخفضت الحوادث؟).</div>
+        </div>
+      </div>
+
+      <div class="th-stage">
+        <div class="th-sn" style="background:#e6f1fb;color:#0c447c;">2</div>
+        <div class="th-sc">
+          <strong>Bloom's Taxonomy — تصنيف بلوم للأهداف التعليمية</strong><br>
+          تصاعدياً: <em>تذكّر → فهم → تطبيق → تحليل → تقييم → إبداع</em><br>
+          المستويات الدنيا: المعرفة الأساسية. المستويات العليا: التفكير النقدي والابتكار.
+          <div class="th-example"><strong>مثال HR:</strong> تدريب الامتثال (Compliance) يستهدف المستوى 1-2 فقط. تدريب القيادة الفعّال يستهدف 4-6 (تحليل مواقف، تقييم خيارات، إبداع حلول).</div>
+          <div class="th-example"><strong>مثال تصميم سؤال:</strong> "أذكر قوانين السلامة" = مستوى 1. "ماذا تفعل إذا رأيت موظفاً يُخالف السلامة؟" = مستوى 3-4.</div>
+        </div>
+      </div>
+
+      <div class="th-stage">
+        <div class="th-sn" style="background:#fff8e7;color:#633806;">3</div>
+        <div class="th-sc">
+          <strong>Kolb's Experiential Learning Cycle — دورة التعلم التجريبي</strong><br>
+          <em>التجربة الملموسة → الملاحظة التأملية → المفهمة المجردة → التجريب الفعّال</em><br>
+          4 أنماط تعلّم: المُتوافق (يُطبّق)، المُتباعد (يُبدع)، المُدرك (يُنظّر)، المُقارب (يُجرّب).
+          <div class="th-example"><strong>مثال HR:</strong> التعلم من خلال المشاريع الفعلية (Stretch Assignments) يُغطي الدورة كاملة. الدورات النظرية فقط تقف عند المفهمة المجردة.</div>
+        </div>
+      </div>
+
+      <div class="th-stage">
+        <div class="th-sn" style="background:#f3effe;color:#5b21b6;">4</div>
+        <div class="th-sc">
+          <strong>Andragogy — مبادئ تعلّم البالغين (Malcolm Knowles)</strong><br>
+          6 مبادئ جوهرية:<br>
+          • البالغون يحتاجون <em>لمعرفة لماذا</em> يتعلّمون قبل البدء.<br>
+          • يحملون تجارب سابقة غنية تُثري التعلّم.<br>
+          • يتعلّمون ما يرونه ذا صلة بحياتهم الفعلية الآن.<br>
+          • يتعلّمون بشكل أفضل عبر حل المشكلات لا الحفظ.
+          <div class="th-example"><strong>مثال امتحاني:</strong> "برنامج تدريب المديرين يشكو المشاركون من أنه نظري جداً" → المشكلة في تطبيق Andragogy. الحل: ربط كل مفهوم بتحدٍّ حقيقي يواجهونه الآن.</div>
+        </div>
+      </div>
+
+      <div class="th-stage">
+        <div class="th-sn" style="background:#e8f2fb;color:#1a3a5c;">5</div>
+        <div class="th-sc">
+          <strong>70-20-10 Model</strong><br>
+          70% التجربة والمهام التحدية (Stretch Assignments).<br>
+          20% العلاقات والإرشاد (Coaching/Mentoring).<br>
+          10% التدريب الرسمي (Formal Training).
+          <div class="th-example"><strong>مثال امتحاني:</strong> "موظف موهوب لا يتطور رغم كثرة الدورات" → ينقصه الـ 70% (مهام تحدية حقيقية) والـ 20% (مرشد يُوجّهه). الدورات وحدها (10%) لا تكفي.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="th-exam-tip">⭐ <strong>نصيحة الامتحان:</strong> Kirkpatrick = كيف تقيس التدريب. Bloom = كيف تُصمّم الأهداف. Kolb = كيف يتعلّم الناس. Andragogy = لماذا تدريب البالغين يختلف. 70-20-10 = ما نسبة التعلّم من كل مصدر.</div>
+  </div>
+</div>
+
+
+
+
+  <div class="footer">
+    <p>اطلب الجزء الخامس (صفحات 401–500) متى شئت 🚀</p>
+    <p style="margin-top:6px;color:#aaa;">SHRM Learning System 2023 — People Domain · ملخص دراسي بالعربية</p>
+  </div>
+</div>
+</body>
+</html>

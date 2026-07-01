@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ملخص SHRM Organization – الصفحات 1–100</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#1a3a5c;--accent:#c8a84b;--accent2:#e8734a;--bg:#f7f4ef;--card:#fff;--green:#1e7a4a;--red:#b91c1c;--purple:#6d28d9;--teal:#0f766e;--border:#e2d9c8;--muted:#6b7280;--org:#2c4a1e;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Tajawal',sans-serif;background:var(--bg);color:#2c2c2c;line-height:1.85;font-size:16px;}
+
+.header{background:linear-gradient(135deg,#1a3a5c 0%,#2c4a1e 50%,#0f3460 100%);color:#fff;padding:48px 40px 40px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-60px;left:-60px;width:300px;height:300px;border-radius:50%;background:rgba(200,168,75,.1);}
+.header::after{content:'';position:absolute;bottom:-80px;right:-40px;width:220px;height:220px;border-radius:50%;background:rgba(44,74,30,.15);}
+.badge{display:inline-block;background:var(--accent);color:var(--primary);font-weight:700;font-size:13px;padding:4px 16px;border-radius:20px;margin-bottom:14px;letter-spacing:1px;}
+.header h1{font-size:2rem;font-weight:800;margin-bottom:8px;}
+.header p{font-size:.95rem;opacity:.8;max-width:620px;}
+.meta{display:flex;gap:24px;margin-top:20px;flex-wrap:wrap;}
+.meta span{font-size:13px;opacity:.85;}
+
+.container{max-width:960px;margin:0 auto;padding:40px 24px 80px;}
+.progress-wrap{margin-bottom:36px;}
+.progress-label{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:6px;}
+.progress-bar{height:10px;background:#e2d9c8;border-radius:10px;overflow:hidden;}
+.progress-fill{height:100%;border-radius:10px;background:linear-gradient(90deg,#1a3a5c,#c8a84b);}
+
+.overview{background:var(--primary);color:#fff;border-radius:16px;padding:30px 34px;margin-bottom:36px;position:relative;overflow:hidden;}
+.overview::after{content:'Organization';position:absolute;left:-10px;bottom:-22px;font-size:70px;font-weight:900;color:rgba(255,255,255,.04);white-space:nowrap;}
+.overview h2{font-size:1.2rem;color:var(--accent);margin-bottom:12px;}
+.overview p{font-size:15px;line-height:1.9;opacity:.92;}
+
+.section{margin-bottom:44px;}
+.sec-title{display:flex;align-items:center;gap:14px;margin-bottom:22px;}
+.sec-num{background:var(--accent);color:var(--primary);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0;}
+.sec-title h2{font-size:1.25rem;font-weight:700;color:var(--primary);}
+.sec-title .en{font-size:13px;color:var(--muted);font-style:italic;direction:ltr;}
+
+.card{background:var(--card);border-radius:14px;padding:26px 28px;border:1px solid var(--border);box-shadow:0 2px 12px rgba(0,0,0,.05);margin-bottom:22px;}
+.card h3{font-size:1rem;font-weight:700;color:var(--primary);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--border);}
+.card h3 .en{color:var(--accent2);font-size:.83rem;direction:ltr;display:inline-block;margin-right:6px;}
+.card p.bt{font-size:15px;margin-bottom:12px;line-height:1.85;}
+
+ul.ilist{list-style:none;padding:0;}
+ul.ilist li{padding:8px 0;border-bottom:1px solid #f0ebe0;font-size:15px;display:flex;gap:10px;align-items:flex-start;}
+ul.ilist li:last-child{border-bottom:none;}
+.dot{width:8px;height:8px;background:var(--accent);border-radius:50%;margin-top:8px;flex-shrink:0;}
+.dot.g{background:var(--green);}
+.dot.r{background:var(--red);}
+.dot.t{background:var(--teal);}
+.dot.p{background:var(--purple);}
+.dot.o{background:var(--org);}
+
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px;}
+.tbl th{background:var(--primary);color:#fff;padding:10px 14px;text-align:right;}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top;}
+.tbl tr:nth-child(even) td{background:#f9f6f0;}
+.tbl tr:hover td{background:#fff3e0;}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+@media(max-width:640px){.grid2{grid-template-columns:1fr;}}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:14px;}
+@media(max-width:700px){.grid3{grid-template-columns:1fr 1fr;}}
+.gitem{background:#f9f6f0;border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.gitem h4{font-size:14px;font-weight:700;color:var(--primary);margin-bottom:6px;}
+.gitem .en{font-size:11px;color:var(--accent2);direction:ltr;display:block;margin-bottom:5px;}
+.gitem p{font-size:13px;color:#444;line-height:1.7;}
+
+/* McKinsey 7S Visual */
+.s7-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px;}
+@media(max-width:640px){.s7-grid{grid-template-columns:1fr 1fr;}}
+.s7-card{border-radius:10px;padding:14px 15px;border:1px solid var(--border);text-align:center;}
+.s7-card h4{font-size:14px;font-weight:700;margin-bottom:5px;}
+.s7-card .en{font-size:11px;direction:ltr;display:block;margin-bottom:6px;}
+.s7-card p{font-size:12.5px;color:#555;line-height:1.6;text-align:right;}
+.s7-hard{border-top:4px solid #1d4ed8;background:#eff6ff;} .s7-hard h4{color:#1d4ed8;}
+.s7-soft{border-top:4px solid var(--purple);background:#f5f3ff;} .s7-soft h4{color:var(--purple);}
+.s7-core{border-top:4px solid var(--accent2);background:#fff8f0;grid-column:1/-1;} .s7-core h4{color:var(--accent2);}
+
+/* HR Model Cards */
+.model-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px;}
+@media(max-width:640px){.model-grid{grid-template-columns:1fr;}}
+.mc{border-radius:12px;padding:16px;border:1px solid var(--border);}
+.mc h4{font-size:13.5px;font-weight:700;margin-bottom:5px;}
+.mc .en{font-size:11px;direction:ltr;display:block;margin-bottom:6px;}
+.mc .pros{font-size:12.5px;color:var(--green);margin-bottom:4px;}
+.mc .cons{font-size:12.5px;color:var(--red);}
+.mc p{font-size:13px;color:#444;line-height:1.65;margin-bottom:6px;}
+.mc1{border-top:4px solid var(--primary);} .mc1 h4{color:var(--primary);}
+.mc2{border-top:4px solid var(--accent2);} .mc2 h4{color:var(--accent2);}
+.mc3{border-top:4px solid var(--green);} .mc3 h4{color:var(--green);}
+.mc4{border-top:4px solid var(--teal);} .mc4 h4{color:var(--teal);}
+.mc5{border-top:4px solid var(--purple);} .mc5 h4{color:var(--purple);}
+.mc6{border-top:4px solid var(--red);} .mc6 h4{color:var(--red);}
+.mc7{border-top:4px solid #854d0e;} .mc7 h4{color:#854d0e;}
+
+/* Deep Dive box */
+.deep{background:linear-gradient(135deg,#fff8e7,#fef3cd);border:2px solid var(--accent);border-radius:14px;padding:22px 26px;margin:16px 0;}
+.deep h4{color:var(--primary);font-size:.95rem;font-weight:700;margin-bottom:10px;}
+.deep p,.deep ul{font-size:15px;line-height:1.85;}
+.deep ul{list-style:none;padding:0;}
+.deep ul li{padding:5px 0;display:flex;gap:10px;}
+.deep ul li::before{content:'◆';color:var(--accent);font-size:11px;margin-top:5px;flex-shrink:0;}
+
+.tip{background:#f0fdf4;border:1px solid #86efac;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.tip strong{color:var(--green);}
+.note{background:#fefce8;border:1px solid #fde047;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.note strong{color:#854d0e;}
+.warn{background:#fff1f2;border:1px solid #fca5a5;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.warn strong{color:var(--red);}
+.hl{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1px solid #93c5fd;border-radius:12px;padding:16px 20px;margin:14px 0;font-size:15px;}
+.hl strong{color:#1d4ed8;}
+
+/* Audit steps */
+.audit-steps{list-style:none;counter-reset:asteps;padding:0;}
+.audit-steps li{counter-increment:asteps;display:flex;gap:14px;padding:10px 0;border-bottom:1px solid #f0ebe0;font-size:15px;}
+.audit-steps li:last-child{border-bottom:none;}
+.audit-steps li::before{content:counter(asteps);background:var(--primary);color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0;}
+
+/* Outsource steps */
+.out-steps{list-style:none;counter-reset:osteps;padding:0;}
+.out-steps li{counter-increment:osteps;display:flex;gap:14px;padding:10px 0;border-bottom:1px solid #f0ebe0;font-size:14px;align-items:flex-start;}
+.out-steps li:last-child{border-bottom:none;}
+.out-steps li::before{content:counter(osteps);background:var(--teal);color:#fff;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;flex-shrink:0;margin-top:2px;}
+
+.divider{border:none;border-top:2px dashed var(--border);margin:36px 0;}
+.footer{text-align:center;margin-top:60px;padding:22px;color:var(--muted);font-size:13px;border-top:2px solid var(--border);}
+
+/* ── THEORY EXPANSION BOXES ── */
+.th-box{background:#fff;border:1.5px solid #ddd6c8;border-radius:16px;margin:24px 0;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);}
+.th-header{display:flex;align-items:center;gap:12px;padding:16px 20px;background:linear-gradient(135deg,#0d1b2e,#163456);}
+.th-icon{font-size:1.4rem;flex-shrink:0;}
+.th-title{color:#fff;font-weight:700;font-size:1rem;}
+.th-subtitle{color:rgba(255,255,255,.55);font-size:.8rem;margin-top:2px;}
+.th-body{padding:0 20px 20px;}
+.th-formula{background:#0d1b2e;color:#c8a84b;font-family:'Outfit',monospace,sans-serif;font-weight:700;font-size:.9rem;padding:10px 16px;border-radius:8px;margin:14px 0;text-align:center;letter-spacing:.03em;}
+.th-stage-list{display:flex;flex-direction:column;gap:0;}
+.th-stage{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #f0ede5;}
+.th-stage:last-child{border-bottom:none;}
+.th-sn{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;flex-shrink:0;margin-top:2px;}
+.th-sc{flex:1;font-size:.9rem;line-height:1.65;color:#333;}
+.th-sc strong{color:#0d1b2e;}
+.th-sc em{color:#888;font-size:.85em;}
+.th-example{background:#f0ede5;border-right:3px solid #c8a84b;padding:10px 14px;border-radius:0 8px 8px 0;margin:8px 0;font-size:.88rem;color:#444;line-height:1.65;}
+.th-example strong{color:#0d1b2e;}
+.th-exam-tip{background:#fff8e7;border:1.5px solid #c8a84b;border-radius:10px;padding:12px 16px;margin:14px 0 0;font-size:.88rem;color:#4a3000;line-height:1.65;}
+.th-exam-tip strong{color:#0d1b2e;}
+.th-compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0;}
+@media(max-width:600px){.th-compare{grid-template-columns:1fr;}}
+.th-compare-card{background:#f7f5f0;border-radius:10px;padding:12px 14px;}
+.th-compare-card h4{font-size:.85rem;font-weight:700;color:#0d1b2e;margin-bottom:8px;}
+.th-compare-card li{font-size:.82rem;color:#444;margin-bottom:4px;line-height:1.5;}
+.th-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:12px 0;}
+.th-card{background:#f7f5f0;border-radius:10px;padding:12px 14px;border-top:3px solid #ccc;}
+.th-card h4{font-size:.82rem;font-weight:700;color:#0d1b2e;margin-bottom:6px;}
+.th-card p{font-size:.8rem;color:#555;line-height:1.55;}
+.th-divider{height:1px;background:#f0ede5;margin:16px 0;}
+
+
+/* ── FORMULA WORKED EXAMPLES ── */
+.fe-box{background:#fff;border:1.5px solid #ddd6c8;border-radius:16px;margin:24px 0;overflow:hidden;}
+.fe-hdr{background:linear-gradient(135deg,#0d1b2e,#163456);padding:14px 20px;display:flex;align-items:center;gap:12px;}
+.fe-hdr-icon{font-size:1.3rem;}
+.fe-hdr-text{color:#fff;font-weight:700;font-size:.95rem;}
+.fe-hdr-sub{color:rgba(255,255,255,.5);font-size:.78rem;margin-top:2px;}
+.fe-body{padding:18px 20px;}
+.fe-formula{background:#0d1b2e;color:#c8a84b;font-family:'Outfit',monospace,sans-serif;font-weight:700;font-size:.92rem;padding:10px 16px;border-radius:8px;margin:0 0 16px;text-align:center;direction:ltr;}
+.fe-steps{display:flex;flex-direction:column;gap:12px;}
+.fe-step{display:flex;gap:12px;align-items:flex-start;}
+.fe-step-n{background:#e8f2fb;color:#163456;font-weight:700;font-size:.8rem;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.fe-step-body{flex:1;font-size:.88rem;color:#333;line-height:1.65;}
+.fe-step-body strong{color:#0d1b2e;}
+.fe-calc{background:#f7f5f0;border:1px solid #e0dbd2;border-radius:8px;padding:10px 14px;margin:8px 0;font-family:'Outfit',monospace,sans-serif;font-size:.87rem;direction:ltr;color:#163456;}
+.fe-calc .result{color:#1D9E75;font-weight:700;font-size:.95rem;}
+.fe-interp{background:#e1f5ee;border-right:3px solid #1D9E75;padding:10px 14px;border-radius:0 8px 8px 0;margin:8px 0;font-size:.87rem;color:#1a3a2e;line-height:1.6;}
+.fe-warn{background:#fff8e7;border-right:3px solid #c8a84b;padding:10px 14px;border-radius:0 8px 8px 0;margin:8px 0;font-size:.87rem;color:#4a3000;line-height:1.6;}
+.fe-compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0;}
+@media(max-width:580px){.fe-compare{grid-template-columns:1fr;}}
+.fe-compare-card{background:#f7f5f0;border-radius:10px;padding:12px 14px;border-top:3px solid #ddd;}
+.fe-compare-card h4{font-size:.83rem;font-weight:700;color:#0d1b2e;margin-bottom:8px;}
+.fe-compare-card p,.fe-compare-card li{font-size:.82rem;color:#444;line-height:1.6;margin-bottom:3px;}
+.fe-exam-tip{background:#fff8e7;border:1.5px solid #c8a84b;border-radius:10px;padding:12px 16px;margin:14px 0 0;font-size:.87rem;color:#4a3000;line-height:1.65;}
+.fe-exam-tip strong{color:#0d1b2e;}
+.fe-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.85rem;}
+.fe-table th{background:#0d1b2e;color:#c8a84b;padding:8px 12px;text-align:right;font-weight:600;}
+.fe-table td{padding:8px 12px;border-bottom:1px solid #f0ede5;color:#333;}
+.fe-table tr:nth-child(even) td{background:#f7f5f0;}
+.fe-divider{height:1px;background:#f0ede5;margin:16px 0;}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="badge">📚 كتاب Organization · الجزء الأول</div>
+  <h1>ملخص الصفحات 1–100</h1>
+  <p>SHRM Learning System 2023 — Organization Domain · شرح موسّع للمفاهيم الصعبة</p>
+  <div class="meta">
+    <span>📄 402 صفحة إجمالاً</span>
+    <span>🎯 18% من الامتحان</span>
+    <span>🏢 5 مناطق وظيفية</span>
+    <span>🌍 شرح عربي + مصطلحات إنجليزية</span>
+  </div>
+</div>
+
+<div class="container">
+  <div class="progress-wrap">
+    <div class="progress-label"><span>تقدّمك في الكتاب</span><span>100 / 402 صفحة — 25%</span></div>
+    <div class="progress-bar"><div class="progress-fill" style="width:25%"></div></div>
+  </div>
+
+
+<div class="th-box">
+  <div class="th-header">
+    <div class="th-icon">🏢</div>
+    <div>
+      <div class="th-title">نماذج استراتيجية HR — Ulrich · McKinsey 7-S · Mintzberg</div>
+      <div class="th-subtitle">أدوار HR الاستراتيجية وتصميم المنظمة</div>
+    </div>
+  </div>
+  <div class="th-body">
+
+    <div class="th-formula">Ulrich's 4 HR Roles: Strategic Partner · Administrative Expert · Employee Champion · Change Agent</div>
+
+    <div class="th-stage-list">
+
+      <div class="th-stage">
+        <div class="th-sn" style="background:#e8f2fb;color:#1a3a5c;">1</div>
+        <div class="th-sc">
+          <strong>Dave Ulrich's HR Roles Model</strong><br>
+          <em>المحور الأفقي:</em> المدى الزمني (يومي ↔ مستقبلي).<br>
+          <em>المحور الرأسي:</em> التركيز (عمليات ↔ أشخاص).<br>
+          • <strong>Strategic Partner:</strong> مستقبلي + عمليات → توافق HR مع استراتيجية الأعمال.<br>
+          • <strong>Change Agent:</strong> مستقبلي + أشخاص → إدارة التغيير الثقافي والتنظيمي.<br>
+          • <strong>Administrative Expert:</strong> يومي + عمليات → كفاءة العمليات HR.<br>
+          • <strong>Employee Champion:</strong> يومي + أشخاص → رفاهية الموظفين ومناصرتهم.
+          <div class="th-example"><strong>مثال SJI:</strong> "HR يُقضي معظم وقته في معالجة طلبات الإجازات والرواتب" → يعمل بشكل أساسي كـ Administrative Expert. للارتقاء لـ Strategic Partner: يجب أتمتة العمليات الإدارية وتخصيص الوقت للقضايا الاستراتيجية.</div>
+        </div>
+      </div>
+
+      <div class="th-stage">
+        <div class="th-sn" style="background:#e1f5ee;color:#085041;">2</div>
+        <div class="th-sc">
+          <strong>McKinsey 7-S Framework</strong><br>
+          <em>العناصر الصلبة (قابلة للقياس):</em> Strategy + Structure + Systems<br>
+          <em>العناصر الناعمة (ثقافية):</em> Shared Values + Skills + Style + Staff<br>
+          Shared Values في المركز — تؤثر على جميع العناصر الأخرى وتُتأثر بها.
+          <div class="th-example"><strong>مثال امتحاني:</strong> شركة غيّرت استراتيجيتها للابتكار (Strategy) لكن نظام التقييم لا يزال يُكافئ على التنفيذ الروتيني (Systems) والمديرون لا يتحملون المخاطرة (Style) → عدم توافق 7-S. النتيجة: الاستراتيجية تفشل.</div>
+          <div class="th-example"><strong>قاعدة الامتحان:</strong> "التغيير في عنصر واحد يستلزم فحص التوافق مع جميع العناصر الستة الأخرى." أي سؤال يصف فشل مبادرة → ابحث عن عنصر 7-S غير متوافق.</div>
+        </div>
+      </div>
+
+      <div class="th-stage">
+        <div class="th-sn" style="background:#fff8e7;color:#633806;">3</div>
+        <div class="th-sc">
+          <strong>Mintzberg's Organizational Configurations</strong><br>
+          5 هياكل تنظيمية حسب مرحلة النمو والبيئة:<br>
+          • <strong>Simple Structure:</strong> صغيرة، رائد أعمال يتحكم بالكل.<br>
+          • <strong>Machine Bureaucracy:</strong> كبيرة، إجراءات موحّدة، استقرار (بنوك، تصنيع).<br>
+          • <strong>Professional Bureaucracy:</strong> خبراء مستقلون، جامعات، مستشفيات.<br>
+          • <strong>Divisional Form:</strong> وحدات أعمال مستقلة.<br>
+          • <strong>Adhocracy:</strong> فرق مشاريع مرنة، إبداعية، بيئة متغيرة.
+          <div class="th-example"><strong>مثال HR:</strong> نظام HR يُناسب Machine Bureaucracy قد يُخنق Adhocracy. يجب أن تتوافق سياسات HR مع هيكل المنظمة.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="th-exam-tip">⭐ <strong>في الامتحان:</strong> Ulrich = أين يجب أن يُنفق HR وقته. McKinsey 7-S = لماذا تفشل المبادرات. Mintzberg = لماذا لا يوجد هيكل HR مثالي واحد.</div>
+  </div>
+</div>
+
+
+
+
+  <div class="overview">
+    <h2>🗺️ نظرة عامة — Organization Domain</h2>
+    <p>
+      يُقدّم هذا الكتاب نطاق <strong>Organization Domain</strong> بكامله (18% من الامتحان) عبر 5 مناطق وظيفية: هيكل وظيفة HR، فاعلية المنظمة وتطويرها (OED)، إدارة القوى العاملة، علاقات الموظفين والعمل، وإدارة التكنولوجيا. يغطي هذا الجزء أول منطقتين: <strong>هيكل وظيفة HR</strong> بكامل نماذجها، وبداية <strong>OED</strong> بنظرياتها الجوهرية.
+    </p>
+  </div>
+
+  <!-- ════ SECTION 1: ORGANIZATION DOMAIN INTRO ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">1</div>
+      <div><h2>المناطق الوظيفية الخمس</h2><div class="en">5 Functional Areas of Organization Domain</div></div>
+    </div>
+    <div class="card">
+      <h3>نظرة عامة على النطاق <span class="en">Organization Domain Overview</span></h3>
+      <div class="grid2">
+        <div class="gitem" style="border-right:4px solid var(--primary);">
+          <h4>1. هيكل وظيفة HR</h4>
+          <span class="en">Structure of the HR Function</span>
+          <p>كيف تُنظّم HR خدماتها وأصولها لخدمة الشركاء الداخليين بما يتوافق مع استراتيجية المنظمة.</p>
+        </div>
+        <div class="gitem" style="border-right:4px solid var(--green);">
+          <h4>2. الفاعلية والتطوير التنظيمي</h4>
+          <span class="en">Organizational Effectiveness & Development (OED)</span>
+          <p>تشخيص "صحة" المنظمة وتصميم تدخلات لإزالة العوائق أمام الأهداف الاستراتيجية.</p>
+        </div>
+        <div class="gitem" style="border-right:4px solid var(--teal);">
+          <h4>3. إدارة القوى العاملة</h4>
+          <span class="en">Workforce Management</span>
+          <p>ضمان توافر العدد المناسب من الأشخاص المناسبين بالمهارات المناسبة في الوقت المناسب.</p>
+        </div>
+        <div class="gitem" style="border-right:4px solid var(--accent2);">
+          <h4>4. علاقات الموظفين والعمل</h4>
+          <span class="en">Employee & Labor Relations</span>
+          <p>بناء بيئة عمل منتجة وإيجابية وإدارة العلاقة مع النقابات.</p>
+        </div>
+      </div>
+      <div class="gitem" style="border-right:4px solid var(--purple);margin-top:10px;">
+        <h4>5. إدارة التكنولوجيا</h4>
+        <span class="en">Technology Management</span>
+        <p>استخدام التكنولوجيا لتعزيز كفاءة HR ودعم القرارات الاستراتيجية.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ SECTION 2: HR ROLES ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">2</div>
+      <div><h2>أدوار HR الثلاثة</h2><div class="en">Strategic · Administrative · Operational Roles</div></div>
+    </div>
+    <div class="card">
+      <h3>لماذا ثلاثة أدوار؟ <span class="en">Why Three Roles?</span></h3>
+      <p class="bt">HR ليست وظيفة ذات دور واحد. إنها تتحرك باستمرار بين ثلاثة مستويات، وأبرز تحدياتها هو التوازن بين المتطلبات الإدارية اليومية والطموح الاستراتيجي بعيد المدى.</p>
+      <table class="tbl">
+        <tr><th>الدور</th><th>التركيز</th><th>أمثلة تطبيقية</th></tr>
+        <tr>
+          <td><strong>استراتيجي</strong><br><em>Strategic Role</em></td>
+          <td>المشاركة في وضع استراتيجية المنظمة وتوافق HR معها</td>
+          <td>تحليل احتياجات المواهب لدخول سوق جديد، استشارة القيادة في قرارات الاندماج، تطوير رؤية HR طويلة المدى</td>
+        </tr>
+        <tr>
+          <td><strong>إداري</strong><br><em>Administrative Role</em></td>
+          <td>الامتثال وحفظ السجلات والأتمتة</td>
+          <td>نظام HRIS، سجلات الموظفين، تقارير الامتثال، بوابات الخدمة الذاتية، الاستعانة بمصادر خارجية للمهام غير الاستراتيجية</td>
+        </tr>
+        <tr>
+          <td><strong>تشغيلي</strong><br><em>Operational Role</em></td>
+          <td>إدارة الناس اليومية والتفاعل مع المديرين</td>
+          <td>التوظيف، حل قضايا العمل، تصميم أنظمة المكافآت، تحسين الأداء</td>
+        </tr>
+      </table>
+      <div class="deep">
+        <h4>💡 شرح أعمق: الدور الإداري لا يعني "مجرد إدارة ورق"</h4>
+        <p>يتجاوز الدور الإداري المفهوم التقليدي المحدود. التكنولوجيا حوّلته إلى أداة استراتيجية:</p>
+        <ul>
+          <li>HRIS لا يحفظ السجلات فحسب — بل يحوّل بيانات HR إلى معلومات تدعم القرار الاستراتيجي</li>
+          <li>بوابات الخدمة الذاتية تُحرّر HR من المهام المتكررة لتُركّز على الاستشارة والتأثير</li>
+          <li>الاستعانة بمصادر خارجية للأعمال غير الاستراتيجية (الرواتب، الفحوصات، إدارة المزايا) تمنح HR وقتاً لمهام أعلى قيمة</li>
+        </ul>
+      </div>
+<div style="background:#e6f1fb;border-right:4px solid #185FA5;padding:14px 18px;margin:16px 0;border-radius:8px;">
+<strong style="color:#163456;">🆕 إضافات 2025 — HR Technology</strong><br>
+أضافت نسخة 2025 صراحةً للمفاهيم الرئيسية:<br>
+• <strong>Blockchain</strong> — تقنية البلوك تشين لأمن وتوثيق بيانات HR<br>
+• <strong>Machine Learning</strong> — التعلم الآلي في تحليلات HR المتقدمة<br>
+• <strong>Big Data Analytics Software</strong> — برمجيات تحليل البيانات الضخمة<br>
+• <strong>Collaboration Software</strong> — برامج التعاون والعمل عن بُعد
+</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ SECTION 3: HR STRUCTURAL MODELS ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">3</div>
+      <div><h2>نماذج هيكل HR — الشرح التفصيلي</h2><div class="en">HR Structural Models — Deep Dive</div></div>
+    </div>
+
+    <div class="card">
+      <h3>المركزية مقابل اللامركزية — فهم القرار الجوهري <span class="en">Centralized vs. Decentralized HR</span></h3>
+      <p class="bt">هذا هو أساس كل نموذج هيكلي آخر. القرار بين المركزية واللامركزية يعكس توتراً حقيقياً بين التناسق والاستجابة.</p>
+      <div class="grid2">
+        <div class="mc mc1">
+          <h4>المركزية — Centralized</h4>
+          <span class="en">All HR from one HQ department</span>
+          <p>جميع موظفي HR في قسم مركزي يخدم المنظمة بأكملها. سياسات وقرارات HR تصدر من المركز.</p>
+          <div class="pros">✅ تناسق في السياسات والإجراءات في كل المنظمة<br>✅ اقتصاديات الحجم — تكلفة أقل لتقديم الخدمات<br>✅ تحكم أقوى وقيادة موحّدة</div>
+          <div class="cons" style="margin-top:5px;">❌ يُضعف المرونة والاستجابة للاحتياجات المحلية<br>❌ يُقلّل التواصل الفعلي مع الموظفين<br>❌ يُصعب التكيّف مع ثقافات وقوانين محلية مختلفة</div>
+        </div>
+        <div class="mc mc2">
+          <h4>اللامركزية — Decentralized</h4>
+          <span class="en">HR embedded in each unit/location</span>
+          <p>كل وحدة أعمال أو موقع أو دولة لديها فريق HR خاص بها يحمل المسؤولية المحلية.</p>
+          <div class="pros">✅ تواصل مباشر وعلاقات أقوى مع الشركاء<br>✅ استجابة أسرع للاحتياجات المحلية<br>✅ تكيّف مع القوانين والثقافات المحلية</div>
+          <div class="cons" style="margin-top:5px;">❌ عدم اتساق السياسات بين الوحدات<br>❌ تكرار الجهود وضياع المعرفة المؤسسية<br>❌ صعوبة التحكم والرقابة من المركز</div>
+        </div>
+      </div>
+      <div class="hl"><strong>💡 الحل العملي:</strong> معظم المنظمات الكبيرة تعتمد نموذجاً هجيناً — سياسات مركزية مع تنفيذ لامركزي. مثال: تضع HR المركزية سياسة التعويضات، لكن كل فرع يُطبّقها وفق السوق المحلي.</div>
+    </div>
+
+    <div class="card">
+      <h3>النماذج الهيكلية المتقدمة <span class="en">Advanced HR Structural Models</span></h3>
+      <div class="model-grid">
+        <div class="mc mc3">
+          <h4>مركز الخدمات المشتركة</h4>
+          <span class="en">Shared Services Center (SSC)</span>
+          <p>وحدات الأعمال المتعددة تختار من قائمة خدمات HR مشتركة (تحويلية عادةً) بدلاً من تطوير خبراتها بشكل منفصل.</p>
+          <div class="pros">✅ كفاءة عالية في تقديم الخدمات التحويلية<br>✅ توفير تكاليف — تقليل التكرار<br>✅ يُحرّر HR للتركيز على القيمة الاستراتيجية</div>
+          <div class="cons" style="margin-top:5px;">❌ خطر ضعف الاستخدام إذا لم يعرف الجميع وجودها</div>
+          <div class="note" style="font-size:12.5px;margin-top:8px;padding:8px 12px;"><strong>أمثلة تقع في SSC:</strong> الرواتب، تسجيل المزايا، إدارة المعاملات، خطوط مساعدة الموظفين</div>
+        </div>
+        <div class="mc mc4">
+          <h4>مراكز التميز</h4>
+          <span class="en">Center of Excellence (COE)</span>
+          <p>تُركّز الخبرة الاستراتيجية لتعزيز النمو والتحسين المستمر. يمكن أن تكون مادية أو افتراضية.</p>
+          <div class="pros">✅ استثمار الخبرة الاستراتيجية عبر المنظمة<br>✅ يدعم التحسين والابتكار المستمر<br>✅ يمكن أن يكون افتراضياً — موزعاً جغرافياً</div>
+          <div class="cons" style="margin-top:5px;">❌ مثل SSC — خطر ضعف الاستخدام</div>
+          <div class="hl" style="font-size:12.5px;margin-top:8px;padding:8px 12px;"><strong>الفرق بين SSC وCOE:</strong> SSC = المهام التحويلية. COE = الخبرة الاستراتيجية (استقطاب المواهب، تطوير القيادة، تصميم التعويضات)</div>
+        </div>
+        <div class="mc mc5">
+          <h4>شركاء الأعمال</h4>
+          <span class="en">HR Business Partners (HRBP)</span>
+          <p>متخصصو HR منتشرون داخل وحدات الأعمال، يُقدّمون لمديري الوحدات ويُبلّغون "بخط منقط" إلى قيادة HR.</p>
+          <div class="pros">✅ فهم أعمق لاحتياجات الأعمال<br>✅ يُظهر قيمة HR في كل مكان بالمنظمة<br>✅ استجابة أسرع للقضايا المحلية</div>
+          <div class="cons" style="margin-top:5px;">❌ صعوبة تحديد الأدوار والمسؤوليات<br>❌ قد يُصبح "كبش فداء" من كلا الطرفين</div>
+        </div>
+        <div class="mc mc6">
+          <h4>الهيكل المصفوفي</h4>
+          <span class="en">Matrix Structure</span>
+          <p>موظفو HR يُبلّغون مباشرةً لقيادة HR لكن يُبلّغون أيضاً لإدارات أخرى عبر المناصب القيادية.</p>
+          <div class="pros">✅ يعمل جيداً حين تأتي الضغوط من مصادر متعددة<br>✅ ملائم للعمل المعقد (سياسات المزايا عبر مجموعات موظفين مختلفة)</div>
+          <div class="cons" style="margin-top:5px;">❌ علاقات تقارير ضبابية وأعباء عمل متزايدة<br>❌ فرصة للصراع بين قيادة HR والإدارات</div>
+        </div>
+        <div class="mc mc7" style="grid-column:1/-1;">
+          <h4>الموارد العالمية والاستعانة بمصادر خارجية</h4>
+          <span class="en">Global Resources & Outsourcing</span>
+          <p>يشمل قدرة HR على الحصول على الدعم من مزودين خارجيين حول العالم. Outsourcing = تعاقد مع طرف ثالث. Cosourcing = وضع المتعاقدين داخل قسم HR مع الاحتفاظ بقدر أعلى من التحكم.</p>
+          <div class="note" style="margin-top:8px;font-size:13px;padding:8px 14px;"><strong>⚖️ المفاضلة:</strong> Outsourcing أوفر تكلفة لكن يقلّل التحكم. Cosourcing أغلى لكن يوفّر تحكماً أكبر. HR تحتفظ دائماً بالمسؤولية عن سلوك المتعاقد الخارجي.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>خطوات الاستعانة بمصادر خارجية <span class="en">The 9-Step Outsourcing Process</span></h3>
+      <ol class="out-steps">
+        <li><strong>تحليل الاحتياجات وتحديد الأهداف:</strong> فريق متعدد الأقسام يجمع متطلبات جميع المستخدمين. المرحلة الأكثر أهمية.</li>
+        <li><strong>تحديد الميزانية:</strong> معرفة ما يمكن إنفاقه وما تكلفه الخدمة الداخلية حالياً.</li>
+        <li><strong>إعداد RFP (طلب العروض):</strong> وثيقة تطلب من المتعاقدين تقديم حلول وأسعار. تضمن الاتساق في المقارنة.</li>
+        <li><strong>إرسال RFP للمتعاقدين المختارين:</strong> اختيار قائمة مختصرة من المتعاقدين وإرسال الطلب.</li>
+        <li><strong>تقييم العروض المقدمة:</strong> مقارنة المتعاقدين وفق معايير: السمعة، القدرة، التخصيص، السعر، الجدول الزمني.</li>
+        <li><strong>اختيار المتعاقد:</strong> اختيار من يلبّي احتياجات المنظمة بأفضل صورة.</li>
+        <li><strong>التفاوض على العقد:</strong> تحديد المنجزات، الجداول الزمنية، معايير الأداء، التدريب، التكاليف.</li>
+        <li><strong>تنفيذ المشروع ومتابعة الجدول:</strong> اجتماع تخطيط أولي ثم متابعة دورية.</li>
+        <li><strong>تقييم المشروع:</strong> تقييم داخلي وخارجي عند الانتهاء. تحديد خطة تقييم مستمرة.</li>
+      </ol>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ════ SECTION 4: HR METRICS & BALANCED SCORECARD ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">4</div>
+      <div><h2>قياس فاعلية HR — BSC والمقاييس</h2><div class="en">HR Metrics & Balanced Scorecard</div></div>
+    </div>
+
+    <div class="card">
+      <h3>بطاقة الأداء المتوازن لـ HR <span class="en">HR Balanced Scorecard — Deep Dive</span></h3>
+      <p class="bt">بطاقة الأداء المتوازن تُعطي صورة شاملة لأداء HR من 4 منظورات متكاملة. الهدف: ربط أنشطة HR بأهداف المنظمة الاستراتيجية بشكل قابل للقياس والمحاسبة.</p>
+      <div class="grid2">
+        <div class="gitem" style="border-right:4px solid #1d4ed8;">
+          <h4>1. المنظور المالي</h4>
+          <span class="en">Financial Perspective</span>
+          <p>هل HR تُسهم في تحسين الكفاءة المالية للمنظمة؟ مثال: تطوير استراتيجيات توظيف بديلة لتوفير مرونة تكلفة العمالة.</p>
+        </div>
+        <div class="gitem" style="border-right:4px solid var(--accent2);">
+          <h4>2. منظور العملاء (الوظائف الداخلية)</h4>
+          <span class="en">Customer Perspective</span>
+          <p>هل HR تُقدّم خدمات عالية الجودة لشركائها الداخليين؟ مثال: تيسير وصول المديرين إلى الاستشارة HR.</p>
+        </div>
+        <div class="gitem" style="border-right:4px solid var(--green);">
+          <h4>3. منظور العمليات الداخلية</h4>
+          <span class="en">Internal Business Processes</span>
+          <p>هل عمليات HR فعّالة وتعمل بكفاءة؟ مثال: تطبيق التكنولوجيا لزيادة الكفاءة وجمع البيانات.</p>
+        </div>
+        <div class="gitem" style="border-right:4px solid var(--purple);">
+          <h4>4. منظور التعلم والنمو</h4>
+          <span class="en">Learning & Growth</span>
+          <p>هل HR تضمن توافر قادة المستقبل؟ مثال: تطوير قادة محتملين عبر المنظمة بالكامل.</p>
+        </div>
+      </div>
+      <div class="deep">
+        <h4>💡 ماذا يجعل BSC فعّالة حقاً؟</h4>
+        <ul>
+          <li>تحتوي على محاسبة ونتائج قابلة للقياس — لا مجرد نوايا</li>
+          <li>تقيس فقط ما هو مهم للمنظمة — لا إغراق بالمقاييس</li>
+          <li>تركّز على النتائج (الإنتاجية والاحتفاظ) لا الأنشطة (معدل الدوران وحده)</li>
+          <li>مُخطّطة بعناية، مرتبطة بالخطة الاستراتيجية، ومُراجعة دورياً</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>أهم مقاييس HR التي يجب معرفتها <span class="en">Key HR Metrics</span></h3>
+      <table class="tbl">
+        <tr><th>المقياس</th><th>الصيغة / الوصف</th><th>الاستخدام الاستراتيجي</th></tr>
+        <tr><td><strong>Human Capital ROI</strong></td><td>(الإيرادات − المصاريف التشغيلية غير العمالية) ÷ تكاليف العمالة الكلية</td><td>إثبات القيمة المضافة للقوى البشرية</td></tr>
+        <tr><td><strong>Human Capital Value Added (HCVA)</strong></td><td>(الإيرادات − المصاريف غير العمالية) ÷ عدد موظفي FTE</td><td>قياس الإنتاجية مقارنة بالحجم</td></tr>
+        <tr><td><strong>HR Staff per FTE</strong></td><td>عدد موظفي HR ÷ إجمالي الموظفين</td><td>تحديد إذا كان قسم HR مكتمل التوظيف</td></tr>
+        <tr><td><strong>Cost per Hire</strong></td><td>إجمالي تكاليف التوظيف ÷ عدد الموظفين الجُدُد</td><td>تحسين عملية التوظيف</td></tr>
+        <tr><td><strong>Success Ratio</strong></td><td>نسبة المتقدمين المُختارين الذين يُعتبرون ناجحين لاحقاً</td><td>قياس فاعلية الاستقطاب والاختيار</td></tr>
+        <tr><td><strong>Key Talent Retention</strong></td><td>نسبة الموظفين الرئيسيين المحتفَظ بهم</td><td>قياس فاعلية برامج التطوير والمكافآت</td></tr>
+        <tr><td><strong>Turnover Costs</strong></td><td>تكاليف الفصل + الشاغر + الاستبدال + التدريب</td><td>إثبات الحجة الاقتصادية لتحسين الاحتفاظ</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>مراجعة HR — الأنواع والخطوات <span class="en">HR Audits — Types & Process</span></h3>
+      <div class="grid2">
+        <div class="gitem" style="border-top:4px solid var(--primary);">
+          <h4>Compliance Audit</h4>
+          <span class="en">مراجعة الامتثال</span>
+          <p>يختبر مدى التزام المنظمة بقوانين ولوائح العمل الحالية.</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid var(--green);">
+          <h4>Best Practices Audit</h4>
+          <span class="en">مراجعة أفضل الممارسات</span>
+          <p>مقارنة ممارسات HR بممارسات أصحاب العمل المتميزين للحفاظ على الميزة التنافسية.</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid var(--accent2);">
+          <h4>Strategic Audit</h4>
+          <span class="en">المراجعة الاستراتيجية</span>
+          <p>يُركّز على نقاط قوة وضعف الأنظمة لتحديد توافقها مع الخطة الاستراتيجية.</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid var(--teal);">
+          <h4>Function-Specific Audit</h4>
+          <span class="en">المراجعة الوظيفية</span>
+          <p>يُركّز على منطقة محددة في HR مثل إدارة الأداء، الرواتب، الاحتفاظ بالسجلات.</p>
+        </div>
+      </div>
+      <div style="margin-top:14px;">
+        <p class="bt"><strong>خطوات عملية المراجعة (7 خطوات):</strong></p>
+        <ol class="audit-steps">
+          <li>تحديد نطاق ونوع المراجعة</li>
+          <li>تطوير استبيان المراجعة لجمع البيانات باتساق</li>
+          <li>جمع البيانات بكفاءة مع تقليل الإزعاج</li>
+          <li>قياس النتائج مقارنةً بمعايير محددة (سياسات، قانون، أفضل الممارسات)</li>
+          <li>تقديم التغذية الراجعة لإدارة المنظمة مع تحديد الأولويات</li>
+          <li>تطوير خطط عمل لمعالجة الثغرات المكتشفة</li>
+          <li>تعزيز ثقافة التحسين المستمر</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+
+<div class="fe-box">
+  <div class="fe-hdr">
+    <div class="fe-hdr-icon">📈</div>
+    <div>
+      <div class="fe-hdr-text">مقاييس رأس المال البشري — أمثلة عددية كاملة</div>
+      <div class="fe-hdr-sub">HC ROI · HCVA · Revenue Per Employee · Cost Per Hire</div>
+    </div>
+  </div>
+  <div class="fe-body">
+
+    <div class="fe-formula">HC ROI = (إيرادات − مصاريف غير عمالية − تكاليف عمالة) ÷ تكاليف عمالة × 100%</div>
+
+    <div class="fe-steps">
+      <div class="fe-step">
+        <div class="fe-step-n">1</div>
+        <div class="fe-step-body">
+          <strong>مثال محلول — HC ROI:</strong>
+          <div class="fe-calc">
+            إيرادات الشركة:              $10,000,000<br>
+            مصاريف غير عمالية:          $6,000,000<br>
+            تكاليف عمالة كاملة:         $2,500,000<br>
+            ─────────────────────────────────────────<br>
+            البسط: 10M − 6M − 2.5M =    $1,500,000<br>
+            HC ROI = 1,500,000 ÷ 2,500,000 × 100%<br>
+            <span class="result">= 60% — لكل $1 تُنفقه على العمالة، تحصل على $0.60 صافي قيمة</span>
+          </div>
+          <div class="fe-interp">HC ROI > 0% = الاستثمار في القوى العاملة يخلق قيمة. كلما ارتفع الرقم كلما كانت القوى العاملة أكثر إنتاجية نسبةً للتكلفة.</div>
+        </div>
+      </div>
+
+      <div class="fe-step">
+        <div class="fe-step-n">2</div>
+        <div class="fe-step-body">
+          <strong>Human Capital Value Added (HCVA):</strong>
+          <div class="fe-calc">
+            HCVA = (إيرادات − مصاريف غير عمالية) ÷ عدد الموظفين<br>
+            مثال: (10M − 6M) ÷ 500 موظف<br>
+            <span class="result">= $8,000 قيمة مضافة لكل موظف</span>
+          </div>
+          <div class="fe-warn">⚠️ الفرق: HC ROI ينسب للتكلفة. HCVA ينسب لعدد الموظفين. كلاهما مفيد لكن لأسئلة مختلفة.</div>
+        </div>
+      </div>
+
+      <div class="fe-step">
+        <div class="fe-step-n">3</div>
+        <div class="fe-step-body">
+          <strong>Revenue Per Employee (الإيراد لكل موظف):</strong>
+          <div class="fe-calc">
+            Revenue Per Employee = إجمالي الإيرادات ÷ عدد الموظفين<br>
+            مثال: $10,000,000 ÷ 500 = <span class="result">$20,000 لكل موظف</span><br>
+            <br>
+            بعد برنامج تطوير أداء: الإيرادات → $11,000,000<br>
+            Revenue Per Employee = $11M ÷ 500 = <span class="result">$22,000 (+10%)</span><br>
+            ROI برنامج التطوير = (1M زيادة إيرادات − 200K تكلفة) ÷ 200K × 100% = <span class="result">400%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fe-step">
+        <div class="fe-step-n">4</div>
+        <div class="fe-step-body">
+          <strong>ربط المقاييس ببعضها — Business Case كامل:</strong>
+          <div class="fe-interp">
+            HC ROI ↓ بعد برنامج تطوير جديد قصير الأجل (التكاليف ارتفعت فوراً) → طبيعي جداً<br>
+            لكن Revenue Per Employee ↑ بعد 6 أشهر → البرنامج يعمل<br>
+            HCVA ↑ → الموظفون يولّدون قيمة أعلى<br>
+            Turnover Rate ↓ → تكاليف الدوران انخفضت → صافي ROI إيجابي
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fe-exam-tip">⭐ <strong>في الامتحان:</strong> CHRO تُقدّم تقرير للـ CFO → يجب استخدام HC ROI وليس "عدد ساعات التدريب". المقاييس المالية = لغة مجلس الإدارة.</div>
+  </div>
+</div>
+
+
+
+
+  <hr class="divider">
+
+  <!-- ════ SECTION 5: OED + McKINSEY 7S ════ -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">5</div>
+      <div><h2>الفاعلية والتطوير التنظيمي — OED</h2><div class="en">Organizational Effectiveness & Development — Deep Dive</div></div>
+    </div>
+
+    <div class="card">
+      <h3>ما هو OED؟ <span class="en">What is OED?</span></h3>
+      <p class="bt">OED هو العملية التي تتبناها HR بوصفها "طبيباً تنظيمياً" — تفحص صحة المنظمة، تُشخّص العوائق أمام الأهداف الاستراتيجية، وتُصمّم تدخلات لإزالتها. تبدأ بثلاثة أسئلة جوهرية:</p>
+      <div class="grid3">
+        <div class="gitem" style="text-align:center;border-top:3px solid var(--primary);">
+          <h4>أين نحن الآن؟</h4>
+          <span class="en">Where are we now?</span>
+          <p>تشخيص الحالة الراهنة</p>
+        </div>
+        <div class="gitem" style="text-align:center;border-top:3px solid var(--accent2);">
+          <h4>أين نريد أن نكون؟</h4>
+          <span class="en">Where do we want to go?</span>
+          <p>الرؤية والهدف الاستراتيجي</p>
+        </div>
+        <div class="gitem" style="text-align:center;border-top:3px solid var(--green);">
+          <h4>ما الذي يعيقنا؟</h4>
+          <span class="en">What is keeping us from getting there?</span>
+          <p>تحديد الفجوات والعوائق</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>نموذج McKinsey 7S — الشرح المعمّق <span class="en">McKinsey 7S Framework — Deep Dive</span></h3>
+      <p class="bt">نموذج 7S هو إطار لتقييم "صحة" المنظمة من خلال 7 عناصر متشابكة. المنطق: لا يمكن تغيير عنصر واحد دون التأثير على البقية. نجاح تنفيذ الاستراتيجية يتطلب توافق جميع العناصر السبعة.</p>
+      <div class="s7-grid">
+        <div class="s7-card s7-hard">
+          <h4>الاستراتيجية</h4>
+          <span class="en">Strategy</span>
+          <p>خطة العمل لتحقيق الأهداف في بيئة تنافسية — نقطة البداية التي تُوجّه بقية العناصر</p>
+        </div>
+        <div class="s7-card s7-hard">
+          <h4>الهيكل</h4>
+          <span class="en">Structure</span>
+          <p>كيف تُنظَّم الوحدات والأقسام وعلاقات الإبلاغ — الهرمي، المصفوفي، المسطّح</p>
+        </div>
+        <div class="s7-card s7-hard">
+          <h4>الأنظمة</h4>
+          <span class="en">Systems</span>
+          <p>العمليات والإجراءات اليومية — السياسات، التكنولوجيا، الأدوات التي تحكم كيفية إنجاز العمل</p>
+        </div>
+        <div class="s7-card s7-soft">
+          <h4>القيم المشتركة</h4>
+          <span class="en">Shared Values</span>
+          <p>القيم والأهداف والثقافة التي تُلهم الموظفين — <strong>مركز النموذج وجوهره</strong></p>
+        </div>
+        <div class="s7-card s7-soft">
+          <h4>الأسلوب</h4>
+          <span class="en">Style</span>
+          <p>نمط القيادة السائد في المنظمة — كيف يتصرف القادة ويتخذون القرارات</p>
+        </div>
+        <div class="s7-card s7-soft">
+          <h4>الموظفون</h4>
+          <span class="en">Staff</span>
+          <p>الموارد البشرية — أنواع الموظفين، كيف يُوظَّفون ويُطوَّرون ويُحفَّزون</p>
+        </div>
+        <div class="s7-card s7-soft">
+          <h4>المهارات</h4>
+          <span class="en">Skills</span>
+          <p>الكفاءات التي تتميز بها المنظمة — ما تفعله جيداً مقارنة بالمنافسين</p>
+        </div>
+      </div>
+      <div class="deep" style="margin-top:14px;">
+        <h4>💡 الصعب مقابل الليّن — الفرق الجوهري</h4>
+        <ul>
+          <li><strong>العناصر الصلبة (Strategy, Structure, Systems):</strong> قابلة للقياس، واضحة، يمكن رؤيتها في الوثائق والمخططات التنظيمية. أسهل في التغيير.</li>
+          <li><strong>العناصر الليّنة (Shared Values, Style, Staff, Skills):</strong> غير ملموسة، تتشكّل بالثقافة والقيم، أصعب كثيراً في التغيير — لكنها الأكثر تأثيراً على الأداء.</li>
+          <li>أشهر أخطاء التحول التنظيمي: تغيير العناصر الصلبة (الهيكل، الأنظمة) وتجاهل العناصر الليّنة (الثقافة، القيم). النتيجة: تغيير على الورق لا في الواقع.</li>
+        </ul>
+      </div>
+      <div class="tip"><strong>🎯 للامتحان:</strong> عندما يطرح SHRM سؤالاً عن "تحليل تنظيمي" أو "فشل التغيير" — فكّر في 7S. المشكلة غالباً في التوافق بين العناصر، وليس في عنصر واحد منفرد.</div>
+    </div>
+
+    <div class="card">
+      <h3>أنواع التدخلات التنظيمية <span class="en">OED Interventions — Proactive vs Remedial</span></h3>
+      <div class="grid2">
+        <div class="gitem" style="border-top:4px solid var(--green);">
+          <h4>التدخلات الاستباقية</h4>
+          <span class="en">Proactive Interventions</span>
+          <p>تُحدّد وتُصحّح المشكلات المحتملة قبل أن تؤثر على الأداء. تُهيّئ المنظمة للاستفادة من الفرص القادمة. مثال: بناء شبكات تواصل مرنة لمنظمة تتنافس في سوق متغيّر بسرعة.</p>
+        </div>
+        <div class="gitem" style="border-top:4px solid var(--accent2);">
+          <h4>التدخلات العلاجية</h4>
+          <span class="en">Remedial Interventions</span>
+          <p>تُعالج مشكلة قائمة وتُعيد المنظمة لمسارها. يمكن تقييمها بسهولة: "هل حُلّت المشكلة؟" تأثيرها: رفع الكفاءة، تقليل الإرهاق، تحسين الأداء، تحويل الاستراتيجية من ردود الأفعال إلى الاستباقية.</p>
+        </div>
+      </div>
+      <div class="warn"><strong>⚠️ لماذا تفشل التدخلات؟</strong> شلل التحليل (جمع بيانات بلا قرار) — أهداف طموحة جداً دون موارد كافية — التركيز على الحل لا على الأشخاص الذين سيُنفّذونه — تواصل متأخر أو غير متوافق مع الواقع التنظيمي.</div>
+    </div>
+
+    <div class="card">
+      <h3>الدور الاستراتيجي لـ HR في العلاقات الوظيفية الداخلية <span class="en">HR as Cross-Functional Bridge</span></h3>
+      <p class="bt">HR ليست قسماً منفصلاً — هي جسر بين جميع وظائف الأعمال. قيمتها تتجلّى في فهمها العميق لاحتياجات كل وظيفة.</p>
+      <table class="tbl">
+        <tr><th>الوظيفة</th><th>أبرز ما يُقدّمه HR</th></tr>
+        <tr><td><strong>الإدارة التنفيذية</strong></td><td>تعيين المواهب التنفيذية + استشارة الاستراتيجية + تعويضات المديرين</td></tr>
+        <tr><td><strong>المالية والمحاسبة</strong></td><td>تخطيط وميزانيات برامج HR + تدريب الحوكمة + دعم التدقيق</td></tr>
+        <tr><td><strong>التسويق والمبيعات</strong></td><td>توافق التعويض مع استراتيجية المبيعات + بناء ثقافة تعكس هوية العلامة التجارية</td></tr>
+        <tr><td><strong>البحث والتطوير</strong></td><td>استقطاب مواهب متخصصة + حماية الملكية الفكرية + بيئة ابتكار</td></tr>
+        <tr><td><strong>العمليات</strong></td><td>تخطيط القوى العاملة + إدارة العلاقات مع النقابات + الامتثال والسلامة</td></tr>
+        <tr><td><strong>تقنية المعلومات</strong></td><td>تنفيذ HRIS + سياسات أمن المعلومات + توفير المواهب التقنية</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- GLOSSARY -->
+  <div class="section">
+    <div class="sec-title"><div class="sec-num">📖</div>
+      <div><h2>المصطلحات الأساسية — الجزء الأول</h2></div>
+    </div>
+    <div class="card">
+      <table class="tbl">
+        <tr><th>المصطلح العربي</th><th>الإنجليزي</th><th>التعريف المختصر</th></tr>
+        <tr><td>هيكل وظيفة HR</td><td>Structure of the HR Function</td><td>طريقة تنظيم HR لأصولها وخدماتها لتخدم استراتيجية المنظمة</td></tr>
+        <tr><td>مركز الخدمات المشتركة</td><td>Shared Services Center (SSC)</td><td>خدمات HR مشتركة بين وحدات الأعمال — غالباً مهام تحويلية</td></tr>
+        <tr><td>مراكز التميز</td><td>Center of Excellence (COE)</td><td>تجميع الخبرة الاستراتيجية لتعزيز النمو والابتكار عبر المنظمة</td></tr>
+        <tr><td>شريك الأعمال</td><td>HR Business Partner (HRBP)</td><td>متخصص HR منتشر داخل وحدة الأعمال بفهم أعمق للأعمال</td></tr>
+        <tr><td>الاستعانة بمصادر خارجية</td><td>Outsourcing</td><td>تعاقد مع طرف ثالث لتنفيذ مهام HR المحددة</td></tr>
+        <tr><td>Cosourcing</td><td>Cosourcing</td><td>وضع متعاقدين خارجيين داخل HR مع احتفاظ بقدر أعلى من التحكم</td></tr>
+        <tr><td>طلب العروض</td><td>Request for Proposal (RFP)</td><td>وثيقة تطلب من المتعاقدين تقديم حلول وأسعار مقترحة</td></tr>
+        <tr><td>الفاعلية والتطوير التنظيمي</td><td>OED</td><td>عملية تشخيص "صحة" المنظمة وتصميم تدخلات لتحسين الأداء</td></tr>
+        <tr><td>نموذج McKinsey 7S</td><td>McKinsey 7S Framework</td><td>إطار يُحلّل توافق 7 عناصر تنظيمية (3 صلبة + 4 ليّنة)</td></tr>
+        <tr><td>تدخل استباقي</td><td>Proactive Intervention</td><td>يُحدّد ويُصحّح مشكلات قبل أن تؤثر على الأداء</td></tr>
+        <tr><td>تدخل علاجي</td><td>Remedial Intervention</td><td>يُعالج مشكلة قائمة ويُعيد المنظمة لمسارها الاستراتيجي</td></tr>
+        <tr><td>مراجعة HR</td><td>HR Audit</td><td>تقييم منهجي لسياسات وإجراءات HR لتحديد الثغرات</td></tr>
+        <tr><td>بطاقة الأداء المتوازنة</td><td>Balanced Scorecard (BSC)</td><td>أداة قياس شاملة من 4 منظورات: مالي + عملاء + عمليات + تعلم</td></tr>
+        <tr><td>Human Capital ROI</td><td>HC ROI</td><td>نسبة العائد على الاستثمار في رأس المال البشري</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="overview" style="margin-top:30px;background:linear-gradient(135deg,#1a3a5c,#2c4a1e);">
+    <h2>📅 خطة الدراسة — Organization Domain (402 صفحة)</h2>
+    <table class="tbl" style="margin-top:14px;background:rgba(255,255,255,.08);">
+      <tr style="background:rgba(255,255,255,.15);">
+        <th style="background:transparent;color:#fff;">الجزء</th>
+        <th style="background:transparent;color:#fff;">الصفحات</th>
+        <th style="background:transparent;color:#fff;">المحتوى</th>
+        <th style="background:transparent;color:#fff;">الحالة</th>
+      </tr>
+      <tr style="color:#fff;font-size:14px;background:rgba(200,168,75,.2);"><td><strong>الأول ✅</strong></td><td><strong>1–100</strong></td><td><strong>هيكل HR (7 نماذج) + مقاييس BSC + مراجعات + بداية OED + McKinsey 7S</strong></td><td>✅</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>الثاني</td><td>101–200</td><td>OED (التدخلات + التصميم التنظيمي + RACI + Tuckman) + إدارة القوى العاملة</td><td>⏳ التالي</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>الثالث</td><td>201–300</td><td>إدارة القوى العاملة (كامل) + بداية علاقات الموظفين والعمل</td><td>⏳</td></tr>
+      <tr style="color:#fff;font-size:14px;"><td>الرابع</td><td>301–402</td><td>علاقات العمل (كامل) + إدارة التكنولوجيا + مراجعة شاملة + نصائح الامتحان</td><td>⏳</td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <p>اطلب الجزء الثاني (صفحات 101–200) متى شئت 🚀</p>
+    <p style="margin-top:6px;color:#aaa;">SHRM Learning System 2023 — Organization Domain · ملخص موسّع بالعربية</p>
+  </div>
+</div>
+</body>
+</html>

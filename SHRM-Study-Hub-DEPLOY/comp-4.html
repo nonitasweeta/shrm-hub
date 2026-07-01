@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ملخص SHRM – الصفحات 301–400</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1a3a5c;
+    --accent:  #c8a84b;
+    --accent2: #e8734a;
+    --bg:      #f7f4ef;
+    --card:    #ffffff;
+    --text:    #2c2c2c;
+    --muted:   #6b7280;
+    --green:   #1e7a4a;
+    --red:     #b91c1c;
+    --purple:  #6d28d9;
+    --teal:    #0f766e;
+    --navy:    #0c2461;
+    --border:  #e2d9c8;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Tajawal','Cairo',sans-serif; background:var(--bg); color:var(--text); line-height:1.85; font-size:16px; }
+
+  /* ── HEADER ── */
+  .header { background:linear-gradient(135deg,#0c2461 0%,#1a3a5c 60%,#1e3799 100%); color:white; padding:48px 40px 44px; position:relative; overflow:hidden; }
+  .header::before { content:''; position:absolute; top:-80px; left:-60px; width:340px; height:340px; border-radius:50%; background:rgba(200,168,75,.12); }
+  .header::after  { content:''; position:absolute; bottom:-90px; right:-50px; width:250px; height:250px; border-radius:50%; background:rgba(232,115,74,.10); }
+  .header-badge { display:inline-block; background:var(--accent); color:var(--primary); font-weight:700; font-size:13px; padding:4px 16px; border-radius:20px; margin-bottom:14px; letter-spacing:1px; }
+  .header h1 { font-size:2.1rem; font-weight:800; margin-bottom:8px; }
+  .header .subtitle { font-size:1rem; opacity:.8; max-width:620px; }
+  .header-meta { display:flex; gap:26px; margin-top:22px; flex-wrap:wrap; }
+  .meta-item { font-size:14px; opacity:.9; }
+
+  /* ── CONTAINER ── */
+  .container { max-width:920px; margin:0 auto; padding:44px 24px 90px; }
+
+  /* ── PROGRESS ── */
+  .progress-bar-wrap { margin:0 0 40px; }
+  .progress-label { display:flex; justify-content:space-between; font-size:13px; color:var(--muted); margin-bottom:6px; }
+  .progress-bar { height:10px; background:#e2d9c8; border-radius:10px; overflow:hidden; }
+  .progress-fill { height:100%; border-radius:10px; background:linear-gradient(90deg,var(--primary),var(--accent)); }
+
+  /* ── OVERVIEW ── */
+  .overview-card { background:var(--primary); color:white; border-radius:16px; padding:32px 36px; margin-bottom:40px; position:relative; overflow:hidden; }
+  .overview-card::after { content:'SHRM'; position:absolute; left:-8px; bottom:-28px; font-size:100px; font-weight:900; color:rgba(255,255,255,.04); }
+  .overview-card h2 { font-size:1.25rem; color:var(--accent); margin-bottom:14px; }
+  .overview-card p  { font-size:15px; line-height:1.9; opacity:.92; }
+
+  /* ── SECTION ── */
+  .section { margin-bottom:44px; }
+  .section-title { display:flex; align-items:center; gap:14px; margin-bottom:22px; }
+  .section-num { background:var(--accent); color:var(--primary); width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:17px; flex-shrink:0; }
+  .section-title h2 { font-size:1.3rem; font-weight:700; color:var(--primary); }
+  .section-title .en-title { font-size:13px; color:var(--muted); font-style:italic; direction:ltr; }
+
+  /* ── CARD ── */
+  .card { background:var(--card); border-radius:14px; padding:26px 30px; border:1px solid var(--border); box-shadow:0 2px 14px rgba(0,0,0,.05); margin-bottom:22px; }
+  .card h3 { font-size:1.05rem; font-weight:700; color:var(--primary); margin-bottom:13px; padding-bottom:10px; border-bottom:2px solid var(--border); }
+  .card h3 .en { color:var(--accent2); direction:ltr; display:inline-block; font-size:.85rem; margin-right:8px; }
+  .card p.body-text { font-size:15px; margin-bottom:12px; }
+
+  /* ── LIST ── */
+  .info-list { list-style:none; padding:0; }
+  .info-list li { padding:8px 0; border-bottom:1px solid #f0ebe0; font-size:15px; display:flex; gap:10px; align-items:flex-start; }
+  .info-list li:last-child { border-bottom:none; }
+  .bullet { width:8px; height:8px; background:var(--accent); border-radius:50%; margin-top:8px; flex-shrink:0; }
+  .bullet.green  { background:var(--green); }
+  .bullet.teal   { background:var(--teal); }
+  .bullet.red    { background:var(--red); }
+  .bullet.purple { background:var(--purple); }
+  .bullet.navy   { background:var(--navy); }
+
+  /* ── TERM ── */
+  .term { background:#f0f6ff; border-right:4px solid var(--primary); padding:10px 16px; margin:9px 0; border-radius:6px; font-size:15px; }
+  .term strong { color:var(--primary); }
+  .term .en-term { color:var(--accent2); font-style:italic; direction:ltr; display:inline-block; }
+
+  /* ── TABLE ── */
+  .compare-table { width:100%; border-collapse:collapse; font-size:14px; margin-top:14px; }
+  .compare-table th { background:var(--primary); color:white; padding:10px 14px; text-align:right; }
+  .compare-table td { padding:10px 14px; border-bottom:1px solid var(--border); vertical-align:top; }
+  .compare-table tr:nth-child(even) td { background:#f9f6f0; }
+  .compare-table tr:hover td { background:#fff3e0; }
+
+  /* ── GRID ── */
+  .theory-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:14px; }
+  @media(max-width:640px){ .theory-grid { grid-template-columns:1fr; } }
+  .theory-item { background:#f9f6f0; border:1px solid var(--border); border-radius:10px; padding:15px 17px; }
+  .theory-item h4 { font-size:14px; font-weight:700; color:var(--primary); margin-bottom:5px; }
+  .theory-item .en { font-size:12px; color:var(--accent2); direction:ltr; display:block; margin-bottom:6px; }
+  .theory-item p { font-size:13px; color:#444; line-height:1.75; }
+
+  /* ── 3-COL GRID ── */
+  .three-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-top:14px; }
+  @media(max-width:700px){ .three-grid { grid-template-columns:1fr 1fr; } }
+  @media(max-width:480px){ .three-grid { grid-template-columns:1fr; } }
+  .three-item { background:#f9f6f0; border:1px solid var(--border); border-radius:10px; padding:14px; }
+  .three-item h4 { font-size:13px; font-weight:700; color:var(--primary); margin-bottom:5px; }
+  .three-item .en { font-size:11px; color:var(--accent2); direction:ltr; display:block; margin-bottom:5px; }
+  .three-item p { font-size:12.5px; color:#444; line-height:1.65; }
+
+  /* ── HIGHLIGHT / TIP / NOTE / WARN ── */
+  .highlight { background:linear-gradient(135deg,#fff8e7,#fef3cd); border:1px solid var(--accent); border-radius:12px; padding:20px 26px; margin:16px 0; }
+  .highlight p { font-size:15px; }
+  .tip-box  { background:#f0fdf4; border:1px solid #86efac; border-radius:12px; padding:18px 22px; margin:16px 0; font-size:15px; }
+  .tip-box strong { color:var(--green); }
+  .note-box { background:#fefce8; border:1px solid #fde047; border-radius:12px; padding:18px 22px; margin:16px 0; font-size:15px; }
+  .note-box strong { color:#854d0e; }
+  .warn-box { background:#fff1f2; border:1px solid #fca5a5; border-radius:12px; padding:18px 22px; margin:16px 0; font-size:15px; }
+  .warn-box strong { color:var(--red); }
+
+  /* ── CHIPS ── */
+  .chips { display:flex; flex-wrap:wrap; gap:10px; margin:14px 0; }
+  .chip { background:var(--primary); color:white; border-radius:30px; padding:7px 18px; font-size:13px; font-weight:600; }
+  .chip.gold   { background:var(--accent); color:var(--primary); }
+  .chip.orange { background:var(--accent2); }
+  .chip.green  { background:var(--green); }
+  .chip.teal   { background:var(--teal); }
+  .chip.purple { background:var(--purple); }
+
+  /* ── STEPS ── */
+  .steps { list-style:none; padding:0; counter-reset:steps; }
+  .steps li { counter-increment:steps; display:flex; gap:14px; align-items:flex-start; padding:12px 0; border-bottom:1px solid #f0ebe0; font-size:15px; }
+  .steps li:last-child { border-bottom:none; }
+  .steps li::before { content:counter(steps); background:var(--primary); color:white; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:13px; flex-shrink:0; }
+
+  /* ── HOFSTEDE CARDS ── */
+  .hofstede-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:14px; }
+  @media(max-width:640px){ .hofstede-grid { grid-template-columns:1fr; } }
+  .hofstede-card { border-radius:12px; padding:16px 18px; border:1px solid var(--border); }
+  .hofstede-card h4 { font-size:14px; font-weight:700; margin-bottom:6px; }
+  .hofstede-card .dim-en { font-size:12px; direction:ltr; display:block; margin-bottom:8px; font-style:italic; }
+  .hofstede-card p { font-size:13px; color:#444; line-height:1.7; }
+  .hofstede-card.h1 { border-top:4px solid #2563eb; } .hofstede-card.h1 h4 { color:#1d4ed8; }
+  .hofstede-card.h2 { border-top:4px solid var(--green); } .hofstede-card.h2 h4 { color:var(--green); }
+  .hofstede-card.h3 { border-top:4px solid var(--red); } .hofstede-card.h3 h4 { color:var(--red); }
+  .hofstede-card.h4 { border-top:4px solid var(--purple); } .hofstede-card.h4 h4 { color:var(--purple); }
+  .hofstede-card.h5 { border-top:4px solid var(--teal); } .hofstede-card.h5 h4 { color:var(--teal); }
+  .hofstede-card.h6 { border-top:4px solid var(--accent2); } .hofstede-card.h6 h4 { color:var(--accent2); }
+
+  /* ── LIFE CYCLE ── */
+  .lifecycle { display:flex; gap:0; margin:14px 0; overflow-x:auto; }
+  .lc-stage { flex:1; min-width:100px; padding:14px 10px; text-align:center; }
+  .lc-stage h5 { font-size:13px; font-weight:700; margin-bottom:6px; }
+  .lc-stage p { font-size:11.5px; line-height:1.5; }
+  .lc-stage.intro { background:#dbeafe; border-radius:10px 0 0 10px; } .lc-stage.intro h5 { color:#1d4ed8; }
+  .lc-stage.growth { background:#d1fae5; } .lc-stage.growth h5 { color:var(--green); }
+  .lc-stage.mature { background:#fef3cd; } .lc-stage.mature h5 { color:#854d0e; }
+  .lc-stage.renew  { background:#ede9fe; border-radius:0 10px 10px 0; } .lc-stage.renew h5 { color:var(--purple); }
+
+  /* ── PESTLE ── */
+  .pestle-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:14px; }
+  @media(max-width:600px){ .pestle-grid { grid-template-columns:1fr 1fr; } }
+  .pestle-item { border-radius:10px; padding:14px; text-align:center; }
+  .pestle-item .letter { font-size:2rem; font-weight:900; margin-bottom:4px; }
+  .pestle-item h4 { font-size:13px; font-weight:700; margin-bottom:4px; }
+  .pestle-item p { font-size:12px; color:#555; }
+  .p-item { background:#dbeafe; } .p-item .letter,.p-item h4 { color:#1d4ed8; }
+  .e-item { background:#d1fae5; } .e-item .letter,.e-item h4 { color:var(--green); }
+  .s-item { background:#fef3cd; } .s-item .letter,.s-item h4 { color:#854d0e; }
+  .t-item { background:#fce7f3; } .t-item .letter,.t-item h4 { color:#9d174d; }
+  .l-item { background:#ede9fe; } .l-item .letter,.l-item h4 { color:var(--purple); }
+  .en-item { background:#e0f2fe; } .en-item .letter,.en-item h4 { color:#0c4a6e; }
+
+  /* ── DIVIDER ── */
+  .divider { border:none; border-top:2px dashed var(--border); margin:36px 0; }
+
+  /* ── FOOTER ── */
+  .footer { text-align:center; margin-top:70px; padding:28px; color:var(--muted); font-size:14px; border-top:2px solid var(--border); }
+
+/* ── THEORY EXPANSION BOXES ── */
+.th-box{background:#fff;border:1.5px solid #ddd6c8;border-radius:16px;margin:24px 0;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);}
+.th-header{display:flex;align-items:center;gap:12px;padding:16px 20px;background:linear-gradient(135deg,#0d1b2e,#163456);}
+.th-icon{font-size:1.4rem;flex-shrink:0;}
+.th-title{color:#fff;font-weight:700;font-size:1rem;}
+.th-subtitle{color:rgba(255,255,255,.55);font-size:.8rem;margin-top:2px;}
+.th-body{padding:0 20px 20px;}
+.th-formula{background:#0d1b2e;color:#c8a84b;font-family:'Outfit',monospace,sans-serif;font-weight:700;font-size:.9rem;padding:10px 16px;border-radius:8px;margin:14px 0;text-align:center;letter-spacing:.03em;}
+.th-stage-list{display:flex;flex-direction:column;gap:0;}
+.th-stage{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #f0ede5;}
+.th-stage:last-child{border-bottom:none;}
+.th-sn{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;flex-shrink:0;margin-top:2px;}
+.th-sc{flex:1;font-size:.9rem;line-height:1.65;color:#333;}
+.th-sc strong{color:#0d1b2e;}
+.th-sc em{color:#888;font-size:.85em;}
+.th-example{background:#f0ede5;border-right:3px solid #c8a84b;padding:10px 14px;border-radius:0 8px 8px 0;margin:8px 0;font-size:.88rem;color:#444;line-height:1.65;}
+.th-example strong{color:#0d1b2e;}
+.th-exam-tip{background:#fff8e7;border:1.5px solid #c8a84b;border-radius:10px;padding:12px 16px;margin:14px 0 0;font-size:.88rem;color:#4a3000;line-height:1.65;}
+.th-exam-tip strong{color:#0d1b2e;}
+.th-compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0;}
+@media(max-width:600px){.th-compare{grid-template-columns:1fr;}}
+.th-compare-card{background:#f7f5f0;border-radius:10px;padding:12px 14px;}
+.th-compare-card h4{font-size:.85rem;font-weight:700;color:#0d1b2e;margin-bottom:8px;}
+.th-compare-card li{font-size:.82rem;color:#444;margin-bottom:4px;line-height:1.5;}
+.th-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:12px 0;}
+.th-card{background:#f7f5f0;border-radius:10px;padding:12px 14px;border-top:3px solid #ccc;}
+.th-card h4{font-size:.82rem;font-weight:700;color:#0d1b2e;margin-bottom:6px;}
+.th-card p{font-size:.8rem;color:#555;line-height:1.55;}
+.th-divider{height:1px;background:#f0ede5;margin:16px 0;}
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-badge">📚 خطة الدراسة · الجزء الرابع</div>
+  <h1>ملخص الصفحات 301–400</h1>
+  <p class="subtitle">SHRM Learning System 2023 — HR Competencies Module</p>
+  <div class="header-meta">
+    <div class="meta-item">📄 601 صفحة إجمالاً</div>
+    <div class="meta-item">🎯 SHRM-CP / SHRM-SCP</div>
+    <div class="meta-item">🌍 شرح بالعربية · المصطلحات بالإنجليزية</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- PROGRESS -->
+  <div class="progress-bar-wrap">
+    <div class="progress-label"><span>تقدّمك في الكتاب</span><span>401 / 601 صفحة — ثلثا الكتاب! 🎉</span></div>
+    <div class="progress-bar"><div class="progress-fill" style="width:67%"></div></div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div class="overview-card">
+    <h2>🗺️ نظرة عامة على هذا الجزء</h2>
+    <p>
+      تُكمل الصفحات 301–400 كفاءة <strong>Global Mindset</strong> بتعمّق في نظريات الثقافة (Hall + Hofstede + Trompenaars) وأساليب التوفيق بين الفوارق الثقافية، ثم تُقدّم الأنظمة القانونية العالمية.
+      بعدها تنتقل إلى كفاءة <strong>Business Acumen</strong> الحيوية — فهم كيف تُنشئ المنظمة قيمتها، دورة الحياة التنظيمية، تحليل PESTLE، الأدوات التجارية الأساسية، وأدوات تحليل الأعمال المتقدمة.
+    </p>
+  </div>
+
+
+<div class="th-box">
+  <div class="th-header">
+    <div class="th-icon">🌍</div>
+    <div>
+      <div class="th-title">نماذج الثقافة العالمية — Hofstede & Trompenaars مع أمثلة</div>
+      <div class="th-subtitle">الأبعاد الثقافية وتطبيقها في قرارات HR الدولية</div>
+    </div>
+  </div>
+  <div class="th-body">
+
+    <div class="th-formula">أبعاد Hofstede الستة: PDI · IDV · MAS · UAI · LTO · IND</div>
+
+    <div class="th-stage-list">
+
+      <div class="th-stage">
+        <div class="th-sn" style="background:#e8f2fb;color:#1a3a5c;">1</div>
+        <div class="th-sc">
+          <strong>Power Distance Index (PDI) — المسافة من السلطة</strong><br>
+          عالٍ: الموظفون يقبلون التسلسل الهرمي، يتوقعون الأوامر لا المشاركة.<br>
+          منخفض: يتوقعون الاستشارة والمشاركة في القرار.
+          <div class="th-example"><strong>مثال HR:</strong> إدخال نظام تقييم 360° في ثقافة PDI عالٍ (الموظف يُقيّم مديره) → مقاومة شديدة. الحل: البدء بتجريب محدود مع شرح سياقي.</div>
+        </div>
+      </div>
+
+      <div class="th-stage">
+        <div class="th-sn" style="background:#e1f5ee;color:#085041;">2</div>
+        <div class="th-sc">
+          <strong>Individualism vs. Collectivism (IDV) — الفردية مقابل الجماعية</strong><br>
+          فردي عالٍ (USA, UK): الإنجاز الشخصي، المسؤولية الفردية.<br>
+          جماعي عالٍ (اليابان، الصين): انسجام المجموعة، القرار التشاركي.
+          <div class="th-example"><strong>مثال HR:</strong> نظام المكافآت الفردية القائم على الأداء يُحفّز في ثقافة فردية لكنه قد يُدمّر العمل الجماعي في ثقافة جماعية.</div>
+        </div>
+      </div>
+
+      <div class="th-stage">
+        <div class="th-sn" style="background:#fff8e7;color:#633806;">3</div>
+        <div class="th-sc">
+          <strong>Uncertainty Avoidance (UAI) — تجنّب الغموض</strong><br>
+          عالٍ: الحاجة لقواعد واضحة، إجراءات مكتوبة، استقرار.<br>
+          منخفض: مرونة، تقبّل الغموض، الابتكار مُرحَّب به.
+          <div class="th-example"><strong>مثال HR:</strong> تقديم سياسة "العمل المرن بدون جداول محددة" في ثقافة UAI عالٍ → قلق وعدم ارتياح. يجب وضع إطار واضح حتى للمرونة.</div>
+        </div>
+      </div>
+
+      <div class="th-stage">
+        <div class="th-sn" style="background:#f3effe;color:#5b21b6;">4</div>
+        <div class="th-sc">
+          <strong>Masculinity vs. Femininity (MAS) — التوجه الإنجازي مقابل التعاوني</strong><br>
+          مرتفع (Masculine): التنافس، النتائج، النجاح المادي. منخفض (Feminine): جودة الحياة، التعاون، رعاية الآخرين.
+          <div class="th-example"><strong>مثال HR:</strong> ثقافات MAS منخفضة (السويد، الدنمارك) تُقدّر إجازات الأبوة الطويلة وتوازن العمل/الحياة أكثر من الترقيات السريعة.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="th-divider"></div>
+
+    <div class="th-formula">Trompenaars: 7 أبعاد — المقارنة الأهم للامتحان</div>
+
+    <div class="th-stage-list">
+      <div class="th-stage">
+        <div class="th-sn" style="background:#e8f2fb;color:#1a3a5c;">5</div>
+        <div class="th-sc">
+          <strong>Universalism vs. Particularism — العالمي مقابل الخاص</strong><br>
+          عالمي: القواعد تنطبق على الجميع بالتساوي.<br>
+          خاص: العلاقات والسياق يُشكّلان الحكم.
+          <div class="th-example"><strong>مثال SJI:</strong> مدير أمريكي (Universalism) يُطبّق سياسة التأخير على الجميع بما فيهم صديقه المقرّب → صواب في ثقافته. زميله البرازيلي (Particularism) يرى هذا بروداً وجفاءً.</div>
+        </div>
+      </div>
+      <div class="th-stage">
+        <div class="th-sn" style="background:#e1f5ee;color:#085041;">6</div>
+        <div class="th-sc">
+          <strong>Sequential vs. Synchronic Time — الوقت التسلسلي مقابل المتزامن</strong><br>
+          تسلسلي: مهمة واحدة في الوقت (USA, Germany). متزامن: عدة مهام متداخلة (الشرق الأوسط، أمريكا اللاتينية).
+          <div class="th-example"><strong>مثال HR:</strong> جدولة اجتماعات وطريقة إدارة المشاريع يجب أن تتكيّف مع نمط الوقت السائد في كل ثقافة.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="th-exam-tip">⭐ <strong>في الامتحان:</strong> Hofstede = يُشخّص الثقافة. Trompenaars = يُوجّه التعامل مع الاختلاف. إذا سألك عن "لماذا فشل نظام الحوافز في فرع اليابان؟" → ابحث عن IDV (جماعي لا فردي). "لماذا لا يُقدّم الموظفون مقترحاتهم للإدارة؟" → PDI عالٍ.</div>
+  </div>
+</div>
+
+
+
+
+  <!-- ══════════════════ SECTION 1 — CULTURE ══════════════════ -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-num">1</div>
+      <div>
+        <h2>نظريات الثقافة العالمية</h2>
+        <div class="en-title">Cultural Theories — Hall · Hofstede · Trompenaars</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>الثقافة: البرمجيات الخفية <span class="en">Culture as "Software of the Mind" — Hofstede</span></h3>
+      <p class="body-text">الثقافة مجموعة من المعتقدات والقيم والمنظورات التي تُورَّث عبر الأجيال وتؤثر في كل تصرف دون أن نشعر. Hofstede يُشبّهها بـ "برمجيات العقل" — تعمل في الخلفية دائماً.</p>
+      <div class="theory-grid">
+        <div class="theory-item">
+          <h4>طبقات شاين للثقافة</h4>
+          <span class="en">Schein's 3 Cultural Layers</span>
+          <p><strong>المصنوعات والمنتجات (Artifacts):</strong> اللغة، الملبس، الطعام، الفن — ما نرى. <strong>القيم والأعراف (Values):</strong> ما هو صح وخطأ. <strong>المسلّمات الأساسية (Assumptions):</strong> لا تُقال لكنها تُوجّه كل شيء.</p>
+        </div>
+        <div class="theory-item">
+          <h4>الثقافة vs المناخ</h4>
+          <span class="en">Culture vs. Climate</span>
+          <p>الثقافة نتاج معتقدات مشتركة عميقة. المناخ قد ينشأ من تصرفات بعض المديرين أو ضغوط خارجية مؤقتة. الخطأ: معالجة ثقافة سليمة كما لو كانت مريضة فيما المشكلة مناخية فقط.</p>
+        </div>
+        <div class="theory-item">
+          <h4>الذكاء الثقافي</h4>
+          <span class="en">Cultural Intelligence (CQ)</span>
+          <p>ثلاثة أبعاد: <strong>المعرفي</strong> (التفكير والتعلم)، <strong>الدافعي</strong> (الاستمتاع بالاختلاف بدل الخوف منه)، <strong>السلوكي</strong> (التكيّف في سياقات متعددة). البرامج تُركّز على المعرفي وتُهمل الأهم!</p>
+        </div>
+        <div class="theory-item">
+          <h4>لا ثقافة أفضل من أخرى</h4>
+          <span class="en">No Universal "Best" Culture</span>
+          <p>الهدف ليس إلغاء الاختلافات — بل تحويلها من مصادر توتر إلى مصادر قوة (التآزر الثقافي / Cultural Synergy).</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>نظرية هول: ثقافات السياق العالي والمنخفض <span class="en">Hall's High-Context vs Low-Context Cultures</span></h3>
+      <table class="compare-table">
+        <tr><th>المعيار</th><th>السياق العالي — High-Context</th><th>السياق المنخفض — Low-Context</th></tr>
+        <tr><td>المعنى في التواصل</td><td>يكمن في السياق، العلاقات، والتاريخ المشترك — ما لم يُقل أهم مما قيل</td><td>الكلمات تحمل المعنى كاملاً — "ما تقوله هو ما تقصده"</td></tr>
+        <tr><td>العلاقات</td><td>شبكات معقدة وطويلة الأمد — الأعمال والحياة الشخصية متداخلة</td><td>علاقات أقل عمقاً — يتطلب تواصلاً صريحاً</td></tr>
+        <tr><td>الأعمال</td><td>"لا أعمال قبل أن أعرفك شخصياً"</td><td>"الأعمال أعمال — لا شيء شخصي"</td></tr>
+        <tr><td>أمثلة دول</td><td>الصين، اليابان، فرنسا، أمريكا اللاتينية، دول الخليج</td><td>أمريكا، كندا، بريطانيا، أستراليا</td></tr>
+      </table>
+      <div class="note-box">
+        <strong>📌 تطبيق عملي:</strong> مدير ياباني قد يُبدو موافقاً في الاجتماع لكنه لم يقبل فعلاً (High-Context). مدير أمريكي يعتبر هذا خداعاً (Low-Context). كلاهما محق في إطار ثقافته — HR يُجسّر الفجوة.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>أبعاد هوفستيد الستة <span class="en">Hofstede's 6 Cultural Dimensions</span></h3>
+      <div class="hofstede-grid">
+        <div class="hofstede-card h1">
+          <h4>مسافة السلطة</h4>
+          <span class="dim-en">Power Distance</span>
+          <p>درجة قبول توزيع السلطة غير المتساوي. <strong>عالية:</strong> المليزيون، العرب، الهند. <strong>منخفضة:</strong> الدنمارك، إسرائيل، النمسا. تأثير HR: في مجتمعات المسافة العالية يُتوقع من المدير الإبقاء على الهيبة وعدم المشاركة الزائدة.</p>
+        </div>
+        <div class="hofstede-card h2">
+          <h4>الفردية vs الجماعية</h4>
+          <span class="dim-en">Individualism vs Collectivism</span>
+          <p>هل الشخص ينظر لنفسه كفرد مستقل أم كجزء من مجموعة؟ <strong>فردية:</strong> أمريكا، أستراليا. <strong>جماعية:</strong> كوريا الجنوبية، الصين، أمريكا اللاتينية. مثال: المكافآت الجماعية تُحسّن أداء القوى الجماعية، لكن المكافآت الفردية قد تُفتّتها.</p>
+        </div>
+        <div class="hofstede-card h3">
+          <h4>تجنب عدم اليقين</h4>
+          <span class="dim-en">Uncertainty Avoidance</span>
+          <p>درجة الراحة مع الغموض. <strong>عالية:</strong> اليونان، فرنسا، اليابان. <strong>منخفضة:</strong> سنغافورة، الدنمارك. مثال: الياباني يحتاج راتباً ثابتاً عالياً أكثر من عمولات متقلبة حتى لو قيمتها أعلى.</p>
+        </div>
+        <div class="hofstede-card h4">
+          <h4>الذكورية vs الأنوثة</h4>
+          <span class="dim-en">Masculinity vs Femininity</span>
+          <p>هل تُقدّر الثقافة الإنجاز والتنافس أم الرعاية والتوافق؟ <strong>ذكورية:</strong> اليابان، هنغاريا. <strong>أنثوية:</strong> الدول الإسكندنافية، هولندا. مثال: برنامج التوازن بين العمل والحياة قد لا يُقبل في ثقافة ذكورية.</p>
+        </div>
+        <div class="hofstede-card h5">
+          <h4>التوجه الزمني</h4>
+          <span class="dim-en">Long-term vs Short-term Orientation</span>
+          <p>هل الثقافة تُركّز على المستقبل والاستدامة أم على النتائج الفورية؟ <strong>طويل الأمد:</strong> الصين، اليابان. <strong>قصير الأمد:</strong> غرب أفريقيا، أمريكا. تؤثر على قرارات التقدم الوظيفي والأقدمية مقابل الأداء.</p>
+        </div>
+        <div class="hofstede-card h6">
+          <h4>الانطلاق vs الكبح</h4>
+          <span class="dim-en">Indulgence vs Restraint</span>
+          <p>درجة السماح باشباع الرغبات. <strong>انطلاق:</strong> أمريكا اللاتينية، كندا. <strong>كبح:</strong> روسيا، الهند، الصين. مثال: الشاب الأمريكي الذي يُريد الاستمتاع بإجازاته قد يُحكم عليه سلباً في بيئة كبح.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>ترومبينارز وهامبدن-تيرنر: التوترات الثقافية السبعة <span class="en">Trompenaars & Hampden-Turner — 7 Cultural Dilemmas</span></h3>
+      <table class="compare-table">
+        <tr><th>التوتر</th><th>الطرف الأول</th><th>الطرف الثاني</th><th>مثال HR</th></tr>
+        <tr><td><strong>Universal / Particular</strong></td><td>قواعد ثابتة للجميع</td><td>المرونة حسب السياق</td><td>فصل موظف خالف القاعدة vs منحه استثناءً لظرف خاص</td></tr>
+        <tr><td><strong>Individual / Communitarian</strong></td><td>الحرية الفردية</td><td>مصلحة المجموعة</td><td>التنافس بين الفرق يُحفّز الفرديين لكن يُحبط الجماعيين</td></tr>
+        <tr><td><strong>Neutral / Affective</strong></td><td>كتمان العواطف</td><td>التعبير الحر عنها</td><td>المدير الإسباني يُعبّر بحدة — الياباني يُفسّرها إهانة</td></tr>
+        <tr><td><strong>Specific / Diffuse</strong></td><td>حدود واضحة بين العام والخاص</td><td>العلاقة تشمل كل الجوانب</td><td>رفض دعوة اجتماعية من المدير قد يُضر بمسارك في ثقافة Diffuse</td></tr>
+        <tr><td><strong>Achieved / Ascribed</strong></td><td>الإنجاز الشخصي هو المعيار</td><td>العائلة والمكانة والأقدمية</td><td>ترقية الشاب الكفء قد تُثير استياء المرؤوسين الأكبر سناً</td></tr>
+        <tr><td><strong>Sequential / Synchronic</strong></td><td>الوقت خطي — والوقت = المال</td><td>الوقت دوري — الصبر فضيلة</td><td>المدير الياباني يستاء من تأخّر زميله الفرنسي المتكرر</td></tr>
+        <tr><td><strong>Internal / External</strong></td><td>الإنسان يتحكم في مصيره</td><td>الظروف تُوجّه — التكيّف أذكى</td><td>النرويجي يؤمن أن العمل الجاد يُضمن الترقية — الروسي لا يثق بذلك</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>عقبات التفاهم الثقافي وحلولها <span class="en">Obstacles & Solutions</span></h3>
+      <div class="theory-grid">
+        <div class="theory-item">
+          <h4>الإثنومركزية والضيق الذهني</h4>
+          <span class="en">Ethnocentrism & Parochialism</span>
+          <p>"طريقتنا هي الأفضل" (إثنومركزية) أو "هي الوحيدة" (ضيق ذهني). الثانية أصعب تغييراً — يحتاج وقتاً وخبرة وتدريباً.</p>
+        </div>
+        <div class="theory-item">
+          <h4>القوالب النمطية الثقافية</h4>
+          <span class="en">Cultural Stereotypes</span>
+          <p>وصف الثقافة بصفات جماعية ثم تطبيقها على الفرد. تذكّر: الصفات تصف الأنماط الجماعية لا تُلزم كل فرد.</p>
+        </div>
+        <div class="theory-item">
+          <h4>الحتمية الثقافية</h4>
+          <span class="en">Cultural Determinism</span>
+          <p>"الثقافة جعلتني أفعل هذا." يُعفي الأفراد من المسؤولية. في الغالب ليست الثقافة هي العقبة بل طريقة التطبيق.</p>
+        </div>
+        <div class="theory-item">
+          <h4>النسبية الثقافية</h4>
+          <span class="en">Cultural Relativism</span>
+          <p>"كل شيء نسبي." خطأ — هناك مطلقات عالمية للنزاهة والكرامة الإنسانية تتجاوز الثقافات.</p>
+        </div>
+      </div>
+      <div class="tip-box" style="margin-top:14px;">
+        <strong>🎯 خطوات التآزر الثقافي (Trompenaars & Hampden-Turner — 4Rs):</strong> Recognize (وعي بالاختلاف) → Respect (تقدير القيمة) → Reconcile (إيجاد مسار مشترك) → Realize (التطبيق والترسيخ).
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>أدوات بناء التفاهم الثقافي في HR</h3>
+      <ul class="info-list">
+        <li><span class="bullet teal"></span><strong>مجموعات التركيز (Focus Groups):</strong> تخلق مساحة آمنة لآراء متنوعة وتوليد حلول مبتكرة.</li>
+        <li><span class="bullet teal"></span><strong>مجموعات الموارد (ERGs):</strong> مصدر معلومات ثقافية حقيقية للمبادرات والسياسات.</li>
+        <li><span class="bullet teal"></span><strong>الإرشاد المعكوس (Reverse Mentorship):</strong> كل طرف يُعلّم الآخر ثقافته — يبني الثقة ويُنمّي التعاطف الحقيقي.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>الأنظمة القانونية العالمية <span class="en">Global Legal Systems</span></h3>
+      <div class="three-grid">
+        <div class="three-item">
+          <h4>القانون المدني</h4>
+          <span class="en">Civil Law</span>
+          <p>مُقنَّن في وثائق تشريعية. يُطبَّق بشكل استنتاجي من النص. القاضي لا يُنشئ قانوناً — يُطبّق ما هو مكتوب.</p>
+        </div>
+        <div class="three-item">
+          <h4>القانون العرفي</h4>
+          <span class="en">Common Law</span>
+          <p>يستند إلى السوابق القضائية — الأحكام السابقة تُشكّل المبادئ. يتطور تدريجياً عبر القضايا. أمريكا وبريطانيا.</p>
+        </div>
+        <div class="three-item">
+          <h4>القانون الديني</h4>
+          <span class="en">Religious Law</span>
+          <p>مبني على المعتقدات الدينية وتفسيراتها: الشريعة الإسلامية، القانون الكنسي، الهالاخا اليهودية. HR يفهم علاقتها بالقانون المدني في كل دولة.</p>
+        </div>
+      </div>
+      <div class="note-box" style="margin-top:14px;">
+        <strong>📌 مفاهيم قانونية جوهرية:</strong> سيادة القانون (Rule of Law)، الاختصاص القضائي (Jurisdiction)، تعارض القوانين (Conflict of Laws)، تسوّق المحكمة (Forum Shopping). HR ليس محامياً لكنه يُدرك هذه المفاهيم لإدارة المخاطر.
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══════════════════ SECTION 2 — BUSINESS ACUMEN ══════════════════ -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-num">2</div>
+      <div>
+        <h2>ذكاء الأعمال</h2>
+        <div class="en-title">Business Acumen Competency</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>لماذا يحتاج HR ذكاء الأعمال؟ <span class="en">Why Business Acumen Matters</span></h3>
+      <p class="body-text">ذكاء الأعمال يأخذ HR خارج "منطقة الراحة" التقنية — من معرفة قوانين العمل إلى فهم كيف تُنشئ المنظمة قيمتها وكيف يُؤثّر كل قرار على الصورة الكبيرة.</p>
+      <div class="highlight">
+        <p>💡 <strong>الانتقال الجوهري:</strong> HR التقليدي يسأل "ما السياسة المناسبة؟". HR الاستراتيجي يسأل "كيف يُساهم هذا في تحقيق أهداف المنظمة وخلق قيمة ملموسة؟"</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>كيف تُنشئ المنظمة قيمتها؟ <span class="en">Value Creation & Value Chain</span></h3>
+      <ul class="info-list">
+        <li><span class="bullet navy"></span><strong>سلسلة القيمة (Value Chain):</strong> تسلسل الأنشطة التي تحوّل الموارد إلى منتج أو خدمة يدفع العميل ثمنه. كل حلقة تُضيف قيمة.</li>
+        <li><span class="bullet navy"></span><strong>الميزة التنافسية (Competitive Advantage):</strong> ما يجعل المنظمة أفضل من المنافسين — جودة، ابتكار، كفاءة، خدمة.</li>
+        <li><span class="bullet navy"></span><strong>ما تُضيفه HR للقيمة:</strong> جودة "مجمّعات المواهب المحورية" — الموظفون الذين تدور حولهم الاستراتيجية. HR يحميها ويُطوّرها ويُجدّدها.</li>
+        <li><span class="bullet navy"></span><strong>اتفاقيات مستوى الخدمة (SLAs):</strong> HR يُحدد بوضوح ما تُقدّمه للدوائر الداخلية: مدة ملء الوظائف، الاستجابة للشكاوى، دقة الرواتب.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>دورة حياة المنظمة والمنتج <span class="en">Organizational & Product Life Cycle</span></h3>
+      <div class="lifecycle">
+        <div class="lc-stage intro">
+          <h5>📍 التقديم<br>Introduction</h5>
+          <p>إيرادات منخفضة، لا هيكل رسمي، ثقافة تُبنى. HR: استقطاب المواهب، السيطرة على المخاطر.</p>
+        </div>
+        <div class="lc-stage growth">
+          <h5>🚀 النمو<br>Growth</h5>
+          <p>نمو متسارع، توازن بين الابتكار والكفاءة. HR: بناء تكتيكي للمواهب، هيكلة المناصب.</p>
+        </div>
+        <div class="lc-stage mature">
+          <h5>🏔️ النضج<br>Maturity</h5>
+          <p>سوق مُشبعة، منافسة عالية، ربحية أضيق. HR: استقرار القيادة، تخطيط الخلافة، تفعيل الثقافة.</p>
+        </div>
+        <div class="lc-stage renew">
+          <h5>🔄 التجديد<br>Renewal/Decline</h5>
+          <p>إعادة ابتكار أو انحدار. HR: إعادة هيكلة القوى، تغيير القيادة، إدارة التغيير والأزمات.</p>
+        </div>
+      </div>
+      <div class="tip-box" style="margin-top:14px;">
+        <strong>🎯 للامتحان:</strong> في كل مرحلة تتغيّر أولويات HR. الخطأ الشائع: استمرار ممارسات مرحلة النضج في مرحلة التجديد — يُعيق الابتكار الضروري.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>تحليل PESTLE — قراءة البيئة الخارجية <span class="en">PESTLE Analysis</span></h3>
+      <p class="body-text">أداة لتحليل العوامل الخارجية التي تؤثر في المنظمة وقراراتها الاستراتيجية.</p>
+      <div class="pestle-grid">
+        <div class="pestle-item p-item">
+          <div class="letter">P</div>
+          <h4>السياسة<br>Political</h4>
+          <p>قوانين، ضرائب، سياسات تجارية</p>
+        </div>
+        <div class="pestle-item e-item">
+          <div class="letter">E</div>
+          <h4>الاقتصاد<br>Economic</h4>
+          <p>معدلات الفائدة، التضخم، الأجور</p>
+        </div>
+        <div class="pestle-item s-item">
+          <div class="letter">S</div>
+          <h4>الاجتماع<br>Social</h4>
+          <p>التركيبة السكانية، القيم، التعليم</p>
+        </div>
+        <div class="pestle-item t-item">
+          <div class="letter">T</div>
+          <h4>التكنولوجيا<br>Technological</h4>
+          <p>الأتمتة، الذكاء الاصطناعي، البيانات</p>
+        </div>
+        <div class="pestle-item l-item">
+          <div class="letter">L</div>
+          <h4>القانون<br>Legal</h4>
+          <p>تشريعات العمل، الخصوصية، الامتثال</p>
+        </div>
+        <div class="pestle-item en-item">
+          <div class="letter">E</div>
+          <h4>البيئة<br>Environmental</h4>
+          <p>تغيّر المناخ، اللوائح البيئية</p>
+        </div>
+      </div>
+      <div class="note-box" style="margin-top:14px;">
+        <strong>📌 مثال تطبيقي:</strong> أتمتة المصانع (T) → تقليص الوظائف الروتينية (E) → حاجة لمهارات جديدة (S) → HR يُصمّم برامج إعادة التأهيل قبل أن تنكشف الفجوة.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>المصطلحات التجارية الأساسية لـ HR <span class="en">Essential Business Terms</span></h3>
+      <div class="theory-grid">
+        <div class="theory-item">
+          <h4>الإيرادات والربح والخسارة</h4>
+          <span class="en">Revenue · Profit & Loss (P&L)</span>
+          <p><strong>Revenue:</strong> إجمالي المبيعات. <strong>Net Income:</strong> الإيرادات – التكاليف. <strong>P&L:</strong> ماذا ربحنا أو خسرنا؟ HR يفهم هذه لربط قراراته بالأثر المالي.</p>
+        </div>
+        <div class="theory-item">
+          <h4>التكاليف الثابتة والمتغيرة</h4>
+          <span class="en">Fixed vs Variable Costs</span>
+          <p><strong>ثابتة:</strong> الإيجار، التأمين — لا تتغير مع الإنتاج. <strong>متغيرة:</strong> الرواتب المرتبطة بالإنتاج، المواد. HR يعرف أيّ تكاليف تُؤثّر على قرارات التوظيف.</p>
+        </div>
+        <div class="theory-item">
+          <h4>مؤشرات الأداء الرئيسية</h4>
+          <span class="en">Key Performance Indicators (KPIs)</span>
+          <p>مقاييس كمية وكيفية للمناطق الحيوية في العمل. تشمل: وقت التوظيف، معدل الدوران، التزام الميزانية، درجات الانخراط.</p>
+        </div>
+        <div class="theory-item">
+          <h4>الخطة الاستراتيجية ومكوناتها</h4>
+          <span class="en">Strategic Plan Components</span>
+          <p>رؤية + رسالة + قيم جوهرية + أهداف (قصيرة وطويلة الأمد) + تحليل SWOT + خطط عمل. HR يقرأ هذه الوثيقة ليوجّه كل قراراته.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══════════════════ SECTION 3 — BUSINESS ANALYSIS ══════════════════ -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-num">3</div>
+      <div>
+        <h2>تحليل الأعمال وأدوات الذكاء المؤسسي</h2>
+        <div class="en-title">Business Analysis & Intelligence Tools</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>الذكاء المؤسسي: المكوّنات الثلاثة <span class="en">Business Intelligence (BI) — 3 Components</span></h3>
+      <ol class="steps">
+        <li><strong>جمع البيانات (Data Gathering):</strong> أنظمة الكمبيوتر في كل جزء من المنظمة تجمع البيانات باستمرار — مبيعات، موظفون، عملاء.</li>
+        <li><strong>تخزين البيانات (Data Warehousing):</strong> البيانات تُنظَّف وتُوحَّد وتُخزَّن في قواعد بيانات متخصصة. نظام ERP يُدمّج هذه القواعد في منصة موحّدة.</li>
+        <li><strong>الاستعلام والتقارير (Query & Reporting):</strong> المستخدمون يصلون للبيانات ويُحلّلونها بأشكال مختلفة: رسوم بيانية، جداول، تنبؤات.</li>
+      </ol>
+      <div class="term">
+        <strong>نظام ERP</strong> <span class="en-term">Enterprise Resource Planning</span> — يُدمّج جميع وظائف المنظمة (HR, Finance, Operations, Sales) في نظام معلومات موحّد. يُتيح للجميع نفس البيانات الحديثة.
+      </div>
+      <div class="term">
+        <strong>HRIS</strong> <span class="en-term">HR Information System</span> — قاعدة بيانات HR ضمن منظومة ERP: الرواتب، تخطيط القوى، تقييم الأداء، التدريب، تخطيط الخلافة.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>أنواع التحليل في HR: من الماضي إلى المستقبل <span class="en">Analytics Types</span></h3>
+      <table class="compare-table">
+        <tr><th>النوع</th><th>التركيز الزمني</th><th>مثال في HR</th></tr>
+        <tr>
+          <td><strong>تحليل الاتجاهات</strong><br><em>Trend Analysis</em></td>
+          <td>الماضي</td>
+          <td>مقارنة فعّالية قنوات التوظيف على مدى 3 سنوات لتحديد أيّها يجذب موظفين يبقون أطول</td>
+        </tr>
+        <tr>
+          <td><strong>لوحة المعلومات</strong><br><em>Dashboard Analytics</em></td>
+          <td>الحاضر</td>
+          <td>معدل الدوران الحالي مقارنةً بالهدف، موزّعاً جغرافياً وحسب الوظيفة والجنس</td>
+        </tr>
+        <tr>
+          <td><strong>التحليل التنبؤي</strong><br><em>Predictive Analytics</em></td>
+          <td>المستقبل</td>
+          <td>التنبؤ بمخاطر الدوران لكل موظف وتحديد من هو على وشك المغادرة قبل أن يقدّم استقالته</td>
+        </tr>
+        <tr>
+          <td><strong>تعلم الآلة</strong><br><em>Machine Learning</em></td>
+          <td>ديناميكي ومستمر</td>
+          <td>نظام يُراجع السير الذاتية ويُرسل فرص العمل تلقائياً لأفضل المرشحين المحتملين</td>
+        </tr>
+      </table>
+      <div class="warn-box">
+        <strong>⚠️ تحذير مهم:</strong> التنبؤ ليس مضموناً — الأزمات والابتكارات التكنولوجية المفاجئة قد تقلب كل التوقعات. استخدم التحليل التنبؤي كأداة دعم لا كقرار نهائي.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>بطاقة الأداء المتوازنة <span class="en">Balanced Scorecard — Kaplan & Norton</span></h3>
+      <p class="body-text">أداة تُعطي صورة شاملة عن أداء المنظمة من 4 منظورات متوازنة — ليس المالي وحده.</p>
+      <div class="theory-grid">
+        <div class="theory-item">
+          <h4>المنظور المالي</h4>
+          <span class="en">Financial Perspective</span>
+          <p>كيف ننظر للمساهمين؟ ROI، نمو الإيرادات، ربحية الأصول.</p>
+        </div>
+        <div class="theory-item">
+          <h4>منظور العملاء</h4>
+          <span class="en">Customer Perspective</span>
+          <p>كيف يرانا العملاء؟ رضا العملاء، حصة السوق، الاحتفاظ بالعملاء.</p>
+        </div>
+        <div class="theory-item">
+          <h4>منظور العمليات الداخلية</h4>
+          <span class="en">Internal Process Perspective</span>
+          <p>ما الذي يجب أن نُتقن؟ كفاءة العمليات، جودة المنتج، وقت دورة الإنتاج.</p>
+        </div>
+        <div class="theory-item">
+          <h4>منظور التعلم والنمو</h4>
+          <span class="en">Learning & Growth Perspective</span>
+          <p>كيف نُحافظ على قدرتنا على التغيير والتحسين؟ تطوير المهارات، رضا الموظفين، بنية المعلومات.</p>
+        </div>
+      </div>
+      <div class="tip-box" style="margin-top:14px;">
+        <strong>🎯 دور HR في Balanced Scorecard:</strong> HR يُسهم في منظور التعلم والنمو مباشرةً، ويُؤثّر في بقية المنظورات من خلال جودة المواهب. هذا هو حجة HR لأن يكون شريكاً استراتيجياً لا مُنفّذ تعليمات.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>تخطيط السيناريوهات <span class="en">Scenario Planning</span></h3>
+      <p class="body-text">بدلاً من التنبؤ بمستقبل واحد — ماذا لو خطّطنا لأكثر من سيناريو؟ HR يستعين بالتجارب السابقة (كالجائحة مثلاً) لبناء خطط بديلة.</p>
+      <ul class="info-list">
+        <li><span class="bullet green"></span>هل كانت التكنولوجيا والدعم الصحي جاهزَين للتحوّل المفاجئ للعمل عن بُعد؟</li>
+        <li><span class="bullet green"></span>هل كانت هناك خطة لإعادة الموظفين الدوليين بسرعة؟</li>
+        <li><span class="bullet green"></span>بعد الأزمة، هل استطعنا تلبية احتياجات التوظيف الجديدة بسرعة؟</li>
+      </ul>
+      <div class="note-box">
+        <strong>📌 السيناريو التخطيطي ليس تنبؤاً — بل استعداداً.</strong> المنظمة التي خطّطت للسيناريوهات السيئة تتعافى أسرع حين تحدث، لأنها لا تبدأ من الصفر.
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══════════════════ SECTION 4 — BUDGETS ══════════════════ -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-num">4</div>
+      <div>
+        <h2>الميزانيات والتوافق الاستراتيجي</h2>
+        <div class="en-title">Budgets & Strategic Alignment</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>أنواع الميزانيات <span class="en">Budgeting Methods</span></h3>
+      <table class="compare-table">
+        <tr><th>النوع</th><th>كيف يعمل؟</th><th>الميزة</th><th>العيب</th></tr>
+        <tr>
+          <td><strong>الميزانية التزايدية</strong><br><em>Incremental</em></td>
+          <td>تأخذ ميزانية العام الماضي وتزيدها/تُنقصها بنسبة ثابتة</td>
+          <td>سريعة وبسيطة</td>
+          <td>تُكرّس الإنفاق القديم حتى لو تغيّرت الظروف</td>
+        </tr>
+        <tr>
+          <td><strong>الميزانية الصفرية</strong><br><em>Zero-Based</em></td>
+          <td>كل بند يبدأ من صفر ويُبرَّر من جديد</td>
+          <td>تُقضي على الإنفاق الهدر، تُركّز على الأولويات الفعلية</td>
+          <td>كثيفة الوقت والجهد في البداية</td>
+        </tr>
+        <tr>
+          <td><strong>الميزانية القائمة على النشاط</strong><br><em>Activity-Based</em></td>
+          <td>تُخصَّص الموارد بحسب تكلفة كل نشاط وأهميته الاستراتيجية</td>
+          <td>ترابط واضح بين الإنفاق والمخرجات</td>
+          <td>تحتاج بيانات تاريخية لتقديرات دقيقة</td>
+        </tr>
+        <tr>
+          <td><strong>الميزانية بالصيغة</strong><br><em>Formula-Based</em></td>
+          <td>وحدات مختلفة تحصل على نسب مختلفة من الميزانية الكلية</td>
+          <td>عادلة وشفافة للمقارنة بين الأقسام</td>
+          <td>قد لا تعكس الاحتياجات الفعلية لكل وحدة</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>HR وحجة الأعمال (Business Case) <span class="en">Building a Business Case for HR</span></h3>
+      <p class="body-text">HR يتنافس على موارد محدودة — يجب تقديم مقترحاته بلغة الأعمال لا بلغة HR الداخلية.</p>
+      <ul class="info-list">
+        <li><span class="bullet navy"></span><strong>ملخص تنفيذي:</strong> المشكلة والحل المقترح في 2-3 جمل.</li>
+        <li><span class="bullet navy"></span><strong>التوافق الاستراتيجي:</strong> لماذا هذا يُخدم أهداف المنظمة؟</li>
+        <li><span class="bullet navy"></span><strong>الفوائد المتوقعة:</strong> كميّة وكيفية — توفير، إنتاجية، تقليل مخاطر.</li>
+        <li><span class="bullet navy"></span><strong>تحليل التكلفة والعائد (ROI):</strong> (العائد – التكلفة) ÷ التكلفة × 100%</li>
+        <li><span class="bullet navy"></span><strong>المخاطر:</strong> ماذا يحدث لو لم نُنفّذ؟</li>
+        <li><span class="bullet navy"></span><strong>الجدول الزمني والمؤشرات:</strong> متى وكيف نعرف أن المبادرة نجحت؟</li>
+      </ul>
+      <div class="tip-box">
+        <strong>🎯 قاعدة Business Case:</strong> القيادة لا تشتري "برامج HR" — تشتري "حلولاً لمشاكل أعمال". أطرح مقترحك بهذه الزاوية دائماً.
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- GLOSSARY -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-num">📖</div>
+      <div>
+        <h2>المصطلحات الأساسية — الجزء الرابع</h2>
+        <div class="en-title">Key Terms Glossary — Pages 301–400</div>
+      </div>
+    </div>
+    <div class="card">
+      <table class="compare-table">
+        <tr><th>المصطلح العربي</th><th>الإنجليزي</th><th>التعريف المختصر</th></tr>
+        <tr><td>برمجيات العقل</td><td>Software of the Mind (Hofstede)</td><td>استعارة تصف كيف تُشكّل الثقافة تفكيرنا دون وعي</td></tr>
+        <tr><td>الذكاء الثقافي</td><td>Cultural Intelligence (CQ)</td><td>القدرة على الوعي والتكيّف الفعّال في سياقات ثقافية متعددة</td></tr>
+        <tr><td>ثقافات السياق العالي</td><td>High-Context Cultures</td><td>ثقافات يحمل فيها السياق والعلاقات معنى الرسالة أكثر من الكلمات</td></tr>
+        <tr><td>مسافة السلطة</td><td>Power Distance</td><td>درجة قبول التراتبية وعدم مساواة السلطة</td></tr>
+        <tr><td>الإثنومركزية</td><td>Ethnocentrism</td><td>الحكم على ثقافات أخرى بمعايير ثقافتك الخاصة</td></tr>
+        <tr><td>التآزر الثقافي</td><td>Cultural Synergy</td><td>خلق "طريق ثالث" يستفيد من أفضل ما في كل ثقافة</td></tr>
+        <tr><td>التوفيق بين التوترات</td><td>Dilemma Reconciliation</td><td>خطوات Trompenaars: وعي، احترام، توفيق، تطبيق</td></tr>
+        <tr><td>سلسلة القيمة</td><td>Value Chain</td><td>تسلسل الأنشطة التي تُحوّل المدخلات إلى قيمة للعميل</td></tr>
+        <tr><td>دورة حياة المنظمة</td><td>Organizational Life Cycle</td><td>تقديم → نمو → نضج → تجديد أو انحدار</td></tr>
+        <tr><td>تحليل PESTLE</td><td>PESTLE Analysis</td><td>السياسي، الاقتصادي، الاجتماعي، التكنولوجي، القانوني، البيئي</td></tr>
+        <tr><td>بطاقة الأداء المتوازنة</td><td>Balanced Scorecard</td><td>أداة تُقيس الأداء من 4 منظورات: مالي، عملاء، عمليات، تعلم</td></tr>
+        <tr><td>التحليل التنبؤي</td><td>Predictive Analytics</td><td>استخدام البيانات التاريخية والحالية للتنبؤ بالمستقبل</td></tr>
+        <tr><td>تخطيط السيناريوهات</td><td>Scenario Planning</td><td>استعداد لمستقبل بديل بناءً على تجارب وسيناريوهات "ماذا لو؟"</td></tr>
+        <tr><td>الميزانية الصفرية</td><td>Zero-Based Budgeting</td><td>كل بند يُبرَّر من الصفر — يُقضي على الإنفاق الهدر</td></tr>
+        <tr><td>حجة الأعمال</td><td>Business Case</td><td>عرض مُقنع بلغة الأعمال لطلب الموارد وإثبات القيمة</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- INTEGRATION NOTE -->
+  <div class="overview-card" style="margin-top:30px;">
+    <h2>🔗 تكامل الكفاءات في هذا الجزء</h2>
+    <p style="line-height:2.1;">
+      <strong>Global Mindset + Business Acumen:</strong> فهم الثقافات يُمكّن HR من تصميم استراتيجيات أعمال تعمل فعلاً في السياقات المحلية المختلفة، لا استراتيجيات مفروضة من المركز.<br>
+      <strong>Business Acumen + Analytical Aptitude:</strong> البيانات وحدها لا تكفي — فهم كيف تُنشئ المنظمة قيمتها يُحوّل الأرقام إلى قرارات ذكية.<br>
+      <strong>Business Acumen + Communication:</strong> حجة الأعمال القوية = تحليل دقيق + تواصل بلغة القيادة. بدون أحدهما، القيمة المقترحة تضيع.
+    </p>
+  </div>
+
+  <div class="tip-box" style="margin-top:24px; font-size:15px;">
+    <strong>🎯 نصيحة الدراسة:</strong> نظريات Hofstede و Trompenaars يُحبّها الامتحان — تظهر في أسئلة السيناريوهات الدولية. حفظ أمثلة الدول مع كل بُعد يُساعد في تحديد السياق بسرعة. وفي Business Acumen: ابدأ دائماً بسؤال "كيف يُضيف هذا قيمة للمنظمة؟"
+  </div>
+
+  <!-- STUDY PLAN -->
+  <div class="overview-card" style="margin-top:36px; background:linear-gradient(135deg,#0c2461,#1a3a5c);">
+    <h2>📅 تقدّمك — ثلثا الكتاب مكتملة! 🎉</h2>
+    <table class="compare-table" style="margin-top:16px; background:rgba(255,255,255,.08);">
+      <tr style="background:rgba(255,255,255,.15);">
+        <th style="background:transparent;color:white;">الجزء</th>
+        <th style="background:transparent;color:white;">الصفحات</th>
+        <th style="background:transparent;color:white;">المحتوى</th>
+        <th style="background:transparent;color:white;">الحالة</th>
+      </tr>
+      <tr style="color:white;font-size:14px;"><td>الأول</td><td>1–100</td><td>المقدمة + Leadership + Ethical Practice</td><td>✅</td></tr>
+      <tr style="color:white;font-size:14px;"><td>الثاني</td><td>101–200</td><td>Ethical Practice (تعمّق) + I&D</td><td>✅</td></tr>
+      <tr style="color:white;font-size:14px;"><td>الثالث</td><td>201–300</td><td>Relationship + Communication + Global Mindset</td><td>✅</td></tr>
+      <tr style="color:white;font-size:14px;background:rgba(200,168,75,.2);"><td><strong>الرابع</strong></td><td><strong>301–400</strong></td><td><strong>Global Mindset (تعمّق) + Business Acumen</strong></td><td>✅ <strong>أنت هنا</strong></td></tr>
+      <tr style="color:white;font-size:14px;"><td>الخامس</td><td>401–480</td><td>Consultation + Analytical Aptitude + People Domain</td><td>⏳ التالي</td></tr>
+      <tr style="color:white;font-size:14px;"><td>السادس</td><td>481–560</td><td>Organization Domain + Workplace Domain</td><td>⏳</td></tr>
+      <tr style="color:white;font-size:14px;"><td>السابع</td><td>561–601</td><td>مراجعة نهائية + مصطلحات + نصائح</td><td>⏳</td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <p style="margin-bottom:10px;font-size:15px;">وصلنا لثلثَي الكتاب! 💪 — اطلب الجزء الخامس (صفحات 401–480) متى شئت</p>
+    <p style="font-size:13px;color:#aaa;">SHRM Learning System 2023 · ملخص دراسي بالعربية</p>
+  </div>
+
+</div>
+</body>
+</html>

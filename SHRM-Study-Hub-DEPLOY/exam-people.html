@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HR People Domain Exam — SHRM Practice Exam</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f2ea;--card:#fff;--navy:#0d1b2e;--navy2:#163456;
+  --ac:#1e7a4a;--acl:#e1f5ee;
+  --gold:#c8a84b;--bdr:#ddd6c8;--txt:#1a1a1a;--mut:#777;
+  --grn:#15803d;--red:#b91c1c;--grnl:#e1f5ee;--redl:#fcebeb;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;}
+.screen{display:none;}.screen.active{display:block;}
+
+/* HEADER */
+.hdr{background:linear-gradient(160deg,var(--navy),var(--navy2));padding:16px 20px;color:#fff;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px rgba(0,0,0,.2);}
+.hdr-row1{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;}
+.hdr-title{font-family:'Tajawal',sans-serif;font-size:1.05rem;font-weight:800;}
+.hdr-sub{font-size:.75rem;opacity:.55;font-family:'Outfit',sans-serif;font-weight:400;margin-top:1px;}
+.lang-sw{display:flex;border:1.5px solid rgba(255,255,255,.2);border-radius:9px;overflow:hidden;}
+.lbtn{padding:6px 14px;font-size:12px;font-weight:700;cursor:pointer;border:none;background:transparent;color:rgba(255,255,255,.5);font-family:'Tajawal',sans-serif;transition:all .15s;}
+.lbtn.on{background:var(--gold);color:var(--navy);}
+.hdr-row2{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.pb{height:4px;flex:1;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden;}
+.pf{height:100%;background:var(--gold);border-radius:2px;transition:width .3s;}
+.ptxt{font-size:11px;opacity:.55;white-space:nowrap;font-family:'Tajawal',sans-serif;}
+.bdg{padding:3px 9px;border-radius:16px;font-size:10.5px;font-weight:700;}
+.bdg-ki{background:rgba(56,189,248,.15);color:#7dd3fc;}
+.bdg-sji{background:rgba(139,92,246,.2);color:#c4b5fd;}
+.bdg-area{background:var(--acl);color:var(--ac);font-family:'Tajawal',sans-serif;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.bdg-2025{background:rgba(21,128,61,.2);color:#4ade80;border:1px solid rgba(74,222,128,.2);}
+.bdg-d{background:rgba(255,255,255,.07);color:rgba(255,255,255,.45);font-size:10px;}
+
+/* QUESTION */
+.qwrap{max-width:740px;margin:20px auto;padding:0 16px;}
+.scen-box{background:#f0f6ff;border:1px solid #c7ddf8;border-radius:12px;padding:14px 18px;margin-bottom:18px;font-size:.9rem;line-height:1.75;}
+.scen-box[dir=rtl]{font-family:'Tajawal',sans-serif;font-size:.95rem;text-align:right;}
+.scen-lbl{font-size:10px;font-weight:700;color:var(--ac);letter-spacing:.07em;text-transform:uppercase;margin-bottom:6px;}
+.qtext{font-size:1.04rem;line-height:1.85;margin-bottom:22px;font-weight:500;}
+.qtext[dir=rtl]{font-family:'Tajawal',sans-serif;font-size:1.1rem;text-align:right;}
+.opts{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:18px;}
+.opt{display:flex;align-items:flex-start;gap:12px;padding:13px 16px;background:var(--card);border:1.5px solid var(--bdr);border-radius:12px;cursor:pointer;transition:border-color .12s,background .12s;}
+.opt:hover:not(.dis){border-color:var(--ac);background:var(--acl);}
+.opt.sel{border-color:var(--ac);background:var(--acl);}
+.opt.ok{border-color:var(--grn);background:var(--grnl);}
+.opt.bad{border-color:var(--red);background:var(--redl);}
+.opt.hint{border-color:var(--grn);background:var(--grnl);opacity:.7;}
+.opt.dis{cursor:default;}
+.olet{width:27px;height:27px;border-radius:7px;background:var(--bdr);display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:700;flex-shrink:0;font-family:'Outfit',sans-serif;}
+.opt.ok .olet{background:var(--grn);color:#fff;}
+.opt.bad .olet{background:var(--red);color:#fff;}
+.opt.hint .olet{background:var(--grn);color:#fff;}
+.otxt{font-size:.92rem;line-height:1.65;}
+.otxt[dir=rtl]{font-family:'Tajawal',sans-serif;font-size:.97rem;text-align:right;}
+.exp{margin-top:14px;border-radius:12px;padding:15px 19px;display:none;font-size:.87rem;line-height:1.8;}
+.exp.show{display:block;}
+.exp.ok{background:var(--grnl);border:1px solid #86efac;}
+.exp.bad{background:var(--redl);border:1px solid #fca5a5;}
+.exp-hdr{font-family:'Tajawal',sans-serif;font-weight:700;font-size:.88rem;margin-bottom:6px;}
+.exp.ok .exp-hdr{color:var(--grn);}
+.exp.bad .exp-hdr{color:var(--red);}
+.exp-body{font-family:'Outfit',sans-serif;}
+.exp-body[dir=rtl]{font-family:'Tajawal',sans-serif;text-align:right;}
+
+/* NAV */
+.qnav{display:flex;align-items:center;justify-content:space-between;max-width:740px;margin:0 auto 28px;padding:0 16px;}
+.nbtn{padding:10px 22px;border-radius:10px;font-size:.88rem;font-weight:600;cursor:pointer;border:none;font-family:'Tajawal',sans-serif;transition:all .15s;}
+.pbtn{background:var(--card);color:var(--mut);border:1.5px solid var(--bdr);}
+.nxbtn{background:var(--ac);color:#fff;}
+.subbtn{background:var(--grn);color:#fff;}
+.dots{display:flex;flex-wrap:wrap;gap:5px;max-width:420px;justify-content:center;}
+.d{width:13px;height:13px;border-radius:4px;background:var(--bdr);cursor:pointer;transition:all .12s;}
+.d.dok{background:var(--grn);}
+.d.dno{background:var(--red);}
+.d.dcur{outline:2px solid var(--ac);outline-offset:1px;}
+
+/* WELCOME */
+.welcome{max-width:580px;margin:48px auto;padding:0 20px;text-align:center;}
+.wtitle{font-family:'Tajawal',sans-serif;font-size:2rem;font-weight:800;color:var(--navy);margin-bottom:6px;}
+.wsub{color:var(--mut);font-size:.95rem;margin-bottom:24px;}
+.wstats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px;}
+.wsc{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:16px;}
+.wsc-n{font-size:1.7rem;font-weight:800;color:var(--ac);}
+.wsc-l{font-size:11px;color:var(--mut);margin-top:2px;font-family:'Tajawal',sans-serif;}
+.lang-pick{display:flex;gap:8px;justify-content:center;margin-bottom:20px;}
+.lpbtn{padding:10px 24px;border-radius:10px;font-size:.92rem;font-weight:600;cursor:pointer;border:1.5px solid var(--bdr);background:var(--card);color:var(--mut);font-family:'Tajawal',sans-serif;transition:all .15s;}
+.lpbtn.on{background:var(--ac);color:#fff;border-color:var(--ac);}
+.sbtn{background:var(--ac);color:#fff;border:none;padding:14px 44px;border-radius:12px;font-size:1rem;font-weight:700;cursor:pointer;font-family:'Tajawal',sans-serif;}
+.update-note{background:rgba(21,128,61,.08);border:1px solid rgba(21,128,61,.2);border-radius:10px;padding:10px 16px;margin-bottom:20px;font-size:.8rem;color:var(--grn);font-family:'Tajawal',sans-serif;text-align:right;}
+
+/* RESULTS */
+.results{max-width:560px;margin:40px auto;padding:0 20px;text-align:center;}
+.scircle{width:110px;height:110px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.7rem;font-weight:800;}
+.sp{background:var(--grnl);border:3px solid var(--grn);color:var(--grn);}
+.sf{background:var(--redl);border:3px solid var(--red);color:var(--red);}
+.rgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0;}
+.rc{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:13px;}
+.rc-n{font-size:1.35rem;font-weight:800;}
+.rc-l{font-size:11px;color:var(--mut);font-family:'Tajawal',sans-serif;}
+.abts{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px;}
+.abt{padding:10px 20px;border-radius:10px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:'Tajawal',sans-serif;border:none;}
+.ab1{background:var(--ac);color:#fff;}
+.ab2{background:var(--card);border:1.5px solid var(--bdr);color:var(--txt);}
+
+@media(max-width:600px){
+  .wstats{grid-template-columns:1fr 1fr;}
+  .hdr-title{font-size:.95rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- STICKY HEADER -->
+<div class="hdr" id="mainHdr">
+  <div class="hdr-row1">
+    <div>
+      <div class="hdr-title" id="hdrTitle">امتحان People Domain</div>
+      <div class="hdr-sub">HR People Domain Exam · SHRM Practice Exam · مُحدَّث 2025</div>
+    </div>
+    <div class="lang-sw">
+      <button class="lbtn on" id="lbAr" onclick="setLang('ar')">العربية</button>
+      <button class="lbtn" id="lbEn" onclick="setLang('en')">English</button>
+    </div>
+  </div>
+  <div class="hdr-row2" id="hdrMeta" style="display:none;">
+    <div class="pb"><div class="pf" id="pf"></div></div>
+    <div class="ptxt" id="ptxt"></div>
+    <div class="bdg" id="typeBdg"></div>
+    <div class="bdg bdg-area" id="areaBdg"></div>
+    <div class="bdg bdg-d" id="diffBdg"></div>
+  </div>
+</div>
+
+<!-- WELCOME SCREEN -->
+<div class="screen active" id="scrWelcome">
+  <div class="welcome">
+    <div class="wtitle" id="wTitle">امتحان People Domain</div>
+    <div class="wsub" id="wSub">HR People Domain Exam</div>
+    <div class="update-note">✅ محدَّث بتغييرات 2025 — يشمل أسئلة جديدة عن: Learning & Development, Employee Engagement</div>
+    <div class="wstats">
+      <div class="wsc"><div class="wsc-n" id="wTotal">102</div><div class="wsc-l">سؤال</div></div>
+      <div class="wsc"><div class="wsc-n">72</div><div class="wsc-l">KI معرفي</div></div>
+      <div class="wsc"><div class="wsc-n">30</div><div class="wsc-l">SJI حكمي</div></div>
+    </div>
+    <div style="margin-bottom:16px;font-size:.85rem;color:var(--mut);font-family:'Tajawal',sans-serif;">اختاري لغة الأسئلة:</div>
+    <div class="lang-pick">
+      <button class="lpbtn" id="lpEn" onclick="pickLang('en')">English Only</button>
+      <button class="lpbtn on" id="lpAr" onclick="pickLang('ar')">عربي فقط</button>
+      <button class="lpbtn" id="lpBi" onclick="pickLang('bi')">ثنائي اللغة</button>
+    </div>
+    <button class="sbtn" onclick="startExam()">ابدأ الامتحان ←</button>
+  </div>
+</div>
+
+<!-- EXAM SCREEN -->
+<div class="screen" id="scrExam">
+  <div class="qwrap">
+    <div class="scen-box" id="scenBox" style="display:none">
+      <div class="scen-lbl">📋 Scenario</div>
+      <div id="scenText"></div>
+    </div>
+    <div class="qtext" id="qText"></div>
+    <ul class="opts" id="optsList"></ul>
+    <div class="exp" id="expBox">
+      <div class="exp-hdr" id="expHdr"></div>
+      <div class="exp-body" id="expBody"></div>
+    </div>
+  </div>
+  <div class="qnav">
+    <button class="nbtn pbtn" id="btnPrev" onclick="prevQ()" style="display:none">← رجوع</button>
+    <div class="dots" id="qDots"></div>
+    <button class="nbtn nxbtn" id="btnNext" onclick="nextQ()">التالي →</button>
+  </div>
+</div>
+
+<!-- RESULTS SCREEN -->
+<div class="screen" id="scrResults">
+  <div class="results">
+    <div class="scircle" id="scoreCirc"></div>
+    <div style="font-family:'Tajawal',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:6px;" id="resMsg"></div>
+    <div style="color:var(--mut);font-size:.85rem;font-family:'Tajawal',sans-serif;" id="resPass">درجة النجاح: 70%</div>
+    <div class="rgrid">
+      <div class="rc"><div class="rc-n" id="rCorrect" style="color:var(--grn)"></div><div class="rc-l">إجابات صحيحة</div></div>
+      <div class="rc"><div class="rc-n" id="rWrong" style="color:var(--red)"></div><div class="rc-l">إجابات خاطئة</div></div>
+      <div class="rc"><div class="rc-n" id="rKi"></div><div class="rc-l">KI صحيحة</div></div>
+      <div class="rc"><div class="rc-n" id="rSji"></div><div class="rc-l">SJI صحيحة</div></div>
+    </div>
+    <div class="abts">
+      <button class="abt ab1" onclick="retryExam()">إعادة الامتحان 🔄</button>
+      <button class="abt ab2" onclick="reviewExam()">مراجعة الإجابات 📋</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const Q=[
+{a:"Talent Acquisition",t:"KI",d:"medium",q:"An 'employer value proposition' (EVP) is MOST accurately defined as:",o:["The full set of attributes, rewards, and experiences that distinguish an employer and influence why talent chooses, stays, and engages","The financial compensation package an employer offers compared to the market median","The formal written commitment an employer makes to employees at the time of hire","A marketing document that HR creates to attract candidates to open positions"],c:0,e:"EVP = the full employment offer: total rewards + career development + culture + purpose + manager quality. It answers 'why work here?' Wrong: B (compensation only) is one element. D (marketing document) describes communication of an EVP. C (written commitment) is an employment contract.",
+qAr:"يُعرَّف 'عرض قيمة صاحب العمل' (EVP) بدقة على أنه:",
+oAr:["المجموعة الكاملة من السمات والمكافآت والتجارب التي تُميّز صاحب العمل وتُؤثر على قرار المواهب بالانضمام والبقاء والانخراط","حزمة التعويض المالي التي يقدمها صاحب العمل مقارنة بمتوسط السوق","الالتزام المكتوب الرسمي الذي يُقدّمه صاحب العمل للموظفين عند التعيين","وثيقة تسويقية تنشئها HR لاستقطاب المرشحين للوظائف الشاغرة"]},
+{a:"Talent Acquisition",t:"KI",d:"medium",q:"A 'structured interview' differs from an unstructured interview primarily because structured interviews:",o:["Are conducted by multiple interviewers simultaneously to reduce individual bias","Require candidates to complete written assessments before the live interview portion","Use the same predetermined questions for all candidates with standardized scoring criteria — improving validity, reliability, and legal defensibility","Take significantly longer since more questions are asked to cover all competency areas"],c:2,e:"Structured interviews: same questions, same order, standardized scoring rubric for all candidates. Improves reliability and validity and provides legal defensibility. Wrong: A describes panel interviews. D (longer) is not inherently true. B describes a different selection tool.",
+qAr:"تختلف 'المقابلة المنظّمة' عن غير المنظّمة أساساً لأن المنظّمة:",
+oAr:["يُجريها عدة محاورين في نفس الوقت للحد من التحيز الفردي","تتطلب من المرشحين إجراء تقييمات كتابية قبل المقابلة المباشرة","تستخدم نفس الأسئلة المحددة مسبقاً لجميع المرشحين مع معيار تقييم موحّد","تستغرق وقتاً أطول بكثير إذ تُطرح أسئلة أكثر لتغطية جميع الكفاءات"]},
+{a:"Talent Acquisition",t:"SJI",d:"hard",s:"A technology company's data shows: time-to-fill is 68 days, offer acceptance rate is 41%, and 90-day turnover is 19%. Candidate surveys show strong interest through interview but 'disappoint at offer.' Exit data from 90-day leavers cites 'the role wasn't what I was told.'",q:"HR's diagnostic conclusion points MOST directly to failures at which stages?",o:["Sourcing — the talent pool is too narrow, causing less-committed candidates to be hired","Time-to-fill — the 68-day process loses candidates to faster-moving competitors","Assessment quality — interview processes are selecting unsuitable candidates who disengage quickly","Offer stage and realistic job preview — 41% acceptance suggests compensation issues, and 90-day exits citing role misrepresentation"],c:3,e:"Two distinct problems: (1) 41% offer acceptance = compensation not competitive. (2) 19% 90-day turnover citing role mismatch = realistic job preview failure. Wrong: A (sourcing) — pipeline converts to interviews so sourcing works. C (assessment) produces poor performance, not role-mismatch exits. B (time-to-fill) may contribute but doesn't explain the 90-day exit pattern.",
+qAr:"يشير الاستنتاج التشخيصي لـ HR مباشرة لفشل في أي مراحل؟",
+oAr:["المصادر — مجموعة المواهب ضيقة جداً مما يُسبب تقدّم مرشحين أقل التزاماً","وقت الملء — العملية التي تستغرق 68 يوماً تُفقد المرشحين لصالح منافسين أسرع","جودة التقييم — عمليات المقابلة تختار مرشحين غير مناسبين","مرحلة العرض ومعاينة الوظيفة الواقعية — نسبة قبول 41% تُشير لمشاكل تنافسية تعويضية أو توقعات غير متوافقة، والدوران المبكر يُشير لعدم مطابقة التوقعات"],
+sAr:"بيانات شركة تكنولوجيا: وقت الملء 68 يوماً، معدل قبول العروض 41%، ودوران السنة الأولى 34%. معدل قبول العروض في قطاع التكنولوجيا المماثل 71%. معدل دوران السنة الأولى 15%."},
+{a:"Talent Acquisition",t:"KI",d:"medium",q:"The '4/5ths rule' (80% rule) in selection is used to identify:",o:["The percentage of interview questions that must be behaviorally anchored to be legally defensible","The minimum passing score that at least 80% of qualified applicants should achieve on any selection test","The proportion of internal candidates organizations should consider before posting positions externally","When the selection rate of a protected group is less than 80% of the highest-selected group's rate — triggering concern about potential adverse impact"],c:3,e:"4/5ths rule: if any group's selection rate is less than 80% of the highest-selected group's rate, adverse impact is indicated. Example: white candidates selected at 50%, Black candidates at 30% → 30÷50=60% < 80% → adverse impact. Wrong: B describes a passing score threshold. A describes structured interview requirements. C describes internal sourcing strategy.",
+qAr:"تُستخدم 'قاعدة الأرباع الأربعة' (80%) في الاختيار لتحديد:",
+oAr:["نسبة أسئلة المقابلة التي يجب أن تكون مُرتكزة سلوكياً","الحد الأدنى للنجاح الذي يجب أن يحققه 80% على الأقل من المتقدمين المؤهلين","نسبة المرشحين الداخليين التي يجب على المنظمات النظر فيها قبل التوظيف الخارجي","متى يكون معدل اختيار مجموعة محمية أقل من 80% من معدل المجموعة الأعلى — مما يُشير لتأثير متعارض محتمل"]},
+{a:"Talent Acquisition",t:"KI",d:"medium",q:"In the STAR behavioral interview technique, the 'Action' component is critical because:",o:["It measures the attitude and values the candidate brought to the situation described","It reveals what the candidate specifically did — separating their individual contribution from team or contextual factors","It confirms the candidate took the described actions rather than simply observing what others did","It establishes the alternative approaches the candidate considered before deciding on a course of action"],c:1,e:"STAR = Situation, Task, Action, Result. The Action reveals the candidate's actual behavior — what they did, not what they observed or what the team did. This is the core behavioral data. Wrong: C (confirmation) is a follow-up clarification. A (attitude) is inferred, not the primary target. D (alternatives) is a separate probe question.",
+qAr:"في تقنية مقابلة STAR، يُعدّ مكوّن 'الإجراء' حاسماً لأنه:",
+oAr:["يقيس الموقف والقيم التي أحضرها المرشح للموقف","يكشف ما فعله المرشح تحديداً — فصل مساهمته الفردية عن الفريق أو السياق","يُؤكد أن المرشح اتخذ الإجراءات الموصوفة بدلاً من مجرد ملاحظتها","يُحدد الأساليب البديلة التي فكّر فيها المرشح قبل التصرف"]},
+{a:"Talent Acquisition",t:"KI",d:"medium",q:"'Yield ratio' in recruiting metrics measures:",o:["The ratio of qualified applications to total applications received per sourcing channel","The rate at which candidates who accept offers become high performers within 90 days","The proportion of candidates from one recruitment stage who advance to the next — identifying where the recruiting funnel loses candidates","The percentage of new hires who complete their first year compared to industry retention benchmarks"],c:2,e:"Yield ratio = stage-to-stage conversion rate. Tracking across stages identifies bottlenecks: low yield at phone screen = poor job ad targeting; low yield at offer = compensation issues. Wrong: B (performance after hire) is quality-of-hire. A (qualified application ratio) is sourcing efficiency. D (first-year retention) is new hire retention rate.",
+qAr:"يقيس 'معدل العائد' في مقاييس التوظيف:",
+oAr:["نسبة الطلبات المؤهلة إلى إجمالي الطلبات المستلمة لكل مصدر","المعدل الذي يُصبح فيه المرشحون الذين قبلوا العروض أصحاب أداء عالٍ","نسبة المرشحين من مرحلة توظيف واحدة الذين ينتقلون للمرحلة التالية","نسبة الموظفين الجدد الذين يُكملون سنتهم الأولى مقارنة بمعيار الصناعة"]},
+{a:"Talent Acquisition",t:"SJI",d:"medium",s:"HR analyzes two sourcing channels for software engineers. Channel A (referrals): 340 applications, 31 hires, cost per hire $1,200, quality-of-hire 87%. Channel B (job boards): 1,840 applications, 29 hires, cost per hire $6,400, quality-of-hire 71%.",q:"The MOST complete strategic recommendation for sourcing strategy is:",o:["Standardize cost-per-hire by capping referral bonuses to match job board costs per hire","Immediately eliminate job boards since referrals outperform on all metrics","Analyze demographic diversity in both channels before drawing any strategic sourcing conclusions","Significantly expand the referral program while using job boards for roles where internal networks can't reach qualified candidates —"],c:3,e:"Referrals: better quality, lower cost — strategic priority. BUT: referral networks tend to replicate existing workforce demographics, potentially limiting diversity. Strategic answer: expand referrals + use boards for volume and diversity gaps. Wrong: B (eliminate boards) is too extreme given diversity and volume considerations. A (standardize costs) misunderstands cost optimization. C is one consideration, not the full strategic analysis.",
+qAr:"التوصية الاستراتيجية الأكثر اكتمالاً لاستراتيجية المصادر هي:",
+oAr:["توحيد التكلفة لكل توظيف بتحديد سقف مكافآت الترشيح لتتناسب مع تكاليف لوحات الوظائف","إلغاء لوحات الوظائف فوراً إذ تتفوق الترشيحات على جميع المقاييس","تحليل التنوع الديموغرافي في كلا القناتين قبل استخلاص أي توصيات استراتيجية","توسيع برنامج الترشيحات بشكل ملحوظ مع استخدام لوحات الوظائف للوظائف التي تُفشل فيها الترشيحات في ملء الأحجام اللازمة — والنظر في التأثير على التنوع في كلا القناتين"],
+sAr:"HR يُحلل قناتين لاستقطاب مهندسي البرمجيات. قناة A (الترشيحات): 340 متقدماً، 78% معدل القبول، 18% دوران السنة الأولى، تكلفة لكل توظيف $4,200. قناة B (لوحات الوظائف): 2,800 متقدماً، 49% معدل القبول، 31% دوران السنة الأولى، تكلفة لكل توظيف $3,100."},
+{a:"Talent Acquisition",t:"KI",d:"medium",q:"An 'Applicant Tracking System' (ATS) creates adverse impact risk when:",o:["It stores candidate data longer than the legally required retention period for HR records","It creates bottlenecks in the pipeline by requiring multiple approvals before advancing candidates","It shares candidate contact information with third-party vendors without authorization","Keyword-filtering algorithms screen out candidates whose resumes don't match exact terms — potentially excluding qualified candidates"],c:3,e:"ATS keyword screening: resumes lacking exact terminology get filtered out regardless of qualification. This disproportionately affects career-changers, non-traditional backgrounds, and international candidates — correlating with protected class status. Wrong: A (retention period) is a compliance issue. C (data sharing) is a privacy issue. B (bottlenecks) is an efficiency issue.",
+qAr:"يُنشئ 'نظام تتبع المتقدمين' (ATS) مخاطر تأثير متعارض عندما:",
+oAr:["يخزّن بيانات المرشحين لفترة أطول من فترة الاحتفاظ المطلوبة قانونياً","يُنشئ عقبات في المسار من خلال طلب موافقات متعددة قبل التقدم","يُشارك معلومات الاتصال بالمرشحين مع موردين خارجيين دون إذن","تُقصي خوارزميات تصفية الكلمات الرئيسية المرشحين الذين لا تتطابق سيرهم الذاتية مع جميع الكلمات الرئيسية رغم امتلاكهم المؤهلات الجوهرية"]},
+{a:"Talent Acquisition",t:"SJI",d:"medium",s:"A company's 'entry level' job postings require: 4-year degree, 2+ years experience, and GPA above 3.5. Analysis shows 73% of the company's high performers in these roles do not have a college degree. The requirements have been unchanged for 10 years.",q:"HR's analysis of these requirements MOST suggests:",o:["The GPA requirement is problematic but the degree and experience requirements are standard industry practice","The requirements likely constitute adverse impact — they screen out qualified candidates who don't have degrees","The requirements should be maintained until new validated criteria are established to replace them","The requirements are appropriate since they set a high quality standard that has produced a strong workforce"],c:1,e:"If 73% of high performers don't have degrees, the degree requirement is not job-relevant. Unnecessary degree requirements have disparate impact (screening out minority and lower-income candidates) and constitute potential Title VII violations per Griggs. Wrong: A ignores direct performance evidence. C only addresses GPA. D allows ongoing adverse impact to continue.",
+qAr:"تُشير تحليلات HR لهذه المتطلبات أكثر ما يكون إلى:",
+oAr:["متطلب المعدل التراكمي إشكالي لكن متطلبَي الدرجة والخبرة مدافَع عنهما صالحيان","المتطلبات على الأرجح تُشكّل تأثيراً متعارضاً — تُقصي مرشحين مؤهلين ذوي عوائق تاريخية في الوصول للتعليم دون إثبات أهميتها للوظيفة","يجب الحفاظ على المتطلبات حتى تُحدد معايير صالحة جديدة","المتطلبات مناسبة إذ تضع معياراً جودة عالياً يُؤكد الجدية"],
+sAr:"إعلانات وظائف 'مستوى الدخول' لشركة تتطلب: درجة جامعية، 2+ سنوات خبرة، ومعدل تراكمي 3.5+. بيانات الإنجاز الوظيفي تُظهر أن أداء الموظفين غير الحاملين لدرجات جامعية مماثل لأداء حاملي الدرجات."},
+{a:"Talent Acquisition",t:"KI",d:"medium",q:"The primary purpose of a 'realistic job preview' (RJP) is to:",o:["Ensure compliance with EEOC requirements for transparency in hiring processes","Reduce time-to-fill by streamlining the number of interview rounds candidates must complete","Standardize information candidates receive to prevent HR from making promises managers cannot keep","Provide candidates with accurate information about both positive and challenging aspects of a role —"],c:3,e:"RJP = honest preview of the real job. Research shows RJPs reduce early voluntary turnover (candidates who self-select out save everyone time) and improve retention among those who accept (joined with accurate expectations). Wrong: B (reduce time-to-fill) is not the purpose. A (EEOC compliance) — no such specific requirement exists for RJPs. C (standardize information) is a benefit but not the purpose.",
+qAr:"الغرض الأساسي من 'معاينة الوظيفة الواقعية' (RJP) هو:",
+oAr:["ضمان الامتثال لمتطلبات EEOC للشفافية في عمليات التوظيف","تقليل وقت الملء بتبسيط عدد جولات المقابلة","توحيد المعلومات التي يتلقاها المرشحون لمنع HR من تقديم وعود لا يمكن الوفاء بها","تزويد المرشحين بمعلومات دقيقة حول الجوانب الإيجابية والصعبة للدور — تقليل صدمة الواقع بعد التوظيف"]},
+{a:"Talent Acquisition",t:"KI",d:"medium",q:"'Onboarding' differs from 'orientation' in scope primarily because onboarding:",o:["Extends beyond administrative welcome to encompass the full integration process — connecting new hires to culture, networks, role clarity, and manager relationships over 30-90 days","Is managed exclusively by HR while orientation involves all team members and managers","Is shorter and more focused than orientation, covering only essential HR administrative tasks","Applies only to senior and executive hires while orientation covers all employee levels"],c:0,e:"Orientation = Day 1 administrative process. Onboarding = 30-90+ day integration: role clarity, culture immersion, network building, performance milestones, manager check-ins. Research shows 90-day onboarding effectiveness significantly predicts 1-year retention. Wrong: A inverts the scope comparison. B (HR exclusive) is false. D (senior only) is false.",
+qAr:"يختلف 'الإلحاق' عن 'التوجيه' في النطاق أساساً لأن الإلحاق:",
+oAr:["يمتد إلى ما وراء الترحيب الإداري ليشمل عملية الاندماج الكاملة: الثقافة والعلاقات ووضوح الدور والأداء المبكر","تديره HR حصرياً بينما يشمل التوجيه جميع أعضاء الفريق","أقصر وأكثر تركيزاً من التوجيه يغطي فقط الإجراءات الإدارية الأساسية لـ HR","ينطبق فقط على التوظيفات الكبيرة والتنفيذية بينما يغطي التوجيه جميع الموظفين"]},
+{a:"Talent Acquisition",t:"SJI",d:"hard",s:"Internal mobility data shows 34% of employees are promoted from within for senior roles, but the company spends $8.3M on external recruiting for mid-to-senior positions. Exit interviews show 41% of voluntary exits cite 'no growth opportunity here.'",q:"The MOST strategically complete HR response addresses:",o:["Negotiate lower recruiter fees with external firms to reduce the $8.3M annual spend","Implement a 90-day freeze on external hires to create immediate internal opportunity","Address the root cause: high external hiring and growth-citing exits together indicate an internal mobility failure.","Survey employees about career ambitions before implementing any internal mobility program"],c:2,e:"The data tells a coherent story: employees leave for growth (41%), then the company replaces them externally at $8.3M. Root cause = no functioning internal mobility system. Solving it reduces turnover AND recruiting costs simultaneously. Wrong: A creates immediate hiring gaps without building capability. A (negotiate fees) treats symptoms. D (survey first) delays action on already-clear data.",
+qAr:"أكثر استجابة HR استراتيجية اكتمالاً تُعالج:",
+oAr:["التفاوض مع شركات التوظيف الخارجي على رسوم أقل لتقليل الإنفاق","تطبيق تجميد 90 يوماً على التوظيف الخارجي لإنشاء فرص داخلية فورية","معالجة السبب الجذري: التوظيف الخارجي المرتفع والمغادرات المرتبطة بالنمو تكشفان معاً غياب مسارات تطوير داخلية مرئية ومنهجية","استطلاع الموظفين حول طموحاتهم المهنية قبل تطبيق أي سياسة تنقل داخلي"],
+sAr:"بيانات الحراك الداخلي: 34% من الموظفين يُرقَّون داخلياً للوظائف العليا، لكن 61% من المغادرين طوعاً في السنوات الثلاث الأخيرة ذكروا 'فرص نمو غير كافية.' تكاليف التوظيف الخارجي لتلك الوظائف بلغت $8.3M. متوسط فارق الراتب بين المُرقَّى داخلياً والمُوظَّف خارجياً $23K."},
+{a:"Talent Acquisition",t:"KI",d:"medium",q:"The primary legal risk in reference checking is:",o:["Providing substantive performance information that could constitute defamation — creating a chilling effect where former employers only confirm dates and titles","Asking reference providers questions about protected characteristics that the company cannot legally consider in hiring","Accepting references from supervisors who may not be objective about former employees","Negligent hiring liability if HR fails to check references for roles with access to vulnerable populations"],c:0,e:"Defamation risk from references has created a 'name/rank/serial number' culture among employers — confirming only dates of employment and title. This limits HR's ability to get substantive reference information. Wrong: C (objective references) is a quality issue, not a legal risk. D (negligent hiring) is a risk from NOT checking. B (protected class questions) is ALSO a risk, but not the PRIMARY one.",
+qAr:"المخاطرة القانونية الأساسية في التحقق من المراجع هي:",
+oAr:["تقديم معلومات أداء جوهرية قد تُشكّل تشهيراً أو تنتهك قوانين الخصوصية","طرح أسئلة على مقدمي المراجع حول الخصائص المحمية","قبول مراجع من مشرفين قد لا يكونون موضوعيين","مسؤولية التوظيف المهمل إذا فشلت HR في فحص المراجع للوظائف ذات الوصول للفئات الضعيفة"]},
+{a:"Talent Acquisition",t:"KI",d:"easy",q:"A 'hiring freeze' in workforce planning represents which type of headcount strategy?",o:["A reduction-in-force approach that reduces workforce size through planned layoffs","A performance management strategy restricting new hiring to roles with demonstrated high performance","A natural attrition management technique that reduces headcount gradually by not filling vacated roles","A legal requirement during union contract negotiations to maintain workforce stability"],c:2,e:"Hiring freeze = stop filling vacancies as they arise. Headcount decreases through natural attrition (retirements, voluntary exits) rather than involuntary action. Used during cost-reduction periods. Wrong: A (RIF) is an active reduction. B (performance restriction) is not how hiring freezes work. D (legal requirement) doesn't exist as described.",
+qAr:"يمثّل 'التجميد الوظيفي' في تخطيط القوى العاملة أي نوع من استراتيجيات التوظيف؟",
+oAr:["نهج تخفيض القوى العاملة يُقلص حجمها من خلال تسريح مُخطَّط","استراتيجية إدارة أداء تقيّد التوظيف الجديد للوظائف ذات مؤشرات فاعلية موثّقة","تقنية إدارة الاستنزاف الطبيعي التي تُقلص الموظفين تدريجياً عن طريق وقف التوظيف الجديد","متطلب قانوني خلال مفاوضات عقود النقابات للحفاظ على استقرار القوى العاملة"]},
+{a:"Talent Acquisition",t:"KI",d:"medium",q:"When designing interview questions, ensuring they are 'job-relevant' primarily supports:",o:["Keeping the interview within the company's standard 45-minute time format","Preventing interviewers from getting to know candidates, which introduces subjective bias","Keeping all candidates comfortable by avoiding questions about personal capabilities","The predictive validity of the selection process and legal defensibility if a rejected candidate claims discrimination"],c:3,e:"Job-relevant questions: (1) increase predictive validity — relevant competencies predict performance; (2) provide legal defensibility — the organization can show questions assessed job-related qualifications. Wrong: A (time efficiency) is not the reason. C inverts the logic — job-irrelevant questions are the problem. D misunderstands the purpose.",
+qAr:"عند تصميم أسئلة المقابلة، يدعم ضمان 'صلتها بالوظيفة' أساساً:",
+oAr:["إبقاء المقابلة ضمن تنسيق الشركة القياسي البالغ 45 دقيقة","منع المحاورين من التعرف على المرشحين مما يُقلل التحيز الشخصي","الحفاظ على راحة جميع المرشحين بتجنب الأسئلة حول قدراتهم الشخصية","الصلاحية التنبؤية لعملية الاختيار وقابلية الدفاع القانوني في حالة الطعن"]},
+{a:"Talent Acquisition",t:"KI",d:"easy",q:"A 'talent pipeline' strategy differs from reactive recruiting by:",o:["Centralizing all recruiting decisions at HR rather than distributing responsibility to hiring managers","Building and maintaining relationships with potential candidates before roles become open — creating a ready pool that reduces time-to-fill and improves quality when positions arise","Focusing exclusively on passive candidates who aren't actively searching for new roles","Requiring HR to post all openings externally before considering internal candidates"],c:1,e:"Pipeline strategy = proactive relationship-building with future talent before there's an open requisition. When a role opens, the pool is already cultivated. Wrong: D (external-first) is a sourcing requirement. C (passive candidates only) is one component of pipeline strategy. A (centralization) is organizational design, not pipeline strategy.",
+qAr:"تختلف استراتيجية 'خط أنابيب المواهب' عن التوظيف التفاعلي بـ:",
+oAr:["مركزة جميع قرارات التوظيف في HR بدلاً من توزيع المسؤوليات","بناء وصون علاقات مع المرشحين المحتملين قبل فتح الشواغر — يُتيح تعييناً أسرع وأكثر استراتيجية","التركيز حصرياً على المرشحين السلبيين الذين لا يبحثون بنشاط عن فرص","إلزام HR بنشر جميع الشواغر خارجياً قبل النظر في المرشحين الداخليين"]},
+{a:"Talent Acquisition",t:"SJI",d:"hard",s:"HR analytics discovers that 94% of candidates from two specific private universities were hired over 2 years, while 87% of candidates from all other universities were rejected at phone screen. The two universities both have high median family income demographics.",q:"This data MOST clearly indicates:",o:["A diversity concern that HR should raise with the DEI function rather than talent acquisition","An efficient sourcing strategy that reduces time-to-fill by focusing on high-yield sourcing channels","Potential adverse impact — if the two universities have higher proportions of white or high-income candidates","Successful targeted campus recruiting at high-quality institutions that consistently produce strong candidates"],c:2,e:"University screening as a de facto filter: using high-income, predominantly white institutions as primary talent source is a classic adverse impact pattern. The key analysis: does university attended actually predict job performance? If not, it's an unjustified adverse impact filter. Wrong: A assumes quality without validity evidence. B (efficiency) ignores equity implications. A (refer to DEI) — this IS a talent acquisition problem to own.",
+qAr:"تُشير هذه البيانات بوضوح إلى:",
+oAr:["مخاوف تنوع يجب على HR إثارتها مع وحدة I&D بدلاً من التعامل معها في التوظيف","استراتيجية مصادر فعّالة تُقلل وقت الملء بالتركيز على مصادر عالية الإنتاجية","تأثير متعارض محتمل — إذا كانت للجامعتين نسب أعلى من المجموعات ذات التمثيل الجيد، فقد يكون التركيز على الجامعة بديلاً لمعايير الاختيار القائمة على العرق أو الفئة الاجتماعية","توظيف جامعي موجّه ناجح في مؤسسات عالية الجودة يُنتج مرشحين مُتحققاً منهم باستمرار"],
+sAr:"تكتشف تحليلات HR أن 94% من المرشحين من جامعتين خاصتين محددتين وُظِّفوا في السنوات الخمس الأخيرة. متوسط معدل تنوع خريجي هاتين الجامعتين 12% مقارنة بـ 34% في سوق العمل الأوسع."},
+{a:"Talent Acquisition",t:"SJI",d:"medium",s:"A hiring manager asks HR to include 'cultural add' as a selection criterion alongside technical competencies. They define it as: brings a perspective the team lacks, challenges groupthink, and represents underrepresented backgrounds.",q:"HR's evaluation of this request should MOST conclude:",o:["Approve the request as described — 'cultural add' (diverse perspective, new thinking) is meaningfully different from 'cultural fit' (demographic","Reject the request because 'cultural add' criteria are legally risky and should never be used in selection","Require the manager to use only technical criteria to prevent subjectivity in the selection process","Approve 'cultural add' only as a tiebreaker after technical competencies are fully evaluated"],c:0,e:"'Cultural add' (what do they bring we lack?) differs from 'cultural fit' (are they like us?) in both intent and legal risk. Used as framed — diverse perspective, challenge to groupthink — it's legally defensible if applied consistently and documented. Wrong: A misunderstands the legal distinction. C eliminates a valid dimension. D unnecessarily limits a valid criterion.",
+qAr:"يجب أن يستنتج تقييم HR لهذا الطلب أكثر ما يكون:",
+oAr:["الموافقة على الطلب كما وُصف — 'الإضافة الثقافية' (منظور متنوع، اهتمامات جديدة، رغبة في التحدي) معرَّفة سلوكياً وقابلة للتقييم الموضوعي","رفض الطلب لأن معايير 'الإضافة الثقافية' محفوفة بالمخاطر القانونية","إلزام المدير باستخدام معايير تقنية فقط لمنع الذاتية","الموافقة على 'الإضافة الثقافية' فقط كعامل مرجّح بعد تحقيق الكفاءات التقنية"],
+sAr:"يطلب مدير توظيف من HR تضمين 'الإضافة الثقافية' كمعيار اختيار إلى جانب الكفاءات التقنية. يصف المدير 'الإضافة الثقافية' بأنها 'مرشح يجلب منظوراً متنوعاً ويتحدى الوضع الراهن.'"},
+{a:"Talent Acquisition",t:"KI",d:"medium",q:"A 'pre-employment background check' under FCRA requires the employer to provide the applicant with:",o:["A written description of all information that will be included in the background check report","A 30-day window to dispute the background check before any employment decision is made","A copy of the background report AND a summary of FCRA rights before taking any adverse action based on the report's findings","Notification only if the background check reveals disqualifying information that will result in offer withdrawal"],c:2,e:"FCRA pre-adverse action: before declining to hire based on a background check, employer must provide: (1) copy of the report, and (2) FCRA rights summary. This gives the applicant a chance to identify and dispute errors. Wrong: A describes disclosure of scope. B (30-day window) — FCRA specifies 'reasonable' period, not specifically 30 days. D inverts the requirement.",
+qAr:"يشترط 'فحص الخلفية قبل التوظيف' بموجب FCRA على صاحب العمل تزويد المتقدم قبل الإجراء السلبي بـ:",
+oAr:["وصف مكتوب لجميع المعلومات التي سيتضمنها تقرير الخلفية","نافذة 30 يوماً للاعتراض على فحص الخلفية قبل أي قرار توظيف","نسخة من تقرير الخلفية وملخص حقوق FCRA قبل اتخاذ أي إجراء توظيف سلبي","إشعاراً فقط إذا كشف فحص الخلفية عن معلومات مُقصية"]},
+{a:"Talent Acquisition",t:"KI",d:"medium",q:"'Internal equity' in compensation refers to:",o:["The relative fairness of pay across roles within the organization — whether jobs of similar value receive similar compensation","The consistency between HR compensation practices and the organization's stated culture and values","The alignment of individual pay with the employee's performance rating and contribution level","Equal pay for equal work as required by the Equal Pay Act for men and women in the same role"],c:0,e:"Internal equity = fairness of pay relationships between jobs inside the organization. An organization with good internal equity pays engineers more than administrative coordinators reflecting relative complexity, skill, and contribution. Wrong: D is the Equal Pay Act's same-role mandate. B (values alignment) describes strategic HR alignment. C (pay for performance) describes individual performance-based pay.",
+qAr:"'الإنصاف الداخلي' في التعويض يشير إلى:",
+oAr:["العدالة النسبية للأجر عبر الوظائف داخل المنظمة — ما إذا كانت الوظائف ذات القيمة المماثلة تتقاضى تعويضاً مماثلاً","الاتساق بين ممارسات تعويض HR واستراتيجية المنظمة","توافق الأجر الفردي مع تقييم أداء الموظف","المساواة في الأجر لعمل متساوٍ كما تتطلبه قانون المساواة في الأجر للرجال والنساء"]},
+{a:"Talent Acquisition",t:"SJI",d:"hard",s:"Compensation analysis shows senior software engineers are paid at P25 of market. Voluntary turnover in engineering is 31% annually, with 67% of exit interviews citing compensation as a major factor.",q:"The MOST strategically appropriate compensation response is:",o:["Increase base pay by a flat 10% for all software engineers immediately to close the gap quickly","Conduct a comprehensive compensation study to establish target pay positioning (e.g., P50 or P75), reprice engineering grades to competitive levels, and develop a budget-phased implementation plan","Wait for the next annual compensation review cycle to address the issue through standard processes","Implement individual retention bonuses for the highest-risk software engineers to avoid structural changes"],c:1,e:"Systematic compensation uncompetitiveness requires a structural fix: re-pricing, grade revision, and clear market positioning strategy. Individual bonuses treat symptoms. Wrong: D (individual bonuses) is expensive, temporary, and creates internal equity problems. A (flat 10%) may not be enough and doesn't establish a sustainable framework. C (wait for annual cycle) allows continued turnover.",
+qAr:"أكثر استجابة تعويضية استراتيجية مناسبة هي:",
+oAr:["زيادة الراتب الأساسي بنسبة 10% ثابتة لجميع المهندسين فوراً لإظهار استجابة سريعة","إجراء دراسة تعويضية شاملة لتحديد موضع الدفع المستهدف ثم تحديد موازنة لمعالجة الفجوة السوقية — مع التعامل الموازي مع عوامل فرص النمو","انتظار دورة مراجعة التعويض السنوية القادمة للتعامل مع المسألة من خلال القنوات القياسية","تطبيق مكافآت احتفاظ فردية للمهندسين الأعلى مخاطر"],
+sAr:"تُظهر تحليلات التعويض أن المهندسين الأقدميين مدفوعون عند P25 من السوق. الدوران الطوعي 28% سنوياً. 71% من مقابلات الخروج تذكر 'فرص غير كافية' — لكن 44% أيضاً تذكر 'التعويض تحت السوق'. بيانات P50: الشركات المنافسة تدفع 23% أكثر."},
+{a:"Talent Acquisition",t:"KI",d:"medium",q:"'Candidate experience' in talent acquisition is significant primarily because:",o:["Every candidate interaction reflects the employer brand — poor experiences are shared publicly, deter future applicants, and can affect customers since candidates are often also customers","Candidate experience surveys are required for SHRM-certified organizations to maintain certification","Regulatory requirements mandate organizations provide positive experiences to all candidates","Candidate experience directly determines hire quality since positive experiences increase offer acceptance rates"],c:0,e:"Candidate experience = brand touchpoint. Research shows: 60%+ of rejected candidates share negative experiences; poor processes deter future applicants; for B2C companies, candidates are also customers. Wrong: C (regulatory requirement) doesn't exist in this form. D (determines quality) confuses acceptance rate with hire quality. B (SHRM certification) doesn't include this requirement.",
+qAr:"'تجربة المرشح' في اكتساب المواهب مهمة أساساً لأن:",
+oAr:["كل تفاعل مع المرشح يعكس علامة صاحب العمل — التجارب السيئة تُرسَّب في المراجعات العامة وتؤثر على كل مرشح مستقبلي في نفس الشبكة","استبيانات تجربة المرشح مطلوبة للمنظمات المعتمدة من SHRM","المتطلبات التنظيمية تُلزم المنظمات بتقديم تجارب إيجابية للمرشحين","تجربة المرشح تُحدد مباشرة جودة التوظيف إذ التجارب الإيجابية تُنتج أداءً أعلى"]},
+{a:"Talent Acquisition",t:"SJI",d:"hard",s:"An HR analytics review shows that interview scores correlate at r=0.31 with 1-year performance ratings. Interviewers use a mix of behavioral, hypothetical, and general questions at their own discretion. The same candidate receives very different scores from different interviewers.",q:"The MOST targeted improvement to increase predictive validity is:",o:["Replace interviews with standardized cognitive ability tests as the primary selection predictor","Implement a structured behavioral interview protocol with job-relevant questions, defined scoring anchors for each response level","Increase interview length to allow more comprehensive candidate evaluation","Add a second interview round with senior leadership to triangulate initial assessments"],c:1,e:"Low validity (r=0.31) + high inter-rater variability = unstructured, uncalibrated process. Fix: same questions (reliability), behavioral format (validity), scoring anchors (consistency), calibration training (inter-rater reliability). Wrong: C (longer interviews) adds time not structure. D (second round) duplicates the low-quality process. A (cognitive tests) may add validity but doesn't fix behavioral data collection.",
+qAr:"أكثر تحسين مستهدف لزيادة الصلاحية التنبؤية هو:",
+oAr:["استبدال المقابلات باختبارات القدرة المعرفية المعيارية كتقييم أولي","تطبيق بروتوكول مقابلة سلوكية منظّمة بأسئلة ذات صلة بالوظيفة ومعايير تقييم موحّدة","زيادة مدة المقابلة للسماح بتقييم المرشح بشكل أكثر شمولاً","إضافة جولة مقابلة ثانية مع القيادة العليا لتثليث التقييم الأولي"],
+sAr:"مراجعة تحليلات HR: درجات المقابلة ترتبط بأداء السنة الأولى بمعامل r=0.31. درجات الشخصية r=0.28. عينة العمل r=0.51. مشرفو المرحلة الأولى r=0.35."},
+{a:"Talent Acquisition",t:"KI",d:"medium",q:"'Market pricing' a job for compensation purposes involves:",o:["Comparing the job's pay to other jobs within the organization to ensure internal equity consistency","Setting pay at the highest observed salary in the industry to guarantee competitive advantage in recruiting","Gathering pay data for comparable jobs in the relevant labor market and using that data to establish the competitive pay range for the job","Negotiating salary with each individual candidate based on their stated expectations and the company's budget"],c:2,e:"Market pricing: (1) identify benchmark jobs in external market; (2) collect salary survey data from relevant labor markets; (3) establish competitive pay range (minimum, midpoint, maximum). Wrong: B (highest observed) would be P100 — not market pricing. D (individual negotiation) is offer management. A (internal comparison) is job evaluation for internal equity.",
+qAr:"يتضمن 'التسعير السوقي' لوظيفة لأغراض التعويض:",
+oAr:["مقارنة أجر الوظيفة بالوظائف الأخرى داخل المنظمة لضمان الإنصاف الداخلي","تحديد الأجر عند أعلى راتب ملحوظ في الصناعة لضمان التنافسية","جمع بيانات الأجور للوظائف المماثلة في سوق العمل ذات الصلة واستخدامها لتحديد نطاق التعويض التنافسي","التفاوض على الراتب مع كل مرشح منفرداً بناءً على توقعاته المُصرَّح بها"]},
+{a:"Talent Acquisition",t:"KI",d:"medium",q:"The purpose of a 'pilot program' before a full L&D rollout is to:",o:["Meet SHRM guidelines requiring validation of all training content before large-scale deployment","Test program design, content accuracy, delivery logistics, and participant experience with a small group — identifying issues before investing in full-scale deployment","Obtain buy-in from a cross-section of employees who will then advocate for the program to peers","Comply with insurance requirements mandating testing of safety-related training with a sample group first"],c:1,e:"Pilot = controlled test: identify design flaws, assess participant reception, check logistics, catch content errors, and measure learning outcomes before committing full budget and audience. Wrong: A (SHRM guideline requirement) doesn't exist in this specific form. C (buy-in) is a byproduct, not the primary purpose. D is not a standard insurance requirement.",
+qAr:"الغرض من 'البرنامج التجريبي' قبل الطرح الكامل لـ L&D هو:",
+oAr:["الوفاء بإرشادات SHRM التي تتطلب التحقق من صحة جميع محتوى التدريب","اختبار تصميم البرنامج ودقة المحتوى ولوجستيات التسليم وردود فعل المشاركين — لتحديد مشكلات تحتاج معالجة قبل الطرح الكامل","الحصول على تأييد مجموعة من الموظفين سيُبشّرون بالبرنامج للآخرين","الامتثال لمتطلبات التأمين التي تُلزم باختبار التدريبات المتعلقة بالسلامة"]},
+{a:"Employee Engagement & Retention",t:"KI",d:"medium",q:"Employee engagement is distinguished from employee satisfaction primarily because:",o:["Engagement is a purely individual trait that cannot be influenced by HR programs or leadership behavior","Satisfaction applies to frontline employees while engagement applies to knowledge workers and professionals","Satisfaction measures contentment with current conditions; engagement measures emotional commitment and willingness to contribute discretionary effort beyond what is required","Satisfaction is measured through formal surveys while engagement can only be assessed through manager observation"],c:2,e:"Satisfaction = happy with current state (passive). Engagement = active commitment + discretionary effort + emotional investment. A satisfied employee stays; an engaged employee advocates, innovates, and performs above the minimum. Wrong: D (measurement method) is not the defining distinction. A (individual trait) — engagement is influenced by leadership, culture, management. B (employee level) — engagement applies across all levels.",
+qAr:"يتميّز انخراط الموظفين عن رضاهم أساساً لأن:",
+oAr:["الانخراط سمة فردية بحتة لا تستطيع ممارسات HR التأثير فيها","يصدق الرضا على موظفي الخطوط الأمامية بينما يصدق الانخراط على موظفي المعرفة","يقيس الرضا الارتياح بالأوضاع الحالية؛ يقيس الانخراط الالتزام الفاعل والجهد التقديري والاستثمار العاطفي في نجاح المنظمة","يُقاس الرضا من خلال استبيانات رسمية بينما يمكن قياس الانخراط فقط بالملاحظة السلوكية"]},
+{a:"Employee Engagement & Retention",t:"SJI",d:"hard",s:"An engagement survey shows an overall score of 74% (above industry benchmark of 68%). Disaggregated data shows: engineering team 48% citing 'no influence over technical decisions,' administrative function 91%, and customer service 52% citing 'no recognition and impossible workload.'",q:"HR's MOST strategically appropriate response to this data is:",o:["Require all managers to complete engagement training since two of three functions show low scores","Report the 74% overall score to leadership as a positive result since it exceeds industry benchmarks","Launch a company-wide recognition program since recognition is cited as an issue in one function","Disaggregate the intervention: the overall score masks severe issues in engineering and customer service that require targeted responses — autonomy for engineering; workload and recognition for customer service"],c:3,e:"74% overall masks 48% and 52% — scores that predict turnover and performance degradation. The interventions are different: engineering needs decision-making autonomy (job design); customer service needs workload relief and recognition (different interventions). Wrong: A ignores function-level severity. C applies one solution to different problems. C is right for customer service but wrong for engineering.",
+qAr:"الاستجابة الأكثر ملاءمة استراتيجياً من HR لهذه البيانات هي:",
+oAr:["إلزام جميع المديرين بإكمال تدريب الانخراط إذ وحدتين من ثلاث تحت 75%","الإبلاغ عن درجة 74% الإجمالية للقيادة كنتيجة إيجابية إذ تتجاوز المعيار","إطلاق برنامج تقدير على مستوى الشركة إذ التقدير مُذكور كأحد محركي الانخراط","فصل التدخل: الدرجة الإجمالية تُخفي مشكلات حادة في عمليات المنطقة الغربية التي تُشير بياناتها المفصّلة لفشل محدد في الإدارة يتطلب تدخلاً مستهدفاً وليس حل للمنظمة ككل"],
+sAr:"استبيان الانخراط يُظهر درجة إجمالية 74% (فوق المعيار 68%). تفصيل الوحدات: المكتب الرئيسي 82%، العمليات المنطقة الشرقية 71%، العمليات المنطقة الغربية 51%، المبيعات 69%. أدنى درجات في المنطقة الغربية: 'التقدير' 34%، 'فرص النمو' 41%، 'الوضوح في الدور' 38%."},
+{a:"Employee Engagement & Retention",t:"KI",d:"medium",q:"In Hackman and Oldham's job characteristics model, 'autonomy' contributes to engagement primarily by:",o:["Creating a sense of personal responsibility for outcomes — employees who control their methods feel accountable for results and experience higher internal motivation","Providing employees with flexibility to balance work and personal commitments","Reducing the need for supervisory oversight, which lowers operational costs for the organization","Ensuring all employees have equal input into organizational decisions regardless of their role level"],c:0,e:"Hackman & Oldham: autonomy → experienced responsibility → internal motivation. When employees have discretion over how they achieve goals, they feel personally accountable for results. Wrong: C (supervision cost reduction) is a byproduct, not the engagement mechanism. D (equal input in decisions) misapplies autonomy to organizational governance. B (work-life flexibility) is a different benefit.",
+qAr:"في نموذج خصائص الوظيفة لـ Hackman وOldham، تُسهم 'الاستقلالية' في الانخراط أساساً من خلال:",
+oAr:["إنشاء إحساس بالمسؤولية الشخصية عن النتائج — الموظفون الذين يتحكمون في أساليبهم يشعرون بمزيد من المسؤولية عن نتائج أعمالهم","توفير المرونة للموظفين للتوازن بين التزامات العمل والحياة الشخصية","تقليل الحاجة للإشراف التشغيلي مما يخفض التكاليف التشغيلية","ضمان مدخلات متساوية من جميع الموظفين في القرارات التنظيمية"]},
+{a:"Employee Engagement & Retention",t:"SJI",d:"hard",s:"A company conducts an annual engagement survey with 78% participation. Scores have been flat for 3 years at 71%. Only 23% of managers complete action planning. Employees say 'we fill out the survey but nothing ever changes.'",q:"The MOST critical systemic failure in this engagement program is:",o:["The action planning non-completion — the feedback loop (survey → team conversations → visible action → trust that input matters) is broken.","Senior leadership visibility — the CHRO and CEO should be reviewing team-level scores to increase accountability","The survey frequency — annual surveys don't capture real-time engagement fluctuations","The survey length — shorter surveys would increase completion quality and reduce response fatigue"],c:0,e:"SHRM's fundamental engagement principle: the survey must lead to visible change for employees to trust the process. When surveys produce no visible action, employees stop providing honest input. The 23% action completion rate is the systemic failure. Wrong: C (frequency) doesn't address the action gap. D (survey length) affects participation marginally. B (senior visibility) is one solution but not the identified failure.",
+qAr:"أكثر فشل منهجي حاسم في برنامج الانخراط هذا هو:",
+oAr:["عدم إكمال تخطيط الإجراءات — حلقة التغذية الراجعة (الاستبيان → محادثة الفريق → الإجراء المرئي) مكسورة مما يُعلّم الموظفين أن ملاحظاتهم لا تُحدث فرقاً","ظهور القيادة العليا — يجب على CHRO والرئيس التنفيذي مراجعة بيانات الفرق","وتيرة الاستبيان — الاستبيانات السنوية لا تلتقط تقلبات الانخراط في الوقت الفعلي","طول الاستبيان — الاستبيانات الأقصر ستزيد جودة الإكمال"],
+sAr:"تُجري شركة استبيان انخراط سنوياً بمشاركة 78%. الدرجات ظلت ثابتة عند 67% لثلاث سنوات. مراجعة لوحة التحكم تُظهر أن 34% من الفرق أكملت مناقشات التخطيط للإجراءات، و11% فقط أكملت الإجراءات الفعلية."},
+{a:"Employee Engagement & Retention",t:"KI",d:"medium",q:"'Stay interviews' differ from exit interviews as a retention tool because they:",o:["Are used only for high-potential employees while exit interviews apply to all departing employees","Provide legally protected information since employed employees are more candid than those leaving","Generate data while the employee is still employed and can influence their decision to stay — rather than capturing information after the departure decision has already been made","Require formal HR involvement while exit interviews are typically conducted by managers"],c:2,e:"Stay interviews = proactive retention tool. Conducted with active employees to understand what keeps them and what might drive them away — creating opportunity to address issues before the resignation. Exit interviews = retrospective. Wrong: D (who conducts) — both can be done by HR or managers. A (high-potential only) — stay interviews are most powerful when done broadly. B (legal protection) — no such framework exists.",
+qAr:"تختلف 'مقابلات البقاء' عن مقابلات الخروج كأداة احتفاظ لأنها:",
+oAr:["تُستخدم فقط للموظفين ذوي الإمكانية العالية بينما تنطبق مقابلات الخروج على الجميع","توفر معلومات محمية قانونياً إذ الموظفون النشطون أكثر صراحةً","تولّد بيانات بينما لا يزال الموظف موظّفاً ويمكن التأثير على قراره بالبقاء","تتطلب مشاركة HR الرسمية بينما تُجرى مقابلات الخروج عادةً من قِبَل المديرين المباشرين"]},
+{a:"Employee Engagement & Retention",t:"KI",d:"medium",q:"The 'employee net promoter score' (eNPS) measures:",o:["The comparison between employee satisfaction scores and competitor employee satisfaction benchmarks","The likelihood that employees would recommend the organization as a place to work — calculated as Promoters (9-10 score) minus Detractors (0-6 score)","The ratio of positive to negative performance reviews across all employee levels annually","The percentage of employees who turn down outside offers to remain with the organization"],c:1,e:"eNPS = Promoters (9-10) minus Detractors (0-6). Range: -100 to +100. Simple, comparable, and tracks directional change. Wrong: C (performance reviews) is not eNPS. A (competitor comparison) is benchmarking. D (turning down offers) is retention rate, not eNPS.",
+qAr:"يقيس 'مؤشر صافي المروّجين للموظفين' (eNPS):",
+oAr:["المقارنة بين درجات رضا الموظفين ودرجات الموظفين في المنظمات المنافسة","احتمالية أن يوصي الموظفون بالمنظمة مكاناً للعمل — يُقيَّم من 0-10 ويُحسب بطرح المنتقدين (0-6) من المروّجين (9-10)","نسبة المراجعات الإيجابية إلى السلبية في تقييمات الأداء عبر جميع مستويات الموظفين","نسبة الموظفين الذين يرفضون عروض خارجية للبقاء في المنظمة"]},
+{a:"Employee Engagement & Retention",t:"SJI",d:"medium",s:"An HRBP reviews retention data for 300 software developers. Voluntary turnover is 26% annually. Exit analysis: 44% leave for career growth, 31% for compensation, 18% for manager quality, and 7% for other reasons.",q:"HR's MOST targeted first intervention addresses which factor, and why?",o:["Career growth (44%) because it is the largest single driver — creating visible internal career pathways will produce the highest turnover reduction if effectively implemented","Manager quality (18%) because improving managers produces broad positive effects across multiple engagement drivers","Compensation (31%) because market competitiveness is the most controllable HR variable in a budget cycle","All factors simultaneously through a comprehensive retention program launched in the first 90 days"],c:0,e:"44% is the largest single driver — highest expected ROI from targeted intervention. Career growth programs (internal mobility, development conversations) address a driver employees can act on quickly. Wrong: B (manager quality at 18%) — important but not the largest driver. C (compensation at 31%) — can't always control budget quickly. D (all simultaneously) dilutes focus.",
+qAr:"أكثر تدخل أولي مستهدف من HR يُعالج أي عامل ولماذا؟",
+oAr:["نمو المسار المهني (44%) لأنه أكبر محرك منفرد — إنشاء مسارات مهنية مرئية ومنظمة يُعالج السبب الجذري للأثر الأكبر","جودة الإدارة (18%) لأن تحسين الإدارة يُنتج تأثيرات إيجابية واسعة على الاحتفاظ والانخراط وغيرهما","التعويض (31%) لأن التنافسية السوقية هي العامل الأكثر قابلية للسيطرة والتصرف السريع","جميع العوامل في آنٍ واحد من خلال إطلاق برنامج احتفاظ شامل"],
+sAr:"HRBP يراجع بيانات الاحتفاظ لـ 300 مطوّر برمجيات. الدوران الطوعي 26% سنوياً. بيانات مقابلات الخروج: 44% يذكرون 'محدودية نمو المسار المهني'، 31% يذكرون 'تعويضاً دون السوق'، 18% يذكرون 'إشكاليات في الإدارة'، 7% يذكرون 'أسباباً أخرى'."},
+{a:"Employee Engagement & Retention",t:"KI",d:"medium",q:"Maslow's hierarchy of needs is applied in HR engagement strategy primarily to recognize that:",o:["Employees are motivated by different needs at different stages — programs addressing higher-order needs will not engage employees whose lower-order needs are unmet","The hierarchy applies only to individual contributors, not to managers or executives whose needs differ in kind","Maslow's hierarchy determines the order in which HR should implement compensation, safety, and development programs","All employees must have physiological needs fully met before any training or development will be effective"],c:0,e:"HR application: if employees feel psychologically unsafe, unfairly treated, or excluded (belonging needs unmet), recognition programs targeting esteem needs won't create engagement. HR must address foundational needs first. Wrong: D is too literal — physiological needs are rarely unmet in employment. C misapplies a motivation model as a program sequencing framework. B is false.",
+qAr:"تُطبَّق هرمية ماسلو للاحتياجات في استراتيجية انخراط HR أساساً للتعرّف على أن:",
+oAr:["الموظفون تحركهم احتياجات مختلفة في مراحل مختلفة — البرامج والتدخلات يجب تصميمها لمعالجة الاحتياجات غير المُشبَعة السائدة","الهرمية تنطبق فقط على المساهمين الأفراد وليس على المديرين","هرمية ماسلو تُحدد ترتيب تطبيق HR لعناصر التعويض وتصاميم الوظائف وبرامج التطوير","يجب إشباع الاحتياجات الفسيولوجية لجميع الموظفين بشكل كامل قبل بدء أي تدريب أو تطوير"]},
+{a:"Employee Engagement & Retention",t:"SJI",d:"medium",s:"A company has implemented generous remote work, competitive pay, and flexible benefits. Engagement improved from 61% to 74% over 18 months. The CEO asks: 'What will drive us from 74% to 85%?'",q:"Based on engagement research, the factor MOST likely to drive further improvement from an already-above-average baseline is:",o:["Increasing remote work days further since employees have high satisfaction with current flexibility","Manager quality and immediate team experience — at higher engagement baselines, hygiene factors are largely satisfied.","Implementing a formal recognition platform since recognition is consistently identified as a top engagement driver","Adding more compensation and benefits since these were the initial engagement drivers"],c:1,e:"Herzberg's two-factor theory: at 74%, hygiene factors (pay, policies) are likely sufficient. Further movement requires motivators: growth, achievement, meaningful work, quality relationships — manifesting primarily through the direct manager. Wrong: D (more compensation) — at competitive levels, marginal increases have diminishing engagement returns. A (more remote days) — already flexible. C (recognition platform) — quality matters more than the platform.",
+qAr:"استناداً لأبحاث الانخراط، العامل الأكثر احتمالاً لدفع المزيد من التحسين من قاعدة عالية هو:",
+oAr:["زيادة أيام العمل عن بُعد إذ الموظفون يُبدون رضاً عالياً عن المرونة","جودة المدير وتجربة الفريق المباشر — عند خطوط الأساس الأعلى للانخراط، المدير هو أكبر محدد لمزيد من التحسين","تطبيق منصة تقدير رسمية إذ التقدير يُذكر باستمرار كمحرك انخراط","إضافة المزيد من التعويض والمزايا إذ كانت هذه المحركات الأولية للمشاركة"],
+sAr:"طبّقت شركة عمل عن بُعد سخياً وأجوراً تنافسية ومزايا مرنة. النتائج: درجات الانخراط ارتفعت من 58% لـ 74% خلال عامين. يُطلب من HRBP توصيات للتحسين من مستوى مرتفع 74%."},
+{a:"Employee Engagement & Retention",t:"KI",d:"medium",q:"'Voluntary turnover cost' is typically calculated to include:",o:["The full replacement cost: recruiting, selection, onboarding, training, productivity ramp-up time, and productivity loss to remaining team members during vacancy","The salary savings from the vacancy period minus the cost of any temporary replacement hired","The cost of the exit interview process plus any severance payments to the departing employee","Only the direct recruitment costs such as advertising, agency fees, and hiring manager time"],c:0,e:"True voluntary turnover cost = departure costs + vacancy costs (overtime, productivity loss) + replacement costs (recruiting, selection) + onboarding costs + ramp-up productivity loss. SHRM estimates 50-200% of annual salary depending on role complexity. Wrong: D (recruitment only) vastly underestimates. B (salary savings) ignores all indirect costs. C (exit + severance) is a fraction of total.",
+qAr:"تُحسب 'تكلفة الدوران الطوعي' عادةً لتشمل:",
+oAr:["تكلفة الاستبدال الكاملة: التوظيف والاختيار والإلحاق والتدريب وانخفاض الإنتاجية أثناء التأهّل والأثر على زملاء الفريق","وفورات الراتب من فترة الشغور ناقص تكلفة أي عمالة مؤقتة","تكلفة عملية مقابلة الخروج بالإضافة إلى أي مدفوعات مكافأة نهاية الخدمة","تكاليف التوظيف المباشرة فقط كالإعلانات ورسوم الوكالات وتكاليف التوظيف"]},
+{a:"Employee Engagement & Retention",t:"SJI",d:"hard",s:"HR analysis identifies three variables predicting 18-month voluntary exit with 73% accuracy: (1) first 30-day manager feedback quality, (2) team social event invitation in weeks 1-2, and (3) skip-level manager one-on-one within 90 days.",q:"The MOST strategic use of this predictive data is to:",o:["Use the model to identify new hires at risk of departure and transfer them to different managers preemptively","Build structured onboarding checkpoints for all new hires ensuring the three predictive factors occur systematically — making relationship-building and manager quality a process, not an accident","Redesign new hire compensation since the compensation variable wasn't included in the model","Share the model with candidates during recruiting to demonstrate the organization's commitment to new hire success"],c:1,e:"Predictive analytics best use: turn prediction into prevention. If the three predictors are controllable, building them into systematic onboarding converts a risk predictor into a retention intervention. Wrong: A (transfer at-risk hires) treats symptoms. D (share with candidates) is brand marketing, not retention. C (compensation) — compensation wasn't predictive; adding it won't improve retention if drivers are relationship-based.",
+qAr:"الاستخدام الأكثر استراتيجية لهذه البيانات التنبؤية هو:",
+oAr:["استخدام النموذج لتحديد الموظفين الجدد المعرضين للمغادرة ونقلهم لفرق مختلفة","بناء نقاط تفتيش منظّمة للإلحاق لجميع الموظفين الجدد تضمن قياس المتغيرات الثلاثة والتدخل عند إشارات الخطر قبل أن تؤدي لقرار المغادرة","إعادة تصميم تعويض الموظفين الجدد إذ متغير التعويض لم يُدرج في النموذج","مشاركة النموذج مع المرشحين خلال التوظيف لإظهار الاستثمار في نجاح الموظف"],
+sAr:"تحليل HR يُحدد ثلاثة متغيرات تتنبأ بالمغادرة الطوعية في 18 شهراً بدقة 73% للموظفين الجدد: 'التوافق مع المدير' (موضوعي، قيم المدير في الشهر 3)، 'وضوح الدور' (موضوعي، درجة التقييم في الشهر 6)، 'التواصل الزملاء' (موضوعي، تكرار التعاون في الشهر 9)."},
+{a:"Employee Engagement & Retention",t:"KI",d:"medium",q:"'Job crafting' as an engagement strategy refers to:",o:["HR redesigning job descriptions to add meaningful tasks to underperforming employees' roles","Managers informally adjusting team roles based on employee performance without formal HR approval","The process of creating custom career paths for high-potential employees in succession planning","Employees proactively reshaping their tasks, relationships, and perceptions of work to increase meaning and alignment with their strengths — without necessarily changing formal job descriptions"],c:3,e:"Job crafting (Wrzesniewski & Dutton): employee-initiated, proactive adjustment of task scope, relationships, and cognitive framing to increase meaning and engagement. HR's role: create conditions that allow job crafting. Wrong: A (HR redesigns) is top-down job design. B (manager adjusts) is informal job design. C (career paths) is succession planning.",
+qAr:"'تصميم الوظيفة الذاتي' كاستراتيجية انخراط يشير إلى:",
+oAr:["إعادة تصميم HR لتوصيفات الوظائف لإضافة مهام ذات معنى للموظفين ضعيفي الأداء","تعديل المديرين غير الرسمي لأدوار الفريق بناءً على أداء الموظف","عملية إنشاء مسارات مهنية مُخصَّصة للموظفين ذوي الإمكانية العالية","إعادة تشكيل الموظفين باستباقية لمهامهم وعلاقاتهم وإدراكهم لعملهم بما يزيد المعنى والتوافق مع نقاط قوتهم"]},
+{a:"Employee Engagement & Retention",t:"KI",d:"easy",q:"A 'total rewards' strategy integrates which components beyond base compensation?",o:["Only legally mandated benefits such as Social Security contributions, workers' compensation, and unemployment insurance","The combination of salary, bonuses, and equity grants comprising direct financial compensation for employees","Employee benefits programs excluding direct compensation elements, managed separately from compensation administration","The full spectrum of monetary and non-monetary value including: base pay, variable pay, benefits, work-life programs, performance management, recognition, and career development"],c:3,e:"Total rewards (WorldatWork model): Compensation (base + variable) + Benefits + Work-Life + Performance & Recognition + Career Development. The power is the integrated value proposition. Wrong: A (legally mandated only) is a fraction. B (monetary only) excludes benefits and non-monetary value. C (benefits only) is the reverse error.",
+qAr:"تدمج استراتيجية 'إجمالي المكافآت' أي مكوّنات تتجاوز الراتب الأساسي؟",
+oAr:["المزايا الإلزامية قانوناً فقط كمساهمات الضمان الاجتماعي وتأمين العجز","مجموع الراتب والمكافآت ومنح الأسهم التي تشكّل التعويض المالي المباشر","برامج مزايا الموظفين باستثناء عناصر التعويض المباشر","الطيف الكامل من القيمة النقدية وغير النقدية: الراتب الأساسي والأجر المتغير والمزايا والتوازن بين العمل والحياة وتقدير الأداء وتطوير المسار المهني"]},
+{a:"Employee Engagement & Retention",t:"SJI",d:"medium",s:"An HRBP is preparing the people review presentation for the business unit leadership team. The VP says: 'Tell me what I need to DO differently, not just what the data shows.'",q:"The MOST business-partnering response translates the data by:",o:["Committing to a follow-up analysis identifying causal factors before making any recommendations","Presenting the data alongside industry benchmarks to give the VP context before recommending actions","Synthesizing the data into a talent narrative: which talent risks are highest, what management behaviors likely drive them","Presenting all four datasets separately with trend lines and letting the VP draw their own conclusions"],c:2,e:"Business partner value = synthesis and prescription, not just reporting. The VP is asking for prioritized action recommendations, not raw data. Wrong: D (present all data) abdicates the HRBP analytical role. A (commit to follow-up) delays when the VP has asked for direction now. B (benchmarks first) provides context but doesn't answer 'what do I DO?'",
+qAr:"أكثر استجابة شراكة الأعمال التي تُترجم البيانات:",
+oAr:["الالتزام بتحليل متابعة يُحدد العوامل السببية قبل تقديم أي توصيات","عرض البيانات إلى جانب المعايير المرجعية للصناعة لإعطاء نائب الرئيس سياقاً","تركيب البيانات في سرد مواهب: أي مخاطر المواهب أعلى، ما الرابط السببي، وتوصيات HR المحددة ذات الأولوية لمعالجة المخاطر المتشابكة","عرض جميع مجموعات البيانات الأربع بشكل منفصل مع خطوط اتجاه وترك نائب الرئيس للتفسير"],
+sAr:"HRBP يُحضّر عرض مراجعة الأفراد لفريق قيادة الوحدة. البيانات المتاحة: معدل دوران طوعي 24% (مقابل 16% سنوات سابقة)، 68% من المغادرين طوعاً ذكروا 'محدودية نمو المسار المهني'، ثلاثة من خمسة مناصب شاغرة في فئة الأقدمية العالية عمرها أكثر من 90 يوماً، 34% من الوظائف ذات المواهب العالية خالية من خطط الخلافة."},
+{a:"Employee Engagement & Retention",t:"KI",d:"medium",q:"The 'Pygmalion effect' in management refers to:",o:["The phenomenon where high expectations communicated by a leader produce higher performance from followers — and low expectations produce lower performance","The manager's tendency to attribute employee success to the manager's own coaching rather than employee effort","The bias where employees perform better when they believe they are being observed by management","The tendency for managers to promote employees who resemble them demographically in background and style"],c:0,e:"Pygmalion effect = self-fulfilling prophecy of expectation. When managers hold high expectations and communicate them, employees internalize those expectations and perform accordingly. This is why manager quality is so central to engagement. Wrong: D (demographic similarity) is affinity bias. B (attribution of success) is self-serving attribution bias. C (observation effect) is the Hawthorne effect.",
+qAr:"'تأثير بيغماليون' في الإدارة يشير إلى:",
+oAr:["الظاهرة التي تُنتج فيها التوقعات العالية التي يُعلنها القائد أداءً أعلى من الأتباع — والعكس صحيح","ميل المدير لنسب نجاح الموظفين لجهود المدير الخاصة","التحيز الذي يؤدي فيه الموظفون أداءً أفضل عندما يعتقدون أنهم مُراقَبون","ميل المديرين لترقية الموظفين الذين يُشبهونهم ديموغرافياً (التحيز للمُشابه)"]},
+{a:"Employee Engagement & Retention",t:"KI",d:"medium",q:"When analyzing why engagement scores differ significantly between demographic groups, HR should FIRST investigate:",o:["Whether the survey instrument contains culturally biased questions that disadvantage certain demographic groups","Whether different groups experience the same workplace conditions differently — examining policies, management behaviors, and career outcomes to identify whether systemic barriers exist for certain groups","Whether the demographic groups completed the survey at different rates, since response bias may explain the difference","Whether the demographic groups work in different business units where local culture naturally varies"],c:1,e:"Demographic engagement gaps are a DEI signal: they indicate different groups experience the workplace differently. The investigation must examine: network access, management quality differences, promotion and development equity. The goal is to address root causes, not explain the gap away. Wrong: C (response bias) is a methodological check but not the primary investigation. A (survey bias) is worth checking but rarely the primary cause. D (business unit culture) is possible but is a description, not an investigation.",
+qAr:"عند تحليل سبب اختلاف درجات الانخراط بشكل ملحوظ بين الفئات الديموغرافية، يجب على HR أولاً تقييم:",
+oAr:["ما إذا كانت أداة الاستبيان تحتوي على أسئلة متحيزة ثقافياً","ما إذا كانت الفئات المختلفة تختبر نفس ظروف العمل بشكل مختلف — التجارب المختلفة تُفسّر الاختلافات في الدرجات بشكل أكثر مباشرة","ما إذا كانت الفئات الديموغرافية أكملت الاستبيان بمعدلات مختلفة","ما إذا كانت الفئات الديموغرافية تعمل في وحدات عمل مختلفة حيث الأداء المحلي يؤثر على درجات الانخراط"]},
+{a:"Learning & Development",t:"KI",d:"medium",q:"The ADDIE model in instructional design stands for:",o:["Assess, Define, Deliver, Integrate, Expand — a needs-driven learning framework used in corporate settings","Analyze, Design, Develop, Implement, Evaluate — a systematic framework for creating effective training programs","Align, Discover, Develop, Implement, Embed — a change management model adapted for learning contexts","Assess, Design, Develop, Integrate, Evaluate — focusing on learner assessment at every training stage"],c:1,e:"ADDIE: Analyze (needs, audience, context) → Design (objectives, structure) → Develop (content, materials) → Implement (delivery) → Evaluate (effectiveness). It is the foundational instructional design model. Wrong: D, C, A are fabricated acronyms. SHRM consistently tests ADDIE for the L&D competency.",
+qAr:"نموذج ADDIE في التصميم التعليمي يرمز إلى:",
+oAr:["تقييم، تحديد، تسليم، دمج، توسيع — إطار تعلّم يُحركه الاحتياج","تحليل، تصميم، تطوير، تطبيق، تقييم — إطار منهجي لتصميم برامج التدريب الفعّالة","توافق، اكتشاف، تطوير، تطبيق، تضمين — نموذج إدارة تغيير مُكيَّف","تقييم، تصميم، تطوير، دمج، تقييم — التركيز على تقييم المتعلم"]},
+{a:"Learning & Development",t:"SJI",d:"hard",s:"An L&D team delivered 8,000 training hours with 94% completion rates and 4.7/5.0 satisfaction scores. A board member asks: 'What behavior changed and what business problem did we solve?'",q:"The board member is identifying a gap at which Kirkpatrick evaluation level?",o:["Level 1 (Reaction) — the satisfaction scores are not sufficient to prove learning actually occurred","Level 3 (Behavior) and Level 4 (Results) — high completion and satisfaction without demonstrated on-the-job behavior change or business outcome improvement means L&D cannot demonstrate strategic value","Level 2 (Learning) — knowledge tests should be added to confirm that learning actually occurred","Level 5 (ROI) — the board wants a dollar-value return calculation that the CLO failed to include"],c:1,e:"The board is asking for Level 3 (are people doing differently on the job?) and Level 4 (did business outcomes improve?). L&D stopping at Level 1/2 (satisfaction + completion) cannot demonstrate strategic value. Wrong: A (Level 1) — satisfaction was measured. C (Level 2) — adds value but isn't the gap the board identified. D (Level 5 ROI) — Kirkpatrick's original model has 4 levels.",
+qAr:"عضو مجلس الإدارة يُحدد فجوة في أي مستوى تقييم Kirkpatrick؟",
+oAr:["المستوى 1 (ردة الفعل) — درجات الرضا غير كافية لإثبات التعلّم","المستوى 3 (السلوك) والمستوى 4 (النتائج) — الإكمال والرضا العاليان يثبتان ردة فعل إيجابية لكنهما لا يثبتان تغيير سلوك القيادة في مكان العمل","المستوى 2 (التعلم) — يجب إضافة اختبارات معرفية لتأكيد التعلم","المستوى 5 (ROI) — المجلس يريد حساب عائد بالدولار"],
+sAr:"قدّم فريق L&D 8,000 ساعة تدريب بمعدل إكمال 94% ودرجات رضا 4.7/5.0. في اجتماع مجلس الإدارة، يسأل أحد الأعضاء: 'كيف يتحول هذا إلى نتائج أعمال؟ كيف نعرف أن سلوك القيادة تغيّر؟'"},
+{a:"Learning & Development",t:"KI",d:"medium",q:"The '70-20-10' learning model suggests that effective professional development comes primarily from:",o:["70% on-the-job experience, 20% relationships and coaching, and 10% formal training — emphasizing experiential and social learning over traditional programs","70% formal classroom training, 20% online courses, and 10% on-the-job experience","70% individual self-directed learning, 20% team-based learning, and 10% manager-directed development","70% skills application, 20% knowledge acquisition, and 10% attitude development — a content-balanced approach"],c:0,e:"70-20-10: 70% = challenging assignments, stretch roles, real work. 20% = relationships, mentors, coaches, feedback. 10% = formal training, courses, workshops. Implication: L&D ROI comes from experiential design, not just classroom delivery. Wrong: A inverts the model completely. C and C are fabricated frameworks.",
+qAr:"يُقترح نموذج التعلم '70-20-10' أن التطوير المهني الفعّال يأتي أساساً من:",
+oAr:["70% تجربة ميدانية، 20% علاقات وإرشاد، 10% تدريب رسمي","70% تدريب رسمي في الفصل الدراسي، 20% دورات إلكترونية، 10% تجربة ميدانية","70% تعلم ذاتي التوجيه، 20% تعلم جماعي، 10% مُيسَّر من قِبَل المدير","70% تطبيق مهارات، 20% اكتساب معرفة، 10% تطوير اتجاهات"]},
+{a:"Learning & Development",t:"SJI",d:"medium",s:"Needs analysis for customer service team reveals: scripts are outdated (product knowledge gap), escalation procedures are unclear (process gap), team leads handle de-escalation differently (skill inconsistency), and supervisors have never been coached to reinforce training on the floor.",q:"The MOST complete learning solution addresses which elements?",o:["Customer satisfaction survey redesign to better diagnose the source of the performance decline","A single customer service training program delivered to all frontline employees","A mystery shopper program to identify which specific employees are causing the satisfaction decline","Multiple targeted interventions: product knowledge update for staff, process clarification for escalation, de-escalation skills workshop"],c:3,e:"The needs analysis identified four distinct gaps: content, process, skill, and transfer environment. A single training program addresses only one gap. Wrong: B (one program) can't fix four different root causes. A (survey redesign) doesn't address already-identified gaps. C (mystery shopping) identifies individuals but doesn't build capability.",
+qAr:"أكثر حل تعليمي اكتمالاً يُعالج أي عناصر؟",
+oAr:["إعادة تصميم استبيان رضا العملاء لتشخيص مصدر مشكلة الخدمة بشكل أفضل","برنامج تدريب خدمة عملاء موحّد يُقدَّم لجميع الموظفين في الخطوط الأمامية","برنامج تسوّق سري لتحديد الموظفين المحددين الذين يُسبّبون المشكلة","تدخلات متعددة ومستهدفة: تحديث معرفة المنتج للموظفين، تطوير كتيب إجراءات الحل، توزيع 23% من الثغرات في المعلومات الأساسية مباشرةً، تصميم مساعد وظيفي لمهارات التوثيق"],
+sAr:"تحليل الاحتياجات لفريق خدمة العملاء يكشف: المعلومات التوضيحية قديمة (قصور معرفة المنتج 67%)، العمليات ضعيفة التطبيق (قصور مهارات الإجراءات 43%)، 23% من الموظفين لم يحصلوا على المعلومات الأساسية حتى، 51% يفتقرون لمهارات التوثيق لحلول المشكلات."},
+{a:"Learning & Development",t:"KI",d:"medium",q:"'Transfer of training' refers to:",o:["Moving learning content from one training modality to another for broader organizational access","The process of certifying that an employee has completed all required training modules for compliance purposes","Sharing of best practices between trainers across different organizational units or geographic locations","The degree to which learners apply what they learned in training to their actual job performance and sustain that application over time"],c:3,e:"Transfer of training = did learning change behavior on the job? The most critical — and most often missing — L&D measure. Factors affecting transfer: realistic job simulation, learner motivation, manager support, and organizational culture rewarding new behaviors. Wrong: A (modality transfer) is content format change. B (completion certification) is compliance tracking. C (trainer sharing) is not transfer in this sense.",
+qAr:"'انتقال التدريب' يشير إلى:",
+oAr:["نقل محتوى التعلم من وسيلة تدريبية لأخرى لتوسيع الوصول","عملية شهادة إكمال الموظف لجميع التدريبات المطلوبة","مشاركة أفضل الممارسات بين المدربين عبر وحدات تنظيمية مختلفة","درجة تطبيق المتعلمين لما تعلّموه في التدريب على أدائهم الفعلي في العمل والحفاظ على ذلك التطبيق بمرور الوقت"]},
+{a:"Learning & Development",t:"SJI",d:"hard",s:"A sales training program cost $420,000 for 200 reps. Six months post-training, average revenue per rep increased by $18,200 compared to a control group of 50 reps who didn't receive training and showed growth of $18,500.",q:"The MOST accurate evaluation conclusion about this training program is:",o:["The program produced no measurable incremental revenue benefit compared to the control group — market growth explains the improvement, not the training. The $420,000 investment did not generate positive ROI","The control group size is too small to draw conclusions, requiring further statistical analysis before concluding","Sales revenue is the wrong metric for evaluating sales training — knowledge scores should be used instead","The program was successful because all participants showed revenue improvement after completing the training"],c:0,e:"Classic confounding variable problem: the control group showed equivalent growth without training. The training investment produced zero incremental return. Without a control group, the revenue growth would have appeared to validate the program. Wrong: A ignores the control group data. B (sample size) — 50 is adequate for preliminary conclusions. C (wrong metric) — revenue IS the right metric for sales training.",
+qAr:"أكثر استنتاج تقييم دقيق حول هذا البرنامج التدريبي هو:",
+oAr:["البرنامج لم يُنتج أي عائد إيراد تدريجي قابل للقياس مقارنة بمجموعة الضبط — ارتفاع إيرادات مجموعة الضبط بنسبة مساوية يُشير لأن محركات السوق وليس التدريب مسؤولة عن التحسن","حجم مجموعة الضبط صغير جداً لاستخلاص استنتاجات","إيرادات المبيعات هي المقياس الخاطئ لتقييم تدريب المبيعات","البرنامج ناجح لأن جميع المشاركين أظهروا تحسناً في الإيرادات"],
+sAr:"كلّف برنامج تدريب مبيعات $420,000 لـ 200 مندوب. بعد ستة أشهر، ارتفع متوسط الإيرادات بنسبة 19% للمشاركين. مجموعة الضبط (50 مندوب غير مدرّب في نفس الفترة) ارتفعت إيراداتهم 22%. معدلات رضا المشاركين: 4.6/5.0."},
+{a:"Learning & Development",t:"KI",d:"medium",q:"A 'learning organization' in Senge's framework is characterized primarily by:",o:["An organization that requires all employees to earn professional certifications relevant to their field","An organizational culture where people continually expand their capacity to create results and where new, expansive patterns of thinking are nurtured — through systems thinking, personal mastery, and team learning","A formal learning management system (LMS) that tracks all employee training completions company-wide","High training hours per employee annually, demonstrating strong investment in continuous development"],c:1,e:"Senge's learning organization (The Fifth Discipline): cultural and systemic quality — not a training metric. Systems thinking + personal mastery + mental models + shared vision + team learning. Wrong: D (training hours) is a lagging indicator. C (LMS) is a tool. A (certifications) is a learning requirement, not organizational character.",
+qAr:"تتميّز 'منظمة التعلّم' في إطار Senge أساساً بـ:",
+oAr:["منظمة تُلزم جميع الموظفين بالحصول على شهادات مهنية للبقاء في أدوارهم","ثقافة تنظيمية يوسّع فيها الناس باستمرار قدرتهم على إنشاء النتائج التي يرغبون فيها حقاً — تتطلب التفكير الأنظمي والبراعة الشخصية والنماذج الذهنية والرؤية المشتركة وتعلم الفريق","نظام إدارة تعلم رسمي (LMS) يتتبع جميع التدريبات","ساعات تدريب عالية لكل موظف سنوياً تُظهر استثماراً قوياً في التطوير"]},
+{a:"Learning & Development",t:"SJI",d:"medium",s:"An L&D team proposes a leadership development program: 3-day residential training + 6 online modules + 360 feedback. Budget $280,000. The CHRO asks: 'Where is the 70% in this design?'",q:"The CHRO's question is MOST likely pointing to which gap in the program design?",o:["There is no structured experiential learning component — the design is all formal training and limited social learning with no stretch assignments","The program should include 70 managers per cohort to optimize group learning dynamics and peer interaction","The program doesn't include 70 hours of formal content, which is the recognized industry minimum for leadership development","The 70-20-10 model requires 70% online learning in all contemporary leadership development programs"],c:0,e:"The CHRO references 70-20-10: the design is entirely in the 10% (classroom + online) and partially in the 20% (360 feedback). The 70% — experiential learning through stretch assignments, action learning, and business projects — is completely absent. This is the most common L&D design error. Wrong: A inverts the model. C misunderstands the 70. D inverts the 70-20-10 allocation.",
+qAr:"السؤال الأرجح أن CHRO يُشير لأي فجوة في تصميم البرنامج؟",
+oAr:["لا يوجد مكوّن تعلم تجريبي منظّم — التصميم كلّه رسمي ولا يُعالج الـ 70% من التعلم الميداني التي تُنتج تطوير القيادة الفعلي","يجب أن يضم البرنامج 70 مديراً لكل دورة لتحسين التعلم الجماعي","البرنامج لا يتضمن 70 ساعة من المحتوى الرسمي وهو الحد المعترف به لبرامج تطوير القيادة","نموذج 70-20-10 يتطلب 70% تعلماً إلكترونياً في برامج القيادة الحديثة"],
+sAr:"يقترح فريق L&D برنامج تطوير قيادي: 3 أيام تدريب داخلي + 6 وحدات إلكترونية + اختبار نهائي. يسأل CHRO: 'ماذا سيفعل المدير بشكل مختلف في الشهر الثاني عشر؟ كيف يتوافق تصميمك مع كيفية تعلّم المديرين فعلاً؟'"},
+{a:"Learning & Development",t:"KI",d:"medium",q:"'Microlearning' is MOST appropriate for which learning objective?",o:["Developing deep technical expertise in complex subjects requiring sequential, structured curriculum progression","Providing just-in-time, bite-sized knowledge reinforcement for skills or information that employees need quickly and can apply immediately","Replacing instructor-led training for legally mandated compliance topics requiring formal attestation","Developing complex leadership capabilities that require sustained reflection and practice over extended periods"],c:1,e:"Microlearning = short (3-5 minute), focused learning moments for immediate application. MOST appropriate for: product updates, software tips, compliance refreshers, process changes. NOT appropriate for: complex skill development, deep expertise, or behavior change programs. Wrong: D, C, D all describe contexts requiring more sustained learning design.",
+qAr:"يكون 'التعلم المُصغَّر' الأكثر ملاءمة لأي هدف تعليمي؟",
+oAr:["تطوير خبرة تقنية عميقة في موضوعات معقدة تتطلب تعلماً تتابعياً","توفير تعزيز معرفي سريع ومُجزَّأ للمهارات أو المعلومات التي تتطلب تطبيقاً فورياً أو مراجعة دورية","استبدال التدريب بقيادة مدرب للموضوعات الإلزامية للامتثال","تطوير قدرات قيادية معقدة تتطلب تفكيراً مستمراً وتطبيقاً تجريبياً"]},
+{a:"Learning & Development",t:"KI",d:"medium",q:"A 'learning needs analysis' typically begins with which step?",o:["Analyzing business performance gaps to determine whether a gap is caused by a training deficiency or by other factors — ensuring training is actually the right solution","Identifying the training solution that best matches the organization's available training budget","Reviewing industry benchmarks to identify gaps in the organization's training investment compared to competitors","Conducting employee surveys to identify topics employees would like to learn about"],c:0,e:"Needs analysis first step: performance gap analysis — is there a gap between expected and actual performance? Is it caused by lack of knowledge/skill (training helps) or by process, motivation, or resource issues (training won't help)? Training for non-training problems wastes resources. Wrong: B (budget) is a constraint. D (employee surveys) captures desired topics but not whether training is the right solution. C (benchmarks) informs investment levels, not specific needs.",
+qAr:"عادةً تبدأ 'تحليل احتياجات التعلم' بأي خطوة؟",
+oAr:["تحليل فجوات أداء الأعمال لتحديد ما إذا كانت الفجوة ناجمة عن نقص المعرفة أو المهارة (التدريب مناسب) أم عوامل أخرى (التدريب غير مناسب)","تحديد حل التدريب الأنسب لموارد المنظمة المتاحة","مراجعة معايير الصناعة لتحديد الفجوات في تدريب المنظمة","إجراء استطلاعات الموظفين لتحديد الموضوعات التي يرغبون في تعلّمها"]},
+{a:"Learning & Development",t:"SJI",d:"hard",s:"HR is implementing a new performance management system for 340 managers. The L&D team proposes a 4-hour classroom training session as the learning solution.",q:"The MOST complete learning solution design for this implementation requires:",o:["Replace classroom training with an online self-paced course to maximize schedule flexibility for all managers","A multi-modal design: pre-work (overview video + job aids), classroom training for criteria and conversation skills (with practice scenarios)","Only the 4-hour classroom training since it covers all required content in the most time-efficient format","Postpone training until after the system go-live so managers can practice in the real environment"],c:1,e:"Complex behavior change requires: pre-work for baseline knowledge, practice scenarios in training for skill development, job aids for performance support, simulation for software, peer learning for application questions. A single 4-hour session can deliver knowledge but cannot produce the behavior change required. Wrong: C (4 hours only) undersizes the design for the behavior change required. D (train after go-live) maximizes confusion. A (self-paced online only) eliminates practice and social learning components.",
+qAr:"أكثر تصميم حل تعليمي اكتمالاً لهذا التطبيق يتطلب:",
+oAr:["استبدال التدريب الفصلي بدورة إلكترونية ذاتية لزيادة مرونة الجدول","تصميم متعدد الأساليب: عمل مسبق (فيديو نظرة عامة + مساعدات وظيفية)، تدريب فصلي للممارسة العملية، تدريب عبر المديرين المباشرين ليُطبّق المديرون في مواقف حقيقية أثناء أول دورة، قنوات دعم متاحة بعد الإطلاق","التدريب الفصلي 4 ساعات فقط إذ يغطي جميع المحتوى المطلوب في جلسة واحدة فعّالة","تأجيل التدريب لما بعد إطلاق النظام حتى يتمكن المديرون من التدرب على النظام الحقيقي"],
+sAr:"تُطبّق HR نظام إدارة أداء جديد لـ 340 مدير. يقترح فريق L&D: تدريب فصلي 4 ساعات قبل الإطلاق، ثم دعم عبر البريد الإلكتروني بعد الإطلاق."},
+{a:"Learning & Development",t:"KI",d:"medium",q:"A 'performance consulting' approach to L&D means the L&D function:",o:["Designs learning programs that directly measure their impact on job performance metrics","Replaces the HR business partner role with dedicated L&D consultants embedded in each business unit","Provides consulting services to HR business partners about learning methodology and best practices","Analyzes root causes of performance gaps before recommending training — recommending non-training solutions when the gap isn't caused by lack of knowledge or skill"],c:3,e:"Performance consulting: L&D as a business partner that diagnoses performance gaps and prescribes the right solution — which may be training, process redesign, incentive restructuring, or technology. Wrong: C (consulting to HR partners) is a different relationship. A (measuring learning impact) describes Kirkpatrick Level 3, not performance consulting. B (replace HRBP) is a structural model, not a consulting approach.",
+qAr:"يعني نهج 'استشارة الأداء' في L&D أن وحدة L&D:",
+oAr:["تُصمّم برامج تعليمية تقيس مباشرة أثرها على أداء الوظيفة","تستبدل دور شريك أعمال HR بمستشاري L&D مُخصَّصين مُضمَّنين في الوحدات","تقدم خدمات استشارية لشركاء أعمال HR حول منهجيات التعلم","تُحلل الأسباب الجذرية لفجوات الأداء قبل التوصية بالتدريب — قد توصي بحلول غير تدريبية عندما لا تكون فجوة المعرفة المشكلة"]},
+{a:"Learning & Development",t:"SJI",d:"medium",s:"L&D delivers mandatory 2-hour harassment prevention training to 1,200 employees. Post-training assessments show 91% pass rates. Six months later, harassment complaints are unchanged and bystander inaction has increased.",q:"HR's MOST analytically accurate assessment is:",o:["The program should be extended to 4 hours to address the bystander gap more comprehensively","The training achieved knowledge transfer (Level 2) but failed to change behavior (Level 3) — unchanged complaints and","The CLO is correct — a 91% pass rate demonstrates effective learning and full legal compliance","Legal compliance was achieved since training was completed, and harassment incidents are a conduct issue not an L&D failure"],c:1,e:"91% pass rate = Level 2 learning. Unchanged complaints + bystander inaction = Level 3 failure. Knowledge and skill to act are different: knowing bystander intervention is expected is different from feeling confident to act under social pressure. Active scenario practice changes behavior; passive knowledge tests do not. Wrong: A stops at Level 2. A (extend to 4 hours) adds time without changing the design flaw. D prioritizes compliance tick-boxing over actual impact.",
+qAr:"أكثر تقييم تحليلي دقيق من HR هو:",
+oAr:["يجب تمديد البرنامج لـ 4 ساعات لمعالجة فجوة المراقب بشكل أكثر شمولاً","حقق التدريب نقل المعرفة (المستوى 2) لكن فشل في تغيير السلوك (المستوى 3) — الفجوة في سلوك المراقب هي فجوة مهارات تطبيق وليست فجوة معرفة","CLO صحيح — معدل اجتياز 91% يُثبت التعلم الفعّال ويُفي بمتطلبات الامتثال","تحقق الامتثال القانوني إذ أُكمل التدريب وشكاوى التحرش هي مصدر قلق مستقل"],
+sAr:"يُقدّم L&D تدريباً إلزامياً لمنع التحرش لـ 1,200 موظف (ساعتان). معدلات الاجتياز: 91%. ستة أشهر لاحقاً: شكاوى التحرش لم تتغير. مراجعة ما بعد التدريب تُظهر: 78% من المشاركين لا يزالون لا يتدخلون كمراقبين عند رؤية سلوك إشكالي."},
+{a:"Total Rewards",t:"KI",d:"medium",q:"The 'compa-ratio' in compensation analysis measures:",o:["The ratio of a job's compensation to the highest-paid employee in the organization","The ratio of direct compensation to indirect compensation in the employee's total rewards package","An employee's actual pay as a percentage of the midpoint of their salary range — a ratio of 1.0 means the employee is paid at midpoint","The comparison between the organization's total compensation cost and industry benchmark compensation spending"],c:2,e:"Compa-ratio = Actual Pay ÷ Range Midpoint. 0.85 = 15% below midpoint (new hires in learning curve). 1.0 = at midpoint (fully competent performer at market). 1.15 = 15% above midpoint (highly experienced, top performer). Used to assess pay equity across individuals in the same grade. Wrong: A (vs. highest paid) is a different ratio. D (total compensation benchmarking) is market analysis. B (direct vs. indirect ratio) describes benefits allocation.",
+qAr:"يقيس 'نسبة Compa-Ratio' في تحليل التعويض:",
+oAr:["نسبة تعويض وظيفة ما إلى الموظف الأعلى أجراً في المنظمة","نسبة التعويض المباشر إلى التعويض غير المباشر في حزمة الموظف","الأجر الفعلي للموظف كنسبة مئوية من منتصف نطاق راتبه — يقيس الموضع السوقي في نطاق الراتب","المقارنة بين إجمالي تكلفة التعويض في المنظمة والمعايير الصناعية"]},
+{a:"Total Rewards",t:"SJI",d:"hard",s:"A company's total compensation analysis shows: base salaries are at P75 of market, but total cash (base + bonus) is at P40 because the bonus program has paid out at only 22% of target for 3 consecutive years. The company reports strong financial performance each year. Voluntary turnover has increased 24% over the same period.",q:"The MOST likely diagnosis of this total rewards situation is:",o:["Reduce bonus targets to 100% of historical payouts to eliminate the expectation gap and stop the turnover","Increase base salaries to P90 to compensate for the chronic bonus shortfall and restore competitive positioning","The P75 base salary positioning provides strong competitive compensation and the turnover increase is driven by other factors","The bonus program is creating a total cash package significantly below market — employees see a P75 salary promise but experience P40 total cash."],c:3,e:"Employees accept offers based on total cash expectations. When bonuses consistently pay below target, the effective compensation package is below the stated market position. P75 base + 22% of target bonus ≠ P75 total cash. Wrong: C (blame other factors) ignores strong correlation between reward shortfall and turnover. A (reduce targets) doesn't fix the fundamental design problem. B (raise base) treats symptoms rather than fixing the bonus design.",
+qAr:"أرجح تشخيص لهذا الوضع في إجمالي المكافآت هو:",
+oAr:["تقليل أهداف المكافآت إلى 100% من المدفوعات التاريخية للقضاء على فجوة التوقعات","زيادة الرواتب الأساسية إلى P90 للتعويض عن قصور المكافآت المزمن","تضع موضع الراتب الأساسي عند P75 تعويضاً إجمالياً تنافسياً ويجب مراجعة الدوران لأسباب أخرى","برنامج المكافآت يُنشئ حزمة نقدية إجمالية أدنى بشكل ملحوظ من السوق مما يُسبّب تسرّباً انتقائياً للمواهب العالية في أعقاب إعلانات المكافآت المخيبة"],
+sAr:"تُظهر تحليلات التعويض الإجمالي للشركة: الرواتب الأساسية عند P75 من السوق، لكن البرنامج السنوي للمكافآت يدفع 58% من الهدف تاريخياً. المنافسون الرئيسيون يدفعون مكافآت عند 95-110% من الهدف. الدوران بين المواهب العالية 24% خلال الستة أشهر الأولى من العام بعد إعلان المكافآت."},
+{a:"Total Rewards",t:"KI",d:"medium",q:"'Variable pay' plans are MOST appropriate for driving business results when:",o:["All employees in an organization earn the same base salary and variable pay serves as the primary compensation differentiator","The organization needs to reduce total compensation costs by replacing fixed pay with contingent pay","Variable pay is used as a substitute for market-competitive base pay to attract cost-conscious candidates","Performance is measurable, the line of sight between individual behavior and the metric is clear, and the plan is funded by the performance improvement it drives"],c:3,e:"Effective variable pay requires: clear line of sight (employees can see how their actions affect the metric), measurability (objective, frequent results data), and self-funding design (the plan pays out because performance improved business results). Wrong: B (cost reduction) creates retention risk. A (salary standardization) is not a variable pay design principle. C (substitute for base) creates significant market competitiveness risk.",
+qAr:"خطط 'الأجر المتغير' الأكثر ملاءمة لدفع نتائج الأعمال عندما:",
+oAr:["يكسب جميع الموظفين راتباً أساسياً متماثلاً والأجر المتغير هو الوحيد المرتبط بالأداء","تحتاج المنظمة لتقليل إجمالي تكاليف التعويض باستبدال التعويض الثابت","يُستخدم الأجر المتغير كبديل للراتب الأساسي التنافسي سوقياً لاستقطاب المواهب بتكاليف ثابتة أقل","الأداء قابل للقياس، وخط البصر بين السلوك الفردي والمقياس واضح، والخطة ذاتية التمويل من تحسين الأداء الذي تدفعه"]},
+{a:"Total Rewards",t:"KI",d:"medium",q:"'Benefits benchmarking' in total rewards strategy serves which primary purpose?",o:["Measuring the utilization rates of existing benefit programs to determine which programs employees actually value","Identifying legally mandated benefit requirements the organization must provide to all employees","Comparing the organization's benefits offerings to relevant market competitors to assess competitiveness in attracting and retaining talent","Ensuring the organization's benefits spending is minimized compared to the lowest-cost competitor"],c:2,e:"Benefits benchmarking = comparing your benefits to market peers to assess competitive positioning. Used to answer: are we losing candidates because competitors offer better benefits? Are we overspending on benefits employees don't value? Wrong: D (minimize spending) describes a cost-cutting goal. B (legal requirements) is compliance analysis. A (utilization measurement) is internal benefits analytics, not benchmarking.",
+qAr:"تخدم 'معيارية المزايا' في استراتيجية إجمالي المكافآت أي غرض أساسي؟",
+oAr:["قياس معدلات استخدام برامج المزايا الحالية","تحديد متطلبات المزايا الإلزامية قانوناً التي يجب على المنظمة تقديمها","مقارنة عروض مزايا المنظمة بالمنافسين السوقيين ذوي الصلة لتقييم التنافسية","ضمان تقليل إنفاق المنظمة على المزايا إلى أقصى حد مقارنة بالسوق"]},
+{a:"Total Rewards",t:"SJI",d:"medium",s:"HR is designing a long-term incentive (LTI) program for 45 senior managers. The CEO wants to 'align their interests with shareholders.' Options: (1) stock options with 4-year vesting, (2) restricted stock units (RSUs) with 3-year vesting, (3) performance shares tied to 3-year EBITDA goals.",q:"The MOST effective LTI design for the stated goal of aligning manager interests with shareholders uses:",o:["A mix of all three plans at equal weighting to diversify incentive risk across different performance dimensions","RSUs exclusively since they provide guaranteed value that ensures retention of senior managers at all times","Performance shares with 3-year EBITDA goals — directly connecting manager reward to the business performance metric shareholders care about most, while vesting creates retention and goal structure creates accountability","Stock options exclusively since they require share price growth for any payout, creating the strongest shareholder alignment"],c:2,e:"Shareholder alignment requires: manager reward tied to business performance outcomes shareholders care about (EBITDA = profitability). Performance shares directly link payout to specific, measurable, management-controllable outcomes. Wrong: D (stock options only) — share price can be driven by market conditions outside management control. B (RSUs) guarantee value regardless of business performance — weak alignment. A (equal mix) dilutes the alignment message.",
+qAr:"أكثر تصميم LTI فاعلية لتحقيق الهدف المُعلن من توافق مصالح المديرين مع المساهمين هو:",
+oAr:["مزيج من الثلاثة خطط بأوزان متساوية لتنويع مخاطر الحوافز","RSU فقط إذ توفر قيمة مضمونة تضمن الاحتفاظ مع تبقى مرتبطة بسعر السهم","أسهم أداء بأهداف EBITDA لـ 3 سنوات — تربط مكافأة المدير مباشرة بتحسينات ربحية التشغيل المحددة المطلوبة","خيارات الأسهم فقط إذ تتطلب نمو سعر السهم لأي مدفوعات"],
+sAr:"HR يُصمّم برنامج حوافز طويل الأجل (LTI) لـ 45 مديراً كبيراً. يريد الرئيس التنفيذي: توافق مصالح المديرين مع المساهمين، دورة أداء 3 سنوات، تحسين أداء الأعمال المتوقع 15% في ربحية التشغيل. الحزمة: خيارات أسهم أو أسهم أداء أو وحدات أسهم مقيدة (RSU)."},
+{a:"Total Rewards",t:"KI",d:"medium",q:"In pay equity analysis, a 'statistically significant' pay gap between demographic groups after controlling for legitimate factors indicates:",o:["That the analytical model failed to include all relevant control variables and needs to be redesigned","A clear legal violation that requires immediate pay adjustment before any further investigation","Only that the sample analyzed was large enough to detect the difference — statistical significance does not prove discrimination","A potential structural compensation equity problem requiring further investigation, even if the gap cannot yet be attributed to intentional discrimination"],c:3,e:"Statistical significance after controlling for legitimate factors = the gap cannot be explained by those factors. This is a red flag requiring investigation into whether non-legitimate factors (bias, systemic disadvantage) are contributing. It does NOT automatically prove discrimination. Wrong: C (only a sample size artifact) misunderstands statistical significance. B (immediate legal violation) overstates the legal conclusion. D may be true but is speculation — the appropriate response is investigation.",
+qAr:"في تحليل المساواة في الأجر، تُشير فجوة الأجر 'ذات الدلالة الإحصائية' بين الفئات الديموغرافية بعد ضبط العوامل المشروعة إلى:",
+oAr:["أن النموذج التحليلي أخفق في تضمين جميع متغيرات التحكم ذات الصلة","انتهاكاً قانونياً واضحاً يستوجب تعديل الأجر الفوري قبل أي تحقيق إضافي","فقط أن حجم العينة المُحللة كان كبيراً بما يكفي للكشف عن الاختلاف — أهمية إحصائية لا تُساوي حجم التأثير","مشكلة عدالة تعويضية هيكلية محتملة تستوجب مزيداً من التحقيق — لكنها لا تُثبت تلقائياً التمييز أو تقتضي الإجراء الفوري"]},
+{a:"Total Rewards",t:"KI",d:"easy",q:"The primary HR objective of an employee 'flexible benefits' (cafeteria) plan is to:",o:["Comply with ERISA's requirement that employers offer employees a choice of benefit options","Eliminate benefits administration complexity by standardizing elections across all employee populations","Allow employees to allocate their benefits budget toward the specific benefits they personally value most — increasing perceived value without necessarily increasing total cost","Reduce the organization's total benefits cost by shifting selection decisions to employees"],c:2,e:"Flexible benefits = same total benefit value, greater personal relevance. A 25-year-old without dependents values different benefits than a 45-year-old with three children. Same budget → higher perceived value when employees choose what they want. Wrong: D (reduce cost) can be a secondary benefit but is not the primary HR objective. A (ERISA requirement) — ERISA doesn't mandate flexible plans. B (reduce complexity) is the opposite — flexible plans increase administrative complexity.",
+qAr:"الهدف الأساسي لـ HR من خطة 'المزايا المرنة' (الكافيتيريا) للموظفين هو:",
+oAr:["الامتثال لمتطلب ERISA بتقديم أصحاب العمل لخيار من المزايا","إلغاء تعقيد إدارة المزايا بتوحيد الانتخابات","السماح للموظفين بتخصيص ميزانية مزاياهم نحو المزايا التي يُقدّرونها شخصياً — تُحسّن القيمة المُدركة بنفس إجمالي إنفاق المزايا","تقليل إجمالي تكاليف مزايا المنظمة بنقل قرارات الاختيار للموظفين"]},
+{a:"Total Rewards",t:"SJI",d:"hard",s:"HR is designing a performance bonus plan after discovering that 87% of the 650-person eligible population received the 'meets expectations' bonus level. Managers report they 'feel bad differentiating in a tight team.'",q:"The MOST important bonus plan design change to address this issue is:",o:["Increase the bonus budget so all employees can receive a higher payout without requiring differentiation","Eliminate the bonus plan and replace with base pay increases to remove manager discomfort with differentiation","Implement forced distribution where exactly 10% must receive the top category and 10% must receive the bottom","Calibrate bonus recommendations through a cross-manager review process that enforces meaningful differentiation — separating the manager's comfort from the payout recommendation"],c:3,e:"The problem is calibration failure: managers default to clustering at 'meets expectations' to avoid conflict. Calibration sessions (where managers compare and justify recommendations) enforce meaningful differentiation without forced distribution. Wrong: A removes a strategic tool to solve an implementation problem. A (increase budget) doesn't address differentiation. C (forced distribution) can solve differentiation mathematically but often demotivates and creates team conflict.",
+qAr:"أكثر تغيير تصميم خطة مكافآت أهمية لمعالجة هذه المشكلة هو:",
+oAr:["زيادة ميزانية المكافآت حتى يتمكن جميع الموظفين من الحصول على مدفوعات أعلى","إلغاء خطة المكافآت واستبدالها بزيادات في الراتب الأساسي لإزالة تحيزات المديرين","تطبيق توزيع إجباري حيث يجب أن يحصل 10% بالضبط على الفئة العليا","معايرة توصيات المكافآت من خلال عملية مراجعة متقاطعة بين المديرين تُقيَّم فيها جميع الموصى بهم بنسبة 90%+ معاً — تُفرض التمييز الحقيقي وتُزيل تراكم التقييم في المنتصف"],
+sAr:"HR يُصمّم خطة مكافآت أداء بعد اكتشاف أن 87% من المستحقين الـ 650 حصلوا على نسبة 90-100% من المكافأة. 83% من المديرين أجابوا بـ'صعب جداً لتصنيف أدناهم أداءً' في استبيان ما بعد التقييم."},
+{a:"Total Rewards",t:"KI",d:"medium",q:"ERISA (Employee Retirement Income Security Act) primarily governs:",o:["The tax treatment of employee stock option grants and equity compensation programs","The standards, reporting, disclosure, and fiduciary requirements for employer-sponsored retirement and welfare benefit plans","Employers' legal obligations to offer health insurance to full-time employees under federal law","The minimum benefit levels that employers must provide in retirement plans for which they claim tax deductions"],c:1,e:"ERISA (1974) = the foundational federal law for private-sector employee benefit plans. It establishes: participation and vesting standards, fiduciary duties for plan administrators, reporting and disclosure requirements, and claims and appeals procedures. It does NOT mandate that plans be offered. Wrong: C (ACA mandates health coverage for large employers — different law). A (stock option tax) is primarily IRC. D (minimum benefit levels) is not an ERISA requirement.",
+qAr:"يحكم قانون ERISA (قانون أمن دخل موظفي التقاعد) أساساً:",
+oAr:["المعاملة الضريبية لمنح خيارات الأسهم للموظفين وبرامج التعويض بالأسهم","معايير الإبلاغ والإفصاح ومتطلبات الأمانة لخطط مزايا الموظفين بما فيها خطط التقاعد والمزايا الصحية","الالتزامات القانونية لأصحاب العمل بتقديم تأمين صحي للموظفين بدوام كامل","الحدود الدنيا لمستويات المزايا التي يجب على أصحاب العمل تقديمها في خطط التقاعد"]},
+{a:"Total Rewards",t:"KI",d:"medium",q:"'Market pricing' a job for compensation purposes involves:",o:["Gathering pay data for comparable jobs in the relevant labor market and using that data to establish the competitive pay range for the role","Setting pay at the highest observed salary in the industry to guarantee competitive advantage","Comparing the job's pay to other jobs within the organization to ensure internal equity consistency","Negotiating salary with each individual candidate based on their stated expectations and the company's budget"],c:0,e:"Market pricing: (1) identify benchmark jobs in external market; (2) collect salary survey data from relevant labor markets (geographic, industry, competitor); (3) establish competitive pay range. Wrong: B (highest observed) would be P100 — not a market pricing strategy. D (individual negotiation) is offer management. C (internal comparison) is job evaluation for internal equity.",
+qAr:"يتضمن 'التسعير السوقي' لوظيفة لأغراض التعويض:",
+oAr:["جمع بيانات الأجور للوظائف المماثلة في سوق العمل ذات الصلة واستخدامها لتحديد نطاق التعويض التنافسي","تحديد الأجر عند أعلى راتب ملحوظ في الصناعة لضمان التنافسية","مقارنة أجر الوظيفة بالوظائف الأخرى داخل المنظمة","التفاوض على الراتب مع كل مرشح منفرداً بناءً على توقعاته"]},
+{a:"Employee & Labor Relations",t:"KI",d:"medium",q:"'Progressive discipline' in employee relations is designed primarily to:",o:["Provide employees with notice of deficiencies, an opportunity to correct performance or behavior, and graduated consequences — treating termination as a last resort after documented improvement opportunities","Create a legal record that an employee was treated consistently with all other employees at the same job level","Ensure managers document every employee behavior for use in future performance reviews and compensation decisions","Protect the organization from wrongful termination litigation by creating documentation for every employment decision"],c:0,e:"Progressive discipline: verbal warning → written warning → suspension → termination. Purpose: give employees fair notice and the chance to improve. It also serves legal defensibility, but that's a byproduct, not the primary design goal. Wrong: D (litigation protection) is secondary. C (documentation for reviews) misapplies the tool. B (consistency evidence) is valuable but again secondary to the development purpose.",
+qAr:"يُصمَّم 'الانضباط التدريجي' في علاقات الموظفين أساساً لـ:",
+oAr:["توفير للموظفين إشعاراً بالقصور وفرصة لتصحيح الأداء قبل الإنهاء","إنشاء سجل قانوني بمعاملة الموظف باتساق مع الآخرين","ضمان توثيق المديرين لكل سلوك موظف لاستخدامه في مراجعات الأداء المستقبلية","حماية المنظمة من التقاضي بسبب الإنهاء التعسفي من خلال إنشاء توثيق"]},
+{a:"Employee & Labor Relations",t:"SJI",d:"hard",s:"An HR investigator completes a harassment investigation. Two witnesses corroborate the complainant's account, there are email records supporting the complainant, and the respondent's only contradicting evidence is their own denial. HR's investigation concludes harassment 'likely occurred' under a preponderance of evidence standard.",q:"HR's documentation and the organization's response MOST appropriately should:",o:["Take no action until the legal standard of 'beyond a reasonable doubt' is met since harassment accusations are very serious","Dismiss the finding since the respondent denied the conduct and HR cannot know the truth with certainty","Apply the 'preponderance of evidence' standard (more likely than not), document the findings, take corrective action proportionate to the severity and consistent with how similar findings have been handled","Share the investigation findings with all relevant parties including the complainant and respondent's colleagues to maintain organizational transparency"],c:2,e:"Workplace investigations use civil (preponderance) standards, not criminal (beyond reasonable doubt). Corroborating witnesses + documentary evidence meeting preponderance is sufficient for HR action. Wrong: A (beyond reasonable doubt) applies criminal law standards to an employment matter. B (denial sufficient) — investigation wouldn't reach preponderance if denial alone sufficed. D (share findings broadly) — confidentiality is a core investigation principle.",
+qAr:"يجب أن تستند توثيق HR واستجابة المنظمة أكثر ما يكون إلى:",
+oAr:["عدم اتخاذ أي إجراء حتى يُستوفى المعيار القانوني 'خارج الشك المعقول'","رفض النتيجة إذ ينكر المستجيب السلوك و HR لا يستطيع الجزم","تطبيق معيار 'ترجيح الأدلة' (أكثر احتمالاً من المرجح)، توثيق النتائج الجوهرية، والعمل وفقاً لها بصرف النظر عن أداء المستجيب","مشاركة نتائج التحقيق مع جميع الأطراف ذات الصلة بما فيهم زملاء الفريق"],
+sAr:"يُكمل محقق HR تحقيقاً في تحرش. شاهدان يُؤيّدان شكوى المُبلِّغة. ينكر المستجيب. لم تُسجَّل وقائع بالصوت أو الصورة. المستجيب أعلى أداءً في القسم ويُحقق إيرادات ضعفي متوسط أعضاء الفريق."},
+{a:"Employee & Labor Relations",t:"KI",d:"medium",q:"An 'at-will' employment relationship means:",o:["Employees are not entitled to unemployment benefits if they are terminated for performance reasons","Employees can only be terminated if the employer provides at least 2 weeks' written notice of the reason for termination","The employer may reduce compensation at any time without employee consent as long as the employee continues working","Either party may end the employment relationship at any time, for any reason, or for no reason — subject to statutory exceptions (no illegal reasons) and contractual limitations"],c:3,e:"At-will = neither party is obligated to continue the relationship; either can terminate at any time without a required reason or notice — UNLESS: a law prohibits the reason (discrimination, retaliation), a contract requires cause or notice, or public policy protects the reason (jury duty, whistleblowing). Wrong: B (written notice requirement) doesn't exist in at-will. A (unemployment benefits) is a separate state-law matter. C (reduce compensation without consent) can violate implied contract.",
+qAr:"يعني علاقة التوظيف 'حسب الإرادة':",
+oAr:["الموظفون ليسوا مستحقين لإعانات البطالة إذا تم إنهاء خدمتهم بموجب التوظيف حسب الإرادة","يمكن إنهاء عقد الموظف فقط إذا قدّم صاحب العمل إشعاراً لمدة أسبوعين على الأقل","يجوز لصاحب العمل تخفيض التعويض في أي وقت دون موافقة الموظف أو إشعاره","يجوز لأي طرف إنهاء علاقة العمل في أي وقت ولأي سبب أو بدون سبب — مع استثناءات للأسباب غير القانونية وبنود العقد والسياسة العامة"]},
+{a:"Employee & Labor Relations",t:"SJI",d:"medium",s:"An employee who received a written warning for attendance 6 months ago now has a positive performance review, no absences in 4 months, and has been nominated for a spot bonus. The manager asks HR whether to keep the written warning 'active' in the employee's file for the next performance period.",q:"HR's MOST appropriate guidance about managing this progressive discipline record is:",o:["Retain the warning permanently but weight it at 25% in the next performance review since it occurred in the prior review period","If the employee has genuinely rehabilitated the behavior and the warning period has passed, HR should advise how the warning should be handled per policy —","Immediately expunge the warning from the file since the employee has demonstrated substantial improvement","Keep all disciplinary records permanently active since any prior warning is relevant to future employment decisions"],c:1,e:"Progressive discipline is a corrective tool, not a permanent punishment system. Most policies specify a period (6-12 months) after which a corrected warning is 'expired' for future use. Using a stale warning against a demonstrably improved employee undermines trust. Wrong: D (permanent active) is punitive and discourages genuine improvement. C (immediately expunge) may be premature depending on policy. A (25% weight) is arbitrary and doesn't reflect improved performance.",
+qAr:"التوجيه الأنسب من HR حول إدارة سجل الانضباط التدريجي هذا هو:",
+oAr:["الإبقاء على الإنذار بشكل دائم لكن تقديره بنسبة 25% في تقييم الأداء القادم","إذا تحسّن الموظف بشكل حقيقي وانتهت فترة الإنذار، فإن الإنذار لا يمثّل قاعدة قانونية للإنهاء — الإنهاء المستند إليه الآن يُنشئ مخاطر إنهاء تعسفي وعكساً للغرض التصحيحي من الانضباط التدريجي","شطب الإنذار من الملف فوراً إذ أثبت الموظف التحسن","الإبقاء على جميع سجلات الانضباط نشطة بشكل دائم إذ أي إنذار سابق شرعي دائماً"],
+sAr:"حصل موظف على إنذار خطي بسبب التغيّب منذ 6 أشهر. لديه الآن تقييم أداء إيجابي وترشيح لجائزة الفريق واتساق حضور كامل في الخمسة أشهر الأخيرة. يريد المدير الآن إنهاء خدمته بسبب 'استمرار مخاوف الأداء.'"},
+{a:"Employee & Labor Relations",t:"KI",d:"medium",q:"The 'duty to bargain in good faith' under the NLRA requires employers to:",o:["Limit bargaining sessions to no more than 4 hours per day to prevent pressure tactics from either party","Accept every union proposal or submit a counter-proposal within 30 days of receiving a union demand","Provide union negotiators with access to all confidential company financial information on request","Meet at reasonable times, exchange information necessary for bargaining, and engage genuinely in the negotiation process — without being required to agree to any specific proposal"],c:3,e:"Good faith bargaining: the parties must meet, be willing to discuss, and provide relevant information (e.g., financial data when wage claims are based on ability to pay). Neither party is required to agree to any specific proposal — impasse is permissible after genuine bargaining. Wrong: B (accept or counter in 30 days) doesn't exist as a requirement. C (all financial information) — only information relevant to bargaining claims. A (4-hour limit) doesn't exist.",
+qAr:"يتطلب 'واجب التفاوض بحسن نية' بموجب NLRA من أصحاب العمل:",
+oAr:["تحديد جلسات التفاوض بلا أكثر من 4 ساعات يومياً","قبول كل مقترح نقابي أو تقديم مقترح مضاد في غضون 30 يوماً","تزويد مفاوضي النقابة بإمكانية الوصول لجميع المعلومات المالية السرية للشركة","الاجتماع في أوقات معقولة وتبادل المعلومات الضرورية للتفاوض والتفاعل بجدية مع المقترحات — مع الحفاظ على الحق في الاعتراض أو الوصول إلى مأزق بعد التفاوض الحقيقي"]},
+{a:"Employee & Labor Relations",t:"SJI",d:"hard",s:"A company receives a complaint from the union that management has been implementing changes to shift scheduling without negotiating. HR reviews the management rights clause: 'Management retains the right to direct the workforce and assign work.' The union argues that shift scheduling is a mandatory bargaining subject.",q:"HR's analysis of this dispute MOST appropriately concludes:",o:["This is purely a legal question that HR should immediately refer to outside labor counsel without offering any preliminary guidance","The management rights clause supersedes any mandatory bargaining obligation, making the union's claim legally moot","Management's rights clause gives complete authority over scheduling and no further bargaining is required","Shift scheduling is likely a mandatory bargaining subject (wages, hours, working conditions). Even with a broad management rights clause"],c:3,e:"Mandatory bargaining subjects cannot be unilaterally changed during the contract term even with a management rights clause. Courts generally hold that management rights clauses must be read narrowly. Shift scheduling (affecting hours and working conditions) likely falls within mandatory subjects. Wrong: A overstates management rights clauses. B is legally incorrect in most interpretations. D abdicates HR's labor relations advisory role.",
+qAr:"يستنتج تحليل HR لهذا النزاع أكثر ما يكون:",
+oAr:["هذا سؤال قانوني بحت يجب أن تُحيله HR فوراً للمستشار الخارجي","يتفوق بند حقوق الإدارة على أي التزامات تفاوض إلزامية إذا كان البند واسع النطاق بما يكفي","تمنح بند حقوق الإدارة صلاحية كاملة على الجدولة ولا يُوجد انتهاك","جدولة الورديات على الأرجح موضوع تفاوض إلزامي (أجور، ساعات، ظروف عمل) — التغييرات الأحادية قد تُشكّل ممارسة عمالية غير عادلة بموجب NLRA"],
+sAr:"تتلقى شركة شكوى من النقابة بأن الإدارة كانت تطبّق تغييرات على جداول ورديات الخط الثالث دون الرجوع للنقابة. تعتقد الإدارة أن 'بند حقوق الإدارة' في العقد الجماعي يُخوّلها كامل السلطة على الجدولة."},
+{a:"Employee & Labor Relations",t:"KI",d:"medium",q:"In HR, 'alternative dispute resolution' (ADR) encompasses approaches that:",o:["Require employees to sign binding arbitration agreements as a condition of employment","Provide structured mechanisms — including mediation, arbitration, and peer review panels — for resolving workplace disputes without litigation","Apply only to labor-management disputes in unionized workplaces, not to individual employee relations matters","Replace the legal court system entirely for employment disputes in organizations that adopt formal ADR policies"],c:1,e:"ADR mechanisms: mediation (neutral facilitates parties' own resolution), arbitration (neutral decision-maker issues a binding or advisory award), peer review (employee-selected panel), ombudsman (confidential neutral listener). Benefits: faster, cheaper, relationship-preserving. Wrong: D (replaces courts) — employees retain legal rights in most ADR programs. A (mandatory arbitration as condition) is one ADR design, not the definition. C (union disputes only) — ADR broadly covers individual disputes.",
+qAr:"في HR، يشمل 'حل النزاعات البديل' (ADR) مناهج:",
+oAr:["تُلزم الموظفين بالتوقيع على اتفاقيات تحكيم ملزمة كشرط للتوظيف","توفر آليات منظّمة — بما فيها الوساطة والتحكيم ومجالس النظراء — لحل النزاعات داخل المنظمة دون تقاضٍ رسمي","تنطبق فقط على نزاعات إدارة العمل في أماكن العمل النقابية","تستبدل نظام المحاكم القانونية كلياً للنزاعات الوظيفية في المنظمات"]},
+{a:"Employee & Labor Relations",t:"KI",d:"easy",q:"An employee 'whistleblower' who reports illegal organizational activity is protected from retaliation under:",o:["Only if they remain employed with the organization at the time the retaliatory action is taken","Only if they report to a government agency and not if they report internally through company ethics hotlines","Multiple federal and state statutes providing anti-retaliation protection — including SOX for public companies, Dodd-Frank for financial services, and specific statutes for safety, environmental, and fraud reporting","Only the specific statute relevant to the reported activity — there is no general federal anti-retaliation protection for all whistleblowers"],c:2,e:"Whistleblower protection: multiple overlapping federal statutes (SOX, OSHA, EPA, FCA, Dodd-Frank) plus state statutes and common law protections. Wrong: D (one statute only) understates the protection network. B (government agency only) is incorrect — many statutes protect internal reporting. A (only if currently employed) is incorrect — protections often extend to former employees and applicants.",
+qAr:"الموظف 'المُبلِّغ عن المخالفات' الذي يُبلّغ عن نشاط تنظيمي غير قانوني محمي من الانتقام بموجب:",
+oAr:["فقط إذا ظلوا موظفين في المنظمة وقت حدوث الانتقام المُدَّعى به","فقط إذا أبلّغوا لوكالة حكومية وليس إذا أبلّغوا داخلياً","تشريعات فيدرالية وولائية متعددة توفر حماية من الانتقام — نطاق الحماية يعتمد على نوع البلاغ والصناعة والقانون المعني","القانون المحدد ذي الصلة بالنشاط المُبلَّغ عنه فقط — لا توجد حماية شاملة"]},
+{a:"Employee & Labor Relations",t:"SJI",d:"medium",s:"HR conducts a workplace investigation into a manager accused of creating a hostile work environment through repeated humiliating comments to team members in group settings. Three witnesses corroborate the behavior. The manager is a high performer who generates 35% of the team's revenue.",q:"The performance and revenue contribution MOST appropriately influences the HR investigation outcome in which way?",o:["High performance and revenue contribution do not affect the findings or type of corrective action required — they may influence the organization's approach to rehabilitation but must not reduce accountability for confirmed misconduct","HR should recommend mediation between the manager and team members as an alternative to formal corrective action","The manager should be transferred to a non-management role to preserve their productivity while eliminating the management conduct issue","The manager's revenue contribution should result in a more lenient corrective action than would apply to a lower performer"],c:0,e:"Revenue contribution is not a harassment defense. Equal accountability regardless of performance level is both an ethical and legal requirement. Treating high performers differently in misconduct investigations signals that the organization tolerates harassment from valuable contributors. Wrong: D is the definition of discriminatory enforcement. C (transfer) may be part of the solution but doesn't eliminate the accountability requirement. B (mediation) is inappropriate for confirmed misconduct — mediation is for disputes, not power-differential violations.",
+qAr:"يُؤثّر الأداء ومساهمة الإيرادات أنسب ما يكون على تحقيق HR بـ:",
+oAr:["الأداء العالي ومساهمة الإيرادات لا تؤثران على النتائج أو نوع التصحيح المناسب — الأداء الممتاز لا يُوفّر حصانة من المسؤولية في بيئة العمل","يجب على HR التوصية بالوساطة بين المدير وأعضاء الفريق كبديل للإجراء التأديبي","يجب نقل المدير لدور غير إداري للحفاظ على إسهاماته مع معالجة المخاوف","يجب أن تُفضي مساهمة الإيرادات للمدير إلى تدابير تصحيحية أخف"],
+sAr:"يُجري HR تحقيقاً في مكان العمل مع مدير متهم بخلق بيئة عمل معادية. ثلاثة شهود يُؤيّدون الاتهامات. يُنكر المدير. خلال التحقيق يُشير نائب الرئيس إلى 'أعلى أداء في القسم' و'يُحقق ضعفَي متوسط الإيرادات.'"},
+{a:"Employee & Labor Relations",t:"KI",d:"medium",q:"In grievance management, the 'open door policy' is most effective when:",o:["It requires employees to submit grievances in writing to create an official record of all workplace concerns","It applies only to matters involving formal disciplinary actions and not to general workplace concerns","All employees are required to use the open door process before any formal HR complaint can be filed","Leaders at all levels actively signal that concerns will be heard without retaliation — and actually follow up on what they hear, creating evidence that the door is truly open"],c:3,e:"Open door effectiveness: employees must believe (a) they won't be retaliated against for speaking up, and (b) concerns will actually be addressed. Without both, the policy exists on paper but employees don't use it — issues fester, engagement declines, and formal complaints increase. Wrong: A (written submissions) defeats the informal access purpose. B (disciplinary only) limits utility. C (mandatory prerequisite) creates a bureaucratic barrier to formal rights.",
+qAr:"سياسة 'الباب المفتوح' في إدارة الشكاوى تكون أكثر فاعلية عندما:",
+oAr:["تُلزم الموظفين بتقديم الشكاوى كتابياً لإنشاء سجل رسمي","تنطبق فقط على المسائل المتعلقة بالإجراءات التأديبية الرسمية","يُلزَم جميع الموظفين باستخدام عملية الباب المفتوح قبل أي إشراك رسمي من HR","يُشير القادة على جميع المستويات بفاعلية إلى أن المخاوف ستُسمع دون انتقام — الثقافة والسلوك القيادي تُحدد الفاعلية وليس وجود السياسة فقط"]},
+{a:"Employee & Labor Relations",t:"SJI",d:"hard",s:"HR receives a complaint from the union that management has been implementing changes to shift scheduling without negotiating. During the investigation, an HR manager also discovers a supervisor has been documenting employee union activities and reporting them to management, and that two union leaders were denied overtime assignments given to non-union employees in similar roles.",q:"The overtime denial to union leaders MOST clearly represents which type of violation?",o:["A Title VII violation since union membership may correlate with protected class membership in this workforce","A breach of the employment contract that requires arbitration under the existing CBA before any HR action","An Unfair Labor Practice (ULP) under NLRA Section 8 — discriminating against employees in employment conditions because of their union activity is a","A FLSA violation since overtime entitlement cannot be restricted based on any non-performance factors"],c:2,e:"Denying overtime to union leaders specifically because of their union activity = Section 8(a)(3) ULP — discrimination in employment based on union activity. This is one of the most clearly defined employer ULPs under the NLRA. Wrong: D (FLSA) — FLSA doesn't address union activity discrimination. A (Title VII) is possible but the scenario specifically shows union activity as the apparent cause. B (CBA arbitration) — this is a ULP requiring NLRB involvement, not just CBA grievance.",
+qAr:"رفض العمل الإضافي لقادة النقابة يمثّل بوضوح أكبر أي نوع من الانتهاكات؟",
+oAr:["انتهاك Title VII إذ قد ترتبط عضوية النقابة بخصائص محمية","خرق عقد التوظيف يستلزم التحكيم بموجب العملية القائمة","ممارسة عمالية غير عادلة (ULP) بموجب المادة 8 من NLRA — التمييز ضد موظفين بسبب نشاطهم النقابي يُشكّل تدخلاً في الحقوق المحمية بموجب المادة 7","انتهاك FLSA إذ لا يمكن تقييد استحقاق العمل الإضافي بناءً على عضوية النقابة"],
+sAr:"تتلقى HR شكوى من النقابة بأن الإدارة تطبّق تغييرات على جداول الورديات دون استشارة. علاوةً على ذلك، رُفضت طلبات العمل الإضافي لأعضاء اللجنة النقابية وأُعطيت لغير الأعضاء للعطل الماضية."},
+{a:"Employee & Labor Relations",t:"KI",d:"medium",q:"Under the NLRA, Section 7 protects employees' rights to engage in 'concerted activities for mutual aid or protection.' This specifically includes:",o:["Employees discussing wages, working conditions, and workplace concerns with each other — even in non-union workplaces —","All employee communications about their employment relationship, regardless of whether the subject matter is work-related","Employees who file formal EEOC or NLRB complaints, but not those who raise concerns informally","Only formal union organizing activities in workplaces with recognized union representation"],c:0,e:"Section 7 applies to ALL private sector employees, whether unionized or not. Employees discussing wages and benefits, forming a group to complain, discussing the possibility of unionizing, and posting about working conditions on social media when addressing workplace concerns collectively are all protected. Wrong: D (union workplaces only) is incorrect — Section 7 applies universally. C (formal complaints only) is too narrow. B (all communications) overstates the scope.",
+qAr:"بموجب NLRA، تحمي المادة 7 حقوق الموظفين في الانخراط في 'أنشطة منسّقة للمساعدة المتبادلة أو الحماية'. عملياً هذا يعني:",
+oAr:["الموظفون يناقشون الأجور وظروف العمل ومخاوف مكان العمل مع زملائهم — بما فيهم في أماكن العمل غير النقابية — وهو محمي من الانتقام","جميع تواصلات الموظفين حول علاقتهم بالعمل، بصرف النظر عن المحتوى","الموظفون الذين يُقدّمون شكاوى EEOC أو NLRB رسمية، وليس الذين يُثيرون مخاوف بشكل غير رسمي","أنشطة تنظيم النقابات الرسمية فقط في أماكن العمل ذات النقابات المعترف بها"]},
+{a:"Employee & Labor Relations",t:"KI",d:"medium",q:"'Constructive discharge' in employment law refers to:",o:["An employee discharged in a way that damages their professional reputation through public statements","A termination not formally communicated to the employee but implied through a change in job duties","A situation where an employer makes working conditions so intolerable that a reasonable person would feel compelled to resign — courts treat this as the legal equivalent of an involuntary termination","A reduction in compensation so severe that it constitutes an effective termination requiring severance payment"],c:2,e:"Constructive discharge: if an employer deliberately makes working conditions so intolerable that a reasonable person would have no choice but to resign, courts treat the resignation as an involuntary termination. The 'resigned' employee can file wrongful termination claims as if they were fired. Wrong: B (implied through job changes) is demotion, not constructive discharge. A (public statement) describes defamation. D (compensation reduction) can be a contributing factor but is not the definition.",
+qAr:"يشير 'الإنهاء البنّاء' في قانون العمل إلى:",
+oAr:["إنهاء يُلحق الضرر بسمعة الموظف المهنية","إنهاء لم يُوصَّل رسمياً للموظف لكن يُفهم ضمنياً من خلال تقليص المسؤوليات","الحالة التي يجعل فيها صاحب العمل ظروف العمل لا تُطاق لدرجة أن الموظف العاقل يشعر بالإكراه على الاستقالة — تُعامله المحاكم كإنهاء لا إرادي","تخفيض في التعويض بالغ الحدة يُشكّل فعلياً إنهاء لعلاقة العمل"]},
+{a:"Employee & Labor Relations",t:"KI",d:"medium",q:"The concept of 'employment at will' in U.S. law means that:",o:["Either the employer or the employee may end the employment relationship at any time for any reason or no reason — with exceptions for illegal reasons and contractual limitations","Employment contracts are presumed to exist whenever an employer makes any verbal representation about job security during hiring","Employees can only be terminated if the employer provides documented, just cause after following a progressive discipline process","Employers are required to provide at least 2 weeks notice before terminating any employment relationship"],c:0,e:"Employment at will (EAW) = default U.S. rule: either party can end employment at any time without a required reason or notice — UNLESS: a law prohibits the reason (discrimination, retaliation), a contract requires cause or notice, or public policy protects the reason (jury duty, whistleblowing). Wrong: C (just cause requirement) is not the default in EAW. D (2-week notice requirement) doesn't exist in EAW doctrine. B (verbal representations creating contracts) is overly broad.",
+qAr:"يعني مفهوم 'التوظيف حسب الإرادة' في القانون الأمريكي أن:",
+oAr:["يجوز لصاحب العمل أو الموظف إنهاء علاقة العمل في أي وقت ولأي سبب أو بلا سبب — شريطة ألا يكون السبب غير قانوني","يُفترض وجود عقود عمل كلما قدّم صاحب العمل أي وعد شفوي بالتوظيف المستمر","يمكن إنهاء عقد الموظف فقط إذا قدّم صاحب العمل إنهاء موثقاً وعادلاً","يُلزَم أصحاب العمل بتقديم إشعار لا يقل عن أسبوعين قبل إنهاء الخدمة"]},
+{a:"Employee & Labor Relations",t:"SJI",d:"hard",s:"An HR director discovers the company has a social media policy prohibiting employees from 'posting any content that could embarrass the company or reflect negatively on our brand, products, or leadership team.' Two employees were recently terminated for posting about working conditions on a local community Facebook group.",q:"HR's MOST legally accurate guidance about this policy and the terminations is:",o:["The policy is enforceable as a legitimate business protection measure for brand reputation management","The policy is valid because the employees were not union members and therefore had no Section 7 protections","The terminated employees have a valid wrongful termination claim only if they were in a state with additional speech protections","The policy as written and as applied to the terminated employees likely violates NLRA Section 7: employees have the right to discuss working conditions publicly as protected"],c:3,e:"NLRA Section 7 applies to ALL private sector employees regardless of union status. Employees discussing working conditions publicly — including on social media — can be protected concerted activity. Blanket 'no negative posts about the company' policies sweeping in protected workplace discussions are ULPs. Wrong: A (legitimate brand protection) overstates what employers can prohibit. C (state protections only) understates the federal protection. B (union members only) is incorrect — Section 7 applies universally.",
+qAr:"أكثر توجيه قانوني دقيق من HR حول هذه السياسة والإنهاءات هو:",
+oAr:["السياسة قابلة للتطبيق كإجراء حماية تجارية مشروعة للمعلومات السرية","السياسة صالحة لأن الموظفين لم يكونوا أعضاء في نقابة وبالتالي ليسوا مشمولين بحماية NLRA","للموظفين المُنهَت خدمتهم دعوى إنهاء تعسفي صالحة فقط إذا كانوا أعضاء في نقابة","السياسة كما صِيغت وكما طُبِّقت على الموظفين المُنهَت خدمتهم على الأرجح تنتهك حقوق المادة 7 من NLRA — مناقشة الرواتب مع زملاء العمل نشاط منسّق محمي سواء في أماكن العمل النقابية أو غير النقابية"],
+sAr:"يكتشف مدير HR أن الشركة لديها سياسة وسائل التواصل الاجتماعي التي تحظر على الموظفين 'مناقشة الراتب أو الأجر أو ظروف العمل علناً أو عبر الإنترنت.' أُنهيت خدمة اثنين من الموظفين بموجب هذه السياسة بعد نشرهما مقارنات رواتب على LinkedIn."}
+,
+// ── 🆕 أسئلة التحديثات 2025 ──
+{a:"Learning & Development",t:"KI",d:"medium",id:205,q:"According to the 2025 SHRM Learning System, which technologies are now explicitly included in the Learning & Development key concepts?",qAr:"وفقاً لنظام SHRM 2025 للتعلم، أي من التقنيات التالية أُضيفت صراحةً ضمن المفاهيم الرئيسية للتعلم والتطوير؟",o:["Only Learning Management Systems (LMS)","Only e-learning and webinars","Artificial Intelligence, Virtual Reality, and Chatbots","Blockchain and machine learning exclusively"],oAr:["نظم إدارة التعلم (LMS) فقط","التعلم الإلكتروني والندوات عبر الإنترنت فقط","الذكاء الاصطناعي والواقع الافتراضي وروبوتات المحادثة","البلوك تشين والتعلم الآلي حصراً"],c:2,e:"The 2025 SHRM Learning System explicitly added to L&D technologies: Artificial Intelligence + Virtual Reality (VR) + Chatbots + Gamification + Microlearning + Podcasts + Infographics. This reflects the modern digital learning landscape.",eAr:"أضاف نظام SHRM 2025 صراحةً لتقنيات التعلم والتطوير: الذكاء الاصطناعي + الواقع الافتراضي + روبوتات المحادثة + التلعيب + التعلم المُصغَّر + البودكاست + الإنفوغرافيك."},
+{a:"Employee Engagement",t:"SJI",d:"medium",id:206,s:"An HR manager wants to improve employee retention by identifying what keeps current high-performing employees engaged before they decide to leave. The organization has high survey fatigue, and employees rarely complete annual engagement surveys.",sAr:"تريد مدير HR تحسين الاحتفاظ بالموظفين من خلال تحديد ما يُبقي الموظفين عاليي الأداء منخرطين قبل أن يقرروا المغادرة. تعاني المنظمة من إرهاق الاستبيانات، ونادراً ما يُكمل الموظفون الاستبيانات السنوية.",q:"The MOST effective and targeted approach for this goal, officially added in the 2025 SHRM Learning System, is:",qAr:"الأسلوب الأكثر فاعلية واستهدافاً لهذا الهدف، المُضاف رسمياً في نظام SHRM 2025 للتعلم، هو:",o:["Conducting another comprehensive annual engagement survey","Implementing stay interviews with current high-performing employees","Analyzing exit interview data from employees who already left","Creating an employee recognition program to increase satisfaction scores"],oAr:["إجراء استبيان شامل آخر للانخراط السنوي","إجراء مقابلات بقاء مع الموظفين الحاليين عاليي الأداء","تحليل بيانات مقابلات الخروج للموظفين الذين غادروا بالفعل","إنشاء برنامج تقدير للموظفين لزيادة درجات الرضا"],c:1,e:"Stay interviews — officially added to the 2025 SHRM Learning System — are conducted with CURRENT employees to understand what keeps them and what might push them to leave, while there's still time to act. Unlike exit interviews (conducted after departure) or surveys (high fatigue), stay interviews are proactive, targeted, and allow immediate intervention.",eAr:"مقابلات البقاء — المضافة رسمياً في نظام SHRM 2025 — تُجرى مع الموظفين الحاليين لفهم ما يُبقيهم وما قد يدفعهم للمغادرة بينما لا يزال هناك وقت للتصرف. على عكس مقابلات الخروج أو الاستبيانات، مقابلات البقاء استباقية ومستهدفة."},
+
+{id:2505,a:"Learning & Development",t:"KI",d:"medium",
+q:"Which learning and development technologies were EXPLICITLY ADDED to SHRM 2025 key concepts for L&D?",
+o:["Artificial Intelligence, Virtual Reality, Chatbots, and Gamification","Asynchronous video, SCORM packaging, and xAPI tracking","Adaptive learning platforms, API integration, and cloud-based LMS","Augmented reality, blockchain credentialing, and neural learning"],
+c:0,
+e:"SHRM 2025 explicitly added to L&D technologies: Artificial Intelligence, Virtual Reality, Chatbots, Gamification, Microlearning, Podcasts, and Infographics — reflecting the evolution of modern learning delivery.",
+qAr:"أي تقنيات التعلم والتطوير أُضيفت صراحةً في SHRM 2025؟",
+oAr:["الذكاء الاصطناعي والواقع الافتراضي وروبوتات المحادثة والتلعيب","الفيديو غير المتزامن وتغليف SCORM وتتبع xAPI","منصات التعلم التكيفي وتكامل API وLMS السحابي","الواقع المعزز وبلوك تشين الاعتماد والتعلم العصبي"]},
+
+{id:2506,a:"Employee Engagement",t:"KI",d:"medium",
+q:"In SHRM 2025, 'stay interviews' are classified as:",
+o:["An officially recognized method for assessing employee engagement and","A legal requirement under the NLRA for unionized workplaces","A replacement for annual performance reviews","A corrective tool used during performance improvement plans"],
+c:0,
+e:"SHRM 2025 officially added stay interviews to the engagement assessment methods: focus groups + stay interviews + surveys. Stay interviews are proactive retention tools conducted with active employees to understand what keeps them before they decide to leave.",
+qAr:"في SHRM 2025، تُصنّف Stay Interviews على أنها:",
+oAr:["أسلوب معترف به رسمياً لقياس انخراط الموظفين ورضاهم إلى جانب الاستبيانات ومجموعات التركيز","متطلب قانوني بموجب NLRA لأماكن العمل النقابية","بديل لمراجعات الأداء السنوية","أداة تصحيحية تُستخدم خلال خطط تحسين الأداء"]},
+
+{id:2507,a:"Total Rewards",t:"KI",d:"medium",
+q:"SHRM 2025 added 'pay transparency' to compensation key concepts. Pay transparency MOST directly helps organizations:",
+o:["Reduce total compensation costs by standardizing all salaries within a band","Meet FLSA requirements for overtime exemption classification","Address unjustified pay gaps, improve offer acceptance rates, and build employee trust in compensation fairness","Eliminate variable pay programs that create salary compression"],
+c:2,
+e:"Pay transparency — sharing pay ranges with employees and applicants — reduces unjustified pay gaps by making disparities visible, improves offer acceptance rates, and builds trust in compensation equity. SHRM 2025 added it explicitly to pay practices key concepts.",
+qAr:"أضافت SHRM 2025 'شفافية الأجور' لمفاهيم التعويض. شفافية الأجور تساعد المنظمات بشكل مباشر على:",
+oAr:["تقليل تكاليف التعويض الإجمالية بتوحيد جميع الرواتب ضمن نطاق","الوفاء بمتطلبات FLSA لتصنيف الإعفاء من الأجر الإضافي","معالجة فجوات الأجور غير المبررة وتحسين معدلات قبول العروض وبناء ثقة الموظفين","إلغاء برامج الأجر المتغير التي تسبب ضغطاً في الرواتب"]}
+];
+
+// ── State ──
+let lang='ar', cur=0, ans=[], Q_shuffled=[];
+const LETTERS=['A','B','C','D'];
+
+
+function pickLang(l){
+  lang=l==='bi'?'bi':l;
+  ['lpAr','lpEn','lpBi'].forEach(id=>{document.getElementById(id).className='lpbtn';});
+  if(l==='ar') document.getElementById('lpAr').className='lpbtn on';
+  else if(l==='en') document.getElementById('lpEn').className='lpbtn on';
+  else document.getElementById('lpBi').className='lpbtn on';
+}
+
+function shuffleArr(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+
+function buildShuffledExam(){
+  // Shuffle OPTIONS within each question + remap correct index, then shuffle question order
+  var arr=Q.map(function(q){
+    var nq=Object.assign({},q);
+    var perm=shuffleArr([0,1,2,3]);
+    nq.o=perm.map(function(k){return q.o[k];});
+    if(q.oAr&&q.oAr.length===4)nq.oAr=perm.map(function(k){return q.oAr[k];});
+    nq.c=perm.indexOf(q.c);
+    return nq;
+  });
+  return shuffleArr(arr);
+}
+
+function startExam(){
+  Q_shuffled=buildShuffledExam();
+  ans=new Array(Q_shuffled.length).fill(null);
+  showScreen('scrExam');
+  document.getElementById('hdrMeta').style.display='flex';
+  renderQ(0);
+}
+
+function showScreen(id){
+  ['scrWelcome','scrExam','scrResults'].forEach(s=>{
+    document.getElementById(s).className='screen'+(s===id?' active':'');
+  });
+}
+
+
+// ── Translation cache ──
+const TR_CACHE = {};
+
+
+// Translation cache
+const _TC = {};
+
+function getQ(q){
+  const id = q.id || q.q.substring(0,30);
+  if(lang==='en') return {q:q.q, opts:q.o, s:q.s||'', e:q.e};
+  
+  if(lang==='ar'){
+    if(q.qAr) return {q:q.qAr, opts:q.oAr||q.o, s:q.sAr||q.s||'', e:q.eAr||q.e};
+    if(_TC[id]) return {q:_TC[id].q, opts:_TC[id].o, s:_TC[id].s||q.s||'', e:q.e};
+    return {q:q.q, opts:q.o, s:q.s||'', e:q.e};
+  }
+  
+  if(lang==='bi'){
+    if(q.qAr){
+      return {
+        q: q.q+'\n\n'+q.qAr,
+        opts: q.o.map((o,i)=>o+(q.oAr&&q.oAr[i]?'\n'+q.oAr[i]:'')),
+        s: q.s?(q.s+(q.sAr?'\n\n'+q.sAr:'')):'',
+        e: q.e
+      };
+    }
+    if(_TC[id]){
+      return {
+        q: q.q+'\n\n'+_TC[id].q,
+        opts: q.o.map((o,i)=>o+(_TC[id].o&&_TC[id].o[i]?'\n'+_TC[id].o[i]:'')),
+        s: q.s?(q.s+(_TC[id].s?'\n\n'+_TC[id].s:'')):'',
+        e: q.e
+      };
+    }
+    return {q:q.q, opts:q.o, s:q.s||'', e:q.e};
+  }
+  return {q:q.q, opts:q.o, s:q.s||'', e:q.e};
+}
+
+let _translating = false;
+
+async function _translateQ(q){
+  if(_translating) return;
+  if(lang==='en') return;
+  if(q.qAr) return;
+  const id = q.id||q.q.substring(0,30);
+  if(_TC[id]) return;
+  
+  _translating = true;
+  
+  // Show translating indicator
+  const qEl = document.getElementById('qText');
+  if(qEl && lang!=='en'){
+    const orig = qEl.innerHTML;
+    qEl.innerHTML += '<div id="_trInd" style="margin-top:8px;font-size:12px;color:#888;font-style:italic">⏳ جارٍ الترجمة...</div>';
+  }
+  
+  try {
+    const s = q.s||'';
+    const prompt = `ترجم للعربية واحتفظ بالمصطلحات التقنية (FMLA,COBRA,ADEA,ADA,Title VII,NLRA,FLSA,WARN,USERRA,PWFA,EEOC,HR,I&D,ROI,OD).
+
+السؤال: ${q.q}${s?'\nالسيناريو: '+s:''}
+أ) ${q.o[0]}
+ب) ${q.o[1]}
+ج) ${q.o[2]}
+د) ${q.o[3]}
+
+أجب بـ JSON فقط: {"q":"","s":"","o":["","","",""]}`;
+
+    const r = await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-20250514',
+        max_tokens:1200,
+        messages:[{role:'user',content:prompt}]
+      })
+    });
+    const d = await r.json();
+    const txt = d.content&&d.content[0]?d.content[0].text:'';
+    const m = txt.match(/\{[\s\S]+\}/);
+    if(m){
+      const tr = JSON.parse(m[0]);
+      _TC[id] = {q:tr.q||q.q, o:tr.o||q.o, s:tr.s||''};
+    }
+  }catch(e){}
+  
+  _translating = false;
+  const ind = document.getElementById('_trInd');
+  if(ind) ind.remove();
+  if(lang!=='en') renderQ(cur);
+}
+
+function setLang(l){
+  lang = l;
+  document.getElementById('lbAr').className='lbtn'+(l==='ar'?' on':'');
+  document.getElementById('lbEn').className='lbtn'+(l==='en'?' on':'');
+  if(document.getElementById('lbBi')) 
+    document.getElementById('lbBi').className='lbtn'+(l==='bi'?' on':'');
+  
+  if(document.getElementById('scrExam').classList.contains('active')){
+    renderQ(cur);
+    if(l !== 'en') translateCurrentQ();
+  }
+}
+
+
+function renderQ(idx){
+  cur=idx;
+  const q=Q_shuffled[idx];
+  const qd=getQ(q);
+  const total=Q_shuffled.length;
+  const isAr = lang==='ar'||lang==='bi';
+  const dir = isAr?'rtl':'ltr';
+  document.getElementById('scrExam').setAttribute('dir', isAr?'rtl':'ltr');
+  
+  document.getElementById('pf').style.width=(((idx+1)/total)*100)+'%';
+  document.getElementById('ptxt').textContent=(idx+1)+' / '+total;
+  
+  const tb=document.getElementById('typeBdg');
+  tb.textContent=q.t==='SJI'?'⚖️ SJI':'📘 KI';
+  tb.className='bdg '+(q.t==='SJI'?'bdg-sji':'bdg-ki');
+  
+  document.getElementById('areaBdg').textContent=q.a;
+  const diffMap={easy:'سهل·Easy',medium:'متوسط·Medium',hard:'متقدم·Advanced'};
+  document.getElementById('diffBdg').textContent=diffMap[q.d]||q.d;
+  
+  // 2025 badge
+  const existing2025 = document.querySelector('.bdg-2025');
+  if(existing2025) existing2025.remove();
+  if(q.id && q.id >= 201){
+    const b2=document.createElement('div');
+    b2.className='bdg bdg-2025';b2.textContent='🆕 2025';
+    document.getElementById('hdrMeta').appendChild(b2);
+  }
+  
+  // Scenario
+  const sb=document.getElementById('scenBox');
+  if(qd.s){
+    sb.style.display='block';
+    document.getElementById('scenText').textContent=qd.s;
+    sb.setAttribute('dir', isAr?'rtl':'ltr');
+  } else {sb.style.display='none';}
+  
+  // Question text
+  const qt=document.getElementById('qText');
+  if(lang==='bi'){
+    const parts=qd.q.split('\n\n');
+    qt.innerHTML='<div style="margin-bottom:10px;">'+parts[0]+'</div>'+(parts[1]?'<div style="font-family:Tajawal,sans-serif;direction:rtl;text-align:right;color:var(--navy);font-size:1.05rem;">'+parts[1]+'</div>':'');
+    qt.removeAttribute('dir');
+  }else{
+    qt.textContent=qd.q;
+    qt.setAttribute('dir', dir);
+  }
+  
+  // Options
+  const ul=document.getElementById('optsList');ul.innerHTML='';
+  const ua=ans[idx], rev=ua!==null;
+  qd.opts.forEach(function(opt,i){
+    const li=document.createElement('li');li.className='opt';
+    if(rev)li.classList.add('dis');
+    if(rev&&i===ua&&i===q.c)li.classList.add('ok');
+    else if(rev&&i===ua&&i!==q.c)li.classList.add('bad');
+    else if(rev&&i===q.c)li.classList.add('hint');
+    else if(!rev&&i===ua)li.classList.add('sel');
+    
+    const letDiv='<div class="olet">'+LETTERS[i]+'</div>';
+    let optContent='';
+    if(lang==='bi'){
+      const parts=opt.split('\n');
+      optContent='<div class="otxt"><div>'+parts[0]+'</div>'+(parts[1]?'<div style="font-family:Tajawal,sans-serif;direction:rtl;text-align:right;font-size:.9rem;color:var(--navy);margin-top:4px;">'+parts[1]+'</div>':'')+'</div>';
+    }else{
+      optContent='<div class="otxt" '+(isAr?'dir="rtl"':'')+'>'+opt+'</div>';
+    }
+    li.innerHTML=letDiv+optContent;
+    if(!rev)(function(ii){li.addEventListener('click',function(){pick(idx,ii);});})(i);
+    ul.appendChild(li);
+  });
+  
+  // Explanation
+  const eb=document.getElementById('expBox');
+  const eh=document.getElementById('expHdr');
+  const ebody=document.getElementById('expBody');
+  if(rev){
+    const ok=ua===q.c;
+    eb.className='exp show '+(ok?'ok':'bad');
+    eh.textContent=ok?(isAr?'✓ صحيح — السبب:':'✓ Correct — Why:'):(isAr?'✗ خطأ — السبب:':'✗ Incorrect — Why:');
+    ebody.textContent=qd.e;
+    ebody.setAttribute('dir', isAr&&q.eAr?'rtl':'ltr');
+  }else{eb.className='exp';}
+  
+  // Nav buttons
+  document.getElementById('btnPrev').style.display=idx===0?'none':'';
+  const bn=document.getElementById('btnNext');
+  if(idx===Q_shuffled.length-1){
+    bn.textContent='إنهاء الامتحان ✓';bn.className='nbtn subbtn';bn.onclick=submitExam;
+  }else{
+    bn.textContent='التالي →';bn.className='nbtn nxbtn';bn.onclick=nextQ;
+  }
+  
+  updateDots();
+  window.scrollTo(0,0);
+}
+
+function pick(idx,i){
+  if(ans[idx]!==null)return;
+  ans[idx]=i;renderQ(idx);
+}
+function nextQ(){if(cur<Q_shuffled.length-1)renderQ(cur+1);}
+function prevQ(){if(cur>0)renderQ(cur-1);}
+
+function updateDots(){
+  const dc=document.getElementById('qDots');dc.innerHTML='';
+  Q_shuffled.forEach(function(_,i){
+    const d=document.createElement('div');
+    d.className='d'+(i===cur?' dcur':'')+(ans[i]!==null?(ans[i]===Q_shuffled[i].c?' dok':' dno'):'');
+    d.onclick=(function(ii){return function(){renderQ(ii);};})(i);
+    dc.appendChild(d);
+  });
+}
+
+function submitExam(){
+  const tot=Q_shuffled.length;
+  const done=ans.filter(a=>a!==null).length;
+  if(done<tot){
+    const unanswered=tot-done;
+    if(!confirm((lang==='ar')?'لديك '+unanswered+' أسئلة بدون إجابة. هل تريدين إنهاء الامتحان؟':'You have '+unanswered+' unanswered questions. Submit anyway?'))return;
+  }
+  
+  let correct=0,kiOk=0,kiTot=0,sjiOk=0,sjiTot=0;
+  Q_shuffled.forEach(function(q,i){
+    const ok=ans[i]===q.c;
+    if(ok)correct++;
+    if(q.t==='KI'){kiTot++;if(ok)kiOk++;}
+    else{sjiTot++;if(ok)sjiOk++;}
+  });
+  
+  const pct=Math.round(correct/tot*100);
+  const pass=pct>=70;
+  showScreen('scrResults');
+  document.getElementById('hdrMeta').style.display='none';
+  
+  const circ=document.getElementById('scoreCirc');
+  circ.textContent=pct+'%';
+  circ.className='scircle '+(pass?'sp':'sf');
+  document.getElementById('resMsg').textContent=pass?'🎉 ممتاز! اجتزت الامتحان':'📚 تحتاجين مزيداً من المراجعة';
+  document.getElementById('rCorrect').textContent=correct;
+  document.getElementById('rWrong').textContent=tot-correct;
+  document.getElementById('rKi').textContent=kiOk+'/'+kiTot;
+  document.getElementById('rSji').textContent=sjiOk+'/'+sjiTot;
+}
+
+function retryExam(){Q_shuffled=buildShuffledExam();ans=new Array(Q_shuffled.length).fill(null);showScreen('scrExam');document.getElementById('hdrMeta').style.display='flex';renderQ(0);}
+function reviewExam(){showScreen('scrExam');document.getElementById('hdrMeta').style.display='flex';renderQ(0);}
+</script>
+</body>
+</html>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="لعبة SHRM التفاعلية — تعلّم بالشرح المُجزّأ وأسئلة الاستيعاب">
+<title>لعبة SHRM التفاعلية</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+:root{
+  --navy:#0d1b2e;--gold:#c8a84b;--gold2:#e8c96a;
+  --blue:#2563a8;--green:#1D9E75;--purple:#7c3aed;--orange:#d97706;--red:#dc2626;
+  --bg:#f4f1ea;--card:#fff;--border:#e0d9cc;--text:#1a1a1a;--muted:#6b6357;
+}
+body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;}
+.wrap{max-width:560px;margin:0 auto;min-height:100vh;position:relative;padding-bottom:30px;}
+
+/* TOP HUD */
+.hud{position:sticky;top:0;z-index:40;background:var(--navy);color:#fff;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.hud .chip{display:flex;align-items:center;gap:5px;font-weight:800;font-size:14px;background:rgba(255,255,255,.08);padding:5px 11px;border-radius:30px;}
+.hud .chip.heart{color:#ff9a9a;}.hud .chip.xp{color:var(--gold2);}.hud .chip.streak{color:#ffd27a;}
+.hud .home-b{background:none;border:none;color:#fff;font-size:20px;cursor:pointer;}
+
+/* SCREENS */
+.screen{display:none;padding:16px;animation:fade .35s ease;}
+.screen.active{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+
+/* MAP / WORLDS */
+.hero-h{text-align:center;padding:14px 8px 6px;}
+.hero-h h1{font-size:1.5rem;font-weight:900;color:var(--navy);}
+.hero-h p{font-size:.9rem;color:var(--muted);margin-top:3px;}
+.level-bar{background:#ece6da;border-radius:20px;height:12px;margin:14px 6px 4px;overflow:hidden;}
+.level-bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:20px;transition:width .6s;}
+.level-lbl{text-align:center;font-size:12px;color:var(--muted);margin-bottom:14px;}
+.world{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;margin-bottom:14px;cursor:pointer;transition:transform .15s,box-shadow .15s;position:relative;overflow:hidden;border-right:6px solid var(--c,var(--gold));}
+.world:active{transform:scale(.985);}
+.world:hover{box-shadow:0 10px 26px rgba(13,27,46,.1);}
+.world .wtop{display:flex;align-items:center;gap:13px;}
+.world .wico{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;background:var(--cl,#eef);flex-shrink:0;}
+.world .wname{font-size:1.12rem;font-weight:900;color:var(--navy);}
+.world .wsub{font-size:.8rem;color:var(--muted);}
+.world .wprog{margin-top:13px;height:8px;background:#ece6da;border-radius:20px;overflow:hidden;}
+.world .wprog>span{display:block;height:100%;background:var(--c,var(--gold));border-radius:20px;transition:width .5s;}
+.world .wpct{font-size:11px;color:var(--muted);margin-top:5px;font-weight:700;}
+
+/* LESSON LIST */
+.back-b{background:none;border:none;color:var(--blue);font-weight:800;font-size:14px;cursor:pointer;margin-bottom:10px;padding:6px 0;}
+.lesson-node{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:15px 16px;margin-bottom:11px;cursor:pointer;transition:transform .15s;}
+.lesson-node:active{transform:scale(.985);}
+.lesson-node.locked{opacity:.5;cursor:not-allowed;}
+.lesson-node.done{border-color:var(--green);}
+.ln-ico{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;background:var(--cl,#eef);}
+.lesson-node.done .ln-ico{background:var(--green);color:#fff;}
+.ln-info h3{font-size:1.02rem;font-weight:800;color:var(--navy);}
+.ln-info p{font-size:.8rem;color:var(--muted);}
+.ln-status{margin-right:auto;font-size:20px;}
+
+/* LESSON PLAY */
+.play-top{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+.play-x{background:none;border:none;font-size:22px;color:var(--muted);cursor:pointer;}
+.pbar{flex:1;height:14px;background:#ece6da;border-radius:20px;overflow:hidden;}
+.pbar>span{display:block;height:100%;background:var(--green);border-radius:20px;transition:width .4s;}
+.seg-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:24px 22px;min-height:240px;animation:fade .3s;}
+.seg-tag{display:inline-block;font-size:11px;font-weight:800;padding:3px 12px;border-radius:20px;margin-bottom:14px;}
+.tag-teach{background:rgba(37,99,168,.12);color:var(--blue);}
+.tag-quiz{background:rgba(200,168,75,.18);color:#9a7d1f;}
+.seg-card h2{font-size:1.25rem;font-weight:900;color:var(--navy);margin-bottom:12px;line-height:1.4;}
+.seg-ar{font-size:1.02rem;color:#2a2a2a;margin-bottom:12px;}
+.seg-en{font-size:.9rem;color:var(--muted);direction:ltr;text-align:left;border-right:3px solid var(--gold);padding-right:0;padding-left:12px;border-left:3px solid var(--gold);border-right:none;background:#faf7f0;border-radius:8px;padding:10px 12px;}
+.q-text{font-size:1.15rem;font-weight:800;color:var(--navy);margin-bottom:18px;line-height:1.5;}
+.opts{display:flex;flex-direction:column;gap:11px;}
+.opt{background:#faf8f3;border:2px solid var(--border);border-radius:14px;padding:14px 16px;font-size:1rem;font-weight:600;cursor:pointer;text-align:right;transition:all .15s;font-family:inherit;color:var(--text);}
+.opt:active{transform:scale(.99);}
+.opt.sel{border-color:var(--blue);background:#eef4fb;}
+.opt.correct{border-color:var(--green);background:#e8f7f0;color:#0f6b48;}
+.opt.wrong{border-color:var(--red);background:#fdeeee;color:#a01c1c;}
+.opt:disabled{cursor:default;}
+.feedback{margin-top:16px;border-radius:14px;padding:14px 16px;font-size:.94rem;animation:fade .25s;display:none;}
+.feedback.show{display:block;}
+.feedback.ok{background:#e8f7f0;border:1px solid var(--green);color:#0f6b48;}
+.feedback.no{background:#fdeeee;border:1px solid var(--red);color:#9a1c1c;}
+.feedback b{display:block;margin-bottom:4px;}
+
+.btn{display:block;width:100%;border:none;border-radius:14px;padding:15px;font-family:inherit;font-size:1.05rem;font-weight:800;cursor:pointer;margin-top:16px;transition:transform .12s,opacity .15s;}
+.btn:active{transform:translateY(1px);}
+.btn-go{background:var(--navy);color:#fff;}
+.btn-ok{background:var(--green);color:#fff;}
+.btn-dis{background:#d8d2c6;color:#fff;cursor:default;}
+
+/* COMPLETE / FAIL */
+.result{text-align:center;padding:40px 18px;animation:fade .4s;}
+.result .big{font-size:4rem;margin-bottom:6px;animation:pop .5s;}
+@keyframes pop{0%{transform:scale(0);}70%{transform:scale(1.2);}100%{transform:scale(1);}}
+.result h2{font-size:1.6rem;font-weight:900;color:var(--navy);margin-bottom:8px;}
+.result p{color:var(--muted);margin-bottom:20px;}
+.result .stats{display:flex;gap:12px;justify-content:center;margin-bottom:24px;}
+.result .rstat{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 20px;min-width:90px;}
+.result .rstat .n{font-size:1.6rem;font-weight:900;color:var(--gold);}
+.result .rstat .l{font-size:11px;color:var(--muted);}
+.confetti{position:fixed;top:-10px;font-size:18px;animation:fall linear forwards;z-index:60;pointer-events:none;}
+@keyframes fall{to{transform:translateY(105vh) rotate(360deg);opacity:.4;}}
+.muted-note{text-align:center;font-size:12px;color:var(--muted);padding:14px;}
+a.home-link{color:var(--blue);font-weight:700;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hud">
+    <button class="home-b" onclick="goMap()" title="الخريطة">🏠</button>
+    <div style="display:flex;gap:8px;">
+      <span class="chip streak">🔥 <span id="hStreak">0</span></span>
+      <span class="chip xp">⭐ <span id="hXp">0</span></span>
+      <span class="chip heart">❤️ <span id="hHearts">5</span></span>
+    </div>
+  </div>
+
+  <!-- MAP -->
+  <div class="screen active" id="screen-map">
+    <div class="hero-h">
+      <h1>🎮 لعبة SHRM</h1>
+      <p>تعلّم بالشرح المُجزّأ وأسئلة الاستيعاب الفورية</p>
+    </div>
+    <div class="level-bar"><span id="lvlFill"></span></div>
+    <div class="level-lbl">المستوى <b id="lvlNum">1</b> · <span id="lvlXp">0</span> نقطة</div>
+    <div id="worldList"></div>
+    <div class="muted-note">تقدّمك يُحفظ تلقائياً على هذا الجهاز · <a class="home-link" href="index.html">← العودة للـ Hub</a></div>
+  </div>
+
+  <!-- LESSON LIST -->
+  <div class="screen" id="screen-lessons">
+    <button class="back-b" onclick="goMap()">→ كل العوالم</button>
+    <div class="hero-h" id="worldHead"></div>
+    <div id="lessonList"></div>
+  </div>
+
+  <!-- PLAY -->
+  <div class="screen" id="screen-play">
+    <div class="play-top">
+      <button class="play-x" onclick="quitLesson()">✕</button>
+      <div class="pbar"><span id="playProg"></span></div>
+    </div>
+    <div id="segHost"></div>
+  </div>
+
+  <!-- RESULT -->
+  <div class="screen" id="screen-result"></div>
+
+</div>
+
+<script>
+/* ════════════ GAME CONTENT ════════════
+   لإضافة دروس: أضيفي كائن درس داخل lessons لأي عالم.
+   نوع المقطع: {t:'teach',h,ar,en?}  أو  {t:'quiz',q,opts:[],a:idx,ex}
+*/
+const WORLDS = [
+ {id:'comp', name:'الكفاءات', sub:'الكفاءات السلوكية التسع', icon:'📘', color:'#2563a8', cl:'#e7f0fb', lessons:[
+   {id:'c1', title:'القيادة', icon:'👑', segments:[
+     {t:'teach',h:'تطوّر نظريات القيادة',ar:'من «السمات» (القائد يُولد بصفات) إلى «السلوكية» (شبكة Blake-Mouton: الإنتاج × الناس) إلى «الظرفية» التي تربط الفعالية بالموقف.',en:'Trait → Behavioral (Blake-Mouton) → Contingency/Situational.'},
+     {t:'quiz',q:'وفق فيدلر للطوارئ، ماذا نغيّر لتحسين الفعالية؟',opts:['أسلوب القائد','الموقف ليلائم أسلوب القائد الثابت','شخصية الموظفين'],a:1,ex:'أسلوب القائد ثابت (يُقاس بـ LPC)، فنغيّر الموقف ليلائمه.'},
+     {t:'quiz',q:'في شبكة Blake-Mouton، النمط الأمثل (9,9) يُسمّى:',opts:['قيادة الفريق','السلطة-الطاعة','نادي الريف'],a:0,ex:'9,9 = قيادة الفريق: اهتمام عالٍ بالإنتاج والناس معاً.'},
+     {t:'quiz',q:'القيادة الظرفية (هيرسي-بلانشارد) تختلف عن فيدلر في أن:',opts:['تتجاهل الموقف','الأسلوب ثابت','القائد يغيّر أسلوبه حسب نضج الموظف'],a:2,ex:'هيرسي-بلانشارد: القائد يغيّر أسلوبه؛ فيدلر: الأسلوب ثابت.'},
+     {t:'teach',h:'الأساليب والقيادة الخادمة',ar:'جولمان: ستة أساليب يبدّل بينها القائد. القيادة الخادمة تضع نموَّ الفريق وتمكينه أولاً.',en:'Goleman: 6 styles. Servant leadership: team growth first.'},
+     {t:'quiz',q:'مدير يزيل عوائق فريقه ويؤمّن موارده بدل الأوامر. أي أسلوب؟',opts:['القسري','الخادم','التبادلي'],a:1,ex:'تمكين الفريق أولاً = القيادة الخادمة.'},
+     {t:'quiz',q:'قائد يُلهم رؤيةً ويغيّر قيم فريقه نحوها:',opts:['تبادلي','قسري','تحويلي'],a:2,ex:'التحويلية تُلهم وتغيّر القيم؛ التبادلية تبادل مكافأة مقابل أداء.'}
+   ]},
+
+   {id:'c2', title:'التحفيز', icon:'🔥', segments:[
+     {t:'teach',h:'ماسلو وهيرزبرغ',ar:'ماسلو: خمس حاجات يُشبَع الأدنى قبل الأعلى. هيرزبرغ: عوامل الصحة تمنع الاستياء، والمحفّزات تخلق الرضا.',en:'Maslow 5 levels; Herzberg: hygiene vs motivators.'},
+     {t:'quiz',q:'تحسين الراتب وظروف العمل (عوامل الصحة) يؤدّي إلى:',opts:['لا أثر','رضا وحماس عالٍ','منع الاستياء فقط'],a:2,ex:'عوامل الصحة تمنع الاستياء ولا تخلق الرضا — الرضا من المحفّزات.'},
+     {t:'quiz',q:'مدير يفترض أن الموظفين كسالى ويحتاجون رقابة صارمة. هذا يعكس:',opts:['نظرية Y','نظرية Z','نظرية X'],a:2,ex:'نظرية X (ماكجريجور) ترى الموظفين كسالى؛ Y تراهم طموحين.'},
+     {t:'teach',h:'فروم والعدالة والتعزيز',ar:'فروم: الدافعية = التوقّع × الوسيلة × التكافؤ. آدامز: الموظف يقارن نسبة مخرجاته/مدخلاته بالآخرين. سكينر: السلوك تحكمه نتائجه.',en:'Vroom expectancy; Adams equity; Skinner reinforcement.'},
+     {t:'quiz',q:'وفق فروم، إذا كان التكافؤ (قيمة المكافأة) = صفر، فالدافعية:',opts:['تتضاعف','تبقى عالية','تنهار إلى الصفر'],a:2,ex:'المعادلة ضربية: أي عنصر = صفر يُسقط الدافعية.'},
+     {t:'quiz',q:'رفع رقابة مشدّدة عن موظف تحسّن أداؤه مثال على:',opts:['عقاب','تعزيز سلبي','إطفاء'],a:1,ex:'التعزيز السلبي = إزالة مُنفّر لتقوية سلوك مرغوب، وليس عقاباً.'},
+     {t:'quiz',q:'موظف يشعر أنه يبذل أكثر من زميله بنفس الأجر فينخفض حماسه. أي نظرية؟',opts:['نظرية التعزيز','نظرية العدالة (آدامز)','هرم ماسلو'],a:1,ex:'نظرية العدالة: الإحساس بعدم الإنصاف في نسبة المخرجات/المدخلات يخفض الدافعية.'}
+   ]},
+
+   {id:'c3', title:'التفاعل والاتصال', icon:'💬', segments:[
+     {t:'teach',h:'نموذج الاتصال والثقة',ar:'الاتصال: مُرسِل ← ترميز ← قناة ← فكّ ترميز ← مُستقبِل ← تغذية راجعة، مع تشويش. وبناء الثقة (Hurley) يقوم على القيم المشتركة والكفاءة والاتساق والتواصل الصادق.',en:'Communication process + Hurley trust factors.'},
+     {t:'quiz',q:'تعميم فُهم خطأً بسبب مصطلح غامض. الحلّ الأفضل؟',opts:['تجاهله','التأكّد عبر التغذية الراجعة وقناة أوضح','إعادة إرسال النص'],a:1,ex:'التأكّد من الفهم عبر التغذية الراجعة، لا التكرار.'},
+     {t:'quiz',q:'مهارة الإصغاء التي تعيد صياغة كلام المتحدّث للتأكّد من الفهم تُسمّى:',opts:['الإصغاء الفعّال','الإصغاء السلبي','الإصغاء الانتقائي'],a:0,ex:'الإصغاء الفعّال: انتباه كامل + إعادة صياغة + تأجيل الحكم.'},
+     {t:'teach',h:'النزاع والتفاوض',ar:'الأساليب الخمسة لحل النزاع = نموذج Thomas-Kilmann (حزم × تعاون)، وليست Blake-Mouton. والتفاوض توزيعي (رابح-خاسر) أو تكاملي (رابح-رابح).',en:'Thomas-Kilmann conflict modes; distributive vs integrative.'},
+     {t:'quiz',q:'الأساليب الخمسة لإدارة النزاع تُنسب إلى:',opts:['Blake-Mouton','Maslow','Thomas-Kilmann'],a:2,ex:'خطأ شائع: هي Thomas-Kilmann، وBlake-Mouton شبكة قيادية.'},
+     {t:'quiz',q:'«أفضل بديل عن الاتفاق» الذي يحدّد نقطة انسحابك:',opts:['ZOPA','SWOT','BATNA'],a:2,ex:'BATNA كلما قوي قوي موقفك التفاوضي.'},
+     {t:'quiz',q:'في أي مرحلة من Tuckman يكثر الصراع وتتصادم الشخصيات؟',opts:['الأداء','التشكّل','العصف'],a:2,ex:'مرحلة العصف (Storming) هي الأصعب وتتطلّب تدخّلاً قيادياً.'}
+   ]},
+
+   {id:'c4', title:'الفطنة التجارية والتحليل', icon:'📊', segments:[
+     {t:'teach',h:'القوائم المالية والنسب',ar:'الميزانية العمومية: لحظة زمنية. قائمة الدخل: فترة. التدفق النقدي: حركة النقد. والنسب تقيس السيولة والربحية والرفع المالي.',en:'Balance sheet (moment), income (period), cash flow.'},
+     {t:'quiz',q:'أي قائمة تصوّر المركز المالي في لحظة زمنية؟',opts:['التدفق النقدي','قائمة الدخل','الميزانية العمومية'],a:2,ex:'الميزانية لقطة لحظية: أصول = خصوم + حقوق ملكية.'},
+     {t:'teach',h:'أدوات الاستراتيجية',ar:'SWOT (داخلي+خارجي)، PESTLE (البيئة الكلّية)، قوى بورتر الخمس (جاذبية القطاع).',en:'SWOT, PESTLE, Porter Five Forces.'},
+     {t:'quiz',q:'أداة تحلّل المنافسة وقوة الموردين والمشترين والبدائل في قطاع:',opts:['RACI','قوى بورتر الخمس','SWOT'],a:1,ex:'بورتر = تحليل القطاع الخارجي.'},
+     {t:'quiz',q:'تحليل العوامل السياسية والاقتصادية والاجتماعية والتقنية والقانونية والبيئية:',opts:['SWOT','BCG','PESTLE'],a:2,ex:'PESTLE يمسح البيئة الكلّية الخارجية.'},
+     {t:'teach',h:'الموثوقية والصحة والاستشارة',ar:'الموثوقية = اتساق التكرار؛ الصحة = قياس المطلوب فعلاً. ونموذج الاستشارة: تقييم ← تشخيص ← تدخّل ← متابعة.',en:'Reliability vs validity; 4-step consulting.'},
+     {t:'quiz',q:'أداة تعطي النتيجة نفسها عند التكرار لكنها لا تقيس المطلوب فعلاً:',opts:['موثوقة لكن غير صحيحة','الاثنان معاً','صحيحة لكن غير موثوقة'],a:0,ex:'يمكن أن تكون موثوقة دون أن تكون صحيحة.'},
+     {t:'quiz',q:'أداة قرار جماعي تجمع آراء خبراء عبر جولات مجهولة متكرّرة:',opts:['العصف الذهني','RACI','أسلوب دلفي'],a:2,ex:'دلفي: جولات خبراء مجهولة للوصول لتوافق دون هيمنة.'}
+   ]}
+ ]},
+
+ {id:'people', name:'People', sub:'إدارة المواهب والمكافآت', icon:'👥', color:'#1D9E75', cl:'#e6f7ef', lessons:[
+   {id:'p1', title:'الاستراتيجية والاستقطاب', icon:'🎯', segments:[
+     {t:'teach',h:'التخطيط الاستراتيجي لـ HR',ar:'يبدأ بالمسح البيئي ثم الصياغة ثم التنفيذ ثم التقييم. ودور HR كشريك استراتيجي يعني مواءمة ممارساته مع استراتيجية المنظمة.',en:'Strategic planning + HR as strategic partner.'},
+     {t:'quiz',q:'ما المرحلة الأولى في التخطيط الاستراتيجي؟',opts:['التقييم','المسح البيئي والتحليل','التنفيذ'],a:1,ex:'يبدأ التخطيط بالمسح والتحليل البيئي قبل صياغة الاستراتيجية.'},
+     {t:'quiz',q:'دور HR كـ«شريك استراتيجي» (نموذج أولريش) يعني:',opts:['مواءمة HR مع استراتيجية العمل','إدارة الرواتب فقط','حفظ الملفات'],a:0,ex:'الشريك الاستراتيجي يربط HR بأهداف العمل.'},
+     {t:'quiz',q:'الأداة التي تجمع القوة والضعف الداخلية مع الفرص والتهديدات الخارجية:',opts:['RACI','SWOT','PESTLE'],a:1,ex:'SWOT يجمع التحليل الداخلي والخارجي.'},
+     {t:'quiz',q:'أداة تحليل العوامل السياسية والاقتصادية والاجتماعية والتقنية والقانونية والبيئية:',opts:['PESTLE','BCG','SWOT'],a:0,ex:'PESTLE يمسح البيئة الكلّية الخارجية.'},
+     {t:'teach',h:'تخطيط القوى العاملة والتحليل الوظيفي',ar:'تخطيط القوى العاملة يقارن الطلب على المواهب بالمعروض. وتحليل الوظيفة ينتج وثيقتين: الوصف الوظيفي والمواصفات الوظيفية.',en:'Workforce planning; job analysis → description + specification.'},
+     {t:'quiz',q:'مقارنة الطلب المستقبلي على المواهب بالمعروض المتاح لتحديد الفجوة:',opts:['تخطيط القوى العاملة','تحليل SWOT','تقييم الأداء'],a:0,ex:'تخطيط القوى العاملة = الطلب مقابل المعروض ← خطة سدّ الفجوة.'},
+     {t:'quiz',q:'الوثيقة التي تصف مهام الوظيفة ومسؤولياتها:',opts:['الوصف الوظيفي','المواصفات الوظيفية','عقد العمل'],a:1,ex:'الوصف الوظيفي يركّز على المهام والمسؤوليات.'},
+     {t:'quiz',q:'الوثيقة التي تحدّد المؤهلات والمهارات المطلوبة من شاغل الوظيفة:',opts:['الميزانية','المواصفات الوظيفية (Job Specification)','الوصف الوظيفي'],a:1,ex:'المواصفات الوظيفية تركّز على متطلّبات الشخص (مهارات/مؤهّلات).'},
+     {t:'quiz',q:'العملية المنهجية لجمع معلومات عن محتوى الوظيفة ومتطلباتها:',opts:['تحليل الوظيفة (Job Analysis)','تقييم الأداء','المقابلة'],a:1,ex:'تحليل الوظيفة أساس الوصف والمواصفات والتقييم.'},
+     {t:'teach',h:'مصادر التجنيد والعلامة',ar:'التجنيد داخلي (ترقية/نقل) أو خارجي. والعلامة التجارية لصاحب العمل وعرض القيمة (EVP) يجذبان المواهب.',en:'Internal/external sourcing; employer brand & EVP.'},
+     {t:'quiz',q:'أي مما يلي مصدر تجنيد داخلي؟',opts:['الترقية والنقل الداخلي','وكالات التوظيف','لوحات الوظائف الخارجية'],a:0,ex:'الترقية والنقل مصادر داخلية.'},
+     {t:'quiz',q:'من مزايا التجنيد الداخلي:',opts:['توسيع التنوّع دائماً','جلب أفكار جديدة تماماً','رفع الاحتفاظ والاحتفاظ بالمعرفة الضمنية وتكلفة أقل'],a:2,ex:'التجنيد الداخلي أرخص ويعزّز الاحتفاظ والمعرفة الضمنية.'},
+     {t:'quiz',q:'«عرض القيمة للموظف» (EVP) يقصد به:',opts:['عدد الموظفين','راتب التعيين فقط','مجمل ما يحصل عليه الموظف مقابل عمله'],a:2,ex:'EVP = الحزمة الكاملة المميِّزة لصاحب العمل.'},
+     {t:'quiz',q:'سمعة المنظمة كمكان جذّاب للعمل تُسمّى:',opts:['العلامة التجارية لصاحب العمل (Employer Brand)','حصة السوق','الميزانية'],a:0,ex:'Employer Brand يؤثّر مباشرةً على جذب المواهب.'},
+     {t:'teach',h:'مقاييس التوظيف',ar:'مقاييس رئيسة: تكلفة التعيين، زمن الإشغال، نسبة العائد، وجودة التعيين.',en:'Cost per hire, time to fill, yield ratio, quality of hire.'},
+     {t:'quiz',q:'«زمن الإشغال» (Time to Fill) يقيس:',opts:['رضا المدير','تكلفة الإعلان','أيام من فتح الشاغر إلى قبول العرض'],a:2,ex:'Time to Fill = كفاءة عملية التوظيف زمنياً.'},
+     {t:'quiz',q:'«نسبة العائد» (Yield Ratio) في التوظيف تقيس:',opts:['رضا العملاء','ربحية القسم','نسبة المرشّحين الذين يجتازون كل مرحلة'],a:2,ex:'Yield Ratio يكشف كفاءة كل مرحلة في مسار التوظيف.'},
+     {t:'quiz',q:'«جودة التعيين» (Quality of Hire) تقيس أساساً:',opts:['سرعة التوظيف','عدد المتقدّمين','أداء واحتفاظ الموظفين الجدد'],a:2,ex:'جودة التعيين تقيس نجاح الموظف الجديد لاحقاً (أداء/احتفاظ).'},
+     {t:'teach',h:'الاختيار والمقابلات',ar:'المقابلة المنظّمة/السلوكية أعلى صدقاً. وأسلوب STAR يبني الإجابة السلوكية. وعيّنة العمل تطلب أداء مهمة فعلية.',en:'Structured/behavioral interviews; STAR; work sample.'},
+     {t:'quiz',q:'أي نوع مقابلات أعلى في التنبؤ بالأداء (الصدق)؟',opts:['المنظّمة/السلوكية','غير المنظّمة','العشوائية'],a:0,ex:'المقابلة المنظّمة (أسئلة ومعايير موحّدة) أعلى صدقاً.'},
+     {t:'quiz',q:'أسلوب STAR في المقابلة السلوكية يرمز إلى:',opts:['الموقف-المهمة-الإجراء-النتيجة','القوة-الفرصة','الراتب-الوقت'],a:0,ex:'STAR = Situation, Task, Action, Result لتقييم سلوك سابق.'},
+     {t:'quiz',q:'اختبار يطلب من المرشّح أداء مهمة فعلية من الوظيفة:',opts:['اختبار الشخصية','المقابلة الهاتفية','عيّنة العمل (Work Sample)'],a:2,ex:'عيّنة العمل من أعلى أدوات الاختيار صدقاً تنبؤياً.'},
+     {t:'quiz',q:'«المعاينة الواقعية للوظيفة» (RJP) تقلّل أساساً:',opts:['تكلفة الإعلان','الدوران المبكّر بضبط التوقّعات بصدق','عدد المتقدّمين'],a:1,ex:'RJP تعرض الإيجابيات والسلبيات بصدق فتقلّل الدوران المبكّر.'}
+   ]},
+
+   {id:'p2', title:'الانخراط والاحتفاظ', icon:'💚', segments:[
+     {t:'teach',h:'مفهوم الانخراط ومحرّكاته',ar:'الانخراط حالة عاطفية ومعرفية تدفع لبذل جهد تقديري إضافي، أعمق من الرضا. ونموذج خصائص الوظيفة (هاكمان وأولدهام) يرفعه عبر تنوّع المهارات والاستقلالية والتغذية الراجعة.',en:'Engagement vs satisfaction; Job Characteristics Model.'},
+     {t:'quiz',q:'كيف يختلف الانخراط (Engagement) عن الرضا الوظيفي؟',opts:['الانخراط يتضمّن جهداً تقديرياً والتزاماً عاطفياً أعمق','متطابقان تماماً','الرضا أعمق من الانخراط'],a:0,ex:'الانخراط أعمق: استعداد لبذل جهد إضافي والتزام عاطفي.'},
+     {t:'quiz',q:'وفق نموذج خصائص الوظيفة، أي بُعد يرفع الدافعية الداخلية؟',opts:['صرامة الرقابة','الاستقلالية (Autonomy)','طول ساعات العمل'],a:1,ex:'الاستقلالية وتنوّع المهارات والتغذية الراجعة ترفع الدافعية الداخلية.'},
+     {t:'quiz',q:'«العقد النفسي» (Psychological Contract) يقصد به:',opts:['عقد العمل المكتوب','اتفاق النقابة','التوقّعات المتبادلة غير المكتوبة بين الموظف وصاحب العمل'],a:2,ex:'إخلاله (كوعد ترقية لم يتحقّق) يضرّ الانخراط والثقة.'},
+     {t:'quiz',q:'إثراء الوظيفة (Job Enrichment) يعني:',opts:['إضافة عمق ومسؤولية واستقلالية للوظيفة','زيادة عدد المهام المتشابهة أفقياً','خفض الأجر'],a:0,ex:'الإثراء توسيع رأسي (مسؤولية/استقلالية)، بعكس التوسيع الأفقي.'},
+     {t:'teach',h:'قياس الانخراط',ar:'يُقاس بالاستبيانات: الشاملة (Census) والنبضية القصيرة (Pulse) وeNPS. والفخّ الأكبر: استبيان بلا إجراءات تالية.',en:'Census, pulse, eNPS; the no-action trap.'},
+     {t:'quiz',q:'الاستبيان القصير المتكرّر لقياس «نبض» الانخراط بسرعة:',opts:['الاستبيان الشامل السنوي','استبيان النبض (Pulse)','مقابلة الخروج'],a:1,ex:'Pulse: قصير ومتكرّر لرصد التغيّرات سريعاً.'},
+     {t:'quiz',q:'مؤشر eNPS يقيس:',opts:['عدد ساعات العمل','مدى احتمال توصية الموظف بالمنظمة كمكان للعمل','ربحية الموظف'],a:1,ex:'eNPS = صافي نقاط ترويج الموظفين للمنظمة.'},
+     {t:'quiz',q:'ما الفخّ الأكبر في استبيانات الانخراط؟',opts:['كثرة الأسئلة','إجراؤها دون إجراءات تالية فيتولّد التهكّم','إجراؤها سنوياً'],a:1,ex:'استبيان بلا متابعة يقتل المصداقية ويضرّ الانخراط.'},
+     {t:'teach',h:'مقابلات البقاء والخروج',ar:'مقابلة البقاء استباقية تكشف ما يُبقي الموظف، ومقابلة الخروج تشخّص أسباب المغادرة لتحسين الاحتفاظ.',en:'Stay vs exit interviews.'},
+     {t:'quiz',q:'متى تُجرى «مقابلة البقاء» (Stay Interview) بفاعلية؟',opts:['عند تقديم الاستقالة','بعد المغادرة','دورياً أثناء بقاء الموظف لاستباق المشكلات'],a:2,ex:'استباقية أثناء البقاء لمعرفة ما يُبقيه قبل تفكيره بالرحيل.'},
+     {t:'quiz',q:'الهدف الأساسي من «مقابلة الخروج»:',opts:['فهم أنماط أسباب المغادرة لتحسين الاحتفاظ','معاقبة المغادر','تأخير الاستقالة'],a:0,ex:'تكشف أسباباً متكرّرة يمكن معالجتها مؤسسياً.'},
+     {t:'teach',h:'الدوران وأنواعه',ar:'الدوران طوعي/غير طوعي، ووظيفي/مختل. أخطره الطوعي لعالي الأداء (Regrettable). والمعدّل = المغادرون ÷ متوسط الموظفين × 100.',en:'Turnover types; rate formula.'},
+     {t:'quiz',q:'أخطر أنواع الدوران على المنظمة:',opts:['غير الطوعي','تقاعد مخطّط له','الطوعي لعالي الأداء (Regrettable)'],a:2,ex:'فقدان عالي الأداء طوعاً هو الأكثر ضرراً.'},
+     {t:'quiz',q:'مغادرة موظف ضعيف الأداء طوعاً تُصنّف دوراناً:',opts:['وظيفياً (Functional) قد يكون مفيداً','غير طوعي','مختلاً ضاراً'],a:0,ex:'الدوران الوظيفي قد يحسّن أداء الفريق.'},
+     {t:'quiz',q:'فصل موظف بقرار من صاحب العمل يُعدّ دوراناً:',opts:['وظيفياً','غير طوعي (Involuntary)','طوعياً'],a:1,ex:'الدوران غير الطوعي يبدأ من صاحب العمل (فصل/تسريح).'},
+     {t:'quiz',q:'معدّل الدوران يُحسب بـ:',opts:['الإيرادات ÷ الموظفين','(عدد المغادرين ÷ متوسط عدد الموظفين) × 100','ساعات العمل ÷ 200,000'],a:1,ex:'النسبة المئوية للمغادرين خلال فترة.'},
+     {t:'teach',h:'الاحتفاظ والاندماج',ar:'اندماج فعّال (الـ4 Cs: امتثال، توضيح، ثقافة، ترابط) يرفع احتفاظ السنة الأولى. والاعتراف والمرونة من أقوى أدوات الاحتفاظ.',en:'Onboarding 4 Cs; recognition; flexibility.'},
+     {t:'quiz',q:'«الـ4 Cs» لاندماج الموظفين الجدد تشمل:',opts:['المنافسة والرقابة','الامتثال والتوضيح والثقافة والترابط','الراتب والمكتب'],a:1,ex:'Compliance, Clarification, Culture, Connection.'},
+     {t:'quiz',q:'الاعتراف الفوري بالإنجاز (Recognition) مقارنةً بالمكافأة المالية:',opts:['غالباً قوي الأثر وأقل تكلفة','بلا قيمة','دائماً أضعف أثراً'],a:0,ex:'الاعتراف المعنوي الفوري محرّك انخراط قوي ومنخفض التكلفة.'},
+     {t:'quiz',q:'الموظف العائد للمنظمة بعد مغادرته يُسمّى:',opts:['Contractor','Boomerang','Freelancer'],a:1,ex:'الموظف «العائد» يجلب خبرة ويقلّل تكلفة وزمن التعيين.'}
+   ]},
+
+   {id:'p3', title:'التعلّم والتطوير', icon:'🎓', segments:[
+     {t:'teach',h:'ADDIE وأندراغوجيا',ar:'ADDIE: تحليل ← تصميم ← تطوير ← تنفيذ ← تقييم. وأندراغوجيا (نولز): الكبار يتعلّمون بالمشكلات وبما يتّصل بخبرتهم.',en:'ADDIE; andragogy.'},
+     {t:'quiz',q:'المرحلة الأولى في ADDIE:',opts:['التقييم','التصميم','التحليل'],a:2,ex:'يبدأ ADDIE بتحليل الاحتياجات قبل التصميم.'},
+     {t:'quiz',q:'وفق أندراغوجيا، يتعلّم الكبار بأفضل صورة حين يكون المحتوى:',opts:['ذا صلة بخبرتهم ومشكلاتهم','نظرياً بحتاً','إلزامياً دون خيار'],a:0,ex:'تعلّم الكبار موجَّه بالمشكلات وذو صلة بالتطبيق.'},
+     {t:'quiz',q:'تصنيف بلوم (Bloom) يرتّب أهداف التعلّم:',opts:['من التذكّر صعوداً إلى التقييم والإبداع','من الإبداع نزولاً','عشوائياً'],a:0,ex:'هرم بلوم: تذكّر ← فهم ← تطبيق ← تحليل ← تقييم ← إبداع.'},
+     {t:'teach',h:'كيركباتريك و70-20-10',ar:'كيركباتريك: ردّ الفعل ← التعلّم ← السلوك ← النتائج. فيليبس يضيف ROI. ونموذج 70-20-10: 70% خبرة، 20% من الآخرين، 10% تدريب رسمي.',en:'Kirkpatrick + Phillips; 70-20-10.'},
+     {t:'quiz',q:'أي مستوى عند كيركباتريك يقيس أثر التدريب على نتائج الأعمال؟',opts:['المستوى 4','المستوى 2','المستوى 1'],a:0,ex:'المستوى 4 (النتائج)؛ وفيليبس يترجمه إلى ROI (المستوى 5).'},
+     {t:'quiz',q:'في 70-20-10، النسبة الأكبر من التعلّم تأتي من:',opts:['التدريب الرسمي','القراءة','الخبرة العملية المباشرة'],a:2,ex:'70% من التعلّم من الخبرة على رأس العمل.'}
+   ]},
+
+   {id:'p4', title:'المكافآت الكلّية', icon:'💰', segments:[
+     {t:'teach',h:'العدالة وبنية الأجر',ar:'العدالة الداخلية (تقييم الوظائف) والخارجية (مسوحات السوق) أساس بنية الأجر. وللنطاق حد أدنى ومنتصف وأعلى.',en:'Internal/external equity; pay structure.'},
+     {t:'quiz',q:'نسبة راتب الموظف إلى نقطة منتصف النطاق تُسمّى:',opts:['Yield','Range spread','Compa-ratio'],a:2,ex:'Compa-ratio = الراتب ÷ منتصف النطاق؛ 1.0 = عند المنتصف.'},
+     {t:'quiz',q:'تقييم الوظائف يحقّق العدالة:',opts:['الخارجية','الداخلية','القانونية'],a:1,ex:'تقييم الوظائف يحدّد القيمة النسبية الداخلية للوظائف.'},
+     {t:'quiz',q:'«ضغط الأجور» (Pay Compression) يعني:',opts:['زيادة سنوية كبيرة','خفض كل الرواتب','فروقاً ضئيلة غير مبرّرة بين الجدد والقدامى/المشرفين'],a:2,ex:'ضغط الأجور: فروق ضئيلة غير مبرّرة بين مستويات الخبرة أو الإشراف.'},
+     {t:'quiz',q:'«المعدّل الأحمر» (Red-Circle) يعني راتباً:',opts:['عند المنتصف','أقل من حدّ النطاق','أعلى من سقف النطاق فيُجمَّد'],a:2,ex:'Red-circle: الراتب تجاوز سقف النطاق فيُجمَّد حتى يلحقه النطاق.'},
+     {t:'quiz',q:'دفع أجر أعلى للمناوبات الليلية أو الظروف الصعبة:',opts:['الأجر التفاضلي (Differential)','Compa-ratio','الحافز السنوي'],a:0,ex:'الأجر التفاضلي يعوّض ظروف عمل خاصة كالمناوبات الليلية.'},
+     {t:'quiz',q:'المكافآت الكلّية (Total Rewards) تشمل:',opts:['الأجر + الحوافز + المزايا + التطوير + بيئة العمل','المزايا الصحية فقط','الراتب فقط'],a:0,ex:'مفهوم شامل يتجاوز النقد إلى التطوير والاعتراف وبيئة العمل.'}
+   ]}
+ ]},
+
+ {id:'org', name:'Organization', sub:'الهيكل وعلاقات العمل', icon:'🏢', color:'#7c3aed', cl:'#f0e9fc', lessons:[
+   {id:'o1', title:'علاقات العمل النقابية', icon:'⚖️', segments:[
+     {t:'teach',h:'التنظيم النقابي',ar:'قبل المفاوضة تمرّ النقابة باعتماد رسمي يشرف عليه مجلس علاقات العمل الوطني (NLRB): بطاقات تفويض ثم تحديد وحدة التفاوض ثم انتخاب.',en:'Union organizing via NLRB: authorization cards, bargaining unit, election.'},
+     {t:'quiz',q:'ما النسبة الدنيا من بطاقات التفويض لطلب انتخاب NLRB؟',opts:['51%','30%','10%'],a:1,ex:'يلزم توقيع 30% على الأقل من العمال لطلب إجراء انتخاب.'},
+     {t:'quiz',q:'الجهة التي تشرف على انتخابات النقابة وتفصل في الممارسات غير العادلة:',opts:['OSHA','EEOC','NLRB'],a:2,ex:'مجلس علاقات العمل الوطني (NLRB) ينظّم الانتخابات وULPs.'},
+     {t:'quiz',q:'مجموعة العمال ذوي المصالح المشتركة الذين تمثّلهم النقابة تُسمّى:',opts:['وحدة التفاوض (Bargaining Unit)','اللجنة التنفيذية','مجلس الإدارة'],a:0,ex:'وحدة التفاوض هي نطاق تمثيل النقابة.'},
+     {t:'quiz',q:'تُعتمد النقابة ممثلاً حصرياً عند فوزها بـ:',opts:['أي نسبة','الأغلبية البسيطة (50%+1)','إجماع تام'],a:1,ex:'فوز الأغلبية يمنح النقابة التمثيل الحصري.'},
+     {t:'teach',h:'المفاوضة الجماعية',ar:'الموضوعات: إلزامية (الأجور/الساعات/الظروف)، اختيارية، محظورة. والتفاوض بحسن نية التزام قانوني.',en:'Mandatory/permissive/illegal subjects; good faith.'},
+     {t:'quiz',q:'الأجور وساعات العمل تُعدّ موضوعاً تفاوضياً:',opts:['إلزامياً','اختيارياً','محظوراً'],a:0,ex:'الأجور والساعات والظروف موضوعات إلزامية.'},
+     {t:'quiz',q:'إدراج «المتجر المغلق» في عقد التفاوض يُعدّ موضوعاً:',opts:['اختيارياً','محظوراً','إلزامياً'],a:1,ex:'المتجر المغلق محظور بموجب Taft-Hartley.'},
+     {t:'quiz',q:'رفض صاحب العمل تقديم معلومات أجور ضرورية للتفاوض يُعدّ:',opts:['موضوعاً اختيارياً','ممارسة عمل غير عادلة','حقاً مشروعاً'],a:1,ex:'الامتناع عن التفاوض بحسن نية (حجب المعلومات) ممارسة غير عادلة.'},
+     {t:'quiz',q:'التزام الطرفين بالتفاوض بجدية ونية صادقة يُسمّى:',opts:['التحكيم','التفاوض بحسن نية (Good Faith)','التفاوض التوزيعي'],a:1,ex:'حسن النية التزام قانوني على الطرفين في المفاوضة الجماعية.'},
+     {t:'teach',h:'الأمن النقابي',ar:'أنواعه: المغلق (محظور)، النقابة (انضمام إلزامي بعد التعيين)، الوكالة (رسوم دون انضمام)، المفتوح (لا إلزام).',en:'Union security: closed/union/agency/open.'},
+     {t:'quiz',q:'«المتجر المغلق» (اشتراط العضوية قبل التعيين):',opts:['مسموح بكل الولايات','محظور بـ Taft-Hartley','إلزامي فيدرالياً'],a:1,ex:'حظره Taft-Hartley.'},
+     {t:'quiz',q:'متجر يُلزم الموظف بالانضمام للنقابة بعد فترة من تعيينه:',opts:['متجر النقابة (Union Shop)','متجر الوكالة','المتجر المفتوح'],a:0,ex:'متجر النقابة: العضوية إلزامية بعد التعيين.'},
+     {t:'quiz',q:'دفع رسوم التفاوض دون إلزام بالانضمام يُسمّى:',opts:['متجر الوكالة (Agency Shop)','المتجر المفتوح','المتجر المغلق'],a:0,ex:'متجر الوكالة: رسوم دون عضوية إجبارية.'},
+     {t:'quiz',q:'قوانين «الحق في العمل» (Right-to-Work) في الولايات تمنع:',opts:['تكوين النقابات','الإضراب','اشتراط العضوية أو الرسوم كشرط للعمل'],a:2,ex:'تُضعف الأمن النقابي بمنع اشتراط العضوية/الرسوم.'},
+     {t:'teach',h:'الإضرابات والتظلّمات',ar:'إضراب اقتصادي (استبدال دائم ممكن)، ULP (محمي)، جامح (غير مصرّح). والإغلاق أداة صاحب العمل. وإجراء التظلّم ينتهي غالباً بالتحكيم.',en:'Strikes, lockouts, grievances, arbitration, Weingarten.'},
+     {t:'quiz',q:'في الإضراب الاقتصادي، العمال:',opts:['قابلون للاستبدال الدائم','محميون تماماً','يُفصلون فوراً'],a:0,ex:'مضربو الإضراب الاقتصادي قابلون للاستبدال الدائم.'},
+     {t:'quiz',q:'في إضراب احتجاجاً على ممارسة غير عادلة (ULP)، العمال:',opts:['محميون من الاستبدال الدائم','قابلون للاستبدال الدائم','يخسرون أجورهم السابقة'],a:0,ex:'مضربو ULP محميون من الاستبدال الدائم.'},
+     {t:'quiz',q:'إضراب يقوم به العمال دون تصريح من نقابتهم يُسمّى:',opts:['جامحاً (Wildcat)','اقتصادياً','تعاطفياً'],a:0,ex:'الإضراب الجامح غير مصرّح به من النقابة وغير محمي.'},
+     {t:'quiz',q:'الأداة المقابلة للإضراب بيد صاحب العمل (منع العمال من الدخول):',opts:['الإغلاق (Lockout)','التحكيم','التظلّم'],a:0,ex:'الإغلاق ضغط تفاوضي من صاحب العمل.'},
+     {t:'quiz',q:'الخطوة الأخيرة غالباً في إجراء التظلّم النقابي:',opts:['الفصل','الإضراب','التحكيم المُلزِم (Arbitration)'],a:2,ex:'ينتهي التظلّم عادةً بتحكيم مُلزِم لطرف محايد.'},
+     {t:'quiz',q:'حق العضو في حضور ممثل نقابي بمقابلة تأديبية قد تؤدي لعقوبة يُسمّى حقوق:',opts:['Weingarten','Garrity','Miranda'],a:0,ex:'حقوق Weingarten تكفل حضور ممثل نقابي في المقابلات التأديبية.'},
+     {t:'quiz',q:'القانون الذي كفل حق التنظيم والمفاوضة الجماعية (1935):',opts:['NLRA (واغنر)','Landrum-Griffin','Taft-Hartley'],a:0,ex:'قانون علاقات العمل الوطني (واغنر) 1935 أسّس هذه الحقوق.'},
+     {t:'quiz',q:'القانون الذي أضاف ممارسات النقابات غير العادلة وأتاح للولايات قوانين الحق في العمل:',opts:['Wagner Act','Taft-Hartley','FMLA'],a:1,ex:'Taft-Hartley (1947) وازن قانون واغنر وأجاز الحق في العمل.'}
+   ]}
+ ]},
+
+ {id:'wp', name:'Workplace', sub:'قانون العمل والمخاطر', icon:'⚖️', color:'#d97706', cl:'#fdf0df', lessons:[
+   {id:'w1', title:'قانون العمل الأمريكي', icon:'📜', segments:[
+     {t:'teach',h:'Title VII والتمييز',ar:'يحظر Title VII (1964) التمييز بسبب العِرق واللون والدين والجنس والأصل القومي، وينطبق على من لديهم 15 موظفاً فأكثر. والتمييز نوعان: مباشر وأثر تمييزي.',en:'Title VII (15+); disparate treatment vs impact.'},
+     {t:'quiz',q:'ينطبق Title VII على أصحاب العمل الذين لديهم:',opts:['50 موظفاً فأكثر','موظف فأكثر','15 موظفاً فأكثر'],a:2,ex:'عتبة Title VII هي 15 موظفاً.'},
+     {t:'quiz',q:'أي مما يلي ليس فئة محمية في Title VII؟',opts:['الأصل القومي','الدين','السن'],a:2,ex:'السن يحميه ADEA لا Title VII.'},
+     {t:'quiz',q:'معاملة فرد بشكل مختلف بسبب فئة محمية تُسمّى:',opts:['أثراً تمييزياً','تمييزاً مباشراً (Disparate Treatment)','تعديلاً معقولاً'],a:1,ex:'التمييز المباشر = معاملة متعمّدة مختلفة بسبب فئة محمية.'},
+     {t:'quiz',q:'سياسة محايدة ظاهرياً لكنها تضرّ فئة محمية بشكل غير متناسب:',opts:['أثر تمييزي (Disparate Impact)','BFOQ','تمييز مباشر'],a:0,ex:'الأثر التمييزي تمييز غير مقصود ناتج عن سياسة محايدة ظاهرياً.'},
+     {t:'quiz',q:'نسبة اختيار الفئة المحمية أقل من 80% من نسبة المجموعة الأعلى تُشير إلى:',opts:['مؤشر أثر تمييزي (قاعدة 4/5)','لا مشكلة','تمييز مقصود مؤكَّد'],a:0,ex:'قاعدة الأربعة أخماس: أقل من 80% مؤشر (لا إثبات قاطع).'},
+     {t:'teach',h:'BFOQ والمضايقة والانتقام',ar:'BFOQ استثناء ضيّق يجيز التمييز حين تكون الصفة ضرورية للوظيفة (لا ينطبق على العِرق). والمضايقة نوعان: «هذا مقابل ذاك» وبيئة عدائية.',en:'BFOQ; quid pro quo vs hostile environment; retaliation.'},
+     {t:'quiz',q:'الاستثناء الذي يجيز التمييز حين تكون الصفة ضرورية جوهرياً للوظيفة:',opts:['RJP','BFOQ','ROI'],a:1,ex:'BFOQ مؤهّل مهني حقيقي — لا ينطبق أبداً على العِرق.'},
+     {t:'quiz',q:'اشتراط مشرف منفعةً جنسيةً مقابل ترقية يُعدّ مضايقة:',opts:['غير قانونية فقط مدنياً','بيئة عدائية','«هذا مقابل ذاك» (Quid Pro Quo)'],a:2,ex:'Quid Pro Quo: ربط قرار وظيفي بقبول تحرّش.'},
+     {t:'quiz',q:'معاقبة موظف لتقديمه شكوى تمييز رسمية تُسمّى:',opts:['تعديلاً معقولاً','انتقاماً (Retaliation) وهو محظور','BFOQ'],a:1,ex:'الانتقام من ممارسة حق محمي محظور صراحةً.'},
+     {t:'teach',h:'ADA وADEA',ar:'ADA يحظر التمييز بالإعاقة (15+) ويُلزم بتعديل معقول ما لم يسبّب مشقّة غير معقولة. وADEA يحمي من هم 40 فأكثر (20+).',en:'ADA (15+), reasonable accommodation; ADEA (40+, 20 employees).'},
+     {t:'quiz',q:'يُلزم ADA صاحب العمل بتعديل معقول ما لم يسبّب:',opts:['أي تكلفة','مشقّة غير معقولة (Undue Hardship)','إزعاجاً بسيطاً'],a:1,ex:'الإعفاء فقط عند المشقّة غير المعقولة (تكلفة/صعوبة جوهرية).'},
+     {t:'quiz',q:'المهام الجوهرية التي يجب أن يؤدّيها شاغل الوظيفة تُسمّى:',opts:['الامتيازات','المهام الثانوية','المهام الأساسية (Essential Functions)'],a:2,ex:'يُقاس التعديل المعقول بقدرة الموظف على أداء المهام الأساسية.'},
+     {t:'quiz',q:'يحمي ADEA من التمييز العمري الأشخاص في عمر:',opts:['40 فأكثر','18 فأكثر','55 فأكثر'],a:0,ex:'ADEA يحمي من هم 40 سنة فأكثر (عتبة 20 موظفاً).'},
+     {t:'teach',h:'FLSA وFMLA',ar:'FLSA: حد أدنى للأجر وعمل إضافي 1.5× بعد 40 ساعة، وعتبة إعفاء 684 دولاراً أسبوعياً. FMLA: 12 أسبوعاً غير مدفوعة لأصحاب العمل (50+).',en:'FLSA OT and $684; FMLA 12 weeks.'},
+     {t:'quiz',q:'عتبة راتب الإعفاء من العمل الإضافي وفق FLSA (2026):',opts:['$684 أسبوعياً','$1,128 أسبوعياً','$455 أسبوعياً'],a:0,ex:'بعد إبطال قاعدة 2024 عادت العتبة إلى $684 أسبوعياً.'},
+     {t:'quiz',q:'أجر العمل الإضافي وفق FLSA يبدأ بعد:',opts:['8 ساعات يومياً','45 ساعة أسبوعياً','40 ساعة أسبوعياً بمعدّل 1.5×'],a:2,ex:'العمل الإضافي 1.5× للأجر بعد 40 ساعة في الأسبوع.'},
+     {t:'quiz',q:'ينطبق FMLA على أصحاب العمل الذين لديهم:',opts:['50 موظفاً ضمن 75 ميلاً','100 موظف','15 موظفاً'],a:0,ex:'عتبة FMLA: 50 موظفاً في نطاق 75 ميلاً.'},
+     {t:'quiz',q:'مدة الإجازة التي يكفلها FMLA لأسباب طبية/عائلية مؤهَّلة:',opts:['6 أسابيع مدفوعة','12 أسبوعاً غير مدفوعة','4 أسابيع'],a:1,ex:'12 أسبوعاً غير مدفوعة مع حماية الوظيفة.'},
+     {t:'quiz',q:'لأهلية الموظف لـ FMLA يجب أن يكون قد عمل:',opts:['عامين','6 أشهر','12 شهراً و1250 ساعة'],a:2,ex:'الأهلية: 12 شهراً خدمة و1250 ساعة عمل.'},
+     {t:'teach',h:'قوانين أخرى',ar:'USERRA يحمي وظيفة من يخدم عسكرياً. GINA يحظر التمييز بالمعلومات الجينية. وقانون المساواة في الأجر يحظر فروق الأجر بين الجنسين لعمل متماثل.',en:'USERRA, GINA, Equal Pay Act.'},
+     {t:'quiz',q:'القانون الذي يحمي وظيفة الموظف عند أدائه الخدمة العسكرية:',opts:['COBRA','USERRA','WARN'],a:1,ex:'USERRA يكفل إعادة التوظيف وحماية حقوق المخدومين عسكرياً.'},
+     {t:'quiz',q:'القانون الذي يحظر التمييز بناءً على المعلومات الوراثية للموظف:',opts:['HIPAA','GINA','ADA'],a:1,ex:'GINA (2008) يحظر التمييز الجيني في التوظيف والتأمين.'},
+     {t:'quiz',q:'قانون المساواة في الأجر يحظر فروق الأجر بين الجنسين عن عمل:',opts:['مختلف تماماً','إداري فقط','متماثل جوهرياً في نفس المنشأة'],a:2,ex:'يحظر فروق الأجر بين الجنسين عن عمل متماثل جوهرياً في نفس المنشأة.'},
+     {t:'quiz',q:'القانون الذي يُلزم بتعديلات معقولة لظروف الحمل (2023):',opts:['PWFA','OSHA','ERISA'],a:0,ex:'PWFA (عدالة الحوامل العاملات) يُلزم بتعديلات معقولة لظروف الحمل.'}
+   ]}
+ ]}
+];
+
+/* ════════════ STATE ════════════ */
+const KEY='shrm-game-v1';
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return {}}}
+function save(s){try{localStorage.setItem(KEY,JSON.stringify(s))}catch(e){}}
+let S=Object.assign({xp:0,done:{},streak:0,lastDay:null},load());
+
+// daily streak
+(function(){const t=new Date().toDateString();
+ if(S.lastDay!==t){const y=new Date(Date.now()-864e5).toDateString();
+   S.streak=(S.lastDay===y)?(S.streak||0)+1:1;S.lastDay=t;save(S);} })();
+
+let cur={world:null,lesson:null,idx:0,correct:0,total:0,hearts:5,answered:false};
+
+/* ════════════ HUD ════════════ */
+function hud(){
+  document.getElementById('hXp').textContent=S.xp;
+  document.getElementById('hStreak').textContent=S.streak||0;
+  document.getElementById('hHearts').textContent=cur.hearts;
+  const lvl=Math.floor(S.xp/100)+1, into=S.xp%100;
+  document.getElementById('lvlNum').textContent=lvl;
+  document.getElementById('lvlXp').textContent=S.xp;
+  document.getElementById('lvlFill').style.width=into+'%';
+}
+
+/* ════════════ NAV ════════════ */
+function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo(0,0);}
+function goMap(){cur.hearts=5;renderMap();show('screen-map');hud();}
+
+function lessonsDone(w){return w.lessons.filter(l=>S.done[l.id]).length;}
+
+function renderMap(){
+  const host=document.getElementById('worldList');host.innerHTML='';
+  WORLDS.forEach(w=>{
+    const done=lessonsDone(w),tot=w.lessons.length,pct=Math.round(done/tot*100);
+    const el=document.createElement('div');el.className='world';
+    el.style.setProperty('--c',w.color);el.style.setProperty('--cl',w.cl);
+    el.onclick=()=>openWorld(w.id);
+    el.innerHTML=`<div class="wtop"><div class="wico" style="--cl:${w.cl}">${w.icon}</div>
+      <div><div class="wname">${w.name}</div><div class="wsub">${w.sub} · ${tot} ${tot===1?'درس':'دروس'}</div></div></div>
+      <div class="wprog"><span style="width:${pct}%"></span></div>
+      <div class="wpct">${done}/${tot} مكتمل · ${pct}%</div>`;
+    host.appendChild(el);
+  });
+}
+
+function openWorld(wid){
+  const w=WORLDS.find(x=>x.id===wid);cur.world=w;
+  document.getElementById('worldHead').innerHTML=`<h1>${w.icon} ${w.name}</h1><p>${w.sub}</p>`;
+  const host=document.getElementById('lessonList');host.innerHTML='';
+  w.lessons.forEach((l,i)=>{
+    const done=!!S.done[l.id];
+    const locked=i>0 && !S.done[w.lessons[i-1].id];
+    const qn=l.segments.filter(s=>s.t==='quiz').length;
+    const el=document.createElement('div');
+    el.className='lesson-node'+(done?' done':'')+(locked?' locked':'');
+    el.innerHTML=`<div class="ln-ico" style="--cl:${w.cl}">${done?'✓':l.icon}</div>
+      <div class="ln-info"><h3>${l.title}</h3><p>${qn} أسئلة استيعاب · ${done?'مكتمل ⭐':(locked?'🔒 أكملي الدرس السابق':'ابدئي')}</p></div>
+      <div class="ln-status">${done?'⭐':(locked?'🔒':'▶')}</div>`;
+    if(!locked) el.onclick=()=>startLesson(w,l);
+    host.appendChild(el);
+  });
+  show('screen-lessons');
+}
+
+/* ════════════ PLAY ════════════ */
+function startLesson(w,l){
+  cur={world:w,lesson:l,idx:0,correct:0,total:0,hearts:5,answered:false};
+  hud();renderSeg();show('screen-play');
+}
+function renderSeg(){
+  const segs=cur.lesson.segments, seg=segs[cur.idx];
+  document.getElementById('playProg').style.width=Math.round(cur.idx/segs.length*100)+'%';
+  const host=document.getElementById('segHost');
+  if(seg.t==='teach'){
+    host.innerHTML=`<div class="seg-card"><span class="seg-tag tag-teach">📖 شرح</span>
+      <h2>${seg.h}</h2><div class="seg-ar">${seg.ar}</div>
+      ${seg.en?`<div class="seg-en">${seg.en}</div>`:''}
+      <button class="btn btn-go" onclick="nextSeg()">متابعة ←</button></div>`;
+  } else {
+    cur.answered=false;
+    host.innerHTML=`<div class="seg-card"><span class="seg-tag tag-quiz">❓ سؤال استيعاب</span>
+      <div class="q-text">${seg.q}</div>
+      <div class="opts" id="opts">${seg.opts.map((o,i)=>`<button class="opt" onclick="answer(${i})">${o}</button>`).join('')}</div>
+      <div class="feedback" id="fb"></div>
+      <button class="btn btn-dis" id="contBtn" disabled>اختاري إجابة</button></div>`;
+  }
+}
+function answer(i){
+  if(cur.answered) return; cur.answered=true;
+  const seg=cur.lesson.segments[cur.idx], opts=[...document.querySelectorAll('#opts .opt')];
+  opts.forEach(o=>o.disabled=true);
+  const ok=i===seg.a; cur.total++;
+  opts[i].classList.add(ok?'correct':'wrong');
+  if(!ok) opts[seg.a].classList.add('correct');
+  const fb=document.getElementById('fb');
+  if(ok){cur.correct++;S.xp+=10;save(S);
+    fb.className='feedback ok show';fb.innerHTML='<b>✅ صحيح! +10 نقاط</b>'+seg.ex;
+  }else{cur.hearts--;
+    fb.className='feedback no show';fb.innerHTML='<b>❌ غير صحيح</b>'+seg.ex;
+  }
+  hud();
+  const cb=document.getElementById('contBtn');
+  cb.disabled=false;cb.className='btn '+(ok?'btn-ok':'btn-go');
+  cb.textContent='متابعة ←';cb.onclick=()=>{ if(cur.hearts<=0){return failLesson();} nextSeg(); };
+  if(cur.hearts<=0){cb.textContent='انتهت القلوب — إعادة';cb.onclick=failLesson;}
+}
+function nextSeg(){
+  cur.idx++;
+  if(cur.idx>=cur.lesson.segments.length) return completeLesson();
+  renderSeg();
+}
+function quitLesson(){ if(confirm('الخروج من الدرس؟ لن يُحفظ إكماله.')) openWorld(cur.world.id); }
+
+function completeLesson(){
+  const first=!S.done[cur.lesson.id];
+  if(first){S.xp+=20;} S.done[cur.lesson.id]=true; save(S); hud();
+  const acc=cur.total?Math.round(cur.correct/cur.total*100):100;
+  confetti();
+  document.getElementById('screen-result').innerHTML=`<div class="result">
+    <div class="big">🏆</div><h2>أحسنتِ! اكتمل الدرس</h2>
+    <p>${cur.lesson.title} — ${cur.world.name}</p>
+    <div class="stats">
+      <div class="rstat"><div class="n">${cur.correct}/${cur.total}</div><div class="l">إجابات صحيحة</div></div>
+      <div class="rstat"><div class="n">${acc}%</div><div class="l">الدقّة</div></div>
+      <div class="rstat"><div class="n">+${cur.correct*10+(first?20:0)}</div><div class="l">نقاط</div></div>
+    </div>
+    <button class="btn btn-ok" onclick="openWorld('${cur.world.id}')">التالي ←</button>
+    <button class="btn btn-go" onclick="goMap()">العودة للخريطة</button>
+  </div>`;
+  show('screen-result');
+}
+function failLesson(){
+  document.getElementById('screen-result').innerHTML=`<div class="result">
+    <div class="big">💔</div><h2>انتهت القلوب</h2>
+    <p>لا بأس — التكرار هو سرّ الإتقان. حاولي هذا الدرس مجدّداً.</p>
+    <div class="stats"><div class="rstat"><div class="n">${cur.correct}</div><div class="l">إجابات صحيحة</div></div></div>
+    <button class="btn btn-ok" onclick="startLesson(cur.world,cur.lesson)">إعادة المحاولة ↻</button>
+    <button class="btn btn-go" onclick="goMap()">العودة للخريطة</button>
+  </div>`;
+  // keep XP earned; only lesson completion withheld
+  show('screen-result');
+}
+
+function confetti(){const e=['🎉','⭐','🏅','✨','🎊'];for(let i=0;i<24;i++){const c=document.createElement('div');c.className='confetti';c.textContent=e[i%e.length];c.style.left=Math.random()*100+'vw';c.style.animationDuration=(2+Math.random()*2)+'s';c.style.fontSize=(14+Math.random()*16)+'px';document.body.appendChild(c);setTimeout(()=>c.remove(),4000);} }
+
+/* init */
+renderMap();hud();
+</script>
+</body>
+</html>

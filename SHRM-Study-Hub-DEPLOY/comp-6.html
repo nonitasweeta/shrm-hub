@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ملخص SHRM – الصفحات 481–560 + المراجعة الشاملة</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1a3a5c;
+    --accent:  #c8a84b;
+    --accent2: #e8734a;
+    --bg:      #f7f4ef;
+    --card:    #ffffff;
+    --text:    #2c2c2c;
+    --muted:   #6b7280;
+    --green:   #1e7a4a;
+    --red:     #b91c1c;
+    --purple:  #6d28d9;
+    --teal:    #0f766e;
+    --navy:    #0c2461;
+    --border:  #e2d9c8;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Tajawal','Cairo',sans-serif; background:var(--bg); color:var(--text); line-height:1.85; font-size:16px; }
+
+  .header { background:linear-gradient(135deg,#0c2461 0%,#1a3a5c 50%,#1e3799 100%); color:white; padding:48px 40px 44px; position:relative; overflow:hidden; }
+  .header::before { content:''; position:absolute; top:-80px; left:-60px; width:340px; height:340px; border-radius:50%; background:rgba(200,168,75,.12); }
+  .header::after  { content:''; position:absolute; bottom:-90px; right:-50px; width:250px; height:250px; border-radius:50%; background:rgba(30,122,74,.12); }
+  .header-badge { display:inline-block; background:var(--accent); color:var(--primary); font-weight:700; font-size:13px; padding:4px 16px; border-radius:20px; margin-bottom:14px; letter-spacing:1px; }
+  .header h1 { font-size:2.1rem; font-weight:800; margin-bottom:8px; }
+  .header .subtitle { font-size:1rem; opacity:.8; }
+  .header-meta { display:flex; gap:26px; margin-top:22px; flex-wrap:wrap; }
+  .meta-item { font-size:14px; opacity:.9; }
+
+  .container { max-width:920px; margin:0 auto; padding:44px 24px 90px; }
+
+  .progress-bar-wrap { margin:0 0 40px; }
+  .progress-label { display:flex; justify-content:space-between; font-size:13px; color:var(--muted); margin-bottom:6px; }
+  .progress-bar { height:12px; background:#e2d9c8; border-radius:10px; overflow:hidden; }
+  .progress-fill { height:100%; border-radius:10px; background:linear-gradient(90deg,var(--primary),var(--accent),var(--green)); }
+
+  .overview-card { background:var(--primary); color:white; border-radius:16px; padding:32px 36px; margin-bottom:40px; position:relative; overflow:hidden; }
+  .overview-card::after { content:'SHRM'; position:absolute; left:-8px; bottom:-28px; font-size:100px; font-weight:900; color:rgba(255,255,255,.04); }
+  .overview-card h2 { font-size:1.25rem; color:var(--accent); margin-bottom:14px; }
+  .overview-card p  { font-size:15px; line-height:1.9; opacity:.92; }
+
+  .section { margin-bottom:44px; }
+  .section-title { display:flex; align-items:center; gap:14px; margin-bottom:22px; }
+  .section-num { background:var(--accent); color:var(--primary); width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:17px; flex-shrink:0; }
+  .section-title h2 { font-size:1.3rem; font-weight:700; color:var(--primary); }
+  .section-title .en-title { font-size:13px; color:var(--muted); font-style:italic; direction:ltr; }
+
+  .card { background:var(--card); border-radius:14px; padding:26px 30px; border:1px solid var(--border); box-shadow:0 2px 14px rgba(0,0,0,.05); margin-bottom:22px; }
+  .card h3 { font-size:1.05rem; font-weight:700; color:var(--primary); margin-bottom:13px; padding-bottom:10px; border-bottom:2px solid var(--border); }
+  .card h3 .en { color:var(--accent2); direction:ltr; display:inline-block; font-size:.85rem; margin-right:8px; }
+  .card p.body-text { font-size:15px; margin-bottom:12px; }
+
+  .info-list { list-style:none; padding:0; }
+  .info-list li { padding:8px 0; border-bottom:1px solid #f0ebe0; font-size:15px; display:flex; gap:10px; align-items:flex-start; }
+  .info-list li:last-child { border-bottom:none; }
+  .bullet { width:8px; height:8px; background:var(--accent); border-radius:50%; margin-top:8px; flex-shrink:0; }
+  .bullet.green  { background:var(--green); }
+  .bullet.teal   { background:var(--teal); }
+  .bullet.red    { background:var(--red); }
+  .bullet.purple { background:var(--purple); }
+  .bullet.navy   { background:var(--navy); }
+
+  .term { background:#f0f6ff; border-right:4px solid var(--primary); padding:10px 16px; margin:9px 0; border-radius:6px; font-size:15px; }
+  .term strong { color:var(--primary); }
+  .term .en-term { color:var(--accent2); font-style:italic; direction:ltr; display:inline-block; }
+
+  .compare-table { width:100%; border-collapse:collapse; font-size:14px; margin-top:14px; }
+  .compare-table th { background:var(--primary); color:white; padding:10px 14px; text-align:right; }
+  .compare-table td { padding:10px 14px; border-bottom:1px solid var(--border); vertical-align:top; }
+  .compare-table tr:nth-child(even) td { background:#f9f6f0; }
+  .compare-table tr:hover td { background:#fff3e0; }
+
+  .theory-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:14px; }
+  @media(max-width:640px){ .theory-grid { grid-template-columns:1fr; } }
+  .theory-item { background:#f9f6f0; border:1px solid var(--border); border-radius:10px; padding:15px 17px; }
+  .theory-item h4 { font-size:14px; font-weight:700; color:var(--primary); margin-bottom:5px; }
+  .theory-item .en { font-size:12px; color:var(--accent2); direction:ltr; display:block; margin-bottom:6px; }
+  .theory-item p { font-size:13px; color:#444; line-height:1.75; }
+
+  .three-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-top:14px; }
+  @media(max-width:640px){ .three-grid { grid-template-columns:1fr; } }
+  .three-item { background:#f9f6f0; border:1px solid var(--border); border-radius:10px; padding:14px; }
+  .three-item h4 { font-size:13px; font-weight:700; color:var(--primary); margin-bottom:4px; }
+  .three-item .en { font-size:11px; color:var(--accent2); direction:ltr; display:block; margin-bottom:5px; }
+  .three-item p { font-size:12.5px; color:#444; line-height:1.65; }
+
+  .highlight { background:linear-gradient(135deg,#fff8e7,#fef3cd); border:1px solid var(--accent); border-radius:12px; padding:20px 26px; margin:16px 0; }
+  .highlight p { font-size:15px; }
+  .tip-box  { background:#f0fdf4; border:1px solid #86efac; border-radius:12px; padding:18px 22px; margin:16px 0; font-size:15px; }
+  .tip-box strong { color:var(--green); }
+  .note-box { background:#fefce8; border:1px solid #fde047; border-radius:12px; padding:18px 22px; margin:16px 0; font-size:15px; }
+  .note-box strong { color:#854d0e; }
+  .warn-box { background:#fff1f2; border:1px solid #fca5a5; border-radius:12px; padding:18px 22px; margin:16px 0; font-size:15px; }
+  .warn-box strong { color:var(--red); }
+
+  /* BIG SUMMARY SECTION */
+  .master-table-wrap { overflow-x:auto; }
+  .master-table { width:100%; border-collapse:collapse; font-size:13px; }
+  .master-table th { background:var(--primary); color:white; padding:10px 12px; text-align:right; white-space:nowrap; }
+  .master-table td { padding:10px 12px; border-bottom:1px solid var(--border); vertical-align:top; }
+  .master-table tr:nth-child(even) td { background:#f9f6f0; }
+
+  /* COMPETENCY BADGES */
+  .comp-badge { display:inline-block; padding:4px 12px; border-radius:20px; font-size:12px; font-weight:700; margin:3px 2px; }
+  .cb-lead { background:#dbeafe; color:#1d4ed8; }
+  .cb-inter { background:#d1fae5; color:#065f46; }
+  .cb-biz { background:#ede9fe; color:#5b21b6; }
+  .cb-hr { background:#fef3cd; color:#854d0e; }
+
+  .divider { border:none; border-top:2px dashed var(--border); margin:36px 0; }
+
+  /* EXAM TIPS */
+  .exam-tip { background:linear-gradient(135deg,var(--primary),#0c2461); color:white; border-radius:14px; padding:24px 28px; margin:20px 0; }
+  .exam-tip h4 { color:var(--accent); font-size:1rem; margin-bottom:10px; }
+  .exam-tip ul { list-style:none; padding:0; }
+  .exam-tip li { padding:6px 0; font-size:14px; opacity:.92; display:flex; gap:10px; }
+  .exam-tip li::before { content:'✓'; color:var(--accent); font-weight:900; flex-shrink:0; }
+
+  .footer { text-align:center; margin-top:70px; padding:28px; color:var(--muted); font-size:14px; border-top:2px solid var(--border); }
+
+  /* CELEBRATION */
+  .celebration { background:linear-gradient(135deg,#f59e0b,#d97706); color:white; border-radius:16px; padding:32px; text-align:center; margin-bottom:32px; }
+  .celebration h2 { font-size:2rem; margin-bottom:10px; }
+  .celebration p { font-size:1rem; opacity:.9; }
+
+/* ── FORMULA WORKED EXAMPLES ── */
+.fe-box{background:#fff;border:1.5px solid #ddd6c8;border-radius:16px;margin:24px 0;overflow:hidden;}
+.fe-hdr{background:linear-gradient(135deg,#0d1b2e,#163456);padding:14px 20px;display:flex;align-items:center;gap:12px;}
+.fe-hdr-icon{font-size:1.3rem;}
+.fe-hdr-text{color:#fff;font-weight:700;font-size:.95rem;}
+.fe-hdr-sub{color:rgba(255,255,255,.5);font-size:.78rem;margin-top:2px;}
+.fe-body{padding:18px 20px;}
+.fe-formula{background:#0d1b2e;color:#c8a84b;font-family:'Outfit',monospace,sans-serif;font-weight:700;font-size:.92rem;padding:10px 16px;border-radius:8px;margin:0 0 16px;text-align:center;direction:ltr;}
+.fe-steps{display:flex;flex-direction:column;gap:12px;}
+.fe-step{display:flex;gap:12px;align-items:flex-start;}
+.fe-step-n{background:#e8f2fb;color:#163456;font-weight:700;font-size:.8rem;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.fe-step-body{flex:1;font-size:.88rem;color:#333;line-height:1.65;}
+.fe-step-body strong{color:#0d1b2e;}
+.fe-calc{background:#f7f5f0;border:1px solid #e0dbd2;border-radius:8px;padding:10px 14px;margin:8px 0;font-family:'Outfit',monospace,sans-serif;font-size:.87rem;direction:ltr;color:#163456;}
+.fe-calc .result{color:#1D9E75;font-weight:700;font-size:.95rem;}
+.fe-interp{background:#e1f5ee;border-right:3px solid #1D9E75;padding:10px 14px;border-radius:0 8px 8px 0;margin:8px 0;font-size:.87rem;color:#1a3a2e;line-height:1.6;}
+.fe-warn{background:#fff8e7;border-right:3px solid #c8a84b;padding:10px 14px;border-radius:0 8px 8px 0;margin:8px 0;font-size:.87rem;color:#4a3000;line-height:1.6;}
+.fe-compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0;}
+@media(max-width:580px){.fe-compare{grid-template-columns:1fr;}}
+.fe-compare-card{background:#f7f5f0;border-radius:10px;padding:12px 14px;border-top:3px solid #ddd;}
+.fe-compare-card h4{font-size:.83rem;font-weight:700;color:#0d1b2e;margin-bottom:8px;}
+.fe-compare-card p,.fe-compare-card li{font-size:.82rem;color:#444;line-height:1.6;margin-bottom:3px;}
+.fe-exam-tip{background:#fff8e7;border:1.5px solid #c8a84b;border-radius:10px;padding:12px 16px;margin:14px 0 0;font-size:.87rem;color:#4a3000;line-height:1.65;}
+.fe-exam-tip strong{color:#0d1b2e;}
+.fe-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.85rem;}
+.fe-table th{background:#0d1b2e;color:#c8a84b;padding:8px 12px;text-align:right;font-weight:600;}
+.fe-table td{padding:8px 12px;border-bottom:1px solid #f0ede5;color:#333;}
+.fe-table tr:nth-child(even) td{background:#f7f5f0;}
+.fe-divider{height:1px;background:#f0ede5;margin:16px 0;}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-badge">📚 الجزء السادس والأخير + مراجعة شاملة</div>
+  <h1>ملخص الصفحات 481–560 + المراجعة الكاملة</h1>
+  <p class="subtitle">SHRM Learning System 2023 — ختام الكتاب + مرجع شامل للامتحان</p>
+  <div class="header-meta">
+    <div class="meta-item">📄 601 صفحة مكتملة ✅</div>
+    <div class="meta-item">🎯 SHRM-CP / SHRM-SCP</div>
+    <div class="meta-item">🌍 شرح بالعربية · المصطلحات بالإنجليزية</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="progress-bar-wrap">
+    <div class="progress-label"><span>تقدّمك في الكتاب</span><span>601 / 601 صفحة — مكتمل 100%! 🎉🎉🎉</span></div>
+    <div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div>
+  </div>
+
+  <div class="celebration">
+    <h2>🎓 أنجزت الكتاب كاملاً!</h2>
+    <p>601 صفحة في 6 أجزاء — شرح عربي شامل لكل كفاءة ونظرية ومصطلح<br>الآن: مراجعة نهائية + نصائح الامتحان + المرجع الشامل</p>
+  </div>
+
+  <div class="overview-card">
+    <h2>🗺️ ما يغطيه هذا الجزء</h2>
+    <p>
+      تُكمل الصفحات 481–560 كفاءة <strong>Analytical Aptitude</strong> بتفصيل مصادر البيانات (مقابلات، مجموعات تركيز، استبيانات، ملاحظة، بيانات موجودة) وأدوات التحليل الإحصائي (الوسيط والمنوال والمتوسط، الانحراف المعياري، تحليل الاتجاهات والانحدار والأسباب الجذرية)، ثم تعرض أدوات التصوير البياني للبيانات.
+      يُتبع ذلك بملخص شامل لجميع الكفاءات التسع وجدول مرجعي للامتحان.
+    </p>
+  </div>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- SECTION 1 — DATA SOURCES COMPLETION -->
+  <!-- ══════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-num">1</div>
+      <div>
+        <h2>مصادر البيانات وتقييمها</h2>
+        <div class="en-title">Data Sources & Validity Assessment</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>أسئلة تقييم مصادر البيانات <span class="en">Assessing Data Source Validity</span></h3>
+      <p class="body-text">ليس كل بيانات على الإنترنت موثوقاً. HR يسأل هذه الأسئلة قبل الاعتماد على أي مصدر:</p>
+      <ul class="info-list">
+        <li><span class="bullet green"></span><strong>هل المصدر موثوق؟</strong> الجهات الحكومية والمؤسسات الأكاديمية أقوى من المدوّنات.</li>
+        <li><span class="bullet green"></span><strong>هل يوجد تحيّز محتمل؟</strong> "اختيار الكرز" (Cherry-picking) = الاستشهاد بما يدعم الرأي فقط.</li>
+        <li><span class="bullet green"></span><strong>هل مصادر البيانات مذكورة وموثّقة؟</strong></li>
+        <li><span class="bullet green"></span><strong>هل البيانات ذات صلة بصناعتك ومنطقتك؟</strong></li>
+        <li><span class="bullet green"></span><strong>هل البيانات حديثة؟</strong> البيانات الاقتصادية تنتهي صلاحيتها سريعاً.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>مقارنة مصادر البيانات في HR <span class="en">HR Data Sources Comparison</span></h3>
+      <table class="compare-table">
+        <tr><th>المصدر</th><th>الميزة الرئيسية</th><th>التحدي الأكبر</th><th>الاستخدام الأمثل</th></tr>
+        <tr><td><strong>المقابلات</strong><br><em>Interviews</em></td><td>عمق وسياق، يفتح أسئلة جديدة</td><td>مكلفة وقتاً + خطر التحيز عالٍ</td><td>الموظفون المهمون، مقابلات الخروج</td></tr>
+        <tr><td><strong>مجموعات التركيز</strong><br><em>Focus Groups</em></td><td>حوار جماعي، عصف ذهني</td><td>Groupthink، صعوبة التحكم</td><td>تعمّق ما بعد الاستبيان</td></tr>
+        <tr><td><strong>الاستبيانات</strong><br><em>Surveys</em></td><td>بيانات كمية من أعداد كبيرة</td><td>تعتمد على الإجابة الذاتية + قد يكون التمثيل ضعيفاً</td><td>قياس انخراط الموظفين على مستوى المنظمة</td></tr>
+        <tr><td><strong>الملاحظة</strong><br><em>Observation</em></td><td>بيانات مباشرة، لا تعتمد على الذاكرة</td><td>التأثير التلقائي عند الشعور بالمراقبة</td><td>تقييم العمليات والأداء في الميدان</td></tr>
+        <tr><td><strong>البيانات الموجودة</strong><br><em>Existing Data (HRIS)</em></td><td>ثرية، متاحة، لا تتطلب جمعاً جديداً</td><td>تحتاج خبرة لاستخراج الرؤى منها</td><td>تخطيط القوى العاملة، تحليل الدوران</td></tr>
+        <tr><td><strong>الآثار الثقافية</strong><br><em>Artifacts</em></td><td>كاشفة للثقافة غير المعلنة</td><td>سهلة سوء التفسير بدون سياق كافٍ</td><td>تكملة للمصادر الأخرى</td></tr>
+      </table>
+      <div class="note-box">
+        <strong>📌 أثر Hawthorne:</strong> الموظفون يتصرفون بشكل مختلف حين يعلمون أنهم تحت الملاحظة — البيانات قد تعكس "أداء للمراقب" لا الواقع الحقيقي.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>أدوات مجموعات التركيز المتقدمة <span class="en">Advanced Focus Group Tools</span></h3>
+      <div class="three-grid">
+        <div class="three-item">
+          <h4>الرسم الذهني</h4>
+          <span class="en">Mind Mapping</span>
+          <p>تبدأ بفكرة محورية ثم تُضاف الأفكار المترابطة. مرئي وتفاعلي.</p>
+        </div>
+        <div class="three-item">
+          <h4>تقنية المجموعة الاسمية</h4>
+          <span class="en">Nominal Group Technique (NGT)</span>
+          <p>جولات فردية للأفكار ثم مناقشة جماعية. تُقلّل هيمنة الأصوات القوية.</p>
+        </div>
+        <div class="three-item">
+          <h4>تقنية دلفي</h4>
+          <span class="en">Delphi Technique</span>
+          <p>مجهولة الهوية. كل مشارك يُضيف تدريجياً. تُحارب GroupThink بشكل ممنهج.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- SECTION 2 — STATISTICAL PRINCIPLES -->
+  <!-- ══════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-num">2</div>
+      <div>
+        <h2>المبادئ الإحصائية في HR</h2>
+        <div class="en-title">Statistical Principles & Data Measurement</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>الموثوقية والصحة في البيانات <span class="en">Reliability & Validity</span></h3>
+      <div class="theory-grid">
+        <div class="theory-item">
+          <h4>الموثوقية</h4>
+          <span class="en">Reliability</span>
+          <p>قدرة الأداة على إنتاج نتائج <strong>متسقة</strong> في ظروف متماثلة. مثال: اختبار مهارات يُعطي نتائج مختلفة جداً في يومين متتاليين → غير موثوق.</p>
+        </div>
+        <div class="theory-item">
+          <h4>الصحة / الصلاحية</h4>
+          <span class="en">Validity</span>
+          <p>قدرة الأداة على قياس <strong>ما صُمِّمت لقياسه</strong>. مثال: اختبار تحديد المواهب يختار موظفين ذوي أداء ضعيف → أداة غير صالحة.</p>
+        </div>
+      </div>
+      <div class="highlight">
+        <p>💡 <strong>الفرق بمثال:</strong> ميزان يُعطي نفس القراءة دائماً لكنها خاطئة = موثوق لكن غير صالح. ميزان يُعطي قراءات مختلفة = لا موثوق ولا صالح. HR يحتاج الاثنين معاً.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>مقاييس الاتجاه المركزي <span class="en">Measures of Central Tendency</span></h3>
+      <table class="compare-table">
+        <tr><th>المقياس</th><th>التعريف</th><th>متى يُستخدم؟</th><th>مثال HR</th></tr>
+        <tr>
+          <td><strong>الوسيط</strong><br><em>Median</em></td>
+          <td>القيمة الوسطى في بيانات مرتّبة (النسبة المئوية الـ 50)</td>
+          <td>عند وجود قيم شاذة (outliers) تُشوّه المتوسط</td>
+          <td>الراتب الوسيط لوظيفة معينة أدق من المتوسط إذا كان بعضهم يكسب ضعف الآخرين</td>
+        </tr>
+        <tr>
+          <td><strong>المنوال</strong><br><em>Mode</em></td>
+          <td>القيمة الأكثر تكراراً</td>
+          <td>لمعرفة الراتب الأكثر شيوعاً في المنظمة</td>
+          <td>الدرجة الوظيفية الأكثر تكراراً في الهيكل</td>
+        </tr>
+        <tr>
+          <td><strong>المتوسط الحسابي</strong><br><em>Mean / Average</em></td>
+          <td>مجموع القيم ÷ عددها</td>
+          <td>حين تكون القيم متقاربة نسبياً</td>
+          <td>متوسط وقت التوظيف خلال الربع</td>
+        </tr>
+        <tr>
+          <td><strong>المتوسط المرجَّح</strong><br><em>Weighted Mean</em></td>
+          <td>كل قيمة تُضرب بمعامل أهميتها النسبية</td>
+          <td>عند اختلاف أحجام المجموعات أو أهميتها</td>
+          <td>متوسط الرواتب في أقسام بأعداد مختلفة من الموظفين</td>
+        </tr>
+      </table>
+      <div class="note-box">
+        <strong>📌 الربعيات والنسب المئوية (Quartiles & Percentiles):</strong> تُستخدم للمقارنة مع السوق. الوقوع في Q3/Q4 يعني أن المنظمة تدفع أكثر من 50-75% من المنافسين (يُسمى "leading the market"). Q1/Q2 = تأخر عن السوق.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>الانحراف المعياري <span class="en">Standard Deviation</span></h3>
+      <p class="body-text">يقيس مدى تشتّت البيانات حول المتوسط. في التوزيع الطبيعي (Bell Curve): 68% من البيانات تقع ضمن انحراف معياري واحد، 95% ضمن انحرافين، 99% ضمن ثلاثة.</p>
+      <div class="theory-grid">
+        <div class="theory-item">
+          <h4>انحراف معياري منخفض</h4>
+          <span class="en">Low Standard Deviation</span>
+          <p>البيانات متقاربة حول المتوسط. منحنى ضيق وعالٍ. مثال: الرواتب متسقة → سياسات الدفع مُطبَّقة بانتظام.</p>
+        </div>
+        <div class="theory-item">
+          <h4>انحراف معياري مرتفع</h4>
+          <span class="en">High Standard Deviation</span>
+          <p>البيانات متفرقة. منحنى مسطح وعريض. مثال: تباين كبير في الرواتب → غياب الاتساق في التطبيق.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>أنواع التحيز في التحليل الإحصائي <span class="en">Statistical Biases</span></h3>
+      <ul class="info-list">
+        <li><span class="bullet red"></span><strong>تحيز العيّنة (Sampling Bias):</strong> العيّنة لا تمثّل المجتمع الكلي. مثال: دراسة انخراط تُشمل نسبة أعلى من الموظفين الأكبر سناً.</li>
+        <li><span class="bullet red"></span><strong>تحيز الاختيار (Selection Bias):</strong> المشاركون في الدراسة لم يُختاروا عشوائياً.</li>
+        <li><span class="bullet red"></span><strong>تحيز الاستجابة (Response Bias):</strong> من أجاب لا يمثّل من دُعي للمشاركة.</li>
+        <li><span class="bullet red"></span><strong>تحيز الأداء (Performance Bias / Hawthorne Effect):</strong> المشاركون يتصرفون بشكل مختلف لأنهم يُدرسون.</li>
+        <li><span class="bullet red"></span><strong>تحيز القياس (Measurement Bias):</strong> المُقيِّمون يقيسون بشكل خاطئ — بسبب نقص التدريب أو تحيز شخصي.</li>
+      </ul>
+    </div>
+  </div>
+
+
+<div class="fe-box">
+  <div class="fe-hdr">
+    <div class="fe-hdr-icon">🔢</div>
+    <div>
+      <div class="fe-hdr-text">معادلات Analytical Aptitude — أمثلة محلولة كاملة</div>
+      <div class="fe-hdr-sub">Standard Deviation · Reliability · Validity · ROI · Regression</div>
+    </div>
+  </div>
+  <div class="fe-body">
+
+    <div class="fe-formula">Standard Deviation: يقيس تشتّت البيانات. في Bell Curve: 68% ضمن ±1σ · 95% ضمن ±2σ</div>
+
+    <div class="fe-steps">
+      <div class="fe-step">
+        <div class="fe-step-n">1</div>
+        <div class="fe-step-body">
+          <strong>Standard Deviation في HR — مثال عملي:</strong>
+          <div class="fe-calc">
+            نتائج تقييم أداء الفريق (10 موظفين):<br>
+            85, 87, 90, 88, 92, 84, 91, 86, 89, 88<br>
+            المتوسط (Mean) = 880 ÷ 10 = 88<br>
+            الانحراف المعياري ≈ 2.5<br>
+            ─────────────────────────────────────────<br>
+            68% من الفريق بين 85.5 و90.5<br>
+            95% من الفريق بين 83 و93
+          </div>
+          <div class="fe-interp">انحراف معياري صغير (2.5) = أداء الفريق متقارب جداً. انحراف معياري كبير (15+) = تفاوت كبير في الأداء → يشير لمشكلة تدريب أو إدارة.</div>
+          <div class="fe-warn">⚠️ توزيع قسري Forced Distribution بنسب ثابتة يفترض توزيعاً طبيعياً — لكن معظم الفرق الصغيرة ليست كذلك.</div>
+        </div>
+      </div>
+
+      <div class="fe-step">
+        <div class="fe-step-n">2</div>
+        <div class="fe-step-body">
+          <strong>Reliability vs. Validity — الفرق الجوهري مع أمثلة:</strong>
+          <div class="fe-compare">
+            <div class="fe-compare-card" style="border-top-color:#185FA5;">
+              <h4>Reliability — الموثوقية</h4>
+              <p>يُعطي نفس النتيجة في ظروف متشابهة</p>
+              <p>مثال ✓: ميزان يُعطي 70 كجم باستمرار</p>
+              <p>مثال ✗: مقابلة يختلف فيها المحكّمون بـ 30 نقطة</p>
+              <p style="color:#185FA5;font-weight:700;">طرق القياس: Test-Retest · Inter-Rater · Internal Consistency (Cronbach Alpha ≥ 0.7)</p>
+            </div>
+            <div class="fe-compare-card" style="border-top-color:#1D9E75;">
+              <h4>Validity — الصلاحية</h4>
+              <p>يقيس ما يُفترض أن يقيسه فعلاً</p>
+              <p>مثال ✓: اختبار محاسبة يتنبأ بأداء المحاسب</p>
+              <p>مثال ✗: اختبار ذكاء عام لوظيفة حارس أمن</p>
+              <p style="color:#1D9E75;font-weight:700;">أنواع: Content · Criterion (Predictive/Concurrent) · Construct</p>
+            </div>
+          </div>
+          <div class="fe-warn">⚠️ <strong>القاعدة:</strong> يمكن أن تكون الأداة Reliable لكن غير Valid. لكن لا يمكن أن تكون Valid بدون أن تكون Reliable أولاً. <em>Reliability شرط ضروري لكنه غير كافٍ لـ Validity.</em></div>
+        </div>
+      </div>
+
+      <div class="fe-step">
+        <div class="fe-step-n">3</div>
+        <div class="fe-step-body">
+          <strong>Criterion Validity — Predictive vs Concurrent:</strong>
+          <div class="fe-calc">
+            Predictive Validity: طبّق الاختبار على المتقدمين → وظّفهم جميعاً → تحقّق من ارتباط نتيجة الاختبار بأدائهم لاحقاً<br>
+            معامل الارتباط r = 0.45 → ارتباط معتدل جيد<br>
+            ─────────────────────────────────────────<br>
+            Concurrent Validity: طبّق الاختبار على الموظفين الحاليين وقارن بتقييماتهم الموجودة<br>
+            <span class="result">أسرع وأرخص لكن أقل دقةً من Predictive</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fe-step">
+        <div class="fe-step-n">4</div>
+        <div class="fe-step-body">
+          <strong>Correlation vs Causation — الفرق الحاسم:</strong>
+          <div class="fe-calc">
+            مثال: r = +0.85 بين "ساعات التدريب" و"المبيعات"<br>
+            هل التدريب يسبب ارتفاع المبيعات؟ ← <span style="color:#A32D2D;font-weight:700;">لا يمكن الجزم!</span><br>
+            ─────────────────────────────────────────<br>
+            سبب محتمل آخر: المندوبون الأفضل أداءً يختارون التدريب أكثر (Selection Bias)<br>
+            الحل: مجموعة تجريبية (Training) + مجموعة ضابطة (No Training) → قياس الفرق
+          </div>
+          <div class="fe-interp">في الامتحان: "الشركات التي تُنفق أكثر على التدريب تحقق أرباحاً أعلى" → ارتباط (Correlation). لا يمكن الادعاء بالسببية بدون تصميم بحثي صارم.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="fe-exam-tip">⭐ <strong>الأرقام المرجعية للامتحان:</strong> Cronbach Alpha ≥ 0.7 = موثوق | معامل ارتباط: 0.1-0.3 ضعيف · 0.3-0.5 معتدل · 0.5+ قوي | Bell Curve: 68% ضمن 1σ · 95% ضمن 2σ · 99% ضمن 3σ</div>
+  </div>
+</div>
+
+
+
+
+  <hr class="divider">
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- SECTION 3 — DATA ANALYSIS TOOLS -->
+  <!-- ══════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-num">3</div>
+      <div>
+        <h2>أدوات تحليل البيانات</h2>
+        <div class="en-title">Data Analysis Techniques & Visualization</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>أساليب التحليل الرئيسية <span class="en">Key Analysis Methods</span></h3>
+      <table class="compare-table">
+        <tr><th>الأسلوب</th><th>ما يفعل</th><th>مثال HR</th></tr>
+        <tr><td><strong>تحليل التباين</strong><br><em>Variance Analysis</em></td><td>يُحدّد الفجوة بين الأداء الفعلي والمُخطَّط</td><td>ميزانية HR المُنفَّقة مقابل المُخطَّطة</td></tr>
+        <tr><td><strong>تحليل النسب</strong><br><em>Ratio Analysis</em></td><td>يُقارن متغيّرين ليُنتج نسبة مئوية</td><td>معدل الدوران = المغادرات ÷ متوسط الموظفين × 100</td></tr>
+        <tr><td><strong>تحليل الاتجاهات</strong><br><em>Trend Analysis</em></td><td>يفحص تطوّر البيانات عبر الزمن</td><td>تتبّع معدل الدوران على مدى 5 سنوات للتنبؤ بالمستقبل</td></tr>
+        <tr><td><strong>تحليل الانحدار</strong><br><em>Regression Analysis</em></td><td>يكتشف وقوّة العلاقة بين المتغيّرات</td><td>ما العوامل التي تُنبئ بالأداء العالي في هذه الوظيفة؟</td></tr>
+        <tr><td><strong>تحليل الأسباب الجذرية</strong><br><em>Root-Cause Analysis (5 Whys)</em></td><td>يعمل من النتيجة إلى الخلف لإيجاد السبب الجذري</td><td>لماذا ارتفع دوران موظفي المبيعات؟ → لماذا؟ → لماذا؟...</td></tr>
+        <tr><td><strong>تحليل السيناريوهات</strong><br><em>Scenario Analysis (What-if)</em></td><td>يختبر تأثير تغيير المتغيّرات على النتائج</td><td>إذا رفعنا الرواتب 10% كيف يتغيّر معدل الدوران؟</td></tr>
+      </table>
+      <div class="tip-box">
+        <strong>🎯 5 Whys — مثال تطبيقي:</strong><br>
+        الموظفون لا يستخدمون البوابة الذاتية → لماذا؟ → صعبة التنقل → لماذا؟ → التصميم معقد → لماذا؟ → لم يشمل التصميم مدخلات المستخدمين → لماذا؟ → الجدول الزمني كان غير واقعي → هذا هو السبب الجذري!
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>أدوات التصوير البياني <span class="en">Data Visualization Tools</span></h3>
+      <table class="compare-table">
+        <tr><th>الأداة</th><th>الاستخدام الأمثل</th><th>مثال HR</th></tr>
+        <tr><td><strong>الرسم الدائري</strong><br><em>Pie Chart</em></td><td>نسب مئوية من كل كامل</td><td>توزيع القوى العاملة حسب الفئة العمرية</td></tr>
+        <tr><td><strong>الرسم الشريطي التكراري</strong><br><em>Histogram</em></td><td>توزيع البيانات في مجموعات</td><td>مقارنة أداء قنوات التوظيف</td></tr>
+        <tr><td><strong>مخطط الاتجاه</strong><br><em>Trend Diagram</em></td><td>تطوّر المتغيّر عبر الوقت</td><td>معدل الدوران الشهري على مدى سنتين</td></tr>
+        <tr><td><strong>مخطط باريتو</strong><br><em>Pareto Chart</em></td><td>تطبيق مبدأ 80/20 — الـ 20% من الأسباب تُحدث 80% من المشاكل</td><td>أسباب الدوران: 20% من الأسباب تُفسّر 80% من الحالات</td></tr>
+        <tr><td><strong>مخطط التشتّت</strong><br><em>Scatter Diagram</em></td><td>اكتشاف الارتباط بين متغيّرين</td><td>هل يرتبط وصول الموظف بالتدريب الأمني بانخفاض الحوادث؟</td></tr>
+      </table>
+      <div class="note-box">
+        <strong>📌 قصة البيانات (Data Storytelling):</strong> البيانات وحدها لا تُقنع القيادة. HR يُحوّلها إلى قصة مرئية واضحة تُجيب على: "ما المشكلة؟ ما دليلها؟ ما الحل المقترح؟ وما العائد المتوقع؟"
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- SECTION 4 — MASTER REVIEW -->
+  <!-- ══════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-num">⭐</div>
+      <div>
+        <h2>المراجعة الشاملة — الكفاءات التسع كاملة</h2>
+        <div class="en-title">Complete Review — All 9 Behavioral Competencies</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>خريطة الكفاءات التسع الكاملة</h3>
+      <div class="master-table-wrap">
+        <table class="master-table">
+          <tr>
+            <th>المجموعة</th>
+            <th>الكفاءة</th>
+            <th>الجوهر في جملة واحدة</th>
+            <th>المفهوم الأبرز</th>
+          </tr>
+          <!-- LEADERSHIP -->
+          <tr>
+            <td rowspan="3"><span class="comp-badge cb-lead">Leadership</span></td>
+            <td><strong>Leadership & Navigation</strong></td>
+            <td>خلق الرؤية وتحقيق الأهداف عبر التأثير لا السلطة</td>
+            <td>6 أساليب قيادة + نظريات Hersey/Transformational + 5 أنواع سلطة + 6 نظريات دافعية</td>
+          </tr>
+          <tr>
+            <td><strong>Ethical Practice</strong></td>
+            <td>النزاهة الشخصية والمهنية + تعزيز ثقافة القيم</td>
+            <td>مدونات السلوك + التحقيق الداخلي + الشفافية والأصالة + FCPA/UK Bribery Act</td>
+          </tr>
+          <tr>
+            <td><strong>Inclusion & Diversity</strong></td>
+            <td>خلق بيئة يُسهم فيها الجميع بكامل طاقتهم</td>
+            <td>Diversity≠Equity≠Inclusion + 12 نوع تحيز + ERGs + Psychological Safety + I&D Metrics</td>
+          </tr>
+          <!-- INTERPERSONAL -->
+          <tr>
+            <td rowspan="3"><span class="comp-badge cb-inter">Interpersonal</span></td>
+            <td><strong>Relationship Management</strong></td>
+            <td>بناء شبكات ثقة تُمكّن HR من تحقيق أهدافه</td>
+            <td>6 عوامل ثقة (Hurley) + EI + 5 أساليب النزاع + BATNA + نموذج التفاوض المبدئي</td>
+          </tr>
+          <tr>
+            <td><strong>Communication</strong></td>
+            <td>نقل الرسائل بفاعلية وإزالة الضوضاء في كل حلقة</td>
+            <td>نموذج التواصل + Framing/Reframing + 7 قنوات تواصل + التغذية الراجعة + الاجتماعات الفعّالة</td>
+          </tr>
+          <tr>
+            <td><strong>Global Mindset</strong></td>
+            <td>رؤية العالم من عيون ثقافة أخرى لبناء جسور حقيقية</td>
+            <td>Hall (High/Low Context) + Hofstede (6 أبعاد) + Trompenaars (7 توترات) + 4Ts + التآزر الثقافي</td>
+          </tr>
+          <!-- BUSINESS -->
+          <tr>
+            <td rowspan="3"><span class="comp-badge cb-biz">Business</span></td>
+            <td><strong>Business Acumen</strong></td>
+            <td>فهم كيف تُنشئ المنظمة قيمتها والتأثير على القرار الاستراتيجي</td>
+            <td>Value Chain + دورة الحياة + PESTLE + قوائم مالية 3 + نسب مالية + Balanced Scorecard</td>
+          </tr>
+          <tr>
+            <td><strong>Consultation</strong></td>
+            <td>HR مستشار داخلي يُشخّص ويُصمّم ويُرافق ويقيس</td>
+            <td>نموذج الاستشارة 4 خطوات + SWOT/SOAR/MCDA/Force-Field + إدارة التغيير + Kotter + J Curve</td>
+          </tr>
+          <tr>
+            <td><strong>Analytical Aptitude</strong></td>
+            <td>تحويل البيانات إلى قرارات أفضل</td>
+            <td>EBDM 6 خطوات + مقاييس مركزية + انحراف معياري + تحليل الاتجاهات/الانحدار/الأسباب الجذرية</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- SECTION 5 — COMPLETE GLOSSARY -->
+  <!-- ══════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-num">📖</div>
+      <div>
+        <h2>المصطلحات الشاملة — المرجع النهائي للامتحان</h2>
+        <div class="en-title">Complete Glossary — All 6 Parts</div>
+      </div>
+    </div>
+    <div class="card">
+      <table class="compare-table">
+        <tr><th>المصطلح العربي</th><th>الإنجليزي</th><th>التعريف</th></tr>
+        <tr><td>إطار المعرفة التطبيقية</td><td>SHRM BASK</td><td>الإطار الذي يُحدد الكفاءات والمعارف المُختبَرة في الشهادتين</td></tr>
+        <tr><td>أسئلة الحكم الموقفي</td><td>SJIs (Situational Judgment Items)</td><td>سيناريو + 4 خيارات — اختر الأفضل لا الصحيح فقط</td></tr>
+        <tr><td>القيادة التحويلية</td><td>Transformational Leadership</td><td>تُلهم التغيير والابتكار عبر الرؤية والتفويض والقدوة</td></tr>
+        <tr><td>القيادة الظرفية</td><td>Situational Leadership</td><td>Telling→Selling→Participating→Delegating بحسب نضج الموظف</td></tr>
+        <tr><td>قيادة الخادم</td><td>Servant Leadership</td><td>القائد يخدم فريقه لتمكينهم من الأداء الأفضل</td></tr>
+        <tr><td>نظرية التوقع</td><td>Expectancy Theory (Vroom)</td><td>Expectancy × Instrumentality × Valence = مستوى الجهد</td></tr>
+        <tr><td>عوامل الصحة</td><td>Hygiene Factors (Herzberg)</td><td>غيابها يُحبط — لكن حضورها لا يُحفّز بالضرورة</td></tr>
+        <tr><td>الشفافية والأصالة</td><td>Transparency & Authenticity</td><td>الإفصاح + الاتساق بين القيم والأفعال</td></tr>
+        <tr><td>التنوع</td><td>Diversity</td><td>اختلافات الهوية: عرق، جنس، سن، قدرة، فكر...</td></tr>
+        <tr><td>المساواة التوزيعية</td><td>Equity</td><td>توفير الموارد بحسب الاحتياج — Equality ≠ Equity</td></tr>
+        <tr><td>الشمول</td><td>Inclusion</td><td>بيئة يشعر فيها الجميع بالانتماء والمشاركة الفعلية</td></tr>
+        <tr><td>التحيز اللاواعي</td><td>Unconscious Bias</td><td>تحيزات خفية تؤثر في القرارات دون وعي صاحبها</td></tr>
+        <tr><td>الإساءة الخفية</td><td>Microaggressions</td><td>إهانات خفية متكررة تتراكم لتُشكّل بيئة مُعادية</td></tr>
+        <tr><td>الأمان النفسي</td><td>Psychological Safety</td><td>شعور الموظف بأمان التعبير والخطأ دون خوف</td></tr>
+        <tr><td>مجموعات الموارد</td><td>Employee Resource Groups (ERGs)</td><td>مجموعات طوعية حول بُعد تنوع مشترك</td></tr>
+        <tr><td>أصحاب المصلحة</td><td>Stakeholders (Freeman)</td><td>جميع الأطراف المؤثرة والمتأثرة بأعمال المنظمة</td></tr>
+        <tr><td>الذكاء العاطفي</td><td>Emotional Intelligence (EI)</td><td>فهم المشاعر وإدارتها لبناء علاقات فعّالة</td></tr>
+        <tr><td>BATNA</td><td>Best Alternative to Negotiated Agreement</td><td>أفضل بديل لك إن فشل التفاوض — مصدر قوّتك</td></tr>
+        <tr><td>التفاوض المبدئي</td><td>Principled Negotiation (Fisher & Ury)</td><td>المصالح لا المواقف + خلق Win-Win</td></tr>
+        <tr><td>نموذج هول</td><td>Hall's High/Low Context</td><td>ثقافات السياق العالي (ضمني) vs المنخفض (صريح)</td></tr>
+        <tr><td>مسافة السلطة</td><td>Power Distance (Hofstede)</td><td>درجة قبول التراتبية وعدم مساواة السلطة</td></tr>
+        <tr><td>التآزر الثقافي</td><td>Cultural Synergy</td><td>خلق "طريق ثالث" يستفيد من أفضل ما في كل ثقافة</td></tr>
+        <tr><td>سلسلة القيمة</td><td>Value Chain</td><td>تسلسل الأنشطة التي تُحوّل المدخلات إلى قيمة للعميل</td></tr>
+        <tr><td>تحليل PESTLE</td><td>PESTLE Analysis</td><td>Political, Economic, Social, Technological, Legal, Environmental</td></tr>
+        <tr><td>بطاقة الأداء المتوازنة</td><td>Balanced Scorecard</td><td>4 منظورات: مالي + عملاء + عمليات + تعلم ونمو</td></tr>
+        <tr><td>منحنى J</td><td>J Curve Effect</td><td>انخفاض الإنتاجية عند التغيير ثم ارتفاعها إلى أعلى</td></tr>
+        <tr><td>نموذج كوتر</td><td>Kotter's 8 Steps</td><td>الإلحاحية → الفريق → الرؤية → التواصل → التمكين → انتصارات → زخم → ترسيخ</td></tr>
+        <tr><td>إطار McKinsey 7-S</td><td>7-S Framework</td><td>Strategy, Structure, Systems, Style, Staff, Skills + Shared Values (المركز)</td></tr>
+        <tr><td>القرار القائم على الأدلة</td><td>Evidence-Based Decision Making (EBDM)</td><td>Ask→Acquire→Appraise→Aggregate→Apply→Assess</td></tr>
+        <tr><td>الوسيط</td><td>Median</td><td>القيمة الوسطى في بيانات مرتّبة — أفضل من المتوسط عند وجود قيم شاذة</td></tr>
+        <tr><td>الانحراف المعياري</td><td>Standard Deviation</td><td>يقيس تشتّت البيانات — منخفض = اتساق، مرتفع = تباين</td></tr>
+        <tr><td>تحليل الأسباب الجذرية</td><td>Root-Cause Analysis (5 Whys)</td><td>السؤال "لماذا؟" بشكل متتالٍ لإيجاد السبب الحقيقي</td></tr>
+        <tr><td>مخطط باريتو</td><td>Pareto Chart (80/20)</td><td>20% من الأسباب تُحدث 80% من المشاكل</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- SECTION 6 — EXAM TIPS -->
+  <!-- ══════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-num">🎯</div>
+      <div>
+        <h2>نصائح الاجتياز الذهبية</h2>
+        <div class="en-title">Golden Exam Tips — SHRM-CP & SHRM-SCP</div>
+      </div>
+    </div>
+
+    <div class="exam-tip">
+      <h4>استراتيجية أسئلة SJI — الموقفية</h4>
+      <ul>
+        <li>اقرأ السيناريو كاملاً — من هي الشخصيات؟ ما المشكلة الجذرية الفعلية؟</li>
+<div style="background:#e8f2fb;border-right:4px solid #185FA5;padding:14px 18px;margin:16px 0;border-radius:8px;">
+<strong style="color:#163456;">🆕 إضافات 2025 — Analytical Aptitude</strong><br>
+أضافت نسخة 2025 صراحةً ضمن المفاهيم الرئيسية:<br>
+• <strong>Big Data Analysis</strong> — تحليل البيانات الضخمة<br>
+• <strong>Predictive Analysis</strong> — التحليل التنبؤي<br>
+• <strong>Data Cleansing & Data Mining</strong> — تنظيف البيانات واستخراجها<br>
+• <strong>Visualization</strong> — التصور البياني للبيانات
+</div>
+        <li>استبعد الخيارين الأسوأ أولاً — يتبقى لك عادةً اثنان للمقارنة</li>
+        <li>الإجابة الصحيحة تبدأ بـ "جمع البيانات وفهم السياق" — لا بفرض حل فوري</li>
+        <li>الخيارات التي تُشرك الأطراف المعنية وتبني علاقات = غالباً صحيحة</li>
+        <li>الخيارات التي تُهمل الموظف أو تُتجاهل الثقافة أو تتصرف من طرف واحد = غالباً خاطئة</li>
+        <li>Win-Win + تعاون + استماع = نمط الإجابة الصحيحة في معظم السيناريوهات</li>
+      </ul>
+    </div>
+
+    <div class="exam-tip">
+      <h4>استراتيجية أسئلة KI — المعرفية</h4>
+      <ul>
+        <li>اقرأ كل الخيارات قبل الإجابة — قد يكون هناك "الأكثر صحةً"</li>
+        <li>كلمات "دائماً" و"أبداً" في الخيار = تحذير — القانون والممارسة الجيدة لها استثناءات</li>
+        <li>إذا لم تعرف الإجابة: ارتكز على المبادئ الجوهرية للكفاءة المذكورة في السؤال</li>
+        <li>لأسئلة القانون الأمريكي: افهم المبدأ (عدم التمييز، الشفافية، العدالة) وليس التفاصيل</li>
+        <li>للنسب والمعادلات المالية: ROI = (عائد-تكلفة)÷تكلفة — Turnover Rate = مغادرات÷متوسط موظفين</li>
+      </ul>
+    </div>
+
+    <div class="exam-tip">
+      <h4>الأخطاء الشائعة في الامتحان — تجنّبها</h4>
+      <ul>
+        <li>لا تقفز للحل قبل تشخيص المشكلة الحقيقية (خطأ #1)</li>
+        <li>لا تفرض ثقافتك على السيناريوهات الدولية — فكّر بـ Global Mindset</li>
+        <li>لا تخلط بين Equality (المساواة) وEquity (المساواة التوزيعية)</li>
+        <li>لا تعتقد أن الامتحان يختبر ما تفعله شركتك — يختبر "أفضل الممارسات العالمية"</li>
+        <li>لا تنسَ أن SJI تختبر "الأفضل" من بين خيارات كلها مقبولة — ليس "الصح" من الخطأ</li>
+      </ul>
+    </div>
+
+    <div class="card" style="margin-top:24px;">
+      <h3>خطة المراجعة الأسبوعية المقترحة</h3>
+      <table class="compare-table">
+        <tr><th>الأسبوع</th><th>ماذا تراجع</th><th>أنشطة التعزيز</th></tr>
+        <tr><td><strong>1</strong></td><td>الأجزاء 1-2: Leadership + Ethics + I&D</td><td>10 أسئلة SJI + حفظ 5 نظريات قيادة</td></tr>
+        <tr><td><strong>2</strong></td><td>الجزء 3: Relationship + Communication + Global Mindset</td><td>ممارسة تطبيق Hofstede على سيناريوهات دولية</td></tr>
+        <tr><td><strong>3</strong></td><td>الأجزاء 4-5: Business Acumen + Consultation + Analytics</td><td>قراءة قائمة دخل حقيقية + حل Business Case</td></tr>
+        <tr><td><strong>4</strong></td><td>الجزء 6: تحليل بيانات + إحصاء + هذا الملخص</td><td>مراجعة المصطلحات الشاملة + اختبار Practice Exam</td></tr>
+        <tr><td><strong>آخر 3 أيام</strong></td><td>Practice Exam كامل + مراجعة الأخطاء فقط</td><td>لا دراسة جديدة — فقط تثبيت وراحة</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- FINAL OVERVIEW -->
+  <div class="overview-card" style="margin-top:30px; background:linear-gradient(135deg,#1e7a4a,#0f4c75);">
+    <h2>🏆 ملخص رحلة الكتاب الكاملة</h2>
+    <table class="compare-table" style="margin-top:16px; background:rgba(255,255,255,.08);">
+      <tr style="background:rgba(255,255,255,.15);">
+        <th style="background:transparent;color:white;">الجزء</th>
+        <th style="background:transparent;color:white;">الصفحات</th>
+        <th style="background:transparent;color:white;">المحتوى</th>
+        <th style="background:transparent;color:white;">الحالة</th>
+      </tr>
+      <tr style="color:white;font-size:14px;"><td>الأول</td><td>1–100</td><td>المقدمة + Leadership & Navigation + Ethical Practice</td><td>✅ مكتمل</td></tr>
+      <tr style="color:white;font-size:14px;"><td>الثاني</td><td>101–200</td><td>Ethical Practice (تعمّق) + I&D كامل</td><td>✅ مكتمل</td></tr>
+      <tr style="color:white;font-size:14px;"><td>الثالث</td><td>201–300</td><td>Relationship Management + Communication + Global Mindset</td><td>✅ مكتمل</td></tr>
+      <tr style="color:white;font-size:14px;"><td>الرابع</td><td>301–400</td><td>Global Mindset (تعمّق) + Business Acumen</td><td>✅ مكتمل</td></tr>
+      <tr style="color:white;font-size:14px;"><td>الخامس</td><td>401–480</td><td>Business Acumen (مالي) + Consultation + Analytical Aptitude</td><td>✅ مكتمل</td></tr>
+      <tr style="color:white;font-size:14px;background:rgba(200,168,75,.2);"><td><strong>السادس ✅</strong></td><td><strong>481–601</strong></td><td><strong>Analytical Aptitude (تعمّق) + مراجعة شاملة + نصائح الامتحان</strong></td><td>✅ <strong>مكتمل</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="tip-box" style="margin-top:24px; font-size:15.5px; padding:24px;">
+    <strong>🌟 الكلمة الأخيرة:</strong><br><br>
+    الامتحان يختبر HR كمهني يُفكّر بشكل استراتيجي ويُعالج المشاكل بأدلة ويبني العلاقات بثقة ويُدير التغيير بذكاء.<br><br>
+    أنت الآن تملك المعرفة الكاملة — استخدمها مع الأمثلة من تجربتك المهنية، وكلٌّ إجابة SJI ستُصبح واضحة بشكل طبيعي.<br><br>
+    <strong>بالتوفيق في اجتياز شهادتك 🎓 SHRM-CP / SHRM-SCP</strong>
+  </div>
+
+  <div class="footer">
+    <p style="margin-bottom:10px;font-size:16px;font-weight:700; color:var(--primary);">🎉 أنجزت الكتاب كاملاً — 601 صفحة في 6 ملخصات شاملة!</p>
+    <p style="font-size:13px;color:#aaa;">SHRM Learning System 2023 · ملخص دراسي بالعربية · جميع الأجزاء مكتملة</p>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HR Organization Domain Exam — SHRM Practice Exam</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f2ea;--card:#fff;--navy:#0d1b2e;--navy2:#163456;
+  --ac:#6d28d9;--acl:#f3effe;
+  --gold:#c8a84b;--bdr:#ddd6c8;--txt:#1a1a1a;--mut:#777;
+  --grn:#15803d;--red:#b91c1c;--grnl:#e1f5ee;--redl:#fcebeb;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;}
+.screen{display:none;}.screen.active{display:block;}
+
+/* HEADER */
+.hdr{background:linear-gradient(160deg,var(--navy),var(--navy2));padding:16px 20px;color:#fff;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px rgba(0,0,0,.2);}
+.hdr-row1{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;}
+.hdr-title{font-family:'Tajawal',sans-serif;font-size:1.05rem;font-weight:800;}
+.hdr-sub{font-size:.75rem;opacity:.55;font-family:'Outfit',sans-serif;font-weight:400;margin-top:1px;}
+.lang-sw{display:flex;border:1.5px solid rgba(255,255,255,.2);border-radius:9px;overflow:hidden;}
+.lbtn{padding:6px 14px;font-size:12px;font-weight:700;cursor:pointer;border:none;background:transparent;color:rgba(255,255,255,.5);font-family:'Tajawal',sans-serif;transition:all .15s;}
+.lbtn.on{background:var(--gold);color:var(--navy);}
+.hdr-row2{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.pb{height:4px;flex:1;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden;}
+.pf{height:100%;background:var(--gold);border-radius:2px;transition:width .3s;}
+.ptxt{font-size:11px;opacity:.55;white-space:nowrap;font-family:'Tajawal',sans-serif;}
+.bdg{padding:3px 9px;border-radius:16px;font-size:10.5px;font-weight:700;}
+.bdg-ki{background:rgba(56,189,248,.15);color:#7dd3fc;}
+.bdg-sji{background:rgba(139,92,246,.2);color:#c4b5fd;}
+.bdg-area{background:var(--acl);color:var(--ac);font-family:'Tajawal',sans-serif;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.bdg-2025{background:rgba(21,128,61,.2);color:#4ade80;border:1px solid rgba(74,222,128,.2);}
+.bdg-d{background:rgba(255,255,255,.07);color:rgba(255,255,255,.45);font-size:10px;}
+
+/* QUESTION */
+.qwrap{max-width:740px;margin:20px auto;padding:0 16px;}
+.scen-box{background:#f0f6ff;border:1px solid #c7ddf8;border-radius:12px;padding:14px 18px;margin-bottom:18px;font-size:.9rem;line-height:1.75;}
+.scen-box[dir=rtl]{font-family:'Tajawal',sans-serif;font-size:.95rem;text-align:right;}
+.scen-lbl{font-size:10px;font-weight:700;color:var(--ac);letter-spacing:.07em;text-transform:uppercase;margin-bottom:6px;}
+.qtext{font-size:1.04rem;line-height:1.85;margin-bottom:22px;font-weight:500;}
+.qtext[dir=rtl]{font-family:'Tajawal',sans-serif;font-size:1.1rem;text-align:right;}
+.opts{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:18px;}
+.opt{display:flex;align-items:flex-start;gap:12px;padding:13px 16px;background:var(--card);border:1.5px solid var(--bdr);border-radius:12px;cursor:pointer;transition:border-color .12s,background .12s;}
+.opt:hover:not(.dis){border-color:var(--ac);background:var(--acl);}
+.opt.sel{border-color:var(--ac);background:var(--acl);}
+.opt.ok{border-color:var(--grn);background:var(--grnl);}
+.opt.bad{border-color:var(--red);background:var(--redl);}
+.opt.hint{border-color:var(--grn);background:var(--grnl);opacity:.7;}
+.opt.dis{cursor:default;}
+.olet{width:27px;height:27px;border-radius:7px;background:var(--bdr);display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:700;flex-shrink:0;font-family:'Outfit',sans-serif;}
+.opt.ok .olet{background:var(--grn);color:#fff;}
+.opt.bad .olet{background:var(--red);color:#fff;}
+.opt.hint .olet{background:var(--grn);color:#fff;}
+.otxt{font-size:.92rem;line-height:1.65;}
+.otxt[dir=rtl]{font-family:'Tajawal',sans-serif;font-size:.97rem;text-align:right;}
+.exp{margin-top:14px;border-radius:12px;padding:15px 19px;display:none;font-size:.87rem;line-height:1.8;}
+.exp.show{display:block;}
+.exp.ok{background:var(--grnl);border:1px solid #86efac;}
+.exp.bad{background:var(--redl);border:1px solid #fca5a5;}
+.exp-hdr{font-family:'Tajawal',sans-serif;font-weight:700;font-size:.88rem;margin-bottom:6px;}
+.exp.ok .exp-hdr{color:var(--grn);}
+.exp.bad .exp-hdr{color:var(--red);}
+.exp-body{font-family:'Outfit',sans-serif;}
+.exp-body[dir=rtl]{font-family:'Tajawal',sans-serif;text-align:right;}
+
+/* NAV */
+.qnav{display:flex;align-items:center;justify-content:space-between;max-width:740px;margin:0 auto 28px;padding:0 16px;}
+.nbtn{padding:10px 22px;border-radius:10px;font-size:.88rem;font-weight:600;cursor:pointer;border:none;font-family:'Tajawal',sans-serif;transition:all .15s;}
+.pbtn{background:var(--card);color:var(--mut);border:1.5px solid var(--bdr);}
+.nxbtn{background:var(--ac);color:#fff;}
+.subbtn{background:var(--grn);color:#fff;}
+.dots{display:flex;flex-wrap:wrap;gap:5px;max-width:420px;justify-content:center;}
+.d{width:13px;height:13px;border-radius:4px;background:var(--bdr);cursor:pointer;transition:all .12s;}
+.d.dok{background:var(--grn);}
+.d.dno{background:var(--red);}
+.d.dcur{outline:2px solid var(--ac);outline-offset:1px;}
+
+/* WELCOME */
+.welcome{max-width:580px;margin:48px auto;padding:0 20px;text-align:center;}
+.wtitle{font-family:'Tajawal',sans-serif;font-size:2rem;font-weight:800;color:var(--navy);margin-bottom:6px;}
+.wsub{color:var(--mut);font-size:.95rem;margin-bottom:24px;}
+.wstats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px;}
+.wsc{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:16px;}
+.wsc-n{font-size:1.7rem;font-weight:800;color:var(--ac);}
+.wsc-l{font-size:11px;color:var(--mut);margin-top:2px;font-family:'Tajawal',sans-serif;}
+.lang-pick{display:flex;gap:8px;justify-content:center;margin-bottom:20px;}
+.lpbtn{padding:10px 24px;border-radius:10px;font-size:.92rem;font-weight:600;cursor:pointer;border:1.5px solid var(--bdr);background:var(--card);color:var(--mut);font-family:'Tajawal',sans-serif;transition:all .15s;}
+.lpbtn.on{background:var(--ac);color:#fff;border-color:var(--ac);}
+.sbtn{background:var(--ac);color:#fff;border:none;padding:14px 44px;border-radius:12px;font-size:1rem;font-weight:700;cursor:pointer;font-family:'Tajawal',sans-serif;}
+.update-note{background:rgba(21,128,61,.08);border:1px solid rgba(21,128,61,.2);border-radius:10px;padding:10px 16px;margin-bottom:20px;font-size:.8rem;color:var(--grn);font-family:'Tajawal',sans-serif;text-align:right;}
+
+/* RESULTS */
+.results{max-width:560px;margin:40px auto;padding:0 20px;text-align:center;}
+.scircle{width:110px;height:110px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.7rem;font-weight:800;}
+.sp{background:var(--grnl);border:3px solid var(--grn);color:var(--grn);}
+.sf{background:var(--redl);border:3px solid var(--red);color:var(--red);}
+.rgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0;}
+.rc{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:13px;}
+.rc-n{font-size:1.35rem;font-weight:800;}
+.rc-l{font-size:11px;color:var(--mut);font-family:'Tajawal',sans-serif;}
+.abts{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px;}
+.abt{padding:10px 20px;border-radius:10px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:'Tajawal',sans-serif;border:none;}
+.ab1{background:var(--ac);color:#fff;}
+.ab2{background:var(--card);border:1.5px solid var(--bdr);color:var(--txt);}
+
+@media(max-width:600px){
+  .wstats{grid-template-columns:1fr 1fr;}
+  .hdr-title{font-size:.95rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- STICKY HEADER -->
+<div class="hdr" id="mainHdr">
+  <div class="hdr-row1">
+    <div>
+      <div class="hdr-title" id="hdrTitle">امتحان Organization Domain</div>
+      <div class="hdr-sub">HR Organization Domain Exam · SHRM Practice Exam · مُحدَّث 2025</div>
+    </div>
+    <div class="lang-sw">
+      <button class="lbtn on" id="lbAr" onclick="setLang('ar')">العربية</button>
+      <button class="lbtn" id="lbEn" onclick="setLang('en')">English</button>
+    </div>
+  </div>
+  <div class="hdr-row2" id="hdrMeta" style="display:none;">
+    <div class="pb"><div class="pf" id="pf"></div></div>
+    <div class="ptxt" id="ptxt"></div>
+    <div class="bdg" id="typeBdg"></div>
+    <div class="bdg bdg-area" id="areaBdg"></div>
+    <div class="bdg bdg-d" id="diffBdg"></div>
+  </div>
+</div>
+
+<!-- WELCOME SCREEN -->
+<div class="screen active" id="scrWelcome">
+  <div class="welcome">
+    <div class="wtitle" id="wTitle">امتحان Organization Domain</div>
+    <div class="wsub" id="wSub">HR Organization Domain Exam</div>
+    <div class="update-note">✅ محدَّث بتغييرات 2025 — يشمل أسئلة جديدة عن: HR Technology</div>
+    <div class="wstats">
+      <div class="wsc"><div class="wsc-n" id="wTotal">121</div><div class="wsc-l">سؤال</div></div>
+      <div class="wsc"><div class="wsc-n">86</div><div class="wsc-l">KI معرفي</div></div>
+      <div class="wsc"><div class="wsc-n">35</div><div class="wsc-l">SJI حكمي</div></div>
+    </div>
+    <div style="margin-bottom:16px;font-size:.85rem;color:var(--mut);font-family:'Tajawal',sans-serif;">اختاري لغة الأسئلة:</div>
+    <div class="lang-pick">
+      <button class="lpbtn" id="lpEn" onclick="pickLang('en')">English Only</button>
+      <button class="lpbtn on" id="lpAr" onclick="pickLang('ar')">عربي فقط</button>
+      <button class="lpbtn" id="lpBi" onclick="pickLang('bi')">ثنائي اللغة</button>
+    </div>
+    <button class="sbtn" onclick="startExam()">ابدأ الامتحان ←</button>
+  </div>
+</div>
+
+<!-- EXAM SCREEN -->
+<div class="screen" id="scrExam">
+  <div class="qwrap">
+    <div class="scen-box" id="scenBox" style="display:none">
+      <div class="scen-lbl">📋 Scenario</div>
+      <div id="scenText"></div>
+    </div>
+    <div class="qtext" id="qText"></div>
+    <ul class="opts" id="optsList"></ul>
+    <div class="exp" id="expBox">
+      <div class="exp-hdr" id="expHdr"></div>
+      <div class="exp-body" id="expBody"></div>
+    </div>
+  </div>
+  <div class="qnav">
+    <button class="nbtn pbtn" id="btnPrev" onclick="prevQ()" style="display:none">← رجوع</button>
+    <div class="dots" id="qDots"></div>
+    <button class="nbtn nxbtn" id="btnNext" onclick="nextQ()">التالي →</button>
+  </div>
+</div>
+
+<!-- RESULTS SCREEN -->
+<div class="screen" id="scrResults">
+  <div class="results">
+    <div class="scircle" id="scoreCirc"></div>
+    <div style="font-family:'Tajawal',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:6px;" id="resMsg"></div>
+    <div style="color:var(--mut);font-size:.85rem;font-family:'Tajawal',sans-serif;" id="resPass">درجة النجاح: 70%</div>
+    <div class="rgrid">
+      <div class="rc"><div class="rc-n" id="rCorrect" style="color:var(--grn)"></div><div class="rc-l">إجابات صحيحة</div></div>
+      <div class="rc"><div class="rc-n" id="rWrong" style="color:var(--red)"></div><div class="rc-l">إجابات خاطئة</div></div>
+      <div class="rc"><div class="rc-n" id="rKi"></div><div class="rc-l">KI صحيحة</div></div>
+      <div class="rc"><div class="rc-n" id="rSji"></div><div class="rc-l">SJI صحيحة</div></div>
+    </div>
+    <div class="abts">
+      <button class="abt ab1" onclick="retryExam()">إعادة الامتحان 🔄</button>
+      <button class="abt ab2" onclick="reviewExam()">مراجعة الإجابات 📋</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const Q=[
+// ══════════════════════════════════════════
+// SECTION 1: HR FUNCTION STRUCTURE (24 q)
+// ══════════════════════════════════════════
+{a:"HR Function Structure",t:"KI",d:"medium",
+q:"A Shared Services Center (SSC) differs from a Center of Excellence (COE) primarily in that an SSC:",
+o:["Reports directly to corporate HR leadership without a dotted-line relationship to business units","Is always physically co-located at headquarters rather than distributed across locations","Focuses on delivering specialized strategic expertise that can be leveraged across business units","Consolidates transactional HR services that multiple units access from a common pool"],
+c:3,e:"SSC = transactional services (payroll, benefits enrollment, employee records, HR helplines). COE = specialized strategic expertise (talent acquisition strategy, compensation design, leadership development). Both risk underutilization if the organization doesn't actively communicate their existence. The key distinction is transactional vs. strategic.",
+qAr:"يختلف مركز الخدمات المشتركة (SSC) عن مركز التميّز (COE) أساساً في أن SSC:",
+oAr:["يُبلّغ مباشرة لقيادة HR المؤسسية دون علاقة منقطّعة بوحدات الأعمال","يقع دائماً فعلياً في المقر الرئيسي بدلاً من توزيعه عبر المواقع","يركّز على تقديم خبرة استراتيجية متخصصة يمكن الاستفادة منها عبر وحدات الأعمال","يُجمّع خدمات HR المعاملاتية التي تصل إليها وحدات متعددة من مجمع مشترك"]},
+
+{a:"HR Function Structure",t:"SJI",d:"hard",
+s:"A global manufacturing company with 12,000 employees operates in 18 countries. The CHRO is redesigning the HR operating model. Currently, each country has a fully independent HR team resulting in 18 different HRIS platforms, inconsistent pay practices, and no talent mobility between regions. The CEO wants standardization without losing local compliance capability.",
+q:"Which HR structural model BEST addresses the tension between standardization and local responsiveness?",
+o:["Outsource all country HR teams to a single global HR services provider who can standardize operations","Deploy a federated model combining a global SSC for transactional services, COEs for strategic expertise, and embedded HRBPs for local compliance and business partnering","Maintain the current decentralized model but add a global HR policy manual that all country teams must follow","Implement a fully centralized HR model where all decisions and processes are made at headquarters and communicated downward"],
+c:1,e:"The federated model (SSC + COE + HRBP) is the industry standard answer for large global organizations. SSC handles transactional consistency and efficiency. COEs provide specialized expertise across the globe. HRBPs handle local compliance and business needs. Full centralization (D) loses local responsiveness. Policy manual only (C) doesn't fix the 18 HRIS platforms. Full outsourcing (A) creates loss of strategic capability.",
+qAr:"أي نموذج هيكلي لـ HR يعالج التوتر بين التوحيد والاستجابة المحلية بشكل أفضل؟",
+oAr:["الاستعانة بمصدر خارجي لجميع فرق HR القطرية لمزوّد خدمات HR عالمي واحد","نشر نموذج فيدرالي يجمع SSC عالمي للخدمات المعاملاتية مع شركاء أعمال HR محليين","الإبقاء على النموذج اللامركزي الحالي مع إضافة دليل سياسة HR عالمي","تطبيق نموذج HR مركزي بالكامل حيث تُتخذ جميع القرارات والعمليات مركزياً"],
+sAr:"شركة تصنيع عالمية بـ 12,000 موظف تعمل في 18 دولة. يُعيد CHRO تصميم هيكل HR لتحقيق التوازن بين توحيد المعايير العالمية والاستجابة المحلية."},
+
+{a:"HR Function Structure",t:"KI",d:"medium",
+q:"In the context of HR structural models, 'cosourcing' is distinguished from standard outsourcing because cosourcing:",
+o:["Places contracted workers inside the HR department structure while retaining a higher degree of organizational control","Applies exclusively to technology-related HR functions such as HRIS and payroll processing systems","Requires competitive bidding among multiple vendors for each HR service category individually","Transfers complete operational control to a third-party vendor while the organization retains strategic oversight"],
+c:0,e:"Cosourcing positions external contractors within the HR function itself, providing more day-to-day visibility and control than traditional outsourcing. The organization accepts higher cost in exchange for greater oversight. Standard outsourcing transfers the work to an external vendor operating independently. Neither model eliminates the organization's accountability for the contractor's conduct.",
+qAr:"في سياق نماذج هيكل HR، يتميّز 'التوريد المشترك' (Cosourcing) عن الاستعانة الخارجية القياسية في أنه:",
+oAr:["يضع عمالاً متعاقدين داخل هيكل قسم HR مع الاحتفاظ بالإشراف الداخلي","ينطبق حصرياً على وظائف HR المتعلقة بالتكنولوجيا مثل HRIS","يتطلب مناقصة تنافسية بين موردين متعددين لكل خدمة HR","ينقل التحكم التشغيلي الكامل لمورّد طرف ثالث بينما تحتفظ المنظمة بالإشراف"]},
+
+{a:"HR Function Structure",t:"SJI",d:"hard",
+s:"An HR director has been asked to build the business case for outsourcing the company's payroll and benefits administration. The CFO asks for a structured proposal. The HR director is on step 3 of the outsourcing process.",
+q:"What has the HR director completed, and what is the MOST appropriate immediate next action?",
+o:["Completed vendor selection and should now prepare the final contract for legal review","Completed the RFP distribution and should now evaluate proposals received from shortlisted vendors","Completed needs analysis and budget definition, and should now prepare and distribute a formal Request for Proposal (RFP)","Completed vendor evaluation and should now negotiate contract terms and SLAs with the chosen provider"],
+c:2,e:"The 9-step outsourcing process: 1-Needs analysis, 2-Budget, 3-Prepare RFP, 4-Distribute RFP, 5-Evaluate proposals, 6-Select vendor, 7-Negotiate contract, 8-Implement, 9-Evaluate. On step 3, the director has completed steps 1 and 2 (needs analysis and budget) and is now preparing the RFP. The RFP ensures consistent comparison across vendors.",
+qAr:"ما الذي أكمله مدير HR، وما الإجراء الفوري الأنسب؟",
+oAr:["أكمل اختيار المورّد وعليه الآن إعداد العقد النهائي","أكمل توزيع RFP وعليه الآن تقييم العروض المستلمة","أكمل تحليل الاحتياجات وتعريف الميزانية، وعليه الآن إعداد وتوزيع طلب عروض (RFP)","أكمل تقييم المورّد وعليه الآن التفاوض على شروط العقد"],
+sAr:"طُلب من مدير HR بناء مقترح أعمال للاستعانة الخارجية بكشوف رواتب الشركة. أكمل تحليل الاحتياجات وتعريف الميزانية."},
+
+{a:"HR Function Structure",t:"KI",d:"medium",
+q:"The HR Balanced Scorecard's 'Learning and Growth' perspective measures which type of organizational capability?",
+o:["The financial return generated by HR training programs relative to their total cost","The employee capabilities, systems, and climate that enable performance in all other scorecard perspectives","The degree to which HR services meet internal customer satisfaction benchmarks","The efficiency metrics that track HR process cycle times and error rates"],
+c:1,e:"Kaplan and Norton designed Learning & Growth as the foundation of the BSC — it measures the intangible human capital, information capital, and organizational capital that enable all other perspectives. It is NOT an HR efficiency metric or satisfaction score. HR's most direct contribution lives here: building the capabilities that make strategy execution possible.",
+qAr:"يقيس منظور 'التعلم والنمو' في بطاقة الأداء المتوازن لـ HR أي نوع من القدرات التنظيمية؟",
+oAr:["العائد المالي المُتحقق من برامج تدريب HR مقارنة بتكلفتها","قدرات الموظفين والأنظمة والمناخ التي تُمكّن الأداء والتحسين المستقبلي","درجة تلبية خدمات HR لمعايير رضا العملاء الداخليين","مقاييس الكفاءة التي تتتبّع أوقات دورة عمليات HR ومعدلات الأخطاء"]},
+
+{a:"HR Function Structure",t:"KI",d:"medium",
+q:"A 'Best Practices Audit' in HR is MOST useful when an organization wants to:",
+o:["Compare its HR practices against those of high-performing organizations to identify competitive gaps","Investigate a specific HR function area such as performance management or compensation equity","Assess whether its HR systems and processes are aligned with its current strategic plan","Verify that its HR practices are in full compliance with current employment law and regulations"],
+c:0,e:"Four HR audit types: Compliance Audit (legal conformance), Best Practices Audit (competitive benchmarking), Strategic Audit (strategic alignment), Function-Specific Audit (deep dive into one area). Best Practices specifically benchmarks against top-performing employers. Organizations use it to identify gaps that may be costing them competitive talent advantage.",
+qAr:"'تدقيق أفضل الممارسات' في HR الأكثر فائدة عندما تريد المنظمة:",
+oAr:["مقارنة ممارسات HR الخاصة بها بممارسات المنظمات عالية الأداء لتحديد الفجوات","التحقيق في مجال وظيفي محدد لـ HR مثل إدارة الأداء","تقييم ما إذا كانت أنظمة HR متوافقة مع استراتيجيتها الحالية","التحقق من أن ممارسات HR متوافقة تماماً مع قوانين العمل الحالية"]},
+
+{a:"HR Function Structure",t:"SJI",d:"medium",
+s:"An HR manager reviews the company's current HR structure: one centralized HR department of 12 people serving all 1,800 employees across 4 business units. Business unit managers frequently complain that HR doesn't understand their specific operational needs and responds too slowly to urgent hiring requests. HR leadership counters that centralization ensures consistency and cost-efficiency.",
+q:"What structural adjustment would MOST effectively address the business units' concern without abandoning the benefits of centralization?",
+o:["Require business unit managers to complete HR certification training so they can handle routine HR requests themselves","Add HR Business Partners aligned to each business unit who act as embedded consultants while core HR services remain centralized","Fully decentralize HR by placing independent HR teams in each business unit with no reporting relationship to central HR","Replace the current HR team with an outsourced HR provider who specializes in multi-unit organizations"],
+c:1,e:"The HRBP model is precisely designed for this tension: business units get a dedicated HR advisor who understands their context; central HR maintains policy consistency and service efficiency. Full decentralization (C) recreates inconsistency. Outsourcing (D) doesn't address the relationship problem. Manager certification (A) is not an HR structural solution.",
+qAr:"أي تعديل هيكلي يعالج مخاوف وحدات الأعمال بفاعلية دون لامركزية كاملة؟",
+oAr:["إلزام مديري وحدات الأعمال بإكمال تدريب شهادة HR","إضافة شركاء أعمال HR متوافقين مع كل وحدة عمل يعملون كموارد HR مُضمّنة مع الحفاظ على الخدمات المركزية","لامركزية HR بالكامل بوضع فرق HR مستقلة في كل وحدة","استبدال فريق HR الحالي بمزوّد HR خارجي"],
+sAr:"يراجع مدير HR الهيكل الحالي: قسم HR مركزي من 12 شخصاً. تشكو وحدات الأعمال من بطء الاستجابة وعدم فهم احتياجاتها."},
+
+{a:"HR Function Structure",t:"KI",d:"easy",
+q:"The Human Capital Value Added (HCVA) metric measures:",
+o:["Total compensation costs as a percentage of operating revenue for benchmarking purposes","The percentage of employees rated as high performers in annual performance evaluations","Revenue minus non-labor operating expenses divided by full-time equivalent employee count","The cost efficiency of the HR department relative to the total number of employees served"],
+c:2,e:"HCVA = (Revenue − Non-labor Operating Expenses) ÷ FTE headcount. It measures the economic value each employee contributes after accounting for the costs that aren't directly tied to labor. A higher HCVA means employees are generating more economic value relative to their numbers — useful for comparing workforce productivity across time periods or competitors.",
+qAr:"يقيس مقياس القيمة المضافة لرأس المال البشري (HCVA):",
+oAr:["إجمالي تكاليف التعويض كنسبة من الإيرادات التشغيلية للمقارنة","نسبة الموظفين المُصنّفين كأداء عالٍ في تقييمات الأداء السنوية","الإيرادات ناقص المصاريف التشغيلية غير العمالية مقسومة على المكافئ بدوام كامل","كفاءة تكلفة قسم HR مقارنة بإجمالي عدد الموظفين"]},
+
+{a:"HR Function Structure",t:"SJI",d:"hard",
+s:"A newly appointed CHRO at a financial services firm finds that HR currently operates in an administrative role: processing transactions, maintaining compliance records, and responding to manager requests. The CEO has stated that the firm's five-year growth strategy requires 'a people function that can help us compete for talent and build the capabilities we'll need.' The HR budget has been kept flat for three years.",
+q:"The CHRO's MOST strategic first action is to:",
+o:["Implement a new HRIS platform to demonstrate that HR can manage technology and modernize operations","Hire several senior HR business partners to demonstrate immediate strategic capability to business unit leaders","Conduct an HR capability assessment and present the business case connecting strategic HR investment to the firm's five-year growth goals","Request a significant budget increase before committing to any strategic HR transformation"],
+c:2,e:"Before requesting budget or making hires, the CHRO must diagnose the gap and build the business case. An HR capability assessment reveals what exists, what's missing, and what's needed for the strategic objectives. Connecting this to the five-year plan makes the case in the CEO's language. Requesting budget without a plan (D) or making hires without strategy (B) are premature. HRIS alone (A) is operational, not strategic.",
+qAr:"الإجراء الأول الأكثر استراتيجية لـ CHRO هو:",
+oAr:["تطبيق منصة HRIS جديدة لإظهار أن HR يمكنها إدارة التكنولوجيا","توظيف عدة شركاء أعمال HR كبار لإظهار قيمة استراتيجية فورية","إجراء تقييم لقدرات HR وتقديم مقترح أعمال يربط HR بأهداف العمل","طلب زيادة كبيرة في الميزانية قبل الالتزام بأي مبادرة استراتيجية"],
+sAr:"CHRO جديد في شركة خدمات مالية يجد أن HR تعمل بدور إداري بحت. يريد تحويلها لشريك استراتيجي."},
+
+{a:"HR Function Structure",t:"KI",d:"medium",
+q:"In the McKinsey 7S Framework, the 'Shared Values' element is placed at the center of the model because it:",
+o:["Was identified in McKinsey's research as the element most commonly misaligned in failed organizations","Represents the financial values and business objectives that drive strategic decision-making","Is the most difficult element to measure and therefore requires the most analysis","Influences and connects all other elements — acting as the organizational foundation that shapes how each element is enacted"],
+c:3,e:"Shared Values (culture, norms, organizational DNA) is the center because it influences HOW the organization operates across all other six elements. Strategy is shaped by values. Structure reflects values. Leadership style embodies values. When values are misaligned with the other six elements, strategic initiatives fail not because the plan was wrong, but because the culture resisted or undermined it.",
+qAr:"في إطار McKinsey 7S، يُوضع عنصر 'القيم المشتركة' في مركز النموذج لأنه:",
+oAr:["حدّدته أبحاث McKinsey كأكثر العناصر شيوعاً في عدم التوافق","يمثّل القيم المالية وأهداف العمل التي تقود الاستراتيجية","العنصر الأصعب قياساً ولذلك يتطلب أكبر اهتمام","يؤثر على ويربط جميع العناصر الأخرى — يعمل كنواة تنظيمية"]},
+
+{a:"HR Function Structure",t:"SJI",d:"hard",
+s:"A retail chain is merging two regional divisions. Leadership has restructured reporting lines, updated the IT systems, and revised compensation structures — all within 6 months. However, 18 months after the merger, employee engagement scores remain low, collaboration between former division employees is minimal, and the 'one company' culture the CEO envisioned has not materialized.",
+q:"The McKinsey 7S analysis of this situation MOST likely reveals that:",
+o:["The HRIS systems from both divisions were incompatible and created data silos that prevented effective collaboration","Leadership over-invested in the hard elements (structure, systems, strategy) while underinvesting in the soft elements (style, staff, skills, shared values) that drive behavioral and cultural integration","The merger moved too quickly — the organization should reverse the structural changes and start the merger process over","The financial incentives for integration were insufficient to motivate behavioral change among employees"],
+c:1,e:"This is the classic McKinsey 7S failure pattern: organizations change the three Hard elements (Strategy, Structure, Systems) — which are visible and tangible — while neglecting the four Soft elements (Style, Staff, Skills, Shared Values) that determine whether the change actually takes hold in human behavior. Culture doesn't merge through org chart revisions. It requires deliberate attention to values, leadership style, and capability building.",
+qAr:"تحليل McKinsey 7S لهذا الوضع يكشف على الأرجح أن:",
+oAr:["أنظمة HRIS من القسمين كانت غير متوافقة وأنشأت مشاكل بيانات","القيادة بالغت في الاستثمار بالعناصر الصلبة (الهيكل، الأنظمة، الاستراتيجية) وأهملت العناصر الناعمة (القيم المشتركة، الأسلوب، الموظفين)","الاندماج تحرّك بسرعة كبيرة — على المنظمة عكس التغييرات الهيكلية","الحوافز المالية للاندماج كانت غير كافية لتحفيز السلوك"],
+sAr:"سلسلة تجزئة تدمج قسمين إقليميين. أعادت القيادة هيكلة خطوط التقارير والأنظمة لكن الاندماج يتعثّر."},
+
+{a:"HR Function Structure",t:"KI",d:"medium",
+q:"When evaluating HR technology vendors, the step of 'establishing performance objectives' PRIMARILY serves to:",
+o:["Communicate to vendors the organization's budget constraints before they finalize their proposals","Identify the specific HR staff members who will serve as system administrators post-implementation","Determine the implementation timeline that vendors must commit to contractually","Define the measurable criteria against which the purchased technology will be evaluated after implementation"],
+c:3,e:"Performance objectives in the technology acquisition process define success criteria upfront — what performance level, adoption rate, time-to-productivity, cost savings, or other metrics will determine whether the technology investment succeeded. They are set before vendor selection so that post-implementation evaluation is objective, not subjective. Without pre-established objectives, ROI claims after implementation are unverifiable.",
+qAr:"عند تقييم موردي تكنولوجيا HR، خطوة 'وضع أهداف الأداء' تهدف أساساً إلى:",
+oAr:["إبلاغ الموردين بقيود ميزانية المنظمة قبل تقديم عروضهم","تحديد موظفي HR المحددين الذين سيعملون كمديري نظام","تحديد الجدول الزمني للتطبيق الذي يجب على الموردين الالتزام به","تحديد المعايير القابلة للقياس التي ستُقيَّم بها التكنولوجيا المُشتراة"]},
+
+{a:"HR Function Structure",t:"SJI",d:"medium",
+s:"An HR team is designing the RFP for a new talent management system. The project sponsor argues that they should distribute the RFP to the five vendors who advertised at a recent HR conference because 'they clearly know the market.' The HR project lead disagrees.",
+q:"The HR project lead's concern is MOST justified because:",
+o:["Conference vendors typically lack the implementation support needed for enterprise HR systems","Restricting the vendor pool to conference advertisers introduces selection bias and may exclude the most capable solutions","Conference advertisers typically charge premiums that will exceed the allocated budget","Vendors who advertise at conferences are generally more focused on marketing than product quality"],
+c:1,e:"Vendor selection should be based on a systematic assessment of capability, fit, references, and cost — not on marketing visibility. Limiting the pool to conference advertisers introduces selection bias that may exclude better-suited, lower-profile solutions. A sound RFP process should identify potential vendors through multiple channels including analyst reports, peer referrals, and capability databases.",
+qAr:"مخاوف قائد مشروع HR مُبرَّرة أكثر ما يكون لأن:",
+oAr:["موردو المؤتمرات يفتقرون عادةً لدعم التطبيق المطلوب","تقييد مجموعة الموردين بالمعلنين في المؤتمرات يُدخل تحيز الاختيار ويستبعد حلولاً أفضل ربما","معلنو المؤتمرات يفرضون عادةً علاوات تتجاوز الميزانية المخصصة","الموردون الذين يعلنون في المؤتمرات أكثر تركيزاً على التسويق"],
+sAr:"فريق HR يُصمّم RFP لنظام إدارة مواهب جديد. يجادل راعي المشروع بأن قائمة الموردين يجب أن تقتصر على المعلنين في المؤتمرات."},
+
+{a:"HR Function Structure",t:"KI",d:"hard",
+q:"The 'operational role' of HR most directly focuses on which type of organizational activities?",
+o:["Building HR's credibility with the executive team by demonstrating measurable business impact through workforce analytics","Managing day-to-day people practices — recruiting, employee relations, performance management — in partnership with line managers","Ensuring regulatory compliance, maintaining employee records, and leveraging technology to reduce administrative burden","Aligning long-term workforce capability with the organization's strategic positioning and competitive direction"],
+c:1,e:"HR's three roles are: Strategic (long-horizon alignment with business strategy), Administrative (compliance, records, automation), and Operational (day-to-day people management partnering with line managers). Operational is the closest to the work — it's where HR directly supports managers and employees through recruitment, ER, and performance management. Strategic addresses the 'where are we going' question; operational addresses the 'how do we work today' question.",
+qAr:"يركّز 'الدور التشغيلي' لـ HR بشكل مباشر على أي نوع من الأنشطة التنظيمية؟",
+oAr:["بناء مصداقية HR مع الفريق التنفيذي بإظهار نتائج قابلة للقياس","إدارة ممارسات الأفراد اليومية — التوظيف وعلاقات الموظفين وإدارة الأداء","ضمان الامتثال التنظيمي والحفاظ على سجلات الموظفين","مواءمة قدرة القوى العاملة طويلة المدى مع الأهداف الاستراتيجية"]},
+
+{a:"HR Function Structure",t:"SJI",d:"hard",
+s:"A CHRO is presenting to the board on HR's value. She presents data showing: 89% employee satisfaction with HR services, 4.2/5 average manager rating of HR support, and 96% compliance audit pass rate over the past 3 years. A board member responds: 'These are nice numbers, but how do we know HR is contributing to our business performance?'",
+q:"The board member's question reveals which fundamental gap in the CHRO's presentation?",
+o:["The satisfaction and compliance metrics are too low to demonstrate world-class HR performance","The board member lacks understanding of HR's role and should receive an education session on HR's value","The metrics presented are appropriate but should be benchmarked against industry peers for context","HR is measuring activity and customer satisfaction rather than business outcome metrics that connect HR to organizational performance"],
+c:3,e:"Activity metrics (satisfaction, compliance) measure whether HR is doing its job reliably. They do NOT measure whether HR is contributing to competitive outcomes. The board wants outcome metrics: Does workforce quality correlate with revenue per employee? Does our talent pipeline strength predict growth execution? Does manager effectiveness predict team performance? The CHRO must transition from measuring HR activity to demonstrating HR's causal contribution to business results.",
+qAr:"سؤال عضو المجلس يكشف أي فجوة جوهرية في عرض CHRO؟",
+oAr:["مقاييس الرضا والامتثال منخفضة جداً لإظهار أداء عالمي المستوى","عضو المجلس يفتقر لفهم دور HR ويجب أن يتلقى توجيهاً","المقاييس المقدّمة مناسبة لكن يجب مقارنتها بالمعايير","HR تقيس النشاط ورضا العملاء بدلاً من نتائج العمل والقيمة الاستراتيجية"],
+sAr:"CHRO تُقدّم للمجلس عن قيمة HR. تعرض بيانات: 89% رضا الموظفين، 100% امتثال تدريبي. يسأل عضو المجلس: 'كيف يؤثر هذا على نتائج العمل؟'"},
+
+// ══════════════════════════════════════════
+// SECTION 2: ORGANIZATIONAL EFFECTIVENESS & DEVELOPMENT (26 q)
+// ══════════════════════════════════════════
+{a:"Organizational Effectiveness & Development",t:"KI",d:"medium",
+q:"In organizational design, 'formalization' refers to:",
+o:["The extent to which rules, procedures, and policies govern employee behavior and work processes","The number of hierarchical levels between the CEO and front-line employees in the organization","The degree to which strategic plans are documented and communicated across organizational levels","The process of officially registering the organization's legal structure with regulatory authorities"],
+c:0,e:"Formalization is a structural characteristic that measures how much employee behavior is governed by rules, policies, and documented procedures. High formalization = standardized, predictable, auditable behavior. Low formalization = more employee discretion, flexibility, and autonomy. Neither extreme is optimal — the right level depends on the work's complexity, the talent's expertise level, and the organization's risk tolerance.",
+qAr:"في التصميم التنظيمي، يشير 'الرسمية' (Formalization) إلى:",
+oAr:["مدى حُكم القواعد والإجراءات والسياسات لسلوك الموظفين","عدد المستويات الهرمية بين الرئيس التنفيذي والموظفين في الخط الأمامي","درجة توثيق الخطط الاستراتيجية ونقلها عبر المنظمة","عملية التسجيل الرسمي للهيكل القانوني للمنظمة"]},
+
+{a:"Organizational Effectiveness & Development",t:"SJI",d:"hard",
+s:"A global technology firm has used a functional organizational structure for 15 years. As the company grew to 25,000 employees in 40 countries, business unit leaders have increasingly complained that cross-functional projects take too long because functional managers deprioritize them in favor of their own departmental goals. Three major product launches were delayed in the past 18 months.",
+q:"Which structural change would MOST effectively address this issue while preserving functional expertise?",
+o:["Eliminate functional departments entirely and replace them with project-based teams that dissolve after each product launch","Increase the number of organizational levels to create more management bandwidth for cross-functional coordination","Implement a matrix structure where employees maintain functional reporting lines while also reporting to project or product managers","Shift to a fully decentralized product-based structure where each product line has its own independent HR, finance, and operations"],
+c:2,e:"The matrix structure is specifically designed for the 'functional vs. project priority' tension. Employees retain functional expertise (vertical axis) while also contributing to cross-functional projects (horizontal axis). The trade-off: increased complexity and potential role ambiguity. Fully product-based (D) loses functional economies of scale. More levels (B) adds bureaucracy. Fully project-based (A) wastes accumulated functional knowledge.",
+qAr:"أي تغيير هيكلي يعالج هذه المشكلة بفاعلية مع الحفاظ على الخبرة الوظيفية؟",
+oAr:["إلغاء الأقسام الوظيفية تماماً واستبدالها بفرق قائمة على المشاريع","زيادة عدد المستويات التنظيمية لإنشاء مزيد من نطاقات الإدارة","تطبيق هيكل مصفوفي حيث يحتفظ الموظفون بتقارير وظيفية مع إضافة تقارير المشروع/المنتج","التحول لهيكل لامركزي كامل قائم على المنتج حيث يدير كل منتج موارده"],
+sAr:"شركة تكنولوجيا عالمية استخدمت هيكلاً وظيفياً 15 عاماً. مع النمو، أصبحت القرارات بطيئة والتنسيق بين الأقسام ضعيفاً."},
+
+{a:"Organizational Effectiveness & Development",t:"KI",d:"medium",
+q:"In the RACI responsibility assignment matrix, the 'Accountable' (A) role is specifically defined as:",
+o:["Those whose input and expertise are required to complete the task effectively","The person or persons who perform the primary work tasks associated with an activity","The individual who has ultimate decision-making authority and answers to management for the activity's outcome","Those who need to be kept informed of progress and outcomes without active involvement in the task"],
+c:2,e:"B = Accountable = the single person who is ultimately responsible to management for whether the activity succeeds. They approve work and allocate resources. Key rule: only ONE A per activity — multiple A designations eliminate accountability by diffusing it. R = does the work (can be multiple). A = provides input (bidirectional). I = receives updates only (unidirectional).",
+qAr:"في مصفوفة تعيين المسؤوليات RACI، يُعرَّف دور 'المُساءل' (Accountable) تحديداً بأنه:",
+oAr:["أولئك الذين تُطلب مدخلاتهم وخبرتهم لإكمال المهمة","الشخص أو الأشخاص الذين يؤدون مهام العمل الأساسية","الفرد الذي له سلطة القرار النهائية ويُساءل عن النتيجة (يجب أن يكون واحداً فقط)","أولئك الذين يجب إبقاؤهم على اطلاع بالتقدم دون مشاركة فعلية"]},
+
+{a:"Organizational Effectiveness & Development",t:"SJI",d:"hard",
+s:"An organization completes a RACI matrix for its annual performance review process. When the project manager reviews the matrix, she notices that three senior managers are each listed as 'Accountable' for the final rating approval step. When she raises this with the team, all three say 'of course I'm accountable — it's my employee.'",
+q:"What is the PRIMARY problem this creates, and how should it be resolved?",
+o:["Three A designations is acceptable for reviews involving cross-functional employees and reflects the collaborative nature of the organization","Multiple A designations eliminate clear ownership — when everyone is accountable, no one is. One person must be designated as the single A, with the others reclassified as Responsible or Consulted","The matrix has confused 'Responsible' with 'Accountable' — all three managers should be relabeled as 'Responsible' since they do the work of rating employees","The problem is purely process-based and can be resolved by having the three managers meet to discuss which ratings to approve collectively"],
+c:1,e:"The cardinal rule of RACI: exactly ONE Accountable per activity. When three people are A, there is no true accountability — each assumes the others will catch problems or make the final call. The resolution is to designate one manager as A (likely the direct manager or HR lead), reclassify the others as R (they do their own rating work) or B (they provide input), and establish a clear approval chain.",
+qAr:"ما المشكلة الأساسية التي يُنشئها هذا، وكيف تُحل؟",
+oAr:["ثلاثة تعيينات A مقبول للمراجعات متعددة الوظائف","تعيينات A المتعددة تُلغي الملكية الواضحة — عندما يكون الجميع مُساءلاً لا أحد كذلك؛ يجب تعيين مُساءل واحد","المصفوفة خلطت بين 'المسؤول' و'المُساءل' — جميع الثلاثة مسؤولون","المشكلة عملية بحتة وتُحل بجعل الثلاثة يتناوبون"],
+sAr:"منظمة تُكمل مصفوفة RACI لعملية مراجعة الأداء السنوية. ثلاثة مديرين حصلوا على تعيين 'A' (مُساءل) لنفس المهمة."},
+
+{a:"Organizational Effectiveness & Development",t:"KI",d:"medium",
+q:"During which stage of Tuckman's team development model is a team MOST at risk of 'groupthink'?",
+o:["Performing — when the team is focused on efficiency and may skip critical evaluation steps","Storming — when conflict is high and dissenting views are actively debated","Forming — when team members are overly polite and avoid expressing genuine opinions","Norming — when consensus, team cohesion, and conformity pressure can suppress individual dissent"],
+c:3,e:"Groupthink risk peaks during Norming. The team has worked through Storming conflict, built cohesion, and established shared norms — but this same cohesion can become a pressure to conform. Members self-censor to protect the group harmony they worked hard to achieve. Ironically, the team's strength (cohesion) becomes its vulnerability (intellectual conformity). Leaders must actively invite challenge and diverse perspectives during Norming.",
+qAr:"خلال أي مرحلة من نموذج Tuckman لتطوير الفريق يكون الفريق أكثر عرضة لـ 'التفكير الجماعي'؟",
+oAr:["الأداء — عندما يركّز الفريق على الكفاءة وقد يتخطى التفكير النقدي","العصف — عندما يكون الصراع عالياً والآراء المعارضة تُناقش بنشاط","التشكيل — عندما يكون الأعضاء مفرطي الأدب ويتجنبون التعبير عن آراء حقيقية","التنظيم — عندما يمكن للإجماع والتماسك وضغط المطابقة أن يقمع التفكير النقدي"]},
+
+{a:"Organizational Effectiveness & Development",t:"SJI",d:"medium",
+s:"A newly formed cross-functional project team is six weeks into its work. During meetings, team members are polite but rarely build on each other's ideas. One team member confides to the project manager: 'I have concerns about the timeline but I don't want to create conflict.' Two other members have stopped contributing actively. The project manager interprets this as 'good team dynamics' because meetings are 'smooth.'",
+q:"The project manager's interpretation is MOST likely incorrect because:",
+o:["Meeting smoothness is an unreliable indicator at any stage, so no conclusions about team health can be drawn","The absence of open debate and the self-censorship described are signs of the Forming stage — the team has not yet built the trust required for productive challenge, and the 'smoothness' masks unexpressed concerns","The team is likely in the Storming stage and the absence of conflict indicates it has already successfully moved to Norming","Teams that have smooth meetings are statistically less productive than teams with high conflict levels"],
+c:1,e:"The described behavior — politeness, withholding concerns, declining engagement — is characteristic of Forming, not a healthy Norming/Performing team. In Forming, members are exploring boundaries and avoiding risk. The 'smooth meetings' are diplomatic, not productive. A healthy high-performing team (Performing stage) has trust-based candor, not conflict avoidance. The project manager needs to create safety for challenge.",
+qAr:"تفسير مدير المشروع غير صحيح على الأرجح لأن:",
+oAr:["سلاسة الاجتماع مؤشر غير موثوق في أي مرحلة","غياب النقاش المفتوح والرقابة الذاتية الموصوفة علامات على التفكير الجماعي","الفريق على الأرجح في مرحلة العصف وغياب الصراع يشير لمشكلة","الفرق ذات الاجتماعات السلسة أقل إنتاجية إحصائياً"],
+sAr:"فريق مشروع متعدد الوظائف حديث التكوين، بعد 6 أسابيع. الاجتماعات سلسة جداً بدون صراع. يعتقد مدير المشروع أن الفريق يؤدي بشكل ممتاز."},
+
+{a:"Organizational Effectiveness & Development",t:"KI",d:"medium",
+q:"A 'remedial' OED intervention is distinguished from a 'proactive' intervention primarily because a remedial intervention:",
+o:["Targets specific, identifiable performance problems that are actively harming the organization","Is mandated by external regulatory requirements rather than initiated by organizational leadership","Involves bringing in external OED consultants rather than relying on internal HR capabilities","Focuses on long-term capability building rather than addressing immediate operational issues"],
+c:0,e:"Proactive interventions anticipate and prevent performance problems or prepare for future opportunities. Remedial interventions respond to existing, active performance problems — they return the organization to its intended trajectory. Remedial is easier to evaluate: 'Did the problem stop?' Proactive requires the harder counterfactual question: 'What would have happened without this intervention?'",
+qAr:"يتميّز تدخل OED 'العلاجي' عن التدخل 'الاستباقي' أساساً في أنه:",
+oAr:["يستهدف مشاكل أداء محددة وقابلة للتحديد تضر بنشاط بالمنظمة","يُفرض بمتطلبات تنظيمية خارجية بدلاً من المبادرة الداخلية","يشمل جلب مستشاري OED خارجيين بدلاً من الاعتماد على الداخليين","يركّز على بناء القدرات طويلة المدى بدلاً من معالجة المشاكل الفورية"]},
+
+{a:"Organizational Effectiveness & Development",t:"SJI",d:"hard",
+s:"An organization's strategic plan calls for a shift from a cost-leadership strategy to a differentiation strategy focused on innovation. After 18 months, innovation output metrics have not improved despite investing in new R&D processes and technology tools (both structural changes). HR focus groups reveal that managers still reward reliability over experimentation, employees fear negative consequences for failed projects, and the informal culture values conformity over creativity.",
+q:"The OED analysis of this situation MOST accurately concludes that:",
+o:["The 18-month timeline is too short to evaluate the success of a strategic transformation of this scale","The R&D technology tools selected were not appropriate for the organization's innovation goals","The structural changes (processes, technology) are necessary but insufficient — the failure is in the soft elements of organizational culture, management style","The structural investments were premature — the organization should have focused on talent acquisition before changing processes"],
+c:2,e:"This is McKinsey 7S applied to OED. The organization changed Hard elements (Systems = processes, technology) but left Soft elements unchanged (Style = managers reward reliability; Staff = employees fear failure; Shared Values = conformity over creativity). Innovation cannot be mandated through process design alone — it requires a psychological safety culture, leadership modeling of risk-taking, and recognition systems that reward experimentation. The investment was correct but incomplete.",
+qAr:"تحليل OED لهذا الوضع يستنتج بدقة أن:",
+oAr:["الجدول الزمني 18 شهراً قصير جداً لتقييم نجاح تحول استراتيجي","أدوات تكنولوجيا R&D المختارة كانت غير مناسبة","التغييرات الهيكلية (العمليات، التكنولوجيا) ضرورية لكن غير كافية — لم تُعالج الثقافة والقدرات والمكافآت","الاستثمارات الهيكلية كانت سابقة لأوانها"],
+sAr:"خطة المنظمة الاستراتيجية تدعو للتحول من استراتيجية قيادة التكلفة إلى التمايز. استثمرت في عمليات وتكنولوجيا R&D لكن بعد 18 شهراً لم يتغير الابتكار."},
+
+{a:"Organizational Effectiveness & Development",t:"KI",d:"medium",
+q:"Performance gap analysis examines organizational performance deficiencies across four dimensions. Which dimension specifically addresses the mismatch between current organizational culture and the culture required to achieve strategic objectives?",
+o:["Organizational Culture Requirements — the values, norms, and behaviors that the strategy requires but that don't currently exist","Knowledge and Skills Gaps — the absence of required competencies in the current workforce","Technology Requirements — insufficient digital tools to support desired performance","Process Requirements — workflows that have drifted from optimal effectiveness"],
+c:0,e:"The four performance gap dimensions: (1) Knowledge/Skills — competency gaps addressed by L&D; (2) Technology — tool gaps addressed by systems investment; (3) Process — workflow gaps addressed by process redesign; (4) Organizational Culture — the gap between current and required cultural DNA. Culture change is the longest and most complex to close: diagnose current culture → define target culture → identify gaps → design culture change initiatives.",
+qAr:"يفحص تحليل فجوة الأداء أوجه القصور التنظيمي عبر أربعة أبعاد. أي مما يلي ليس أحد هذه الأبعاد الأربعة؟",
+oAr:["متطلبات الثقافة التنظيمية — القيم والأعراف والسلوكيات (هذا ليس من الأبعاد الأربعة القياسية)","فجوات المعرفة والمهارات — غياب الكفاءات المطلوبة في القوى العاملة","متطلبات التكنولوجيا — أدوات رقمية غير كافية لدعم الأداء المرغوب","متطلبات العملية — سير عمل انحرف عن الفاعلية المثلى"]},
+
+{a:"Organizational Effectiveness & Development",t:"SJI",d:"hard",
+s:"A healthcare network is integrating three recently acquired hospitals. HR has been given 12 months to complete organizational integration. Initial assessment reveals: (1) All three hospitals use different performance management systems with incompatible rating scales. (2) Compensation grades overlap but don't align. (3) Two hospitals have unions with active collective agreements. (4) Patient satisfaction scores have declined 11% since the merger announcement.",
+q:"What is the MOST strategically sequenced HR integration approach?",
+o:["Conduct a comprehensive HR due diligence assessment to map risks, priorities, and interdependencies — then sequence integration activities starting with items that affect patient care and employee experience most directly","Immediately standardize all HR systems and compensation grades to create consistency across the network","Begin with patient-facing initiatives that directly address the satisfaction score decline before addressing internal HR integration","Focus exclusively on union negotiations before addressing any non-union HR integration activities"],
+c:0,e:"Post-merger HR integration requires diagnosis before action. Without a due diligence map, 'standardizing everything immediately' may violate union agreements (triggering grievances), create compensation inequities that deepen the engagement crisis, or disrupt patient-care-critical HR processes. Patient satisfaction decline is a business risk but its HR root cause must be identified first. Sequencing should prioritize patient care and employee experience, then systems. Option A risks legal issues with unions. Option B treats symptom not cause. Option D ignores the 89% non-union majority.",
+qAr:"ما النهج الأكثر تسلسلاً استراتيجياً لاندماج HR؟",
+oAr:["إجراء تقييم شامل للعناية الواجبة لـ HR لرسم المخاطر والأولويات قبل التنفيذ","توحيد جميع أنظمة HR ودرجات التعويض فوراً لخلق الاتساق","البدء بمبادرات مواجهة المرضى التي تعالج مباشرة مخاوف الرضا","التركيز حصرياً على مفاوضات النقابات قبل معالجة أي قضايا غير نقابية"],
+sAr:"شبكة رعاية صحية تدمج ثلاثة مستشفيات مُستحوذة حديثاً. أُعطيت HR 12 شهراً للاندماج."},
+
+{a:"Organizational Effectiveness & Development",t:"KI",d:"medium",
+q:"The 'geographic structure' in organizational design is MOST advantageous for organizations that need to:",
+o:["Maximize functional expertise by pooling specialists in centralized centers of excellence","Reduce duplication of resources by sharing administrative and support functions across all operations","Build product-specific teams with deep knowledge across the full product development lifecycle","Adapt quickly to local market conditions, regulatory environments, and customer preferences in each operating region"],
+c:3,e:"Geographic structure clusters operations by location — each region has its own operational team adapted to local needs. Its primary advantage is local responsiveness: knowing the market, complying with local law, serving customers in culturally appropriate ways. Its disadvantage is that it sacrifices functional economies of scale (each region duplicates resources). Best for: multinational consumer goods, banking, healthcare, retail with significant regional variation.",
+qAr:"'الهيكل الجغرافي' في التصميم التنظيمي الأكثر فائدة للمنظمات التي:",
+oAr:["تُعظّم الخبرة الوظيفية بتجميع المتخصصين في مراكز مركزية","تُقلل ازدواجية الموارد بمشاركة الدعم الإداري","تبني فرقاً خاصة بالمنتج بمعرفة عميقة عبر خط المنتجات","تتكيّف بسرعة مع ظروف السوق المحلية والبيئات التنظيمية والثقافية"]},
+
+{a:"Organizational Effectiveness & Development",t:"SJI",d:"medium",
+s:"An organization is deploying a new knowledge management (KM) system. Six months after launch, HR analytics show: system login rate is 23% of eligible employees, average session duration is 4 minutes, and the 'submit knowledge' function has been used by only 8% of users. A manager says: 'People don't see the point of contributing — they just search for what they need and leave.'",
+q:"The data pattern MOST suggests which fundamental KM system design failure?",
+o:["The system was launched before sufficient content existed to demonstrate its value to potential contributors","The 6-month window is too short to evaluate adoption of organizational knowledge management tools","The organization failed to address the reciprocity challenge: users benefit from consuming knowledge but face no incentive or expectation to contribute, creating an unsustainable imbalance","The system interface is too complex — a UX redesign will significantly increase engagement and contribution rates"],
+c:2,e:"KM systems fail when they become extraction utilities rather than exchange communities. If consuming knowledge is frictionless but contributing is effortful and optional, only 8% will contribute — exactly what's observed. The reciprocity principle requires that users who benefit from the system be expected (and recognized) to contribute. Solutions: mandate contribution as part of project closure, recognize contributors publicly, make contribution easy, and create cultural norms around knowledge sharing.",
+qAr:"يشير نمط البيانات أكثر ما يكون لأي فشل أساسي في تصميم نظام KM؟",
+oAr:["أُطلق النظام قبل وجود محتوى كافٍ","نافذة 6 أشهر قصيرة جداً لتقييم التبني","المنظمة فشلت في معالجة تحدي المعاملة بالمثل: المستخدمون يستفيدون من معرفة الآخرين لكن لا يُكافأون على المساهمة بمعرفتهم","واجهة النظام معقدة جداً — إعادة تصميم UX ستُحسّن بشكل كبير"],
+sAr:"منظمة تنشر نظام إدارة معرفة (KM) جديد. بعد 6 أشهر من الإطلاق، HR تلاحظ استخداماً منخفضاً جداً."},
+
+{a:"Organizational Effectiveness & Development",t:"KI",d:"hard",
+q:"In Benne and Sheats' group roles taxonomy, 'dysfunctional roles' are most accurately described as roles that:",
+o:["Are structurally incompatible with the matrix reporting relationships found in cross-functional teams","Represent necessary team maintenance functions that are sometimes misinterpreted as negative by task-focused leaders","Serve individual members' personal agendas at the expense of the group's collective effectiveness and cohesion","Are assigned to team members who lack the technical skills to contribute meaningfully to task completion"],
+c:2,e:"Benne and Sheats identified three role categories: Task roles (help accomplish the work), Social/Maintenance roles (sustain group relationships), and Dysfunctional/Individual roles (serve personal needs at group expense — blocking, dominating, withdrawing, attacking). Dysfunctional roles undermine the team and must be addressed — either through private coaching, team norms, or structural interventions. They are not fixed traits but situational behaviors that can change.",
+qAr:"في تصنيف Benne و Sheats لأدوار المجموعة، تُوصف 'الأدوار المختلة' بدقة بأنها أدوار:",
+oAr:["غير متوافقة هيكلياً مع علاقات تقارير المصفوفة","تمثّل وظائف صيانة فريق ضرورية تُساء أحياناً تفسيرها","تخدم أجندات الأعضاء الشخصية على حساب أهداف المجموعة","تُعيَّن لأعضاء الفريق الذين يفتقرون للمهارات التقنية للمساهمة"]},
+
+{a:"Organizational Effectiveness & Development",t:"SJI",d:"hard",
+s:"During a project post-mortem, team members report: one member consistently dismissed others' ideas as 'impractical,' another habitually redirected discussions back to his area of expertise regardless of relevance, and a third frequently missed deadlines while blaming technology issues. The project delivered 3 weeks late and 15% over budget.",
+q:"These behaviors MOST directly map to which category in Benne and Sheats' group roles framework, and what is the appropriate organizational response?",
+o:["Dysfunctional roles serving individual agendas — these behaviors should be addressed through coaching and clear behavioral expectations, not just skills training","Leadership style misalignment — the project manager failed to adapt their style to the team's developmental stage","Social/maintenance roles that failed to build cohesion — the team needs team-building activities before the next project","Task roles that were inefficiently executed — the team needs clearer project management training"],
+c:0,e:"Dismissing ideas (blocking), redirecting to personal expertise (dominating/self-serving), and chronic deflection of accountability (avoiding) are textbook dysfunctional individual roles. They are not skill gaps or process failures — they are behavioral choices that prioritize individual comfort over group effectiveness. The response must address the behavior explicitly through coaching, behavioral expectations, and team norms — not team-building or skills training which don't target the underlying dynamic.",
+qAr:"تُطابق هذه السلوكيات بشكل مباشر أي فئة في إطار Benne و Sheats؟",
+oAr:["أدوار مختلة تخدم أجندات فردية — يجب معالجة هذه السلوكيات","عدم توافق أسلوب القيادة","أدوار اجتماعية/صيانة فشلت في بناء التماسك","أدوار مهام نُفّذت بكفاءة منخفضة"],
+sAr:"خلال تشريح مشروع، يُبلّغ أعضاء الفريق: عضو رفض باستمرار أفكار الآخرين، وآخر سيطر على المحادثة لتعزيز صورته."},
+
+{a:"Organizational Effectiveness & Development",t:"KI",d:"medium",
+q:"Succession planning and replacement planning address the same organizational risk through fundamentally different mechanisms. The key distinguishing feature of succession planning is:",
+o:["It focuses exclusively on C-suite positions while replacement planning covers all organizational levels","It identifies and develops high-potential employees over a 12-36 month horizon rather than naming ready-now replacements","It is conducted entirely by HR without involvement from line managers or the executive team","It guarantees specific individuals will be promoted to specific roles when they become vacant"],
+c:1,e:"Succession planning (12-36 months): talent pools, developmental assignments, multi-rater assessment, building bench depth. Replacement planning (0-12 months): specific individuals for specific roles right now. The horizon and commitment level differ: succession is probabilistic development, replacement is contingency planning. Common mistake: treating them as identical. You need both — replacement for operational continuity, succession for strategic capability.",
+qAr:"يعالج تخطيط التعاقب وتخطيط الإحلال نفس المخاطر التنظيمية بطرق مختلفة جوهرياً. تخطيط التعاقب:",
+oAr:["يركّز حصرياً على مناصب القيادة العليا بينما الإحلال يغطي الجميع","يُحدد ويُطوّر الموظفين عالي الإمكانية على أفق 12-36 شهراً (بينما الإحلال يحدد بدائل فورية لأدوار محددة)","يُجرى كلياً بواسطة HR دون مشاركة مديري الخط","يضمن ترقية أفراد محددين لأدوار محددة"]},
+
+{a:"Organizational Effectiveness & Development",t:"SJI",d:"medium",
+s:"An organization's annual talent review uses the 9-Box Grid. An HR business partner reviews her division and finds that Box 9 contains 4 employees (low performance, low potential) — all in the same team reporting to the same manager. The HRBP notes that the same manager rated employees in his prior division 6 years ago, and Box 9 was empty.",
+q:"What conclusion should the HRBP draw from this pattern, and what action is MOST appropriate?",
+o:["The current team has genuine performance and potential deficits that require a comprehensive training program","The concentration of low ratings in one team indicates a structural problem that should be escalated immediately to the CEO","Box 9 concentrations are statistically normal in mature organizations and should not trigger disproportionate HR attention","The pattern suggests a possible rating bias issue — the manager may have become more critical over time or may have a pattern of underrating employees."],
+c:3,e:"When an unusual pattern (all Box 9s in one team, one manager) appears in performance data, the first HR response is diagnostic, not prescriptive. The contrast with the same manager's prior team is the critical signal. This warrants investigating rating validity: Does behavioral evidence support these ratings? Are calibration standards being applied? Is there manager bias? Acting on potentially invalid ratings harms employees and undermines the succession process built on 9-Box data.",
+qAr:"ما الاستنتاج الذي يجب أن تستخلصه HRBP، وما الإجراء الأنسب؟",
+oAr:["الفريق الحالي لديه عجز حقيقي في الأداء والإمكانية يتطلب تدخلاً","تركّز التقييمات المنخفضة في فريق واحد يشير لمشكلة هيكلية","تركّزات الصندوق 9 طبيعية إحصائياً","النمط يشير لاحتمال تحيز في التقييم — قد يكون المدير صنّف بقسوة؛ يجب استكشاف معايير المدير"],
+sAr:"مراجعة المواهب السنوية تستخدم شبكة 9-Box. شريكة أعمال HR تراجع فريقها: تركّز معظم تقييمات فريق واحد في الصناديق المنخفضة بينما الفرق الأخرى موزعة طبيعياً."},
+
+// ══════════════════════════════════════════
+// SECTION 3: WORKFORCE MANAGEMENT (26 q)
+// ══════════════════════════════════════════
+{a:"Workforce Management",t:"KI",d:"medium",
+q:"The 'demand analysis' step in workforce planning most directly answers which organizational question?",
+o:["What solutions — internal development or external hiring — should close identified gaps?","What is the gap between current capabilities and future requirements?","What workforce capabilities, composition, and headcount will the organization need to execute its strategy in the future?","What workforce capabilities and headcount does the organization currently have available?"],
+c:2,e:"Workforce planning has six stages: (1) Strategic focus — direction setting, (2) Supply analysis — current state inventory, (3) Demand analysis — FUTURE state requirements, (4) Gap analysis — supply vs. demand delta, (5) Solution analysis — Build/Buy/Borrow, (6) Evaluation. Demand analysis answers 'what will we need?' not 'what do we have?' The distinction between supply (stage 2) and demand (stage 3) is a common exam trap.",
+qAr:"خطوة 'تحليل الطلب' في تخطيط القوى العاملة تُجيب مباشرة على أي سؤال تنظيمي؟",
+oAr:["ما الحلول — التطوير الداخلي أو التوظيف الخارجي — التي يجب أن تسد الفجوة؟","ما الفجوة بين القدرات الحالية والمتطلبات المستقبلية؟","ما القدرات والتكوين وعدد الموظفين الذي ستحتاجه المنظمة لتحقيق أهدافها المستقبلية؟","ما القدرات وعدد الموظفين الذي تملكه المنظمة حالياً؟"]},
+
+{a:"Workforce Management",t:"SJI",d:"hard",
+s:"An insurance company's workforce planning reveals: (1) Data science is a critical future capability — needed in 3 years. (2) There are zero qualified data scientists internally. (3) External market for data scientists is extremely competitive — 18-month average time-to-fill. (4) Budget is constrained for the next 2 years due to a technology upgrade.",
+q:"Which workforce strategy BEST balances the capability timeline, budget constraint, and market competition?",
+o:["Commission a compensation benchmarking study to determine the premium needed to win in the competitive data science market before taking any talent acquisition steps","Delay the data science investment until the budget constraint lifts, then use premium salaries to acquire talent quickly","Design a portfolio approach: launch an internal reskilling program for high-aptitude employees now (24-36 months to produce results), while using low-cost contractor arrangements for near-term needs","Focus exclusively on internal reskilling — identify employees with analytical aptitudes and develop them into data scientists over 3 years"],
+c:2,e:"Critical capability gaps with long lead times require portfolio strategies. No single approach works: delay (B) creates an execution crisis at the 3-year mark; internal-only (D) may not produce enough capacity at sufficient quality; benchmarking-first (A) delays action without building any capability. The portfolio approach hedges: internal development builds sustainable capability at lower cost; contractors fill immediate needs; employer branding builds future market position. This is the Build + Borrow + Buy sequenced approach.",
+qAr:"أي استراتيجية قوى عاملة توازن بين الجدول الزمني للقدرة وقيود الميزانية وتنافسية السوق؟",
+oAr:["تكليف دراسة معيارية للتعويضات لتحديد العلاوة المطلوبة","تأجيل استثمار علوم البيانات حتى ترتفع قيود الميزانية","تصميم نهج محفظة: إطلاق برنامج إعادة مهارات داخلي للأدوار عالية الإمكانية مع توظيف خارجي مستهدف للقدرات الفورية","التركيز حصرياً على إعادة المهارات الداخلية — تحديد الموظفين ذوي الخلفية التحليلية"],
+sAr:"تخطيط القوى العاملة لشركة تأمين يكشف: (1) علوم البيانات قدرة مستقبلية حاسمة، (2) قيود ميزانية، (3) سوق تنافسي للمواهب."},
+
+{a:"Workforce Management",t:"KI",d:"medium",
+q:"The 'Build' strategy in workforce planning refers to which talent approach?",
+o:["Contracting with external specialists to access capabilities without adding permanent headcount","Hiring ready-skilled employees directly from the external talent market to fill identified gaps","Developing the needed capabilities internally through training, rotational assignments, and career development","Acquiring organizations or teams through mergers and acquisitions to obtain needed capabilities"],
+c:2,e:"The four workforce strategies: Build = develop internally (training, assignments, succession). Buy = hire from external market. Borrow = contract, lease, outsource (temporary access without permanent commitment). Bridge = temporary solutions while long-term strategies mature. Build is typically slowest but most cost-effective and culture-aligned for long-term capability. Buy is fastest but most expensive and carries integration risk. The optimal choice depends on timeline, budget, and strategic importance.",
+qAr:"استراتيجية 'البناء' (Build) في تخطيط القوى العاملة تشير لأي نهج للمواهب؟",
+oAr:["التعاقد مع متخصصين خارجيين للوصول للقدرات دون إضافة عدد موظفين","توظيف موظفين جاهزي المهارات مباشرة من السوق الخارجي","تطوير القدرات المطلوبة داخلياً من خلال التدريب والتناوب","الاستحواذ على منظمات أو فرق من خلال عمليات الاندماج للحصول على المواهب"]},
+
+{a:"Workforce Management",t:"SJI",d:"hard",
+s:"A consumer products company is acquiring a 2,200-employee food manufacturer. The HR team has been given 45 days to complete HR due diligence before the deal closes. The deal team identifies this as a 'straightforward bolt-on acquisition' with no planned workforce reductions.",
+q:"Which HR due diligence elements should receive HIGHEST priority in the 45-day window?",
+o:["Benchmark the target company's compensation against market data to identify equity adjustment needs","Conduct employee engagement surveys to identify cultural integration risks before the close","Review total compensation obligations, union contract terms and expiration dates, pending employment litigation","Assess HR technology compatibility to plan the HRIS integration roadmap for the post-close period"],
+c:2,e:"Pre-close due diligence must identify items that affect deal VALUE and create legal/financial liability: hidden compensation liabilities, union contracts limiting integration flexibility (especially terms and expiration), pending litigation risk, unfunded pension obligations, and key talent retention risk. These affect whether the deal makes financial sense and at what price. Engagement surveys (B), comp benchmarking (A), and IT assessment (D) are post-close integration activities — important but not valuation-critical.",
+qAr:"أي عناصر عناية HR الواجبة يجب أن تحصل على أعلى أولوية في نافذة الـ 45 يوماً؟",
+oAr:["مقارنة تعويض الشركة المستهدفة ببيانات السوق","إجراء استبيانات انخراط الموظفين لتحديد مخاطر الاندماج الثقافي","مراجعة التزامات التعويض الكلية وشروط عقود النقابات وتواريخ انتهائها والالتزامات القانونية","تقييم توافق تكنولوجيا HR لتخطيط دمج HRIS"],
+sAr:"شركة منتجات استهلاكية تستحوذ على مصنّع أغذية بـ 2,200 موظف. أُعطي فريق HR 45 يوماً للعناية الواجبة."},
+
+{a:"Workforce Management",t:"KI",d:"medium",
+q:"Workforce furloughs are MOST accurately described as:",
+o:["Voluntary early retirement incentive programs offered to senior employees approaching retirement age","Permanent involuntary separations triggered by organizational restructuring or economic downturns","Temporary mandatory leave periods, typically unpaid or partially paid, used to reduce labor costs while preserving the employment relationship","Performance-based separations that follow a documented progressive discipline process"],
+c:2,e:"Furloughs = temporary, mandatory, unpaid or reduced-pay leave. Key distinction from RIF (Reduction in Force): the employment relationship is preserved — employees return when conditions improve. Used as an alternative to permanent layoffs when revenue disruption is expected to be temporary. HR must be careful: furlough terms, benefits continuation during furlough, and recall rights must be clearly communicated and legally reviewed in each jurisdiction.",
+qAr:"تُوصف إجازات القوى العاملة الإجبارية (Furloughs) بدقة بأنها:",
+oAr:["برامج تقاعد مبكر طوعية تُقدّم للموظفين الكبار","فصل دائم غير طوعي ناتج عن إعادة هيكلة تنظيمية","فترات إجازة إلزامية مؤقتة، عادةً غير مدفوعة أو مدفوعة جزئياً، تُستخدم لتقليل تكاليف العمالة مع الاحتفاظ بالموظفين","فصل قائم على الأداء يتبع تأديباً تدريجياً موثقاً"]},
+
+{a:"Workforce Management",t:"SJI",d:"medium",
+s:"Following a 20% workforce reduction, a company's HR director observes in the remaining workforce: elevated sick leave usage (up 34%), a decline in innovation metrics, and multiple unsolicited comments from employees such as 'I just keep my head down and do my job now' and 'I'm not going to volunteer for anything — look what happened to the people who worked hardest.'",
+q:"These behaviors MOST likely represent:",
+o:["Inadequate technical skills revealed by the departure of key mentors and subject-matter experts","Insufficient communication from leadership about the reasons for the workforce reduction","Normal operational adjustment that will resolve naturally within 3-6 months as workloads redistribute","Survivor syndrome — a cluster of psychological responses in employees who remain after layoffs, including guilt, anxiety, reduced risk-taking, and withdrawal of discretionary effort"],
+c:3,e:"Survivor syndrome is a documented post-RIF phenomenon. Remaining employees experience: guilt (why did I keep my job?), fear (am I next?), grief (for departed colleagues), distrust (of management's commitments), and behavioral withdrawal. The 'keep my head down' pattern is classic risk avoidance. HR's post-RIF role: transparent communication about the future, visible leadership engagement, meaningful recognition, and gradual restoration of psychological safety — not just operational stabilization.",
+qAr:"تمثّل هذه السلوكيات على الأرجح:",
+oAr:["مهارات تقنية غير كافية كشفها رحيل الموجّهين الرئيسيين","تواصل غير كافٍ من القيادة حول أسباب التقليص","تكيف تشغيلي طبيعي سيُحل تلقائياً خلال 3-6 أشهر","متلازمة الناجين — مجموعة استجابات نفسية لدى الموظفين الباقين بعد التسريح"],
+sAr:"بعد تقليص القوى العاملة بنسبة 20%، يلاحظ مدير HR في القوى المتبقية: انخفاض الإنتاجية والقلق وفقدان الولاء."},
+
+{a:"Workforce Management",t:"KI",d:"medium",
+q:"When conducting HR due diligence for a merger, reviewing 'unfunded pension liabilities' is critically important because:",
+o:["Pension plans must be converted to defined contribution plans within 12 months of a merger closing","Employees must be immediately notified of any changes to retirement benefits upon deal announcement","Unfunded liabilities may represent significant hidden financial obligations that affect the acquisition price and post-merger balance sheet","Pension plan integration requires at least 24 months and must begin immediately after deal signing"],
+c:2,e:"Unfunded pension liability = the gap between what the pension plan has in assets and what it owes in future benefits. In acquisitions of companies with traditional defined benefit plans, this gap can be enormous and may not be visible on the surface financial statements. The acquirer inherits this liability. HR's role is to identify the magnitude during due diligence so the deal team can properly value the acquisition and negotiate price accordingly.",
+qAr:"عند إجراء العناية الواجبة لـ HR لاندماج، مراجعة 'التزامات المعاشات غير المموّلة' حاسمة لأن:",
+oAr:["يجب تحويل خطط المعاشات لخطط مساهمة محددة خلال 12 شهراً","يجب إخطار الموظفين فوراً بأي تغييرات في مزايا التقاعد","الالتزامات غير المموّلة قد تمثّل التزامات مالية خفية كبيرة تنتقل للمُستحوِذ","دمج خطة المعاشات يتطلب 24 شهراً على الأقل"]},
+
+{a:"Workforce Management",t:"SJI",d:"hard",
+s:"A technology company's talent review shows: the VP of Engineering role is occupied by a high performer who has indicated plans to retire in 18 months. The 9-Box analysis identifies one internal Box 1 candidate (high performance, high potential) in the engineering division, and two Box 2 candidates (high performance, high potential-in-development). The CEO wants a succession plan for the role.",
+q:"A strategically sound succession plan for this role would include:",
+o:["Promote the Box 1 candidate immediately to associate VP to accelerate readiness before the retirement date","Extend the current VP's tenure by offering a retention bonus that delays retirement by 12 months","Hire an external replacement now to eliminate succession risk, since 18 months may not be enough time to develop internal candidates","Create a development plan for the Box 1 candidate with specific stretch assignments, executive mentoring, and targeted competency assessments tied to the VP role requirements —"],
+c:3,e:"Succession planning best practice: develop identified successors through deliberate assignments and assessment rather than premature promotion or external hiring. The Box 1 candidate needs role-specific development: what VP competencies does she have? What gaps exist? Stretch assignments, executive exposure, and 360-degree assessment create readiness evidence. Option A (immediate promotion) is premature. Option C (external hire) abandons the internal pipeline and sends a negative retention signal. Option B (retention bonus) merely delays the problem.",
+qAr:"خطة تعاقب سليمة استراتيجياً لهذا الدور تشمل:",
+oAr:["ترقية مرشح الصندوق 1 فوراً لمنصب نائب رئيس مساعد","تمديد فترة نائب الرئيس الحالي بمنح مكافأة احتفاظ","توظيف بديل خارجي الآن للقضاء على مخاطر التعاقب","إنشاء خطة تطوير لمرشح الصندوق 1 بمهام تمدّد محددة لسد فجوات الجاهزية خلال نافذة الـ 18 شهراً"],
+sAr:"مراجعة المواهب لشركة تكنولوجيا تُظهر: دور نائب رئيس الهندسة يشغله أداء عالٍ يخطط للتقاعد خلال 18 شهراً. هناك مرشح في الصندوق 1."},
+
+{a:"Workforce Management",t:"KI",d:"medium",
+q:"The primary organizational purpose of a formal Knowledge Management (KM) system is to:",
+o:["Ensure that critical organizational knowledge is captured, organized, and accessible — preserving performance capacity as the workforce changes","Automate the transfer of tacit knowledge between experienced employees and new hires through AI-assisted learning","Comply with regulatory requirements for documentation of key organizational processes and decisions","Replace informal mentoring relationships with structured digital knowledge transfer protocols"],
+c:0,e:"KM's core purpose is organizational resilience through knowledge preservation and accessibility. Without it, critical knowledge walks out the door when people leave — whether through retirement, turnover, or M&B. A formal system: inventories knowledge assets, creates searchable repositories, encourages contribution, and maintains currency. This protects the organization during any talent transition. The other options describe either AI capabilities, regulatory compliance, or mentoring — all different functions.",
+qAr:"الغرض التنظيمي الأساسي لنظام إدارة المعرفة (KM) الرسمي هو:",
+oAr:["ضمان التقاط المعرفة التنظيمية الحرجة وتنظيمها وإتاحتها للوصول","أتمتة نقل المعرفة الضمنية بين الموظفين ذوي الخبرة والجدد","الامتثال للمتطلبات التنظيمية لتوثيق المعرفة التنظيمية الرئيسية","استبدال علاقات الإرشاد غير الرسمية بمستودعات معرفة رقمية منظمة"]},
+
+{a:"Workforce Management",t:"SJI",d:"medium",
+s:"An HR manager is planning the workforce impact of the company's decision to automate its customer service function over 24 months. The automation will affect 240 customer service representatives. Analysis shows: 85 have adjacent skills suitable for retraining into data quality roles (new positions created by the automation). 90 have general administrative skills. 65 have specialized legacy system skills that will have no future application.",
+q:"The MOST strategically balanced workforce transition plan prioritizes:",
+o:["Immediate RIF for all 240 employees to allow clean organizational restructuring before the automation deployment","Negotiate voluntary separation packages for all affected employees and rehire the best performers after the automation is fully deployed","Reskilling all 240 employees into data quality roles regardless of aptitude assessment, to avoid any involuntary separations","Develop detailed reskilling plans for the 85 aptitude-matched employees (Build), explore redeployment or upskilling options for the 90 administrative employees (Build/Bridge)"],
+c:3,e:"Workforce transition planning requires segmentation by future viability of each employee's skills. The three groups require different strategies: the 85 matched employees are a Build opportunity — invest in reskilling them into new roles. The 90 general skills employees need assessment — some may be redeployed, others may need Bridge support. The 65 legacy-only employees face the most difficult reality — HR's obligation is to provide dignified, generous transition support. A blanket RIF (A) wastes reskillable talent. Forced reskilling of all 240 (C) ignores aptitude reality. Option D creates unnecessary churn.",
+qAr:"خطة الانتقال الأكثر توازناً استراتيجياً للقوى العاملة تُعطي الأولوية لـ:",
+oAr:["تسريح فوري لجميع الـ 240 موظفاً لإعادة هيكلة نظيفة","التفاوض على حزم فصل طوعية لجميع المتأثرين","إعادة مهارات جميع الـ 240 موظفاً لأدوار جودة البيانات بصرف النظر عن الاستعداد","تطوير خطط إعادة مهارات مفصّلة للـ 85 موظفاً المتطابقين مع الاستعداد مع حزم انتقال عادلة للآخرين"],
+sAr:"مدير HR يخطط لتأثير القوى العاملة لقرار الشركة بأتمتة خدمة العملاء. 240 موظفاً متأثرون، 85 منهم لديهم استعداد لأدوار جودة البيانات."},
+
+{a:"Workforce Management",t:"KI",d:"medium",
+q:"Strategic workforce planning's 'gap analysis' step is best characterized as:",
+o:["The comparison between projected future workforce requirements (demand) and the projected available workforce (supply) to identify surpluses and deficits","A competitive analysis of talent market conditions to determine whether internal or external hiring strategies are more viable","An assessment of the financial investment required to close each identified workforce capability deficiency","A comprehensive audit of current employees' skills and performance ratings to identify development needs"],
+c:0,e:"Gap analysis = Demand (what you'll need) minus Supply (what you'll have). The result: specific capability deficits (not enough of something) or surpluses (too much of something becoming obsolete). This is the pivot point of workforce planning — without an accurate gap, solution analysis is shooting in the dark. The gap drives Build/Buy/Borrow decisions and identifies where the organization is most strategically vulnerable.",
+qAr:"خطوة 'تحليل الفجوة' في التخطيط الاستراتيجي للقوى العاملة تُوصف بدقة بأنها:",
+oAr:["المقارنة بين متطلبات القوى العاملة المستقبلية المتوقعة (الطلب) والتوريد المتوقع المتاح","تحليل تنافسي لظروف سوق المواهب","تقييم الاستثمار المالي المطلوب لسد كل فجوة","تدقيق شامل لمهارات الموظفين الحاليين وتقييمات الأداء"]},
+
+// ══════════════════════════════════════════
+// SECTION 4: EMPLOYEE & LABOR RELATIONS (26 q)
+// ══════════════════════════════════════════
+{a:"Employee & Labor Relations",t:"KI",d:"medium",
+q:"ILO Convention 87 on Freedom of Association specifically prohibits which type of action by public authorities?",
+o:["Mandating that union membership be a prerequisite for employment in specific industry sectors","Interference with the establishment, operation, or administration of workers' and employers' organizations","Restricting collective bargaining to wage-related issues and excluding other terms and conditions of employment","Requiring employers to recognize union certifications that have not been validated through government-supervised elections"],
+c:1,e:"ILO Convention 87 (Freedom of Association) guarantees workers' right to form and join organizations of their own choosing WITHOUT prior authorization. It prohibits public authority interference with how organizations are established, operated, or run. This is distinct from Convention 98 (Collective Bargaining) which addresses the employer-union negotiation process. Freedom of Association is the foundational right that enables all other collective labor rights.",
+qAr:"اتفاقية ILO رقم 87 حول حرية تكوين الجمعيات تحظر تحديداً أي نوع من الإجراءات من السلطات العامة؟",
+oAr:["إلزام أن تكون عضوية النقابة شرطاً مسبقاً للتوظيف","التدخل في إنشاء أو تشغيل أو إدارة منظمات العمال","تقييد المفاوضة الجماعية بقضايا الأجور واستبعاد أخرى","إلزام أصحاب العمل بالاعتراف بشهادات النقابات غير المُصدَّقة"]},
+
+{a:"Employee & Labor Relations",t:"SJI",d:"hard",
+s:"An HR manager at a multinational's factory in Cambodia receives a complaint from a supervisor that 15 production workers have begun meeting informally after shifts to discuss working conditions. The factory director says: 'We need to stop this before they form a union — terminate the three organizers and the others will stop.' The HR manager knows Cambodia is an ILO member and has ratified Freedom of Association conventions.",
+q:"The HR manager's MOST appropriate response is to:",
+o:["Implement the factory director's request but document it as a performance-based separation to create legal cover","Schedule individual meetings with the 15 workers to determine their concerns and offer solutions before they formally organize","Notify corporate HR so they can obtain legal advice on the legality of union suppression in Cambodia specifically","Advise the factory director that the workers' meeting activity is protected under ILO Convention 87 — terminating workers for organizing activity is illegal and exposes the company to significant legal and reputational risk"],
+c:3,e:"This tests ILO knowledge applied to an ethical dilemma. Convention 87 protects workers' right to associate and organize. Terminating workers for organizing is: (1) illegal in ILO member states, (2) a violation of the organization's ethical obligations even where law is weaker, and (3) a major reputational risk. The HR manager's role is to give honest legal and ethical counsel to the director — not to implement an illegal instruction. Meeting workers' concerns (B) may be wise but doesn't address the immediate illegal directive.",
+qAr:"الاستجابة الأنسب من مدير HR هي:",
+oAr:["تطبيق طلب مدير المصنع لكن توثيقه كأداء","جدولة اجتماعات فردية مع الـ 15 عاملاً لتحديد مخاوفهم","إخطار HR المؤسسي للحصول على استشارة قانونية","نصح مدير المصنع بأن نشاط اجتماع العمال محمي بموجب اتفاقية ILO 87 وأن الفصل سينتهك حرية تكوين الجمعيات"],
+sAr:"مدير HR في مصنع متعدد الجنسيات في كمبوديا يتلقى شكوى من مشرف بأن 15 عاملاً يجتمعون لمناقشة تكوين نقابة. يطلب مدير المصنع فصلهم."},
+
+{a:"Employee & Labor Relations",t:"KI",d:"medium",
+q:"Progressive discipline applies B.F. Skinner's operant conditioning theory primarily through which mechanism?",
+o:["Negative punishment — removing valued privileges or opportunities as a consequence of unacceptable behavior","Positive reinforcement — providing rewards to employees who demonstrate improved behavior after disciplinary conversations","Extinction — systematically ignoring problematic behavior until it naturally decreases in frequency","Continuous reinforcement — providing immediate feedback after every behavioral instance to accelerate learning"],
+c:0,e:"Progressive discipline uses BOTH positive punishment (adding a burden — attend counseling, complete a PIP) AND negative punishment (removing something valued — suspend without pay, withhold promotion). Extinction (ignoring) is theoretically possible but is dangerous in a workplace context: ignored misconduct creates legal liability and signals that behavior is tolerated. Positive reinforcement applies to desired behavior, not discipline for problematic behavior.",
+qAr:"يُطبّق التأديب التدريجي نظرية الاشتراط الإجرائي لـ B.F. Skinner أساساً من خلال أي آلية؟",
+oAr:["العقاب السلبي — إزالة الامتيازات أو الفرص القيّمة كنتيجة","التعزيز الإيجابي — تقديم مكافآت للموظفين الذين يُظهرون سلوكاً جيداً","الانطفاء — تجاهل السلوك المُشكِل بشكل منهجي حتى يتلاشى","التعزيز المستمر — تقديم ملاحظات فورية بعد كل سلوك"]},
+
+{a:"Employee & Labor Relations",t:"SJI",d:"hard",
+s:"An employee is terminated for what the company describes as 'theft of company property' — she took home two pens and a notepad. Investigation consisted of a manager calling HR to report it, and HR authorizing termination the same day. The employee is a 12-year veteran with no prior disciplinary record. She files a wrongful dismissal claim.",
+q:"The organization's MOST significant legal vulnerability in this case relates to which Due Process principle?",
+o:["The theft was too minor in value to constitute a terminable offense under any employment law standard","The manager should not have reported the matter to HR — the supervisor should have handled the discipline directly","The termination was disproportionate to the offense — progressive discipline should have been applied before termination","The investigation was insufficient — the employee was not given the opportunity to review the evidence or provide her own account before the termination decision was made"],
+c:3,e:"Due process test 4: the employee has the right to examine evidence and defend herself before a disciplinary decision. Test 5: progressive discipline should be applied. Test 7: the employee should be treated as an individual, not a category. Terminating a 12-year veteran on the same day as the report, for pens and a notepad, without allowing her to speak, violates multiple due process principles. The legal exposure is substantial. Both A and D are valid concerns, but D is the most immediate procedural violation — no investigation, no opportunity to respond.",
+qAr:"أكبر ضعف قانوني للمنظمة في هذه الحالة يتعلق بأي معيار للإجراءات القانونية الواجبة؟",
+oAr:["السرقة كانت ضئيلة القيمة لتُشكّل مخالفة تستوجب الفصل","لم يكن على المدير الإبلاغ عن الأمر لـ HR","الفصل غير متناسب مع المخالفة — كان يجب تطبيق التأديب التدريجي","التحقيق كان غير كافٍ — لم تُمنح الموظفة فرصة عادلة لشرح موقفها قبل القرار"],
+sAr:"فُصلت موظفة لما تصفه الشركة بـ'سرقة ممتلكات الشركة' — أخذت أدوات مكتبية. لم يُمنح الموظفة فرصة لشرح موقفها ولم تُتبع خطوات تأديب تدريجي."},
+
+{a:"Employee & Labor Relations",t:"KI",d:"medium",
+q:"A workplace investigation's 'closure' step is MOST critical because it:",
+o:["Confirms that disciplinary action has been taken against the subject regardless of investigation findings","Allows the investigator to archive all evidence in a secure location before the statute of limitations for appeals expires","Provides HR with documentation required to defend termination decisions in subsequent litigation","Ensures that both the complainant and the subject have received communication about the outcome AND that conditions have been created for the complainant to return to work without experiencing retaliation"],
+c:3,e:"Investigation closure is not just administrative — it has a human component. After an investigation, the complainant's ability to return to a normal working environment is paramount. HR must: communicate outcomes appropriately to both parties (within confidentiality limits), confirm the complainant feels safe returning, take steps to prevent retaliation (which is itself a separate violation), and implement corrective actions. Investigations that end with a disciplinary decision but no attention to the return-to-work experience are incomplete.",
+qAr:"خطوة 'الإغلاق' في تحقيق مكان العمل الأكثر أهمية لأنها:",
+oAr:["تؤكد أن إجراءً تأديبياً اتُّخذ ضد المُشتكى عليه","تسمح للمحقق بأرشفة جميع الأدلة في مكان آمن","توفر لـ HR توثيقاً مطلوباً للدفاع عن قرارات الفصل","تضمن أن كلاً من المُشتكي والمُشتكى عليه تلقّيا تواصلاً مناسباً حول نتيجة التحقيق"]},
+
+{a:"Employee & Labor Relations",t:"SJI",d:"medium",
+s:"An HR director receives a report that a manager in the accounting department has been deliberately excluding a female employee from team meetings and client calls since she filed an internal harassment complaint 6 weeks ago. The manager denies retaliation and says he has simply 'restructured the team.' The affected employee has documented three specific instances.",
+q:"The MOST appropriate HR response addresses which primary obligation?",
+o:["Reopen the original harassment complaint and treat the exclusion pattern as additional evidence in that investigation","Immediately investigate the documented pattern as a potential retaliation complaint — retaliation for protected activity is itself an independent violation regardless of the outcome of the original harassment complaint","Counsel the manager on the importance of team inclusion and monitor the situation for 30 days before taking further action","Transfer the affected employee to a different team to prevent further exposure to the potentially hostile manager"],
+c:1,e:"Retaliation for filing a protected complaint (harassment) is an independent legal violation — it doesn't require the original complaint to be substantiated. Three documented instances of exclusion after a harassment filing is a clear pattern warranting immediate investigation. Monitoring and waiting (C) allows retaliation to continue. Transfer (D) punishes the victim. Reopening the original complaint (A) misclassifies the issue — retaliation is a separate legal matter with its own investigation.",
+qAr:"الاستجابة الأنسب من HR تعالج أي التزام أساسي؟",
+oAr:["إعادة فتح شكوى التحرش الأصلية ومعالجة نمط الاستبعاد","التحقيق فوراً في النمط الموثق كانتقام محتمل (الاستبعاد بعد شكوى محمية = انتقام محظور)","توجيه المدير حول أهمية شمول الفريق ومراقبة الوضع","نقل الموظفة المتأثرة لفريق مختلف لمنع المزيد من الاستبعاد"],
+sAr:"يتلقى مدير HR تقريراً بأن مديراً في قسم المحاسبة يستبعد عمداً موظفة قدّمت شكوى تحرش سابقة."},
+
+{a:"Employee & Labor Relations",t:"KI",d:"medium",
+q:"In the ADR spectrum, mediation is legally distinct from binding arbitration because mediation:",
+o:["Does not compel any settlement — the parties retain full control over whether and on what terms they agree","Requires the mediator to have formal legal credentials and licensure in the relevant jurisdiction","Is always conducted privately and its proceedings cannot be referenced in subsequent litigation","Applies exclusively to employment disputes and cannot be used for contract or commercial disputes"],
+c:0,e:"Mediation's defining legal characteristic: voluntary, facilitated, non-binding. The mediator helps parties communicate and explore settlement — but cannot impose an outcome. If no agreement is reached, the parties are exactly where they started and can pursue other remedies. Binding arbitration is the opposite: the arbitrator hears both sides and issues a final, enforceable decision. Organizations offering arbitration as ADR must be careful: binding arbitration clauses in employment agreements are subject to legal challenge in many jurisdictions.",
+qAr:"في طيف الحلول البديلة للنزاعات (ADR)، تختلف الوساطة قانونياً عن التحكيم المُلزِم لأن الوساطة:",
+oAr:["لا تُجبر أي تسوية — يحتفظ الأطراف بالتحكم الكامل في قبول الحل","تتطلب أن يكون لدى الوسيط مؤهلات قانونية رسمية","تُجرى دائماً سراً ولا يمكن الإشارة لإجراءاتها","تنطبق حصرياً على نزاعات العمل ولا يمكن استخدامها للعقود"]},
+
+{a:"Employee & Labor Relations",t:"SJI",d:"hard",
+s:"A software company's collective agreement expires in 4 months. The agreement includes a 'management rights' clause allowing the company to assign employees to any project. The company recently acquired a startup and wants to assign 40 unionized developers to the startup's codebase, which uses a different technology stack. The union's shop steward files a grievance arguing that the assignment violates a 'past practice' of allowing developers to choose project assignments.",
+q:"The organization's most legally defensible position in the grievance process depends on:",
+o:["Whether the acquired startup's employees could be included in the existing collective bargaining unit","Whether past practice has established a binding norm that restricts the management rights clause — if project self-selection was consistently allowed without formal objection","Whether the collective agreement's expiration date means the grievance cannot be processed through the current contract's grievance procedure","Whether the new technology stack assignment constitutes a material change in working conditions requiring bargaining"],
+c:1,e:"Past practice doctrine is critical in labor relations: consistent, longstanding practices that deviate from written contract terms can become implied contractual obligations. If the company consistently allowed self-selection despite the management rights clause and never objected, the union can argue this practice modified the contract. The organization's defense: did it ever formally communicate that assignment was a management right, even when honoring preferences? This is why HR must never make informal commitments that create unintended past practice.",
+qAr:"الموقف الأكثر قابلية للدفاع قانونياً للمنظمة في عملية الشكوى يعتمد على:",
+oAr:["ما إذا كان موظفو الشركة الناشئة المُستحوذة يمكن إدراجهم في الاتفاقية","ما إذا كانت الممارسة السابقة أنشأت عُرفاً ملزماً يقيّد حقوق الإدارة","ما إذا كان تاريخ انتهاء الاتفاقية يعني أن الشكوى لاغية","ما إذا كان تكليف التقنية الجديدة يُشكّل تغييراً مادياً"],
+sAr:"اتفاقية شركة برمجيات الجماعية تنتهي خلال 4 أشهر. تتضمن بند 'حقوق الإدارة'. تقدم نقابة بشكوى تعترض على تكليف بتقنية جديدة."},
+
+{a:"Employee & Labor Relations",t:"KI",d:"easy",
+q:"The primary purpose of an 'open-door policy' as an ADR mechanism is to:",
+o:["Establish a mandatory pre-litigation dispute resolution step required before employees can file external regulatory complaints","Require that all employee complaints be formally documented and investigated before management responds","Allow employees to bring workplace concerns to any level of management, bypassing their direct supervisor when necessary","Create a designated HR ombudsperson role responsible for receiving and routing all employee concerns"],
+c:2,e:"Open-door policy is the most informal ADR form: any employee can approach any manager in the hierarchy to discuss concerns, including bypassing their immediate supervisor when that supervisor is the source of the concern. It is proactive and preventive — addressing issues before they escalate to formal grievances. Its effectiveness depends entirely on: management responsiveness, absence of retaliation, and genuine leadership commitment to hearing difficult feedback.",
+qAr:"الغرض الأساسي من 'سياسة الباب المفتوح' كآلية ADR هو:",
+oAr:["إنشاء خطوة حل نزاع إلزامية قبل التقاضي","إلزام توثيق جميع شكاوى الموظفين والتحقيق فيها رسمياً","السماح للموظفين بإحضار مخاوف مكان العمل لأي مستوى من الإدارة لحلها مبكراً وغير رسمياً","إنشاء دور أمين مظالم HR مخصص لاستقبال الشكاوى"]},
+
+{a:"Employee & Labor Relations",t:"SJI",d:"medium",
+s:"A union files a grievance at Level 3 (senior management) arguing that the company improperly denied a steward's request to represent an employee during a disciplinary meeting. The company argues that the meeting was 'investigative' and not disciplinary. The union argues the employee reasonably believed discipline could result.",
+q:"This grievance turns on which established labor relations principle?",
+o:["The duty to bargain in good faith, which requires the employer to notify the union 30 days before any disciplinary action","The past practice doctrine, which establishes that consistent patterns of union access to disciplinary meetings create contractual obligations","The Weingarten rights doctrine, which requires employers to allow union representation when an employee reasonably believes an investigative interview may result in disciplinary action","The just cause standard, which requires employers to demonstrate proportionality between the offense and the disciplinary action taken"],
+c:2,e:"NLRB v. Weingarten (1975) — the Weingarten rule: employees have the right to union representation during investigative interviews that they reasonably believe could lead to discipline. The key word is 'reasonably believe' — the employee's subjective reasonable belief, not the employer's characterization of the meeting as 'investigative vs. disciplinary.' If the employee feared discipline and requested representation, denying it is a potential unfair labor practice.",
+qAr:"تتمحور هذه الشكوى حول أي مبدأ مُؤسَّس في علاقات العمل؟",
+oAr:["واجب المفاوضة بحسن نية الذي يتطلب من صاحب العمل الإخطار","عقيدة الممارسة السابقة التي تُثبت أن الأنماط المتسقة","حقوق Weingarten التي تتطلب من أصحاب العمل السماح بحضور ممثل نقابي في الاجتماعات التأديبية","معيار السبب العادل الذي يتطلب التناسب"],
+sAr:"تقدم نقابة بشكوى عند المستوى 3 (الإدارة العليا) بحجة أن الشركة حرمت موظفاً من حقه في حضور ممثل نقابي خلال اجتماع تأديبي."},
+
+{a:"Employee & Labor Relations",t:"KI",d:"medium",
+q:"ILO Convention 100 on Equal Remuneration requires that men and women receive equal pay for work of:",
+o:["Comparable skill requirements as determined by annual labor market compensation surveys","Equivalent seniority and experience within the same occupational category","Equal value — measured by objective job evaluation criteria regardless of job title or historical pay patterns","Identical job titles and descriptions within the same organizational level and grade"],
+c:2,e:"Convention 100 uses 'equal value' — broader than 'same work' or 'same job.' This addresses the pay gap problem more systemically: two different job titles (nurse vs. technician) may be of equal value when objectively evaluated for skill, responsibility, effort, and working conditions. If one is paid less despite equal value, that is a violation. Point-factor job evaluation systems are the most common mechanism for objectively determining equal value across dissimilar jobs.",
+qAr:"اتفاقية ILO رقم 100 حول المساواة في الأجر تتطلب أن يتلقى الرجال والنساء أجراً متساوياً عن عمل ذي:",
+oAr:["متطلبات مهارة قابلة للمقارنة كما تحددها المنافسة السوقية السنوية","أقدمية وخبرة متكافئة في نفس الفئة المهنية","قيمة متساوية — تُقاس بمعايير تقييم وظيفي موضوعية بصرف النظر عن المسمى","مسميات وأوصاف وظيفية متطابقة في نفس المستوى التنظيمي"]},
+
+// ══════════════════════════════════════════
+// SECTION 5: TECHNOLOGY MANAGEMENT (18 q)
+// ══════════════════════════════════════════
+{a:"Technology Management",t:"KI",d:"medium",
+q:"In an information systems architecture, the 'Data Tier' primarily serves which function?",
+o:["Executes the business rules and processing logic that transform inputs into meaningful outputs","Manages the network infrastructure that enables communication between system components and users","Manages the user interface and interaction points through which users access and submit information","Stores, organizes, and retrieves the information that applications draw upon to execute their functions"],
+c:3,e:"The four-tier IS model: Presentation Tier (user interface — what users see and interact with), Logic/Business Tier (processing — what the system calculates and decides), Data Tier (storage — where information lives and is retrieved from), and Communications Tier (network — how tiers connect and share information). The Data Tier is where the organization's information assets physically reside — whether on local servers, hosted data centers, or cloud infrastructure.",
+qAr:"في بنية أنظمة المعلومات، تخدم 'طبقة البيانات' (Data Tier) أساساً أي وظيفة؟",
+oAr:["تنفيذ قواعد العمل ومنطق المعالجة","إدارة البنية التحتية للشبكة التي تُمكّن التواصل بين الأنظمة","إدارة واجهة المستخدم ونقاط التفاعل","تخزين وتنظيم واسترجاع المعلومات التي تعتمد عليها التطبيقات"]},
+
+{a:"Technology Management",t:"KI",d:"medium",
+q:"The 'Velocity' dimension of Big Data describes which characteristic of modern organizational data?",
+o:["The speed at which data is generated and must be processed, making data currency a persistent operational challenge","The complexity of data relationships that require advanced analytics to extract meaningful patterns","The enormous scale of data volumes that exceed the capacity of traditional storage and analysis tools","The variety of data types — structured, unstructured, and semi-structured — that organizations must integrate"],
+c:0,e:"Big Data 3Vs: Volume = scale (amount of data too large for traditional tools). Velocity = speed (data flows so fast that real-time or near-real-time processing is required). Variety = types (images, video, text, sensor data, social media alongside traditional structured data). Velocity creates the 'data freshness' problem: by the time data is processed with traditional batch methods, it may already be obsolete for the decision it was meant to inform.",
+qAr:"يصف بُعد 'السرعة' (Velocity) في البيانات الضخمة أي خاصية للبيانات التنظيمية الحديثة؟",
+oAr:["السرعة التي تُولَّد بها البيانات ويجب معالجتها، مما يجعل توقيت البيانات حرجاً","تعقيد علاقات البيانات التي تتطلب تحليلات متقدمة","الحجم الهائل للبيانات الذي يتجاوز قدرة الأنظمة التقليدية","تنوّع أنواع البيانات — منظمة وغير منظمة وشبه منظمة"]},
+
+{a:"Technology Management",t:"SJI",d:"hard",
+s:"An HR director is evaluating two options for a new talent management platform: Option A is a module within the organization's existing SAP ERP system. Option B is a specialized talent management application with significantly more sophisticated functionality but requires API integration with SAP. The CFO prefers Option A for simplicity. HR users who tested both strongly prefer Option B.",
+q:"The MOST complete framework for making this decision considers which factors?",
+o:["The CFO's preference should be determinative since technology decisions primarily affect the finance function's reporting requirements","The decision should weigh: total cost of ownership (including integration costs for B), implementation risk, data integrity across systems, user adoption probability, and the strategic importance of advanced talent management functionality to the organization's competitive goals","User preference for Option B's functionality should be determinative since HR users are the primary stakeholders in the talent management process","The organization should implement both systems in parallel for 12 months and select whichever achieves higher user adoption"],
+c:1,e:"Technology acquisition decisions must integrate: TCO (not just licensing cost — Option B's integration cost may negate its functional advantage), implementation risk (API integration complexity), data integrity (will employee data be consistent across systems?), user adoption (Option B's superior functionality means nothing if users circumvent it), and strategic fit (does advanced talent analytics capability serve strategic objectives?). Neither CFO preference nor user preference alone is sufficient — the decision requires a multi-criteria framework.",
+qAr:"الإطار الأكثر اكتمالاً لاتخاذ هذا القرار يأخذ في الاعتبار أي عوامل؟",
+oAr:["تفضيل CFO يجب أن يكون حاسماً لأن قرارات التكنولوجيا مالية","يجب أن يوازن القرار: التكلفة الإجمالية للملكية (بما فيها التكامل) والقابلية للتوسع والأمان وملاءمة الاحتياجات ودعم المورّد","تفضيل المستخدم للخيار B يجب أن يكون حاسماً","تطبيق كلا النظامين بالتوازي 12 شهراً"],
+sAr:"مدير HR يُقيّم خيارين لمنصة إدارة مواهب جديدة: الخيار A نظام أكثر نضجاً، الخيار B أحدث بميزات يفضلها المستخدمون لكن دعم أقل."},
+
+{a:"Technology Management",t:"KI",d:"medium",
+q:"'Software as a Service' (SaaS) delivery fundamentally shifts financial and operational responsibility because:",
+o:["The organization must purchase hardware infrastructure that the SaaS vendor then manages remotely","The organization retains full responsibility for hardware infrastructure while the vendor manages software updates","The vendor assumes responsibility for hosting, maintenance, and updates — the organization pays for access rather than ownership, trading capital expenditure for operating expenditure","Both the organization and vendor share equal responsibility for system performance and data security"],
+c:2,e:"SaaS's fundamental business model: you pay for access (OpEx/subscription) rather than purchasing software (CapEx/license). The vendor hosts, maintains, secures, and updates the system. Benefits: lower upfront cost, automatic updates, no hardware investment, scalability. Risks: data resides with vendor (security dependency), customization is limited, vendor lock-in, and continued service depends on vendor's business viability. HR must assess these trade-offs relative to the organization's risk tolerance.",
+qAr:"تسليم 'البرمجيات كخدمة' (SaaS) يُحوّل المسؤولية المالية والتشغيلية بشكل جوهري بحيث:",
+oAr:["يجب على المنظمة شراء بنية تحتية للأجهزة","تحتفظ المنظمة بالمسؤولية الكاملة عن البنية التحتية للأجهزة","يتحمّل المورّد مسؤولية الاستضافة والصيانة والتحديثات بينما تدفع المنظمة اشتراكاً","تتقاسم المنظمة والمورّد المسؤولية بالتساوي"]},
+
+{a:"Technology Management",t:"SJI",d:"hard",
+s:"A company's HR data security audit reveals: 23 current employees have system access permissions that exceed what their current roles require, including 4 employees with view access to all employee salary data. Three former employees still have active system credentials. The CISO identifies this as a 'high risk' finding requiring immediate remediation.",
+q:"This situation MOST directly illustrates which data security principle that HR failed to implement?",
+o:["Principle of least privilege — users should only have access to the data and systems specifically required to perform their current role, and access should be removed promptly upon role change or separation","Two-factor authentication — system login should require both a password and a secondary verification method","Encryption — sensitive HR data should be encrypted in transit and at rest to prevent unauthorized access","Audit trail — all data access should be logged and reviewed regularly for unusual access patterns"],
+c:0,e:"Principle of Least Privilege (PoLP) = grant minimum access necessary for the current role; remove access upon any change in role or departure. 23 employees with excessive permissions and 3 former employees with active credentials are textbook PoLP failures. HR's role: maintain current access maps, conduct periodic access reviews, and — critically — include system access revocation in the employee offboarding checklist. Access that isn't removed is a standing invitation for data breach.",
+qAr:"يوضح هذا الوضع مباشرة أي مبدأ أمن بيانات فشلت HR في تطبيقه؟",
+oAr:["مبدأ الحد الأدنى من الصلاحيات — يجب أن يكون للمستخدمين وصول فقط للبيانات التي تتطلبها وظائفهم","المصادقة الثنائية — يجب أن يتطلب تسجيل الدخول كلمة مرور وعاملاً ثانياً","التشفير — يجب تشفير بيانات HR الحساسة أثناء النقل والتخزين","سجل التدقيق — يجب تسجيل ومراجعة جميع الوصول للبيانات"],
+sAr:"تدقيق أمن بيانات HR يكشف: 23 موظفاً حالياً لديهم صلاحيات وصول لأنظمة لم تعد وظائفهم تتطلبها."},
+
+{a:"Technology Management",t:"KI",d:"medium",
+q:"The GDPR's requirement that HR document 'valid legal grounds for all data processing activities' addresses which specific challenge in HR data practice?",
+o:["HR historically processed employee data without informing employees of what data was being collected","HR lacked the technical capability to produce employee data access requests within required timeframes","Employment agreements often cited 'employee consent' as the legal basis for data processing —","HR data was stored on servers in multiple countries with inconsistent data protection laws"],
+c:2,e:"GDPR's most counterintuitive HR impact: employee consent to data use is NOT a valid legal basis under GDPR because, in an employment context, employees cannot freely refuse consent without fearing job consequences. GDPR requires a different legal ground — contractual necessity, legal obligation, or legitimate interest — that doesn't depend on consent. HR must remove 'employee consents to data use' from employment agreements and establish documented legal grounds for every processing activity.",
+qAr:"متطلب GDPR بأن توثّق HR 'أسساً قانونية صالحة لجميع أنشطة معالجة البيانات' عالج أي ممارسة HR إشكالية شائعة؟",
+oAr:["HR عالجت تاريخياً بيانات الموظفين دون إبلاغهم بالغرض","HR افتقرت للقدرة التقنية على إنتاج طلبات وصول لبيانات الموظفين","اتفاقيات العمل غالباً استشهدت بـ'موافقة الموظف' كأساس قانوني — لكن الموافقة في سياق العمل قد لا تكون 'مُعطاة بحرية' بسبب اختلال القوة","بيانات HR خُزّنت على خوادم في دول متعددة"]},
+
+{a:"Technology Management",t:"SJI",d:"medium",
+s:"A pharmaceutical company's HR team uses an AI-powered resume screening tool that was trained on 5 years of previous hiring decisions. An analysis reveals that the tool systematically rates candidates from research universities significantly higher than candidates from teaching universities — regardless of GPA, research experience, or other merit-based factors. The company's previous hiring pattern disproportionately drew from research universities.",
+q:"The MOST accurate characterization of this AI system's problem is:",
+o:["The problem is solvable by retraining the tool on data from the past 2 years rather than 5 years","The tool reflects hiring manager bias that existed in the training data — it has learned to replicate historical preferences, not predict job performance, creating potential disparate impact liability","The tool's university weighting is appropriate because research universities produce graduates with stronger analytical skills relevant to pharmaceutical roles","The tool is functioning correctly — historical hiring data is the most reliable predictor of future hiring success"],
+c:1,e:"This is algorithmic bias through training data contamination. The AI learned what the organization's PAST hirers preferred — but if those preferences were themselves biased (hiring from research universities due to familiarity, not merit), the AI replicates and scales that bias. This creates: (1) potential disparate impact liability (if university type correlates with protected characteristics), (2) systematic exclusion of qualified candidates, and (3) perpetuation of historical diversity failures. The legal standard for algorithmic tools is the same as for human raters: does it produce disparate impact?",
+qAr:"الوصف الأكثر دقة لمشكلة نظام الذكاء الاصطناعي هذا هو:",
+oAr:["المشكلة قابلة للحل بإعادة التدريب على بيانات السنتين الأخيرتين","الأداة تعكس تحيز مديري التوظيف الموجود في بيانات التدريب وتُوسّعه (الذكاء الاصطناعي يُوسّع التمييز التاريخي ولا يُزيله)","ترجيح الجامعة مناسب لأن جامعات البحث","الأداة تعمل بشكل صحيح — البيانات التاريخية هي الأكثر موثوقية"],
+sAr:"فريق HR لشركة أدوية يستخدم أداة فرز سير ذاتية مدعومة بالذكاء الاصطناعي دُرّبت على بيانات التوظيف التاريخية. الأداة تُرجّح خريجي جامعات معينة."},
+
+{a:"Technology Management",t:"KI",d:"medium",
+q:"An effective BYOD (Bring Your Own Device) policy MUST address which employment law risk that is unique to personal device usage for work purposes?",
+o:["The obligation to compensate non-exempt employees for work performed on personal devices outside scheduled hours, and the organization's right to remotely wipe devices containing corporate data","The organization's obligation to provide personal device insurance coverage for employees who use their own devices","The tax implications for employees of receiving employer-provided technology versus using personal devices","The requirement to implement identical security standards on personal devices as on corporate-issued hardware"],
+c:0,e:"BYOD creates two interlocking legal risks: (1) Wage and hour risk — if non-exempt employees answer emails or perform work on personal devices outside scheduled hours, those hours may be compensable under wage laws. Employers who permit but don't track this incur unpaid wage liability. (2) Device wipe authority — when an employee separates, the company may need to wipe corporate data from a personal device, but this can destroy the employee's personal data. Both risks require explicit policy coverage and legal review.",
+qAr:"سياسة BYOD (إحضار جهازك الخاص) الفعّالة يجب أن تعالج أي خطر قانوني للعمل غالباً ما يُتجاهَل؟",
+oAr:["الالتزام بتعويض الموظفين غير المُعفيين عن العمل المُؤدّى على أجهزتهم (وقت العمل الإضافي)","التزام المنظمة بتوفير تأمين على الأجهزة الشخصية","الآثار الضريبية للموظفين لتلقي تكنولوجيا مقدّمة من صاحب العمل","متطلب تطبيق معايير أمان متطابقة على الأجهزة الشخصية"]},
+
+{a:"Technology Management",t:"SJI",d:"hard",
+s:"A large healthcare organization's social media policy has been unchanged for 6 years. A compliance officer requests an urgent review after two incidents: (1) A nurse posted a photo that inadvertently revealed a patient's room number on a visible whiteboard. (2) An employee publicly criticized hospital management on LinkedIn, describing what she called 'systemic patient safety failures.' The hospital's legal team is concerned about both incidents.",
+q:"The policy update should MOST critically address which two distinct legal dimensions?",
+o:["The nurse's post implicates HIPAA/patient privacy obligations on social media, and the LinkedIn post may involve protected concerted activity under labor law — both require distinct policy provisions that reflect different legal frameworks","Both incidents violate standard professional conduct expectations and can be addressed through a single 'professional social media use' policy update","The LinkedIn post is the primary legal concern — the nurse's post was unintentional and therefore not actionable","The nurse's post raises a PR concern and the LinkedIn post is protected speech — neither requires legal policy changes"],
+c:0,e:"Two distinct legal frameworks apply: (1) HIPAA/patient privacy — healthcare employees posting on social media must understand that incidental patient identifiers (room numbers, names visible in background) trigger HIPAA violations. The policy must include specific healthcare social media guidance. (2) NLRA Section 7 — employee criticism of employer working conditions on social media may be 'protected concerted activity' under labor law, even if the employer finds it embarrassing. Disciplining employees for protected concerted activity is an unfair labor practice. A single 'professional conduct' policy doesn't adequately distinguish these two very different legal situations.",
+qAr:"يجب أن يعالج تحديث السياسة أي بُعدين قانونيين متميزين بشكل حاسم؟",
+oAr:["منشور الممرضة يتعلق بالتزامات HIPAA/خصوصية المريض ومنشور LinkedIn محمي تحت NLRA (نشاط مُتضافِر)","كلا الحادثتين تنتهك توقعات السلوك المهني","منشور LinkedIn هو المخاوف القانونية الأساسية","منشور الممرضة يثير مخاوف علاقات عامة ومنشور LinkedIn محمي"],
+sAr:"سياسة وسائل التواصل لمنظمة رعاية صحية كبيرة لم تتغير 6 سنوات. حادثتان: ممرضة نشرت معلومات مريض، وموظف نشر على LinkedIn حول ظروف العمل."},
+
+{a:"Technology Management",t:"KI",d:"medium",
+q:"The 'Manager Self-Service' (MSS) capability in HRIS most directly transforms HR's strategic role by:",
+o:["Creating standardized decision templates that eliminate managerial discretion in compensation and promotion decisions","Automating manager compliance training and certification tracking in a centralized learning management system","Providing managers with AI-generated performance feedback to replace the traditional annual review process","Enabling managers to access real-time workforce data and complete HR transactions — reducing HR's administrative burden and repositioning HR professionals toward strategic advisory activities"],
+c:3,e:"MSS's strategic transformation effect: when managers can approve salary changes, view team analytics, initiate onboarding, and access workforce data without contacting HR for every transaction, HR professionals are freed from a transactional support role. The time previously spent processing manager requests is redirected to consulting, workforce planning, and analytics. This is the mechanism by which technology enables the HR 'seat at the table' — not by making HR look strategic, but by actually freeing HR capacity for strategic work.",
+qAr:"قدرة 'الخدمة الذاتية للمدير' (MSS) في HRIS تُحوّل دور HR الاستراتيجي مباشرة من خلال:",
+oAr:["إنشاء قوالب قرار موحّدة تُلغي تقدير المدير","أتمتة تدريب المدير على الامتثال وتتبّع الشهادات","تقديم ملاحظات أداء مُولّدة بالذكاء الاصطناعي للمديرين","تمكين المديرين من الوصول لبيانات القوى العاملة في الوقت الفعلي وإكمال معاملات HR — مما يُحرّر HR للعمل الاستراتيجي"]},
+
+{a:"Technology Management",t:"SJI",d:"medium",
+s:"A company's phishing simulation program sent test emails to all 850 employees. Results: 34% of employees clicked the malicious link in the test email, including 3 members of the IT security team. Of those who clicked, 71% entered their credentials into the fake login page. The CISO categorizes this as a 'critical vulnerability finding.'",
+q:"HR's MOST appropriate contribution to remediation involves:",
+o:["Partnering with IT Security to design mandatory security awareness training for all employees — particularly targeted content for groups with high click rates","Updating the BYOD policy to require employees to use only corporate-managed devices for email access","Disciplining the 34% who failed the simulation for violating the acceptable use policy","Escalating the finding to the board as evidence that the IT security function requires immediate leadership change"],
+c:0,e:"A 34% click rate (including IT staff) indicates a systemic awareness deficit, not individual misconduct. Discipline for a security simulation (C) would be punitive, legally questionable, and counterproductive — it discourages honest engagement with security training. HR's role: work with IT Security to design behavior change programs, manage the training rollout, embed security awareness into onboarding and annual training, and use ongoing simulations to measure improvement over time. Security culture is an HR-IT co-ownership.",
+qAr:"مساهمة HR الأنسب في المعالجة تشمل:",
+oAr:["الشراكة مع أمن IT لتصميم تدريب توعية أمني إلزامي يُعالج السلوك دون عقاب","تحديث سياسة BYOD لإلزام استخدام أجهزة الشركة فقط","تأديب الـ 34% الذين فشلوا لانتهاك سياسة الاستخدام المقبول","تصعيد النتيجة للمجلس كدليل على فشل وظيفة أمن IT"],
+sAr:"برنامج محاكاة تصيّد احتيالي أرسل رسائل اختبار لجميع الـ 850 موظفاً. النتائج: 34% فشلوا (نقروا أو أدخلوا بيانات)."},
+
+{a:"Technology Management",t:"KI",d:"medium",
+q:"The primary distinguishing characteristic between 'on-premises' and 'hosted' HR technology deployment models is:",
+o:["Whether the organization owns or licenses the software that powers the HR system","Where the hardware infrastructure resides — on-premises keeps servers at the organization's own facility","Whether the organization's IT team or the vendor's team provides end-user technical support","The number of users who can simultaneously access the system without performance degradation"],
+c:1,e:"On-premises: hardware (servers) and software both reside at and are managed by the organization. Hosted: the hardware is at a third-party location (vendor's data center), but the organization may still license and 'own' the software installation. SaaS is different again: both hardware and software are at the vendor, and the organization only accesses the service. The distinction matters for: data sovereignty (where physically does your data live?), security responsibility allocation, and total cost of ownership.",
+qAr:"الخاصية المميِّزة الأساسية بين نشر تكنولوجيا HR 'محلياً' (on-premises) و'مُستضاف' (hosted) هي:",
+oAr:["ما إذا كانت المنظمة تملك أو ترخّص البرمجيات","مكان وجود البنية التحتية للأجهزة — محلياً يُبقي الخوادم في الموقع بينما المُستضاف يضعها لدى المورّد","ما إذا كان فريق IT المنظمة أم المورّد يقدّم دعم المستخدم","عدد المستخدمين الذين يمكنهم الوصول للنظام في وقت واحد"]},
+
+// ══════════════════════════════════════════
+// 10 ADDITIONAL CROSS-FUNCTIONAL SJI
+// ══════════════════════════════════════════
+{a:"Organizational Effectiveness & Development",t:"SJI",d:"hard",
+s:"A global consumer goods company's market research division has been using a flat, self-managed team structure for 5 years. Teams choose their own projects, set their own timelines, and operate with minimal management oversight. Innovation output has been excellent. The CFO now wants to impose standardized quarterly project reporting, pre-approval for research budgets over $5,000, and KPIs tied to cost efficiency. The division director warns HR that this will 'kill the culture that drives results.'",
+q:"HR's MOST strategically balanced counsel to executive leadership is:",
+o:["Recommend conducting an employee survey to determine whether the research team wants the new controls before any decision is made","Side with the division director because the current model's innovation results prove it is optimal and should not be changed","Acknowledge the CFO's legitimate governance need while framing the risk that excessive formalization in a creative","Support the CFO's controls fully because financial governance requirements supersede organizational culture preferences"],
+c:2,e:"This is an organizational design + culture tension. The CFO has a legitimate financial governance need. The director has a legitimate performance culture protection need. HR's role is honest strategic counsel: point out what organizational design research shows — high formalization in knowledge/creative work correlates with reduced intrinsic motivation, risk-taking, and innovation. Propose governance solutions that satisfy financial oversight (budget transparency, project tracking) without imposing process controls that conflict with the work's nature (pre-approval thresholds, efficiency KPIs for research).",
+qAr:"نصيحة HR الأكثر توازناً استراتيجياً للقيادة التنفيذية هي:",
+oAr:["التوصية بإجراء استبيان موظفين","الانحياز لمدير القسم لأن نموذج الابتكار الحالي","الإقرار بحاجة الحوكمة المشروعة لـ CFO مع تأطير المخاطر بأن الضوابط الهرمية قد تضر بالابتكار الذي يميّز القسم — اقتراح حل وسط","دعم ضوابط CFO بالكامل لأن متطلبات الحوكمة المالية"],
+sAr:"قسم أبحاث السوق لشركة سلع استهلاكية عالمية يستخدم هيكلاً مسطحاً ذاتي الإدارة يعزز الابتكار. يريد CFO إضافة ضوابط مالية أكثر هرمية."},
+
+{a:"HR Function Structure",t:"SJI",d:"medium",
+s:"An organization is implementing a new SSC model for transactional HR services. Six months after launch, the SSC is processing transactions efficiently but business unit managers report that they 'can't get answers to strategic HR questions anymore — the SSC just tells us to submit a ticket.' The HRBP assigned to three business units has been absorbed into SSC operations due to staffing shortages.",
+q:"The MOST accurate diagnosis of what went wrong is:",
+o:["The SSC model is fundamentally incompatible with organizations that have complex business unit HR needs","The SSC model requires at least 18 months before business unit managers adapt their expectations appropriately","The business unit managers need to be trained on how to use the SSC ticketing system more effectively","The organization successfully implemented the SSC's transactional efficiency goal but failed to protect the HRBP strategic advisory capacity — conflating transactional and strategic HR roles undermines the entire operating model"],
+c:3,e:"The SSC + HRBP model only works if both components are maintained. When HRBPs get absorbed into SSC operations, the strategic advisory layer disappears and the SSC becomes the only HR touchpoint — pushing complex questions through a transactional channel not designed to handle them. The fix: protect HRBP capacity by keeping it structurally separate from SSC operations, ensuring HRBPs' time is explicitly protected for business partnership, not SSC service delivery.",
+qAr:"التشخيص الأكثر دقة لما حدث خطأً هو:",
+oAr:["نموذج SSC غير متوافق جوهرياً مع المنظمات","نموذج SSC يتطلب 18 شهراً على الأقل","يحتاج مديرو وحدات الأعمال لتدريب على استخدام نظام تذاكر SSC","نجحت المنظمة في تطبيق الكفاءة المعاملاتية لـ SSC لكنها فشلت في الاحتفاظ بشركاء أعمال HR للاحتياجات الاستراتيجية والعلائقية"],
+sAr:"منظمة تُطبّق نموذج SSC جديداً لخدمات HR المعاملاتية. بعد 6 أشهر، يشكو مديرو وحدات الأعمال من فقدان اللمسة الشخصية."},
+
+{a:"Employee & Labor Relations",t:"SJI",d:"hard",
+s:"During a workplace harassment investigation, the investigator interviews the alleged harasser and concludes: 'He gave a plausible explanation for all the behaviors. I believe him.' The investigator then closes the case without interviewing the complainant's corroborating witnesses or reviewing the email chain the complainant submitted as evidence.",
+q:"This investigation has failed which specific due process and investigation quality standard?",
+o:["The investigation closed too quickly — regulations require a minimum of 30 days for harassment investigations","The investigator should have been external rather than internal to maintain objectivity","The investigation failed to gather complete evidence — reaching a conclusion before reviewing all available evidence and","The complainant should have been re-interviewed to give her an opportunity to respond to the alleged harasser's account"],
+c:2,e:"Investigation quality requires: reviewing all available evidence, interviewing all relevant witnesses, and making decisions based on complete information — not on which party's account is more immediately compelling. Closing after one interview without reviewing submitted evidence or speaking to corroborating witnesses is a fundamental investigation failure. It also violates due process (the complainant has a right to have her evidence considered) and creates significant legal liability if the investigation is later challenged.",
+qAr:"فشل هذا التحقيق في أي معيار محدد للإجراءات القانونية الواجبة وجودة التحقيق؟",
+oAr:["أُغلق التحقيق بسرعة كبيرة — تتطلب اللوائح حداً أدنى","كان يجب أن يكون المحقق خارجياً وليس داخلياً","فشل التحقيق في جمع أدلة كاملة — الوصول لاستنتاج دون مقابلة الشهود الرئيسيين ينتهك معيار التحقيق الشامل والعادل","كان يجب إعادة مقابلة المُشتكية"],
+sAr:"خلال تحقيق تحرش في مكان العمل، يقابل المحقق المُتهم بالتحرش ثم يصل لاستنتاج دون مقابلة الشهود الذين سمّتهم المُشتكية."},
+
+{a:"Workforce Management",t:"SJI",d:"hard",
+s:"A company is preparing for a workforce reduction of 200 positions across multiple departments. The legal team has approved a severance and selection process. HR discovers that the selection criteria — 'last hired, first fired' — will result in the terminated group being 67% women and 71% employees over 45, compared to 44% women and 38% over 45 in the retained workforce.",
+q:"Before proceeding, HR's MOST critical action is to:",
+o:["Communicate the demographic impact to affected employees in advance to demonstrate organizational transparency","Consult with legal counsel to assess whether the demographic concentration constitutes disparate impact discrimination —","Request that the selection criteria include performance ratings to counterbalance the demographic concentration","Proceed with the process since 'last hired, first fired' is an objective, legally established criterion"],
+c:1,e:"Even facially neutral criteria (seniority, last-in-first-out) can constitute illegal disparate impact if they produce statistically significant adverse effects on protected classes. A 67% female termination rate vs. 44% female workforce, and 71% over-45 termination rate vs. 38% workforce — both are statistically significant disparities. Before proceeding, HR must validate with legal counsel whether these disparities are explainable by lawful non-discriminatory factors. If not, the criteria must be revised. Proceeding without this analysis is significant legal and organizational risk.",
+qAr:"قبل المضي، الإجراء الأكثر أهمية لـ HR هو:",
+oAr:["إبلاغ التأثير الديموغرافي للموظفين المتأثرين مسبقاً","استشارة المستشار القانوني لتقييم ما إذا كان التركّز الديموغرافي يُنشئ مخاطر تأثير متعارض (تمييز عمري محتمل)","طلب تضمين تقييمات الأداء في معايير الاختيار","المضي في العملية لأن 'آخر من عُيّن، أول من يُفصل' معيار موضوعي"],
+sAr:"شركة تستعد لتقليص 200 وظيفة عبر أقسام متعددة. معيار الاختيار المقترح 'آخر من عُيّن، أول من يُفصل'. تحليل أولي يُظهر أن هذا سيؤثر بشكل غير متناسب على العمال الأصغر سناً."},
+
+{a:"Technology Management",t:"SJI",d:"hard",
+s:"An HR team purchases an AI-powered compensation recommendation tool that analyzes market data and internal equity to suggest salary ranges. During a calibration review, HR notices that the tool's recommendations consistently place marketing roles 12-15% below comparable analytical roles — both being rated as equivalent value in the job evaluation system. Investigation shows the tool was trained on market data from an industry with historically lower marketing compensation.",
+q:"This situation presents which two concurrent risks that HR must address?",
+o:["Legal compliance risk only — the pay gap must be corrected to meet equal pay for equal value standards","Internal equity violation (comparable-value roles receiving different compensation without objective justification) AND algorithmic bias risk (tool trained","Vendor contract risk — the AI vendor may have breached performance warranties by providing biased recommendations","Reputational risk only — if employees compare compensation and discover the gap, retention will be affected"],
+c:1,e:"Two distinct issues: (1) Internal equity — if jobs are rated as equivalent value by the job evaluation system but compensated differently, that's an equity violation regardless of whether it's caused by AI or human error. (2) Algorithmic bias — the tool learned from historically biased market data and is now encoding that bias into the organization's pay decisions at scale. Both must be addressed: correct the compensation gap, and either reconfigure the tool's training data or cease using it for decisions it's biased in. AI doesn't launder discrimination — it scales it.",
+qAr:"يُقدّم هذا الوضع أي خطرين متزامنين يجب على HR معالجتهما؟",
+oAr:["خطر الامتثال القانوني فقط — يجب تصحيح فجوة الأجر","انتهاك العدالة الداخلية (أدوار متساوية القيمة تتلقى تعويضاً مختلفاً) + خطر التمييز القانوني (تأثير متعارض على فئات محمية)","خطر عقد المورّد — قد يكون المورّد انتهك ضمانات الأداء","خطر السمعة فقط — إذا قارن الموظفون التعويض"],
+sAr:"فريق HR يشتري أداة توصية تعويض مدعومة بالذكاء الاصطناعي تُحلل بيانات السوق. تُوصي الأداة بأجور أقل لأدوار ذات قيمة مماثلة يشغلها أفراد من فئات محمية."},
+
+{id:2508,a:"HR Technology",t:"KI",d:"medium",
+q:"SHRM 2025 explicitly added which technologies to the HR Technology key concepts in the Organization Domain?",
+o:["Natural language processing, facial recognition, and predictive policing tools","Augmented reality, quantum computing, and biometric authentication","Robotic process automation, IoT sensors, and neural networks","Blockchain and Machine Learning — along with Big Data Analytics Software and Collaboration Software"],
+c:3,
+e:"SHRM 2025 explicitly added to HR Technology key concepts: Blockchain (for HR data security and verification), Machine Learning (for advanced HR analytics), Big Data Analytics Software, and Collaboration Software.",
+qAr:"أضافت SHRM 2025 صراحةً أي التقنيات لمفاهيم HR Technology في نطاق Organization؟",
+oAr:["معالجة اللغة الطبيعية والتعرف على الوجه وأدوات التحليل التنبؤي","الواقع المعزز والحوسبة الكمومية والمصادقة البيومترية","أتمتة العمليات الآلية وأجهزة استشعار IoT والشبكات العصبية","البلوك تشين والتعلم الآلي مع برمجيات تحليل البيانات الضخمة وبرامج التعاون"]},
+
+{id:2509,a:"HR Technology",t:"SJI",d:"hard",
+s:"An HR director is evaluating whether to implement a blockchain-based employee verification system. The vendor claims it will reduce credential fraud, enable instant verification for global transfers, and create an immutable employment record. The CFO asks for a business case.",
+q:"The MOST compelling element of the business case, aligned with SHRM 2025 HR Technology concepts, is:",
+o:["Blockchain compliance with GDPR is automatic and requires no additional legal review","Blockchain creates tamper-proof, instantly verifiable employment records that reduce onboarding time for global trans","The system will eliminate the need for the HR department's administrative staff","The technology is trending in the industry and competitors are already adopting it"],
+c:1,
+e:"SHRM 2025 added Blockchain explicitly to HR Technology key concepts for its value in HR data security and verification. The business case must quantify: reduced fraud risk, faster onboarding for transfers, and cost avoidance — not trend-following or unsubstantiated compliance claims.",
+qAr:"مديرة HR تقيّم نظام التحقق من الموظفين المبني على البلوك تشين. العنصر الأكثر إقناعاً في مقترح الأعمال هو:",
+oAr:["الامتثال للـ GDPR تلقائي ولا يحتاج مراجعة قانونية إضافية","يُنشئ البلوك تشين سجلات توظيف غير قابلة للتلاعب وقابلة للتحقق فوراً مما يُقلل وقت الإلحاق ويخفض مخاطر الاحتيال ويُلغي تكاليف فحوصات الخلفية المتكررة","النظام سيُلغي الحاجة للموظفين الإداريين في HR","التقنية رائجة في الصناعة والمنافسون يتبنونها بالفعل"]}
+];
+
+// ── State ──
+let lang='ar', cur=0, ans=[], Q_shuffled=[];
+const LETTERS=['A','B','C','D'];
+
+
+function pickLang(l){
+  lang=l==='bi'?'bi':l;
+  ['lpAr','lpEn','lpBi'].forEach(id=>{document.getElementById(id).className='lpbtn';});
+  if(l==='ar') document.getElementById('lpAr').className='lpbtn on';
+  else if(l==='en') document.getElementById('lpEn').className='lpbtn on';
+  else document.getElementById('lpBi').className='lpbtn on';
+}
+
+function shuffleArr(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+
+function buildShuffledExam(){
+  // Shuffle OPTIONS within each question + remap correct index, then shuffle question order
+  var arr=Q.map(function(q){
+    var nq=Object.assign({},q);
+    var perm=shuffleArr([0,1,2,3]);
+    nq.o=perm.map(function(k){return q.o[k];});
+    if(q.oAr&&q.oAr.length===4)nq.oAr=perm.map(function(k){return q.oAr[k];});
+    nq.c=perm.indexOf(q.c);
+    return nq;
+  });
+  return shuffleArr(arr);
+}
+
+function startExam(){
+  Q_shuffled=buildShuffledExam();
+  ans=new Array(Q_shuffled.length).fill(null);
+  showScreen('scrExam');
+  document.getElementById('hdrMeta').style.display='flex';
+  renderQ(0);
+}
+
+function showScreen(id){
+  ['scrWelcome','scrExam','scrResults'].forEach(s=>{
+    document.getElementById(s).className='screen'+(s===id?' active':'');
+  });
+}
+
+
+// ── Translation cache ──
+const TR_CACHE = {};
+
+
+// Translation cache
+const _TC = {};
+
+function getQ(q){
+  const id = q.id || q.q.substring(0,30);
+  if(lang==='en') return {q:q.q, opts:q.o, s:q.s||'', e:q.e};
+  
+  if(lang==='ar'){
+    if(q.qAr) return {q:q.qAr, opts:q.oAr||q.o, s:q.sAr||q.s||'', e:q.eAr||q.e};
+    if(_TC[id]) return {q:_TC[id].q, opts:_TC[id].o, s:_TC[id].s||q.s||'', e:q.e};
+    return {q:q.q, opts:q.o, s:q.s||'', e:q.e};
+  }
+  
+  if(lang==='bi'){
+    if(q.qAr){
+      return {
+        q: q.q+'\n\n'+q.qAr,
+        opts: q.o.map((o,i)=>o+(q.oAr&&q.oAr[i]?'\n'+q.oAr[i]:'')),
+        s: q.s?(q.s+(q.sAr?'\n\n'+q.sAr:'')):'',
+        e: q.e
+      };
+    }
+    if(_TC[id]){
+      return {
+        q: q.q+'\n\n'+_TC[id].q,
+        opts: q.o.map((o,i)=>o+(_TC[id].o&&_TC[id].o[i]?'\n'+_TC[id].o[i]:'')),
+        s: q.s?(q.s+(_TC[id].s?'\n\n'+_TC[id].s:'')):'',
+        e: q.e
+      };
+    }
+    return {q:q.q, opts:q.o, s:q.s||'', e:q.e};
+  }
+  return {q:q.q, opts:q.o, s:q.s||'', e:q.e};
+}
+
+let _translating = false;
+
+async function _translateQ(q){
+  if(_translating) return;
+  if(lang==='en') return;
+  if(q.qAr) return;
+  const id = q.id||q.q.substring(0,30);
+  if(_TC[id]) return;
+  
+  _translating = true;
+  
+  // Show translating indicator
+  const qEl = document.getElementById('qText');
+  if(qEl && lang!=='en'){
+    const orig = qEl.innerHTML;
+    qEl.innerHTML += '<div id="_trInd" style="margin-top:8px;font-size:12px;color:#888;font-style:italic">⏳ جارٍ الترجمة...</div>';
+  }
+  
+  try {
+    const s = q.s||'';
+    const prompt = `ترجم للعربية واحتفظ بالمصطلحات التقنية (FMLA,COBRA,ADEA,ADA,Title VII,NLRA,FLSA,WARN,USERRA,PWFA,EEOC,HR,I&D,ROI,OD).
+
+السؤال: ${q.q}${s?'\nالسيناريو: '+s:''}
+أ) ${q.o[0]}
+ب) ${q.o[1]}
+ج) ${q.o[2]}
+د) ${q.o[3]}
+
+أجب بـ JSON فقط: {"q":"","s":"","o":["","","",""]}`;
+
+    const r = await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-20250514',
+        max_tokens:1200,
+        messages:[{role:'user',content:prompt}]
+      })
+    });
+    const d = await r.json();
+    const txt = d.content&&d.content[0]?d.content[0].text:'';
+    const m = txt.match(/\{[\s\S]+\}/);
+    if(m){
+      const tr = JSON.parse(m[0]);
+      _TC[id] = {q:tr.q||q.q, o:tr.o||q.o, s:tr.s||''};
+    }
+  }catch(e){}
+  
+  _translating = false;
+  const ind = document.getElementById('_trInd');
+  if(ind) ind.remove();
+  if(lang!=='en') renderQ(cur);
+}
+
+function setLang(l){
+  lang = l;
+  document.getElementById('lbAr').className='lbtn'+(l==='ar'?' on':'');
+  document.getElementById('lbEn').className='lbtn'+(l==='en'?' on':'');
+  if(document.getElementById('lbBi')) 
+    document.getElementById('lbBi').className='lbtn'+(l==='bi'?' on':'');
+  
+  if(document.getElementById('scrExam').classList.contains('active')){
+    renderQ(cur);
+    if(l !== 'en') translateCurrentQ();
+  }
+}
+
+
+function renderQ(idx){
+  cur=idx;
+  const q=Q_shuffled[idx];
+  const qd=getQ(q);
+  const total=Q_shuffled.length;
+  const isAr = lang==='ar'||lang==='bi';
+  const dir = isAr?'rtl':'ltr';
+  document.getElementById('scrExam').setAttribute('dir', isAr?'rtl':'ltr');
+  
+  document.getElementById('pf').style.width=(((idx+1)/total)*100)+'%';
+  document.getElementById('ptxt').textContent=(idx+1)+' / '+total;
+  
+  const tb=document.getElementById('typeBdg');
+  tb.textContent=q.t==='SJI'?'⚖️ SJI':'📘 KI';
+  tb.className='bdg '+(q.t==='SJI'?'bdg-sji':'bdg-ki');
+  
+  document.getElementById('areaBdg').textContent=q.a;
+  const diffMap={easy:'سهل·Easy',medium:'متوسط·Medium',hard:'متقدم·Advanced'};
+  document.getElementById('diffBdg').textContent=diffMap[q.d]||q.d;
+  
+  // 2025 badge
+  const existing2025 = document.querySelector('.bdg-2025');
+  if(existing2025) existing2025.remove();
+  if(q.id && q.id >= 201){
+    const b2=document.createElement('div');
+    b2.className='bdg bdg-2025';b2.textContent='🆕 2025';
+    document.getElementById('hdrMeta').appendChild(b2);
+  }
+  
+  // Scenario
+  const sb=document.getElementById('scenBox');
+  if(qd.s){
+    sb.style.display='block';
+    document.getElementById('scenText').textContent=qd.s;
+    sb.setAttribute('dir', isAr?'rtl':'ltr');
+  } else {sb.style.display='none';}
+  
+  // Question text
+  const qt=document.getElementById('qText');
+  if(lang==='bi'){
+    const parts=qd.q.split('\n\n');
+    qt.innerHTML='<div style="margin-bottom:10px;">'+parts[0]+'</div>'+(parts[1]?'<div style="font-family:Tajawal,sans-serif;direction:rtl;text-align:right;color:var(--navy);font-size:1.05rem;">'+parts[1]+'</div>':'');
+    qt.removeAttribute('dir');
+  }else{
+    qt.textContent=qd.q;
+    qt.setAttribute('dir', dir);
+  }
+  
+  // Options
+  const ul=document.getElementById('optsList');ul.innerHTML='';
+  const ua=ans[idx], rev=ua!==null;
+  qd.opts.forEach(function(opt,i){
+    const li=document.createElement('li');li.className='opt';
+    if(rev)li.classList.add('dis');
+    if(rev&&i===ua&&i===q.c)li.classList.add('ok');
+    else if(rev&&i===ua&&i!==q.c)li.classList.add('bad');
+    else if(rev&&i===q.c)li.classList.add('hint');
+    else if(!rev&&i===ua)li.classList.add('sel');
+    
+    const letDiv='<div class="olet">'+LETTERS[i]+'</div>';
+    let optContent='';
+    if(lang==='bi'){
+      const parts=opt.split('\n');
+      optContent='<div class="otxt"><div>'+parts[0]+'</div>'+(parts[1]?'<div style="font-family:Tajawal,sans-serif;direction:rtl;text-align:right;font-size:.9rem;color:var(--navy);margin-top:4px;">'+parts[1]+'</div>':'')+'</div>';
+    }else{
+      optContent='<div class="otxt" '+(isAr?'dir="rtl"':'')+'>'+opt+'</div>';
+    }
+    li.innerHTML=letDiv+optContent;
+    if(!rev)(function(ii){li.addEventListener('click',function(){pick(idx,ii);});})(i);
+    ul.appendChild(li);
+  });
+  
+  // Explanation
+  const eb=document.getElementById('expBox');
+  const eh=document.getElementById('expHdr');
+  const ebody=document.getElementById('expBody');
+  if(rev){
+    const ok=ua===q.c;
+    eb.className='exp show '+(ok?'ok':'bad');
+    eh.textContent=ok?(isAr?'✓ صحيح — السبب:':'✓ Correct — Why:'):(isAr?'✗ خطأ — السبب:':'✗ Incorrect — Why:');
+    ebody.textContent=qd.e;
+    ebody.setAttribute('dir', isAr&&q.eAr?'rtl':'ltr');
+  }else{eb.className='exp';}
+  
+  // Nav buttons
+  document.getElementById('btnPrev').style.display=idx===0?'none':'';
+  const bn=document.getElementById('btnNext');
+  if(idx===Q_shuffled.length-1){
+    bn.textContent='إنهاء الامتحان ✓';bn.className='nbtn subbtn';bn.onclick=submitExam;
+  }else{
+    bn.textContent='التالي →';bn.className='nbtn nxbtn';bn.onclick=nextQ;
+  }
+  
+  updateDots();
+  window.scrollTo(0,0);
+}
+
+function pick(idx,i){
+  if(ans[idx]!==null)return;
+  ans[idx]=i;renderQ(idx);
+}
+function nextQ(){if(cur<Q_shuffled.length-1)renderQ(cur+1);}
+function prevQ(){if(cur>0)renderQ(cur-1);}
+
+function updateDots(){
+  const dc=document.getElementById('qDots');dc.innerHTML='';
+  Q_shuffled.forEach(function(_,i){
+    const d=document.createElement('div');
+    d.className='d'+(i===cur?' dcur':'')+(ans[i]!==null?(ans[i]===Q_shuffled[i].c?' dok':' dno'):'');
+    d.onclick=(function(ii){return function(){renderQ(ii);};})(i);
+    dc.appendChild(d);
+  });
+}
+
+function submitExam(){
+  const tot=Q_shuffled.length;
+  const done=ans.filter(a=>a!==null).length;
+  if(done<tot){
+    const unanswered=tot-done;
+    if(!confirm((lang==='ar')?'لديك '+unanswered+' أسئلة بدون إجابة. هل تريدين إنهاء الامتحان؟':'You have '+unanswered+' unanswered questions. Submit anyway?'))return;
+  }
+  
+  let correct=0,kiOk=0,kiTot=0,sjiOk=0,sjiTot=0;
+  Q_shuffled.forEach(function(q,i){
+    const ok=ans[i]===q.c;
+    if(ok)correct++;
+    if(q.t==='KI'){kiTot++;if(ok)kiOk++;}
+    else{sjiTot++;if(ok)sjiOk++;}
+  });
+  
+  const pct=Math.round(correct/tot*100);
+  const pass=pct>=70;
+  showScreen('scrResults');
+  document.getElementById('hdrMeta').style.display='none';
+  
+  const circ=document.getElementById('scoreCirc');
+  circ.textContent=pct+'%';
+  circ.className='scircle '+(pass?'sp':'sf');
+  document.getElementById('resMsg').textContent=pass?'🎉 ممتاز! اجتزت الامتحان':'📚 تحتاجين مزيداً من المراجعة';
+  document.getElementById('rCorrect').textContent=correct;
+  document.getElementById('rWrong').textContent=tot-correct;
+  document.getElementById('rKi').textContent=kiOk+'/'+kiTot;
+  document.getElementById('rSji').textContent=sjiOk+'/'+sjiTot;
+}
+
+function retryExam(){Q_shuffled=buildShuffledExam();ans=new Array(Q_shuffled.length).fill(null);showScreen('scrExam');document.getElementById('hdrMeta').style.display='flex';renderQ(0);}
+function reviewExam(){showScreen('scrExam');document.getElementById('hdrMeta').style.display='flex';renderQ(0);}
+</script>
+</body>
+</html>

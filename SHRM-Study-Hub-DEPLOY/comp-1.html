@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ملخص SHRM - الصفحات 1-100</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1a3a5c;
+    --accent: #c8a84b;
+    --accent2: #e8734a;
+    --bg: #f7f4ef;
+    --card: #ffffff;
+    --text: #2c2c2c;
+    --muted: #6b7280;
+    --green: #1e7a4a;
+    --red: #b91c1c;
+    --border: #e2d9c8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Tajawal', 'Cairo', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    font-size: 16px;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--primary);
+    color: white;
+    padding: 48px 40px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(200,168,75,0.15);
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; right: -40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(232,115,74,0.12);
+  }
+  .header-badge {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 13px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+    letter-spacing: 1px;
+  }
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .header p {
+    font-size: 1rem;
+    opacity: 0.8;
+    max-width: 600px;
+  }
+  .header-meta {
+    display: flex;
+    gap: 24px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    opacity: 0.9;
+  }
+  .meta-icon { font-size: 18px; }
+
+  /* CONTAINER */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  /* OVERVIEW CARD */
+  .overview-card {
+    background: var(--primary);
+    color: white;
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .overview-card::after {
+    content: 'SHRM';
+    position: absolute;
+    left: -10px; bottom: -20px;
+    font-size: 90px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.05);
+  }
+  .overview-card h2 {
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .overview-card p {
+    font-size: 15px;
+    line-height: 1.9;
+    opacity: 0.9;
+  }
+
+  /* SECTION */
+  .section {
+    margin-bottom: 40px;
+  }
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .section-num {
+    background: var(--accent);
+    color: var(--primary);
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .section-title h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+  }
+  .section-title .en-title {
+    font-size: 13px;
+    color: var(--muted);
+    font-style: italic;
+    direction: ltr;
+  }
+
+  /* CARD */
+  .card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 26px 28px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+  }
+  .card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border);
+  }
+  .card h3 .en { color: var(--accent2); direction: ltr; display: inline-block; font-size: 0.85rem; margin-right: 8px; }
+
+  /* LIST */
+  .info-list {
+    list-style: none;
+    padding: 0;
+  }
+  .info-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0ebe0;
+    font-size: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .info-list li:last-child { border-bottom: none; }
+  .bullet {
+    width: 8px; height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+  .bullet.green { background: var(--green); }
+  .bullet.red { background: var(--red); }
+
+  /* TERM */
+  .term {
+    background: #f0f6ff;
+    border-right: 4px solid var(--primary);
+    padding: 10px 16px;
+    margin: 8px 0;
+    border-radius: 6px;
+    font-size: 15px;
+  }
+  .term strong { color: var(--primary); }
+  .term .en-term {
+    color: var(--accent2);
+    font-style: italic;
+    direction: ltr;
+    display: inline-block;
+  }
+
+  /* TABLE */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 12px;
+  }
+  .compare-table th {
+    background: var(--primary);
+    color: white;
+    padding: 10px 14px;
+    text-align: right;
+  }
+  .compare-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .compare-table tr:nth-child(even) td { background: #f9f6f0; }
+  .compare-table tr:hover td { background: #fff3e0; }
+
+  /* HIGHLIGHT BOX */
+  .highlight {
+    background: linear-gradient(135deg, #fff8e7, #fef3cd);
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 16px 0;
+  }
+  .highlight .icon { font-size: 24px; margin-bottom: 8px; }
+  .highlight p { font-size: 15px; }
+
+  /* THEORY GRID */
+  .theory-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 12px;
+  }
+  @media (max-width: 640px) { .theory-grid { grid-template-columns: 1fr; } }
+  .theory-item {
+    background: #f9f6f0;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .theory-item h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 6px;
+  }
+  .theory-item .en { font-size: 12px; color: var(--accent2); direction: ltr; display: block; margin-bottom: 6px; }
+  .theory-item p { font-size: 13px; color: #444; line-height: 1.7; }
+
+  /* COMPETENCY PYRAMID */
+  .pyramid-section {
+    background: var(--card);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+  .pyramid-row {
+    background: var(--primary);
+    color: white;
+    border-radius: 8px;
+    padding: 12px 20px;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .pyramid-row.level2 { background: #2d6a4f; }
+  .pyramid-row.level3 { background: #5c4a1e; }
+  .pyramid-row .en { font-size: 12px; opacity: 0.8; direction: ltr; }
+
+  /* TIP BOX */
+  .tip-box {
+    background: #f0fdf4;
+    border: 1px solid #86efac;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  .tip-box strong { color: var(--green); }
+
+  /* EXAM INFO */
+  .exam-stat {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+  .stat-chip {
+    background: var(--primary);
+    color: white;
+    border-radius: 30px;
+    padding: 8px 18px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .stat-chip.gold { background: var(--accent); color: var(--primary); }
+  .stat-chip.orange { background: var(--accent2); }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 24px;
+    color: var(--muted);
+    font-size: 14px;
+    border-top: 2px solid var(--border);
+  }
+  .next-btn {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .divider {
+    border: none;
+    border-top: 2px dashed var(--border);
+    margin: 32px 0;
+  }
+
+/* ── THEORY EXPANSION BOXES ── */
+.th-box{background:#fff;border:1.5px solid #ddd6c8;border-radius:16px;margin:24px 0;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);}
+.th-header{display:flex;align-items:center;gap:12px;padding:16px 20px;background:linear-gradient(135deg,#0d1b2e,#163456);}
+.th-icon{font-size:1.4rem;flex-shrink:0;}
+.th-title{color:#fff;font-weight:700;font-size:1rem;}
+.th-subtitle{color:rgba(255,255,255,.55);font-size:.8rem;margin-top:2px;}
+.th-body{padding:0 20px 20px;}
+.th-formula{background:#0d1b2e;color:#c8a84b;font-family:'Outfit',monospace,sans-serif;font-weight:700;font-size:.9rem;padding:10px 16px;border-radius:8px;margin:14px 0;text-align:center;letter-spacing:.03em;}
+.th-stage-list{display:flex;flex-direction:column;gap:0;}
+.th-stage{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #f0ede5;}
+.th-stage:last-child{border-bottom:none;}
+.th-sn{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;flex-shrink:0;margin-top:2px;}
+.th-sc{flex:1;font-size:.9rem;line-height:1.65;color:#333;}
+.th-sc strong{color:#0d1b2e;}
+.th-sc em{color:#888;font-size:.85em;}
+.th-example{background:#f0ede5;border-right:3px solid #c8a84b;padding:10px 14px;border-radius:0 8px 8px 0;margin:8px 0;font-size:.88rem;color:#444;line-height:1.65;}
+.th-example strong{color:#0d1b2e;}
+.th-exam-tip{background:#fff8e7;border:1.5px solid #c8a84b;border-radius:10px;padding:12px 16px;margin:14px 0 0;font-size:.88rem;color:#4a3000;line-height:1.65;}
+.th-exam-tip strong{color:#0d1b2e;}
+.th-compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0;}
+@media(max-width:600px){.th-compare{grid-template-columns:1fr;}}
+.th-compare-card{background:#f7f5f0;border-radius:10px;padding:12px 14px;}
+.th-compare-card h4{font-size:.85rem;font-weight:700;color:#0d1b2e;margin-bottom:8px;}
+.th-compare-card li{font-size:.82rem;color:#444;margin-bottom:4px;line-height:1.5;}
+.th-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:12px 0;}
+.th-card{background:#f7f5f0;border-radius:10px;padding:12px 14px;border-top:3px solid #ccc;}
+.th-card h4{font-size:.82rem;font-weight:700;color:#0d1b2e;margin-bottom:6px;}
+.th-card p{font-size:.8rem;color:#555;line-height:1.55;}
+.th-divider{height:1px;background:#f0ede5;margin:16px 0;}
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-badge">📚 خطة الدراسة · الجزء الأول</div>
+  <h1>ملخص الصفحات 1–100</h1>
+  <p>SHRM Learning System 2023 – HR Competencies Module</p>
+  <div class="header-meta">
+    <div class="meta-item"><span class="meta-icon">📄</span> 601 صفحة إجمالاً</div>
+    <div class="meta-item"><span class="meta-icon">🎯</span> SHRM-CP / SHRM-SCP</div>
+    <div class="meta-icon">🌍</div>
+    <div class="meta-item">شرح بالعربية · المصطلحات بالإنجليزية</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- OVERVIEW -->
+  <div class="overview-card">
+    <h2>🗺️ نظرة عامة على هذا الجزء</h2>
+    <p>
+      تغطي الصفحات 1–100 <strong>المقدمة الأساسية</strong> للكتاب، وتشمل: شرح نظام التعلم (SHRM Learning System)، اختبارات الشهادة (SHRM-CP و SHRM-SCP)، إطار المعرفة (SHRM BASK)، ثم تبدأ في استعراض أول كفاءتين سلوكيتين:
+      <strong>القيادة والتوجيه (Leadership &amp; Navigation)</strong> 
+      و<strong>الممارسة الأخلاقية (Ethical Practice)</strong>
+      — وهما من أهم 9 كفاءات سلوكية في النموذج.
+    </p>
+  </div>
+
+  <!-- ====== SECTION 1 ====== -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-num">1</div>
+      <div>
+        <h2>نظام التعلم SHRM ومكوناته</h2>
+        <div class="en-title">The SHRM Learning System</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>ما هو SHRM؟ <span class="en">Society for Human Resource Management</span></h3>
+      <ul class="info-list">
+        <li><span class="bullet"></span><strong>SHRM</strong> هي منظمة دولية رائدة في مجال إدارة الموارد البشرية، تُصدر شهادتين مهنيتين محترمتين عالمياً.</li>
+        <li><span class="bullet"></span>يعتمد نظام التعلم على <strong>SHRM BASK</strong> (Body of Applied Skills and Knowledge) — وهو "الإطار المعرفي التطبيقي" الذي يحدد ما يجب أن يعرفه كل متخصص في HR.</li>
+        <li><span class="bullet"></span>الكتاب يتكون من 4 وحدات (Modules): كفاءات HR + People + Organization + Workplace.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>كيف تستخدم النظام بالطريقة الصحيحة؟ <span class="en">How to Use the Learning System</span></h3>
+      <ul class="info-list">
+        <li><span class="bullet green"></span>ابدأ بمراجعة إطار SHRM BASK لتعرف ما سيُختبر.</li>
+        <li><span class="bullet green"></span>خذ الاختبار التمهيدي <strong>(Pre-test)</strong> لتحديد نقاط الضعف.</li>
+        <li><span class="bullet green"></span>ادرس كل وحدة وخذ الاختبار الخاص بها.</li>
+        <li><span class="bullet green"></span>انته بـ <strong>Practice Exam</strong> — يحتوي على أسئلة حقيقية سبق تطبيقها في الاختبارات الرسمية.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ====== SECTION 2 ====== -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-num">2</div>
+      <div>
+        <h2>الشهادتان: SHRM-CP و SHRM-SCP</h2>
+        <div class="en-title">Certifications Overview</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>الفرق بين الشهادتين</h3>
+      <table class="compare-table">
+        <tr>
+          <th>المعيار</th>
+          <th>SHRM-CP</th>
+          <th>SHRM-SCP</th>
+        </tr>
+        <tr>
+          <td>المستوى المهني</td>
+          <td>تشغيلي (Operational)</td>
+          <td>استراتيجي (Strategic)</td>
+        </tr>
+        <tr>
+          <td>الخبرة المطلوبة</td>
+          <td>لا يشترط سنوات محددة</td>
+          <td>3 سنوات على الأقل في دور استراتيجي</td>
+        </tr>
+        <tr>
+          <td>طبيعة العمل</td>
+          <td>تنفيذ سياسات HR، دعم يومي</td>
+          <td>وضع استراتيجيات، قيادة وظيفة HR بالكامل</td>
+        </tr>
+        <tr>
+          <td>نسبة النجاح (2022)</td>
+          <td>65%</td>
+          <td>46%</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>تفاصيل الاختبار <span class="en">Exam Details</span></h3>
+      <div class="exam-stat">
+        <div class="stat-chip">⏱️ 3 ساعات و40 دقيقة</div>
+        <div class="stat-chip gold">134 سؤالاً إجمالاً</div>
+        <div class="stat-chip orange">110 أسئلة محسوبة</div>
+        <div class="stat-chip">24 أسئلة تجريبية</div>
+      </div>
+      <ul class="info-list" style="margin-top:16px;">
+        <li><span class="bullet"></span><strong>Knowledge Items (KI / FKI):</strong> أسئلة معرفية تقيس الفهم والتطبيق.</li>
+        <li><span class="bullet"></span><strong>Situational Judgment Items (SJIs):</strong> سيناريوهات عملية تختبر الحكم والقرار — 4 خيارات لكن واحداً فقط هو "الأفضل".</li>
+      </ul>
+      <div class="highlight">
+        <div class="icon">💡</div>
+        <p><strong>نصيحة ذهبية:</strong> في أسئلة SJI لا تبحث عن الإجابة "الصحيحة" بل عن "الأفضل". كل الخيارات مقبولة لكن يجب اختيار الأنسب للسياق.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>توزيع الأسئلة على موضوعات الاختبار <span class="en">Item Distribution</span></h3>
+      <table class="compare-table">
+        <tr><th>المجموعة</th><th>المحتوى</th><th>النسبة</th></tr>
+        <tr><td>Leadership Cluster</td><td>Leadership & Navigation + Ethics + DEI</td><td>17%</td></tr>
+        <tr><td>Interpersonal Cluster</td><td>Relationship + Communication + Global Mindset</td><td>16.5%</td></tr>
+        <tr><td>Business Cluster</td><td>Business Acumen + Consultation + Analytical Aptitude</td><td>16.5%</td></tr>
+        <tr><td>People Domain</td><td>HR Strategy, Talent, Engagement, L&D, Total Rewards</td><td>18%</td></tr>
+        <tr><td>Organization Domain</td><td>Structure, OED, Workforce Mgmt, Labor Relations, Tech</td><td>18%</td></tr>
+        <tr><td>Workplace Domain</td><td>Global Workforce, Risk, CSR, Employment Law</td><td>14%</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ====== SECTION 3 ====== -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-num">3</div>
+      <div>
+        <h2>إطار المعرفة التطبيقية SHRM BASK</h2>
+        <div class="en-title">Body of Applied Skills and Knowledge</div>
+      </div>
+    </div>
+
+    <div class="pyramid-section">
+      <h3 style="margin-bottom:16px; font-weight:700; color:var(--primary);">🔺 هرم SHRM BASK</h3>
+      <div class="pyramid-row">
+        <span>الكفاءات السلوكية التسع</span>
+        <span class="en">9 Behavioral Competencies → 3 Clusters</span>
+      </div>
+      <div class="pyramid-row level2">
+        <span>3 مجموعات: القيادة | التواصل البشري | الأعمال</span>
+        <span class="en">Leadership · Interpersonal · Business</span>
+      </div>
+      <div class="pyramid-row level3">
+        <span>خبرة HR التقنية (14 مجالاً وظيفياً)</span>
+        <span class="en">HR Expertise: People · Organization · Workplace</span>
+      </div>
+      <div class="tip-box" style="margin-top:14px;">
+        <strong>📌 الفكرة الجوهرية:</strong> المعرفة التقنية وحدها لا تكفي. يجب أن تُكمّلها الكفاءات السلوكية لتحقيق الأثر الفعلي في المنظمة.
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ====== SECTION 4 ====== -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-num">4</div>
+      <div>
+        <h2>الكفاءة الأولى: القيادة والتوجيه</h2>
+        <div class="en-title">Leadership & Navigation Competency</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>التعريف والجوهر</h3>
+      <p>القدرة على خلق رؤية ومهمة واضحة لـ HR، تحقيق أهداف المنظمة، قيادة التغيير، والتعامل مع الديناميكيات الداخلية.</p>
+      <div class="highlight" style="margin-top:16px;">
+        <p>🧠 <strong>مقارنة مفيدة:</strong> المدير يُنجز المهام، بينما القائد يلهم الآخرين لإنجازها بأنفسهم. HR يحتاج الاثنين معاً.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>مقاربات القيادة الست <span class="en">6 Leadership Approaches (Goleman)</span></h3>
+      <div class="theory-grid">
+        <div class="theory-item">
+          <h4>القيادة القسرية</h4>
+          <span class="en">Coercive Leadership</span>
+          <p>فرض القرار مباشرة. فعّالة في الأزمات فقط. تضر بالحافزية على المدى البعيد.</p>
+        </div>
+        <div class="theory-item">
+          <h4>القيادة التسلطية</h4>
+          <span class="en">Authoritative Leadership</span>
+          <p>يطرح القائد رؤية جريئة ويدعو الفريق للانضمام. تمنح الأعضاء مساحة للمساهمة.</p>
+        </div>
+        <div class="theory-item">
+          <h4>القيادة التآلفية</h4>
+          <span class="en">Affiliative Leadership</span>
+          <p>تبني علاقات قوية وثقة. ضعيفة إذا استُخدمت وحدها — تتجنب النقد.</p>
+        </div>
+        <div class="theory-item">
+          <h4>القيادة الديمقراطية</h4>
+          <span class="en">Democratic Leadership</span>
+          <p>قرارات بالإجماع. فعّالة عند الحاجة لمشاركة الفريق. بطيئة في الأزمات.</p>
+        </div>
+        <div class="theory-item">
+          <h4>قيادة تحديد الوتيرة</h4>
+          <span class="en">Pacesetting Leadership</span>
+          <p>يضع القائد معايير أداء عالية. خطرة إن أُفرط فيها — تُرهق الفريق.</p>
+        </div>
+        <div class="theory-item">
+          <h4>قيادة التدريب والتطوير</h4>
+          <span class="en">Coaching Leadership</span>
+          <p>تطوير مهارات الأعضاء كأولوية. تحتاج وقتاً وقدرات قيادية عالية.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>نظريات القيادة الرئيسية <span class="en">Leadership Theories</span></h3>
+      <ul class="info-list">
+        <li><span class="bullet"></span><strong>Trait Theory (نظرية السمات):</strong> القادة يولدون بصفات فطرية. الآن مرفوضة إلى حد ما — تثبّط التطوير.</li>
+        <li><span class="bullet"></span><strong>Blake-Mouton Theory:</strong> 5 أنماط بناءً على الاهتمام بالمهمة vs الاهتمام بالعلاقات. "قائد الفريق" هو الأفضل (مرتفع في الاثنين).</li>
+        <li><span class="bullet"></span><strong>Hersey-Blanchard Situational Leadership:</strong> يتكيف القائد مع مستوى نضج الموظف: Telling → Selling → Participating → Delegating.</li>
+        <li><span class="bullet"></span><strong>Transformational Leadership (القيادة التحويلية):</strong> تُلهم التغيير والابتكار. تعتمد على القدوة والتفويض.</li>
+        <li><span class="bullet"></span><strong>Servant Leadership (قيادة الخادم):</strong> القائد يخدم فريقه. تُعزز الثقة والابتكار لكنها تحتاج وقتاً أطول.</li>
+        <li><span class="bullet"></span><strong>Transactional vs Transformational:</strong> الأول: نظام + عقوبات + مكافآت. الثاني: إلهام + استقلالية + رؤية.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>أنواع السلطة <span class="en">Types of Power (French & Raven)</span></h3>
+      <ul class="info-list">
+        <li><span class="bullet"></span><strong>Legitimate Power:</strong> سلطة المنصب الرسمي.</li>
+        <li><span class="bullet"></span><strong>Reward Power:</strong> القدرة على منح المكافآت.</li>
+        <li><span class="bullet"></span><strong>Expert Power:</strong> الخبرة والمعرفة المتخصصة.</li>
+        <li><span class="bullet"></span><strong>Referent Power:</strong> قوة الشخصية والكاريزما.</li>
+        <li><span class="bullet"></span><strong>Coercive Power:</strong> سلطة العقاب — فعّالة لفترة قصيرة فقط.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>نظريات الدافعية <span class="en">Motivation Theories</span></h3>
+      <div class="theory-grid">
+        <div class="theory-item">
+          <h4>هرم ماسلو</h4>
+          <span class="en">Maslow's Hierarchy of Needs</span>
+          <p>5 احتياجات هرمية: الفسيولوجية → الأمان → الانتماء → التقدير → تحقيق الذات.</p>
+ 
+<div style="background:#fff8e7;border-right:4px solid #C8A84B;padding:14px 18px;margin:16px 0;border-radius:8px;">
+<strong style="color:#0D1B2E;">🆕 إضافات 2025 — Leadership & Navigation</strong><br>
+أضافت نسخة 2025 للمفاهيم الرئيسية:<br>
+• <strong>Growth Mindset</strong> (عقلية النمو) — ضمن الصفات القيادية الشخصية<br>
+• <strong>Self-Determination Theory</strong> (نظرية تقرير الذات) — ضمن نظريات التحفيز<br>
+• <strong>Attribution Theory</strong> — ضمن نظريات التحفيز (مضافة صراحةً)
+</div>       </div>
+        <div class="theory-item">
+          <h4>نظرية X و Y</h4>
+          <span class="en">Theory X / Theory Y (McGregor)</span>
+          <p>X: الناس كسالى يحتاجون سيطرة. Y: يريدون العمل والإبداع. بيئات المعرفة تحتاج Y.</p>
+        </div>
+        <div class="theory-item">
+          <h4>العاملان لهرتزبرغ</h4>
+          <span class="en">Herzberg's Two-Factor Theory</span>
+          <p>Hygiene factors (الراتب، البيئة): غيابها يسبب استياءً. Motivators (الإنجاز، التقدير): وجودها يرفع الحافز.</p>
+        </div>
+        <div class="theory-item">
+          <h4>نظرية التوقع</h4>
+          <span class="en">Expectancy Theory (Vroom)</span>
+          <p>الجهد = Expectancy × Instrumentality × Valence. الموظف يعمل بجد فقط إذا توقع نتيجة ذات قيمة.</p>
+        </div>
+        <div class="theory-item">
+          <h4>نظرية العدالة</h4>
+          <span class="en">Equity Theory</span>
+          <p>الموظف يقارن مدخلاته بمخرجاته مع زملائه. الشعور بالظلم يقلل الحافز.</p>
+        </div>
+        <div class="theory-item">
+          <h4>نظرية تحديد الأهداف</h4>
+          <span class="en">Goal-Setting Theory</span>
+          <p>الأهداف الواضحة والمتحدية تزيد الحافز. يجب أن تكون محددة وواقعية مع تغذية راجعة.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>التوجه في المنظمة <span class="en">Navigating the Organization</span></h3>
+      <ul class="info-list">
+        <li><span class="bullet"></span><strong>الهيكل الرسمي (Formal Structure):</strong> الخريطة التنظيمية، السياسات، خطوط الإبلاغ.</li>
+        <li><span class="bullet"></span><strong>الهيكل غير الرسمي (Informal Structure):</strong> العلاقات الشخصية، الشبكات، الثقافة المُعاشة.</li>
+        <li><span class="bullet"></span>الـ HR الفعّال يفهم الاثنين ويستخدمهما لتمرير مبادراته.</li>
+        <li><span class="bullet"></span>بناء <strong>التحالفات (Alliances)</strong> أمر ضروري — الفكرة الجيدة وحدها لا تكفي.</li>
+      </ul>
+    </div>
+  </div>
+
+
+<div class="th-box">
+  <div class="th-header">
+    <div class="th-icon">🎯</div>
+    <div>
+      <div class="th-title">نظريات التحفيز — المقارنة الشاملة مع أمثلة الامتحان</div>
+      <div class="th-subtitle">Motivation Theories — Maslow · Herzberg · McGregor · Vroom · Adams · McClelland</div>
+    </div>
+  </div>
+  <div class="th-body">
+
+    <div class="th-formula">الجهد = التوقع (E) × الأداتية (I) × التكافؤ (V) — نظرية Vroom</div>
+
+    <div class="th-stage-list">
+
+      <div class="th-stage">
+        <div class="th-sn" style="background:#e8f2fb;color:#1a3a5c;">1</div>
+        <div class="th-sc">
+          <strong>Maslow's Hierarchy — هرم ماسلو للاحتياجات</strong><br>
+          5 مستويات تصاعدية: <em>الفسيولوجية → الأمان → الانتماء → التقدير → تحقيق الذات</em><br>
+          القاعدة: الاحتياجات الأدنى يجب إشباعها قبل التحرك للأعلى.
+          <div class="th-example"><strong>مثال امتحاني:</strong> موظف يقلق من تقليص الشركة → احتياج الأمان غير مُشبع → لن يستجيب لبرامج تطوير المسار (Self-actualization) حتى تُحلّ مخاوف الأمان أولاً.</div>
+          <div class="th-example"><strong>تطبيق HR:</strong> برامج التوازن بين العمل والحياة → تلبي احتياجات الانتماء. التقدير والترقية → تلبي احتياجات التقدير.</div>
+        </div>
+      </div>
+
+      <div class="th-stage">
+        <div class="th-sn" style="background:#e1f5ee;color:#085041;">2</div>
+        <div class="th-sc">
+          <strong>Herzberg's Two-Factor Theory — نظرية العاملين</strong><br>
+          <em>عوامل النظافة Hygiene:</em> غيابها يُسبّب عدم الرضا لكن وجودها لا يُحفّز — الراتب، الإشراف، بيئة العمل.<br>
+          <em>عوامل التحفيز Motivators:</em> وجودها يُحفّز — الإنجاز، التقدير، المسؤولية، النمو.
+          <div class="th-example"><strong>مثال امتحاني:</strong> رفع الراتب لن يُحفّز على المدى البعيد (Hygiene فقط). لكن منح المسؤولية على مشروع جديد (Motivator) يرفع الحافز الفعلي.</div>
+          <div class="th-example"><strong>تطبيق HR:</strong> إذا انخفض الأداء بسبب الراتب → عوامل نظافة. إذا انخفض بسبب عدم الشعور بالإنجاز → عوامل تحفيز. الحل مختلف تماماً.</div>
+        </div>
+      </div>
+
+      <div class="th-stage">
+        <div class="th-sn" style="background:#fff8e7;color:#633806;">3</div>
+        <div class="th-sc">
+          <strong>McGregor Theory X & Y</strong><br>
+          <em>Theory X:</em> الموظفون كسالى، يحتاجون مراقبة وإجبار.<br>
+          <em>Theory Y:</em> الموظفون يريدون العمل والإبداع، الرقابة الذاتية أفعل.
+          <div class="th-example"><strong>مثال امتحاني:</strong> مدير يُلزم بتسجيل كل نشاط كل 30 دقيقة → يعكس Theory X. مدير يُعطي المهمة ويترك طريقة التنفيذ للموظف → Theory Y.</div>
+          <div class="th-example"><strong>في الامتحان:</strong> بيئات المعرفة (مهندسون، أطباء، محللون) تحتاج Theory Y دائماً. Theory X مناسبة للعمل الروتيني المتكرر فقط.</div>
+        </div>
+      </div>
+
+      <div class="th-stage">
+        <div class="th-sn" style="background:#f3effe;color:#5b21b6;">4</div>
+        <div class="th-sc">
+          <strong>Vroom's Expectancy Theory — نظرية التوقع</strong><br>
+          <em>الجهد = Expectancy × Instrumentality × Valence</em><br>
+          • <strong>Expectancy:</strong> هل جهدي سيُنتج أداء جيداً؟<br>
+          • <strong>Instrumentality:</strong> هل الأداء الجيد سيُفضي لمكافأة؟<br>
+          • <strong>Valence:</strong> هل أقدّر هذه المكافأة؟
+          <div class="th-example"><strong>مثال امتحاني:</strong> موظف يعرف أنه مهما عمل سيحصل على نفس الراتب (Instrumentality = 0) → لن يبذل جهداً إضافياً حتى لو كان الراتب مرتفعاً.</div>
+          <div class="th-example"><strong>تطبيق HR:</strong> نظام الحوافز يفشل إذا: الموظفون لا يثقون بإمكانية تحقيق الهدف، أو لا يؤمنون أن الأداء سيُكافَأ فعلاً.</div>
+        </div>
+      </div>
+
+      <div class="th-stage">
+        <div class="th-sn" style="background:#fff4ee;color:#c2410c;">5</div>
+        <div class="th-sc">
+          <strong>Adams' Equity Theory — نظرية العدالة</strong><br>
+          الموظف يقارن: <em>(مدخلاتي ÷ مخرجاتي) مقابل (مدخلات الآخر ÷ مخرجاته)</em><br>
+          عدم المساواة يُنتج: تقليل الجهد، طلب زيادة، ترك العمل، أو إعادة تأطير التصور.
+          <div class="th-example"><strong>مثال امتحاني:</strong> موظف يكتشف أن زميله بنفس المؤهلات يتقاضى أكثر → سيُقلّل إنتاجيته أو يطلب زيادة أو يبحث عن عمل آخر.</div>
+          <div class="th-example"><strong>تطبيق HR:</strong> سياسات شفافية الأجور (Pay Transparency) تُقلّل الإدراك السلبي لعدم العدالة.</div>
+        </div>
+      </div>
+
+      <div class="th-stage">
+        <div class="th-sn" style="background:#e8f2fb;color:#1a3a5c;">6</div>
+        <div class="th-sc">
+          <strong>McClelland's Need Theory — نظرية الاحتياجات</strong><br>
+          3 احتياجات تحفيزية اكتسابية (وليست فطرية):<br>
+          • <strong>nAch (Need for Achievement):</strong> الحاجة للإنجاز — يُحبّون التحديات المتوسطة الصعوبة<br>
+          • <strong>nAff (Need for Affiliation):</strong> الحاجة للانتماء — يُفضّلون التعاون على التنافس<br>
+          • <strong>nPow (Need for Power):</strong> الحاجة للسلطة — يريدون التأثير والقيادة
+          <div class="th-example"><strong>مثال امتحاني:</strong> مندوب مبيعات ممتاز قد يكون مديراً فاشلاً إذا كان nAch عالياً وnPow منخفضاً — يُفضّل العمل الفردي على قيادة الآخرين.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:22px;margin-bottom:8px;"><strong style="font-size:1.05rem;color:#1a3a5c;">نظريات أسلوب القيادة <span class="en">Leadership Style Theories</span></strong> <span style="background:#1D9E75;color:#fff;font-size:11px;font-weight:800;padding:2px 9px;border-radius:20px;">محدّث ٢٠٢٥</span></div>
+    <div class="theory-item">
+      <div class="th-stage">
+        <div class="th-sn" style="background:#fbeee8;color:#7a3a1c;">أ</div>
+        <div class="th-sc"><strong>Trait Theory — نظرية السمات</strong><br>أقدم المقاربات: القائد يُولد بسمات مميِّزة (الذكاء، الثقة، الحزم، النزاهة). انتُقدت لإهمالها المهارات المكتسبة وأثر الموقف.</div>
+      </div>
+      <div class="th-stage">
+        <div class="th-sn" style="background:#fbeee8;color:#7a3a1c;">ب</div>
+        <div class="th-sc"><strong>Blake-Mouton Managerial Grid — الشبكة الإدارية</strong><br>محوران: الاهتمام بالإنتاج × الاهتمام بالناس. الأمثل <strong>9,9</strong> (قيادة الفريق). والأنماط: 9,1 سلطة-طاعة · 1,9 نادي الريف · 5,5 منتصف الطريق · 1,1 متهالك.</div>
+      </div>
+      <div class="th-stage">
+        <div class="th-sn" style="background:#fbeee8;color:#7a3a1c;">ج</div>
+        <div class="th-sc"><strong>Fiedler's Contingency — نموذج الطوارئ</strong><br>الفعالية = توافق أسلوب القائد (موجَّه للمهمة أو للعلاقة، يُقاس بمقياس LPC) مع مواتاة الموقف. <em>الأسلوب ثابت، فنغيّر الموقف لا القائد.</em></div>
+      </div>
+      <div class="th-stage">
+        <div class="th-sn" style="background:#fbeee8;color:#7a3a1c;">د</div>
+        <div class="th-sc"><strong>Path-Goal (House) — المسار-الهدف</strong><br>القائد يمهّد المسار نحو الهدف بإزالة العقبات، ويكيّف أسلوبه: توجيهي / داعم / مشارك / موجَّه بالإنجاز — حسب الموظف والمهمة.</div>
+      </div>
+      <div class="th-stage">
+        <div class="th-sn" style="background:#fbeee8;color:#7a3a1c;">هـ</div>
+        <div class="th-sc"><strong>Hersey-Blanchard Situational — القيادة الظرفية</strong><br>يغيّر القائد أسلوبه (توجيه / إقناع / مشاركة / تفويض) حسب نضج الموظف.
+        <div class="th-example"><strong>تمييز امتحاني:</strong> الفرق عن فيدلر — هنا القائد يغيّر أسلوبه، أما عند فيدلر فالأسلوب ثابت ونغيّر الموقف.</div></div>
+      </div>
+      <div class="th-stage">
+        <div class="th-sn" style="background:#fbeee8;color:#7a3a1c;">و</div>
+        <div class="th-sc"><strong>Transformational vs Transactional — التحويلية والتبادلية</strong><br>التحويلية تُلهم وتغيّر قيم التابعين نحو رؤية؛ والتبادلية تبادل مكافأة مقابل أداء (عصا وجزرة).</div>
+      </div>
+      <div class="th-stage">
+        <div class="th-sn" style="background:#fbeee8;color:#7a3a1c;">ز</div>
+        <div class="th-sc"><strong>Servant Leadership — القيادة الخادمة</strong><br>القائد يضع نموَّ الفريق ورفاهيته وتمكينه أولاً، فيقود بالخدمة لا بسلطة المنصب.
+        <div class="th-example"><strong>مثال امتحاني:</strong> الموقف الذي يكافئ تمكين الفريق وإزالة عوائقه ← القيادة الخادمة، لا الآمرة.</div></div>
+      </div>
+    </div>
+
+    <div class="th-exam-tip">⭐ <strong>نصيحة الامتحان:</strong> في أسئلة SJI — ابدأ بتشخيص نوع المشكلة: هل هي نقص في Hygiene Factors؟ أم في Motivators؟ أم مشكلة Expectancy؟ أم Equity؟ كل تشخيص يُفضي لحل مختلف.</div>
+  </div>
+</div>
+
+
+
+
+  <hr class="divider">
+
+  <!-- ====== SECTION 5 ====== -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-num">5</div>
+      <div>
+        <h2>الكفاءة الثانية: الممارسة الأخلاقية</h2>
+        <div class="en-title">Ethical Practice Competency</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>التعريف والمبادئ الأساسية</h3>
+      <p>الحفاظ على النزاهة الشخصية والمهنية، وأن يكون HR عاملاً على نشر ثقافة القيم والمساءلة في المنظمة بأكملها.</p>
+      <div class="highlight" style="margin-top:16px;">
+        <p>⚖️ <strong>المبادئ الثلاثة:</strong> الالتزام بالمعايير الاجتماعية المقبولة (honesty) + النزاهة (consistency بين القيم والأفعال) + الالتزام بالصالح العام.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>مفاهيم أخلاقية جوهرية</h3>
+      <div class="term">
+        <strong>Transparency (الشفافية):</strong> <span class="en-term">Transparency</span> — الوضوح في السياسات والقرارات وإمكانية الوصول للمعلومات.
+      </div>
+      <div class="term">
+        <strong>Conflicts of Interest (تعارض المصالح):</strong> <span class="en-term">Conflicts of Interest</span> — حين تتعارض المصلحة الشخصية مع المهنية. HR يجب أن يُبلّغ ويُعالج.
+      </div>
+      <div class="term">
+        <strong>Unconscious Bias (التحيز اللاواعي):</strong> <span class="en-term">Unconscious Bias</span> — تحيزات لا نشعر بها تؤثر في قراراتنا. HR يتعرف عليها ويعمل على تقليلها.
+      </div>
+      <div class="term">
+        <strong>Privacy & Confidentiality (الخصوصية والسرية):</strong> <span class="en-term">Privacy / Confidentiality</span> — الالتزام بعدم كشف بيانات الموظفين إلا بالقدر القانوني.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>دور HR كنموذج أخلاقي</h3>
+      <ul class="info-list">
+        <li><span class="bullet green"></span>يكون قدوة حسنة في النزاهة والصدق.</li>
+        <li><span class="bullet green"></span>يُمكّن الموظفين من الإبلاغ عن المخالفات دون خوف من الانتقام.</li>
+        <li><span class="bullet green"></span>يوازن بين مصلحة الموظف، المنظمة، والقانون.</li>
+        <li><span class="bullet red"></span>يتجنب استخدام السلطة للمكسب الشخصي.</li>
+        <li><span class="bullet red"></span>لا يخضع للضغوط السياسية على حساب القيم.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- TERMS GLOSSARY -->
+  <div class="section">
+    <div class="section-title">
+      <div class="section-num">📖</div>
+      <div>
+        <h2>المصطلحات الأساسية في هذا الجزء</h2>
+        <div class="en-title">Key Terms Glossary</div>
+      </div>
+    </div>
+    <div class="card">
+      <table class="compare-table">
+        <tr><th>المصطلح العربي</th><th>المصطلح الإنجليزي</th><th>التعريف المختصر</th></tr>
+        <tr><td>إطار المعرفة التطبيقية</td><td>SHRM BASK</td><td>الإطار الذي يحدد المهارات والمعارف المطلوبة من متخصص HR</td></tr>
+        <tr><td>الكفاءات السلوكية</td><td>Behavioral Competencies</td><td>السلوكيات التي تجعل HR فعّالاً خارج نطاق المعرفة التقنية</td></tr>
+        <tr><td>المجالات الوظيفية</td><td>Functional Areas</td><td>14 مجالاً تقنياً في HR (تعيين، تدريب، رواتب...)</td></tr>
+        <tr><td>أسئلة الحكم الموقفي</td><td>SJIs (Situational Judgment Items)</td><td>سيناريو + سؤال عن أفضل إجراء</td></tr>
+        <tr><td>القيادة التحويلية</td><td>Transformational Leadership</td><td>قيادة تُلهم التغيير والابتكار عبر الرؤية والقدوة</td></tr>
+        <tr><td>عوامل الصحة الوظيفية</td><td>Hygiene Factors (Herzberg)</td><td>الراتب والبيئة — غيابها يسبب الاستياء لكن حضورها لا يرفع الحافز</td></tr>
+        <tr><td>التحيز اللاواعي</td><td>Unconscious Bias</td><td>تحيزات ذهنية غير مقصودة تؤثر في القرارات</td></tr>
+        <tr><td>قيادة الخادم</td><td>Servant Leadership</td><td>القائد يخدم موظفيه لتمكينهم</td></tr>
+        <tr><td>التوقع (دافعية)</td><td>Expectancy (Vroom)</td><td>ثقة الموظف في أن جهده سيؤدي إلى نتيجة قيّمة</td></tr>
+        <tr><td>هرم الاحتياجات</td><td>Maslow's Hierarchy</td><td>5 مستويات: فسيولوجي → أمان → انتماء → تقدير → تحقيق الذات</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- STUDY PLAN OVERVIEW -->
+  <div class="overview-card" style="margin-top:36px;">
+    <h2>📅 خطة الدراسة الكاملة (601 صفحة = 7 أجزاء)</h2>
+    <p>بناءً على حجم الكتاب، سيتم تقسيم الدراسة إلى 7 ملخصات:</p>
+    <table class="compare-table" style="margin-top:16px; background:rgba(255,255,255,0.1);">
+      <tr style="background:rgba(255,255,255,0.2);">
+        <th style="background:transparent;">الجزء</th>
+        <th style="background:transparent;">الصفحات</th>
+        <th style="background:transparent;">المحتوى الرئيسي</th>
+        <th style="background:transparent;">الحالة</th>
+      </tr>
+      <tr><td>الأول ✅</td><td>1–100</td><td>المقدمة + الكفاءتان الأولى والثانية</td><td>✅ مكتمل</td></tr>
+      <tr><td>الثاني</td><td>101–200</td><td>DEI + Relationship + Communication + Global Mindset</td><td>⏳ قريباً</td></tr>
+      <tr><td>الثالث</td><td>201–300</td><td>Business Acumen + Consultation + Analytical Aptitude</td><td>⏳</td></tr>
+      <tr><td>الرابع</td><td>301–400</td><td>People Domain (HR Strategy, Talent, Engagement)</td><td>⏳</td></tr>
+      <tr><td>الخامس</td><td>401–480</td><td>Organization Domain</td><td>⏳</td></tr>
+      <tr><td>السادس</td><td>481–560</td><td>Workplace Domain</td><td>⏳</td></tr>
+      <tr><td>السابع</td><td>561–601</td><td>المراجعة + المصطلحات + نصائح الاختبار</td><td>⏳</td></tr>
+    </table>
+  </div>
+
+  <div class="tip-box" style="margin-top:24px; font-size:15px;">
+    <strong>🎯 نصيحة للدراسة:</strong> بعد قراءة هذا الملخص، اربط كل نظرية بمثال من حياتك أو عملك. نظرية Herzberg مثلاً — ما الـ Hygiene Factors في وظيفتك الحالية؟ هذا يرسّخ المعلومة ويساعد في أسئلة SJI.
+  </div>
+
+  <div class="footer">
+    <p style="margin-bottom:16px; color:var(--muted); font-size:14px;">
+      اطلب الجزء التالي (صفحات 101–200) في أي وقت!<br>
+      <em>ملخص شامل مع مقارنات وأمثلة تطبيقية</em>
+    </p>
+    <p style="font-size:13px; color:#aaa;">SHRM Learning System 2023 · ملخص دراسي بالعربية</p>
+  </div>
+
+</div>
+</body>
+</html>
